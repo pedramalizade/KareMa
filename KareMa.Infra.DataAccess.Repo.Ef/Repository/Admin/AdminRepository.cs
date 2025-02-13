@@ -50,16 +50,14 @@ namespace KareMa.Infra.DataAccess.Repo.Ef.Repository
 
         public async Task<bool> Update(AdminUpdateDto adminUpdateDto, CancellationToken cancellationToken)
         {
-            var targetModel = await _context.Admins
-                .Include(a => a.AppUser)
-                .FirstOrDefaultAsync(a => a.Id == adminUpdateDto.Id, cancellationToken);
-
+            var targetModel = _context.Admins.FirstOrDefault(a => a.Id == adminUpdateDto.Id);
             targetModel.FirstName = adminUpdateDto.FirstName;
             targetModel.LastName = adminUpdateDto.LastName;
-            targetModel.AppUser.Email = adminUpdateDto.Email;
-            targetModel.AppUser.PhoneNumber = adminUpdateDto.PhoneNumber;
-
-            await _context.SaveChangesAsync(cancellationToken);
+            targetModel.Email = adminUpdateDto.Email;
+            targetModel.Gender = adminUpdateDto.Gender;
+            targetModel.Password = adminUpdateDto.Password;
+            targetModel.PhoneNumber = adminUpdateDto.PhoneNumber;
+            _context.SaveChanges();
             return true;
         }
         private async Task<Admin> FindAdmin(int id, CancellationToken cancellationToken)

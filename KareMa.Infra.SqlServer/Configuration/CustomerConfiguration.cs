@@ -24,7 +24,7 @@ namespace KareMa.Infra.SqlServer.Configuration
 
             builder.Property(c => c.Balance)
                 .HasColumnType("decimal(18,2)");
-                
+
 
             builder.HasData
                 (
@@ -38,7 +38,7 @@ namespace KareMa.Infra.SqlServer.Configuration
                     PhoneNumber = "09123669858",
                     CreatedAt = new DateTime(2024, 2, 12),
                     IsDeleted = false,
-                    AppUserId = 3
+                    BankCardNumber = "1239684412341234"
                 },
                 new Customer
                 {
@@ -50,7 +50,7 @@ namespace KareMa.Infra.SqlServer.Configuration
                     PhoneNumber = "09123623258",
                     CreatedAt = new DateTime(2024, 2, 12),
                     IsDeleted = false,
-                    AppUserId = 5
+                    BankCardNumber = "1239684412341234"
                 }
                 ); ;
         }

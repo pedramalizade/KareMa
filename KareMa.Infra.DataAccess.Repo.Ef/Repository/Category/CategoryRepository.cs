@@ -16,12 +16,12 @@ namespace KareMa.Infra.DataAccess.Repo.Ef.Repository
     public class CategoryRepository : ICategoryRepository
     {
         private readonly AppDbContext _context;
-        private readonly ILogger<CategoryRepository> _logger;
+        //private readonly ILogger<CategoryRepository> _logger;
 
-        public CategoryRepository(AppDbContext context, ILogger<CategoryRepository> logger)
+        public CategoryRepository(AppDbContext context)
         {
             _context = context;
-            _logger = logger;
+            //_logger = logger;
         }
 
         public async Task<bool> Create(CategoryCreateDto categoryCreateDto, CancellationToken cancellationToken)
@@ -43,7 +43,7 @@ namespace KareMa.Infra.DataAccess.Repo.Ef.Repository
             try
             {
                 await _context.SaveChangesAsync(cancellationToken);
-                _logger.LogInformation("category is deleted");
+                //_logger.LogInformation("category is deleted");
             }
             catch (Exception ex)
             {

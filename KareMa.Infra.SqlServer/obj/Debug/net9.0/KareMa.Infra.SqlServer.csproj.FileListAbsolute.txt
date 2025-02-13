@@ -15,3 +15,4 @@ C:\Users\asus\source\repos\KareMa\KareMa.Infra.SqlServer\obj\Debug\net9.0\refint
 C:\Users\asus\source\repos\KareMa\KareMa.Infra.SqlServer\obj\Debug\net9.0\KareMa.Infra.SqlServer.pdb
 C:\Users\asus\source\repos\KareMa\KareMa.Infra.SqlServer\obj\Debug\net9.0\KareMa.Infra.SqlServer.genruntimeconfig.cache
 C:\Users\asus\source\repos\KareMa\KareMa.Infra.SqlServer\obj\Debug\net9.0\ref\KareMa.Infra.SqlServer.dll
+C:\Users\asus\source\repos\KareMa\KareMa.Infra.SqlServer\obj\Debug\net9.0\KareMa.Infra.SqlServer.sourcelink.json

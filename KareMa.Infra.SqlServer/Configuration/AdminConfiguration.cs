@@ -23,7 +23,9 @@ public class AdminConfiguration : IEntityTypeConfiguration<Admin>
                 Gender = GenderEnum.Male,
                 CreatedAt = new DateTime(2024, 2, 12),
                 IsDeleted = false,
-                AppUserId = 1
+                Email = "prdramalizade@gmail.com",
+                Password = "09090909",
+                PhoneNumber = "09126565738",
             }
         );
     }

@@ -15,3 +15,4 @@ C:\Users\asus\source\repos\KareMa\KareMa.Infra.DataAccess.Repo.Ef\obj\Debug\net9
 C:\Users\asus\source\repos\KareMa\KareMa.Infra.DataAccess.Repo.Ef\obj\Debug\net9.0\refint\KareMa.Infra.DataAccess.Repo.Ef.dll
 C:\Users\asus\source\repos\KareMa\KareMa.Infra.DataAccess.Repo.Ef\obj\Debug\net9.0\KareMa.Infra.DataAccess.Repo.Ef.pdb
 C:\Users\asus\source\repos\KareMa\KareMa.Infra.DataAccess.Repo.Ef\obj\Debug\net9.0\ref\KareMa.Infra.DataAccess.Repo.Ef.dll
+C:\Users\asus\source\repos\KareMa\KareMa.Infra.DataAccess.Repo.Ef\obj\Debug\net9.0\KareMa.Infra.DataAccess.Repo.Ef.sourcelink.json

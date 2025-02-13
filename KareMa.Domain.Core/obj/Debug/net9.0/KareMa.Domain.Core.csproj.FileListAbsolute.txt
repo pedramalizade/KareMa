@@ -10,3 +10,4 @@ C:\Users\asus\source\repos\KareMa\KareMa.Domain.Core\obj\Debug\net9.0\KareMa.Dom
 C:\Users\asus\source\repos\KareMa\KareMa.Domain.Core\obj\Debug\net9.0\refint\KareMa.Domain.Core.dll
 C:\Users\asus\source\repos\KareMa\KareMa.Domain.Core\obj\Debug\net9.0\KareMa.Domain.Core.pdb
 C:\Users\asus\source\repos\KareMa\KareMa.Domain.Core\obj\Debug\net9.0\ref\KareMa.Domain.Core.dll
+C:\Users\asus\source\repos\KareMa\KareMa.Domain.Core\obj\Debug\net9.0\KareMa.Domain.Core.sourcelink.json

@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\asus\\source\\repos\\KareMa\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{48A4C85E-18AF-403F-BA7F-D174C754F93A}|KareMa.Infra.SqlServer\\KareMa.Infra.SqlServer.csproj|c:\\users\\asus\\source\\repos\\karema\\karema.infra.sqlserver\\configuration\\userconfigurations.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{48A4C85E-18AF-403F-BA7F-D174C754F93A}|KareMa.Infra.SqlServer\\KareMa.Infra.SqlServer.csproj|solutionrelative:karema.infra.sqlserver\\configuration\\userconfigurations.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C8765232-F67C-4145-A26E-3F6E118CB187}|KareMa.Infra.DataAccess.Repo.Ef\\KareMa.Infra.DataAccess.Repo.Ef.csproj|c:\\users\\asus\\source\\repos\\karema\\karema.infra.dataaccess.repo.ef\\repository\\comment\\commentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C8765232-F67C-4145-A26E-3F6E118CB187}|KareMa.Infra.DataAccess.Repo.Ef\\KareMa.Infra.DataAccess.Repo.Ef.csproj|solutionrelative:karema.infra.dataaccess.repo.ef\\repository\\comment\\commentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{48A4C85E-18AF-403F-BA7F-D174C754F93A}|KareMa.Infra.SqlServer\\KareMa.Infra.SqlServer.csproj|c:\\users\\asus\\source\\repos\\karema\\karema.infra.sqlserver\\configuration\\customerconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{48A4C85E-18AF-403F-BA7F-D174C754F93A}|KareMa.Infra.SqlServer\\KareMa.Infra.SqlServer.csproj|solutionrelative:karema.infra.sqlserver\\configuration\\customerconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C8765232-F67C-4145-A26E-3F6E118CB187}|KareMa.Infra.DataAccess.Repo.Ef\\KareMa.Infra.DataAccess.Repo.Ef.csproj|c:\\users\\asus\\source\\repos\\karema\\karema.infra.dataaccess.repo.ef\\repository\\category\\categoryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C8765232-F67C-4145-A26E-3F6E118CB187}|KareMa.Infra.DataAccess.Repo.Ef\\KareMa.Infra.DataAccess.Repo.Ef.csproj|solutionrelative:karema.infra.dataaccess.repo.ef\\repository\\category\\categoryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -35,27 +35,27 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "UserConfigurations.cs",
-              "DocumentMoniker": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.Infra.SqlServer\\Configuration\\UserConfigurations.cs",
-              "RelativeDocumentMoniker": "KareMa.Infra.SqlServer\\Configuration\\UserConfigurations.cs",
-              "ToolTip": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.Infra.SqlServer\\Configuration\\UserConfigurations.cs",
-              "RelativeToolTip": "KareMa.Infra.SqlServer\\Configuration\\UserConfigurations.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAAACAAAAAxAAAAAAAAAA==",
+              "Title": "CommentRepository.cs",
+              "DocumentMoniker": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.Infra.DataAccess.Repo.Ef\\Repository\\Comment\\CommentRepository.cs",
+              "RelativeDocumentMoniker": "KareMa.Infra.DataAccess.Repo.Ef\\Repository\\Comment\\CommentRepository.cs",
+              "ToolTip": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.Infra.DataAccess.Repo.Ef\\Repository\\Comment\\CommentRepository.cs",
+              "RelativeToolTip": "KareMa.Infra.DataAccess.Repo.Ef\\Repository\\Comment\\CommentRepository.cs",
+              "ViewState": "AgIAACgAAAAAAAAAAAAwwDsAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-13T06:22:22.407Z",
+              "WhenOpened": "2025-02-13T11:42:29.583Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "CustomerConfiguration.cs",
-              "DocumentMoniker": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.Infra.SqlServer\\Configuration\\CustomerConfiguration.cs",
-              "RelativeDocumentMoniker": "KareMa.Infra.SqlServer\\Configuration\\CustomerConfiguration.cs",
-              "ToolTip": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.Infra.SqlServer\\Configuration\\CustomerConfiguration.cs",
-              "RelativeToolTip": "KareMa.Infra.SqlServer\\Configuration\\CustomerConfiguration.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAACYAAAA6AAAAAAAAAA==",
+              "Title": "CategoryRepository.cs",
+              "DocumentMoniker": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.Infra.DataAccess.Repo.Ef\\Repository\\Category\\CategoryRepository.cs",
+              "RelativeDocumentMoniker": "KareMa.Infra.DataAccess.Repo.Ef\\Repository\\Category\\CategoryRepository.cs",
+              "ToolTip": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.Infra.DataAccess.Repo.Ef\\Repository\\Category\\CategoryRepository.cs",
+              "RelativeToolTip": "KareMa.Infra.DataAccess.Repo.Ef\\Repository\\Category\\CategoryRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-13T06:22:06.371Z",
+              "WhenOpened": "2025-02-13T11:42:21.424Z",
               "EditorCaption": ""
             }
           ]

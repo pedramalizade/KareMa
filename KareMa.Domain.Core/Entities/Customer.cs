@@ -12,8 +12,8 @@ namespace KareMa.Domain.Core.Entities
     public class Customer
     {
         public int Id { get; set; }
-        public AppUser AppUser { get; set; }
-        public int AppUserId { get; set; }
+        //public AppUser AppUser { get; set; }
+        //public int AppUserId { get; set; }
         [MaxLength(20)]
         public string FirstName { get; set; }
         [MaxLength(50)]
@@ -23,6 +23,7 @@ namespace KareMa.Domain.Core.Entities
         public string? PhoneNumber { get; set; }
         public decimal Balance { get; set; } = 0;
         public bool IsDeleted { get; set; } = false;
+        public string BankCardNumber { get; set; }
         public DateTime CreatedAt { get; set; } = DateTime.Now;
 
         public Address? Address { get; set; }

@@ -14,50 +14,52 @@ namespace KareMa.Infra.SqlServer.Configuration
     {
         public static void SeedUsers(ModelBuilder builder)
         {
-            //var hasher = new PasswordHasher<AppUser>();
+            var hasher = new PasswordHasher<AppUser>();
 
-            // SeedUsers
-            //          var users = new List<AppUser>
-            //      {
-            //          new AppUser()
-            //          {
-            //              Id = 1,
-            //              UserName = "Admin@gmail.com",
-            //              NormalizedUserName = "ADMIN@GMAIL.COM",
-            //              Email = "Admin@gmail.com",
-            //              NormalizedEmail = "ADMIN@GMAIL.COM",
-            //              LockoutEnabled = false,
-            //              PhoneNumber = "09124545786",
-            //              //SecurityStamp = Guid.NewGuid().ToString(),
-            //              SecurityStamp = "a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11",
-            //              PasswordHash = "1234"
-            //          }
+
+            var users = new List<AppUser>
+            {
+                      new AppUser()
+                      {
+                          Id = 1,
+                          UserName = "Admin@gmail.com",
+                          NormalizedUserName = "ADMIN@GMAIL.COM",
+                          Email = "Admin@gmail.com",
+                          NormalizedEmail = "ADMIN@GMAIL.COM",
+                          LockoutEnabled = false,
+                          PhoneNumber = "09124545786",
+                          //SecurityStamp = Guid.NewGuid().ToString(),
+                          SecurityStamp = "5696d88e-c49d-4804-8721-7571f4f7bc57",
+                          PasswordHash = "AQAAAAIAAYagAAAAEA1fG2ymdTI5QNpS5QaRSW8d7xQubl5bv246a69tsF9zUnp/2r22+KrUG51REjLJLg==",
+                          ConcurrencyStamp = "686fc046-614e-491d-a647-51ae4fe0a8d4"
+                      }
+            
+           };
+
+            //var user = new AppUser()
+            //{
+            //    Id = 1,
+            //    UserName = "Admin@gmail.com",
+            //    NormalizedUserName = "ADMIN@GMAIL.COM",
+            //    Email = "Admin@gmail.com",
+            //    NormalizedEmail = "ADMIN@GMAIL.COM",
+            //    LockoutEnabled = false,
+            //    PhoneNumber = "09124545786",
+            //    //SecurityStamp = Guid.NewGuid().ToString(),
+            //    //SecurityStamp = "a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11",
+            //    //PasswordHash = "1234",
+            //    //ConcurrencyStamp = ""
             //};
 
-            var user = new AppUser()
+            foreach (var user in users)
             {
-                Id = 1,
-                UserName = "Admin@gmail.com",
-                NormalizedUserName = "ADMIN@GMAIL.COM",
-                Email = "Admin@gmail.com",
-                NormalizedEmail = "ADMIN@GMAIL.COM",
-                LockoutEnabled = false,
-                PhoneNumber = "09124545786",
-                //SecurityStamp = Guid.NewGuid().ToString(),
-                SecurityStamp = "a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11",
-                PasswordHash = "1234",
-                ConcurrencyStamp = ""
-            };
+                //var passwordHasher = new PasswordHasher<AppUser>();
+                //user.PasswordHash = passwordHasher.HashPassword(user, "1234");
 
-            //foreach (var user in users)
-            //{
-            //    var passwordHasher = new PasswordHasher<AppUser>();
-            //    user.PasswordHash = passwordHasher.HashPassword(user, "1234");
+                builder.Entity<AppUser>().HasData(user);
+            }
 
-            //    builder.Entity<AppUser>().HasData(user);
-            //}
-
-            builder.Entity<AppUser>().HasData(user);
+            //builder.Entity<AppUser>().HasData(users);
 
             // Seed Roles
             builder.Entity<IdentityRole<int>>().HasData(

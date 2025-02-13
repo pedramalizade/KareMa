@@ -243,3 +243,4 @@ C:\Users\asus\source\repos\KareMa\KareMa.EndPoint.MVC\obj\Debug\net9.0\refint\Ka
 C:\Users\asus\source\repos\KareMa\KareMa.EndPoint.MVC\obj\Debug\net9.0\KareMa.EndPoint.MVC.pdb
 C:\Users\asus\source\repos\KareMa\KareMa.EndPoint.MVC\obj\Debug\net9.0\KareMa.EndPoint.MVC.genruntimeconfig.cache
 C:\Users\asus\source\repos\KareMa\KareMa.EndPoint.MVC\obj\Debug\net9.0\ref\KareMa.EndPoint.MVC.dll
+C:\Users\asus\source\repos\KareMa\KareMa.EndPoint.MVC\obj\Debug\net9.0\KareMa.EndPoint.MVC.sourcelink.json
