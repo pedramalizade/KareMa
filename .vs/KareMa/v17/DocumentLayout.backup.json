@@ -1,0 +1,66 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\asus\\source\\repos\\KareMa\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{48A4C85E-18AF-403F-BA7F-D174C754F93A}|KareMa.Infra.SqlServer\\KareMa.Infra.SqlServer.csproj|c:\\users\\asus\\source\\repos\\karema\\karema.infra.sqlserver\\configuration\\userconfigurations.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{48A4C85E-18AF-403F-BA7F-D174C754F93A}|KareMa.Infra.SqlServer\\KareMa.Infra.SqlServer.csproj|solutionrelative:karema.infra.sqlserver\\configuration\\userconfigurations.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{48A4C85E-18AF-403F-BA7F-D174C754F93A}|KareMa.Infra.SqlServer\\KareMa.Infra.SqlServer.csproj|c:\\users\\asus\\source\\repos\\karema\\karema.infra.sqlserver\\configuration\\customerconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{48A4C85E-18AF-403F-BA7F-D174C754F93A}|KareMa.Infra.SqlServer\\KareMa.Infra.SqlServer.csproj|solutionrelative:karema.infra.sqlserver\\configuration\\customerconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 747,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UserConfigurations.cs",
+              "DocumentMoniker": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.Infra.SqlServer\\Configuration\\UserConfigurations.cs",
+              "RelativeDocumentMoniker": "KareMa.Infra.SqlServer\\Configuration\\UserConfigurations.cs",
+              "ToolTip": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.Infra.SqlServer\\Configuration\\UserConfigurations.cs",
+              "RelativeToolTip": "KareMa.Infra.SqlServer\\Configuration\\UserConfigurations.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAAACAAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-13T06:22:22.407Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CustomerConfiguration.cs",
+              "DocumentMoniker": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.Infra.SqlServer\\Configuration\\CustomerConfiguration.cs",
+              "RelativeDocumentMoniker": "KareMa.Infra.SqlServer\\Configuration\\CustomerConfiguration.cs",
+              "ToolTip": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.Infra.SqlServer\\Configuration\\CustomerConfiguration.cs",
+              "RelativeToolTip": "KareMa.Infra.SqlServer\\Configuration\\CustomerConfiguration.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAACYAAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-13T06:22:06.371Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
