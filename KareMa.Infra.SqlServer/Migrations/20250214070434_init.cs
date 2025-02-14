@@ -91,33 +91,12 @@ namespace KareMa.Infra.SqlServer.Migrations
                     Balance = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     IsDeleted = table.Column<bool>(type: "bit", nullable: false),
                     BankCardNumber = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false)
+                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    ExpertId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Customers", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Experts",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    FirstName = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
-                    LastName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    Gender = table.Column<int>(type: "int", nullable: true),
-                    PhoneNumber = table.Column<string>(type: "nvarchar(11)", maxLength: 11, nullable: true),
-                    BirthDate = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    ProfileImage = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Balance = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    IsConfirm = table.Column<bool>(type: "bit", nullable: false),
-                    IsDeleted = table.Column<bool>(type: "bit", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Experts", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -160,6 +139,57 @@ namespace KareMa.Infra.SqlServer.Migrations
                         name: "FK_SubCategories_Categories_CategoryId",
                         column: x => x.CategoryId,
                         principalTable: "Categories",
+                        principalColumn: "Id");
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Experts",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    FirstName = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
+                    LastName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    Gender = table.Column<int>(type: "int", nullable: true),
+                    PhoneNumber = table.Column<string>(type: "nvarchar(11)", maxLength: 11, nullable: true),
+                    BirthDate = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    ProfileImage = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    BankCardNumber = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Balance = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    IsConfirm = table.Column<bool>(type: "bit", nullable: false),
+                    IsDeleted = table.Column<bool>(type: "bit", nullable: false),
+                    CustomerId = table.Column<int>(type: "int", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Experts", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Experts_Customers_CustomerId",
+                        column: x => x.CustomerId,
+                        principalTable: "Customers",
+                        principalColumn: "Id");
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Services",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    SubCategoryId = table.Column<int>(type: "int", nullable: false),
+                    Price = table.Column<int>(type: "int", nullable: false),
+                    IsDeleted = table.Column<bool>(type: "bit", nullable: false),
+                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Services", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Services_SubCategories_SubCategoryId",
+                        column: x => x.SubCategoryId,
+                        principalTable: "SubCategories",
                         principalColumn: "Id");
                 });
 
@@ -273,24 +303,65 @@ namespace KareMa.Infra.SqlServer.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Services",
+                name: "ExpertService",
+                columns: table => new
+                {
+                    ExpertsId = table.Column<int>(type: "int", nullable: false),
+                    ServicesId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ExpertService", x => new { x.ExpertsId, x.ServicesId });
+                    table.ForeignKey(
+                        name: "FK_ExpertService_Experts_ExpertsId",
+                        column: x => x.ExpertsId,
+                        principalTable: "Experts",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_ExpertService_Services_ServicesId",
+                        column: x => x.ServicesId,
+                        principalTable: "Services",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Orders",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
-                    SubCategoryId = table.Column<int>(type: "int", nullable: false),
-                    Price = table.Column<int>(type: "int", nullable: false),
+                    Title = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    Description = table.Column<string>(type: "nvarchar(1000)", maxLength: 1000, nullable: false),
+                    Status = table.Column<int>(type: "int", nullable: false),
+                    CustomerId = table.Column<int>(type: "int", nullable: false),
+                    ExpertId = table.Column<int>(type: "int", nullable: false),
+                    ServiceId = table.Column<int>(type: "int", nullable: false),
+                    Image = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     IsDeleted = table.Column<bool>(type: "bit", nullable: false),
-                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false)
+                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    RequestForTime = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    DoneAt = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Services", x => x.Id);
+                    table.PrimaryKey("PK_Orders", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Services_SubCategories_SubCategoryId",
-                        column: x => x.SubCategoryId,
-                        principalTable: "SubCategories",
+                        name: "FK_Orders_Customers_CustomerId",
+                        column: x => x.CustomerId,
+                        principalTable: "Customers",
+                        principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK_Orders_Experts_ExpertId",
+                        column: x => x.ExpertId,
+                        principalTable: "Experts",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Orders_Services_ServiceId",
+                        column: x => x.ServiceId,
+                        principalTable: "Services",
                         principalColumn: "Id");
                 });
 
@@ -377,62 +448,6 @@ namespace KareMa.Infra.SqlServer.Migrations
                         principalTable: "AspNetUsers",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "ExpertService",
-                columns: table => new
-                {
-                    ExpertsId = table.Column<int>(type: "int", nullable: false),
-                    ServicesId = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_ExpertService", x => new { x.ExpertsId, x.ServicesId });
-                    table.ForeignKey(
-                        name: "FK_ExpertService_Experts_ExpertsId",
-                        column: x => x.ExpertsId,
-                        principalTable: "Experts",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_ExpertService_Services_ServicesId",
-                        column: x => x.ServicesId,
-                        principalTable: "Services",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Orders",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Title = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    Description = table.Column<string>(type: "nvarchar(1000)", maxLength: 1000, nullable: false),
-                    Status = table.Column<int>(type: "int", nullable: false),
-                    CustomerId = table.Column<int>(type: "int", nullable: false),
-                    ServiceId = table.Column<int>(type: "int", nullable: false),
-                    Image = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    IsDeleted = table.Column<bool>(type: "bit", nullable: false),
-                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    RequestForTime = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    DoneAt = table.Column<DateTime>(type: "datetime2", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Orders", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Orders_Customers_CustomerId",
-                        column: x => x.CustomerId,
-                        principalTable: "Customers",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_Orders_Services_ServiceId",
-                        column: x => x.ServiceId,
-                        principalTable: "Services",
-                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
@@ -539,21 +554,22 @@ namespace KareMa.Infra.SqlServer.Migrations
 
             migrationBuilder.InsertData(
                 table: "Customers",
-                columns: new[] { "Id", "Balance", "BankCardNumber", "CreatedAt", "FirstName", "Gender", "IsDeleted", "LastName", "PhoneNumber" },
+                columns: new[] { "Id", "Balance", "BankCardNumber", "CreatedAt", "ExpertId", "FirstName", "Gender", "IsDeleted", "LastName", "PhoneNumber" },
                 values: new object[,]
                 {
-                    { 1, 0m, "1239684412341234", new DateTime(2024, 2, 12, 0, 0, 0, 0, DateTimeKind.Unspecified), "تارا", 1, false, "بابایی", "09123669858" },
-                    { 2, 0m, "1239684412341234", new DateTime(2024, 2, 12, 0, 0, 0, 0, DateTimeKind.Unspecified), "پارسا", 2, false, "تقوایی", "09123623258" }
+                    { 1, 0m, "1239684412341234", new DateTime(2024, 2, 12, 0, 0, 0, 0, DateTimeKind.Unspecified), 1, "تارا", 1, false, "بابایی", "09123669858" },
+                    { 2, 0m, "1239684412341234", new DateTime(2024, 2, 12, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "پارسا", 2, false, "تقوایی", "09123623258" }
                 });
 
             migrationBuilder.InsertData(
                 table: "Experts",
-                columns: new[] { "Id", "Balance", "BirthDate", "CreatedAt", "FirstName", "Gender", "IsConfirm", "IsDeleted", "LastName", "PhoneNumber", "ProfileImage" },
-                values: new object[,]
-                {
-                    { 1, 0m, new DateTime(1998, 12, 3, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2024, 2, 12, 0, 0, 0, 0, DateTimeKind.Unspecified), "علی", 2, true, false, "کریمی", "09362356998", null },
-                    { 2, 0m, new DateTime(2004, 12, 7, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2024, 2, 12, 0, 0, 0, 0, DateTimeKind.Unspecified), "سارا", 1, true, false, "خاتمی", "09362357998", null }
-                });
+                columns: new[] { "Id", "Balance", "BankCardNumber", "BirthDate", "CreatedAt", "CustomerId", "FirstName", "Gender", "IsConfirm", "IsDeleted", "LastName", "PhoneNumber", "ProfileImage" },
+                values: new object[] { 2, 0m, "123454678", new DateTime(2004, 12, 7, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2024, 2, 12, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "سارا", 1, true, false, "خاتمی", "09362357998", null });
+
+            migrationBuilder.InsertData(
+                table: "Addresses",
+                columns: new[] { "Id", "Area", "CityId", "CreatedAt", "CustomerId", "ExpertId", "IsDeleted", "PostalCode", "Street" },
+                values: new object[] { 1, "منطقه 7", 4, new DateTime(2024, 5, 3, 0, 0, 0, 0, DateTimeKind.Unspecified), 1, 2, false, "174735364", "سهروردی" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUserRoles",
@@ -561,9 +577,9 @@ namespace KareMa.Infra.SqlServer.Migrations
                 values: new object[] { 1, 1 });
 
             migrationBuilder.InsertData(
-                table: "Comments",
-                columns: new[] { "Id", "CreatedAt", "CustomerId", "Description", "ExpertId", "IsAccept", "IsDeleted", "Score", "Title" },
-                values: new object[] { 1, new DateTime(2024, 2, 12, 0, 0, 0, 0, DateTimeKind.Unspecified), 1, "کارش بی نظیر بود", 1, false, false, 4, "عالی" });
+                table: "Experts",
+                columns: new[] { "Id", "Balance", "BankCardNumber", "BirthDate", "CreatedAt", "CustomerId", "FirstName", "Gender", "IsConfirm", "IsDeleted", "LastName", "PhoneNumber", "ProfileImage" },
+                values: new object[] { 1, 0m, "123454678", new DateTime(1998, 12, 3, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2024, 2, 12, 0, 0, 0, 0, DateTimeKind.Unspecified), 1, "علی", 2, true, false, "کریمی", "09362356998", null });
 
             migrationBuilder.InsertData(
                 table: "SubCategories",
@@ -595,6 +611,11 @@ namespace KareMa.Infra.SqlServer.Migrations
                     { 24, 7, new DateTime(2024, 2, 12, 0, 0, 0, 0, DateTimeKind.Unspecified), "\\Images\\SubCategory\\24.jpg", false, "حیوانات خانگی" },
                     { 25, 7, new DateTime(2024, 2, 12, 0, 0, 0, 0, DateTimeKind.Unspecified), "\\Images\\SubCategory\\25.jpg", false, "تندرستی و ورزش" }
                 });
+
+            migrationBuilder.InsertData(
+                table: "Comments",
+                columns: new[] { "Id", "CreatedAt", "CustomerId", "Description", "ExpertId", "IsAccept", "IsDeleted", "Score", "Title" },
+                values: new object[] { 1, new DateTime(2024, 2, 12, 0, 0, 0, 0, DateTimeKind.Unspecified), 1, "کارش بی نظیر بود", 1, false, false, 4, "عالی" });
 
             migrationBuilder.InsertData(
                 table: "Services",
@@ -848,8 +869,13 @@ namespace KareMa.Infra.SqlServer.Migrations
 
             migrationBuilder.InsertData(
                 table: "Orders",
-                columns: new[] { "Id", "CreatedAt", "CustomerId", "Description", "DoneAt", "Image", "IsDeleted", "RequestForTime", "ServiceId", "Status", "Title" },
-                values: new object[] { 1, new DateTime(2024, 2, 12, 0, 0, 0, 0, DateTimeKind.Unspecified), 1, "نظافت خونه صد متری به طور کامل", new DateTime(2024, 2, 12, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, new DateTime(2024, 2, 12, 0, 0, 0, 0, DateTimeKind.Unspecified), 1, 3, "نظافت" });
+                columns: new[] { "Id", "CreatedAt", "CustomerId", "Description", "DoneAt", "ExpertId", "Image", "IsDeleted", "RequestForTime", "ServiceId", "Status", "Title" },
+                values: new object[] { 1, new DateTime(2024, 2, 12, 0, 0, 0, 0, DateTimeKind.Unspecified), 1, "نظافت خونه صد متری به طور کامل", new DateTime(2024, 2, 12, 0, 0, 0, 0, DateTimeKind.Unspecified), 1, null, false, new DateTime(2024, 2, 12, 0, 0, 0, 0, DateTimeKind.Unspecified), 1, 3, "نظافت" });
+
+            migrationBuilder.InsertData(
+                table: "Suggestions",
+                columns: new[] { "Id", "CreateAt", "Description", "ExpertId", "IsDeleted", "OrderId", "Price", "Status", "SuggestedDate" },
+                values: new object[] { 1, new DateTime(2024, 6, 8, 0, 0, 0, 0, DateTimeKind.Unspecified), "نظافت خانه", 1, false, 1, 4000, 1, new DateTime(2024, 4, 7, 0, 0, 0, 0, DateTimeKind.Unspecified) });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Addresses_CityId",
@@ -935,6 +961,13 @@ namespace KareMa.Infra.SqlServer.Migrations
                 column: "ExpertId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Experts_CustomerId",
+                table: "Experts",
+                column: "CustomerId",
+                unique: true,
+                filter: "[CustomerId] IS NOT NULL");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_ExpertService_ServicesId",
                 table: "ExpertService",
                 column: "ServicesId");
@@ -943,6 +976,11 @@ namespace KareMa.Infra.SqlServer.Migrations
                 name: "IX_Orders_CustomerId",
                 table: "Orders",
                 column: "CustomerId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Orders_ExpertId",
+                table: "Orders",
+                column: "ExpertId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Orders_ServiceId",
@@ -1019,10 +1057,10 @@ namespace KareMa.Infra.SqlServer.Migrations
                 name: "Experts");
 
             migrationBuilder.DropTable(
-                name: "Customers");
+                name: "Services");
 
             migrationBuilder.DropTable(
-                name: "Services");
+                name: "Customers");
 
             migrationBuilder.DropTable(
                 name: "SubCategories");

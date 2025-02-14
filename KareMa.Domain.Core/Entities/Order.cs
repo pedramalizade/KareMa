@@ -19,6 +19,8 @@ namespace KareMa.Domain.Core.Entities
         public StatusEnum Status { get; set; }
         public Customer Customer { get; set; }
         public int CustomerId { get; set; }
+        public Expert Expert { get; set; }
+        public int ExpertId { get; set; }
         public int ServiceId { get; set; }
         [DisplayName("عکس")]
         public string? Image { get; set; }

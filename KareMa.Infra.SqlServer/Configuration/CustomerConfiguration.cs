@@ -21,6 +21,9 @@ namespace KareMa.Infra.SqlServer.Configuration
             builder.HasMany(c => c.Comments)
                 .WithOne(c => c.Customer)
                 .OnDelete(DeleteBehavior.NoAction);
+            builder.HasOne(c => c.Expert)
+                .WithOne(x => x.Customer)
+                .HasForeignKey<Expert>(x => x.CustomerId);
 
             builder.Property(c => c.Balance)
                 .HasColumnType("decimal(18,2)");
@@ -35,6 +38,7 @@ namespace KareMa.Infra.SqlServer.Configuration
                     LastName = "بابایی",
                     Gender = GenderEnum.Female,
                     Balance = 0,
+                    ExpertId = 1,
                     PhoneNumber = "09123669858",
                     CreatedAt = new DateTime(2024, 2, 12),
                     IsDeleted = false,
@@ -46,13 +50,14 @@ namespace KareMa.Infra.SqlServer.Configuration
                     FirstName = "پارسا",
                     LastName = "تقوایی",
                     Balance = 0,
+                    ExpertId = null,
                     Gender = GenderEnum.Male,
                     PhoneNumber = "09123623258",
                     CreatedAt = new DateTime(2024, 2, 12),
                     IsDeleted = false,
                     BankCardNumber = "1239684412341234"
                 }
-                ); ;
+                ) ;
         }
     }
 }

@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace KareMa.Infra.SqlServer.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250213113535_init")]
+    [Migration("20250214070434_init")]
     partial class init
     {
         /// <inheritdoc />
@@ -90,6 +90,20 @@ namespace KareMa.Infra.SqlServer.Migrations
                         .HasFilter("[ExpertId] IS NOT NULL");
 
                     b.ToTable("Addresses");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Area = "منطقه 7",
+                            CityId = 4,
+                            CreatedAt = new DateTime(2024, 5, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CustomerId = 1,
+                            ExpertId = 2,
+                            IsDeleted = false,
+                            PostalCode = "174735364",
+                            Street = "سهروردی"
+                        });
                 });
 
             modelBuilder.Entity("KareMa.Domain.Core.Entities.Admin", b =>
@@ -623,6 +637,9 @@ namespace KareMa.Infra.SqlServer.Migrations
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
+                    b.Property<int?>("ExpertId")
+                        .HasColumnType("int");
+
                     b.Property<string>("FirstName")
                         .IsRequired()
                         .HasMaxLength(20)
@@ -654,6 +671,7 @@ namespace KareMa.Infra.SqlServer.Migrations
                             Balance = 0m,
                             BankCardNumber = "1239684412341234",
                             CreatedAt = new DateTime(2024, 2, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ExpertId = 1,
                             FirstName = "تارا",
                             Gender = 1,
                             IsDeleted = false,
@@ -685,11 +703,18 @@ namespace KareMa.Infra.SqlServer.Migrations
                     b.Property<decimal>("Balance")
                         .HasColumnType("decimal(18,2)");
 
+                    b.Property<string>("BankCardNumber")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<DateTime?>("BirthDate")
                         .HasColumnType("datetime2");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
+
+                    b.Property<int?>("CustomerId")
+                        .HasColumnType("int");
 
                     b.Property<string>("FirstName")
                         .IsRequired()
@@ -719,6 +744,10 @@ namespace KareMa.Infra.SqlServer.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("CustomerId")
+                        .IsUnique()
+                        .HasFilter("[CustomerId] IS NOT NULL");
+
                     b.ToTable("Experts");
 
                     b.HasData(
@@ -726,8 +755,10 @@ namespace KareMa.Infra.SqlServer.Migrations
                         {
                             Id = 1,
                             Balance = 0m,
+                            BankCardNumber = "123454678",
                             BirthDate = new DateTime(1998, 12, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             CreatedAt = new DateTime(2024, 2, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CustomerId = 1,
                             FirstName = "علی",
                             Gender = 2,
                             IsConfirm = true,
@@ -739,6 +770,7 @@ namespace KareMa.Infra.SqlServer.Migrations
                         {
                             Id = 2,
                             Balance = 0m,
+                            BankCardNumber = "123454678",
                             BirthDate = new DateTime(2004, 12, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             CreatedAt = new DateTime(2024, 2, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             FirstName = "سارا",
@@ -772,6 +804,9 @@ namespace KareMa.Infra.SqlServer.Migrations
                     b.Property<DateTime?>("DoneAt")
                         .HasColumnType("datetime2");
 
+                    b.Property<int>("ExpertId")
+                        .HasColumnType("int");
+
                     b.Property<string>("Image")
                         .HasColumnType("nvarchar(max)");
 
@@ -796,6 +831,8 @@ namespace KareMa.Infra.SqlServer.Migrations
 
                     b.HasIndex("CustomerId");
 
+                    b.HasIndex("ExpertId");
+
                     b.HasIndex("ServiceId");
 
                     b.ToTable("Orders");
@@ -808,6 +845,7 @@ namespace KareMa.Infra.SqlServer.Migrations
                             CustomerId = 1,
                             Description = "نظافت خونه صد متری به طور کامل",
                             DoneAt = new DateTime(2024, 2, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ExpertId = 1,
                             IsDeleted = false,
                             RequestForTime = new DateTime(2024, 2, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             ServiceId = 1,
@@ -3327,6 +3365,20 @@ namespace KareMa.Infra.SqlServer.Migrations
                     b.HasIndex("OrderId");
 
                     b.ToTable("Suggestions");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CreateAt = new DateTime(2024, 6, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Description = "نظافت خانه",
+                            ExpertId = 1,
+                            IsDeleted = false,
+                            OrderId = 1,
+                            Price = 4000,
+                            Status = 1,
+                            SuggestedDate = new DateTime(2024, 4, 7, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole<int>", b =>
@@ -3568,12 +3620,27 @@ namespace KareMa.Infra.SqlServer.Migrations
                     b.Navigation("Expert");
                 });
 
+            modelBuilder.Entity("KareMa.Domain.Core.Entities.Expert", b =>
+                {
+                    b.HasOne("KareMa.Domain.Core.Entities.Customer", "Customer")
+                        .WithOne("Expert")
+                        .HasForeignKey("KareMa.Domain.Core.Entities.Expert", "CustomerId");
+
+                    b.Navigation("Customer");
+                });
+
             modelBuilder.Entity("KareMa.Domain.Core.Entities.Order", b =>
                 {
                     b.HasOne("KareMa.Domain.Core.Entities.Customer", "Customer")
                         .WithMany("Orders")
                         .HasForeignKey("CustomerId")
                         .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
+
+                    b.HasOne("KareMa.Domain.Core.Entities.Expert", "Expert")
+                        .WithMany("Orders")
+                        .HasForeignKey("ExpertId")
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("KareMa.Domain.Core.Entities.Service", "Service")
@@ -3583,6 +3650,8 @@ namespace KareMa.Infra.SqlServer.Migrations
                         .IsRequired();
 
                     b.Navigation("Customer");
+
+                    b.Navigation("Expert");
 
                     b.Navigation("Service");
                 });
@@ -3693,6 +3762,8 @@ namespace KareMa.Infra.SqlServer.Migrations
 
                     b.Navigation("Comments");
 
+                    b.Navigation("Expert");
+
                     b.Navigation("Orders");
                 });
 
@@ -3701,6 +3772,8 @@ namespace KareMa.Infra.SqlServer.Migrations
                     b.Navigation("Address");
 
                     b.Navigation("Comments");
+
+                    b.Navigation("Orders");
 
                     b.Navigation("Suggestions");
                 });

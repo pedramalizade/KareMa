@@ -56,19 +56,19 @@ builder.Services.AddScoped<ICustomerRepository, CustomerRepository>();
 builder.Services.AddScoped<IExpertRepository, ExpertRepository>();
 
 
-builder.Services.AddIdentity<AppUser, IdentityRole<int>>
-    (options =>
-    {
-        options.SignIn.RequireConfirmedAccount = false;
-        options.Password.RequireDigit = false;
-        options.Password.RequiredLength = 6;
-        options.Password.RequireNonAlphanumeric = false;
-        options.Password.RequireUppercase = false;
-        options.Password.RequireLowercase = false;
-    })
-    .AddRoles<IdentityRole<int>>()
-    .AddEntityFrameworkStores<AppDbContext>()
-    .AddErrorDescriber<PersianIdentityErrorDescriber>();
+//builder.Services.AddIdentity<AppUser, IdentityRole<int>>
+//    (options =>
+//    {
+//        options.SignIn.RequireConfirmedAccount = false;
+//        options.Password.RequireDigit = false;
+//        options.Password.RequiredLength = 6;
+//        options.Password.RequireNonAlphanumeric = false;
+//        options.Password.RequireUppercase = false;
+//        options.Password.RequireLowercase = false;
+//    })
+//    .AddRoles<IdentityRole<int>>()
+//    .AddEntityFrameworkStores<AppDbContext>()
+//    .AddErrorDescriber<PersianIdentityErrorDescriber>();
 
 
 

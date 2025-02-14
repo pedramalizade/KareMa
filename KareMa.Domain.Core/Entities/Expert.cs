@@ -26,11 +26,15 @@ namespace KareMa.Domain.Core.Entities
         public string? ProfileImage { get; set; }
         [DisplayName("آدرس")]
         public Address? Address { get; set; }
+        public string BankCardNumber { get; set; }
         public decimal Balance { get; set; } = 0;
         public DateTime CreatedAt { get; set; } = DateTime.Now;
         public bool IsConfirm { get; set; } = false;
         public bool IsDeleted { get; set; } = false;
 
+        public int? CustomerId { get; set; }
+        public Customer? Customer { get; set; }
+        public List<Order>? Orders { get; set; }
         public List<Comment>? Comments { get; set; }
         public List<Suggestion>? Suggestions { get; set; }
         public List<Service>? Services { get; set; }

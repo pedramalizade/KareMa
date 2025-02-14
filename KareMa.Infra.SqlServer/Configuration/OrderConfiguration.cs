@@ -41,6 +41,7 @@ namespace KareMa.Infra.SqlServer.Configuration
                     RequestForTime = new DateTime(2024, 2, 12),
                     ServiceId = 1,
                     Title = "نظافت",
+                    ExpertId = 1,
                     Status = StatusEnum.Confirmed,
                 }
                 );

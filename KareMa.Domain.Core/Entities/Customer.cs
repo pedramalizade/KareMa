@@ -26,6 +26,8 @@ namespace KareMa.Domain.Core.Entities
         public string BankCardNumber { get; set; }
         public DateTime CreatedAt { get; set; } = DateTime.Now;
 
+        public int? ExpertId { get; set; }
+        public Expert? Expert { get; set; }
         public Address? Address { get; set; }
         public List<Comment>? Comments { get; set; }
         public List<Order>? Orders { get; set; }
