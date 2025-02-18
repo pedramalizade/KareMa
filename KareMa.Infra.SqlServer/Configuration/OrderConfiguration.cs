@@ -20,6 +20,10 @@ namespace KareMa.Infra.SqlServer.Configuration
                 .WithMany(c => c.Orders)
                 .OnDelete(DeleteBehavior.NoAction);
 
+            builder.HasOne(o => o.Expert)
+                .WithMany(c => c.Orders)
+                .OnDelete(DeleteBehavior.NoAction);
+
             builder.HasOne(o => o.Service)
                 .WithMany(c => c.Orders)
                 .OnDelete(DeleteBehavior.NoAction);
@@ -36,12 +40,12 @@ namespace KareMa.Infra.SqlServer.Configuration
                     CreatedAt = new DateTime(2024, 2, 12),
                     CustomerId = 1,
                     IsDeleted = false,
-                    Description = "نظافت خونه صد متری به طور کامل",
-                    DoneAt = new DateTime(2024, 2, 12),
-                    RequestForTime = new DateTime(2024, 2, 12),
+                    Description = "نظافت خونه صد متری هب طور کامل",
+                    ExpertId = 1,
+                    DoneAt = DateTime.Now,
+                    RequestedAt = DateTime.Now,
                     ServiceId = 1,
                     Title = "نظافت",
-                    ExpertId = 1,
                     Status = StatusEnum.Confirmed,
                 }
                 );

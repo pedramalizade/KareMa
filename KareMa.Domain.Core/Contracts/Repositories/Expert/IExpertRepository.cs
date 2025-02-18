@@ -14,6 +14,7 @@ namespace KareMa.Domain.Core.Contracts.Repositories
         Task<bool> Delete(int expertId, CancellationToken cancellationToken);
         Task<Expert> GetById(int expertId, CancellationToken cancellationToken);
         Task<List<Expert>> GetAll(CancellationToken cancellationToken);
+        Task<int> ExpertCount(CancellationToken cancellationToken);
     }
 
 }

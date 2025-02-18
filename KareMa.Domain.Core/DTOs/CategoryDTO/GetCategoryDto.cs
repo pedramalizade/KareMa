@@ -4,10 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-public class GetCategoryDto
+namespace KareMa.Domain.Core.DTOs.CategoryDTO
 {
-    public int Id { get; set; }
-    public string Name { get; set; }
-    public string? Image { get; set; }
-    public bool IsDeleted { get; set; }
+    public class GetCategoryDto
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string? Image { get; set; }
+        public bool IsDeleted { get; set; }
+    }
 }

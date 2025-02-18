@@ -16,5 +16,4 @@ namespace KareMa.Domain.Core.DTOs.SubCategoryDTO
         public string? Image { get; set; }
         public bool IsDeleted { get; set; }
     }
-
 }

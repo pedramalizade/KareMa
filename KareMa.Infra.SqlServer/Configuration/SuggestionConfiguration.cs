@@ -29,8 +29,6 @@ namespace KareMa.Infra.SqlServer.Configuration
                 Id = 1,
                 Description = "نظافت خانه",
                 ExpertId = 1,
-                SuggestedDate = new DateTime(2024, 4, 7),
-                Status = Domain.Core.Enums.StatusEnum.AwaitingSuggestionExperts,
                 CreateAt = new DateTime(2024, 6, 8),
                 Price = 4000,
                 OrderId = 1,

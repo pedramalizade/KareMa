@@ -15,6 +15,7 @@ namespace KareMa.Infra.SqlServer.Configuration
         public void Configure(EntityTypeBuilder<Expert> builder)
         {
             builder.HasKey(e => e.Id);
+
             builder.HasMany(e => e.Services)
                  .WithMany(e => e.Experts);
 
@@ -22,11 +23,9 @@ namespace KareMa.Infra.SqlServer.Configuration
                 .WithOne(e => e.Expert)
                 .OnDelete(DeleteBehavior.NoAction);
 
-            builder.Property(c => c.Balance)
-                .HasColumnType("decimal(18,2)");
 
-            //builder.HasOne(e => e.Address)
-            //    .WithOne(a => a.Expert)
+            //builder.HasOne(e => e.EvidenceImage)
+            //    .WithOne(e => e.Expert)
             //    .OnDelete(DeleteBehavior.NoAction);
 
             builder.HasData
@@ -35,13 +34,11 @@ namespace KareMa.Infra.SqlServer.Configuration
                 {
                     Id = 1,
                     FirstName = "علی",
+                    BirthDate = new DateTime(1999, 10, 03),
                     LastName = "کریمی",
-                    BirthDate = new DateTime(1998, 12, 03),
                     PhoneNumber = "09362356998",
                     Gender = GenderEnum.Male,
-                    BankCardNumber = "123454678",
-                    Balance = 0,
-                    CustomerId = 1,
+                    BankCardNumber = "1234123412341234",
                     IsConfirm = true,
                     CreatedAt = new DateTime(2024, 2, 12),
                     IsDeleted = false,
@@ -52,13 +49,11 @@ namespace KareMa.Infra.SqlServer.Configuration
                      Id = 2,
                      FirstName = "سارا",
                      LastName = "خاتمی",
-                     BirthDate = new DateTime(2004, 12, 07),
+                     BirthDate = new DateTime(1999, 4, 04),
                      PhoneNumber = "09362357998",
-                     BankCardNumber = "123454678",
+                     BankCardNumber = "1234123412341234",
                      Gender = GenderEnum.Female,
                      IsConfirm = true,
-                     CustomerId = null,
-                     Balance = 0,
                      CreatedAt = new DateTime(2024, 2, 12),
                      IsDeleted = false,
                      //AppUserId = 1

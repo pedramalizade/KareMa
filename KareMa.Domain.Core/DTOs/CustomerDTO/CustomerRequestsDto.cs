@@ -5,7 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-public class CustomerRequestsDto
+namespace KareMa.Domain.Core.DTOs.CustomerDTO
 {
-    public Order Order { get; set; }
+    public class CustomerRequestsDto
+    {
+        public Order Order { get; set; }
+    }
 }

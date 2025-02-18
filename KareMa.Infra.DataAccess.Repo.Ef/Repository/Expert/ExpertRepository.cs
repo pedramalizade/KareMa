@@ -27,6 +27,7 @@ namespace KareMa.Infra.DataAccess.Repo.Ef.Repository
                 LastName = expertCreateDto.LastName,
                 Gender = expertCreateDto.Gender,
                 PhoneNumber = expertCreateDto.PhoneNumber,
+                BankCardNumber = expertCreateDto.BankCardNumber,
                 Address = expertCreateDto.Address,
                 BirthDate = expertCreateDto.BirthDate,
                 ProfileImage = expertCreateDto.ProfileImage,
@@ -65,34 +66,25 @@ namespace KareMa.Infra.DataAccess.Repo.Ef.Repository
 
             if (targetModel != null)
             {
-                targetModel.Services ??= new List<Service>();
-
-                targetModel.Services.Clear();
-
-                if (expertUpdateDto.ServiceIds is not null)
-                {
-                    foreach (var item in expertUpdateDto.ServiceIds)
-                    {
-                        var service = await _context.Services
-                            .FirstOrDefaultAsync(c => c.Id == item, cancellationToken);
-
-                        targetModel.Services.Add(service);
-                    }
-                }
                 targetModel.FirstName = expertUpdateDto.FirstName;
                 targetModel.LastName = expertUpdateDto.LastName;
+                targetModel.Gender = expertUpdateDto.Gender;
                 targetModel.PhoneNumber = expertUpdateDto.PhoneNumber;
+                targetModel.BankCardNumber = expertUpdateDto.BankCardNumber;
+                targetModel.Address = expertUpdateDto.Address;
                 targetModel.BirthDate = expertUpdateDto.BirthDate;
-
-                if (expertUpdateDto.ProfileImage != null)
-                {
-                    targetModel.ProfileImage = expertUpdateDto.ProfileImage;
-                }
+                targetModel.ProfileImage = expertUpdateDto.ProfileImage;
+                targetModel.Services = expertUpdateDto.Services;
 
             }
             await _context.SaveChangesAsync(cancellationToken);
 
             return true;
+        }
+        public async Task<int> ExpertCount(CancellationToken cancellationToken)
+        {
+            var count = await _context.Experts.CountAsync(cancellationToken);
+            return count;
         }
         private async Task<Expert> FindExpert(int id, CancellationToken cancellationToken)
    => await _context.Experts.FirstOrDefaultAsync(a => a.Id == id, cancellationToken);

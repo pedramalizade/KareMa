@@ -17,7 +17,8 @@ namespace KareMa.Infra.SqlServer.Common
         {
 
         }
-
+       
+       
         protected override void OnModelCreating(ModelBuilder builder)
         {
             builder.ApplyConfiguration(new AdminConfiguration());
@@ -38,6 +39,7 @@ namespace KareMa.Infra.SqlServer.Common
         }
 
         public DbSet<Admin> Admins { get; set; }
+        public DbSet<AppUser> AppUser { get; set; }
         public DbSet<Order> Orders { get; set; }
         public DbSet<City> Cities { get; set; }
         public DbSet<Comment> Comments { get; set; }

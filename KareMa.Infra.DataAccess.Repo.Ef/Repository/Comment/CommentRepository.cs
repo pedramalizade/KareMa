@@ -1,4 +1,6 @@
-﻿using KareMa.Domain.Core.Entities;
+﻿using KareMa.Domain.Core.Contracts.Repositories;
+using KareMa.Domain.Core.DTOs.CommentDTO;
+using KareMa.Domain.Core.Entities;
 using KareMa.Infra.SqlServer.Common;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -9,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace KareMa.Infra.DataAccess.Repo.Ef.Repository
 {
-    public class CommentRepository : KareMa.Domain.Core.Contracts.Repositories.ICommentRepository
+    public class CommentRepository : ICommentRepository
     {
 
         private readonly AppDbContext _context;
@@ -58,8 +60,6 @@ namespace KareMa.Infra.DataAccess.Repo.Ef.Repository
                      Description = c.Description,
                      IsActive = c.IsAccept,
                      IsDeleted = c.IsDeleted,
-                     Score = c.Score
-
                  }).ToListAsync(cancellationToken);
             return comments;
         }
@@ -80,6 +80,44 @@ namespace KareMa.Infra.DataAccess.Repo.Ef.Repository
 
             return true;
         }
+        public async Task<bool> SetScore(int expertId, int score, CancellationToken cancellationToken)
+        {
+            var targetModel = await _context.Comments.FirstOrDefaultAsync(c => c.ExpertId == expertId, cancellationToken);
+            targetModel.Score = score;
+            await _context.SaveChangesAsync(cancellationToken);
+            return true;
+        }
+        public async Task AcceptComment(int commentId, CancellationToken cancellationToken)
+        {
+            var targetModel = await FindComment(commentId, cancellationToken);
+            targetModel.IsAccept = true;
+            await _context.SaveChangesAsync(cancellationToken);
+        }
+        public async Task RejectComment(int commentId, CancellationToken cancellationToken)
+        {
+            var targetModel = await FindComment(commentId, cancellationToken);
+            targetModel.IsAccept = false;
+            await _context.SaveChangesAsync(cancellationToken);
+        }
+        public async Task<List<RecentCommentDto>> GetRecentComments(int count, CancellationToken cancellationToken)
+        {
+            var recentComments = await _context.Comments.
+                Select(c => new RecentCommentDto
+                {
+                    Id = c.Id,
+                    Title = c.Title,
+                    Score = c.Score,
+                    Expert = c.Expert,
+                    CreateAt = c.CreatedAt,
+                })
+                .OrderByDescending(c => c.CreateAt)
+                .Take(count)
+                .ToListAsync(cancellationToken);
+            return recentComments;
+        }
+        public async Task<int> CommentCount(CancellationToken cancellationToken)
+          => await _context.Comments.CountAsync(cancellationToken);
+
         private async Task<Comment> FindComment(int id, CancellationToken cancellationToken)
      => await _context.Comments.FirstOrDefaultAsync(a => a.Id == id, cancellationToken);
     }

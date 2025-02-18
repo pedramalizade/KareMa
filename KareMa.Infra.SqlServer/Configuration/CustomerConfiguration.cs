@@ -15,18 +15,16 @@ namespace KareMa.Infra.SqlServer.Configuration
         public void Configure(EntityTypeBuilder<Customer> builder)
         {
             builder.HasMany(c => c.Orders)
-                .WithOne(c => c.Customer)
-                .OnDelete(DeleteBehavior.NoAction);
+           .WithOne(c => c.Customer)
+           .OnDelete(DeleteBehavior.NoAction);
 
             builder.HasMany(c => c.Comments)
                 .WithOne(c => c.Customer)
                 .OnDelete(DeleteBehavior.NoAction);
-            builder.HasOne(c => c.Expert)
-                .WithOne(x => x.Customer)
-                .HasForeignKey<Expert>(x => x.CustomerId);
 
-            builder.Property(c => c.Balance)
-                .HasColumnType("decimal(18,2)");
+            builder.HasMany(c => c.Addresses)
+                .WithOne(c => c.Customer)
+                .OnDelete(DeleteBehavior.NoAction);
 
 
             builder.HasData
@@ -37,27 +35,26 @@ namespace KareMa.Infra.SqlServer.Configuration
                     FirstName = "تارا",
                     LastName = "بابایی",
                     Gender = GenderEnum.Female,
-                    Balance = 0,
-                    ExpertId = 1,
-                    PhoneNumber = "09123669858",
+                    //PhoneNumber = "09192365988",
+                    BackUpPhoneNumber = "09123669858",
+                    BankCardNumber = "1234123412341234",
                     CreatedAt = new DateTime(2024, 2, 12),
                     IsDeleted = false,
-                    BankCardNumber = "1239684412341234"
                 },
                 new Customer
                 {
                     Id = 2,
-                    FirstName = "پارسا",
+                    FirstName = "امیر",
                     LastName = "تقوایی",
-                    Balance = 0,
-                    ExpertId = null,
                     Gender = GenderEnum.Male,
-                    PhoneNumber = "09123623258",
+                    //PhoneNumber = "09014839264",
+                    BackUpPhoneNumber = "09123623258",
+                    BankCardNumber = "1239684412341234",
                     CreatedAt = new DateTime(2024, 2, 12),
                     IsDeleted = false,
-                    BankCardNumber = "1239684412341234"
                 }
                 ) ;
         }
     }
 }
+

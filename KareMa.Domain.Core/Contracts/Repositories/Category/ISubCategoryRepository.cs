@@ -10,10 +10,13 @@ namespace KareMa.Domain.Core.Contracts.Repositories.Category
 {
     public interface ISubCategoryRepository
     {
-        Task<bool> Create(ServiceSubCategoryCreateDto serviceSubCategoryCreateDto, CancellationToken cancellationToken);
-        Task<bool> Update(ServiceSubCategoryUpdateDto serviceSubCategoryUpdateDto, CancellationToken cancellationToken);
+        Task<bool> Create(SubCategoryCreateDto serviceSubCategoryCreateDto, CancellationToken cancellationToken);
+        Task<bool> Update(SubCategoryUpdateDto serviceSubCategoryUpdateDto, CancellationToken cancellationToken);
         Task<bool> Delete(int serviceSubCategoryId, CancellationToken cancellationToken);
         Task<SubCategory> GetById(int serviceSubCategoryId, CancellationToken cancellationToken);
         Task<List<SubCategory>> GetAll(CancellationToken cancellationToken);
+        Task<List<SubCategoryNameDto>> GetCategorisName(CancellationToken cancellationToken);
+        Task<List<GetSubCategoryDto>> GetSubCategories(CancellationToken cancellationToken);
+
     }
 }

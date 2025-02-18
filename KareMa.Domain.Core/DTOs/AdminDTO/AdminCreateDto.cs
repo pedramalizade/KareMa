@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 public class AdminCreateDto
 {
+
     [DisplayName("نام")]
     public string FirstName { get; set; }
     [DisplayName("نام خانوادگی")]

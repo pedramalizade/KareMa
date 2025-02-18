@@ -1,4 +1,5 @@
-﻿using KareMa.Domain.Core.Entities;
+﻿using KareMa.Domain.Core.DTOs.CustomerDTO;
+using KareMa.Domain.Core.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +15,7 @@ namespace KareMa.Domain.Core.Contracts.Repositories
         Task<bool> Delete(int customerId, CancellationToken cancellationToken);
         Task<Customer> GetById(int customerId, CancellationToken cancellationToken);
         Task<List<Customer>> GetAll(CancellationToken cancellationToken);
-
+        Task<int> CustomerCount(CancellationToken cancellationToken);
+        Task<CustomerSummaryDto> GetCustomerSummary(int id, CancellationToken cancellationToken);
     }
-
 }

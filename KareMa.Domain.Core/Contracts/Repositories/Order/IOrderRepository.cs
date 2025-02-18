@@ -1,6 +1,8 @@
 ﻿using KareMa.Domain.Core.DTOs.OrderDTO;
+using KareMa.Domain.Core.DTOs.SubCategoryDTO;
 using KareMa.Domain.Core.Entities;
 using KareMa.Domain.Core.Enums;
+using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,6 +18,9 @@ namespace KareMa.Domain.Core.Contracts.Repositories
         Task<bool> Delete(int orderId, CancellationToken cancellationToken);
         Task<Order> GetById(int orderId, CancellationToken cancellationToken);
         Task<List<GetOrderDto>> GetAll(CancellationToken cancellationToken);
-
+        Task<bool> ChangeStatus(StatusEnum status, int orderId, CancellationToken cancellationToken);
+        Task<int> OrderCount(CancellationToken cancellationToken);
+        Task<List<GetOrderDto>> GetOrders(int customerId, CancellationToken cancellationToken);
+        Task AcceptStatus(int orderId, CancellationToken cancellationToken);
     }
 }

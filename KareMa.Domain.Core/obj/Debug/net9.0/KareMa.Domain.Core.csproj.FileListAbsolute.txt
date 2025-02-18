@@ -1,13 +1,13 @@
+C:\Users\asus\source\repos\KareMa\KareMa.Domain.Core\bin\Debug\net9.0\KareMa.Domain.Core.deps.json
+C:\Users\asus\source\repos\KareMa\KareMa.Domain.Core\bin\Debug\net9.0\KareMa.Domain.Core.dll
+C:\Users\asus\source\repos\KareMa\KareMa.Domain.Core\bin\Debug\net9.0\KareMa.Domain.Core.pdb
 C:\Users\asus\source\repos\KareMa\KareMa.Domain.Core\obj\Debug\net9.0\KareMa.Domain.Core.csproj.AssemblyReference.cache
 C:\Users\asus\source\repos\KareMa\KareMa.Domain.Core\obj\Debug\net9.0\KareMa.Domain.Core.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\asus\source\repos\KareMa\KareMa.Domain.Core\obj\Debug\net9.0\KareMa.Domain.Core.AssemblyInfoInputs.cache
 C:\Users\asus\source\repos\KareMa\KareMa.Domain.Core\obj\Debug\net9.0\KareMa.Domain.Core.AssemblyInfo.cs
 C:\Users\asus\source\repos\KareMa\KareMa.Domain.Core\obj\Debug\net9.0\KareMa.Domain.Core.csproj.CoreCompileInputs.cache
-C:\Users\asus\source\repos\KareMa\KareMa.Domain.Core\bin\Debug\net9.0\KareMa.Domain.Core.deps.json
-C:\Users\asus\source\repos\KareMa\KareMa.Domain.Core\bin\Debug\net9.0\KareMa.Domain.Core.dll
-C:\Users\asus\source\repos\KareMa\KareMa.Domain.Core\bin\Debug\net9.0\KareMa.Domain.Core.pdb
+C:\Users\asus\source\repos\KareMa\KareMa.Domain.Core\obj\Debug\net9.0\KareMa.Domain.Core.sourcelink.json
 C:\Users\asus\source\repos\KareMa\KareMa.Domain.Core\obj\Debug\net9.0\KareMa.Domain.Core.dll
 C:\Users\asus\source\repos\KareMa\KareMa.Domain.Core\obj\Debug\net9.0\refint\KareMa.Domain.Core.dll
 C:\Users\asus\source\repos\KareMa\KareMa.Domain.Core\obj\Debug\net9.0\KareMa.Domain.Core.pdb
 C:\Users\asus\source\repos\KareMa\KareMa.Domain.Core\obj\Debug\net9.0\ref\KareMa.Domain.Core.dll
-C:\Users\asus\source\repos\KareMa\KareMa.Domain.Core\obj\Debug\net9.0\KareMa.Domain.Core.sourcelink.json

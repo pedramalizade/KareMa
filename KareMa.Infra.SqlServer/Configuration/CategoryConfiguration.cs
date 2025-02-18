@@ -18,7 +18,7 @@ namespace KareMa.Infra.SqlServer.Configuration
             builder.HasMany(s => s.SubCategories)
                 .WithOne(s => s.Category)
                 .OnDelete(DeleteBehavior.NoAction);
-            ;
+
 
             builder.HasData
                 (

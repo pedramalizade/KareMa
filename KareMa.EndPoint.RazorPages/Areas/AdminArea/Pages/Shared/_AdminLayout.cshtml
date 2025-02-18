@@ -1,0 +1,234 @@
+﻿<!DOCTYPE html>
+<html lang="fa" class="light-style layout-navbar-fixed layout-menu-fixed" dir="rtl" data-theme="theme-semi-dark"
+      data-assets-path="../admin/assets/" data-template="vertical-menu-template">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+
+    <title>@ViewData["Title"]</title>
+
+    <meta name="description" content="">
+
+    <!-- Favicon -->
+    <link rel="icon" href="../admin/assets//img//logo/ido-service.png">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="../admin/assets/vendor/fonts/boxicons.css">
+    <link rel="stylesheet" href="../admin/assets/vendor/fonts/fontawesome.css">
+    <link rel="stylesheet" href="../admin/assets/vendor/fonts/flag-icons.css">
+
+    <!-- Core CSS -->
+    <link rel="stylesheet" href="../admin/assets/vendor/css/rtl/core.css" class="template-customizer-core-css">
+    <link rel="stylesheet" href="../admin/assets/vendor/css/rtl/theme-semi-dark.css" class="template-customizer-theme-css">
+    <link rel="stylesheet" href="../admin/assets/css/demo.css">
+    <link rel="stylesheet" href="../admin/assets/vendor/css/rtl/rtl.css">
+
+    <!-- Vendors CSS -->
+    <link rel="stylesheet" href="../admin/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css">
+    <link rel="stylesheet" href="../admin/assets/vendor/libs/typeahead-js/typeahead.css">
+    <link rel="stylesheet" href="../admin/assets/vendor/libs/apex-charts/apex-charts.css">
+    <!-- Page CSS -->
+    <!-- Helpers -->
+    <script src="../admin/assets/vendor/js/helpers.js"></script>
+
+    <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
+    <!--? Template customizer: To hide customizer set displayCustomizer value false in config.js.  -->
+    <script src="../admin/assets/vendor/js/template-customizer.js"></script>
+    <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
+    <script src="../admin/assets/js/config.js"></script>
+
+    <style>
+        * {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif !important;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Layout wrapper -->
+    <div class="layout-wrapper layout-content-navbar">
+        <div class="layout-container">
+            <!-- Menu -->
+
+            <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
+                <div class="app-brand demo">
+                    <a href="index.html" class="app-brand-link">
+                        <span class="app-brand-logo demo">
+                            <img width="32px" height="32px" src="../admin//assets//img//logo/ido-service.png" />
+                        </span>
+                        <span class="app-brand-text demo menu-text fw-bold ms-2">آیدو</span>
+                    </a>
+
+                    <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto">
+                        <i class="bx menu-toggle-icon d-none d-xl-block fs-4 align-middle"></i>
+                        <i class="bx bx-x d-block d-xl-none bx-sm align-middle"></i>
+                    </a>
+                </div>
+
+                <div class="menu-divider mt-1"></div>
+
+                <div class="menu-inner-shadow"></div>
+
+                <ul class="menu-inner py-1">
+                    <!-- Dashboards -->
+                    <li class="menu-item @ViewData["Dashboard"]">
+                        <a asp-page="Index" asp-area="AdminArea" class="menu-link">
+                            <i class="menu-icon tf-icons bx bx-home-circle"></i>
+                            <div>داشبورد</div>
+                        </a>
+                    </li>
+
+                    <!-- Layouts -->
+                    <!-- Apps & Pages -->
+
+                    <li class="menu-item @ViewData["Service"]">
+                        <a asp-page="Service" asp-area="AdminArea" class="menu-link">
+                            <i class="menu-icon tf-icons bx bx-wrench"> </i>
+                            <div>سرویس‌ها</div>
+                        </a>
+                    </li>
+                    <li class="menu-item @ViewData["Category"]">
+                        <a asp-page="Category" asp-area="AdminArea" class="menu-link">
+                            <i class="menu-icon tf-icons bx bxs-category-alt"></i>
+                            <div>دسته‌بندی‌های اصلی</div>
+                        </a>
+                    </li>
+                    <li class="menu-item @ViewData["SubCategory"]">
+                        <a asp-page="SubCategory" asp-area="AdminArea" class="menu-link">
+                            <i class="menu-icon tf-icons bx bx-category-alt"></i>
+                            <div>دسته‌بندی‌های فرعی</div>
+                        </a>
+                    </li>
+                    <li class="menu-item @ViewData["Order"]">
+                        <a asp-page="Order" asp-area="AdminArea" class="menu-link">
+                            <i class="menu-icon tf-icons bx bx-spreadsheet"></i>
+                            <div>درخواست‌ها</div>
+                        </a>
+                    </li>
+                    </li>
+                    <li class="menu-item @ViewData["Comment"]">
+                        <a asp-page="Comment" asp-area="AdminArea" class="menu-link">
+                            <i class="menu-icon tf-icons bx bx-comment-detail"></i>
+                            <div>کامنت‌ها</div>
+                        </a>
+                    </li>
+
+                    <li class="menu-header small text-uppercase"><span class="menu-header-text">پروفایل</span></li>
+                    <li class="menu-item">
+                        <a href="javascript:void(0);" class="menu-link menu-toggle">
+                            <i class="menu-icon tf-icons bx bx-user"></i>
+                            <div data-i18n="Wizard Examples">پروفایل</div>
+                        </a>
+                        <ul class="menu-sub">
+                            <li class="menu-item  @ViewData["ProfileSetting"]">
+                                <a asp-page="ProfileSetting" asp-area="AdminArea" class="menu-link">
+                                    <div data-i18n="Property Listing">تنظیمات پروفایل</div>
+                                </a>
+                            </li>
+                            <li class="menu-item  @ViewData["Register"]">
+                                <a asp-page="Register" asp-area="AdminArea" class="menu-link">
+                                    <div data-i18n="Property Listing">افزودن ادمین جدید</div>
+                                </a>
+                            </li>
+                        </ul>
+                    <li class="menu-item">
+                        <a class="menu-link">
+                            <i class="menu-icon tf-icons bx bx-exit"></i>
+                            <div data-i18n="Tables">
+                                <form class="form-inline" asp-area="Account" asp-page="Logout" asp-route-returnUrl="@Url.Page("/Index", new { area = "" })">
+                                    <button type="submit" class="nav-link btn btn-link">خروج</button>
+                                </form>
+                            </div>
+                        </a>
+                    </li>
+
+            </aside>
+            <!-- / Menu -->
+            <!-- Layout container -->
+            <div class="layout-page">
+                <!-- Navbar -->
+
+                <nav class="layout-navbar navbar navbar-expand-xl align-items-center bg-navbar-theme" id="layout-navbar">
+                    <div class="container-fluid">
+                        <div class="layout-menu-toggle navbar-nav align-items-xl-center me-3 me-xl-0 d-xl-none">
+                            <a class="nav-item nav-link px-0 me-xl-4" href="javascript:void(0)">
+                                <i class="bx bx-menu bx-sm"></i>
+                            </a>
+                        </div>
+
+                        <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
+
+
+                            <ul class="navbar-nav flex-row align-items-center ms-auto">
+
+                                <!-- User -->
+                                <partial name="_AccountPartial" />
+                                <!--/ User -->
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+
+                <!-- / Navbar -->
+                <!-- Content wrapper -->
+                <div class="content-wrapper">
+                    <h2 class="breadcrumb-wrapper mb-4 ps-4 pb-0">
+                        @ViewData["PageTitle"]
+                    </h2>
+                    <!--content-->
+                    @RenderBody();
+                    <!-- / Content -->
+                    <!-- Footer -->
+                    <footer class="content-footer footer bg-footer-theme">
+                        <div class="container-fluid d-flex flex-wrap justify-content-between py-3 flex-md-row flex-column">
+                            <div class="mb-2 mb-md-0">
+                                &copy; آیدو سرویس | 1403
+                            </div>
+                        </div>
+                    </footer>
+                    <!-- / Footer -->
+
+                    <div class="content-backdrop fade"></div>
+                </div>
+                <!-- Content wrapper -->
+            </div>
+            <!-- / Layout page -->
+        </div>
+
+        <!-- Overlay -->
+        <div class="layout-overlay layout-menu-toggle"></div>
+
+        <!-- Drag Target Area To SlideIn Menu On Small Screens -->
+        <div class="drag-target"></div>
+    </div>
+    <!-- / Layout wrapper -->
+    <!-- Core JS -->
+    <!-- build:js assets/vendor/js/core.js -->
+    <script src="../admin/assets/vendor/libs/jquery/jquery.js"></script>
+    <script src="../admin/assets/vendor/libs/popper/popper.js"></script>
+    <script src="../admin/assets/vendor/js/bootstrap.js"></script>
+    <script src="../admin/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+
+    <script src="../admin/assets/vendor/libs/hammer/hammer.js"></script>
+
+    <script src="../admin/assets/vendor/libs/i18n/i18n.js"></script>
+    <script src="../admin/assets/vendor/libs/typeahead-js/typeahead.js"></script>
+
+    <script src="../admin/assets/vendor/js/menu.js"></script>
+    <!-- endbuild -->
+    <!-- Vendors JS -->
+    <script src="../admin/assets/vendor/libs/apex-charts/apexcharts.js"></script>
+
+    <!-- Main JS -->
+    <script src="../admin/assets/js/main.js"></script>
+
+    <!-- Page JS -->
+    <script src="../admin/assets/js/dashboards-analytics.js"></script>
+</body>
+
+@await RenderSectionAsync("Scripts", required: false)
+
+</html>

@@ -1,0 +1,49 @@
+﻿@using KareMa.Domain.Core.Entities
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<AppUser> SignInManager
+@inject UserManager<AppUser> UserManager
+
+<li class="nav-item navbar-dropdown dropdown-user dropdown">
+    <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
+        <div class="avatar avatar-online">
+            <img src="../admin/assets/img/avatars/new.png" alt class="rounded-circle">
+        </div>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end">
+        <li>
+            <a class="dropdown-item" href="pages-account-settings-account.html">
+                <div class="d-flex align-items-center">
+                    <div class="flex-shrink-0 me-3">
+                        <div class="avatar avatar-online">
+                            <img src="../admin/assets/img/avatars/new.png" alt class="rounded-circle">
+                        </div>
+                    </div>
+                    <div class="flex-grow-1">
+                        <span class="fw-semibold d-block">@User.Identity?.Name</span>
+                        <small>مدیر</small>
+                    </div>
+                </div>
+            </a>
+        </li>
+        <li>
+            <div class="dropdown-divider"></div>
+        </li>
+        <li>
+            <a class="dropdown-item" asp-page="ProfileSetting" asp-area="AdminArea">
+                <i class="bx bx-user me-2"></i>
+                <span class="align-middle">تنظیمات پروفایل</span>
+            </a>
+        </li>
+        <li>
+            <div class="dropdown-divider"></div>
+        </li>
+        <li>
+            <a class="dropdown-item">
+                <form class="form-inline" asp-area="Account" asp-page="Logout" asp-route-returnUrl="@Url.Page("/Index", new { area = "" })">
+                    <i class="bx bx-power-off me-2"></i>
+                    <button type="submit" class="nav-link btn btn-link">خروج</button>
+                </form>
+            </a>
+        </li>
+    </ul>
+</li>

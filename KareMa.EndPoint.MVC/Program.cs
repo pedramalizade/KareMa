@@ -72,12 +72,12 @@ builder.Services.AddScoped<IExpertRepository, ExpertRepository>();
 
 
 
-var configuration = new ConfigurationBuilder().AddJsonFile("appsettings.json").Build();
-var siteSettings = configuration.GetSection(nameof(SiteSettings)).Get<SiteSettings>();
-builder.Services.AddSingleton(siteSettings);
+//var configuration = new ConfigurationBuilder().AddJsonFile("appsettings.json").Build();
+//var siteSettings = configuration.GetSection(nameof(SiteSettings)).Get<SiteSettings>();
+//builder.Services.AddSingleton(siteSettings);
 
-builder.Services.AddDbContext<AppDbContext>(options
-    => options.UseSqlServer(siteSettings.ConnectionStrings.SqlConnection));
+//builder.Services.AddDbContext<AppDbContext>(options
+//    => options.UseSqlServer(siteSettings.ConnectionStrings.SqlConnection));
 
 
 // Add services to the container.

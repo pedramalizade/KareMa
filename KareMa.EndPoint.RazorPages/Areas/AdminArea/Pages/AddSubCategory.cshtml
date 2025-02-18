@@ -1,0 +1,41 @@
+﻿@page
+@model KareMa.EndPoint.RazorPages.Pages.Areas.AdminArea.Pages.AddSubCategoryModel
+@{
+    
+    Layout = "_AdminLayout";
+}
+<div class="col-xxl">
+    <div class="card mb-4">
+        <div class="card-header d-flex align-items-center justify-content-between">
+            <small class="text-muted float-end primary-font">افزودن دسته بندی فرعی‌</small>
+        </div>
+        <div class="card-body">
+            <form method="post" asp-page-handler="Add" enctype="multipart/form-data">
+                <div class="row mb-3">
+                    <label class="col-sm-2 col-form-label" asp-for="@Model.ServiceSubCategoryCreate.Name"></label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" asp-for="@Model.ServiceSubCategoryCreate.Name">
+                    </div>
+                </div>
+                <select id="select2Basic" asp-for="@Model.ServiceSubCategoryCreate.CategoryId" class="select2 form-select form-select-lg" data-allow-clear="true">
+                    @foreach (var category in Model.CategoryNames)
+                    {
+                        <option value="@category.Id">@category.Name</option>
+                    }
+                </select>
+                <div class="row mb-3">
+                    <label class="col-sm-2 col-form-label" asp-for="@Model.Image">عکس</label>
+                    <div class="col-sm-10">
+                        <input type="file" class="form-control" asp-for="@Model.Image">
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="row justify-content-end">
+                        <div class="col-sm-10">
+                            <button type="submit" class="btn btn-primary">ارسال</button>
+                        </div>
+                    </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,39 @@
+﻿@page
+@using KareMa.Domain.Core.Enums
+@model KareMa.EndPoint.RazorPages.Pages.Areas.AdminArea.Pages.ChangeStatusModel
+@{
+    Layout = "_AdminLayout";
+}
+<div class="col-xxl">
+    <div class="card mb-4">
+        <div class="card-header d-flex align-items-center justify-content-between">
+            <small class="text-muted float-end primary-font">تغییر وضعیت‌</small>
+        </div>
+        <div class="card-body">
+            <form method="post" asp-page-handler="ChangeStatus">
+                <div class="row mb-3">
+                    <input hidden asp-for="@Model.OrderId" value="@Model.Order.Id" />
+                    <label class="col-sm-2 col-form-label" asp-for="@Model.Status">نام</label>
+                    <div class="col-sm-10">
+                        <select asp-for="@Model.Status" class="select2 form-select form-select-lg" data-allow-clear="true">
+                            <option value="@StatusEnum.AwaitingCustomerConfirmation">@StatusEnum.AwaitingCustomerConfirmation</option>
+                            @* <option value="@StatusEnum.AwaitingPayment">@StatusEnum.AwaitingPayment</option> *@
+                            <option value="@StatusEnum.AwaitingSuggestionExperts">@StatusEnum.AwaitingSuggestionExperts</option>
+                          @*   <option value="@StatusEnum.Canceled">@StatusEnum.Canceled</option>
+                            <option value="@StatusEnum.Done">@StatusEnum.Done</option>
+                            <option value="@StatusEnum.Paied">@StatusEnum.Paied</option> *@
+                            <option value="@StatusEnum.Confirmed">@StatusEnum.Confirmed</option>
+                            @* <option value="@StatusEnum.NotConfirmed">@StatusEnum.NotConfirmed</option> *@
+                            }
+                        </select>
+                    </div>
+                </div>
+                <div class="row justify-content-end">
+                    <div class="col-sm-10">
+                        <button type="submit" class="btn btn-primary">ارسال</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

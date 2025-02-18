@@ -1,0 +1,44 @@
+﻿@page
+@model KareMa.EndPoint.RazorPages.Pages.Areas.AdminArea.Pages.CommentModel
+@{
+    Layout = "_AdminLayout";
+    ViewData["Title"] = "کامنت‌ها | آیدو";
+    ViewData["Comment"] = "active open";
+    ViewData["PageTitle"] = "کامنت";
+}
+<div class="row">
+    @foreach (var comment in Model.Comments)
+    {
+        @if (comment.IsDeleted == false)
+        {
+
+            <div class="col-md-4 col-lg-4 p-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">@comment.Title</h5>
+                        <p class="card-text">@comment.Description</p>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">از @comment.CustomerName @comment.CustomerFamily</li>
+                        <li class="list-group-item">برای @comment.ExpertName @comment.CustomerFamily</li>
+                    </ul>
+                    <div class="card-body">
+                        @if (comment.IsActive == true)
+                        {
+                            <a class="btn rounded-pill btn-label-success disabled">تایید شده</a>
+                            <a asp-page-handler="Reject" asp-route-id="@comment.Id" class="card-link rounded-pill btn btn-warning">رد</a>
+                            <a asp-page-handler="Delete" asp-route-id="@comment.Id" onclick="return confirm('مطمئنی؟')" class="card-link rounded-pill btn btn-danger">حذف</a>
+                        }
+                        else
+                        {
+                            <a class="btn rounded-pill btn-labal-danger disabled">رد شده</a>
+                            <a asp-page-handler="Accept" asp-route-id="@comment.Id" class="card-link rounded-pill btn btn-success">تایید</a>
+                            <a asp-page-handler="Delete" asp-route-id="@comment.Id" onclick="return confirm('مطمئنی؟')" class="card-link rounded-pill btn btn-danger">حذف</a>
+                        }
+                    </div>
+                </div>
+            </div>
+
+        }
+    }
+</div>

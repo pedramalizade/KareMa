@@ -6,6 +6,7 @@ C:\Users\asus\source\repos\KareMa\Framework\obj\Debug\net9.0\Framework.Generated
 C:\Users\asus\source\repos\KareMa\Framework\obj\Debug\net9.0\Framework.AssemblyInfoInputs.cache
 C:\Users\asus\source\repos\KareMa\Framework\obj\Debug\net9.0\Framework.AssemblyInfo.cs
 C:\Users\asus\source\repos\KareMa\Framework\obj\Debug\net9.0\Framework.csproj.CoreCompileInputs.cache
+C:\Users\asus\source\repos\KareMa\Framework\obj\Debug\net9.0\Framework.sourcelink.json
 C:\Users\asus\source\repos\KareMa\Framework\obj\Debug\net9.0\Framework.dll
 C:\Users\asus\source\repos\KareMa\Framework\obj\Debug\net9.0\refint\Framework.dll
 C:\Users\asus\source\repos\KareMa\Framework\obj\Debug\net9.0\Framework.pdb

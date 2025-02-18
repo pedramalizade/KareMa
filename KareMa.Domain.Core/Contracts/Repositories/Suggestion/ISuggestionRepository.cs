@@ -16,5 +16,7 @@ namespace KareMa.Domain.Core.Contracts.Repositories
         Task<bool> Delete(int suggestionId, CancellationToken cancellationToken);
         Task<Suggestion> GetById(int suggestionId, CancellationToken cancellationToken);
         Task<List<Suggestion>> GetAll(CancellationToken cancellationToken);
+        Task AcceptSuggestion(int id, CancellationToken cancellationToken);
+        Task<int> ConfrimedStatusCount(int orderId, CancellationToken cancellationToken);
     }
 }

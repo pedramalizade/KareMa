@@ -16,12 +16,12 @@ namespace KareMa.Infra.DataAccess.Repo.Ef.Repository
     public class CategoryRepository : ICategoryRepository
     {
         private readonly AppDbContext _context;
-        //private readonly ILogger<CategoryRepository> _logger;
+        private readonly ILogger<CategoryRepository> _logger;
 
-        public CategoryRepository(AppDbContext context)
+        public CategoryRepository(AppDbContext context, ILogger<CategoryRepository> logger)
         {
             _context = context;
-            //_logger = logger;
+            _logger = logger;
         }
 
         public async Task<bool> Create(CategoryCreateDto categoryCreateDto, CancellationToken cancellationToken)
@@ -35,6 +35,16 @@ namespace KareMa.Infra.DataAccess.Repo.Ef.Repository
             await _context.SaveChangesAsync(cancellationToken);
             return true;
         }
+        public async Task<List<CategoryNameDto>> GetCategorisName(CancellationToken cancellationToken)
+        {
+            var categories = await _context.Categories.AsNoTracking()
+                 .Select(s => new CategoryNameDto
+                 {
+                     Id = s.Id,
+                     Name = s.Name,
+                 }).ToListAsync(cancellationToken);
+            return categories;
+        }
 
         public async Task<bool> Delete(int CategoryId, CancellationToken cancellationToken)
         {
@@ -43,19 +53,27 @@ namespace KareMa.Infra.DataAccess.Repo.Ef.Repository
             try
             {
                 await _context.SaveChangesAsync(cancellationToken);
-                //_logger.LogInformation("category is deleted");
+                _logger.LogInformation("category is deleted");
             }
             catch (Exception ex)
             {
                 throw ex;
             }
-
+            _logger.LogInformation("category is deleted");
             return true;
         }
 
-        public async Task<List<Domain.Core.Entities.Category>> GetAll(CancellationToken cancellationToken)
+        public async Task<List<GetCategoryDto>> GetAll(CancellationToken cancellationToken)
         {
-            return await _context.Categories.AsNoTracking().ToListAsync(cancellationToken);
+            var categories = await _context.Categories.AsNoTracking()
+                .Select(c => new GetCategoryDto
+                {
+                    Id = c.Id,
+                    Name = c.Name,
+                    Image = c.Image,
+                    IsDeleted = c.IsDeleted
+                }).ToListAsync(cancellationToken);
+            return categories;
         }
 
         public async Task<Domain.Core.Entities.Category> GetById(int CategoryId, CancellationToken cancellationToken)
@@ -66,6 +84,8 @@ namespace KareMa.Infra.DataAccess.Repo.Ef.Repository
             var targetModel = await FindServiceCategory(CategoryUpdateDto.Id, cancellationToken);
 
             targetModel.Name = CategoryUpdateDto.Name;
+            //targetModel.SubCategories = CategoryUpdateDto.SubCategories;
+            targetModel.Image = CategoryUpdateDto.Image;
 
             if (CategoryUpdateDto.Image != null) targetModel.Image = CategoryUpdateDto.Image;
 

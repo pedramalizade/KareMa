@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("KareMa.EndPoint.MVC")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cb39eeadb7dc8a701a612767d28567d3213963c0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+77dd66a6143d8b13a854ce20fac7bb1b7fda6a12")]
 [assembly: System.Reflection.AssemblyProductAttribute("KareMa.EndPoint.MVC")]
 [assembly: System.Reflection.AssemblyTitleAttribute("KareMa.EndPoint.MVC")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using KareMa.Domain.Core.Entities;
 
 namespace KareMa.Domain.Core.DTOs.ServiceDTO
 {
@@ -12,14 +13,14 @@ namespace KareMa.Domain.Core.DTOs.ServiceDTO
     {
         public int Id { get; set; }
         [DisplayName("نام سرویس")]
-        [MaxLength(100, ErrorMessage = "نام سرویس نمیتواند بیشتر از 100 کاراکتر باشد")]
-        [MinLength(3, ErrorMessage = "نام سرویس نمیتواند کمتر از 3 کاراکتر باشد")]
-        [Required(ErrorMessage = "نام سرویس نمی‌تواند بدون مقدار باشد")]
-        public string? ServiceName { get; set; }
+        //[MaxLength(100, ErrorMessage = "نام سرویس نمیتواند بیشتر از 100 کاراکتر باشد")]
+        //[MinLength(10, ErrorMessage = "نام سرویس نمیتواند کمتر از 10 کاراکتر باشد")]
+        //[Required(ErrorMessage = "وارد کردن نام سرویس اجباری است.")]
+        public string Name { get; set; }
         [DisplayName("قیمت")]
-        [Required(ErrorMessage = "قیمت نمی‌تواند بدون مقدار باشد")]
-        [Range(100000, 99000000, ErrorMessage = "قیمت نمی‌تواند کمتر از 100 هزار تومان (100000) و بیشتر از 99 میلیون تومان (99000000) باشد")]
+        //[MaxLength(8, ErrorMessage = "قیمت نمیتواند بیشتر از 8 کاراکتر باشد")]
+        //[MinLength(5, ErrorMessage = "قیمت نمیتواند کمتر از 5 کاراکتر باشد")]
+        //[Required(ErrorMessage = "وارد کردن قیمت اجباری است.")]
         public int Price { get; set; }
-        public int SubCategoryId { get; set; }
     }
 }

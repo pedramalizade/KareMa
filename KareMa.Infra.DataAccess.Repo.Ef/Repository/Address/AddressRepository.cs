@@ -27,8 +27,8 @@ namespace KareMa.Infra.DataAccess.Repo.Ef.Repository
                 PostalCode = addressCreateDto.PostalCode,
                 Street = addressCreateDto.Street,
                 CityId = addressCreateDto.CityId,
-                CreatedAt = DateTime.Now,
-                IsDeleted = false
+                Title = addressCreateDto.Title,
+                IsDefault = addressCreateDto.IsDefault,
             };
             await _context.Addresses.AddAsync(newModel);
 

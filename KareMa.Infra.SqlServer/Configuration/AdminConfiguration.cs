@@ -20,12 +20,12 @@ public class AdminConfiguration : IEntityTypeConfiguration<Admin>
                 Id = 1,
                 FirstName = "پدرام",
                 LastName = "علیزاده",
+                //Email = "pedramalizade@gmail.com",
                 Gender = GenderEnum.Male,
+                //Password = "0909",
+                //PhoneNumber = "09127575839",
                 CreatedAt = new DateTime(2024, 2, 12),
                 IsDeleted = false,
-                Email = "prdramalizade@gmail.com",
-                Password = "09090909",
-                PhoneNumber = "09126565738",
             }
         );
     }

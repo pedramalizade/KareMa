@@ -6,9 +6,11 @@ using System.Threading.Tasks;
 
 namespace KareMa.Domain.Core.Entities.Configs
 {
-    public class ConnectionStrings
+    public class CommentConfiguration
     {
-        public string SqlConnection { get; set; }
-        public string HangfireConnectionString { get; set; }
+        public int RecentCount { get; set; }
+
+        //public string SqlConnection { get; set; }
+        //public string HangfireConnectionString { get; set; }
     }
 }

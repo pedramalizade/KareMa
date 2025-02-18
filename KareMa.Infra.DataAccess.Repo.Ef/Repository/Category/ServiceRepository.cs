@@ -1,4 +1,5 @@
-﻿using KareMa.Domain.Core.Contracts.Repositories.Category;
+﻿using KareMa.Domain.Core.Contracts.Repositories;
+using KareMa.Domain.Core.Contracts.Repositories.Category;
 using KareMa.Domain.Core.DTOs.ServiceDTO;
 using KareMa.Domain.Core.Entities;
 using KareMa.Infra.SqlServer.Common;
@@ -26,11 +27,11 @@ namespace KareMa.Infra.DataAccess.Repo.Ef.Repository
             var newModel = new Service()
             {
                 Name = serviceCreateDto.Name,
-                SubCategoryId = serviceCreateDto.ServiceSubCategoryId,
+                SubCategoryId = serviceCreateDto.SubCategoryId,
+                Image = serviceCreateDto.Image,
                 Price = serviceCreateDto.Price,
             };
             await _context.Services.AddAsync(newModel, cancellationToken);
-
             await _context.SaveChangesAsync(cancellationToken);
             return true;
 
@@ -55,10 +56,9 @@ namespace KareMa.Infra.DataAccess.Repo.Ef.Repository
                       Price = s.Price,
                       SubCategoryId = s.SubCategoryId,
                       SubCategory = s.SubCategory,
-
+                      Image = s.Image,
                   })
                   .ToListAsync(cancellationToken);
-
             return services;
         }
 
@@ -69,9 +69,8 @@ namespace KareMa.Infra.DataAccess.Repo.Ef.Repository
         {
             var targetModel = await FindService(serviceUpdateDto.Id, cancellationToken);
 
-            targetModel.Name = serviceUpdateDto.ServiceName;
+            targetModel.Name = serviceUpdateDto.Name;
             targetModel.Price = serviceUpdateDto.Price;
-            targetModel.SubCategoryId = serviceUpdateDto.SubCategoryId;
 
             await _context.SaveChangesAsync(cancellationToken);
 

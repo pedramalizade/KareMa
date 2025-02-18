@@ -19,6 +19,7 @@ public class ServiceConfiguration : IEntityTypeConfiguration<Service>
             .WithOne(o => o.Service)
             .OnDelete(DeleteBehavior.NoAction);
 
+
         builder.HasData
             (
             new Service { Id = 1, Name = "سرویس عادی نظافت", Price = 700000, SubCategoryId = 1, CreatedAt = new DateTime(2024, 2, 12), IsDeleted = false },

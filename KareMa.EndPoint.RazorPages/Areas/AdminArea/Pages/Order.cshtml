@@ -1,0 +1,70 @@
+﻿@page
+@model KareMa.EndPoint.RazorPages.Pages.Areas.AdminArea.Pages.OrderModel
+@{
+    Layout = "_AdminLayout";
+    ViewData["Title"] = " درخواست‌ها | آیدو";
+    ViewData["[Order]"] = " active open";
+    ViewData["PageTitle"] = "درخواست";
+}
+<div class="card p-5">
+    <div class="table-responsive text-nowrap">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>آیدی</th>
+                    @* <th>عکس</th> *@
+                    <th>عنوان</th>
+                    <th>توضیحات</th>
+                    <th>نام مشتری</th>
+                    <th>نام متخصص تایید شده</th>
+                    <th>تعداد پیشنهادات</th>
+                    <th>وضعیت</th>
+                    <th>عملیات</th>
+                </tr>
+            </thead>
+            <tbody class="table-border-bottom-0">
+                @foreach (var order in Model.Orders)
+                {
+                    <tr>
+                        <td>
+                            @order.Id
+                        </td>
+                        @* <td>
+                    @*  <img src="@service.Image.ImageAddress" alt="@service.Image.Alt" class="rounded-circle"> *@
+                        <td>@order.Title</td>
+                        <td>@order.Description</td>
+                        <td>@order.Customer.FirstName @order.Customer.LastName</td>
+                        @if (order.Expert != null)
+                        {
+                            <td>@order.Expert.FirstName @order.Expert.LastName</td>
+                        }
+                        else
+                        {
+                            <td>هنوز متخصصی تایید نشده</td>
+                        }
+                        @if (@order.Suggestions.Count != null)
+                        {
+                            <td>@order.Suggestions.Count</td>
+                        }
+                        else
+                        {
+                            <td>0</td>
+                        }
+                        <td>
+                            @order.Status
+                            <a class="btn btn-success" asp-page="ChangeStatus" asp-route-id="@order.Id">
+                                <i class="bx bx-edit-alt me-1"></i>
+                                تغغیر وضغیت
+                            </a>
+                        </td>
+                        <td>
+                            <a asp-page-handler="Delete" asp-route-id="@order.Id" onclick="return confirm('مطمئنی؟')">
+                                <i class="bx bx-trash me-1"></i> حذف
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

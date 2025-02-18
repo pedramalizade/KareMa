@@ -17,5 +17,4 @@ namespace KareMa.Domain.Core.DTOs.ServiceDTO
         public string Image { get; set; }
         public bool IsDeleted { get; set; }
     }
-
 }

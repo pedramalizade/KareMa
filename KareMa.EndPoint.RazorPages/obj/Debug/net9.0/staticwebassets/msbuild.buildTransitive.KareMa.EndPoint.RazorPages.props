@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\KareMa.EndPoint.RazorPages.props" />
+</Project>

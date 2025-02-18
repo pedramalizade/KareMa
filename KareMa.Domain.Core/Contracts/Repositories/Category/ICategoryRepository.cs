@@ -14,7 +14,8 @@ namespace KareMa.Domain.Core.Contracts.Repositories
         Task<bool> Update(CategoryUpdateDto serviceCategoryUpdateDto, CancellationToken cancellationToken);
         Task<bool> Delete(int serviceCategoryId, CancellationToken cancellationToken);
         Task<Entities.Category> GetById(int serviceCategoryId, CancellationToken cancellationToken);
-        Task<List<Entities.Category>> GetAll(CancellationToken cancellationToken);
+        Task<List<GetCategoryDto>> GetAll(CancellationToken cancellationToken);
+        Task<List<CategoryNameDto>> GetCategorisName(CancellationToken cancellationToken);
 
     }
 

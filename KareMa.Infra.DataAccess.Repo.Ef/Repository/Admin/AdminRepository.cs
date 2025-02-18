@@ -24,7 +24,10 @@ namespace KareMa.Infra.DataAccess.Repo.Ef.Repository
             {
                 FirstName = adminCreateDto.FirstName,
                 LastName = adminCreateDto.LastName,
+                //Email = adminCreateDto.Email,
                 Gender = adminCreateDto.Gender,
+                //Password = adminCreateDto.Password,
+                //PhoneNumber = adminCreateDto.PhoneNumber,
             };
 
             await _context.Admins.AddAsync(newModel, cancellationToken);
@@ -53,10 +56,10 @@ namespace KareMa.Infra.DataAccess.Repo.Ef.Repository
             var targetModel = _context.Admins.FirstOrDefault(a => a.Id == adminUpdateDto.Id);
             targetModel.FirstName = adminUpdateDto.FirstName;
             targetModel.LastName = adminUpdateDto.LastName;
-            targetModel.Email = adminUpdateDto.Email;
+            //targetModel.Email = adminUpdateDto.Email;
             targetModel.Gender = adminUpdateDto.Gender;
-            targetModel.Password = adminUpdateDto.Password;
-            targetModel.PhoneNumber = adminUpdateDto.PhoneNumber;
+            //targetModel.Password = adminUpdateDto.Password;
+            //targetModel.PhoneNumber = adminUpdateDto.PhoneNumber;
             _context.SaveChanges();
             return true;
         }

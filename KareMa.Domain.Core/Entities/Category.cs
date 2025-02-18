@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
@@ -12,8 +13,8 @@ namespace KareMa.Domain.Core.Entities
         public int Id { get; set; }
         [MaxLength(100)]
         public string Name { get; set; }
-        public List<SubCategory>? SubCategories { get; set; }
         public string? Image { get; set; }
+        public List<SubCategory>? SubCategories { get; set; }
         public bool IsDeleted { get; set; } = false;
         public DateTime CreatedAt { get; set; } = DateTime.Now;
     }

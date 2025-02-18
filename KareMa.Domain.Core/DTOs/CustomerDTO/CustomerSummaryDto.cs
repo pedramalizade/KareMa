@@ -7,19 +7,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-public class CustomerSummaryDto
+namespace KareMa.Domain.Core.DTOs.CustomerDTO
 {
-    public int Id { get; set; }
-    [MaxLength(20)]
-    public string FirstName { get; set; }
-    [MaxLength(50)]
-    public string LastName { get; set; }
-    public GenderEnum? Gender { get; set; }
-    [MaxLength(11)]
-    public string BackUpPhoneNumber { get; set; }
-    [MaxLength(16)]
-    public string? BankCardNumber { get; set; }
-    public Address? Address { get; set; }
-    public List<Comment>? Comments { get; set; }
-    public List<Order>? Orders { get; set; }
+    public class CustomerSummaryDto
+    {
+        public int Id { get; set; }
+        [MaxLength(20)]
+        public string FirstName { get; set; }
+        [MaxLength(50)]
+        public string LastName { get; set; }
+        public GenderEnum? Gender { get; set; }
+        [MaxLength(11)]
+        public string BackUpPhoneNumber { get; set; }
+        [MaxLength(16)]
+        public string? BankCardNumber { get; set; }
+        public List<Address>? Addresses { get; set; }
+        public List<Comment>? Comments { get; set; }
+        public List<Order>? Orders { get; set; }
+    }
 }
