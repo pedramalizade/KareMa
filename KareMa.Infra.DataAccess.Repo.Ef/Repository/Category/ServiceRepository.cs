@@ -28,12 +28,35 @@ namespace KareMa.Infra.DataAccess.Repo.Ef.Repository
             {
                 Name = serviceCreateDto.Name,
                 SubCategoryId = serviceCreateDto.SubCategoryId,
-                Image = serviceCreateDto.Image,
                 Price = serviceCreateDto.Price,
             };
             await _context.Services.AddAsync(newModel, cancellationToken);
             await _context.SaveChangesAsync(cancellationToken);
             return true;
+
+        }
+        public async Task<List<ServicesNameDto>> GetServicesName(CancellationToken cancellationToken)
+        {
+            return await _context.Services.Select(s => new ServicesNameDto
+            {
+                Id = s.Id,
+                Name = s.Name,
+                Price = s.Price
+            }).ToListAsync(cancellationToken);
+        }
+        public async Task<ServiceNameAndPriceDto> GetServiceNameAndPrice(int id, CancellationToken cancellationToken)
+        {
+            var targetSrtvice = await _context.Services.AsNoTracking().Where(s => s.Id == id)
+                  .Select(s => new ServiceNameAndPriceDto
+                  {
+                      Id = s.Id,
+                      Name = s.Name,
+                      Price = s.Price,
+                  }).FirstOrDefaultAsync(cancellationToken);
+
+            if (targetSrtvice != null) return targetSrtvice;
+
+            return new ServiceNameAndPriceDto();
 
         }
 
@@ -61,7 +84,29 @@ namespace KareMa.Infra.DataAccess.Repo.Ef.Repository
                   .ToListAsync(cancellationToken);
             return services;
         }
+        public async Task<List<GetByCategorySubIdDto>> GetAllBySubCategoryId(int id, CancellationToken cancellationToken)
+        {
+            return await _context.Services.Where(x => x.SubCategoryId == id).AsNoTracking()
+                .Select(c => new GetByCategorySubIdDto
+                {
+                    Id = c.Id,
+                    Name = c.Name
+                })
+                .ToListAsync(cancellationToken);
+        }
 
+        public async Task<ServiceUpdateDto> ServiceUpdateInfo(int id, CancellationToken cancellationToken)
+        {
+            return await _context.Services
+                .Select(s => new ServiceUpdateDto
+                {
+                    Id = s.Id,
+                    ServiceName = s.Name,
+                    Price = s.Price,
+                    SubCategoryId = s.SubCategoryId
+
+                }).FirstOrDefaultAsync(s => s.Id == id);
+        }
         public async Task<Service> GetById(int serviceId, CancellationToken cancellationToken)
        => await FindService(serviceId, cancellationToken);
 
@@ -69,7 +114,7 @@ namespace KareMa.Infra.DataAccess.Repo.Ef.Repository
         {
             var targetModel = await FindService(serviceUpdateDto.Id, cancellationToken);
 
-            targetModel.Name = serviceUpdateDto.Name;
+            targetModel.Name = serviceUpdateDto.ServiceName;
             targetModel.Price = serviceUpdateDto.Price;
 
             await _context.SaveChangesAsync(cancellationToken);

@@ -2,32 +2,75 @@
 @model KareMa.EndPoint.RazorPages.Pages.Areas.AdminArea.Pages.UpdateSubCategoryModel
 @{
     Layout = "_AdminLayout";
+    ViewData["Title"] = "  ویرایش دسته بندی فرعی سرویس ها | کاره ما";
+    ViewData["PageTitle"] = " ویرایش دسته بندی فرعی";
 }
+
 <div class="col-xxl">
     <div class="card mb-4">
-        <div class="card-header d-flex align-items-center justify-content-between">
-            <small class="text-muted float-end primary-font">ویرایش‌</small>
-        </div>
         <div class="card-body">
             <form method="post" asp-page-handler="Update" enctype="multipart/form-data">
+
+                <input hidden asp-for="@Model.SubCategoryUpdate.Id" value="@Model.SubCategoryUpdate.Id" />
                 <div class="row mb-3">
-                    <input hidden asp-for="@Model.SubCategoryUpdate.Id" value="@Model.SubCategory.Id" />
-                    <label class="col-sm-2 col-form-label" asp-for="@Model.SubCategoryUpdate.Name">نام</label>
+                    <label class="col-sm-2 col-form-label" asp-for="@Model.SubCategoryUpdate.CategoryName">نام دسته بندی</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" asp-for="@Model.SubCategoryUpdate.Name">
+                        <input class="form-control" asp-for="@Model.SubCategoryUpdate.CategoryName">
+                        <span asp-validation-for="@Model.SubCategoryUpdate.CategoryName" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <label class="col-sm-2 col-form-label">انتخاب دسته بندی سرویس</label>
+                    <div class="col-sm-10">
+                        <select id="select2Basic" asp-for="@Model.SubCategoryUpdate.CategoryId" class="select2 form-select form-select-lg" data-allow-clear="true">
+                            @if (Model.CategoryNames != null && Model.CategoryNames.Any())
+                            {
+                                @foreach (var category in Model.CategoryNames)
+                                {
+                                    <option value="@category.Id">@category.Name</option>
+                                }
+                            }
+                            else
+                            {
+                                <option disabled>دسته‌بندی‌ای یافت نشد</option>
+                            }
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <label class="col-sm-2 col-form-label" asp-for="@Model.Image">آپلود عکس</label>
+                    <div class="col-sm-10">
+                        <input type="file" class="form-control" asp-for="@Model.Image">
+                        <span asp-validation-for="@Model.Image" class="text-danger"></span>
                     </div>
                 </div>
                 <div class="row mb-3">
                     <label class="col-sm-2 col-form-label" asp-for="@Model.Image">عکس</label>
                     <div class="col-sm-10">
-                        <input type="file" class="form-control" asp-for="@Model.Image">
+                        @if (Model.SubCategoryUpdate != null && (string.IsNullOrEmpty(Model.SubCategoryUpdate.Image)))
+                        {
+                            <img src="~/assets/img/none.png" class="img-fluid rounded" />
+                        }
+                        else if (Model.SubCategoryUpdate != null)
+                        {
+                            <img src="@Model.SubCategoryUpdate.Image" class="img-fluid rounded" alt="" />
+                        }
                     </div>
-                    <div class="row justify-content-end">
-                        <div class="col-sm-10">
-                            <button type="submit" class="btn btn-primary">ارسال</button>
-                        </div>
+                </div>
+
+                <div class="row justify-content-end">
+                    <div class="col-sm-10">
+                        <button type="submit" class="btn btn-primary">ارسال</button>
                     </div>
+                </div>
             </form>
         </div>
     </div>
 </div>
+
+@section Scripts {
+
+    <partial name="_ValidationScriptsPartial" />
+}

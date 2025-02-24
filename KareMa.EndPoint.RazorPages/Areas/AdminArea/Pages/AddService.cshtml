@@ -2,43 +2,50 @@
 @model KareMa.EndPoint.RazorPages.Pages.Areas.AdminArea.Pages.AddServiceModel
 @{
     Layout = "_AdminLayout";
+    ViewData["Title"] = "  افزودن  سرویس | کاره ما";
+    ViewData["PageTitle"] = " افزودن سرویس";
 }
 <div class="col-xxl">
     <div class="card mb-4">
-        <div class="card-header d-flex align-items-center justify-content-between">
-            <small class="text-muted float-end primary-font">افزودن سرویس‌</small>
-        </div>
         <div class="card-body">
-            <form method="post" asp-page-handler="Add" enctype="multipart/form-data">
+            <form method="post" asp-page-handler="AddService" asp-page="AddService" enctype="multipart/form-data">
                 <div class="row mb-3">
                     <label class="col-sm-2 col-form-label" asp-for="@Model.ServiceCreate.Name"></label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control" asp-for="@Model.ServiceCreate.Name">
+                        <span asp-validation-for="@Model.ServiceCreate.Name" class="text-danger"></span>
                     </div>
                 </div>
-                <select id="select2Basic" asp-for="@Model.ServiceCreate.SubCategoryId" class="select2 form-select form-select-lg" data-allow-clear="true">
-                    @foreach (var subcategory in Model.SubCategoryNames)
-                    {
-                        <option value="@subcategory.Id">@subcategory.Name</option>
-                    }
-                </select>
                 <div class="row mb-3">
-                    <label class="col-sm-2 col-form-label" asp-for="@Model.Image">عکس</label>
+                    <label class="col-sm-2 col-form-label">انتخاب دسته بندی سرویس</label>
                     <div class="col-sm-10">
-                        <input type="file" class="form-control" asp-for="@Model.Image">
+                        <select id="select2Basic" asp-for="@Model.ServiceCreate.SubCategoryId" class="select2 form-select form-select-lg" data-allow-clear="true">
+                            @foreach (var subcategory in Model.SubCategoryNames)
+                            {
+                                <option value="@subcategory.Id">@subcategory.Name</option>
+                            }
+                        </select>
                     </div>
                 </div>
                 <div class="row mb-3">
                     <label class="col-sm-2 col-form-label" asp-for="@Model.ServiceCreate.Price"></label>
                     <div class="col-sm-10">
                         <input type="number" class="form-control" asp-for="@Model.ServiceCreate.Price">
+                        <span asp-validation-for="@Model.ServiceCreate.Price" class="text-danger"></span>
                     </div>
-                    <div class="row justify-content-end">
-                        <div class="col-sm-10">
-                            <button type="submit" class="btn btn-primary">ارسال</button>
-                        </div>
+                </div>
+                <div class="row justify-content-end">
+                    <div class="col-sm-10">
+                        <button type="submit" class="btn btn-primary">ارسال</button>
                     </div>
+                </div>
+
             </form>
         </div>
     </div>
 </div>
+
+@section Scripts {
+
+    <partial name="_ValidationScriptsPartial" />
+}

@@ -26,6 +26,7 @@ public class AdminConfiguration : IEntityTypeConfiguration<Admin>
                 //PhoneNumber = "09127575839",
                 CreatedAt = new DateTime(2024, 2, 12),
                 IsDeleted = false,
+                AppUserId = 1
             }
         );
     }

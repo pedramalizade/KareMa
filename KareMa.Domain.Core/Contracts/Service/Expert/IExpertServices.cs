@@ -1,4 +1,5 @@
-﻿using KareMa.Domain.Core.Entities;
+﻿using KareMa.Domain.Core.DTOs.Expert;
+using KareMa.Domain.Core.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,5 +16,10 @@ namespace KareMa.Domain.Core.Contracts.Service
         Task<Expert> GetById(int expertId, CancellationToken cancellationToken);
         Task<List<Expert>> GetAll(CancellationToken cancellationToken);
         Task<int> ExpertCount(CancellationToken cancellationToken);
+        Task<ExpertSummaryDto> GetExpertSummary(int id, CancellationToken cancellationToken);
+        Task<int> ExpertCommentCount(int id, CancellationToken cancellationToken);
+        Task<int> ExpertAverageScores(int id, CancellationToken cancellationToken);
+        Task<int> ExpertOrderCount(int id, CancellationToken cancellationToken);
     }
 }
+

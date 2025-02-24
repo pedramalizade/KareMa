@@ -17,7 +17,7 @@ namespace KareMa.Domain.Core.DTOs.OrderDTO
         public string Description { get; set; }
         [DisplayName("وضعیت")]
         public StatusEnum Status { get; set; }
-        public Expert? Expert { get; set; }
+        public Entities.Expert? Expert { get; set; }
         public int? ExpertId { get; set; }
         public List<Suggestion>? Suggestions { get; set; }
         public Service Service { get; set; }

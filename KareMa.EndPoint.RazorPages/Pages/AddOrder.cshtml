@@ -1,0 +1,120 @@
+﻿@page
+@model KareMa.EndPoint.RazorPages.Pages.AddOrderModel
+@{
+}
+<form method="post" asp-page-handler="Add" enctype="multipart/form-data" asp-page="AddOrder" asp-area="">
+    <div class="dashboard-list-wraps bg-white rounded mb-4">
+        <div class="dashboard-list-wraps-head br-bottom py-3 px-3">
+            <div class="dashboard-list-wraps-flx">
+                <h4 class="mb-0 ft-medium fs-md">درخواست خدمات</h4>
+            </div>
+        </div>
+
+        <div class="dashboard-list-wraps-body py-3 px-3">
+            <div class="row">
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                    <div class="form-group">
+                        <label class="mb-1"> سرویس</label>
+                        <div class="form-control rounded" type="text">@Model.Service.Name</div>
+                        <input asp-for="@Model.Order.ServiceId" hidden value="@Model.Service.Id" />
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                    <div class="form-group">
+                        <label class="mb-1">قیمت</label>
+                        <div class="form-control rounded" type="text">@Model.Service.Price</div>
+                        <span asp-validation-for="@Model.Order.Title" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                    <div class="form-group">
+                        <label class="mb-1">عنوان</label>
+                        <input asp-for="@Model.Order.Title" class="form-control rounded" type="text" />
+                        <span asp-validation-for="@Model.Order.Title" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                    <div class="form-group">
+                        <label class="mb-1">تاریخ</label>
+                        <input asp-for="@Model.Date" data-jdp data-jdp-min-date="today" class="form-control rounded" />
+                        <span asp-validation-for="@Model.Date" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                    <div class="form-group">
+                        <label class="mb-1">توضیحات</label>
+                        <textarea asp-for="@Model.Order.Description" class="form-control rounded ht-80"></textarea>
+                        <span asp-validation-for="@Model.Order.Description" class="text-danger"></span>
+
+                    </div>
+                </div>
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                    <label for="formFileLg" class="form-label">آپلود تصویر</label>
+                    <div class="input-group form-group">
+                        <input type="text" class="form-control upload-name-photo rounded" asp-for="@Model.Image" />
+                        <span class="btn cursor-pointer upload-btn-photo">آپلود فایل</span>
+                    </div>
+                    <input type="file" asp-for="@Model.Image" class="d-none hidden-upload-photo" />
+                    <span asp-validation-for="@Model.Image" class="text-danger"></span>
+
+                </div>
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                    <div class="form-group p-2">
+                        <button type="submit" class="btn theme-cl rounded theme-bg-light ft-medium">افزودن</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+@section Scripts {
+
+    <partial name="_ValidationScriptsPartial" />
+
+    <script>
+        jalaliDatepicker.startWatch({
+            minDate: "attr",
+            maxDate: "attr",
+            minTime: "attr",
+            maxTime: "attr",
+            hideAfterChange: true,
+            autoHide: true,
+            showTodayBtn: true,
+            showEmptyBtn: true,
+            topSpace: 10,
+            bottomSpace: 30,
+            time: true,
+            dayRendering(opt, input) {
+                return {
+                    isHollyDay: opt.day == 1
+                }
+            }
+        });
+        document.getElementById("aaa").addEventListener("jdp:change", function (e) { console.log(e) });
+    </script>
+
+    <script>
+        Dropzone.options.gallery = {
+            accept: function (file, done) {
+                console.log("uploaded");
+                done();
+            },
+            init: function () {
+                this.on("maxfilesexceeded", function (file) {
+                    alert("No more files please!");
+                });
+            }
+        };
+        $(".upload-btn-photo").on("click", () => {
+            //clicks on the file input
+            document.querySelector(".hidden-upload-photo").click();
+        });
+        //adds event listener on the hidden file input to listen for any changes
+        $(".hidden-upload-photo").on("change", (event) => {
+            //gets the file name
+            document.querySelector(".upload-name-photo").value = event.target.files[0].name;
+        });
+    </script>
+}

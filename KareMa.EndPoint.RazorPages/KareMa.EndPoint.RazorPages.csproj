@@ -8,7 +8,8 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="9.0.2" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.2">
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="9.0.2" />
+	  <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.2">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
@@ -24,4 +25,201 @@
     <ProjectReference Include="..\KareMa.Infra.DataAccess.Repo.Ef\KareMa.Infra.DataAccess.Repo.Ef.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Update="Areas\CustomerArea\Pages\_ViewImports.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+
+	<ItemGroup>
+		<Content Update="Areas\AdminArea\Pages\Shared\_AccountPartial.cshtml">
+			<ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+			<CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+		</Content>
+	</ItemGroup>
+
+	  <ItemGroup>
+    <None Include="Areas\Account\Pages\AccessDenied.cshtml" />
+    <None Include="Areas\Account\Pages\Login.cshtml" />
+    <None Include="Areas\Account\Pages\Logout.cshtml" />
+    <None Include="Areas\Account\Pages\Register.cshtml" />
+    <None Include="Areas\Account\Pages\_ValidationScriptsPartial.cshtml" />
+    <None Include="Areas\Account\Pages\_ViewImports.cshtml" />
+    <None Include="Areas\Account\Pages\_ViewStart.cshtml" />
+    <None Include="Areas\AdminArea\Pages\ProfileSetting.cshtml" />
+    <None Include="Areas\AdminArea\Pages\Service.cshtml" />
+    <None Include="Areas\CustomerArea\Pages\CustomerProfileSetting.cshtml" />
+    <None Include="Areas\ExpertArea\Pages\AddSuggestion.cshtml" />
+    <None Include="wwwroot\assets\css\fonts\fa-brands-400.svg" />
+    <None Include="wwwroot\assets\css\fonts\fa-brands-400.woff2" />
+    <None Include="wwwroot\assets\css\fonts\fa-regular-400.svg" />
+    <None Include="wwwroot\assets\css\fonts\fa-regular-400.woff2" />
+    <None Include="wwwroot\assets\css\fonts\fa-solid-900.svg" />
+    <None Include="wwwroot\assets\css\fonts\fa-solid-900.woff2" />
+    <None Include="wwwroot\assets\css\fonts\Flaticon.svg" />
+    <None Include="wwwroot\assets\css\fonts\houses.svg" />
+    <None Include="wwwroot\assets\css\fonts\icofont.woff2" />
+    <None Include="wwwroot\assets\css\fonts\LineIcons.svg" />
+    <None Include="wwwroot\assets\css\fonts\LineIcons.woff2" />
+    <None Include="wwwroot\assets\css\fonts\themify9f249f24.svg" />
+    <None Include="wwwroot\assets\img\sub-category\barbari.webp" />
+    <None Include="wwwroot\assets\img\sub-category\khadamat-sherkati.webp" />
+    <None Include="wwwroot\assets\img\sub-category\khodro\carwash.webp" />
+    <None Include="wwwroot\assets\img\sub-category\khodro\khdamet-khodro.webp" />
+    <None Include="wwwroot\assets\img\sub-category\sakhtemen\baghbani.webp" />
+    <None Include="wwwroot\assets\img\sub-category\sakhtemen\bargh-kari.webp" />
+    <None Include="wwwroot\assets\img\sub-category\sakhtemen\chub-cabinet.webp" />
+    <None Include="wwwroot\assets\img\sub-category\sakhtemen\khadamat-shishei.webp" />
+    <None Include="wwwroot\assets\img\sub-category\sakhtemen\lule-keshi.webp" />
+    <None Include="wwwroot\assets\img\sub-category\sakhtemen\sarmayesh-garmayesh.webp" />
+    <None Include="wwwroot\assets\img\sub-category\sakhtemen\tamirat-sakhteman.webp" />
+    <None Include="wwwroot\assets\img\sub-category\sakhtemen\tarahi-sakhtemen.webp" />
+    <None Include="wwwroot\assets\img\sub-category\salamat-zibayi\pet.webp" />
+    <None Include="wwwroot\assets\img\sub-category\salamat-zibayi\pezeshki.webp" />
+    <None Include="wwwroot\assets\img\sub-category\salamat-zibayi\varzesh.webp" />
+    <None Include="wwwroot\assets\img\sub-category\salamat-zibayi\zibayi-aghayan.webp" />
+    <None Include="wwwroot\assets\img\sub-category\salamat-zibayi\zibayi-banovan.webp" />
+    <None Include="wwwroot\assets\img\sub-category\tamirat\khadamat-computer.webp" />
+    <None Include="wwwroot\assets\img\sub-category\tamirat\sarmayesh-garmayesh.webp" />
+    <None Include="wwwroot\assets\img\sub-category\tamirat\tamir-lavazem-khanegi.webp" />
+    <None Include="wwwroot\assets\img\sub-category\tamirat\tamirat-mobile.webp" />
+    <None Include="wwwroot\assets\img\sub-category\tamiz-kari\carwash.webp" />
+    <None Include="wwwroot\assets\img\sub-category\tamiz-kari\nezafat-pazirayi.webp" />
+    <None Include="wwwroot\assets\img\sub-category\tamiz-kari\shosteshu.webp" />
+    <None Include="wwwroot\assets\img\verify.svg" />
+    <None Include="wwwroot\assets\js\bootstrap.min.js" />
+    <None Include="wwwroot\assets\js\counterup.js" />
+    <None Include="wwwroot\assets\js\custom.js" />
+    <None Include="wwwroot\assets\js\daterangepicker-fa-ex.js" />
+    <None Include="wwwroot\assets\js\daterangepicker.js" />
+    <None Include="wwwroot\assets\js\dropzone.js" />
+    <None Include="wwwroot\assets\js\filepond.js" />
+    <None Include="wwwroot\assets\js\jquery.magnific-popup.min.js" />
+    <None Include="wwwroot\assets\js\jquery.min.js" />
+    <None Include="wwwroot\assets\js\jQuery.style.switcher.js" />
+    <None Include="wwwroot\assets\js\leaflet.js" />
+    <None Include="wwwroot\assets\js\lightbox.js" />
+    <None Include="wwwroot\assets\js\moment-jalaali.js" />
+    <None Include="wwwroot\assets\js\moment.js" />
+    <None Include="wwwroot\assets\js\moment.min.js" />
+    <None Include="wwwroot\assets\js\plugins\dashboard-2.js" />
+    <None Include="wwwroot\assets\js\plugins\morris.js\morris.min.js" />
+    <None Include="wwwroot\assets\js\plugins\raphael\raphael.min.js" />
+    <None Include="wwwroot\assets\js\popper.min.js" />
+    <None Include="wwwroot\assets\js\slick.js" />
+    <None Include="wwwroot\calendar-dist\jalalidatepicker.js" />
+    <None Include="wwwroot\calendar-dist\jalalidatepicker.min.js" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.min.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.min.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.min.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.min.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.min.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap.min.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.min.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.esm.js" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.esm.js.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.esm.min.js" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.esm.min.js.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.js" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.js.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.min.js" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.min.js.map" />
+    <None Include="wwwroot\lib\bootstrap\LICENSE" />
+    <None Include="wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.js" />
+    <None Include="wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.min.js" />
+    <None Include="wwwroot\lib\jquery-validation\dist\additional-methods.js" />
+    <None Include="wwwroot\lib\jquery-validation\dist\additional-methods.min.js" />
+    <None Include="wwwroot\lib\jquery-validation\dist\jquery.validate.js" />
+    <None Include="wwwroot\lib\jquery-validation\dist\jquery.validate.min.js" />
+    <None Include="wwwroot\lib\jquery-validation\LICENSE.md" />
+    <None Include="wwwroot\lib\jquery\dist\jquery.js" />
+    <None Include="wwwroot\lib\jquery\dist\jquery.min.js" />
+    <None Include="wwwroot\lib\jquery\dist\jquery.min.map" />
+    <None Include="wwwroot\select2\js\i18n\af.js" />
+    <None Include="wwwroot\select2\js\i18n\ar.js" />
+    <None Include="wwwroot\select2\js\i18n\az.js" />
+    <None Include="wwwroot\select2\js\i18n\bg.js" />
+    <None Include="wwwroot\select2\js\i18n\bn.js" />
+    <None Include="wwwroot\select2\js\i18n\bs.js" />
+    <None Include="wwwroot\select2\js\i18n\ca.js" />
+    <None Include="wwwroot\select2\js\i18n\cs.js" />
+    <None Include="wwwroot\select2\js\i18n\da.js" />
+    <None Include="wwwroot\select2\js\i18n\de.js" />
+    <None Include="wwwroot\select2\js\i18n\dsb.js" />
+    <None Include="wwwroot\select2\js\i18n\el.js" />
+    <None Include="wwwroot\select2\js\i18n\en.js" />
+    <None Include="wwwroot\select2\js\i18n\eo.js" />
+    <None Include="wwwroot\select2\js\i18n\es.js" />
+    <None Include="wwwroot\select2\js\i18n\et.js" />
+    <None Include="wwwroot\select2\js\i18n\eu.js" />
+    <None Include="wwwroot\select2\js\i18n\fa.js" />
+    <None Include="wwwroot\select2\js\i18n\fi.js" />
+    <None Include="wwwroot\select2\js\i18n\fr.js" />
+    <None Include="wwwroot\select2\js\i18n\gl.js" />
+    <None Include="wwwroot\select2\js\i18n\he.js" />
+    <None Include="wwwroot\select2\js\i18n\hi.js" />
+    <None Include="wwwroot\select2\js\i18n\hr.js" />
+    <None Include="wwwroot\select2\js\i18n\hsb.js" />
+    <None Include="wwwroot\select2\js\i18n\hu.js" />
+    <None Include="wwwroot\select2\js\i18n\hy.js" />
+    <None Include="wwwroot\select2\js\i18n\id.js" />
+    <None Include="wwwroot\select2\js\i18n\is.js" />
+    <None Include="wwwroot\select2\js\i18n\it.js" />
+    <None Include="wwwroot\select2\js\i18n\ja.js" />
+    <None Include="wwwroot\select2\js\i18n\ka.js" />
+    <None Include="wwwroot\select2\js\i18n\km.js" />
+    <None Include="wwwroot\select2\js\i18n\ko.js" />
+    <None Include="wwwroot\select2\js\i18n\lt.js" />
+    <None Include="wwwroot\select2\js\i18n\lv.js" />
+    <None Include="wwwroot\select2\js\i18n\mk.js" />
+    <None Include="wwwroot\select2\js\i18n\ms.js" />
+    <None Include="wwwroot\select2\js\i18n\nb.js" />
+    <None Include="wwwroot\select2\js\i18n\ne.js" />
+    <None Include="wwwroot\select2\js\i18n\nl.js" />
+    <None Include="wwwroot\select2\js\i18n\pa.js" />
+    <None Include="wwwroot\select2\js\i18n\pl.js" />
+    <None Include="wwwroot\select2\js\i18n\ps.js" />
+    <None Include="wwwroot\select2\js\i18n\pt-BR.js" />
+    <None Include="wwwroot\select2\js\i18n\pt.js" />
+    <None Include="wwwroot\select2\js\i18n\ro.js" />
+    <None Include="wwwroot\select2\js\i18n\ru.js" />
+    <None Include="wwwroot\select2\js\i18n\sk.js" />
+    <None Include="wwwroot\select2\js\i18n\sl.js" />
+    <None Include="wwwroot\select2\js\i18n\sq.js" />
+    <None Include="wwwroot\select2\js\i18n\sr-Cyrl.js" />
+    <None Include="wwwroot\select2\js\i18n\sr.js" />
+    <None Include="wwwroot\select2\js\i18n\sv.js" />
+    <None Include="wwwroot\select2\js\i18n\te.js" />
+    <None Include="wwwroot\select2\js\i18n\th.js" />
+    <None Include="wwwroot\select2\js\i18n\tk.js" />
+    <None Include="wwwroot\select2\js\i18n\tr.js" />
+    <None Include="wwwroot\select2\js\i18n\uk.js" />
+    <None Include="wwwroot\select2\js\i18n\vi.js" />
+    <None Include="wwwroot\select2\js\i18n\zh-CN.js" />
+    <None Include="wwwroot\select2\js\i18n\zh-TW.js" />
+    <None Include="wwwroot\select2\js\select2.full.js" />
+    <None Include="wwwroot\select2\js\select2.full.min.js" />
+    <None Include="wwwroot\select2\js\select2.js" />
+    <None Include="wwwroot\select2\js\select2.min.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Areas\ExpertArea\" />
+    <Folder Include="wwwroot\uploads\" />
+  </ItemGroup>
+	
 </Project>

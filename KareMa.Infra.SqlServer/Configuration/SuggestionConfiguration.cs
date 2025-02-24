@@ -22,19 +22,6 @@ namespace KareMa.Infra.SqlServer.Configuration
             builder.HasOne(s => s.Expert)
                 .WithMany(e => e.Suggestions)
                 .OnDelete(DeleteBehavior.NoAction);
-
-            builder.HasData(
-            new Suggestion
-            {
-                Id = 1,
-                Description = "نظافت خانه",
-                ExpertId = 1,
-                CreateAt = new DateTime(2024, 6, 8),
-                Price = 4000,
-                OrderId = 1,
-                IsDeleted = false
-            }
-        );
         }
     }
 }

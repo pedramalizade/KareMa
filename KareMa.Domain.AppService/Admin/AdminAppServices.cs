@@ -23,6 +23,8 @@ namespace KareMa.Domain.AppService
          => await _adminServices.Delete(adminId, cancellationToken);
         public async Task<List<Admin>> GetAll(CancellationToken cancellationToken)
        => await _adminServices.GetAll(cancellationToken);
+        public async Task<AdminUpdateDto> AdminUpdateInfo(int id, CancellationToken cancellationToken)
+          => await _adminServices.AdminUpdateInfo(id, cancellationToken);
         public async Task<Admin> GetById(int adminId, CancellationToken cancellationToken)
    => await _adminServices.GetById(adminId, cancellationToken);
         public async Task<bool> Update(AdminUpdateDto adminUpdateDto, CancellationToken cancellationToken)

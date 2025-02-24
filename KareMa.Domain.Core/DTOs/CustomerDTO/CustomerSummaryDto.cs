@@ -18,10 +18,10 @@ namespace KareMa.Domain.Core.DTOs.CustomerDTO
         public string LastName { get; set; }
         public GenderEnum? Gender { get; set; }
         [MaxLength(11)]
-        public string BackUpPhoneNumber { get; set; }
+        public string PhoneNumber { get; set; }
         [MaxLength(16)]
         public string? BankCardNumber { get; set; }
-        public List<Address>? Addresses { get; set; }
+        public Address Addresses { get; set; }
         public List<Comment>? Comments { get; set; }
         public List<Order>? Orders { get; set; }
     }

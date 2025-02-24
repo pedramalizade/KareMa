@@ -1,4 +1,5 @@
 ﻿@page
+@using KareMa.Domain.Core.Enums
 @model KareMa.EndPoint.RazorPages.Areas.AdminArea.Account.Pages.RegisterModel
 @{
     Layout = "_Layout";
@@ -7,58 +8,79 @@
     <div class="container">
         <div class="row align-items-start justify-content-center">
             <div class="col-xl-6 col-lg-8 col-md-12">
+
                 <div class="signup-screen-wrap">
                     <div class="signup-screen-single light">
                         <div class="text-center mb-4">
                             <h4 class="m-0 ft-medium">ثبت نـام</h4>
                         </div>
+
                         <form class="submit-form" method="post">
-                            <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
+                            <div asp-validation-summary="ModelOnly" class="text-danger p-3" role="alert"></div>
                             <div class="row">
                                 <div class="col-6">
                                     <div class="form-group">
-                                        <label asp-for="Input.FisrtName" class="mb-1">نام</label>
-                                        <input type="text" asp-for="Input.FisrtName" class="form-control rounded" placeholder="نام*">
+                                        <label asp-for="@Model.AccountRegister.FirstName" class="mb-1">نام</label>
+                                        <input type="text" asp-for="@Model.AccountRegister.FirstName" class="form-control rounded">
+                                        <span asp-validation-for="@Model.AccountRegister.FirstName" class="text-danger"></span>
+
                                     </div>
                                 </div>
                                 <div class="col-6">
                                     <div class="form-group">
-                                        <label asp-for="Input.LastName" class="mb-1">نام‌خانوادگی</label>
-                                        <input asp-for="Input.LastName" type="text" class="form-control rounded" placeholder="نام‌خانوادگی*">
+                                        <label asp-for="@Model.AccountRegister.LastName" class="mb-1">نام‌خانوادگی</label>
+                                        <input asp-for="@Model.AccountRegister.LastName" type="text" class="form-control rounded">
+                                        <span asp-validation-for="@Model.AccountRegister.LastName" class="text-danger"></span>
                                     </div>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label asp-for="Input.Email" class="mb-1">نام کاربری</label>
-                                <input type="email" asp-for="Input.Email" class="form-control rounded" placeholder="ایمیل*">
+                                <label asp-for="@Model.AccountRegister.Email" class="mb-1">ایمیل</label>
+                                <input type="email" asp-for="@Model.AccountRegister.Email" class="form-control rounded">
+                                <span asp-validation-for="@Model.AccountRegister.Email" class="text-danger"></span>
                             </div>
-                            <div class="form-group">
-                                <label asp-for="Input.Password" class="mb-1">رمز عبور</label>
-                                <input type="password" asp-for="Input.Password" class="form-control rounded" placeholder="رمز عبور*">
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <label asp-for="@Model.AccountRegister.Password" class="mb-1">رمز عبور</label>
+                                        <input type="password" asp-for="@Model.AccountRegister.Password" class="form-control rounded">
+                                        <span asp-validation-for="@Model.AccountRegister.Password" class="text-danger"></span>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <label asp-for="@Model.AccountRegister.Gender" class="mb-1">جنسیت</label>
+                                        <select class="form-control rounded" asp-for="@Model.AccountRegister.Gender">
+                                            <option value="@GenderEnum.Female">خانوم</option>
+                                            <option value="@GenderEnum.Male">آقا</option>
+                                        </select>
+                                    </div>
+                                </div>
                             </div>
                             <div class="sign-controls form-group">
                                 <div class="custom-control custom-checkbox">
-                                    <input id="IsReporter" asp-for="Input.IsCustomer" type="checkbox" class="custom-control-input">
-                                    <label class="custom-control-label" for="IsReporter">مشتری</label>
-                                </div>
-                                <div class="custom-control custom-checkbox">
-                                    <input id="IsVisitor" asp-for="Input.IsExpert" type="checkbox" class="custom-control-input">
-                                    <label class="custom-control-label" for="IsVisitor">متخصص</label>
+                                    <input id="IsVisitor" asp-for="@Model.AccountRegister.isExpert" type="checkbox" class="custom-control-input">
+                                    <label class="custom-control-label" for="IsVisitor">متخصص هستید؟</label>
                                 </div>
                             </div>
+
+
                             <div class="form-group">
                                 <button type="submit" class="btn btn-md full-width theme-bg text-light rounded ft-medium">ثبت نام</button>
                             </div>
+
                             <div class="form-group text-center mt-4 mb-0">
                                 <p class="mb-0">آیا قبلا ثبت نام کرده اید؟ <a asp-page="./Login" class="ft-medium text-success">ورود به حساب کاربری</a></p>
                             </div>
                         </form>
                     </div>
                 </div>
+
             </div>
         </div>
     </div>
 </section>
+
 @section Scripts {
     <script>
         $(document).ready(function () {
@@ -68,4 +90,6 @@
             });
         });
     </script>
+
+    <partial name="_ValidationScriptsPartial" />
 }

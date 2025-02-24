@@ -19,5 +19,6 @@ namespace KareMa.Domain.Core.DTOs.CommentDTO
         public string Description { get; set; }
         public bool IsActive { get; set; }
         public bool IsDeleted { get; set; }
+        public int Score { get; set; }
     }
 }

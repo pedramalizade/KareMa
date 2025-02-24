@@ -25,6 +25,8 @@ namespace KareMa.Domain.Service
           => _customerRepository.Delete(customerId, cancellationToken);
         public Task<List<Customer>> GetAll(CancellationToken cancellationToken)
           => _customerRepository.GetAll(cancellationToken);
+        public async Task<CustomerUpdateDto> GetCustomerUpdateInfo(int customerId, CancellationToken cancellationToken)
+   => await _customerRepository.GetCustomerUpdateInfo(customerId, cancellationToken);
         public Task<Customer> GetById(int customerId, CancellationToken cancellationToken)
           => _customerRepository.GetById(customerId, cancellationToken);
         public async Task<CustomerSummaryDto> GetCustomerSummary(int id, CancellationToken cancellationToken)

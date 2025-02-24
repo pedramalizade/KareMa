@@ -2,31 +2,47 @@
 @model KareMa.EndPoint.RazorPages.Pages.Areas.AdminArea.Pages.UpdateCategoryModel
 @{
     Layout = "_AdminLayout";
+    ViewData["Title"] = "  ویرایش دسته بندی اصلی سرویس ها | کاره ما";
+    ViewData["PageTitle"] = " ویرایش دسته بندی اصلی";
 }
 <div class="col-xxl">
     <div class="card mb-4">
-        <div class="card-header d-flex align-items-center justify-content-between">
-            <small class="text-muted float-end primary-font">ویرایش‌</small>
-        </div>
         <div class="card-body">
             <form method="post" asp-page-handler="Update" enctype="multipart/form-data">
                 <div class="row mb-3">
-                    <input hidden asp-for="@Model.ServiceCategoryUpdate.Id" value="@Model.ServiceCategory.Id" />
+                    <input hidden asp-for="@Model.ServiceCategoryUpdate.Id" value="@Model.ServiceCategoryUpdate.Id" />
                     <label class="col-sm-2 col-form-label" asp-for="@Model.ServiceCategoryUpdate.Name">نام</label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control" asp-for="@Model.ServiceCategoryUpdate.Name">
+                        <span asp-validation-for="@Model.ServiceCategoryUpdate.Name" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <label class="col-sm-2 col-form-label" asp-for="@Model.Image">آپلود عکس</label>
+                    <div class="col-sm-10">
+                        <input type="file" class="form-control" asp-for="@Model.Image">
+                        <span asp-validation-for="@Model.Image" class="text-danger"></span>
                     </div>
                 </div>
                 <div class="row mb-3">
                     <label class="col-sm-2 col-form-label" asp-for="@Model.Image">عکس</label>
                     <div class="col-sm-10">
-                        <input type="file" class="form-control" asp-for="@Model.Image">
+                        @if (Model.ServiceCategoryUpdate.Image == string.Empty || Model.ServiceCategoryUpdate.Image == null)
+                        {
+                            <img src="~/assets/img/none.png" width="=150px" height="100px" />
+                        }
+                        else
+                        {
+                            <img src="@Model.ServiceCategoryUpdate.Image" width="=150px" height="100px" />
+                        }
                     </div>
-                    <div class="row justify-content-end">
-                        <div class="col-sm-10">
-                            <button type="submit" class="btn btn-primary">ارسال</button>
-                        </div>
+                </div>
+                <div class="row justify-content-end">
+                    <div class="col-sm-10">
+                        <button type="submit" class="btn btn-primary">ارسال</button>
                     </div>
+                </div>
             </form>
         </div>
     </div>

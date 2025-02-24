@@ -2,10 +2,11 @@
 @model KareMa.EndPoint.RazorPages.Pages.Areas.AdminArea.Pages.CategoryModel
 @{
     Layout = "_AdminLayout";
-    ViewData["Title"] = " دسته بندی اصلی سوریس ها | آیدو";
+    ViewData["Title"] = " دسته بندی اصلی سوریس ها | کاره ما";
     ViewData["Category"] = " active open";
     ViewData["PageTitle"] = "دسته بندی اصلی";
 }
+
 <div class="card p-5">
     <div class="table-responsive text-nowrap">
         <a asp-page="AddCategory" class="btn btn-primary">افزودن</a>
@@ -13,41 +14,51 @@
             <thead>
                 <tr>
                     <th>آیدی</th>
-                    @* <th>عکس</th> *@
+                    <th>عکس</th>
                     <th>نام دسته بندی</th>
                     <th>عملیات</th>
                 </tr>
             </thead>
             <tbody class="table-border-bottom-0">
+
                 @foreach (var category in Model.GetCategories)
                 {
                     @if (category.IsDeleted == false)
                     {
-                    <tr>
-                        <td>
-                            @category.Id
-                        </td>
-                        @* <td>
-                    @*  <img src="@service.Image.ImageAddress" alt="@service.Image.Alt" class="rounded-circle"> *@
-                        <td>@category.Name</td>
-                        <td>
-                            <div class="dropdown">
-                                <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
-                                    <i class="bx bx-dots-vertical-rounded"></i>
-                                </button>
-                                <div class="dropdown-menu">
-                                    <a asp-page="UpdateCategory" asp-route-id="@category.Id">
-                                        <i class="bx bx-edit-alt me-1"></i>
-                                        ویرایش
-                                    </a>
-                                    <a asp-page-handler="Delete" asp-route-id="@category.Id" onclick="return confirm('مطمئنی؟')">
-                                        <i class="bx bx-trash me-1"></i> حذف
-                                    </a>
+                        <tr>
+                            <td>
+                                @category.Id
+                            </td>
+                            <td>
+                                @if (category.Image == null || category.Image == string.Empty)
+                                {
+                                    <img src="~/assets/img/none.png" width="100px" height="50px" />
+                                }
+                                else
+                                {
+                                    <img src="@category.Image" alt="@category.Image" width="100px" height="50px" />
+                                }
+                            </td>
+
+                            <td>@category.Name</td>
+                            <td>
+                                <div class="dropdown">
+                                    <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
+                                        <i class="bx bx-dots-vertical-rounded"></i>
+                                    </button>
+                                    <div class="dropdown-menu">
+                                        <a asp-page="UpdateCategory" asp-route-id="@category.Id">
+                                            <i class="bx bx-edit-alt me-1"></i>
+                                            ویرایش
+                                        </a>
+                                        <a asp-page-handler="Delete" asp-route-id="@category.Id" onclick="return confirm('مطمئنی؟')">
+                                            <i class="bx bx-trash me-1"></i> حذف
+                                        </a>
+                                    </div>
                                 </div>
-                            </div>
-                        </td>
-                    </tr>
-                }
+                            </td>
+                        </tr>
+                    }
                 }
             </tbody>
         </table>

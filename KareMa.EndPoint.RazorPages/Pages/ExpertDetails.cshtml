@@ -1,0 +1,225 @@
+﻿@page
+@using Framework
+@using KareMa.Domain.Core.Contracts.AppService
+@model KareMa.EndPoint.RazorPages.Pages.ExpertDetailsModel
+@inject IExpertAppServices ExpertAppServices;
+@{
+    int commentCount = await ExpertAppServices.ExpertCommentCount(Model.ExpertSummary.Id, default);
+}
+<section class="gray">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-xl-4 col-lg-4 col-md-12">
+                <div class="author-wrap-ngh">
+                    <div class="author-wrap-head-ngh">
+                        @if (Model.ExpertSummary.ProfileImage == null)
+                        {
+                            <div class="author-wrap-ngh-thumb">
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="author-wrap-ngh-thumb">
+                                <img src="@Model.ExpertSummary.ProfileImage" class="img-fluid circle" style="object-fit:cover; width: 100%; height: 100%;" />
+                            </div>
+                        }
+                        <div class="author-wrap-ngh-info">
+                            <h5>@Model.ExpertSummary.FirstName @Model.ExpertSummary.LastName</h5>
+                        </div>
+                    </div>
+
+                    <div class="author-wrap-caption-ngh">
+                        <div class="author-wrap-jhyu-ngh">
+                            <ul>
+                                <li>
+                                    <div class="gdup-kvty">
+                                        <div class="gdup-kvty-icon bg-light-sky text-sky"><i class="fas fa-file"></i></div>
+                                        <div class="gdup-kvty-ctr"><h6 class="count">@commentCount</h6></div>
+                                        <div class="gdup-kvty-text">کامنت‌ها</div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="gdup-kvty">
+                                        <div class="gdup-kvty-icon bg-light-warning text-warning"><i class="fas fa-thumbs-up"></i></div>
+                                        <div class="gdup-kvty-ctr"><h6 class="count">@await ExpertAppServices.ExpertAverageScores(Model.ExpertSummary.Id, default)</h6></div>
+                                        <div class="gdup-kvty-text">میانگین امتیازات</div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="gdup-kvty">
+                                        <div class="gdup-kvty-icon bg-light-danger text-danger"><i class="fas fa-heart"></i></div>
+                                        <div class="gdup-kvty-ctr"><h6 class="count">@await ExpertAppServices.ExpertOrderCount(Model.ExpertSummary.Id, default)</h6></div>
+                                        <div class="gdup-kvty-text">ماموریت‌ها</div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="author-wrap-footer-ngh">
+                        <ul>
+                            <li>
+                                <div class="jhk-list-inf">
+                                    <div class="jhk-list-inf-ico"><i class="fas fa-envelope"></i></div>
+                                    <div class="jhk-list-inf-caption"><h5>جنسیت</h5><p>@Model.ExpertSummary.Gender.GetEnumDisplayName()</p></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="jhk-list-inf">
+                                    <div class="jhk-list-inf-ico"><i class="fas fa-map-marker-alt"></i></div>
+                                    <div class="jhk-list-inf-caption">
+                                        <h5>تخصص‌ها</h5>
+                                        @foreach (var item in Model.ExpertSummary.Services)
+                                        {
+                                            <p>@item.Name</p>
+                                        }
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xl-8 col-lg-8 col-md-12">
+                <div class="auth-filter-headers">
+                    <h3 class=" m-0 theme-cl px-2">نظرات</h3>
+                </div>
+
+                <!-- row -->
+                <div class="row justify-content-center gx-3">
+
+                    <div class="bg-white rounded mb-4">
+                        <div class="jbd-01 px-4 py-4">
+                            <div class="jbd-details mb-4">
+                                <h5 class="ft-bold fs-lg ff-second">امتیاز و نظر کاربران</h5>
+                                <div class="reviews-comments-wrap">
+                                    @foreach (var comment in Model.ExpertSummary.Comments)
+                                    {
+                                        <!-- reviews-comments-item -->
+                                        <div class="reviews-comments-item">
+                                            <div class="reviews-comments-item-text">
+                                                <h4>@comment.Customer.FirstName @comment.Customer.LastName<span class="reviews-comments-item-date d-flex align-items-center"><i class="ti-calendar theme-cl ms-1"></i>@comment.CreatedAt.ToPersianString("dddd, dd MMMM,yyyy")</span></h4>
+                                                <div class="listing-rating high">
+                                                    @if (comment.Score == 1)
+                                                    {
+                                                        <i class="fas fa-star active"></i>
+                                                        <i class="fas fa-star "></i>
+                                                        <i class="fas fa-star "></i>
+                                                        <i class="fas fa-star "></i>
+                                                        <i class="fas fa-star "></i>
+                                                    }
+                                                    else if (comment.Score == 2)
+                                                    {
+                                                        <i class="fas fa-star active"></i>
+                                                        <i class="fas fa-star active"></i>
+                                                        <i class="fas fa-star "></i>
+                                                        <i class="fas fa-star "></i>
+                                                        <i class="fas fa-star "></i>
+                                                    }
+                                                    else if (comment.Score == 3)
+                                                    {
+                                                        <i class="fas fa-star active"></i>
+                                                        <i class="fas fa-star active"></i>
+                                                        <i class="fas fa-star active"></i>
+                                                        <i class="fas fa-star "></i>
+                                                        <i class="fas fa-star "></i>
+                                                    }
+                                                    else if (comment.Score == 4)
+                                                    {
+                                                        <i class="fas fa-star active"></i>
+                                                        <i class="fas fa-star active"></i>
+                                                        <i class="fas fa-star active"></i>
+                                                        <i class="fas fa-star active"></i>
+                                                        <i class="fas fa-star "></i>
+                                                    }
+                                                    else if (comment.Score == 5)
+                                                    {
+                                                        <i class="fas fa-star active"></i>
+                                                        <i class="fas fa-star active"></i>
+                                                        <i class="fas fa-star active"></i>
+                                                        <i class="fas fa-star active"></i>
+                                                        <i class="fas fa-star active"></i>
+                                                    }
+                                                    else
+                                                    {
+                                                        <i class="fas fa-star "></i>
+                                                        <i class="fas fa-star "></i>
+                                                        <i class="fas fa-star "></i>
+                                                        <i class="fas fa-star "></i>
+                                                        <i class="fas fa-star "></i>
+                                                    }
+
+                                                </div>
+                                                <div class="clearfix"></div>
+                                                <p>"@comment.Description"</p>
+                                            </div>
+                                        </div>
+                                        <!--reviews-comments-item end-->
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /row -->
+            </div>
+            @if (TempData["OrderNotDone"] != null)
+            {
+                <div class="alert alert-danger text-center col-lg-12" role="alert">
+                    <h6 class="alert-heading mb-1">@TempData["OrderNotDone"]</h6>
+                </div>
+            }
+            @if (User.IsInRole("Customer"))
+            {
+                <div class="bg-white rounded mb-4">
+                    <div class="jbd-01 px-4 py-4">
+                        <div class="jbd-details mb-4">
+                            <h5 class="ft-bold fs-lg ff-second">ثبت امتیاز و نظر</h5>
+                            <div class="review-form-box form-submit mt-3">
+                                <form method="post" asp-page-handler="AddComment">
+                                    <div class="row">
+                                        <div class="col-lg-12 col-md-12 col-sm-12">
+                                            <div class="form-group mb-3">
+                                                <label class="ft-medium small mb-1">امتیازدهی</label>
+                                                <select asp-for="@Model.Comment.Score" class="form-control rounded">
+                                                    <option value="1">1 ستاره</option>
+                                                    <option value="2">2 ستاره</option>
+                                                    <option value="3">3 ستاره</option>
+                                                    <option value="4">4 ستاره</option>
+                                                    <option value="5">5 ستاره</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-sm-12">
+                                            <div class="form-group mb-3">
+                                                <label class="ft-medium small mb-1">عنوان</label>
+                                                <input asp-for="@Model.Comment.Title" class="form-control rounded" type="text">
+                                                <span asp-validation-for="@Model.Comment.Title" class="text-danger"></span>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 col-sm-12">
+                                            <div class="form-group mb-3">
+                                                <label class="ft-medium small mb-1">متن نظر</label>
+                                                <textarea asp-for="@Model.Comment.Description" class="form-control rounded ht-140" placeholder="نظر خود را بنویسید"></textarea>
+                                                <span asp-validation-for="@Model.Comment.Description" class="text-danger"></span>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-12 col-md-12 col-sm-12">
+                                            <div class="form-group">
+                                                <button type="submit" class="btn theme-bg text-light rounded">ثبت نظر</button>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+

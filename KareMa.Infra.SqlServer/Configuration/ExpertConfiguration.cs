@@ -42,7 +42,7 @@ namespace KareMa.Infra.SqlServer.Configuration
                     IsConfirm = true,
                     CreatedAt = new DateTime(2024, 2, 12),
                     IsDeleted = false,
-                    //AppUserId = 1
+                    AppUserId = 2
                 },
                  new Expert
                  {
@@ -56,7 +56,7 @@ namespace KareMa.Infra.SqlServer.Configuration
                      IsConfirm = true,
                      CreatedAt = new DateTime(2024, 2, 12),
                      IsDeleted = false,
-                     //AppUserId = 1
+                     AppUserId = 4
                  }
                 );
             ;

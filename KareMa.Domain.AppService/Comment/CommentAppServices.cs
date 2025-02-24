@@ -14,11 +14,11 @@ namespace KareMa.Domain.AppService
     public class CommentAppServices : ICommentAppServices
     {
         private readonly ICommentServices _commentServices;
-        //private readonly SiteSettings _siteSettings;
-        public CommentAppServices(ICommentServices commentServices)
+        private readonly CommentConfiguration _commentConfiguration;
+        public CommentAppServices(ICommentServices commentServices, CommentConfiguration commentConfiguration)
         {
             _commentServices = commentServices;
-            //_siteSettings = siteSettings;
+            _commentConfiguration = commentConfiguration;
         }
         public async Task AcceptComment(int commentId, CancellationToken cancellationToken)
            => await _commentServices.AcceptComment(commentId, cancellationToken);
@@ -36,11 +36,11 @@ namespace KareMa.Domain.AppService
           => await _commentServices.Update(commentUpdateDto, cancellationToken);
         public async Task<int> CommentCount(CancellationToken cancellationToken)
           => await _commentServices.CommentCount(cancellationToken);
-        //public async Task<List<RecentCommentDto>> GetRecentComments(CancellationToken cancellationToken)
-        //{
-        //    var resentCount = _siteSettings.CommentConfiguration.RecentCount;
-        //    return await _commentServices.GetRecentComments(resentCount, cancellationToken);
-        //}
+        public async Task<List<RecentCommentDto>> GetRecentComments(CancellationToken cancellationToken)
+        {
+            var resentCount = _commentConfiguration.RecentCount;
+            return await _commentServices.GetRecentComments(resentCount, cancellationToken);
+        }
         public async Task RejectComment(int commentId, CancellationToken cancellationToken)
          => await _commentServices.RejectComment(commentId, cancellationToken);
     }

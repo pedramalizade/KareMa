@@ -18,7 +18,7 @@ namespace KareMa.Domain.Core.Contracts.AppService
         Task<bool> SetScore(int expertId, int score, CancellationToken cancellationToken);
         Task AcceptComment(int commentId, CancellationToken cancellationToken);
         Task RejectComment(int commentId, CancellationToken cancellationToken);
-        //Task<List<RecentCommentDto>> GetRecentComments(CancellationToken cancellationToken);
+        Task<List<RecentCommentDto>> GetRecentComments(CancellationToken cancellationToken);
         Task<int> CommentCount(CancellationToken cancellationToken);
     }
 }

@@ -32,23 +32,23 @@ namespace KareMa.Infra.SqlServer.Configuration
                 .WithOne(s => s.Order)
                 .OnDelete(DeleteBehavior.NoAction);
 
-
             builder.HasData(
-                new Order
-                {
-                    Id = 1,
-                    CreatedAt = new DateTime(2024, 2, 12),
-                    CustomerId = 1,
-                    IsDeleted = false,
-                    Description = "نظافت خونه صد متری هب طور کامل",
-                    ExpertId = 1,
-                    DoneAt = DateTime.Now,
-                    RequestedAt = DateTime.Now,
-                    ServiceId = 1,
-                    Title = "نظافت",
-                    Status = StatusEnum.Confirmed,
-                }
-                );
+          new Order
+          {
+              Id = 1,
+              CreatedAt = new DateTime(2024, 2, 12),
+              CustomerId = 1,
+              IsDeleted = false,
+              Description = "نظافت خونه صد متری یه طور کامل",
+              ExpertId = 1,
+              DoneAt = new DateTime(2024, 2, 12),
+              RequesteForTime = new DateTime(2024, 2, 12),
+              ServiceId = 1,
+              Title = "نظافت",
+              Status = StatusEnum.Confirmed,
+          }
+          );
         }
     }
 }
+

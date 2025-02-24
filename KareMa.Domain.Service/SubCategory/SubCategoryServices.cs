@@ -29,7 +29,11 @@ namespace KareMa.Domain.Service
           => await _subCategoryRepository.Update(serviceSubCategoryUpdateDto, cancellationToken);
         public async Task<List<SubCategoryNameDto>> GetCategorisName(CancellationToken cancellationToken)
       => await _subCategoryRepository.GetCategorisName(cancellationToken);
+        public Task<List<GetByCategoryIdDto>> GetAllByCategoryId(int id, CancellationToken cancellationToken)
+  => _subCategoryRepository.GetAllByCategoryId(id, cancellationToken);
         public async Task<List<GetSubCategoryDto>> GetSubCategories(CancellationToken cancellationToken)
     => await _subCategoryRepository.GetSubCategories(cancellationToken);
+        public async Task<SubCategoryUpdateDto> ServiceSubCategoryUpdateInfo(int id, CancellationToken cancellationToken)
+          => await _subCategoryRepository.ServiceSubCategoryUpdateInfo(id, cancellationToken);
     }
 }

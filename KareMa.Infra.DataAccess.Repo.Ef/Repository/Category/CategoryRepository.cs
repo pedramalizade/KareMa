@@ -37,11 +37,13 @@ namespace KareMa.Infra.DataAccess.Repo.Ef.Repository
         }
         public async Task<List<CategoryNameDto>> GetCategorisName(CancellationToken cancellationToken)
         {
-            var categories = await _context.Categories.AsNoTracking()
+            var categories = await _context.Categories.AsNoTracking().Where(c => c.IsDeleted == false)
                  .Select(s => new CategoryNameDto
                  {
                      Id = s.Id,
                      Name = s.Name,
+                     Image = s.Image
+
                  }).ToListAsync(cancellationToken);
             return categories;
         }

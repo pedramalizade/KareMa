@@ -23,8 +23,8 @@ namespace KareMa.Domain.AppService
         }
         public async Task<bool> Create(CategoryCreateDto categoryCreateDto, IFormFile image, CancellationToken cancellationToken)
         {
-            var imageAddress = await _baseSevices.UploadImage(image);
-            categoryCreateDto.Image = imageAddress;
+            var imageAddress = _baseSevices.UploadImage(image);
+            categoryCreateDto.Image = await imageAddress;
             return await _categoryServices.Create(categoryCreateDto, cancellationToken);
         }
         public async Task<bool> Delete(int serviceCategoryId, CancellationToken cancellationToken)
@@ -37,8 +37,8 @@ namespace KareMa.Domain.AppService
      => _categoryServices.GetCategorisName(cancellationToken);
         public async Task<bool> Update(CategoryUpdateDto categoryUpdateDto, IFormFile image, CancellationToken cancellationToken)
         {
-            var imageAddress = await _baseSevices.UploadImage(image);
-            categoryUpdateDto.Image = imageAddress;
+            var imageAddress = _baseSevices.UploadImage(image);
+            categoryUpdateDto.Image = await imageAddress;
             return await _categoryServices.Update(categoryUpdateDto, cancellationToken);
         }
     }

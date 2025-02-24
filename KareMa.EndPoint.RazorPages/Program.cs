@@ -29,14 +29,39 @@ using Microsoft.Extensions.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Configuration
+.SetBasePath(Directory.GetCurrentDirectory())
+.AddJsonFile("appsettings.json")
+.AddJsonFile("appsettings.Development.json");
+
 //string? Connectionstring = builder.Configuration.GetConnectionString("sql");
 //builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(Connectionstring));
 
+//builder.Services.AddDbContext<AppDbContext>(options =>
+//options.UseSqlServer(builder.Configuration.GetConnectionString("YourConnectionStringName")));
+
+//var configuration = new ConfigurationBuilder()
+//    .AddJsonFile("appsettings.json")
+//    .Build();
+
+//var siteSettings = builder.Configuration.GetSection("SiteSetting").Get<SiteSettings>();
+var seq = builder.Configuration.GetSection("Seq").Get<Seq>();
+
+var commentConfig = builder.Configuration.GetSection("CommentConfiguration").Get<CommentConfiguration>();
+builder.Services.AddSingleton(commentConfig);
+
+//var commentConfiguration = builder.Configuration.GetSection("CommentConfiguration").Get<CommentConfiguration>();
+
+
+var connectionString = builder.Configuration.GetSection("ConnectionStrings").Value;
+
 builder.Services.AddDbContext<AppDbContext>(options =>
-options.UseSqlServer(builder.Configuration.GetConnectionString("YourConnectionStringName")));
+    options.UseSqlServer(connectionString));
+
 
 // Add services to the container.
-builder.Services.AddRazorPages();
+builder.Services.AddRazorPages()
+    .AddRazorRuntimeCompilation();
 
 //Admin Services
 builder.Services.AddScoped<IAdminRepository, AdminRepository>();
@@ -111,25 +136,22 @@ builder.Services.AddIdentity<AppUser, IdentityRole<int>>
         options.Password.RequireNonAlphanumeric = false;
         options.Password.RequireUppercase = false;
         options.Password.RequireLowercase = false;
-    });
-//.AddRoles<IdentityRole<int>>()
-//.AddEntityFrameworkStores<AppDbContext>()
-//.AddErrorDescriber<PersianIdentityErrorDescriber>();
+    })
+    .AddRoles<IdentityRole<int>>()
+    .AddEntityFrameworkStores<AppDbContext>()
+    .AddErrorDescriber<PersianIdentityErrorDescriber>();
 
 
 
+builder.Host.ConfigureLogging(loggingBuilder =>
+{
+    loggingBuilder.ClearProviders();
 
-
-
-//builder.Host.ConfigureLogging(loggingBuilder =>
-//{
-//    loggingBuilder.ClearProviders();
-
-//}).UseSerilog((context, config) =>
-//{
-//    config.WriteTo.Console();
-//    config.WriteTo.Seq(siteSettings.Seq.ServerUrl, LogEventLevel.Information, apiKey: siteSettings.Seq.ApiKey);
-//});
+}).UseSerilog((context, config) =>
+{
+    config.WriteTo.Console();
+    config.WriteTo.Seq(seq.ServerUrl, LogEventLevel.Information, apiKey: seq.ApiKey);
+});
 
 
 
@@ -143,16 +165,16 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
+//app.CustomExceptionHandlingMiddleware();
 
-app.CustomExceptionHandlingMiddleware();
 app.UseHttpsRedirection();
+app.UseStaticFiles();
 
 app.UseRouting();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
-app.MapStaticAssets();
-app.MapRazorPages()
-   .WithStaticAssets();
+app.MapRazorPages();
 
 app.Run();

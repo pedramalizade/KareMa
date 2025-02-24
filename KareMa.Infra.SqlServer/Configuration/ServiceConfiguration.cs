@@ -1,4 +1,5 @@
-﻿using KareMa.Domain.Core.Entities;
+﻿using KareMa.Domain.Core.Contracts.Service;
+using KareMa.Domain.Core.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -9,11 +10,12 @@ public class ServiceConfiguration : IEntityTypeConfiguration<Service>
     public void Configure(EntityTypeBuilder<Service> builder)
     {
         builder.HasOne(s => s.SubCategory)
-            .WithMany(s => s.Services)
+            .WithMany(b => b.Services)
             .OnDelete(DeleteBehavior.NoAction);
 
         builder.HasMany(s => s.Experts)
-            .WithMany(e => e.Services);
+        .WithMany(e => e.Services);
+          
 
         builder.HasMany(s => s.Orders)
             .WithOne(o => o.Service)

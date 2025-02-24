@@ -1,9 +1,11 @@
 ﻿using KareMa.Domain.Core.Contracts.AppService;
 using KareMa.Domain.Core.Contracts.Service;
+using KareMa.Domain.Core.Contracts.Service.BaseService;
 using KareMa.Domain.Core.DTOs.OrderDTO;
 using KareMa.Domain.Core.Entities;
 using KareMa.Domain.Core.Enums;
 using KareMa.Domain.Service;
+using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,14 +17,22 @@ namespace KareMa.Domain.AppService
     public class OrderAppServices : IOrderAppServices
     {
         private readonly IOrderServices _orderServices;
-        public OrderAppServices(IOrderServices orderServices)
+        private readonly IBaseSevices _baseSevices;
+        public OrderAppServices(IOrderServices orderServices, IBaseSevices baseSevices)
         {
             _orderServices = orderServices;
+            _baseSevices = baseSevices; 
         }
         public async Task<bool> ChangeStatus(StatusEnum status, int orderId, CancellationToken cancellationToken)
            => await _orderServices.ChangeStatus(status, orderId, cancellationToken);
-        public async Task<bool> Create(OrderCreateDto orderCreateDto, CancellationToken cancellationToken)
-    => await _orderServices.Create(orderCreateDto, cancellationToken);
+        public async Task<bool> Create(OrderCreateDto orderCreateDto, IFormFile image, string runTime, CancellationToken cancellationToken)
+        {
+            var gregorianDate = _baseSevices.PersianToGregorian(runTime);
+            var imageUrl = await _baseSevices.UploadImage(image);
+            orderCreateDto.Image = imageUrl;
+            orderCreateDto.Date = gregorianDate;
+            return await _orderServices.Create(orderCreateDto, cancellationToken);
+        }
         public async Task<bool> Delete(int orderId, CancellationToken cancellationToken)
      => await _orderServices.Delete(orderId, cancellationToken);
         public Task AcceptStatus(int orderId, CancellationToken cancellationToken)

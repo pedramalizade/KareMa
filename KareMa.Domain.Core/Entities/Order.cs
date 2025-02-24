@@ -30,7 +30,7 @@ namespace KareMa.Domain.Core.Entities
         public string? Image { get; set; }
         public bool IsDeleted { get; set; } = false;
         public DateTime CreatedAt { get; set; } = DateTime.Now;
-        public DateTime RequestedAt { get; set; } = DateTime.Now;
+        public DateTime RequesteForTime { get; set; } = DateTime.Now;
         public DateTime? DoneAt { get; set; }
 
 

@@ -2,10 +2,11 @@
 @model KareMa.EndPoint.RazorPages.Pages.Areas.AdminArea.Pages.ServiceModel
 @{
     Layout = "_AdminLayout";
-    ViewData["Title"] = "سرویس ها | آیدو";
+    ViewData["Title"] = "سرویس ها | کاره ما";
     ViewData["Service"] = " active open";
     ViewData["PageTitle"] = "سرویس";
 }
+
 <div class="card p-5">
     <div class="table-responsive text-nowrap">
         <a asp-page="AddService" class="btn btn-primary">افزودن</a>
@@ -13,14 +14,14 @@
             <thead>
                 <tr>
                     <th>آیدی</th>
-                    @* <th>عکس</th> *@
-                    <th>قیمت</th>
                     <th>نام سرویس</th>
+                    <th>قیمت</th>
                     <th>نام دسته بندی</th>
                     <th>عملیات</th>
                 </tr>
             </thead>
             <tbody class="table-border-bottom-0">
+
                 @foreach (var service in Model.Services)
                 {
                     @if (service.IsDeleted == false)
@@ -29,25 +30,7 @@
                             <td>
                                 @service.Id
                             </td>
-                        @* <td>
-                    @*  <img src="@service.Image.ImageAddress" alt="@service.Image.Alt" class="rounded-circle"> *@
 
-                        @* <td>@service.Name</td>
-                        <td>@service.Price</td>
-                        <td>@service.SubCategory.Name</td>
-                        <td>
-                            <div class="dropdown">
-                                <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
-                                    <i class="bx bx-dots-vertical-rounded"></i>
-                                </button>
-                                <div class="dropdown-menu">
-                                    <a asp-page="UpdateService" asp-route-id="@service.Id">
-                                        <i class="bx bx-edit-alt me-1"></i>
-                                        ویرایش
-                                    </a>
-                                    <a asp-page-handler="Delete" asp-route-id="@service.Id" onclick="return confirm('مطمئنی؟')">
-                                        <i class="bx bx-trash me-1"></i> حذف
-                                    </a> *@
                             <td>@service.Name</td>
                             <td>@service.Price</td>
                             <td>@service.SubCategory.Name</td>
@@ -57,7 +40,7 @@
                                         <i class="bx bx-dots-vertical-rounded"></i>
                                     </button>
                                     <div class="dropdown-menu">
-                                        <a asp-page="UpdateService" asp-route-id="@service.Id">
+                                        <a asp-page="/UpdateService" asp-route-id="@service.Id">
                                             <i class="bx bx-edit-alt me-1"></i>
                                             ویرایش
                                         </a>

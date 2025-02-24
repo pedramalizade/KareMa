@@ -3,12 +3,11 @@
 @model KareMa.EndPoint.RazorPages.Pages.Areas.AdminArea.Pages.ChangeStatusModel
 @{
     Layout = "_AdminLayout";
+    ViewData["Title"] = "   تغییر وضعیت | کاره ما";
+    ViewData["PageTitle"] = "تغییر وضعیت";
 }
 <div class="col-xxl">
     <div class="card mb-4">
-        <div class="card-header d-flex align-items-center justify-content-between">
-            <small class="text-muted float-end primary-font">تغییر وضعیت‌</small>
-        </div>
         <div class="card-body">
             <form method="post" asp-page-handler="ChangeStatus">
                 <div class="row mb-3">
@@ -16,15 +15,12 @@
                     <label class="col-sm-2 col-form-label" asp-for="@Model.Status">نام</label>
                     <div class="col-sm-10">
                         <select asp-for="@Model.Status" class="select2 form-select form-select-lg" data-allow-clear="true">
-                            <option value="@StatusEnum.AwaitingCustomerConfirmation">@StatusEnum.AwaitingCustomerConfirmation</option>
-                            @* <option value="@StatusEnum.AwaitingPayment">@StatusEnum.AwaitingPayment</option> *@
-                            <option value="@StatusEnum.AwaitingSuggestionExperts">@StatusEnum.AwaitingSuggestionExperts</option>
-                          @*   <option value="@StatusEnum.Canceled">@StatusEnum.Canceled</option>
-                            <option value="@StatusEnum.Done">@StatusEnum.Done</option>
-                            <option value="@StatusEnum.Paied">@StatusEnum.Paied</option> *@
-                            <option value="@StatusEnum.Confirmed">@StatusEnum.Confirmed</option>
-                            @* <option value="@StatusEnum.NotConfirmed">@StatusEnum.NotConfirmed</option> *@
-                            }
+
+                            <option value="@StatusEnum.AwaitingCustomerConfirmation">در انتظار تایید متشری</option>
+                            <option value="@StatusEnum.AwaitingSuggestionExperts">در انتظار تایید متخصص</option>
+                            <option value="@StatusEnum.Done"> انجام شد</option>
+                            <option value="@StatusEnum.Confirmed">تایید شد</option>
+
                         </select>
                     </div>
                 </div>

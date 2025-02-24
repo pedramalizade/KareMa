@@ -5,17 +5,15 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static System.Net.Mime.MediaTypeNames;
+//using static System.Net.Mime.MediaTypeNames;
 
 namespace KareMa.Domain.Core.Entities
 {
     public class Service
     {
         public int Id { get; set; }
-        [DisplayName("نام سرویس")]
+        [MaxLength(100)]
         public string Name { get; set; }
-        [DisplayName("توضیحات")]
-        public string Description { get; set; }
         public SubCategory? SubCategory { get; set; }
         public int SubCategoryId { get; set; }
         public List<Expert>? Experts { get; set; }

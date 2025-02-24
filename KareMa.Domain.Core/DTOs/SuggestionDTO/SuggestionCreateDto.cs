@@ -13,7 +13,7 @@ namespace KareMa.Domain.Core.DTOs.SuggestionDTO
     {
         [DisplayName("توضیحات")]
         public string Description { get; set; }
-        public Expert Expert { get; set; }
+        public Entities.Expert Expert { get; set; }
         public int ExpertId { get; set; }
         public Order Order { get; set; }
         public int OrderId { get; set; }

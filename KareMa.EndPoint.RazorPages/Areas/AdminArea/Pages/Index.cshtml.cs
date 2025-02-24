@@ -25,7 +25,7 @@ namespace KareMa.EndPoint.RazorPages.Pages.Areas.AdminArea.Pages
         public CountViewModel CountViewModel { get; set; } = new CountViewModel();
         public async Task OnGet(CancellationToken cancellationToken)
         {
-            //ResentComment = await _commentAppServices.GetRecentComments(cancellationToken);
+            ResentComment = await _commentAppServices.GetRecentComments(cancellationToken);
             CountViewModel.ExpertCount = await _expertAppServices.ExpertCount(cancellationToken);
             CountViewModel.CommentCount = await _commentAppServices.CommentCount(cancellationToken);
             CountViewModel.CommentCount = await _orderAppServices.OrderCount(cancellationToken);

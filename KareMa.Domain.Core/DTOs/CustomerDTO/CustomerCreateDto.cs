@@ -20,5 +20,5 @@ public class CustomerCreateDto
     public string BackUpPhoneNumber { get; set; }
     [DisplayName("شماره کارت بانکی")]
     public string BankCardNumber { get; set; }
-    public List<Address> Addresses { get; set; }
+    public Address Addresses { get; set; }
 }

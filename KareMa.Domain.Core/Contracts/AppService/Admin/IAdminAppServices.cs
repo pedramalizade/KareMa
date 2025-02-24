@@ -14,5 +14,7 @@ namespace KareMa.Domain.Core.Contracts.AppService
         Task<bool> Delete(int adminId, CancellationToken cancellationToken);
         public Task<Admin> GetById(int adminId, CancellationToken cancellationToken);
         public Task<List<Admin>> GetAll(CancellationToken cancellationToken);
+        Task<AdminUpdateDto> AdminUpdateInfo(int id, CancellationToken cancellationToken);
+
     }
 }

@@ -12,6 +12,8 @@ namespace KareMa.Domain.Core.Entities
     public class Admin
     {
         public int Id { get; set; }
+        public AppUser AppUser { get; set; }
+        public int AppUserId { get; set; }
         [MaxLength(20)]
         public string FirstName { get; set; }
         [MaxLength(50)]

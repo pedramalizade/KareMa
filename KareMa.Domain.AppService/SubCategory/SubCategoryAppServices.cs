@@ -31,19 +31,23 @@ namespace KareMa.Domain.AppService
           => await _subCategoryServices.GetById(serviceSubCategoryId, cancellationToken);
         public async Task<bool> Update(SubCategoryUpdateDto subCategoryUpdateDto, IFormFile image, CancellationToken cancellationToken)
         {
-            var imageAddress = await _baseSevices.UploadImage(image);
-            subCategoryUpdateDto.Image = imageAddress;
+            var imageAddress = _baseSevices.UploadImage(image);
+            subCategoryUpdateDto.Image = await imageAddress;
             return await _subCategoryServices.Update(subCategoryUpdateDto, cancellationToken);
         }
         public async Task<List<GetSubCategoryDto>> GetSubCategories(CancellationToken cancellationToken)
   => await _subCategoryServices.GetSubCategories(cancellationToken);
+        public Task<List<GetByCategoryIdDto>> GetAllByCategoryId(int id, CancellationToken cancellationToken)
+  => _subCategoryServices.GetAllByCategoryId(id, cancellationToken);
         public async Task<List<SubCategoryNameDto>> GetCategorisName(CancellationToken cancellationToken)
       => await _subCategoryServices.GetCategorisName(cancellationToken);
+        public async Task<SubCategoryUpdateDto> ServiceSubCategoryUpdateInfo(int id, CancellationToken cancellationToken)
+   => await _subCategoryServices.ServiceSubCategoryUpdateInfo(id, cancellationToken);
 
-        public async Task<bool> Create(SubCategoryCreateDto subCategoryCreateDto, IFormFile image, CancellationToken cancellationToken)
+        public async Task<bool> Create(SubCategoryCreateDto subCategoryCreateDto, CancellationToken cancellationToken, IFormFile image)
         {
-            var imageAddress = await _baseSevices.UploadImage(image);
-            subCategoryCreateDto.Image = imageAddress;
+            var imageAddress = _baseSevices.UploadImage(image);
+            subCategoryCreateDto.Image = await imageAddress;
             return await _subCategoryServices.Create(subCategoryCreateDto, cancellationToken);
         }
     }

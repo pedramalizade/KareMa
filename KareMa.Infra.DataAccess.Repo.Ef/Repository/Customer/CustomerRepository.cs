@@ -26,8 +26,8 @@ namespace KareMa.Infra.DataAccess.Repo.Ef.Repository
                 FirstName = customerCreateDto.FirstName,
                 LastName = customerCreateDto.LastName,
                 Gender = customerCreateDto.Gender,
-                //PhoneNumber = customerCreateDto.PhoneNumber,
-                BackUpPhoneNumber = customerCreateDto.BackUpPhoneNumber,
+                PhoneNumber = customerCreateDto.PhoneNumber,
+                //BackUpPhoneNumber = customerCreateDto.BackUpPhoneNumber,
                 BankCardNumber = customerCreateDto.BankCardNumber,
                 Addresses = customerCreateDto.Addresses,
             };
@@ -66,10 +66,10 @@ namespace KareMa.Infra.DataAccess.Repo.Ef.Repository
 
             targetModel.FirstName = customerUpdateDto.FirstName;
             targetModel.LastName = customerUpdateDto.LastName;
-            targetModel.Gender = customerUpdateDto.Gender;
+            //targetModel.Gender = customerUpdateDto.Gender;
             //targetModel.PhoneNumber = customerUpdateDto.PhoneNumber;
-            targetModel.BackUpPhoneNumber = customerUpdateDto.BackUpPhoneNumber;
-            targetModel.BankCardNumber = customerUpdateDto.BankCardNumber;
+            //targetModel.BackUpPhoneNumber = customerUpdateDto.BackUpPhoneNumber;
+            //targetModel.BankCardNumber = customerUpdateDto.BankCardNumber;
 
             await _context.SaveChangesAsync(cancellationToken);
 
@@ -78,19 +78,48 @@ namespace KareMa.Infra.DataAccess.Repo.Ef.Repository
 
         public async Task<CustomerSummaryDto> GetCustomerSummary(int id, CancellationToken cancellationToken)
         {
-            return await _context.Customers.Where(a => a.IsDeleted == false)
+            var target = await _context.Customers.Where(a => a.Id == id && a.IsDeleted == false)
                 .Select(c => new CustomerSummaryDto
                 {
                     Id = c.Id,
                     FirstName = c.FirstName,
                     LastName = c.LastName,
                     BankCardNumber = c.BankCardNumber,
-                    BackUpPhoneNumber = c.BackUpPhoneNumber,
+                    PhoneNumber = c.PhoneNumber,
                     Gender = c.Gender,
                     Addresses = c.Addresses,
                     Comments = c.Comments,
                     Orders = c.Orders
                 }).FirstOrDefaultAsync(cancellationToken);
+            if (target is not null)
+            {
+                return target;
+            }
+            return new CustomerSummaryDto();
+        }
+        public async Task<CustomerUpdateDto> GetCustomerUpdateInfo(int customerId, CancellationToken cancellationToken)
+        {
+            var targetCustomer = await _context.Customers.AsNoTracking().Include(c => c.Addresses)
+                 .Select(c => new CustomerUpdateDto()
+                 {
+                     Id = c.Id,
+                     FirstName = c.FirstName,
+                     LastName = c.LastName,
+                     PhoneNumber = c.PhoneNumber,
+                     Address = c.Addresses,
+                 }).FirstOrDefaultAsync(c => c.Id == customerId, cancellationToken);
+
+            if (targetCustomer is null)
+                return new CustomerUpdateDto();
+
+            return targetCustomer;
+        }
+
+        public async Task<int> FindCustomerIdWithApplicationUser(int appUserId, CancellationToken cancellationToken)
+        {
+            var targetCustomer = await _context.Customers.FirstOrDefaultAsync(c => c.AppUserId == appUserId, cancellationToken);
+            var customerId = targetCustomer.Id;
+            return customerId;
         }
         public async Task<int> CustomerCount(CancellationToken cancellationToken)
   => await _context.Customers.CountAsync(cancellationToken);

@@ -27,11 +27,10 @@ namespace KareMa.Infra.DataAccess.Repo.Ef.Repository
                 Title = orderCreateDto.Title,
                 Description = orderCreateDto.Description,
                 Status = StatusEnum.AwaitingSuggestionExperts,
-                Customer = orderCreateDto.Customer,
                 CustomerId = orderCreateDto.CustomerId,
-                Service = orderCreateDto.Service,
                 ServiceId = orderCreateDto.ServiceId,
                 Image = orderCreateDto.Image,
+                RequesteForTime = orderCreateDto.Date
             };
             await _context.Orders.AddAsync(newModel, cancellationToken);
 
@@ -96,7 +95,7 @@ namespace KareMa.Infra.DataAccess.Repo.Ef.Repository
 
         public async Task<List<GetOrderDto>> GetOrders(int customerId, CancellationToken cancellationToken)
         {
-            return await _context.Orders.Where(o => o.Customer.Id == customerId && o.IsDeleted == false)
+            var target = await _context.Orders.Where(o => o.Customer.Id == customerId && o.IsDeleted == false)
                 .Select(o => new GetOrderDto
                 {
                     Customer = o.Customer,
@@ -107,8 +106,18 @@ namespace KareMa.Infra.DataAccess.Repo.Ef.Repository
                     Service = o.Service,
                     Status = o.Status,
                     Title = o.Title,
-                    Suggestions = o.Suggestions
+                    Suggestions = o.Suggestions.Select(x => new Suggestion()
+                    {
+                        ExpertId = x.ExpertId,
+                        Expert = x.Expert,
+                        Id = x.Id,
+                        Description = x.Description,
+                        Price = x.Price,
+                        SuggestedDate = x.SuggestedDate,
+                        Status = x.Status,
+                    }).ToList()
                 }).ToListAsync(cancellationToken);
+            return target;
         }
         public async Task AcceptStatus(int orderId, CancellationToken cancellationToken)
         {

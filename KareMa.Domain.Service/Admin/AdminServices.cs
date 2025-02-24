@@ -22,6 +22,8 @@ namespace KareMa.Domain.Service
      => await _adminRepository.Delete(adminId, cancellationToken);
         public async Task<List<Admin>> GetAll(CancellationToken cancellationToken)
    => await _adminRepository.GetAll(cancellationToken);
+        public async Task<AdminUpdateDto> AdminUpdateInfo(int id, CancellationToken cancellationToken)
+  => await _adminRepository.AdminUpdateInfo(id, cancellationToken);
         public async Task<Admin> GetById(int adminId, CancellationToken cancellationToken)
           => await _adminRepository.GetById(adminId, cancellationToken);
         public async Task<bool> Update(AdminUpdateDto adminUpdateDto, CancellationToken cancellationToken)

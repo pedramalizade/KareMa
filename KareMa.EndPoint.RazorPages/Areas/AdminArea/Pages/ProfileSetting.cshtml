@@ -1,0 +1,50 @@
+﻿@page
+@model KareMa.EndPoint.RazorPages.Areas.AdminArea.Pages.ProfileSettingModel
+@{
+    Layout = "_AdminLayout";
+    ViewData["Title"] = "‌ تنظیمات پروفایل | کاره ما";
+    ViewData["ProfileSetting"] = "active open";
+    ViewData["PageTitle"] = "تنظیمات پروفایل";
+}
+<div class="card mb-4">
+    <h5 class="card-header heading-color">جزئیات پروفایل</h5>
+    <!-- Account -->
+    <hr class="my-0">
+    <div class="card-body">
+        <form method="post" asp-page-handler="UpdateAdmin">
+            <div class="row">
+                <div class="mb-3 col-md-6">
+                    <label asp-for="@Model.AdminUpdate.FirstName" class="form-label">نام</label>
+                    <input class="form-control" type="text" asp-for="@Model.AdminUpdate.FirstName" autofocus>
+                    <span asp-validation-for="@Model.AdminUpdate.FirstName" class="text-danger"></span>
+                </div>
+                <div class="mb-3 col-md-6">
+                    <label asp-for="@Model.AdminUpdate.LastName" class="form-label">نام خانوادگی</label>
+                    <input class="form-control" type="text" asp-for="@Model.AdminUpdate.LastName">
+                    <span asp-validation-for="@Model.AdminUpdate.LastName" class="text-danger"></span>
+                </div>
+                <div class="mb-3 col-md-6">
+                    <label asp-for="@Model.AdminUpdate.Email" class="form-label">ایمیل</label>
+                    <input class="form-control text-start" type="text" asp-for="@Model.AdminUpdate.Email" dir="ltr">
+                    <span asp-validation-for="@Model.AdminUpdate.Email" class="text-danger"></span>
+                </div>
+                <div class="mb-3 col-md-6">
+                    <label class="form-label" asp-for="@Model.AdminUpdate.PhoneNumber">شماره تلفن</label>
+                    <div class="input-group input-group-merge">
+                        <input type="text" asp-for="@Model.AdminUpdate.PhoneNumber" class="form-control text-start" dir="ltr">
+                        <span asp-validation-for="@Model.AdminUpdate.PhoneNumber" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-2">
+                <button type="submit" class="btn btn-primary me-2">ذخیره تغییرات</button>
+            </div>
+        </form>
+    </div>
+    <!-- /Account -->
+</div>
+
+@section Scripts {
+
+    <partial name="_ValidationScriptsPartial" />
+}

@@ -8,10 +8,10 @@ namespace KareMa.Domain.Service
 {
     public class CategoryServices : ICategoryServices
     {
-        private readonly CategoryRepository _categoryRepository;
+        private readonly ICategoryRepository _categoryRepository;
         public CategoryServices(ICategoryRepository categoryRepository)
         {
-            _categoryRepository = (CategoryRepository?)categoryRepository; // ?
+            _categoryRepository = categoryRepository; 
         }
         public async Task<bool> Create(CategoryCreateDto serviceCategoryCreateDto, CancellationToken cancellationToken)
            => await _categoryRepository.Create(serviceCategoryCreateDto, cancellationToken);
@@ -20,7 +20,7 @@ namespace KareMa.Domain.Service
         public async Task<List<GetCategoryDto>> GetAll(CancellationToken cancellationToken)
           => await _categoryRepository.GetAll(cancellationToken);
         public async Task<List<CategoryNameDto>> GetCategorisName(CancellationToken cancellationToken)
-  => await _categoryRepository.GetCategorisName(cancellationToken);
+      => await _categoryRepository.GetCategorisName(cancellationToken);
         public async Task<Category> GetById(int serviceCategoryId, CancellationToken cancellationToken)
           => await _categoryRepository.GetById(serviceCategoryId, cancellationToken);
         public async Task<bool> Update(CategoryUpdateDto serviceCategoryUpdateDto, CancellationToken cancellationToken)

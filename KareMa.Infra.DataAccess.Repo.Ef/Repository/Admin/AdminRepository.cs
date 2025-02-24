@@ -47,6 +47,19 @@ namespace KareMa.Infra.DataAccess.Repo.Ef.Repository
         public async Task<List<Admin>> GetAll(CancellationToken cancellationToken)
        => await _context.Admins.AsNoTracking().ToListAsync(cancellationToken);
 
+        public async Task<AdminUpdateDto> AdminUpdateInfo(int id, CancellationToken cancellationToken)
+        {
+            var m = await _context.Admins.Select(a => new AdminUpdateDto
+            {
+                Id = a.Id,
+                Email = a.AppUser.Email,
+                FirstName = a.FirstName,
+                LastName = a.LastName,
+                PhoneNumber = a.AppUser.PhoneNumber
+
+            }).FirstOrDefaultAsync(a => a.Id == id, cancellationToken);
+            return m;
+        }
 
         public async Task<Admin> GetById(int adminId, CancellationToken cancellationToken)
           => await FindAdmin(adminId, cancellationToken);

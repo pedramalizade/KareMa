@@ -67,8 +67,24 @@ namespace KareMa.Infra.DataAccess.Repo.Ef.Repository
         public async Task AcceptSuggestion(int id, CancellationToken cancellationToken)
         {
             var targetSuggestion = await _context.Suggestions.FirstOrDefaultAsync(s => s.Id == id, cancellationToken);
-            targetSuggestion.Status = StatusEnum.Confirmed;
-            _context.SaveChangesAsync(cancellationToken);
+
+            var orderId = targetSuggestion.OrderId;
+
+            var otherSuggestions = await _context.Suggestions.Where(s => s.OrderId == orderId).ToListAsync(cancellationToken);
+
+            foreach (var suggestion in otherSuggestions)
+            {
+                if (suggestion.Id == id)
+                {
+                    suggestion.Status = StatusEnum.Confirmed;
+                }
+                else
+                {
+                    suggestion.Status = StatusEnum.NotConfirmed;
+                }
+            }
+
+            await _context.SaveChangesAsync(cancellationToken);
         }
         public async Task<int> ConfrimedStatusCount(int orderId, CancellationToken cancellationToken)
         {

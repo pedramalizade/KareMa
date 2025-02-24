@@ -14,9 +14,6 @@ namespace KareMa.Infra.SqlServer.Configuration
         public void Configure(EntityTypeBuilder<City> builder)
         {
             builder.HasKey(c => c.Id);
-            builder.HasMany(c => c.Address)
-                .WithOne(c => c.City)
-                .OnDelete(DeleteBehavior.NoAction);
 
             builder.HasMany(c => c.Address)
                 .WithOne(c => c.City)

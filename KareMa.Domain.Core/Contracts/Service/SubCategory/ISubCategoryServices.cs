@@ -17,6 +17,9 @@ namespace KareMa.Domain.Core.Contracts.Service
         Task<List<SubCategory>> GetAll(CancellationToken cancellationToken);
         Task<List<SubCategoryNameDto>> GetCategorisName(CancellationToken cancellationToken);
         Task<List<GetSubCategoryDto>> GetSubCategories(CancellationToken cancellationToken);
+        Task<List<GetByCategoryIdDto>> GetAllByCategoryId(int id, CancellationToken cancellationToken);
+        Task<SubCategoryUpdateDto> ServiceSubCategoryUpdateInfo(int id, CancellationToken cancellationToken);
+
 
     }
 }

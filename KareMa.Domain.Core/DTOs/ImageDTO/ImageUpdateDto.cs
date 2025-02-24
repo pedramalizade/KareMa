@@ -15,7 +15,8 @@ namespace KareMa.Domain.Core.DTOs.ImageDTO
         public string? Alt { get; set; }
         [DisplayName("آدرس تصویر")]
         public string ImageAddress { get; set; }
-        public Expert? Expert { get; set; }
+        public Entities.Expert Expert { get; set; }
+        //public Expert? Expert { get; set; }
         public int? ExpertId { get; set; }
         public Order? Order { get; set; }
         public int OrderId { get; set; }

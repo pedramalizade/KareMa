@@ -1094,6 +1094,7 @@
         "dependencies": {
           "KareMa.Domain.Core": "1.0.0",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "9.0.2",
+          "Microsoft.EntityFrameworkCore": "9.0.2",
           "Microsoft.EntityFrameworkCore.SqlServer": "9.0.2"
         },
         "runtime": {

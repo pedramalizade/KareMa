@@ -2,32 +2,51 @@
 @model KareMa.EndPoint.RazorPages.Areas.AdminArea.Pages.UpdateServiceModel
 @{
     Layout = "_AdminLayout";
+    ViewData["Title"] = "  ویرایش سرویس ها | کاره ما";
+    ViewData["PageTitle"] = " ویرایش سرویس";
 }
 <div class="col-xxl">
     <div class="card mb-4">
-        <div class="card-header d-flex align-items-center justify-content-between">
-            <small class="text-muted float-end primary-font">ویرایش‌</small>
-        </div>
         <div class="card-body">
             <form method="post" asp-page-handler="Update">
                 <div class="row mb-3">
-                    <input hidden asp-for="@Model.ServiceUpdate.Id" value="@Model.Service.Id" />
-                    <label class="col-sm-2 col-form-label" asp-for="@Model.ServiceUpdate.Name">نام</label>
+                    <input hidden asp-for="@Model.ServiceUpdate.Id" value="@Model.ServiceUpdate.Id" />
+                    <label class="col-sm-2 col-form-label" asp-for="@Model.ServiceUpdate.ServiceName">نام</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" asp-for="@Model.ServiceUpdate.Name">
+                        <input type="text" class="form-control" asp-for="@Model.ServiceUpdate.ServiceName">
+                        <span asp-validation-for="@Model.ServiceUpdate.ServiceName" class="text-danger"></span>
                     </div>
                 </div>
                 <div class="row mb-3">
                     <label class="col-sm-2 col-form-label" asp-for="@Model.ServiceUpdate.Price">قیمت</label>
                     <div class="col-sm-10">
                         <input type="number" class="form-control" asp-for="@Model.ServiceUpdate.Price">
+                        <span asp-validation-for="@Model.ServiceUpdate.Price" class="text-danger"></span>
                     </div>
-                    <div class="row justify-content-end">
-                        <div class="col-sm-10">
-                            <button type="submit" class="btn btn-primary">ارسال</button>
-                        </div>
+                </div>
+                <div class="row mb-3">
+                    <label class="col-sm-2 col-form-label" asp-for="@Model.ServiceUpdate.SubCategoryId">دسته بندی</label>
+                    <div class="col-sm-10">
+                        <select id="select2Basic" asp-for="@Model.ServiceUpdate.SubCategoryId" class="select2 form-select form-select-lg" data-allow-clear="true">
+                            @foreach (var category in Model.SubCategoryNames)
+                            {
+                                <option value="@category.Id">@category.Name</option>
+                            }
+                        </select>
+                        <span asp-validation-for="@Model.ServiceUpdate.SubCategoryId" class="text-danger"></span>
                     </div>
+                </div>
+                <div class="row justify-content-end">
+                    <div class="col-sm-10">
+                        <button type="submit" class="btn btn-primary">ارسال</button>
+                    </div>
+                </div>
             </form>
         </div>
     </div>
 </div>
+
+@section Scripts {
+
+    <partial name="_ValidationScriptsPartial" />
+}

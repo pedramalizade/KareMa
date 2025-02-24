@@ -2,7 +2,7 @@
 @model KareMa.EndPoint.RazorPages.Pages.Areas.AdminArea.Pages.SubCategoryModel
 @{
     Layout = "_AdminLayout";
-    ViewData["Title"] = " دسته بندی فرعی سوریس ها | آیدو";
+    ViewData["Title"] = " دسته بندی فرعی سوریس ها | کاره ما";
     ViewData["Subcategory"] = " active open";
     ViewData["PageTitle"] = "دسته بندی فرعی";
 }
@@ -13,7 +13,7 @@
             <thead>
                 <tr>
                     <th>آیدی</th>
-                    @* <th>عکس</th> *@
+                    <th>عکس</th>
                     <th>نام سرویس</th>
                     <th>نام دسته بندی</th>
                     <th>عملیات</th>
@@ -28,8 +28,16 @@
                             <td>
                                 @category.Id
                             </td>
-                            @* <td>
-                    @*  <img src="@service.Image.ImageAddress" alt="@service.Image.Alt" class="rounded-circle"> *@
+                            <td>
+                                @if (category.Image == null || category.Image == string.Empty)
+                                {
+                                    <img src="~/assets/img/none.png" class="rounded-circle " width="100px" height="100px" />
+                                }
+                                else
+                                {
+                                    <img src="@category.Image" alt="@category.Image" class="rounded-circle" width="100px" height="100px" />
+                                }
+                            </td>
                             <td>@category.Name</td>
                             <td>@category.Category.Name</td>
                             <td>
@@ -38,11 +46,10 @@
                                         <i class="bx bx-dots-vertical-rounded"></i>
                                     </button>
                                     <div class="dropdown-menu">
-                                        <a asp-page="UpdateSubCategory" asp-route-id="@category.Id">
-                                            <i class="bx bx-edit-alt me-1"></i>
-                                            ویرایش
+                                        <a class="dropdown-item" asp-page="UpdateSubCategory" asp-route-id="@category.Id">
+                                            <i class="bx bx-edit-alt me-1"></i> ویرایش
                                         </a>
-                                        <a asp-page-handler="Delete" asp-route-id="@category.Id" onclick="return confirm('مطمئنی؟')">
+                                        <a class="dropdown-item" asp-page-handler="Delete" asp-route-id="@category.Id" onclick="return confirm('مطمئنی؟')">
                                             <i class="bx bx-trash me-1"></i> حذف
                                         </a>
                                     </div>

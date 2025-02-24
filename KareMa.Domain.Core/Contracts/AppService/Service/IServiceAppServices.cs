@@ -16,5 +16,10 @@ namespace KareMa.Domain.Core.Contracts
         Task<bool> Delete(int serviceId, CancellationToken cancellationToken);
         Task<Entities.Service> GetById(int serviceId, CancellationToken cancellationToken);
         Task<List<GetServiceDto>> GetAll(CancellationToken cancellationToken);
+        Task<List<GetByCategorySubIdDto>> GetAllBySubCategoryId(int id, CancellationToken cancellationToken);
+        Task<ServiceUpdateDto> ServiceUpdateInfo(int id, CancellationToken cancellationToken);
+        Task<List<ServicesNameDto>> GetServicesName(CancellationToken cancellationToken);
+        Task<ServiceNameAndPriceDto> GetServiceNameAndPrice(int id, CancellationToken cancellationToken);
+
     }
 }

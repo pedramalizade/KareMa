@@ -1,4 +1,5 @@
 C:\Users\asus\source\repos\KareMa\KareMa.Infra.DataAccess.Repo.Ef\bin\Debug\net9.0\KareMa.Infra.DataAccess.Repo.Ef.deps.json
+C:\Users\asus\source\repos\KareMa\KareMa.Infra.DataAccess.Repo.Ef\bin\Debug\net9.0\KareMa.Infra.DataAccess.Repo.Ef.runtimeconfig.json
 C:\Users\asus\source\repos\KareMa\KareMa.Infra.DataAccess.Repo.Ef\bin\Debug\net9.0\KareMa.Infra.DataAccess.Repo.Ef.dll
 C:\Users\asus\source\repos\KareMa\KareMa.Infra.DataAccess.Repo.Ef\bin\Debug\net9.0\KareMa.Infra.DataAccess.Repo.Ef.pdb
 C:\Users\asus\source\repos\KareMa\KareMa.Infra.DataAccess.Repo.Ef\bin\Debug\net9.0\KareMa.Domain.Core.dll
@@ -15,6 +16,5 @@ C:\Users\asus\source\repos\KareMa\KareMa.Infra.DataAccess.Repo.Ef\obj\Debug\net9
 C:\Users\asus\source\repos\KareMa\KareMa.Infra.DataAccess.Repo.Ef\obj\Debug\net9.0\KareMa.Infra.DataAccess.Repo.Ef.dll
 C:\Users\asus\source\repos\KareMa\KareMa.Infra.DataAccess.Repo.Ef\obj\Debug\net9.0\refint\KareMa.Infra.DataAccess.Repo.Ef.dll
 C:\Users\asus\source\repos\KareMa\KareMa.Infra.DataAccess.Repo.Ef\obj\Debug\net9.0\KareMa.Infra.DataAccess.Repo.Ef.pdb
-C:\Users\asus\source\repos\KareMa\KareMa.Infra.DataAccess.Repo.Ef\obj\Debug\net9.0\ref\KareMa.Infra.DataAccess.Repo.Ef.dll
-C:\Users\asus\source\repos\KareMa\KareMa.Infra.DataAccess.Repo.Ef\bin\Debug\net9.0\KareMa.Infra.DataAccess.Repo.Ef.runtimeconfig.json
 C:\Users\asus\source\repos\KareMa\KareMa.Infra.DataAccess.Repo.Ef\obj\Debug\net9.0\KareMa.Infra.DataAccess.Repo.Ef.genruntimeconfig.cache
+C:\Users\asus\source\repos\KareMa\KareMa.Infra.DataAccess.Repo.Ef\obj\Debug\net9.0\ref\KareMa.Infra.DataAccess.Repo.Ef.dll

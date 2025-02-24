@@ -22,7 +22,7 @@ build_property.EnableComHosting =
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 9.0
 build_property.SupportLocalizedComponentNames = 
-build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = true
 build_property.MSBuildProjectDirectory = C:\Users\asus\source\repos\KareMa\KareMa.EndPoint.RazorPages
 build_property._RazorSourceGeneratorDebug = 
 build_property.EffectiveAnalysisLevelStyle = 9.0
@@ -88,6 +88,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5BcmVhXFBhZ2VzXE9yZGVyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/asus/source/repos/KareMa/KareMa.EndPoint.RazorPages/Areas/AdminArea/Pages/ProfileSetting.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5BcmVhXFBhZ2VzXFByb2ZpbGVTZXR0aW5nLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/asus/source/repos/KareMa/KareMa.EndPoint.RazorPages/Areas/AdminArea/Pages/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5BcmVhXFBhZ2VzXFJlZ2lzdGVyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/asus/source/repos/KareMa/KareMa.EndPoint.RazorPages/Areas/AdminArea/Pages/Service.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5BcmVhXFBhZ2VzXFNlcnZpY2UuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -120,28 +128,72 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5BcmVhXFBhZ2VzXFVwZGF0ZVN1YkNhdGVnb3J5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/asus/source/repos/KareMa/KareMa.EndPoint.RazorPages/Areas/AdminArea/Pages/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5BcmVhXFBhZ2VzXF9WaWV3SW1wb3J0cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/asus/source/repos/KareMa/KareMa.EndPoint.RazorPages/Areas/CustomerArea/Pages/AddOrder.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ3VzdG9tZXJBcmVhXFBhZ2VzXEFkZE9yZGVyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/asus/source/repos/KareMa/KareMa.EndPoint.RazorPages/Areas/CustomerArea/Pages/CustomerOrders.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ3VzdG9tZXJBcmVhXFBhZ2VzXEN1c3RvbWVyT3JkZXJzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/asus/source/repos/KareMa/KareMa.EndPoint.RazorPages/Areas/CustomerArea/Pages/CustomerProfileSetting.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ3VzdG9tZXJBcmVhXFBhZ2VzXEN1c3RvbWVyUHJvZmlsZVNldHRpbmcuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/asus/source/repos/KareMa/KareMa.EndPoint.RazorPages/Areas/CustomerArea/Pages/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ3VzdG9tZXJBcmVhXFBhZ2VzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/asus/source/repos/KareMa/KareMa.EndPoint.RazorPages/Areas/CustomerArea/Pages/Shared/_CustomerProfileLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ3VzdG9tZXJBcmVhXFBhZ2VzXFNoYXJlZFxfQ3VzdG9tZXJQcm9maWxlTGF5b3V0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/asus/source/repos/KareMa/KareMa.EndPoint.RazorPages/Areas/CustomerArea/Pages/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ3VzdG9tZXJBcmVhXFBhZ2VzXFNoYXJlZFxfVmFsaWRhdGlvblNjcmlwdHNQYXJ0aWFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/asus/source/repos/KareMa/KareMa.EndPoint.RazorPages/Areas/CustomerArea/Pages/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ3VzdG9tZXJBcmVhXFBhZ2VzXF9WaWV3SW1wb3J0cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/asus/source/repos/KareMa/KareMa.EndPoint.RazorPages/Areas/CustomerArea/Pages/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ3VzdG9tZXJBcmVhXFBhZ2VzXF9WaWV3U3RhcnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/asus/source/repos/KareMa/KareMa.EndPoint.RazorPages/Pages/AddOrder.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRkT3JkZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/asus/source/repos/KareMa/KareMa.EndPoint.RazorPages/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/asus/source/repos/KareMa/KareMa.EndPoint.RazorPages/Pages/ExpertDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXhwZXJ0RGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/asus/source/repos/KareMa/KareMa.EndPoint.RazorPages/Pages/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/asus/source/repos/KareMa/KareMa.EndPoint.RazorPages/Pages/Privacy.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeS5jc2h0bWw=
+[C:/Users/asus/source/repos/KareMa/KareMa.EndPoint.RazorPages/Pages/Service.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2VydmljZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/asus/source/repos/KareMa/KareMa.EndPoint.RazorPages/Pages/Shared/_AdminLayout.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9BZG1pbkxheW91dC5jc2h0bWw=
+[C:/Users/asus/source/repos/KareMa/KareMa.EndPoint.RazorPages/Pages/Shared/_LoginPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/asus/source/repos/KareMa/KareMa.EndPoint.RazorPages/Pages/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/asus/source/repos/KareMa/KareMa.EndPoint.RazorPages/Pages/UpdateService.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXBkYXRlU2VydmljZS5jc2h0bWw=
+[C:/Users/asus/source/repos/KareMa/KareMa.EndPoint.RazorPages/Pages/SubCategory.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3ViQ2F0ZWdvcnkuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/asus/source/repos/KareMa/KareMa.EndPoint.RazorPages/Pages/_ViewImports.cshtml]

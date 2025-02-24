@@ -29,6 +29,8 @@ namespace KareMa.Domain.AppService
           => await _customerServices.GetAll(cancellationToken);
         public async Task<Customer> GetById(int customerId, CancellationToken cancellationToken)
           => await _customerServices.GetById(customerId, cancellationToken);
+        public async Task<CustomerUpdateDto> GetCustomerUpdateInfo(int customerId, CancellationToken cancellationToken)
+  => await _customerServices.GetCustomerUpdateInfo(customerId, cancellationToken);
         public async Task<bool> Update(CustomerUpdateDto customerUpdateDto, CancellationToken cancellationToken)
           => await _customerServices.Update(customerUpdateDto, cancellationToken);
     }

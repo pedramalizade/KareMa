@@ -2,7 +2,7 @@
 @model KareMa.EndPoint.RazorPages.Pages.Areas.AdminArea.Pages.OrderModel
 @{
     Layout = "_AdminLayout";
-    ViewData["Title"] = " درخواست‌ها | آیدو";
+    ViewData["Title"] = " درخواست‌ها | کاره ما";
     ViewData["[Order]"] = " active open";
     ViewData["PageTitle"] = "درخواست";
 }
@@ -12,7 +12,7 @@
             <thead>
                 <tr>
                     <th>آیدی</th>
-                    @* <th>عکس</th> *@
+                    <th>عکس</th>
                     <th>عنوان</th>
                     <th>توضیحات</th>
                     <th>نام مشتری</th>
@@ -29,8 +29,9 @@
                         <td>
                             @order.Id
                         </td>
-                        @* <td>
-                    @*  <img src="@service.Image.ImageAddress" alt="@service.Image.Alt" class="rounded-circle"> *@
+                        <td>
+                            <img src="@order.Image" alt="@order.Image" class="rounded-circle" width="100px" height="100px">
+                        </td>
                         <td>@order.Title</td>
                         <td>@order.Description</td>
                         <td>@order.Customer.FirstName @order.Customer.LastName</td>
@@ -50,6 +51,10 @@
                         {
                             <td>0</td>
                         }
+                        <td>
+                            @order.Status
+
+                        </td>
                         <td>
                             @order.Status
                             <a class="btn btn-success" asp-page="ChangeStatus" asp-route-id="@order.Id">

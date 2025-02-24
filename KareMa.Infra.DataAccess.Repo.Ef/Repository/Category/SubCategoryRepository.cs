@@ -43,7 +43,32 @@ namespace KareMa.Infra.DataAccess.Repo.Ef.Repository
         }
 
         public async Task<List<SubCategory>> GetAll(CancellationToken cancellationToken)
-         => await _context.SubCategories.AsNoTracking().ToListAsync(cancellationToken);
+        {
+            return await _context.SubCategories.AsNoTracking().Where(c => c.IsDeleted == false)
+                 .Select(s => new SubCategory()
+                 {
+                     Id = s.Id,
+                     Name = s.Name,
+                     Image = s.Image,
+                     CreatedAt = s.CreatedAt,
+                     IsDeleted = s.IsDeleted,
+                     Category = s.Category,
+                     CategoryId = s.CategoryId,
+                     Services = s.Services.Select(x => new Service()
+                     {
+                         Id = x.Id,
+                         Experts = x.Experts,
+                         Price = x.Price,
+                         Name = x.Name,
+                         CreatedAt = x.CreatedAt,
+                         IsDeleted = x.IsDeleted,
+                         Orders = x.Orders,
+                         SubCategory = x.SubCategory,
+                         SubCategoryId = x.SubCategoryId
+                     }).ToList()
+                 })
+                 .ToListAsync(cancellationToken);
+        }
 
         public async Task<SubCategory> GetById(int SubCategoryId, CancellationToken cancellationToken)
        => await FindServiceSubCategory(SubCategoryId, cancellationToken);
@@ -56,6 +81,18 @@ namespace KareMa.Infra.DataAccess.Repo.Ef.Repository
                      Name = s.Name,
                  }).ToListAsync(cancellationToken);
             return subcategories;
+        }
+
+        public async Task<List<GetByCategoryIdDto>> GetAllByCategoryId(int id, CancellationToken cancellationToken)
+        {
+            return await _context.SubCategories.Where(x => x.CategoryId == id && x.IsDeleted == false).AsNoTracking()
+                .Select(c => new GetByCategoryIdDto
+                {
+                    Id = c.Id,
+                    Image = c.Image,
+                    Name = c.Name
+                })
+                .ToListAsync(cancellationToken);
         }
         public async Task<List<GetSubCategoryDto>> GetSubCategories(CancellationToken cancellationToken)
         {
@@ -72,11 +109,24 @@ namespace KareMa.Infra.DataAccess.Repo.Ef.Repository
             return subcategories;
         }
 
+        public async Task<SubCategoryUpdateDto> ServiceSubCategoryUpdateInfo(int id, CancellationToken cancellationToken)
+        {
+            return await _context.SubCategories.AsNoTracking().Where(c => c.IsDeleted == false)
+                .Select(s => new SubCategoryUpdateDto
+                {
+                    Id = s.Id,
+                    CategoryName = s.Name ,
+                    Image = s.Image,
+                    CategoryId = s.CategoryId
+
+                }).FirstOrDefaultAsync(s => s.Id == id, cancellationToken);
+        }
+
         public async Task<bool> Update(SubCategoryUpdateDto subCategoryUpdateDto, CancellationToken cancellationToken)
         {
             var targetModel = await FindServiceSubCategory(subCategoryUpdateDto.Id, cancellationToken);
 
-            targetModel.Name = subCategoryUpdateDto.Name;
+            targetModel.Name = subCategoryUpdateDto.CategoryName;
             targetModel.Image = subCategoryUpdateDto.Image;
             //targetModel.Services = subCategoryUpdateDto.Services;
             //targetModel.Category = subCategoryUpdateDto.Category;

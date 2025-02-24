@@ -1,3 +1,5 @@
+using KareMa.Domain.Core.Contracts.AppService;
+using KareMa.Domain.Core.DTOs.CategoryDTO;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
@@ -5,16 +7,19 @@ namespace KareMa.EndPoint.RazorPages.Pages
 {
     public class IndexModel : PageModel
     {
-        private readonly ILogger<IndexModel> _logger;
+        private readonly ICategoryAppServices _categoryAppServices;
 
-        public IndexModel(ILogger<IndexModel> logger)
+        public IndexModel(ICategoryAppServices categoryAppServices)
         {
-            _logger = logger;
+            _categoryAppServices = categoryAppServices;
         }
 
-        public void OnGet()
-        {
+        [BindProperty]
+        public List<CategoryNameDto> CategoryNames { get; set; } = new List<CategoryNameDto>();
 
+        public async Task OnGet(CancellationToken cancellationToken)
+        {
+            CategoryNames = await _categoryAppServices.GetCategorisName(cancellationToken);
         }
     }
 }

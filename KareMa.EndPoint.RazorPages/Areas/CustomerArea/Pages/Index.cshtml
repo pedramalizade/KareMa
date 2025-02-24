@@ -1,0 +1,15 @@
+﻿@page
+@model KareMa.EndPoint.RazorPages.Areas.CustomerArea.Pages.IndexModel
+@{
+    Layout = "_CustomerLayout";
+    ViewData["Dashboard"] = "active";
+}
+<div class="dashboard-tlbar d-block mb-5">
+    <div class="row">
+        <div class="colxl-12 col-lg-12 col-md-12">
+            <h3 class="breadcrumb-item"><a href="#" class="theme-cl">داشبورد</a></h3>
+            <br>
+            <h6 class="ft-medium fs-4">سلام @Model.CustomerSummary.FirstName</h6>
+        </div>
+    </div>
+</div>
