@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("KareMa.EndPoint.RazorPages")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0eb88408f2f8edfcac41e9767a6dcb8e0d85f015")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+88da66d5564406590c3b1872213a27b19d7da813")]
 [assembly: System.Reflection.AssemblyProductAttribute("KareMa.EndPoint.RazorPages")]
 [assembly: System.Reflection.AssemblyTitleAttribute("KareMa.EndPoint.RazorPages")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

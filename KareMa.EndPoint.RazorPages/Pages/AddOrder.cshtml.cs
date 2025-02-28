@@ -1,4 +1,4 @@
-using KareMa.Domain.Core.Contracts.AppService;
+﻿using KareMa.Domain.Core.Contracts.AppService;
 using KareMa.Domain.Core.Contracts;
 using KareMa.Domain.Core.DTOs.OrderDTO;
 using Microsoft.AspNetCore.Authorization;
@@ -28,13 +28,13 @@ namespace KareMa.EndPoint.RazorPages.Pages
         public OrderCreateDto Order { get; set; }
 
         [BindProperty]
-        [Required(ErrorMessage = " ??? ????????? ???? ????? ????")]
+        [Required(ErrorMessage = " عکس نمی‌تواند بدون مقدار باشد")]
         public IFormFile Image { get; set; }
 
         [BindProperty]
-        [Required(ErrorMessage = "????? ????????? ???? ????? ????")]
-        [RegularExpression("^((1[34]\\d{2}|140[0-3])\\/(0[1-9]|1[0-2])\\/(0[1-9]|[12]\\d|3[01]) (2[0-3]|[01]\\d):([0-5]\\d):([0-5]\\d))$", ErrorMessage = "???? ????? ???? ?? ???? yyyy/mm/dd hh:mm:ss ????.")]
-        [Length(19, 19, ErrorMessage = "????? ????????? ???? ?? ????? ?? 19 ??????? ????")]
+        [Required(ErrorMessage = "تاریخ نمی‌تواند بدون مقدار باشد")]
+        [RegularExpression("^((1[34]\\d{2}|140[0-3])\\/(0[1-9]|1[0-2])\\/(0[1-9]|[12]\\d|3[01]) (2[0-3]|[01]\\d):([0-5]\\d):([0-5]\\d))$", ErrorMessage = "فرمت تاریخ باید به صورت yyyy/mm/dd hh:mm:ss باشد.")]
+        [Length(19, 19, ErrorMessage = "تاریخ نمی‌تواند کمتر یا بیشتر از 19 کاراکتر باشد")]
         public string Date { get; set; }
         public async Task OnGet(int id, CancellationToken cancellationToken)
         {

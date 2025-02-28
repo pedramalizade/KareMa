@@ -17,7 +17,6 @@ namespace KareMa.Domain.Core.DTOs.ServiceDTO
         [Required(ErrorMessage = "نام سرویس  نمی‌تواند بدون مقدار باشد")]
         public string Name { get; set; }
         public int SubCategoryId { get; set; }
-        public string? Image { get; set; }
         [DisplayName("قیمت")]
         [Range(100000, 99000000, ErrorMessage = "قیمت نمی‌تواند کمتر از 100 هزار تومان (100000) و بیشتر از 99 میلیون تومان (99000000) باشد")]
         [Required(ErrorMessage = "قیمت نمی‌تواند بدون مقدار باشد")]

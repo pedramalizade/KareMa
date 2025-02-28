@@ -17028,6 +17028,30 @@
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-dtMMDGUYtCh7jGachRizmptizk2wZEIdAehT2N0uaxM="}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"86027"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u0022dtMMDGUYtCh7jGachRizmptizk2wZEIdAehT2N0uaxM=\u0022"},{"Name":"Last-Modified","Value":"Tue, 11 Feb 2025 09:15:15 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/KareMa.EndPoint.RazorPages/assets/img/logo/init.fwahpmjy4d.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\logo\init.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"fwahpmjy4d"},{"Name":"integrity","Value":"sha256-b9Lx3Ul9cM9xFthT\u002B\u002B5/NRlcXHAkzZs/EPZ/cAG7cGs="},{"Name":"label","Value":"_content/KareMa.EndPoint.RazorPages/assets/img/logo/init.jpg"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"77590"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022b9Lx3Ul9cM9xFthT\u002B\u002B5/NRlcXHAkzZs/EPZ/cAG7cGs=\u0022"},{"Name":"Last-Modified","Value":"Wed, 26 Feb 2025 10:03:38 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/KareMa.EndPoint.RazorPages/assets/img/logo/init.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\logo\init.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-b9Lx3Ul9cM9xFthT\u002B\u002B5/NRlcXHAkzZs/EPZ/cAG7cGs="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"77590"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022b9Lx3Ul9cM9xFthT\u002B\u002B5/NRlcXHAkzZs/EPZ/cAG7cGs=\u0022"},{"Name":"Last-Modified","Value":"Wed, 26 Feb 2025 10:03:38 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/KareMa.EndPoint.RazorPages/assets/img/logo/logoo.png">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\logo\logoo.png'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-QYET58YrkQfxFx4ElWvHFdSiynyQXkMhw66TGlMmt2U="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"181339"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u0022QYET58YrkQfxFx4ElWvHFdSiynyQXkMhw66TGlMmt2U=\u0022"},{"Name":"Last-Modified","Value":"Thu, 27 Feb 2025 06:39:10 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/KareMa.EndPoint.RazorPages/assets/img/logo/logoo.rlff2om2jp.png">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\logo\logoo.png'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"rlff2om2jp"},{"Name":"integrity","Value":"sha256-QYET58YrkQfxFx4ElWvHFdSiynyQXkMhw66TGlMmt2U="},{"Name":"label","Value":"_content/KareMa.EndPoint.RazorPages/assets/img/logo/logoo.png"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"181339"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u0022QYET58YrkQfxFx4ElWvHFdSiynyQXkMhw66TGlMmt2U=\u0022"},{"Name":"Last-Modified","Value":"Thu, 27 Feb 2025 06:39:10 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/KareMa.EndPoint.RazorPages/assets/img/m-1.6dn7sgk6j0.png">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\m-1.png'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
@@ -18628,13 +18652,13 @@
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\KareMa.EndPoint.RazorPages.t40s8yt41u.bundle.scp.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-U3C\u002BIoWaHzC6tUAtffWZ12sFqLI2syLaZgWWWHY83LM="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"1144"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022U3C\u002BIoWaHzC6tUAtffWZ12sFqLI2syLaZgWWWHY83LM=\u0022"},{"Name":"Last-Modified","Value":"Mon, 24 Feb 2025 18:34:22 GMT"}]]]></ResponseHeaders>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"1144"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022U3C\u002BIoWaHzC6tUAtffWZ12sFqLI2syLaZgWWWHY83LM=\u0022"},{"Name":"Last-Modified","Value":"Tue, 25 Feb 2025 12:17:00 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/KareMa.EndPoint.RazorPages/KareMa.EndPoint.RazorPages.t40s8yt41u.bundle.scp.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\KareMa.EndPoint.RazorPages.t40s8yt41u.bundle.scp.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"t40s8yt41u"},{"Name":"integrity","Value":"sha256-U3C\u002BIoWaHzC6tUAtffWZ12sFqLI2syLaZgWWWHY83LM="},{"Name":"label","Value":"_content/KareMa.EndPoint.RazorPages/KareMa.EndPoint.RazorPages.bundle.scp.css"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"1144"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022U3C\u002BIoWaHzC6tUAtffWZ12sFqLI2syLaZgWWWHY83LM=\u0022"},{"Name":"Last-Modified","Value":"Mon, 24 Feb 2025 18:34:22 GMT"}]]]></ResponseHeaders>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"1144"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022U3C\u002BIoWaHzC6tUAtffWZ12sFqLI2syLaZgWWWHY83LM=\u0022"},{"Name":"Last-Modified","Value":"Tue, 25 Feb 2025 12:17:00 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/KareMa.EndPoint.RazorPages/lib/bootstrap/dist/css/bootstrap-grid.bqjiyaj88i.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\lib\bootstrap\dist\css\bootstrap-grid.css'))</AssetFile>
@@ -20184,6 +20208,18 @@
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-tJDNm9T1mztNsuMj0LFUPpM7gU/snQRj/0bk0Wt2vfg="}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"76647"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022tJDNm9T1mztNsuMj0LFUPpM7gU/snQRj/0bk0Wt2vfg=\u0022"},{"Name":"Last-Modified","Value":"Tue, 11 Feb 2025 09:15:15 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/KareMa.EndPoint.RazorPages/uploads/032c6553-ff5e-4b5e-bcbf-5fc7a4b6c8a3_young-people-doing-housework-living-room_52683-22049.2mn24nx4n5.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\032c6553-ff5e-4b5e-bcbf-5fc7a4b6c8a3_young-people-doing-housework-living-room_52683-22049.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"2mn24nx4n5"},{"Name":"integrity","Value":"sha256-9sstlQ2L4hqh7V7byqlcRfdecPF8pHe2S/qBM3nEP3c="},{"Name":"label","Value":"_content/KareMa.EndPoint.RazorPages/uploads/032c6553-ff5e-4b5e-bcbf-5fc7a4b6c8a3_young-people-doing-housework-living-room_52683-22049.jpg"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"67540"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u00229sstlQ2L4hqh7V7byqlcRfdecPF8pHe2S/qBM3nEP3c=\u0022"},{"Name":"Last-Modified","Value":"Wed, 26 Feb 2025 20:31:49 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/KareMa.EndPoint.RazorPages/uploads/032c6553-ff5e-4b5e-bcbf-5fc7a4b6c8a3_young-people-doing-housework-living-room_52683-22049.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\032c6553-ff5e-4b5e-bcbf-5fc7a4b6c8a3_young-people-doing-housework-living-room_52683-22049.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-9sstlQ2L4hqh7V7byqlcRfdecPF8pHe2S/qBM3nEP3c="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"67540"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u00229sstlQ2L4hqh7V7byqlcRfdecPF8pHe2S/qBM3nEP3c=\u0022"},{"Name":"Last-Modified","Value":"Wed, 26 Feb 2025 20:31:49 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/KareMa.EndPoint.RazorPages/uploads/043e29f7-4b6f-44da-9b32-de9ee1e79288587118_352.jpg">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\043e29f7-4b6f-44da-9b32-de9ee1e79288587118_352.jpg'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
@@ -20256,6 +20292,18 @@
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-tesntx1o190t/33U8NxwPT7q92OZALqoEekkwh4z0c4="}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"77712"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022tesntx1o190t/33U8NxwPT7q92OZALqoEekkwh4z0c4=\u0022"},{"Name":"Last-Modified","Value":"Tue, 11 Feb 2025 09:15:15 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/KareMa.EndPoint.RazorPages/uploads/4360b1ec-584c-4b0e-9bc3-648ae5195a2b_Screenshot (386).d0mnatw5nu.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\4360b1ec-584c-4b0e-9bc3-648ae5195a2b_Screenshot (386).jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"d0mnatw5nu"},{"Name":"integrity","Value":"sha256-Le0NXiRrNUkS87cX6pRHMdBkGZgQVlaWrA9rJ90xP8Y="},{"Name":"label","Value":"_content/KareMa.EndPoint.RazorPages/uploads/4360b1ec-584c-4b0e-9bc3-648ae5195a2b_Screenshot (386).jpg"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"1052212"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022Le0NXiRrNUkS87cX6pRHMdBkGZgQVlaWrA9rJ90xP8Y=\u0022"},{"Name":"Last-Modified","Value":"Tue, 25 Feb 2025 12:53:40 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/KareMa.EndPoint.RazorPages/uploads/4360b1ec-584c-4b0e-9bc3-648ae5195a2b_Screenshot (386).jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\4360b1ec-584c-4b0e-9bc3-648ae5195a2b_Screenshot (386).jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-Le0NXiRrNUkS87cX6pRHMdBkGZgQVlaWrA9rJ90xP8Y="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"1052212"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022Le0NXiRrNUkS87cX6pRHMdBkGZgQVlaWrA9rJ90xP8Y=\u0022"},{"Name":"Last-Modified","Value":"Tue, 25 Feb 2025 12:53:40 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/KareMa.EndPoint.RazorPages/uploads/43a4e7fe-bd55-4bce-a4c1-83283d1cc5e53f2c91d9440631c4f1105b835be7438a.1hhlkz6hjp.jpg">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\43a4e7fe-bd55-4bce-a4c1-83283d1cc5e53f2c91d9440631c4f1105b835be7438a.jpg'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
@@ -20304,6 +20352,18 @@
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-tesntx1o190t/33U8NxwPT7q92OZALqoEekkwh4z0c4="}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"77712"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022tesntx1o190t/33U8NxwPT7q92OZALqoEekkwh4z0c4=\u0022"},{"Name":"Last-Modified","Value":"Tue, 11 Feb 2025 09:15:15 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/KareMa.EndPoint.RazorPages/uploads/673e5ba4-90dd-42b7-bba4-15962dd0cda4_smiling-man-helping-woman-with-household_74855-7860.16nevo6ojp.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\673e5ba4-90dd-42b7-bba4-15962dd0cda4_smiling-man-helping-woman-with-household_74855-7860.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"16nevo6ojp"},{"Name":"integrity","Value":"sha256-N1RkX8nxrgrMlpL3dQCMjrS4nhG/4ds\u002BfmDk1P9Kbn8="},{"Name":"label","Value":"_content/KareMa.EndPoint.RazorPages/uploads/673e5ba4-90dd-42b7-bba4-15962dd0cda4_smiling-man-helping-woman-with-household_74855-7860.jpg"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"73987"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022N1RkX8nxrgrMlpL3dQCMjrS4nhG/4ds\u002BfmDk1P9Kbn8=\u0022"},{"Name":"Last-Modified","Value":"Thu, 27 Feb 2025 10:35:07 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/KareMa.EndPoint.RazorPages/uploads/673e5ba4-90dd-42b7-bba4-15962dd0cda4_smiling-man-helping-woman-with-household_74855-7860.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\673e5ba4-90dd-42b7-bba4-15962dd0cda4_smiling-man-helping-woman-with-household_74855-7860.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-N1RkX8nxrgrMlpL3dQCMjrS4nhG/4ds\u002BfmDk1P9Kbn8="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"73987"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022N1RkX8nxrgrMlpL3dQCMjrS4nhG/4ds\u002BfmDk1P9Kbn8=\u0022"},{"Name":"Last-Modified","Value":"Thu, 27 Feb 2025 10:35:07 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/KareMa.EndPoint.RazorPages/uploads/689c48f0-90e1-493c-ad2f-51655dd50ad71-1.jpg">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\689c48f0-90e1-493c-ad2f-51655dd50ad71-1.jpg'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
@@ -20327,6 +20387,18 @@
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"sxzvasyd4e"},{"Name":"integrity","Value":"sha256-sGE296nQ0/V/8zRWfmducDvXm2b0cGczlg04Zz4Q29I="},{"Name":"label","Value":"_content/KareMa.EndPoint.RazorPages/uploads/712b3b8b-bd04-42ce-8284-9ac77385a8b01-1.jpg"}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"90241"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022sGE296nQ0/V/8zRWfmducDvXm2b0cGczlg04Zz4Q29I=\u0022"},{"Name":"Last-Modified","Value":"Tue, 11 Feb 2025 09:15:15 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/KareMa.EndPoint.RazorPages/uploads/84111f9d-2243-487b-ae6c-fa156481f474_smiling-man-helping-woman-with-household_74855-7860.16nevo6ojp.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\84111f9d-2243-487b-ae6c-fa156481f474_smiling-man-helping-woman-with-household_74855-7860.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"16nevo6ojp"},{"Name":"integrity","Value":"sha256-N1RkX8nxrgrMlpL3dQCMjrS4nhG/4ds\u002BfmDk1P9Kbn8="},{"Name":"label","Value":"_content/KareMa.EndPoint.RazorPages/uploads/84111f9d-2243-487b-ae6c-fa156481f474_smiling-man-helping-woman-with-household_74855-7860.jpg"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"73987"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022N1RkX8nxrgrMlpL3dQCMjrS4nhG/4ds\u002BfmDk1P9Kbn8=\u0022"},{"Name":"Last-Modified","Value":"Wed, 26 Feb 2025 20:40:22 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/KareMa.EndPoint.RazorPages/uploads/84111f9d-2243-487b-ae6c-fa156481f474_smiling-man-helping-woman-with-household_74855-7860.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\84111f9d-2243-487b-ae6c-fa156481f474_smiling-man-helping-woman-with-household_74855-7860.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-N1RkX8nxrgrMlpL3dQCMjrS4nhG/4ds\u002BfmDk1P9Kbn8="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"73987"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022N1RkX8nxrgrMlpL3dQCMjrS4nhG/4ds\u002BfmDk1P9Kbn8=\u0022"},{"Name":"Last-Modified","Value":"Wed, 26 Feb 2025 20:40:22 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/KareMa.EndPoint.RazorPages/uploads/8e09878b-7986-4c7c-9580-ba75905e15b0355515ee2d07f66714b3ca04ffe224df.itvkfzyz34.jpg">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\8e09878b-7986-4c7c-9580-ba75905e15b0355515ee2d07f66714b3ca04ffe224df.jpg'))</AssetFile>
@@ -20364,6 +20436,18 @@
       <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"ojlv0r80gg"},{"Name":"integrity","Value":"sha256-1EpOmekXK98aw34k\u002BXM0ix\u002B4NOrhKm9dH8WClDavBPY="},{"Name":"label","Value":"_content/KareMa.EndPoint.RazorPages/uploads/95bb9fe5-ac3c-4870-9ff4-4bdd8a6ba7d8587118_352.jpg"}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"59902"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u00221EpOmekXK98aw34k\u002BXM0ix\u002B4NOrhKm9dH8WClDavBPY=\u0022"},{"Name":"Last-Modified","Value":"Tue, 11 Feb 2025 09:15:15 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/KareMa.EndPoint.RazorPages/uploads/96040a74-1321-44b5-a519-2ab4179d6068_flat-design-household-renovation-professions-with-men_23-2148655570.fjutjja0hb.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\96040a74-1321-44b5-a519-2ab4179d6068_flat-design-household-renovation-professions-with-men_23-2148655570.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"fjutjja0hb"},{"Name":"integrity","Value":"sha256-2/5ptG9rWvV4Q5xeCTvlecDMXG9vFCWOI8ni1ICF7nA="},{"Name":"label","Value":"_content/KareMa.EndPoint.RazorPages/uploads/96040a74-1321-44b5-a519-2ab4179d6068_flat-design-household-renovation-professions-with-men_23-2148655570.jpg"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"69912"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u00222/5ptG9rWvV4Q5xeCTvlecDMXG9vFCWOI8ni1ICF7nA=\u0022"},{"Name":"Last-Modified","Value":"Wed, 26 Feb 2025 20:34:39 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/KareMa.EndPoint.RazorPages/uploads/96040a74-1321-44b5-a519-2ab4179d6068_flat-design-household-renovation-professions-with-men_23-2148655570.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\96040a74-1321-44b5-a519-2ab4179d6068_flat-design-household-renovation-professions-with-men_23-2148655570.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-2/5ptG9rWvV4Q5xeCTvlecDMXG9vFCWOI8ni1ICF7nA="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"69912"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u00222/5ptG9rWvV4Q5xeCTvlecDMXG9vFCWOI8ni1ICF7nA=\u0022"},{"Name":"Last-Modified","Value":"Wed, 26 Feb 2025 20:34:39 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/KareMa.EndPoint.RazorPages/uploads/9b5062ad-b9c1-453f-b51b-510a0b698308587118_352.jpg">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\9b5062ad-b9c1-453f-b51b-510a0b698308587118_352.jpg'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
@@ -20375,6 +20459,30 @@
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"ojlv0r80gg"},{"Name":"integrity","Value":"sha256-1EpOmekXK98aw34k\u002BXM0ix\u002B4NOrhKm9dH8WClDavBPY="},{"Name":"label","Value":"_content/KareMa.EndPoint.RazorPages/uploads/9b5062ad-b9c1-453f-b51b-510a0b698308587118_352.jpg"}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"59902"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u00221EpOmekXK98aw34k\u002BXM0ix\u002B4NOrhKm9dH8WClDavBPY=\u0022"},{"Name":"Last-Modified","Value":"Tue, 11 Feb 2025 09:15:15 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/KareMa.EndPoint.RazorPages/uploads/abfe68c4-06af-4204-b412-2890157c5ef4_flat-design-household-renovation-professions-with-men_23-2148655570.fjutjja0hb.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\abfe68c4-06af-4204-b412-2890157c5ef4_flat-design-household-renovation-professions-with-men_23-2148655570.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"fjutjja0hb"},{"Name":"integrity","Value":"sha256-2/5ptG9rWvV4Q5xeCTvlecDMXG9vFCWOI8ni1ICF7nA="},{"Name":"label","Value":"_content/KareMa.EndPoint.RazorPages/uploads/abfe68c4-06af-4204-b412-2890157c5ef4_flat-design-household-renovation-professions-with-men_23-2148655570.jpg"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"69912"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u00222/5ptG9rWvV4Q5xeCTvlecDMXG9vFCWOI8ni1ICF7nA=\u0022"},{"Name":"Last-Modified","Value":"Fri, 28 Feb 2025 07:25:12 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/KareMa.EndPoint.RazorPages/uploads/abfe68c4-06af-4204-b412-2890157c5ef4_flat-design-household-renovation-professions-with-men_23-2148655570.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\abfe68c4-06af-4204-b412-2890157c5ef4_flat-design-household-renovation-professions-with-men_23-2148655570.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-2/5ptG9rWvV4Q5xeCTvlecDMXG9vFCWOI8ni1ICF7nA="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"69912"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u00222/5ptG9rWvV4Q5xeCTvlecDMXG9vFCWOI8ni1ICF7nA=\u0022"},{"Name":"Last-Modified","Value":"Fri, 28 Feb 2025 07:25:12 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/KareMa.EndPoint.RazorPages/uploads/b0eac1d0-0cd1-4059-9f08-dbc0a6b1ac5c_young-people-doing-housework-living-room_52683-22049.2mn24nx4n5.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\b0eac1d0-0cd1-4059-9f08-dbc0a6b1ac5c_young-people-doing-housework-living-room_52683-22049.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"2mn24nx4n5"},{"Name":"integrity","Value":"sha256-9sstlQ2L4hqh7V7byqlcRfdecPF8pHe2S/qBM3nEP3c="},{"Name":"label","Value":"_content/KareMa.EndPoint.RazorPages/uploads/b0eac1d0-0cd1-4059-9f08-dbc0a6b1ac5c_young-people-doing-housework-living-room_52683-22049.jpg"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"67540"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u00229sstlQ2L4hqh7V7byqlcRfdecPF8pHe2S/qBM3nEP3c=\u0022"},{"Name":"Last-Modified","Value":"Wed, 26 Feb 2025 10:47:12 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/KareMa.EndPoint.RazorPages/uploads/b0eac1d0-0cd1-4059-9f08-dbc0a6b1ac5c_young-people-doing-housework-living-room_52683-22049.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\b0eac1d0-0cd1-4059-9f08-dbc0a6b1ac5c_young-people-doing-housework-living-room_52683-22049.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-9sstlQ2L4hqh7V7byqlcRfdecPF8pHe2S/qBM3nEP3c="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"67540"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u00229sstlQ2L4hqh7V7byqlcRfdecPF8pHe2S/qBM3nEP3c=\u0022"},{"Name":"Last-Modified","Value":"Wed, 26 Feb 2025 10:47:12 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/KareMa.EndPoint.RazorPages/uploads/b4571a17-4145-452f-9b82-af426f5f2fe3355515ee2d07f66714b3ca04ffe224df.itvkfzyz34.jpg">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\b4571a17-4145-452f-9b82-af426f5f2fe3355515ee2d07f66714b3ca04ffe224df.jpg'))</AssetFile>
@@ -20412,6 +20520,18 @@
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-xzQntqbDL65sNm4ZL\u002BO1kPRS6VYOEOBdWdDsiNrdeyM="}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"48187"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022xzQntqbDL65sNm4ZL\u002BO1kPRS6VYOEOBdWdDsiNrdeyM=\u0022"},{"Name":"Last-Modified","Value":"Tue, 11 Feb 2025 09:15:15 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/KareMa.EndPoint.RazorPages/uploads/bd229bca-40b0-4f56-af63-66a8ab2d98fb_smiling-man-helping-woman-with-household_74855-7860.16nevo6ojp.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\bd229bca-40b0-4f56-af63-66a8ab2d98fb_smiling-man-helping-woman-with-household_74855-7860.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"16nevo6ojp"},{"Name":"integrity","Value":"sha256-N1RkX8nxrgrMlpL3dQCMjrS4nhG/4ds\u002BfmDk1P9Kbn8="},{"Name":"label","Value":"_content/KareMa.EndPoint.RazorPages/uploads/bd229bca-40b0-4f56-af63-66a8ab2d98fb_smiling-man-helping-woman-with-household_74855-7860.jpg"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"73987"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022N1RkX8nxrgrMlpL3dQCMjrS4nhG/4ds\u002BfmDk1P9Kbn8=\u0022"},{"Name":"Last-Modified","Value":"Wed, 26 Feb 2025 20:41:43 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/KareMa.EndPoint.RazorPages/uploads/bd229bca-40b0-4f56-af63-66a8ab2d98fb_smiling-man-helping-woman-with-household_74855-7860.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\bd229bca-40b0-4f56-af63-66a8ab2d98fb_smiling-man-helping-woman-with-household_74855-7860.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-N1RkX8nxrgrMlpL3dQCMjrS4nhG/4ds\u002BfmDk1P9Kbn8="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"73987"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022N1RkX8nxrgrMlpL3dQCMjrS4nhG/4ds\u002BfmDk1P9Kbn8=\u0022"},{"Name":"Last-Modified","Value":"Wed, 26 Feb 2025 20:41:43 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/KareMa.EndPoint.RazorPages/uploads/d399bcb2-8018-484c-8d0b-d479e7ef6019_8f2f07fe2b3b8a5fff2b41af915fcfe8.gxslz6ryet.jpg">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\d399bcb2-8018-484c-8d0b-d479e7ef6019_8f2f07fe2b3b8a5fff2b41af915fcfe8.jpg'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
@@ -20423,6 +20543,30 @@
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-tJDNm9T1mztNsuMj0LFUPpM7gU/snQRj/0bk0Wt2vfg="}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"76647"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022tJDNm9T1mztNsuMj0LFUPpM7gU/snQRj/0bk0Wt2vfg=\u0022"},{"Name":"Last-Modified","Value":"Tue, 11 Feb 2025 09:15:15 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/KareMa.EndPoint.RazorPages/uploads/d9e67b78-6427-4126-9b4a-c105449609f3_cleaning-service-big-set-isolated-icons-with-detergents-mops-brooms-female-character-worker-vector-illustration_1284-78507.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\d9e67b78-6427-4126-9b4a-c105449609f3_cleaning-service-big-set-isolated-icons-with-detergents-mops-brooms-female-character-worker-vector-illustration_1284-78507.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-DE4zbyV66sD4zgfU/6xk7zr4WRYnjRj1vu/fqtmRzU4="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"108091"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022DE4zbyV66sD4zgfU/6xk7zr4WRYnjRj1vu/fqtmRzU4=\u0022"},{"Name":"Last-Modified","Value":"Thu, 27 Feb 2025 10:33:00 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/KareMa.EndPoint.RazorPages/uploads/d9e67b78-6427-4126-9b4a-c105449609f3_cleaning-service-big-set-isolated-icons-with-detergents-mops-brooms-female-character-worker-vector-illustration_1284-78507.wdsddx1mu0.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\d9e67b78-6427-4126-9b4a-c105449609f3_cleaning-service-big-set-isolated-icons-with-detergents-mops-brooms-female-character-worker-vector-illustration_1284-78507.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"wdsddx1mu0"},{"Name":"integrity","Value":"sha256-DE4zbyV66sD4zgfU/6xk7zr4WRYnjRj1vu/fqtmRzU4="},{"Name":"label","Value":"_content/KareMa.EndPoint.RazorPages/uploads/d9e67b78-6427-4126-9b4a-c105449609f3_cleaning-service-big-set-isolated-icons-with-detergents-mops-brooms-female-character-worker-vector-illustration_1284-78507.jpg"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"108091"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022DE4zbyV66sD4zgfU/6xk7zr4WRYnjRj1vu/fqtmRzU4=\u0022"},{"Name":"Last-Modified","Value":"Thu, 27 Feb 2025 10:33:00 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/KareMa.EndPoint.RazorPages/uploads/dbc60c3d-1ab9-4d2d-9541-957d01cf2440_young-people-doing-housework-living-room_52683-22049.2mn24nx4n5.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\dbc60c3d-1ab9-4d2d-9541-957d01cf2440_young-people-doing-housework-living-room_52683-22049.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"2mn24nx4n5"},{"Name":"integrity","Value":"sha256-9sstlQ2L4hqh7V7byqlcRfdecPF8pHe2S/qBM3nEP3c="},{"Name":"label","Value":"_content/KareMa.EndPoint.RazorPages/uploads/dbc60c3d-1ab9-4d2d-9541-957d01cf2440_young-people-doing-housework-living-room_52683-22049.jpg"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"67540"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u00229sstlQ2L4hqh7V7byqlcRfdecPF8pHe2S/qBM3nEP3c=\u0022"},{"Name":"Last-Modified","Value":"Wed, 26 Feb 2025 10:43:42 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/KareMa.EndPoint.RazorPages/uploads/dbc60c3d-1ab9-4d2d-9541-957d01cf2440_young-people-doing-housework-living-room_52683-22049.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\dbc60c3d-1ab9-4d2d-9541-957d01cf2440_young-people-doing-housework-living-room_52683-22049.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-9sstlQ2L4hqh7V7byqlcRfdecPF8pHe2S/qBM3nEP3c="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"67540"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u00229sstlQ2L4hqh7V7byqlcRfdecPF8pHe2S/qBM3nEP3c=\u0022"},{"Name":"Last-Modified","Value":"Wed, 26 Feb 2025 10:43:42 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/KareMa.EndPoint.RazorPages/uploads/ef3e1cc0-ca14-4d13-b41b-c5b8006afb18_3f2c91d9440631c4f1105b835be7438a.1hhlkz6hjp.jpg">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\ef3e1cc0-ca14-4d13-b41b-c5b8006afb18_3f2c91d9440631c4f1105b835be7438a.jpg'))</AssetFile>
@@ -20436,6 +20580,30 @@
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-tesntx1o190t/33U8NxwPT7q92OZALqoEekkwh4z0c4="}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"77712"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022tesntx1o190t/33U8NxwPT7q92OZALqoEekkwh4z0c4=\u0022"},{"Name":"Last-Modified","Value":"Tue, 11 Feb 2025 09:15:15 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/KareMa.EndPoint.RazorPages/uploads/f1645901-6cbc-48d8-8006-35754de00be7_cleaning-service-big-set-isolated-icons-with-detergents-mops-brooms-female-character-worker-vector-illustration_1284-78507.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\f1645901-6cbc-48d8-8006-35754de00be7_cleaning-service-big-set-isolated-icons-with-detergents-mops-brooms-female-character-worker-vector-illustration_1284-78507.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-DE4zbyV66sD4zgfU/6xk7zr4WRYnjRj1vu/fqtmRzU4="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"108091"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022DE4zbyV66sD4zgfU/6xk7zr4WRYnjRj1vu/fqtmRzU4=\u0022"},{"Name":"Last-Modified","Value":"Wed, 26 Feb 2025 11:20:38 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/KareMa.EndPoint.RazorPages/uploads/f1645901-6cbc-48d8-8006-35754de00be7_cleaning-service-big-set-isolated-icons-with-detergents-mops-brooms-female-character-worker-vector-illustration_1284-78507.wdsddx1mu0.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\f1645901-6cbc-48d8-8006-35754de00be7_cleaning-service-big-set-isolated-icons-with-detergents-mops-brooms-female-character-worker-vector-illustration_1284-78507.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"wdsddx1mu0"},{"Name":"integrity","Value":"sha256-DE4zbyV66sD4zgfU/6xk7zr4WRYnjRj1vu/fqtmRzU4="},{"Name":"label","Value":"_content/KareMa.EndPoint.RazorPages/uploads/f1645901-6cbc-48d8-8006-35754de00be7_cleaning-service-big-set-isolated-icons-with-detergents-mops-brooms-female-character-worker-vector-illustration_1284-78507.jpg"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"108091"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022DE4zbyV66sD4zgfU/6xk7zr4WRYnjRj1vu/fqtmRzU4=\u0022"},{"Name":"Last-Modified","Value":"Wed, 26 Feb 2025 11:20:38 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/KareMa.EndPoint.RazorPages/uploads/f5803ca4-d55b-469d-b99f-7b5c843c2e76_flat-design-household-renovation-professions-with-men_23-2148655570.fjutjja0hb.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\f5803ca4-d55b-469d-b99f-7b5c843c2e76_flat-design-household-renovation-professions-with-men_23-2148655570.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"fjutjja0hb"},{"Name":"integrity","Value":"sha256-2/5ptG9rWvV4Q5xeCTvlecDMXG9vFCWOI8ni1ICF7nA="},{"Name":"label","Value":"_content/KareMa.EndPoint.RazorPages/uploads/f5803ca4-d55b-469d-b99f-7b5c843c2e76_flat-design-household-renovation-professions-with-men_23-2148655570.jpg"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"69912"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u00222/5ptG9rWvV4Q5xeCTvlecDMXG9vFCWOI8ni1ICF7nA=\u0022"},{"Name":"Last-Modified","Value":"Thu, 27 Feb 2025 10:36:06 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/KareMa.EndPoint.RazorPages/uploads/f5803ca4-d55b-469d-b99f-7b5c843c2e76_flat-design-household-renovation-professions-with-men_23-2148655570.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\f5803ca4-d55b-469d-b99f-7b5c843c2e76_flat-design-household-renovation-professions-with-men_23-2148655570.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-2/5ptG9rWvV4Q5xeCTvlecDMXG9vFCWOI8ni1ICF7nA="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"69912"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u00222/5ptG9rWvV4Q5xeCTvlecDMXG9vFCWOI8ni1ICF7nA=\u0022"},{"Name":"Last-Modified","Value":"Thu, 27 Feb 2025 10:36:06 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/KareMa.EndPoint.RazorPages/uploads/f6d91538-c7a1-44e6-becd-a1c64ef33727_3f2c91d9440631c4f1105b835be7438a.1hhlkz6hjp.jpg">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\f6d91538-c7a1-44e6-becd-a1c64ef33727_3f2c91d9440631c4f1105b835be7438a.jpg'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
@@ -20447,6 +20615,18 @@
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-tesntx1o190t/33U8NxwPT7q92OZALqoEekkwh4z0c4="}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"77712"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022tesntx1o190t/33U8NxwPT7q92OZALqoEekkwh4z0c4=\u0022"},{"Name":"Last-Modified","Value":"Tue, 11 Feb 2025 09:15:15 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/KareMa.EndPoint.RazorPages/uploads/f8b7f65d-d60d-450d-93c4-793c7a2e8667_cleaning-service-big-set-isolated-icons-with-detergents-mops-brooms-female-character-worker-vector-illustration_1284-78507.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\f8b7f65d-d60d-450d-93c4-793c7a2e8667_cleaning-service-big-set-isolated-icons-with-detergents-mops-brooms-female-character-worker-vector-illustration_1284-78507.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-DE4zbyV66sD4zgfU/6xk7zr4WRYnjRj1vu/fqtmRzU4="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"108091"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022DE4zbyV66sD4zgfU/6xk7zr4WRYnjRj1vu/fqtmRzU4=\u0022"},{"Name":"Last-Modified","Value":"Thu, 27 Feb 2025 10:30:21 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/KareMa.EndPoint.RazorPages/uploads/f8b7f65d-d60d-450d-93c4-793c7a2e8667_cleaning-service-big-set-isolated-icons-with-detergents-mops-brooms-female-character-worker-vector-illustration_1284-78507.wdsddx1mu0.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\f8b7f65d-d60d-450d-93c4-793c7a2e8667_cleaning-service-big-set-isolated-icons-with-detergents-mops-brooms-female-character-worker-vector-illustration_1284-78507.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"wdsddx1mu0"},{"Name":"integrity","Value":"sha256-DE4zbyV66sD4zgfU/6xk7zr4WRYnjRj1vu/fqtmRzU4="},{"Name":"label","Value":"_content/KareMa.EndPoint.RazorPages/uploads/f8b7f65d-d60d-450d-93c4-793c7a2e8667_cleaning-service-big-set-isolated-icons-with-detergents-mops-brooms-female-character-worker-vector-illustration_1284-78507.jpg"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"108091"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022DE4zbyV66sD4zgfU/6xk7zr4WRYnjRj1vu/fqtmRzU4=\u0022"},{"Name":"Last-Modified","Value":"Thu, 27 Feb 2025 10:30:21 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/KareMa.EndPoint.RazorPages/uploads/fe556eb6-4d2e-480f-ab4c-4b4cda7a533a__6b3deaa3-c9a1-4660-b15e-d495fb2399f5.jfif">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\fe556eb6-4d2e-480f-ab4c-4b4cda7a533a__6b3deaa3-c9a1-4660-b15e-d495fb2399f5.jfif'))</AssetFile>

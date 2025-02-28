@@ -29,11 +29,11 @@ namespace KareMa.EndPoint.RazorPages.Pages.Areas.AdminArea.Pages
         {
             SubCategoryNames = await _subCategoryAppServices.GetCategorisName(cancellationToken);
         }
-        public async Task<IActionResult> OnPostAddService(ServiceCreateDto serviceCreate, CancellationToken cancellationToken, IFormFile image)
+        public async Task<IActionResult> OnPostAddService(ServiceCreateDto serviceCreate, CancellationToken cancellationToken)
         {
             if (ModelState.IsValid)
             {
-                await _serviceAppServices.Create(serviceCreate, cancellationToken, image);
+                await _serviceAppServices.Create(serviceCreate, cancellationToken);
                 return RedirectToPage("Service");
             }
             return Page();

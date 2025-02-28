@@ -16,6 +16,6 @@ namespace KareMa.Domain.Core.DTOs.CategoryDTO
         [MinLength(10, ErrorMessage = "نام دسته بندی نمیتواند کمتر از 10 کاراکتر باشد")]
         [Required(ErrorMessage = "وارد کردن نام دسته بندی اجباری است.")]
         public string Name { get; set; }
-        public string Image { get; set; }
+        public string? Image { get; set; }
     }
 }

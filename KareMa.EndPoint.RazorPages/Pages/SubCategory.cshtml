@@ -4,32 +4,71 @@
 }
 <section class="gray py-5">
     <div class="container">
-        <!-- Item Wrap Start -->
-        <div class="row">
+        <div class="row justify-content-center">
             @foreach (var item in Model.SubCategories)
             {
-                <div class="col-xl-2 col-lg-2 col-md-2 col-sm-12">
-                    <a asp-page="Service" asp-route-id="@item.Id" class="d-block text-center m-auto">
-                        <div class="Goodup-grid-wrap">
-                            <div class="Goodup-grid-upper">
-                                <div class="Goodup-pos ab-right"></div>
+                <div class="col-md-4 col-sm-6 mb-4">
+                    <div class="Goodup-grid-wrap">
+                        <div class="Goodup-grid-upper">
+                            <a asp-page="Service" asp-route-id="@item.Id" class="d-block text-center m-auto">
                                 <div class="Goodup-grid-thumb">
-                                    <img src="@item.Image" class="img-fluid" alt>
+                                    <img src="@item.Image" class="img-fluid" alt="@item.Name">
                                 </div>
-                                <div class="Goodup-rating overlay"></div>
-                            </div>
-                            <div class="Goodup-grid-fl-wrap">
-                                <div class="Goodup-caption px-3 p-4">
-                                    <h4 class="mb-0 ft-medium medium mb-0">
-                                        @item.Name
-                                    </h4>
-                                </div>
+                            </a>
+                        </div>
+                        <div class="Goodup-grid-fl-wrap">
+                            <div class="Goodup-caption px-3 p-4 text-center">
+                                <h4 class="mb-0 ft-medium">@item.Name</h4>
                             </div>
                         </div>
-                    </a>
+                    </div>
                 </div>
             }
         </div>
-        <!-- Item Wrap End -->
     </div>
 </section>
+@* <section class="gray py-5">
+    <div class="container">
+        <div class="row">
+            <!-- Item Wrap Start -->
+            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
+
+                <!-- row -->
+                @foreach (var item in Model.SubCategories)
+                {
+                    <div class="row justify-content-center gx-3">
+
+                        <!-- Single -->
+
+                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
+
+                            <div class="Goodup-grid-wrap">
+                                <div class="Goodup-grid-upper">
+                                    <a asp-page="Service" asp-route-id="@item.Id" class="d-block text-center m-auto">
+                                        <div class="Goodup-pos ab-right">
+                                        </div>
+                                        <div class="Goodup-grid-thumb">
+
+
+                                            <img src="@item.Image" class="img-fluid" alt>
+
+                                        </div>
+                                        <div class="Goodup-rating overlay">
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="Goodup-grid-fl-wrap">
+                                    <div class="Goodup-caption px-3 p-4">
+                                        <h4 class="mb-0 ft-medium medium mb-0">
+                                            @item.Name
+                                        </h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</section> *@

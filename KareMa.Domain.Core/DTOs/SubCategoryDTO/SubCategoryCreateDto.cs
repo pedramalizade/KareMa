@@ -17,6 +17,6 @@ namespace KareMa.Domain.Core.DTOs.SubCategoryDTO
         [Required(ErrorMessage = "وارد کردن نام دسته بندی اجباری است.")]
         public string Name { get; set; }
         public int CategoryId { get; set; }
-        public string Image { get; set; }
+        public string? Image { get; set; }
     }
 }

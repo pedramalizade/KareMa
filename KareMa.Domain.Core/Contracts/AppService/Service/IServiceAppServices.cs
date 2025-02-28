@@ -11,7 +11,7 @@ namespace KareMa.Domain.Core.Contracts
 {
     public interface IServiceAppServices
     {
-        Task<bool> Create(ServiceCreateDto serviceCreateDto, CancellationToken cancellationToken, IFormFile image);
+        Task<bool> Create(ServiceCreateDto serviceCreateDto, CancellationToken cancellationToken);
         Task<bool> Update(ServiceUpdateDto serviceUpdateDto, CancellationToken cancellationToken);
         Task<bool> Delete(int serviceId, CancellationToken cancellationToken);
         Task<Entities.Service> GetById(int serviceId, CancellationToken cancellationToken);

@@ -21,6 +21,8 @@ namespace KareMa.Domain.Service
           => await _categoryRepository.GetAll(cancellationToken);
         public async Task<List<CategoryNameDto>> GetCategorisName(CancellationToken cancellationToken)
       => await _categoryRepository.GetCategorisName(cancellationToken);
+        public async Task<CategoryUpdateDto> ServiceCategoryUpdateInfo(int id, CancellationToken cancellationToken)
+  => await _categoryRepository.ServiceCategoryUpdateInfo(id, cancellationToken);
         public async Task<Category> GetById(int serviceCategoryId, CancellationToken cancellationToken)
           => await _categoryRepository.GetById(serviceCategoryId, cancellationToken);
         public async Task<bool> Update(CategoryUpdateDto serviceCategoryUpdateDto, CancellationToken cancellationToken)

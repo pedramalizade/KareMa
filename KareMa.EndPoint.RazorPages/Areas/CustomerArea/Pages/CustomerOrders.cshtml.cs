@@ -1,4 +1,4 @@
-using KareMa.Domain.Core.Contracts.AppService;
+﻿using KareMa.Domain.Core.Contracts.AppService;
 using KareMa.Domain.Core.DTOs.OrderDTO;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -33,7 +33,7 @@ namespace KareMa.EndPoint.RazorPages.Areas.CustomerArea.Pages
 
             if (result == false)
             {
-                ModelState.AddModelError(string.Empty, "??? ???? ?? ????? ??? ???????? ?? ????? ?????? ????");
+                ModelState.AddModelError(string.Empty, "شما برای یک سفارش فقط میتوانید یک متخصص انتخاب کنید");
             }
         }
     }

@@ -2472,6 +2472,8 @@ wwwroot\assets\img\logo.png
 wwwroot\assets\img\logo\1716061360566.png
 wwwroot\assets\img\logo\banner (2).jpg
 wwwroot\assets\img\logo\ido-service.png
+wwwroot\assets\img\logo\init.jpg
+wwwroot\assets\img\logo\logoo.png
 wwwroot\assets\img\logo-light.png
 wwwroot\assets\img\m-1.png
 wwwroot\assets\img\m-2.png
@@ -2735,26 +2737,39 @@ wwwroot\select2\js\select2.full.min.js
 wwwroot\select2\js\select2.js
 wwwroot\select2\js\select2.min.js
 wwwroot\uploads\01ac62a3-8bd9-49f2-8449-17d5e86ce1728f2f07fe2b3b8a5fff2b41af915fcfe8.jpg
+wwwroot\uploads\032c6553-ff5e-4b5e-bcbf-5fc7a4b6c8a3_young-people-doing-housework-living-room_52683-22049.jpg
 wwwroot\uploads\043e29f7-4b6f-44da-9b32-de9ee1e79288587118_352.jpg
 wwwroot\uploads\0e13dc06-a06b-40f4-925e-7279868e2b75_3f2c91d9440631c4f1105b835be7438a.jpg
 wwwroot\uploads\132ab33f-7fd3-4a76-bcb2-ba5733690cf0gittaWeb-76-3416 (1).jpeg
 wwwroot\uploads\2a84a999-eff1-4fc5-8b8f-233af8f31145587118_352.jpg
 wwwroot\uploads\3e8dcc42-4726-402d-802f-02d2c09668c2gittaWeb-76-3416 (1).jpeg
 wwwroot\uploads\4038f0ca-df6b-4632-b075-ce3fed19ae05_3f2c91d9440631c4f1105b835be7438a.jpg
+wwwroot\uploads\4360b1ec-584c-4b0e-9bc3-648ae5195a2b_Screenshot (386).jpg
 wwwroot\uploads\43a4e7fe-bd55-4bce-a4c1-83283d1cc5e53f2c91d9440631c4f1105b835be7438a.jpg
 wwwroot\uploads\464f07ca-19f9-4d9e-8ed8-d6307d8a3c413f2c91d9440631c4f1105b835be7438a.jpg
 wwwroot\uploads\5e8c8ab4-7e4e-47b8-9e42-c28b36a0733f_8f2f07fe2b3b8a5fff2b41af915fcfe8.jpg
 wwwroot\uploads\609c9b31-9027-417b-bd98-a04cc8ee2b42_3f2c91d9440631c4f1105b835be7438a.jpg
+wwwroot\uploads\673e5ba4-90dd-42b7-bba4-15962dd0cda4_smiling-man-helping-woman-with-household_74855-7860.jpg
 wwwroot\uploads\689c48f0-90e1-493c-ad2f-51655dd50ad71-1.jpg
 wwwroot\uploads\712b3b8b-bd04-42ce-8284-9ac77385a8b01-1.jpg
+wwwroot\uploads\84111f9d-2243-487b-ae6c-fa156481f474_smiling-man-helping-woman-with-household_74855-7860.jpg
 wwwroot\uploads\8e09878b-7986-4c7c-9580-ba75905e15b0355515ee2d07f66714b3ca04ffe224df.jpg
 wwwroot\uploads\9232f4e5-89b8-4911-b55c-ca863fc343eb587118_352.jpg
 wwwroot\uploads\95bb9fe5-ac3c-4870-9ff4-4bdd8a6ba7d8587118_352.jpg
+wwwroot\uploads\96040a74-1321-44b5-a519-2ab4179d6068_flat-design-household-renovation-professions-with-men_23-2148655570.jpg
 wwwroot\uploads\9b5062ad-b9c1-453f-b51b-510a0b698308587118_352.jpg
+wwwroot\uploads\abfe68c4-06af-4204-b412-2890157c5ef4_flat-design-household-renovation-professions-with-men_23-2148655570.jpg
+wwwroot\uploads\b0eac1d0-0cd1-4059-9f08-dbc0a6b1ac5c_young-people-doing-housework-living-room_52683-22049.jpg
 wwwroot\uploads\b4571a17-4145-452f-9b82-af426f5f2fe3355515ee2d07f66714b3ca04ffe224df.jpg
 wwwroot\uploads\b73c278e-034d-4d7e-8199-93c4381912f3_3f2c91d9440631c4f1105b835be7438a.jpg
 wwwroot\uploads\b7b3c4bc-912c-4cb4-86f9-40fc65662f464c4dea9bf359e02eba42ab1389237810.jpg
+wwwroot\uploads\bd229bca-40b0-4f56-af63-66a8ab2d98fb_smiling-man-helping-woman-with-household_74855-7860.jpg
 wwwroot\uploads\d399bcb2-8018-484c-8d0b-d479e7ef6019_8f2f07fe2b3b8a5fff2b41af915fcfe8.jpg
+wwwroot\uploads\d9e67b78-6427-4126-9b4a-c105449609f3_cleaning-service-big-set-isolated-icons-with-detergents-mops-brooms-female-character-worker-vector-illustration_1284-78507.jpg
+wwwroot\uploads\dbc60c3d-1ab9-4d2d-9541-957d01cf2440_young-people-doing-housework-living-room_52683-22049.jpg
 wwwroot\uploads\ef3e1cc0-ca14-4d13-b41b-c5b8006afb18_3f2c91d9440631c4f1105b835be7438a.jpg
+wwwroot\uploads\f1645901-6cbc-48d8-8006-35754de00be7_cleaning-service-big-set-isolated-icons-with-detergents-mops-brooms-female-character-worker-vector-illustration_1284-78507.jpg
+wwwroot\uploads\f5803ca4-d55b-469d-b99f-7b5c843c2e76_flat-design-household-renovation-professions-with-men_23-2148655570.jpg
 wwwroot\uploads\f6d91538-c7a1-44e6-becd-a1c64ef33727_3f2c91d9440631c4f1105b835be7438a.jpg
+wwwroot\uploads\f8b7f65d-d60d-450d-93c4-793c7a2e8667_cleaning-service-big-set-isolated-icons-with-detergents-mops-brooms-female-character-worker-vector-illustration_1284-78507.jpg
 wwwroot\uploads\fe556eb6-4d2e-480f-ab4c-4b4cda7a533a__6b3deaa3-c9a1-4660-b15e-d495fb2399f5.jfif

@@ -12,8 +12,6 @@ namespace KareMa.Domain.Core.Entities
     {
         public Address()
         {
-            //SetFullAddress();
-            FullAddress = City.Name + Street + Area;
         }
         public int Id { get; set; }
         public int? CustomerId { get; set; }
@@ -25,13 +23,17 @@ namespace KareMa.Domain.Core.Entities
         public int CityId { get; set; }
         [MaxLength(50)]
         public City? City { get; set; }
-        [MaxLength(50)]
+        [MaxLength(50, ErrorMessage = "نام خیابان  نمی‌تواند بیشتر از 50 کاراکتر باشد")]
+        [MinLength(2, ErrorMessage = "نام خیابان نمی‌تواند کمتر از 2 کاراکتر باشد")]
+        [Required(ErrorMessage = "نام خیابان نمی‌تواند بدون مقدار باشد")]
         public string Street { get; set; }
-        [MaxLength(50)]
+        [MaxLength(500, ErrorMessage = "محله نمی‌تواند بیشتر از 500 کاراکتر باشد")]
+        [MinLength(3, ErrorMessage = "محله نمی‌تواند کمتر از 3 کاراکتر باشد")]
+        [Required(ErrorMessage = "محله نمی‌تواند بدون مقدار باشد")]
         public string Area { get; set; }
-        [MaxLength(1000)]
-        public string? FullAddress { get; set; }
-        [MaxLength(10)]
+        [DisplayName("کدپستی")]
+        [Length(10, 10, ErrorMessage = "کدپستی نمی‌تواند کمتر یا بیشتر از 10 کاراکتر باشد")]
+        [Required(ErrorMessage = "کدپستی نمی‌تواند بدون مقدار باشد")]
         public string PostalCode { get; set; }
         public bool IsDefault { get; set; }
         public bool IsDeleted { get; set; }

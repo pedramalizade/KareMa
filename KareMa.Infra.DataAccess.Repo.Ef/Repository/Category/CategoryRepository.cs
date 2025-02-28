@@ -26,14 +26,37 @@ namespace KareMa.Infra.DataAccess.Repo.Ef.Repository
 
         public async Task<bool> Create(CategoryCreateDto categoryCreateDto, CancellationToken cancellationToken)
         {
+            if (categoryCreateDto == null || string.IsNullOrEmpty(categoryCreateDto.Name))
+            {
+                _logger.LogError("Invalid category data.");
+                return false;
+            }
+
             var newModel = new Domain.Core.Entities.Category()
             {
                 Name = categoryCreateDto.Name,
-                Image = categoryCreateDto.Image,
+                Image = string.IsNullOrEmpty(categoryCreateDto.Image) ? "default-image.jpg" : categoryCreateDto.Image,
             };
+
             await _context.Categories.AddAsync(newModel, cancellationToken);
             await _context.SaveChangesAsync(cancellationToken);
+
+            var exists = await _context.Categories.AnyAsync(c => c.Name == categoryCreateDto.Name, cancellationToken);
+            if (!exists)
+            {
+                _logger.LogError("Category was not saved to database.");
+                return false;
+            }
+
             return true;
+            //var newModel = new Domain.Core.Entities.Category()
+            //{
+            //    Name = categoryCreateDto.Name,
+            //    Image = categoryCreateDto.Image,
+            //};
+            //await _context.Categories.AddAsync(newModel, cancellationToken);
+            //await _context.SaveChangesAsync(cancellationToken);
+            //return true;
         }
         public async Task<List<CategoryNameDto>> GetCategorisName(CancellationToken cancellationToken)
         {
@@ -46,6 +69,17 @@ namespace KareMa.Infra.DataAccess.Repo.Ef.Repository
 
                  }).ToListAsync(cancellationToken);
             return categories;
+        }
+        public async Task<CategoryUpdateDto> ServiceCategoryUpdateInfo(int id, CancellationToken cancellationToken)
+        {
+            return await _context.Categories.Select(c => new CategoryUpdateDto
+            {
+                Id = c.Id,
+                Image = c.Image,
+                Name = c.Name
+
+            }).FirstOrDefaultAsync(c => c.Id == id, cancellationToken);
+
         }
 
         public async Task<bool> Delete(int CategoryId, CancellationToken cancellationToken)
@@ -85,14 +119,14 @@ namespace KareMa.Infra.DataAccess.Repo.Ef.Repository
         {
             var targetModel = await FindServiceCategory(CategoryUpdateDto.Id, cancellationToken);
 
-            targetModel.Name = CategoryUpdateDto.Name;
-            //targetModel.SubCategories = CategoryUpdateDto.SubCategories;
-            targetModel.Image = CategoryUpdateDto.Image;
+            if (targetModel == null) return false;
 
-            if (CategoryUpdateDto.Image != null) targetModel.Image = CategoryUpdateDto.Image;
+            targetModel.Name = CategoryUpdateDto.Name;
+
+            if (CategoryUpdateDto.Image != null)
+                targetModel.Image = CategoryUpdateDto.Image;
 
             await _context.SaveChangesAsync(cancellationToken);
-
 
             return true;
         }

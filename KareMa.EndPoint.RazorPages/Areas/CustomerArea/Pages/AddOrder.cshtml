@@ -1,11 +1,10 @@
 ﻿@page
 @model KareMa.EndPoint.RazorPages.Areas.CustomerArea.Pages.AddOrderModel
 @{
-    Layout = "_CustomerProfileLayout";
+    Layout = "_CustomerLayout";
     ViewData["AddOrder"] = "active";
 }
 <form method="post" asp-page-handler="AddOrder" enctype="multipart/form-data">
-    <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
     <div class="dashboard-list-wraps bg-white rounded mb-4">
         <div class="dashboard-list-wraps-head br-bottom py-3 px-3">
             <div class="dashboard-list-wraps-flx">
@@ -30,28 +29,34 @@
                     <div class="form-group">
                         <label class="mb-1">عنوان</label>
                         <input asp-for="@Model.Order.Title" class="form-control rounded" type="text" />
+                        <span asp-validation-for="@Model.Order.Title" class="text-danger"></span>
                     </div>
                 </div>
                 <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
                     <div class="form-group">
                         <label class="mb-1">تاریخ</label>
-                        <input asp-for="@Model.Date" data-jdp placeholder="min Today" data-jdp-min-date="today" class="form-control rounded" />
+                        <input asp-for="@Model.Date" data-jdp data-jdp-min-date="today" class="form-control rounded" />
+                        <span asp-validation-for="@Model.Date" class="text-danger"></span>
                     </div>
                 </div>
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
                     <div class="form-group">
                         <label class="mb-1">توضیحات</label>
                         <textarea asp-for="@Model.Order.Description" class="form-control rounded ht-80"></textarea>
+                        <span asp-validation-for="@Model.Order.Description" class="text-danger"></span>
+
                     </div>
                 </div>
 
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
                     <label for="formFileLg" class="form-label">آپلود تصویر</label>
                     <div class="input-group form-group">
-                        <input type="text" class="form-control upload-name-photo rounded" />
+                        <input type="text" class="form-control upload-name-photo rounded" asp-for="@Model.Image" />
                         <span class="btn cursor-pointer upload-btn-photo">آپلود فایل</span>
                     </div>
                     <input type="file" asp-for="@Model.Image" class="d-none hidden-upload-photo" />
+                    <span asp-validation-for="@Model.Image" class="text-danger"></span>
+
                 </div>
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
                     <div class="form-group p-2">
@@ -64,6 +69,9 @@
 </form>
 
 @section Scripts {
+
+    <partial name="_ValidationScriptsPartial" />
+
     <script>
         jalaliDatepicker.startWatch({
             minDate: "attr",

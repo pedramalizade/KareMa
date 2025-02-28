@@ -16,17 +16,25 @@ namespace KareMa.Domain.Service.BaseService
             if (image != null && image.Length > 0)
             {
                 var uploadsFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "uploads");
-                var uniqueFileName = Guid.NewGuid().ToString() + "_" + image.FileName;
+
+                if (!Directory.Exists(uploadsFolder))
+                {
+                    Directory.CreateDirectory(uploadsFolder);
+                }
+
+                var uniqueFileName = Guid.NewGuid().ToString() + "_" + Path.GetFileName(image.FileName);
                 var filePath = Path.Combine(uploadsFolder, uniqueFileName);
 
                 using (var stream = new FileStream(filePath, FileMode.Create))
                 {
-                    image.CopyToAsync(stream);
+                    await image.CopyToAsync(stream); 
                 }
+
                 return "/uploads/" + uniqueFileName;
             }
             return null;
         }
+
         public DateTime PersianToGregorian(string persianDateString)
         {
             PersianCalendar pc = new PersianCalendar();
