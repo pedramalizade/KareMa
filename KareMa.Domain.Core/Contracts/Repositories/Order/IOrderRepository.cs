@@ -21,6 +21,10 @@ namespace KareMa.Domain.Core.Contracts.Repositories
         Task<bool> ChangeStatus(StatusEnum status, int orderId, CancellationToken cancellationToken);
         Task<int> OrderCount(CancellationToken cancellationToken);
         Task<List<GetOrderDto>> GetOrders(int customerId, CancellationToken cancellationToken);
-        Task AcceptStatus(int orderId, CancellationToken cancellationToken);
+        Task AcceptOrder(int orderId, CancellationToken cancellationToken);
+        Task DoneOrder(int id, CancellationToken cancellationToken);
+        Task AddSampleSuggestionsAsync(int customerId, CancellationToken cancellationToken);
+        Task<List<OrdersByServiceIdsDto>> GetOrdersByServiceIds(List<int> serviceIds, CancellationToken cancellationToken);
+        Task<bool> OrderIsDone(int orderId, CancellationToken cancellationToken);
     }
 }

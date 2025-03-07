@@ -30330,6 +30330,24 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\032c6553-ff5e-4b5e-bcbf-5fc7a4b6c8a3_young-people-doing-housework-living-room_52683-22049.jpg'))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\03441ebb-8a8e-4cf1-8812-b824171addbf_flat-design-household-renovation-professions-with-men_23-2148655570.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>KareMa.EndPoint.RazorPages</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/KareMa.EndPoint.RazorPages</BasePath>
+      <RelativePath>uploads/03441ebb-8a8e-4cf1-8812-b824171addbf_flat-design-household-renovation-professions-with-men_23-2148655570.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>fjutjja0hb</Fingerprint>
+      <Integrity>2/5ptG9rWvV4Q5xeCTvlecDMXG9vFCWOI8ni1ICF7nA=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\03441ebb-8a8e-4cf1-8812-b824171addbf_flat-design-household-renovation-professions-with-men_23-2148655570.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\043e29f7-4b6f-44da-9b32-de9ee1e79288587118_352.jpg'))">
       <SourceType>Package</SourceType>
       <SourceId>KareMa.EndPoint.RazorPages</SourceId>
@@ -30347,6 +30365,42 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\043e29f7-4b6f-44da-9b32-de9ee1e79288587118_352.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\04e3045a-73de-4430-8052-c1ec56a7b9a4_cleaning-service-big-set-isolated-icons-with-detergents-mops-brooms-female-character-worker-vector-illustration_1284-78507.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>KareMa.EndPoint.RazorPages</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/KareMa.EndPoint.RazorPages</BasePath>
+      <RelativePath>uploads/04e3045a-73de-4430-8052-c1ec56a7b9a4_cleaning-service-big-set-isolated-icons-with-detergents-mops-brooms-female-character-worker-vector-illustration_1284-78507.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>wdsddx1mu0</Fingerprint>
+      <Integrity>DE4zbyV66sD4zgfU/6xk7zr4WRYnjRj1vu/fqtmRzU4=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\04e3045a-73de-4430-8052-c1ec56a7b9a4_cleaning-service-big-set-isolated-icons-with-detergents-mops-brooms-female-character-worker-vector-illustration_1284-78507.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\07c3e559-2943-47d8-9cd9-798f35b6bb05_cleaning-service-big-set-isolated-icons-with-detergents-mops-brooms-female-character-worker-vector-illustration_1284-78507.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>KareMa.EndPoint.RazorPages</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/KareMa.EndPoint.RazorPages</BasePath>
+      <RelativePath>uploads/07c3e559-2943-47d8-9cd9-798f35b6bb05_cleaning-service-big-set-isolated-icons-with-detergents-mops-brooms-female-character-worker-vector-illustration_1284-78507.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>wdsddx1mu0</Fingerprint>
+      <Integrity>DE4zbyV66sD4zgfU/6xk7zr4WRYnjRj1vu/fqtmRzU4=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\07c3e559-2943-47d8-9cd9-798f35b6bb05_cleaning-service-big-set-isolated-icons-with-detergents-mops-brooms-female-character-worker-vector-illustration_1284-78507.jpg'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\0e13dc06-a06b-40f4-925e-7279868e2b75_3f2c91d9440631c4f1105b835be7438a.jpg'))">
       <SourceType>Package</SourceType>
@@ -30384,6 +30438,78 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\132ab33f-7fd3-4a76-bcb2-ba5733690cf0gittaWeb-76-3416 (1).jpeg'))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\1e142208-aee2-4c84-b074-ff47e387c488_young-people-doing-housework-living-room_52683-22049.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>KareMa.EndPoint.RazorPages</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/KareMa.EndPoint.RazorPages</BasePath>
+      <RelativePath>uploads/1e142208-aee2-4c84-b074-ff47e387c488_young-people-doing-housework-living-room_52683-22049.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>2mn24nx4n5</Fingerprint>
+      <Integrity>9sstlQ2L4hqh7V7byqlcRfdecPF8pHe2S/qBM3nEP3c=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\1e142208-aee2-4c84-b074-ff47e387c488_young-people-doing-housework-living-room_52683-22049.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\210cfb6d-78ee-4a8b-9021-c12a95c9be35_young-people-doing-housework-living-room_52683-22049.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>KareMa.EndPoint.RazorPages</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/KareMa.EndPoint.RazorPages</BasePath>
+      <RelativePath>uploads/210cfb6d-78ee-4a8b-9021-c12a95c9be35_young-people-doing-housework-living-room_52683-22049.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>2mn24nx4n5</Fingerprint>
+      <Integrity>9sstlQ2L4hqh7V7byqlcRfdecPF8pHe2S/qBM3nEP3c=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\210cfb6d-78ee-4a8b-9021-c12a95c9be35_young-people-doing-housework-living-room_52683-22049.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\248a947d-26b0-42db-b4d8-8dc4f88ac433_cleaning-service-big-set-isolated-icons-with-detergents-mops-brooms-female-character-worker-vector-illustration_1284-78507.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>KareMa.EndPoint.RazorPages</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/KareMa.EndPoint.RazorPages</BasePath>
+      <RelativePath>uploads/248a947d-26b0-42db-b4d8-8dc4f88ac433_cleaning-service-big-set-isolated-icons-with-detergents-mops-brooms-female-character-worker-vector-illustration_1284-78507.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>wdsddx1mu0</Fingerprint>
+      <Integrity>DE4zbyV66sD4zgfU/6xk7zr4WRYnjRj1vu/fqtmRzU4=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\248a947d-26b0-42db-b4d8-8dc4f88ac433_cleaning-service-big-set-isolated-icons-with-detergents-mops-brooms-female-character-worker-vector-illustration_1284-78507.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\28c6776a-cfd3-4ac4-a66e-af26ff8242f3_young-people-doing-housework-living-room_52683-22049.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>KareMa.EndPoint.RazorPages</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/KareMa.EndPoint.RazorPages</BasePath>
+      <RelativePath>uploads/28c6776a-cfd3-4ac4-a66e-af26ff8242f3_young-people-doing-housework-living-room_52683-22049.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>2mn24nx4n5</Fingerprint>
+      <Integrity>9sstlQ2L4hqh7V7byqlcRfdecPF8pHe2S/qBM3nEP3c=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\28c6776a-cfd3-4ac4-a66e-af26ff8242f3_young-people-doing-housework-living-room_52683-22049.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\2a84a999-eff1-4fc5-8b8f-233af8f31145587118_352.jpg'))">
       <SourceType>Package</SourceType>
       <SourceId>KareMa.EndPoint.RazorPages</SourceId>
@@ -30401,6 +30527,42 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\2a84a999-eff1-4fc5-8b8f-233af8f31145587118_352.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\370265b9-f791-42b3-9bd1-aafa94acaebc_Black and White Simple Circle Brush Name Logo.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>KareMa.EndPoint.RazorPages</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/KareMa.EndPoint.RazorPages</BasePath>
+      <RelativePath>uploads/370265b9-f791-42b3-9bd1-aafa94acaebc_Black and White Simple Circle Brush Name Logo.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>friefolfew</Fingerprint>
+      <Integrity>ezXKMVGAnsYTShbMhAaYsfX8oyyuwOi3X39y6U+tO7Y=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\370265b9-f791-42b3-9bd1-aafa94acaebc_Black and White Simple Circle Brush Name Logo.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\3b788e57-6881-4291-ad5f-0622f65ee2b1_young-people-doing-housework-living-room_52683-22049.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>KareMa.EndPoint.RazorPages</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/KareMa.EndPoint.RazorPages</BasePath>
+      <RelativePath>uploads/3b788e57-6881-4291-ad5f-0622f65ee2b1_young-people-doing-housework-living-room_52683-22049.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>2mn24nx4n5</Fingerprint>
+      <Integrity>9sstlQ2L4hqh7V7byqlcRfdecPF8pHe2S/qBM3nEP3c=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\3b788e57-6881-4291-ad5f-0622f65ee2b1_young-people-doing-housework-living-room_52683-22049.jpg'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\3e8dcc42-4726-402d-802f-02d2c09668c2gittaWeb-76-3416 (1).jpeg'))">
       <SourceType>Package</SourceType>
@@ -30437,6 +30599,24 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\4038f0ca-df6b-4632-b075-ce3fed19ae05_3f2c91d9440631c4f1105b835be7438a.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\4080d037-3bf8-492f-8531-15b7e6da5500_flat-design-household-renovation-professions-with-men_23-2148655570.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>KareMa.EndPoint.RazorPages</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/KareMa.EndPoint.RazorPages</BasePath>
+      <RelativePath>uploads/4080d037-3bf8-492f-8531-15b7e6da5500_flat-design-household-renovation-professions-with-men_23-2148655570.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>fjutjja0hb</Fingerprint>
+      <Integrity>2/5ptG9rWvV4Q5xeCTvlecDMXG9vFCWOI8ni1ICF7nA=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\4080d037-3bf8-492f-8531-15b7e6da5500_flat-design-household-renovation-professions-with-men_23-2148655570.jpg'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\4360b1ec-584c-4b0e-9bc3-648ae5195a2b_Screenshot (386).jpg'))">
       <SourceType>Package</SourceType>
@@ -30492,6 +30672,168 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\464f07ca-19f9-4d9e-8ed8-d6307d8a3c413f2c91d9440631c4f1105b835be7438a.jpg'))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\4b192d21-3c40-4c45-8b6c-816f0b89aad4_Black and White Simple Circle Brush Name Logo.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>KareMa.EndPoint.RazorPages</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/KareMa.EndPoint.RazorPages</BasePath>
+      <RelativePath>uploads/4b192d21-3c40-4c45-8b6c-816f0b89aad4_Black and White Simple Circle Brush Name Logo.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>friefolfew</Fingerprint>
+      <Integrity>ezXKMVGAnsYTShbMhAaYsfX8oyyuwOi3X39y6U+tO7Y=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\4b192d21-3c40-4c45-8b6c-816f0b89aad4_Black and White Simple Circle Brush Name Logo.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\4de645be-98ad-4f40-a619-7628565aa5e4_cleaning-service-big-set-isolated-icons-with-detergents-mops-brooms-female-character-worker-vector-illustration_1284-78507.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>KareMa.EndPoint.RazorPages</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/KareMa.EndPoint.RazorPages</BasePath>
+      <RelativePath>uploads/4de645be-98ad-4f40-a619-7628565aa5e4_cleaning-service-big-set-isolated-icons-with-detergents-mops-brooms-female-character-worker-vector-illustration_1284-78507.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>wdsddx1mu0</Fingerprint>
+      <Integrity>DE4zbyV66sD4zgfU/6xk7zr4WRYnjRj1vu/fqtmRzU4=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\4de645be-98ad-4f40-a619-7628565aa5e4_cleaning-service-big-set-isolated-icons-with-detergents-mops-brooms-female-character-worker-vector-illustration_1284-78507.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\5096f723-10e1-446b-86c0-db108e86c8df_flat-design-household-renovation-professions-with-men_23-2148655570.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>KareMa.EndPoint.RazorPages</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/KareMa.EndPoint.RazorPages</BasePath>
+      <RelativePath>uploads/5096f723-10e1-446b-86c0-db108e86c8df_flat-design-household-renovation-professions-with-men_23-2148655570.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>fjutjja0hb</Fingerprint>
+      <Integrity>2/5ptG9rWvV4Q5xeCTvlecDMXG9vFCWOI8ni1ICF7nA=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\5096f723-10e1-446b-86c0-db108e86c8df_flat-design-household-renovation-professions-with-men_23-2148655570.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\516a4a76-e7d0-4a84-ab8d-3942466690e9_cleaning-service-big-set-isolated-icons-with-detergents-mops-brooms-female-character-worker-vector-illustration_1284-78507.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>KareMa.EndPoint.RazorPages</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/KareMa.EndPoint.RazorPages</BasePath>
+      <RelativePath>uploads/516a4a76-e7d0-4a84-ab8d-3942466690e9_cleaning-service-big-set-isolated-icons-with-detergents-mops-brooms-female-character-worker-vector-illustration_1284-78507.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>wdsddx1mu0</Fingerprint>
+      <Integrity>DE4zbyV66sD4zgfU/6xk7zr4WRYnjRj1vu/fqtmRzU4=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\516a4a76-e7d0-4a84-ab8d-3942466690e9_cleaning-service-big-set-isolated-icons-with-detergents-mops-brooms-female-character-worker-vector-illustration_1284-78507.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\51e544de-2e8e-4edc-ad15-13ad7a462366_cleaning-service-big-set-isolated-icons-with-detergents-mops-brooms-female-character-worker-vector-illustration_1284-78507.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>KareMa.EndPoint.RazorPages</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/KareMa.EndPoint.RazorPages</BasePath>
+      <RelativePath>uploads/51e544de-2e8e-4edc-ad15-13ad7a462366_cleaning-service-big-set-isolated-icons-with-detergents-mops-brooms-female-character-worker-vector-illustration_1284-78507.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>wdsddx1mu0</Fingerprint>
+      <Integrity>DE4zbyV66sD4zgfU/6xk7zr4WRYnjRj1vu/fqtmRzU4=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\51e544de-2e8e-4edc-ad15-13ad7a462366_cleaning-service-big-set-isolated-icons-with-detergents-mops-brooms-female-character-worker-vector-illustration_1284-78507.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\521a4133-ce50-4b11-ba23-fc4883bd5b79_cleaning-service-big-set-isolated-icons-with-detergents-mops-brooms-female-character-worker-vector-illustration_1284-78507.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>KareMa.EndPoint.RazorPages</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/KareMa.EndPoint.RazorPages</BasePath>
+      <RelativePath>uploads/521a4133-ce50-4b11-ba23-fc4883bd5b79_cleaning-service-big-set-isolated-icons-with-detergents-mops-brooms-female-character-worker-vector-illustration_1284-78507.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>wdsddx1mu0</Fingerprint>
+      <Integrity>DE4zbyV66sD4zgfU/6xk7zr4WRYnjRj1vu/fqtmRzU4=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\521a4133-ce50-4b11-ba23-fc4883bd5b79_cleaning-service-big-set-isolated-icons-with-detergents-mops-brooms-female-character-worker-vector-illustration_1284-78507.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\5311fd39-2b00-49b9-98b8-e84b37930ea5.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>KareMa.EndPoint.RazorPages</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/KareMa.EndPoint.RazorPages</BasePath>
+      <RelativePath>uploads/5311fd39-2b00-49b9-98b8-e84b37930ea5.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>fjutjja0hb</Fingerprint>
+      <Integrity>2/5ptG9rWvV4Q5xeCTvlecDMXG9vFCWOI8ni1ICF7nA=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\5311fd39-2b00-49b9-98b8-e84b37930ea5.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\559db06d-4549-47d1-8dc4-63dae995c1d7_Black and White Simple Circle Brush Name Logo.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>KareMa.EndPoint.RazorPages</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/KareMa.EndPoint.RazorPages</BasePath>
+      <RelativePath>uploads/559db06d-4549-47d1-8dc4-63dae995c1d7_Black and White Simple Circle Brush Name Logo.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>friefolfew</Fingerprint>
+      <Integrity>ezXKMVGAnsYTShbMhAaYsfX8oyyuwOi3X39y6U+tO7Y=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\559db06d-4549-47d1-8dc4-63dae995c1d7_Black and White Simple Circle Brush Name Logo.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\5c95c0da-8991-46f4-8401-cccbc4f61bf6_cleaning-service-big-set-isolated-icons-with-detergents-mops-brooms-female-character-worker-vector-illustration_1284-78507.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>KareMa.EndPoint.RazorPages</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/KareMa.EndPoint.RazorPages</BasePath>
+      <RelativePath>uploads/5c95c0da-8991-46f4-8401-cccbc4f61bf6_cleaning-service-big-set-isolated-icons-with-detergents-mops-brooms-female-character-worker-vector-illustration_1284-78507.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>wdsddx1mu0</Fingerprint>
+      <Integrity>DE4zbyV66sD4zgfU/6xk7zr4WRYnjRj1vu/fqtmRzU4=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\5c95c0da-8991-46f4-8401-cccbc4f61bf6_cleaning-service-big-set-isolated-icons-with-detergents-mops-brooms-female-character-worker-vector-illustration_1284-78507.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\5e8c8ab4-7e4e-47b8-9e42-c28b36a0733f_8f2f07fe2b3b8a5fff2b41af915fcfe8.jpg'))">
       <SourceType>Package</SourceType>
       <SourceId>KareMa.EndPoint.RazorPages</SourceId>
@@ -30510,6 +30852,24 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\5e8c8ab4-7e4e-47b8-9e42-c28b36a0733f_8f2f07fe2b3b8a5fff2b41af915fcfe8.jpg'))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\5f9d6769-3232-4974-b96b-3296c1cbc644_smiling-man-helping-woman-with-household_74855-7860.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>KareMa.EndPoint.RazorPages</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/KareMa.EndPoint.RazorPages</BasePath>
+      <RelativePath>uploads/5f9d6769-3232-4974-b96b-3296c1cbc644_smiling-man-helping-woman-with-household_74855-7860.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>16nevo6ojp</Fingerprint>
+      <Integrity>N1RkX8nxrgrMlpL3dQCMjrS4nhG/4ds+fmDk1P9Kbn8=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\5f9d6769-3232-4974-b96b-3296c1cbc644_smiling-man-helping-woman-with-household_74855-7860.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\609c9b31-9027-417b-bd98-a04cc8ee2b42_3f2c91d9440631c4f1105b835be7438a.jpg'))">
       <SourceType>Package</SourceType>
       <SourceId>KareMa.EndPoint.RazorPages</SourceId>
@@ -30527,6 +30887,24 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\609c9b31-9027-417b-bd98-a04cc8ee2b42_3f2c91d9440631c4f1105b835be7438a.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\63fba7ec-e9bd-4a2d-8233-2a32169df2bd_flat-design-household-renovation-professions-with-men_23-2148655570.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>KareMa.EndPoint.RazorPages</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/KareMa.EndPoint.RazorPages</BasePath>
+      <RelativePath>uploads/63fba7ec-e9bd-4a2d-8233-2a32169df2bd_flat-design-household-renovation-professions-with-men_23-2148655570.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>fjutjja0hb</Fingerprint>
+      <Integrity>2/5ptG9rWvV4Q5xeCTvlecDMXG9vFCWOI8ni1ICF7nA=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\63fba7ec-e9bd-4a2d-8233-2a32169df2bd_flat-design-household-renovation-professions-with-men_23-2148655570.jpg'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\673e5ba4-90dd-42b7-bba4-15962dd0cda4_smiling-man-helping-woman-with-household_74855-7860.jpg'))">
       <SourceType>Package</SourceType>
@@ -30582,6 +30960,42 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\712b3b8b-bd04-42ce-8284-9ac77385a8b01-1.jpg'))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\716e262a-a6df-4154-bdce-5f8b5fc53186_cleaning-service-big-set-isolated-icons-with-detergents-mops-brooms-female-character-worker-vector-illustration_1284-78507.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>KareMa.EndPoint.RazorPages</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/KareMa.EndPoint.RazorPages</BasePath>
+      <RelativePath>uploads/716e262a-a6df-4154-bdce-5f8b5fc53186_cleaning-service-big-set-isolated-icons-with-detergents-mops-brooms-female-character-worker-vector-illustration_1284-78507.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>wdsddx1mu0</Fingerprint>
+      <Integrity>DE4zbyV66sD4zgfU/6xk7zr4WRYnjRj1vu/fqtmRzU4=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\716e262a-a6df-4154-bdce-5f8b5fc53186_cleaning-service-big-set-isolated-icons-with-detergents-mops-brooms-female-character-worker-vector-illustration_1284-78507.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\76ba401f-7acc-4e6b-b5f8-861e6ebc768a.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>KareMa.EndPoint.RazorPages</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/KareMa.EndPoint.RazorPages</BasePath>
+      <RelativePath>uploads/76ba401f-7acc-4e6b-b5f8-861e6ebc768a.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>fjutjja0hb</Fingerprint>
+      <Integrity>2/5ptG9rWvV4Q5xeCTvlecDMXG9vFCWOI8ni1ICF7nA=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\76ba401f-7acc-4e6b-b5f8-861e6ebc768a.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\84111f9d-2243-487b-ae6c-fa156481f474_smiling-man-helping-woman-with-household_74855-7860.jpg'))">
       <SourceType>Package</SourceType>
       <SourceId>KareMa.EndPoint.RazorPages</SourceId>
@@ -30599,6 +31013,42 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\84111f9d-2243-487b-ae6c-fa156481f474_smiling-man-helping-woman-with-household_74855-7860.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\8b8733e2-db8c-48d7-b858-dd4e907a00db_cleaning-service-big-set-isolated-icons-with-detergents-mops-brooms-female-character-worker-vector-illustration_1284-78507.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>KareMa.EndPoint.RazorPages</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/KareMa.EndPoint.RazorPages</BasePath>
+      <RelativePath>uploads/8b8733e2-db8c-48d7-b858-dd4e907a00db_cleaning-service-big-set-isolated-icons-with-detergents-mops-brooms-female-character-worker-vector-illustration_1284-78507.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>wdsddx1mu0</Fingerprint>
+      <Integrity>DE4zbyV66sD4zgfU/6xk7zr4WRYnjRj1vu/fqtmRzU4=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\8b8733e2-db8c-48d7-b858-dd4e907a00db_cleaning-service-big-set-isolated-icons-with-detergents-mops-brooms-female-character-worker-vector-illustration_1284-78507.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\8c9c2f27-c946-42ac-910d-6de4949e8e30_cleaning-service-big-set-isolated-icons-with-detergents-mops-brooms-female-character-worker-vector-illustration_1284-78507.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>KareMa.EndPoint.RazorPages</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/KareMa.EndPoint.RazorPages</BasePath>
+      <RelativePath>uploads/8c9c2f27-c946-42ac-910d-6de4949e8e30_cleaning-service-big-set-isolated-icons-with-detergents-mops-brooms-female-character-worker-vector-illustration_1284-78507.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>wdsddx1mu0</Fingerprint>
+      <Integrity>DE4zbyV66sD4zgfU/6xk7zr4WRYnjRj1vu/fqtmRzU4=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\8c9c2f27-c946-42ac-910d-6de4949e8e30_cleaning-service-big-set-isolated-icons-with-detergents-mops-brooms-female-character-worker-vector-illustration_1284-78507.jpg'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\8e09878b-7986-4c7c-9580-ba75905e15b0355515ee2d07f66714b3ca04ffe224df.jpg'))">
       <SourceType>Package</SourceType>
@@ -30618,6 +31068,24 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\8e09878b-7986-4c7c-9580-ba75905e15b0355515ee2d07f66714b3ca04ffe224df.jpg'))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\90c36121-f21a-465f-a729-c4b954fb488b_smiling-man-helping-woman-with-household_74855-7860.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>KareMa.EndPoint.RazorPages</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/KareMa.EndPoint.RazorPages</BasePath>
+      <RelativePath>uploads/90c36121-f21a-465f-a729-c4b954fb488b_smiling-man-helping-woman-with-household_74855-7860.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>16nevo6ojp</Fingerprint>
+      <Integrity>N1RkX8nxrgrMlpL3dQCMjrS4nhG/4ds+fmDk1P9Kbn8=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\90c36121-f21a-465f-a729-c4b954fb488b_smiling-man-helping-woman-with-household_74855-7860.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\9232f4e5-89b8-4911-b55c-ca863fc343eb587118_352.jpg'))">
       <SourceType>Package</SourceType>
       <SourceId>KareMa.EndPoint.RazorPages</SourceId>
@@ -30635,6 +31103,24 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\9232f4e5-89b8-4911-b55c-ca863fc343eb587118_352.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\92abebb4-bf06-4cae-82b2-77d6a769ff80_Black and White Simple Circle Brush Name Logo.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>KareMa.EndPoint.RazorPages</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/KareMa.EndPoint.RazorPages</BasePath>
+      <RelativePath>uploads/92abebb4-bf06-4cae-82b2-77d6a769ff80_Black and White Simple Circle Brush Name Logo.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>friefolfew</Fingerprint>
+      <Integrity>ezXKMVGAnsYTShbMhAaYsfX8oyyuwOi3X39y6U+tO7Y=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\92abebb4-bf06-4cae-82b2-77d6a769ff80_Black and White Simple Circle Brush Name Logo.jpg'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\95bb9fe5-ac3c-4870-9ff4-4bdd8a6ba7d8587118_352.jpg'))">
       <SourceType>Package</SourceType>
@@ -30672,6 +31158,42 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\96040a74-1321-44b5-a519-2ab4179d6068_flat-design-household-renovation-professions-with-men_23-2148655570.jpg'))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\9647919d-c386-40a3-9d28-bce81ca1ac51_Black and White Simple Circle Brush Name Logo.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>KareMa.EndPoint.RazorPages</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/KareMa.EndPoint.RazorPages</BasePath>
+      <RelativePath>uploads/9647919d-c386-40a3-9d28-bce81ca1ac51_Black and White Simple Circle Brush Name Logo.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>friefolfew</Fingerprint>
+      <Integrity>ezXKMVGAnsYTShbMhAaYsfX8oyyuwOi3X39y6U+tO7Y=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\9647919d-c386-40a3-9d28-bce81ca1ac51_Black and White Simple Circle Brush Name Logo.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\96543da5-f3a2-493a-828a-74b3d904c702_young-people-doing-housework-living-room_52683-22049.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>KareMa.EndPoint.RazorPages</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/KareMa.EndPoint.RazorPages</BasePath>
+      <RelativePath>uploads/96543da5-f3a2-493a-828a-74b3d904c702_young-people-doing-housework-living-room_52683-22049.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>2mn24nx4n5</Fingerprint>
+      <Integrity>9sstlQ2L4hqh7V7byqlcRfdecPF8pHe2S/qBM3nEP3c=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\96543da5-f3a2-493a-828a-74b3d904c702_young-people-doing-housework-living-room_52683-22049.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\9b5062ad-b9c1-453f-b51b-510a0b698308587118_352.jpg'))">
       <SourceType>Package</SourceType>
       <SourceId>KareMa.EndPoint.RazorPages</SourceId>
@@ -30690,6 +31212,78 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\9b5062ad-b9c1-453f-b51b-510a0b698308587118_352.jpg'))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\a419a9df-3318-4aa3-8a49-8c5fa7be0e3f_flat-design-household-renovation-professions-with-men_23-2148655570.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>KareMa.EndPoint.RazorPages</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/KareMa.EndPoint.RazorPages</BasePath>
+      <RelativePath>uploads/a419a9df-3318-4aa3-8a49-8c5fa7be0e3f_flat-design-household-renovation-professions-with-men_23-2148655570.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>fjutjja0hb</Fingerprint>
+      <Integrity>2/5ptG9rWvV4Q5xeCTvlecDMXG9vFCWOI8ni1ICF7nA=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\a419a9df-3318-4aa3-8a49-8c5fa7be0e3f_flat-design-household-renovation-professions-with-men_23-2148655570.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\a8811ffe-7f0f-4841-8dab-bed7084a5e14_flat-design-household-renovation-professions-with-men_23-2148655570.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>KareMa.EndPoint.RazorPages</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/KareMa.EndPoint.RazorPages</BasePath>
+      <RelativePath>uploads/a8811ffe-7f0f-4841-8dab-bed7084a5e14_flat-design-household-renovation-professions-with-men_23-2148655570.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>fjutjja0hb</Fingerprint>
+      <Integrity>2/5ptG9rWvV4Q5xeCTvlecDMXG9vFCWOI8ni1ICF7nA=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\a8811ffe-7f0f-4841-8dab-bed7084a5e14_flat-design-household-renovation-professions-with-men_23-2148655570.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\a8f97bd0-42b3-40d0-8851-77a6f9d6913f_young-people-doing-housework-living-room_52683-22049.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>KareMa.EndPoint.RazorPages</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/KareMa.EndPoint.RazorPages</BasePath>
+      <RelativePath>uploads/a8f97bd0-42b3-40d0-8851-77a6f9d6913f_young-people-doing-housework-living-room_52683-22049.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>2mn24nx4n5</Fingerprint>
+      <Integrity>9sstlQ2L4hqh7V7byqlcRfdecPF8pHe2S/qBM3nEP3c=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\a8f97bd0-42b3-40d0-8851-77a6f9d6913f_young-people-doing-housework-living-room_52683-22049.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\abfa5ce5-2732-4ec2-98fe-f25dbcf08bbb_young-people-doing-housework-living-room_52683-22049.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>KareMa.EndPoint.RazorPages</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/KareMa.EndPoint.RazorPages</BasePath>
+      <RelativePath>uploads/abfa5ce5-2732-4ec2-98fe-f25dbcf08bbb_young-people-doing-housework-living-room_52683-22049.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>2mn24nx4n5</Fingerprint>
+      <Integrity>9sstlQ2L4hqh7V7byqlcRfdecPF8pHe2S/qBM3nEP3c=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\abfa5ce5-2732-4ec2-98fe-f25dbcf08bbb_young-people-doing-housework-living-room_52683-22049.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\abfe68c4-06af-4204-b412-2890157c5ef4_flat-design-household-renovation-professions-with-men_23-2148655570.jpg'))">
       <SourceType>Package</SourceType>
       <SourceId>KareMa.EndPoint.RazorPages</SourceId>
@@ -30707,6 +31301,24 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\abfe68c4-06af-4204-b412-2890157c5ef4_flat-design-household-renovation-professions-with-men_23-2148655570.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\adc8c3ab-e2c0-4c8d-bd13-19e402f03007_young-people-doing-housework-living-room_52683-22049.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>KareMa.EndPoint.RazorPages</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/KareMa.EndPoint.RazorPages</BasePath>
+      <RelativePath>uploads/adc8c3ab-e2c0-4c8d-bd13-19e402f03007_young-people-doing-housework-living-room_52683-22049.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>2mn24nx4n5</Fingerprint>
+      <Integrity>9sstlQ2L4hqh7V7byqlcRfdecPF8pHe2S/qBM3nEP3c=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\adc8c3ab-e2c0-4c8d-bd13-19e402f03007_young-people-doing-housework-living-room_52683-22049.jpg'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\b0eac1d0-0cd1-4059-9f08-dbc0a6b1ac5c_young-people-doing-housework-living-room_52683-22049.jpg'))">
       <SourceType>Package</SourceType>
@@ -30780,6 +31392,42 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\b7b3c4bc-912c-4cb4-86f9-40fc65662f464c4dea9bf359e02eba42ab1389237810.jpg'))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\b8b8b9f4-2dfc-45c7-bcc9-3e183ade6768_flat-design-household-renovation-professions-with-men_23-2148655570.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>KareMa.EndPoint.RazorPages</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/KareMa.EndPoint.RazorPages</BasePath>
+      <RelativePath>uploads/b8b8b9f4-2dfc-45c7-bcc9-3e183ade6768_flat-design-household-renovation-professions-with-men_23-2148655570.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>fjutjja0hb</Fingerprint>
+      <Integrity>2/5ptG9rWvV4Q5xeCTvlecDMXG9vFCWOI8ni1ICF7nA=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\b8b8b9f4-2dfc-45c7-bcc9-3e183ade6768_flat-design-household-renovation-professions-with-men_23-2148655570.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\bbc6ef3e-275d-4ea8-9191-aa468c9ab662_cleaning-service-big-set-isolated-icons-with-detergents-mops-brooms-female-character-worker-vector-illustration_1284-78507.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>KareMa.EndPoint.RazorPages</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/KareMa.EndPoint.RazorPages</BasePath>
+      <RelativePath>uploads/bbc6ef3e-275d-4ea8-9191-aa468c9ab662_cleaning-service-big-set-isolated-icons-with-detergents-mops-brooms-female-character-worker-vector-illustration_1284-78507.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>wdsddx1mu0</Fingerprint>
+      <Integrity>DE4zbyV66sD4zgfU/6xk7zr4WRYnjRj1vu/fqtmRzU4=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\bbc6ef3e-275d-4ea8-9191-aa468c9ab662_cleaning-service-big-set-isolated-icons-with-detergents-mops-brooms-female-character-worker-vector-illustration_1284-78507.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\bd229bca-40b0-4f56-af63-66a8ab2d98fb_smiling-man-helping-woman-with-household_74855-7860.jpg'))">
       <SourceType>Package</SourceType>
       <SourceId>KareMa.EndPoint.RazorPages</SourceId>
@@ -30798,6 +31446,114 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\bd229bca-40b0-4f56-af63-66a8ab2d98fb_smiling-man-helping-woman-with-household_74855-7860.jpg'))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\c121825c-f947-4e41-b27c-f968bfeef650_flat-design-household-renovation-professions-with-men_23-2148655570.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>KareMa.EndPoint.RazorPages</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/KareMa.EndPoint.RazorPages</BasePath>
+      <RelativePath>uploads/c121825c-f947-4e41-b27c-f968bfeef650_flat-design-household-renovation-professions-with-men_23-2148655570.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>fjutjja0hb</Fingerprint>
+      <Integrity>2/5ptG9rWvV4Q5xeCTvlecDMXG9vFCWOI8ni1ICF7nA=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\c121825c-f947-4e41-b27c-f968bfeef650_flat-design-household-renovation-professions-with-men_23-2148655570.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\c4455c64-77a0-4e83-b1f0-aed18707c311_flat-design-household-renovation-professions-with-men_23-2148655570.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>KareMa.EndPoint.RazorPages</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/KareMa.EndPoint.RazorPages</BasePath>
+      <RelativePath>uploads/c4455c64-77a0-4e83-b1f0-aed18707c311_flat-design-household-renovation-professions-with-men_23-2148655570.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>fjutjja0hb</Fingerprint>
+      <Integrity>2/5ptG9rWvV4Q5xeCTvlecDMXG9vFCWOI8ni1ICF7nA=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\c4455c64-77a0-4e83-b1f0-aed18707c311_flat-design-household-renovation-professions-with-men_23-2148655570.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\c4bbfda4-4f1b-4e61-9a3c-c04f43a8e751_cleaning-service-big-set-isolated-icons-with-detergents-mops-brooms-female-character-worker-vector-illustration_1284-78507.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>KareMa.EndPoint.RazorPages</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/KareMa.EndPoint.RazorPages</BasePath>
+      <RelativePath>uploads/c4bbfda4-4f1b-4e61-9a3c-c04f43a8e751_cleaning-service-big-set-isolated-icons-with-detergents-mops-brooms-female-character-worker-vector-illustration_1284-78507.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>wdsddx1mu0</Fingerprint>
+      <Integrity>DE4zbyV66sD4zgfU/6xk7zr4WRYnjRj1vu/fqtmRzU4=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\c4bbfda4-4f1b-4e61-9a3c-c04f43a8e751_cleaning-service-big-set-isolated-icons-with-detergents-mops-brooms-female-character-worker-vector-illustration_1284-78507.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\c522074c-bf75-4e43-afd8-aeb9e12e7c69.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>KareMa.EndPoint.RazorPages</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/KareMa.EndPoint.RazorPages</BasePath>
+      <RelativePath>uploads/c522074c-bf75-4e43-afd8-aeb9e12e7c69.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>friefolfew</Fingerprint>
+      <Integrity>ezXKMVGAnsYTShbMhAaYsfX8oyyuwOi3X39y6U+tO7Y=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\c522074c-bf75-4e43-afd8-aeb9e12e7c69.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\c5a02ad5-1413-4618-9728-ec1fd6fb0a7c.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>KareMa.EndPoint.RazorPages</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/KareMa.EndPoint.RazorPages</BasePath>
+      <RelativePath>uploads/c5a02ad5-1413-4618-9728-ec1fd6fb0a7c.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>friefolfew</Fingerprint>
+      <Integrity>ezXKMVGAnsYTShbMhAaYsfX8oyyuwOi3X39y6U+tO7Y=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\c5a02ad5-1413-4618-9728-ec1fd6fb0a7c.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\ce35358c-700f-4782-bfca-5905144a04bd_cleaning-service-big-set-isolated-icons-with-detergents-mops-brooms-female-character-worker-vector-illustration_1284-78507.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>KareMa.EndPoint.RazorPages</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/KareMa.EndPoint.RazorPages</BasePath>
+      <RelativePath>uploads/ce35358c-700f-4782-bfca-5905144a04bd_cleaning-service-big-set-isolated-icons-with-detergents-mops-brooms-female-character-worker-vector-illustration_1284-78507.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>wdsddx1mu0</Fingerprint>
+      <Integrity>DE4zbyV66sD4zgfU/6xk7zr4WRYnjRj1vu/fqtmRzU4=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\ce35358c-700f-4782-bfca-5905144a04bd_cleaning-service-big-set-isolated-icons-with-detergents-mops-brooms-female-character-worker-vector-illustration_1284-78507.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\d399bcb2-8018-484c-8d0b-d479e7ef6019_8f2f07fe2b3b8a5fff2b41af915fcfe8.jpg'))">
       <SourceType>Package</SourceType>
       <SourceId>KareMa.EndPoint.RazorPages</SourceId>
@@ -30815,6 +31571,60 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\d399bcb2-8018-484c-8d0b-d479e7ef6019_8f2f07fe2b3b8a5fff2b41af915fcfe8.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\d50cbfa2-bb1c-4c25-bf23-5feda56667a7.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>KareMa.EndPoint.RazorPages</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/KareMa.EndPoint.RazorPages</BasePath>
+      <RelativePath>uploads/d50cbfa2-bb1c-4c25-bf23-5feda56667a7.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>friefolfew</Fingerprint>
+      <Integrity>ezXKMVGAnsYTShbMhAaYsfX8oyyuwOi3X39y6U+tO7Y=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\d50cbfa2-bb1c-4c25-bf23-5feda56667a7.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\d86b1651-9555-4640-aee6-df7ea241372e.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>KareMa.EndPoint.RazorPages</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/KareMa.EndPoint.RazorPages</BasePath>
+      <RelativePath>uploads/d86b1651-9555-4640-aee6-df7ea241372e.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>fjutjja0hb</Fingerprint>
+      <Integrity>2/5ptG9rWvV4Q5xeCTvlecDMXG9vFCWOI8ni1ICF7nA=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\d86b1651-9555-4640-aee6-df7ea241372e.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\d8f375d1-cc9f-4155-9fc1-5176bb73e0d1_smiling-man-helping-woman-with-household_74855-7860.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>KareMa.EndPoint.RazorPages</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/KareMa.EndPoint.RazorPages</BasePath>
+      <RelativePath>uploads/d8f375d1-cc9f-4155-9fc1-5176bb73e0d1_smiling-man-helping-woman-with-household_74855-7860.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>16nevo6ojp</Fingerprint>
+      <Integrity>N1RkX8nxrgrMlpL3dQCMjrS4nhG/4ds+fmDk1P9Kbn8=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\d8f375d1-cc9f-4155-9fc1-5176bb73e0d1_smiling-man-helping-woman-with-household_74855-7860.jpg'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\d9e67b78-6427-4126-9b4a-c105449609f3_cleaning-service-big-set-isolated-icons-with-detergents-mops-brooms-female-character-worker-vector-illustration_1284-78507.jpg'))">
       <SourceType>Package</SourceType>
@@ -30852,6 +31662,60 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\dbc60c3d-1ab9-4d2d-9541-957d01cf2440_young-people-doing-housework-living-room_52683-22049.jpg'))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\dd91ba02-b5d6-4f45-857f-854d952977e5_young-people-doing-housework-living-room_52683-22049.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>KareMa.EndPoint.RazorPages</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/KareMa.EndPoint.RazorPages</BasePath>
+      <RelativePath>uploads/dd91ba02-b5d6-4f45-857f-854d952977e5_young-people-doing-housework-living-room_52683-22049.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>2mn24nx4n5</Fingerprint>
+      <Integrity>9sstlQ2L4hqh7V7byqlcRfdecPF8pHe2S/qBM3nEP3c=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\dd91ba02-b5d6-4f45-857f-854d952977e5_young-people-doing-housework-living-room_52683-22049.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\e636e7bf-e14b-4d04-9646-28d0282ad1cd_young-people-doing-housework-living-room_52683-22049.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>KareMa.EndPoint.RazorPages</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/KareMa.EndPoint.RazorPages</BasePath>
+      <RelativePath>uploads/e636e7bf-e14b-4d04-9646-28d0282ad1cd_young-people-doing-housework-living-room_52683-22049.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>2mn24nx4n5</Fingerprint>
+      <Integrity>9sstlQ2L4hqh7V7byqlcRfdecPF8pHe2S/qBM3nEP3c=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\e636e7bf-e14b-4d04-9646-28d0282ad1cd_young-people-doing-housework-living-room_52683-22049.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\eb661d4e-bd82-4963-af05-f20c48f9bd00_Black and White Simple Circle Brush Name Logo.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>KareMa.EndPoint.RazorPages</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/KareMa.EndPoint.RazorPages</BasePath>
+      <RelativePath>uploads/eb661d4e-bd82-4963-af05-f20c48f9bd00_Black and White Simple Circle Brush Name Logo.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>friefolfew</Fingerprint>
+      <Integrity>ezXKMVGAnsYTShbMhAaYsfX8oyyuwOi3X39y6U+tO7Y=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\eb661d4e-bd82-4963-af05-f20c48f9bd00_Black and White Simple Circle Brush Name Logo.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\ef3e1cc0-ca14-4d13-b41b-c5b8006afb18_3f2c91d9440631c4f1105b835be7438a.jpg'))">
       <SourceType>Package</SourceType>
       <SourceId>KareMa.EndPoint.RazorPages</SourceId>
@@ -30869,6 +31733,24 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\ef3e1cc0-ca14-4d13-b41b-c5b8006afb18_3f2c91d9440631c4f1105b835be7438a.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\f11b0c0d-9e52-4437-bfed-c6502cd5725a_Black and White Simple Circle Brush Name Logo.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>KareMa.EndPoint.RazorPages</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/KareMa.EndPoint.RazorPages</BasePath>
+      <RelativePath>uploads/f11b0c0d-9e52-4437-bfed-c6502cd5725a_Black and White Simple Circle Brush Name Logo.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>friefolfew</Fingerprint>
+      <Integrity>ezXKMVGAnsYTShbMhAaYsfX8oyyuwOi3X39y6U+tO7Y=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\f11b0c0d-9e52-4437-bfed-c6502cd5725a_Black and White Simple Circle Brush Name Logo.jpg'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\f1645901-6cbc-48d8-8006-35754de00be7_cleaning-service-big-set-isolated-icons-with-detergents-mops-brooms-female-character-worker-vector-illustration_1284-78507.jpg'))">
       <SourceType>Package</SourceType>
@@ -30906,6 +31788,24 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\f5803ca4-d55b-469d-b99f-7b5c843c2e76_flat-design-household-renovation-professions-with-men_23-2148655570.jpg'))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\f59c5567-b6bb-41de-bd22-1b535416c6e4_cleaning-service-big-set-isolated-icons-with-detergents-mops-brooms-female-character-worker-vector-illustration_1284-78507.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>KareMa.EndPoint.RazorPages</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/KareMa.EndPoint.RazorPages</BasePath>
+      <RelativePath>uploads/f59c5567-b6bb-41de-bd22-1b535416c6e4_cleaning-service-big-set-isolated-icons-with-detergents-mops-brooms-female-character-worker-vector-illustration_1284-78507.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>wdsddx1mu0</Fingerprint>
+      <Integrity>DE4zbyV66sD4zgfU/6xk7zr4WRYnjRj1vu/fqtmRzU4=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\f59c5567-b6bb-41de-bd22-1b535416c6e4_cleaning-service-big-set-isolated-icons-with-detergents-mops-brooms-female-character-worker-vector-illustration_1284-78507.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\f6d91538-c7a1-44e6-becd-a1c64ef33727_3f2c91d9440631c4f1105b835be7438a.jpg'))">
       <SourceType>Package</SourceType>
       <SourceId>KareMa.EndPoint.RazorPages</SourceId>
@@ -30924,6 +31824,24 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\f6d91538-c7a1-44e6-becd-a1c64ef33727_3f2c91d9440631c4f1105b835be7438a.jpg'))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\f81e0b03-fc0c-4e8c-a588-2421bc47cdb2_flat-design-household-renovation-professions-with-men_23-2148655570.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>KareMa.EndPoint.RazorPages</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/KareMa.EndPoint.RazorPages</BasePath>
+      <RelativePath>uploads/f81e0b03-fc0c-4e8c-a588-2421bc47cdb2_flat-design-household-renovation-professions-with-men_23-2148655570.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>fjutjja0hb</Fingerprint>
+      <Integrity>2/5ptG9rWvV4Q5xeCTvlecDMXG9vFCWOI8ni1ICF7nA=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\f81e0b03-fc0c-4e8c-a588-2421bc47cdb2_flat-design-household-renovation-professions-with-men_23-2148655570.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\f8b7f65d-d60d-450d-93c4-793c7a2e8667_cleaning-service-big-set-isolated-icons-with-detergents-mops-brooms-female-character-worker-vector-illustration_1284-78507.jpg'))">
       <SourceType>Package</SourceType>
       <SourceId>KareMa.EndPoint.RazorPages</SourceId>
@@ -30941,6 +31859,42 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\f8b7f65d-d60d-450d-93c4-793c7a2e8667_cleaning-service-big-set-isolated-icons-with-detergents-mops-brooms-female-character-worker-vector-illustration_1284-78507.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\f927a109-7599-4eb5-ac16-92bfccca95d8_smiling-man-helping-woman-with-household_74855-7860.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>KareMa.EndPoint.RazorPages</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/KareMa.EndPoint.RazorPages</BasePath>
+      <RelativePath>uploads/f927a109-7599-4eb5-ac16-92bfccca95d8_smiling-man-helping-woman-with-household_74855-7860.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>16nevo6ojp</Fingerprint>
+      <Integrity>N1RkX8nxrgrMlpL3dQCMjrS4nhG/4ds+fmDk1P9Kbn8=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\f927a109-7599-4eb5-ac16-92bfccca95d8_smiling-man-helping-woman-with-household_74855-7860.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\fe126c89-fcde-4804-b895-3d477e26677b_Black and White Simple Circle Brush Name Logo.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>KareMa.EndPoint.RazorPages</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/KareMa.EndPoint.RazorPages</BasePath>
+      <RelativePath>uploads/fe126c89-fcde-4804-b895-3d477e26677b_Black and White Simple Circle Brush Name Logo.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>friefolfew</Fingerprint>
+      <Integrity>ezXKMVGAnsYTShbMhAaYsfX8oyyuwOi3X39y6U+tO7Y=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\fe126c89-fcde-4804-b895-3d477e26677b_Black and White Simple Circle Brush Name Logo.jpg'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\fe556eb6-4d2e-480f-ab4c-4b4cda7a533a__6b3deaa3-c9a1-4660-b15e-d495fb2399f5.jfif'))">
       <SourceType>Package</SourceType>

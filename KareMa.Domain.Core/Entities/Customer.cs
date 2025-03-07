@@ -18,11 +18,13 @@ namespace KareMa.Domain.Core.Entities
         public int AppUserId { get; set; }
         [MaxLength(20)]
         public string FirstName { get; set; }
+        public string? Image { get; set; }
         [MaxLength(50)]
         public string LastName { get; set; }
         public GenderEnum? Gender { get; set; }
         [MaxLength(11)]
         public string? PhoneNumber { get; set; }
+        public decimal Balance { get; set; }
         [MaxLength(16)]
         public string? BankCardNumber { get; set; }
         public Address? Addresses { get; set; }

@@ -1,0 +1,70 @@
+﻿@page
+@model KareMa.EndPoint.RazorPages.Areas.AdminArea.Pages.ExpertsModel
+@{
+    Layout = "_AdminLayout";
+    ViewData["Title"] = "متخصص ها | کاره ما";
+    ViewData["Service"] = " active open";
+    ViewData["PageTitle"] = "متخصص";
+}
+
+<div class="card p-5">
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success" role="alert">@TempData["SuccessMessage"]</div>
+    }
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <div class="alert alert-danger" role="alert">@TempData["ErrorMessage"]</div>
+    }
+    <div class="table-responsive text-nowrap">
+        <a asp-page="AddExpert" class="btn btn-primary">افزودن</a>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>آیدی</th>
+                    <th>عکس</th>
+                    <th>نام </th>
+                    <th>نام خانوادگی </th>
+                    <th>عملیات</th>
+                </tr>
+            </thead>
+            <tbody class="table-border-bottom-0">
+                @foreach (var expert in Model.GetExpert)
+                {
+                    <tr>
+                        <td>@expert.Id</td>
+                        <td>
+                            @if (string.IsNullOrEmpty(expert.Image))
+                            {
+                                <img src="~/assets/img/none.png" width="100px" height="50px" />
+                            }
+                            else
+                            {
+                                <img src="@expert.Image" alt="@expert.Image" width="100px" height="50px" />
+                            }
+                        </td>
+                        <td>@expert.FirstName</td>
+                        <td>@expert.LastName</td>
+                        <td>
+                            <div class="dropdown">
+                                <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
+                                    <i class="bx bx-dots-vertical-rounded"></i>
+                                </button>
+                                <div class="dropdown-menu">
+                                    <a asp-page="UpdateExpert" asp-route-id="@expert.Id">
+                                        <i class="bx bx-edit-alt me-1"></i> ویرایش
+                                    </a>
+                                    <form method="post" asp-page-handler="Delete" asp-route-id="@expert.Id" style="display:inline;">
+                                        <button type="submit" class="dropdown-item" onclick="return confirm('مطمئنی؟')">
+                                            <i class="bx bx-trash me-1"></i> حذف
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,5 +1,6 @@
 ﻿using KareMa.Domain.Core.Contracts.Repositories;
 using KareMa.Domain.Core.DTOs.SuggestionDTO;
+using KareMa.Domain.Core.Entities;
 using KareMa.Domain.Core.Enums;
 using KareMa.Infra.SqlServer.Common;
 using Microsoft.EntityFrameworkCore;
@@ -20,14 +21,16 @@ namespace KareMa.Infra.DataAccess.Repo.Ef.Repository
         }
         public async Task<bool> Create(SuggestionCreateDto suggestionCreateDto, CancellationToken cancellationToken)
         {
-            var newModel = new Domain.Core.Entities.Suggestion()
+            var newModel = new Suggestion()
             {
                 Description = suggestionCreateDto.Description,
-                Expert = suggestionCreateDto.Expert,
                 ExpertId = suggestionCreateDto.ExpertId,
-                Order = suggestionCreateDto.Order,
                 OrderId = suggestionCreateDto.OrderId,
                 Price = suggestionCreateDto.Price,
+                SuggestedDate = suggestionCreateDto.SuggastionDate,
+                CreateAt = DateTime.Now,
+                IsDeleted = false,
+                Status = StatusEnum.AwaitingCustomerConfirmation,
             };
             await _context.Suggestions.AddAsync(newModel, cancellationToken);
 
@@ -43,12 +46,12 @@ namespace KareMa.Infra.DataAccess.Repo.Ef.Repository
             return true;
         }
 
-        public async Task<List<Domain.Core.Entities.Suggestion>> GetAll(CancellationToken cancellationToken)
+        public async Task<List<Suggestion>> GetAll(CancellationToken cancellationToken)
         {
             return await _context.Suggestions.AsNoTracking().ToListAsync(cancellationToken);
         }
 
-        public async Task<Domain.Core.Entities.Suggestion> GetById(int suggestionId, CancellationToken cancellationToken)
+        public async Task<Suggestion> GetById(int suggestionId, CancellationToken cancellationToken)
         {
             return await FindSuggestion(suggestionId, cancellationToken);
         }
@@ -64,33 +67,113 @@ namespace KareMa.Infra.DataAccess.Repo.Ef.Repository
 
             return true;
         }
-        public async Task AcceptSuggestion(int id, CancellationToken cancellationToken)
+
+        public async Task<bool> AcceptSuggestion(int suggestionId, int orderId, CancellationToken cancellationToken)
         {
-            var targetSuggestion = await _context.Suggestions.FirstOrDefaultAsync(s => s.Id == id, cancellationToken);
+            var targetSuggestion = await _context.Suggestions
+                .FirstOrDefaultAsync(s => s.Id == suggestionId && s.OrderId == orderId, cancellationToken);
 
-            var orderId = targetSuggestion.OrderId;
+            if (targetSuggestion == null || targetSuggestion.Status != StatusEnum.AwaitingCustomerConfirmation)
+            {
+                Console.WriteLine($"Suggestion ID: {suggestionId} not found or not awaiting confirmation for Order ID: {orderId}");
+                return false;
+            }
 
-            var otherSuggestions = await _context.Suggestions.Where(s => s.OrderId == orderId).ToListAsync(cancellationToken);
+            var otherSuggestions = await _context.Suggestions
+                .Where(s => s.OrderId == orderId && s.Id != suggestionId)
+                .ToListAsync(cancellationToken);
 
+            // تأیید پیشنهاد انتخاب‌شده
+            targetSuggestion.Status = StatusEnum.Confirmed;
+
+            // رد کردن بقیه پیشنهادها
             foreach (var suggestion in otherSuggestions)
             {
-                if (suggestion.Id == id)
-                {
-                    suggestion.Status = StatusEnum.Confirmed;
-                }
-                else
+                if (suggestion.Status == StatusEnum.AwaitingCustomerConfirmation)
                 {
                     suggestion.Status = StatusEnum.NotConfirmed;
                 }
             }
 
             await _context.SaveChangesAsync(cancellationToken);
+            Console.WriteLine($"Suggestion ID: {suggestionId} confirmed for Order ID: {orderId}");
+            return true;
         }
+
         public async Task<int> ConfrimedStatusCount(int orderId, CancellationToken cancellationToken)
         {
             return await _context.Suggestions.Where(s => s.OrderId == orderId && s.Status == StatusEnum.Confirmed).CountAsync(cancellationToken);
         }
-        private async Task<Domain.Core.Entities.Suggestion> FindSuggestion(int id, CancellationToken cancellationToken)
-=> await _context.Suggestions.FirstOrDefaultAsync(a => a.Id == id, cancellationToken);
+
+        public async Task<List<SuggestionsByExpertIdDto>> GetSuggestionsByExperId(int id, CancellationToken cancellationToken)
+        {
+            return await _context.Suggestions.Where(s => s.ExpertId == id)
+                .Select(s => new SuggestionsByExpertIdDto
+                {
+                    Id = s.Id,
+                    Description = s.Description,
+                    ExpertId = s.ExpertId,
+                    Price = s.Price,
+                    Status = s.Status,
+                    SuggestedDate = s.SuggestedDate,
+                    OrderId = s.OrderId,
+                    Order = new Order()
+                    {
+                        Service = s.Order.Service,
+                        Title = s.Order.Title,
+                        Description = s.Order.Description,
+                        Image = s.Order.Image
+                    }
+                })
+               .ToListAsync(cancellationToken);
+        }
+
+        public async Task DoneSuggestion(int id, CancellationToken cancellationToken)
+        {
+            var targetSuggestion = await _context.Suggestions.FirstOrDefaultAsync(s => s.Id == id, cancellationToken);
+            targetSuggestion.Status = StatusEnum.Done;
+
+            await _context.SaveChangesAsync(cancellationToken);
+        }
+
+        public async Task<bool> ChangeStatus(StatusEnum status, int orderId, CancellationToken cancellationToken)
+        {
+            var targetModel = await _context.Suggestions.FirstOrDefaultAsync(x => x.OrderId == orderId, cancellationToken);
+
+            if (targetModel == null)
+            {
+                Console.WriteLine($"No suggestion found for OrderId: {orderId}");
+                return false;
+            }
+
+            targetModel.Status = status;
+            await _context.SaveChangesAsync(cancellationToken);
+            Console.WriteLine($"Suggestion status changed to {status} for OrderId: {orderId}");
+            return true;
+        }
+
+        private async Task<Suggestion> FindSuggestion(int id, CancellationToken cancellationToken)
+       => await _context.Suggestions.FirstOrDefaultAsync(a => a.Id == id, cancellationToken);
+
+        public async Task<SuggestionDto> GetSuggestionById(int suggestionId, CancellationToken cancellationToken)
+        {
+            var suggestion = await _context.Suggestions
+        .Include(s => s.Expert)
+        .FirstOrDefaultAsync(s => s.Id == suggestionId, cancellationToken);
+
+            if (suggestion == null) return null;
+
+            return new SuggestionDto
+            {
+                Id = suggestion.Id,
+                OrderId = suggestion.OrderId,
+                ExpertId = suggestion.ExpertId,
+                Expert = suggestion.Expert,
+                Price = suggestion.Price, // تبدیل int به decimal خودکار انجام می‌شه
+                Description = suggestion.Description,
+                SuggestedDate = suggestion.SuggestedDate,
+                Status = suggestion.Status
+            };
+        }
     }
 }

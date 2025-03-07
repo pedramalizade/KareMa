@@ -1,4 +1,6 @@
-using KareMa.Domain.Core.Contracts.AppService.Account;
+﻿using KareMa.Domain.Core.Contracts.AppService.Account;
+using KareMa.Domain.Core.Entities;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.ComponentModel.DataAnnotations;
@@ -23,7 +25,6 @@ namespace KareMa.EndPoint.RazorPages.Areas.AdminArea.Account.Pages
 
         public async Task<IActionResult> OnPostAsync(AccountLoginDto accountLogin, string returnUrl = null)
         {
-            //returnUrl ??= Url.Content("~/");
 
             if (!ModelState.IsValid)
                 return Page();
@@ -40,9 +41,12 @@ namespace KareMa.EndPoint.RazorPages.Areas.AdminArea.Account.Pages
 
                 if (User.IsInRole("Customer"))
                     return LocalRedirect("/CustomerArea/Index");
+
+                if (User.IsInRole("Customer"))
+                    return LocalRedirect("/CustomerArea/Index");
             }
 
-            ModelState.AddModelError(string.Empty, "??? ?????? ?? ???? ???? ?????? ???");
+            ModelState.AddModelError(string.Empty, "نام کاربری یا کلمه عبور اشتباه است");
             return Page();
         }
     }

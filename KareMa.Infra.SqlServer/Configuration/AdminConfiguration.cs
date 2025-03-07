@@ -22,6 +22,7 @@ public class AdminConfiguration : IEntityTypeConfiguration<Admin>
                 LastName = "علیزاده",
                 //Email = "pedramalizade@gmail.com",
                 Gender = GenderEnum.Male,
+                Balance = 0,
                 //Password = "0909",
                 //PhoneNumber = "09127575839",
                 CreatedAt = new DateTime(2024, 2, 12),

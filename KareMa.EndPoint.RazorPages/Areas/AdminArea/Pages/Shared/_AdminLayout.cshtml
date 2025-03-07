@@ -83,7 +83,18 @@
 
                     <!-- Layouts -->
                     <!-- Apps & Pages -->
-
+                    <li class="menu-item @ViewData["Customers"]">
+                        <a asp-page="Customers" asp-area="AdminArea" class="menu-link">
+                            <i class="menu-icon tf-icons bx bx-wrench"> </i>
+                            <div>مشتری ‌ها</div>
+                        </a>
+                    </li>
+                    <li class="menu-item @ViewData["Experts"]">
+                        <a asp-page="Experts" asp-area="AdminArea" class="menu-link">
+                            <i class="menu-icon tf-icons bx bx-wrench"> </i>
+                            <div>متخصص ‌ها</div>
+                        </a>
+                    </li>
                     <li class="menu-item @ViewData["Service"]">
                         <a asp-page="Service" asp-area="AdminArea" class="menu-link">
                             <i class="menu-icon tf-icons bx bx-wrench"> </i>

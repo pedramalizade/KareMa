@@ -39,9 +39,11 @@ namespace KareMa.Infra.SqlServer.Configuration
                     PhoneNumber = "09362356998",
                     Gender = GenderEnum.Male,
                     BankCardNumber = "1234123412341234",
+                    Image = "\\AdminTemplate\\images\\user\\placeholder.jpg",
                     IsConfirm = true,
                     CreatedAt = new DateTime(2024, 2, 12),
                     IsDeleted = false,
+                    Balance = 0,
                     AppUserId = 2
                 },
                  new Expert
@@ -53,7 +55,9 @@ namespace KareMa.Infra.SqlServer.Configuration
                      PhoneNumber = "09362357998",
                      BankCardNumber = "1234123412341234",
                      Gender = GenderEnum.Female,
+                     Image = "\\AdminTemplate\\images\\user\\placeholder.jpg",
                      IsConfirm = true,
+                     Balance = 0,
                      CreatedAt = new DateTime(2024, 2, 12),
                      IsDeleted = false,
                      AppUserId = 4

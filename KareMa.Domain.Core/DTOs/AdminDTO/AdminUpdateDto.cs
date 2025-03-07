@@ -20,6 +20,8 @@ public class AdminUpdateDto
     public string Password { get; set; }
     [DisplayName("شماره تلفن")]
     public string PhoneNumber { get; set; }
+    [DisplayName("موجودی")]
+    public decimal Balance { get; set; }
     [DisplayName("جنسیت")]
     public GenderEnum Gender { get; set; }
 

@@ -107,6 +107,9 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
+              "C:\\Users\\asus\\source\\repos\\KareMa\\Framework\\Framework.csproj": {
+                "projectPath": "C:\\Users\\asus\\source\\repos\\KareMa\\Framework\\Framework.csproj"
+              },
               "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.Domain.Core\\KareMa.Domain.Core.csproj": {
                 "projectPath": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.Domain.Core\\KareMa.Domain.Core.csproj"
               },

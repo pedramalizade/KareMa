@@ -52,6 +52,8 @@ namespace Framework
 
         public static string ToPersianString(this DateTime date, string format = "yyyy/MM/dd")
         {
+            if (date == DateTime.MinValue)
+                return "Invalid time";
             return date.ToString(format, GetPersianCulture());
         }
     }

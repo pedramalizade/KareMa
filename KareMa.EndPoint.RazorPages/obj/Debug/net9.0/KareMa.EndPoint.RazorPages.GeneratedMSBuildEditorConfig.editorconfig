@@ -60,6 +60,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5BcmVhXFBhZ2VzXEFkZENhdGVnb3J5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/asus/source/repos/KareMa/KareMa.EndPoint.RazorPages/Areas/AdminArea/Pages/AddCustomer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5BcmVhXFBhZ2VzXEFkZEN1c3RvbWVyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/asus/source/repos/KareMa/KareMa.EndPoint.RazorPages/Areas/AdminArea/Pages/AddExpert.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5BcmVhXFBhZ2VzXEFkZEV4cGVydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/asus/source/repos/KareMa/KareMa.EndPoint.RazorPages/Areas/AdminArea/Pages/AddService.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5BcmVhXFBhZ2VzXEFkZFNlcnZpY2UuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -80,8 +88,20 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5BcmVhXFBhZ2VzXENvbW1lbnQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/asus/source/repos/KareMa/KareMa.EndPoint.RazorPages/Areas/AdminArea/Pages/Customers.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5BcmVhXFBhZ2VzXEN1c3RvbWVycy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/asus/source/repos/KareMa/KareMa.EndPoint.RazorPages/Areas/AdminArea/Pages/Experts.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5BcmVhXFBhZ2VzXEV4cGVydHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/asus/source/repos/KareMa/KareMa.EndPoint.RazorPages/Areas/AdminArea/Pages/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5BcmVhXFBhZ2VzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/asus/source/repos/KareMa/KareMa.EndPoint.RazorPages/Areas/AdminArea/Pages/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5BcmVhXFBhZ2VzXExvZ2luLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/asus/source/repos/KareMa/KareMa.EndPoint.RazorPages/Areas/AdminArea/Pages/Order.cshtml]
@@ -118,6 +138,14 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/asus/source/repos/KareMa/KareMa.EndPoint.RazorPages/Areas/AdminArea/Pages/UpdateCategory.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5BcmVhXFBhZ2VzXFVwZGF0ZUNhdGVnb3J5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/asus/source/repos/KareMa/KareMa.EndPoint.RazorPages/Areas/AdminArea/Pages/UpdateCustomer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5BcmVhXFBhZ2VzXFVwZGF0ZUN1c3RvbWVyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/asus/source/repos/KareMa/KareMa.EndPoint.RazorPages/Areas/AdminArea/Pages/UpdateExpert.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5BcmVhXFBhZ2VzXFVwZGF0ZUV4cGVydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/asus/source/repos/KareMa/KareMa.EndPoint.RazorPages/Areas/AdminArea/Pages/UpdateService.cshtml]
@@ -162,6 +190,42 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/asus/source/repos/KareMa/KareMa.EndPoint.RazorPages/Areas/CustomerArea/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ3VzdG9tZXJBcmVhXFBhZ2VzXF9WaWV3U3RhcnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/asus/source/repos/KareMa/KareMa.EndPoint.RazorPages/Areas/ExpertArea/Pages/AddSuggestion.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRXhwZXJ0QXJlYVxQYWdlc1xBZGRTdWdnZXN0aW9uLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/asus/source/repos/KareMa/KareMa.EndPoint.RazorPages/Areas/ExpertArea/Pages/ExpertSuggestions.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRXhwZXJ0QXJlYVxQYWdlc1xFeHBlcnRTdWdnZXN0aW9ucy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/asus/source/repos/KareMa/KareMa.EndPoint.RazorPages/Areas/ExpertArea/Pages/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRXhwZXJ0QXJlYVxQYWdlc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/asus/source/repos/KareMa/KareMa.EndPoint.RazorPages/Areas/ExpertArea/Pages/OpenOrders.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRXhwZXJ0QXJlYVxQYWdlc1xPcGVuT3JkZXJzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/asus/source/repos/KareMa/KareMa.EndPoint.RazorPages/Areas/ExpertArea/Pages/ProfileSetting.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRXhwZXJ0QXJlYVxQYWdlc1xQcm9maWxlU2V0dGluZy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/asus/source/repos/KareMa/KareMa.EndPoint.RazorPages/Areas/ExpertArea/Pages/Shared/_ExpertLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRXhwZXJ0QXJlYVxQYWdlc1xTaGFyZWRcX0V4cGVydExheW91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/asus/source/repos/KareMa/KareMa.EndPoint.RazorPages/Areas/ExpertArea/Pages/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRXhwZXJ0QXJlYVxQYWdlc1xTaGFyZWRcX1ZhbGlkYXRpb25TY3JpcHRzUGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/asus/source/repos/KareMa/KareMa.EndPoint.RazorPages/Areas/ExpertArea/Pages/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRXhwZXJ0QXJlYVxQYWdlc1xfVmlld0ltcG9ydHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/asus/source/repos/KareMa/KareMa.EndPoint.RazorPages/Areas/ExpertArea/Pages/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRXhwZXJ0QXJlYVxQYWdlc1xfVmlld1N0YXJ0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/asus/source/repos/KareMa/KareMa.EndPoint.RazorPages/Pages/AddOrder.cshtml]

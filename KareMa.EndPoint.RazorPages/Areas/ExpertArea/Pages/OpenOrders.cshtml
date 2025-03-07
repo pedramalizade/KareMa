@@ -1,0 +1,83 @@
+﻿@page
+@using KareMa.Domain.Core.Enums
+@model KareMa.EndPoint.RazorPages.Areas.ExpertArea.Pages.OpenOrdersModel
+@{
+    Layout = "_ExpertLayout";
+    ViewData["OpenOrders"] = "active";
+    ViewData["Title"] = "درخواست های مرتبط";
+}
+<div class="goodup-dashboard-content">
+    <div class="dashboard-tlbar d-block mb-5">
+        <div class="row">
+            <div class="colxl-12 col-lg-12 col-md-12">
+                <h3 class="breadcrumb-item"><a href="#" class="theme-cl">درخواست های مرتبط</a></h3>
+            </div>
+        </div>
+    </div>
+
+    <div class="dashboard-widg-bar d-block">
+        <div class="row">
+            <div class="col-xl-12 col-lg-12">
+                <div class="dashboard-list-wraps bg-white rounded mb-4">
+                    <div class="dashboard-list-wraps-head br-bottom py-3 px-3">
+                        <div class="dashboard-list-wraps-flx">
+                            <h4 class="mb-0 ft-medium fs-md"><i class="fa fa-file-alt ms-2 theme-cl fs-sm"></i>درخواست های مرتبط </h4>
+                        </div>
+                    </div>
+
+                    <div class="dashboard-list-wraps-body py-3 px-3">
+                        <div class="dashboard-listing-wraps">
+                            @foreach (var order in Model.Orders)
+                            {
+                                if (order.Status == StatusEnum.AwaitingSuggestionExperts)
+                                {
+                                    <!-- Single Listing Item -->
+                                    ViewData["orderId"] = order.Id;
+
+                                    <div class="dsd-single-listing-wraps">
+                                        <div class="dsd-single-lst-thumb"><img src="@order.Image" class="img-fluid" alt="" /></div>
+                                        <div class="dsd-single-lst-caption">
+                                            <div class="dsd-single-lst-title"><h5>@order.Title</h5></div>
+                                            <span class="agd-location">@order.Description</span>
+                                            <div class="dsd-single-lst-footer">
+                                                <a asp-page="AddSuggestion" asp-route-id="@order.Id" class="btn btn-success">
+                                                    ثبت پیشنهاد
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts {
+    <script>
+        jalaliDatepicker.startWatch({
+            minDate: "attr",
+            maxDate: "attr",
+            minTime: "attr",
+            maxTime: "attr",
+            hideAfterChange: true,
+            autoHide: true,
+            showTodayBtn: true,
+            showEmptyBtn: true,
+            topSpace: 10,
+            bottomSpace: 30,
+            time: true,
+            dayRendering(opt, input) {
+                return {
+                    isHollyDay: opt.day == 1
+                }
+            }
+        });
+
+        document.getElementById("aaa").addEventListener("jdp:change", function (e) { console.log(e) });
+
+
+    </script>
+}

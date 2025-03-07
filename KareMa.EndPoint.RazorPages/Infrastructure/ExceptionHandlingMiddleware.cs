@@ -1,4 +1,6 @@
-﻿namespace KareMa.EndPoint.RazorPages.Infrastructure
+﻿using System.Net;
+
+namespace KareMa.EndPoint.RazorPages.Infrastructure
 {
     public class ExceptionHandlingMiddleware
     {
@@ -12,6 +14,7 @@
         }
         public async Task InvokeAsync(HttpContext context)
         {
+
             try
             {
                 await _next(context);

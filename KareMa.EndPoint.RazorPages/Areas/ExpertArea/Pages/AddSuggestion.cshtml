@@ -1,0 +1,87 @@
+﻿@page
+@model KareMa.EndPoint.RazorPages.Areas.ExpertArea.Pages.AddSuggestionModel
+@{
+    Layout = "_ExpertLayout";
+    ViewData["Title"] = "ایجاد پیشنهاد";
+}
+<div class="goodup-dashboard-content">
+
+    <form class="submit-form" method="post" asp-page-handler="CreateSuggestion">
+        <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
+        <div class="dashboard-widg-bar d-block">
+            <div class="row">
+                <input asp-for="@Model.SuggestionCreate.OrderId" hidden value="@Model.OrderId" />
+                <div class="col-xl-9 col-lg-9 col-md-8 col-sm-12">
+                    <div class="dashboard-list-wraps bg-white rounded mb-4">
+                        <div class="dashboard-list-wraps-head br-bottom py-3 px-3">
+                            <div class="dashboard-list-wraps-flx">
+                                <h4 class="mb-0 ft-medium fs-md"><i class="fa fa-user-check ms-2 theme-cl fs-sm"></i>پیشنهاد</h4>
+                            </div>
+                        </div>
+
+                        <div class="dashboard-list-wraps-body py-3 px-3">
+                            <div class="row">
+                                <div class="col-xl-12 col-lg-6 col-md-12 col-sm-12">
+                                    <div class="form-group">
+                                        <label class="mb-1">توضیحات</label>
+                                        <textarea asp-for=@Model.SuggestionCreate.Description type="text" class="form-control rounded">
+                                        </textarea>
+                                        <span asp-validation-for="@Model.SuggestionCreate.Description" class="text-danger"></span>
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                                    <div class="form-group">
+                                        <label class="mb-1">قیمت پیشنهادی</label>
+                                        <input asp-for=@Model.SuggestionCreate.Price type="number" class="form-control rounded" />
+                                        <span asp-validation-for="@Model.SuggestionCreate.Price" class="text-danger"></span>
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                                    <div class="form-group">
+                                        <label class="mb-1">تاریخ پیشنهادی</label>
+                                        <input asp-for=@Model.SuggestionDate data-jdp data-jdp-min-date="today" class="form-control rounded" />
+                                        <span asp-validation-for="@Model.SuggestionDate" class="text-danger"></span>
+                                    </div>
+                                </div>
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                                    <div class="form-group">
+                                        <button type="submit" class="btn theme-bg rounded text-light">ثبت پیشنهاد</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </form>
+</div>
+@section Scripts {
+
+    <partial name="_ValidationScriptsPartial" />
+
+    <script>
+        jalaliDatepicker.startWatch({
+            minDate: "attr",
+            maxDate: "attr",
+            minTime: "attr",
+            maxTime: "attr",
+            hideAfterChange: true,
+            autoHide: true,
+            showTodayBtn: true,
+            showEmptyBtn: true,
+            topSpace: 10,
+            bottomSpace: 30,
+            time: true,
+            dayRendering(opt, input) {
+                return {
+                    isHollyDay: opt.day == 1
+                }
+            }
+        });
+
+        document.getElementById("aaa").addEventListener("jdp:change", function (e) { console.log(e) });
+
+    </script>
+}

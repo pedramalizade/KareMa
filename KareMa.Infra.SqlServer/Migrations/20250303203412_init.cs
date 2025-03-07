@@ -113,6 +113,7 @@ namespace KareMa.Infra.SqlServer.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     AppUserId = table.Column<int>(type: "int", nullable: false),
                     FirstName = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
+                    Balance = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     LastName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     Gender = table.Column<int>(type: "int", nullable: false),
                     IsDeleted = table.Column<bool>(type: "bit", nullable: false),
@@ -222,9 +223,11 @@ namespace KareMa.Infra.SqlServer.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     AppUserId = table.Column<int>(type: "int", nullable: false),
                     FirstName = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
+                    Image = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     LastName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     Gender = table.Column<int>(type: "int", nullable: true),
                     PhoneNumber = table.Column<string>(type: "nvarchar(11)", maxLength: 11, nullable: true),
+                    Balance = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     BankCardNumber = table.Column<string>(type: "nvarchar(16)", maxLength: 16, nullable: true),
                     CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
                     IsDeleted = table.Column<bool>(type: "bit", nullable: false)
@@ -250,10 +253,11 @@ namespace KareMa.Infra.SqlServer.Migrations
                     FirstName = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
                     LastName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     Gender = table.Column<int>(type: "int", nullable: false),
-                    PhoneNumber = table.Column<string>(type: "nvarchar(11)", maxLength: 11, nullable: false),
+                    PhoneNumber = table.Column<string>(type: "nvarchar(11)", maxLength: 11, nullable: true),
+                    Balance = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     BirthDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    BankCardNumber = table.Column<string>(type: "nvarchar(16)", maxLength: 16, nullable: false),
-                    ProfileImage = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    BankCardNumber = table.Column<string>(type: "nvarchar(16)", maxLength: 16, nullable: true),
+                    Image = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
                     IsConfirm = table.Column<bool>(type: "bit", nullable: false),
                     IsDeleted = table.Column<bool>(type: "bit", nullable: false)
@@ -549,8 +553,8 @@ namespace KareMa.Infra.SqlServer.Migrations
 
             migrationBuilder.InsertData(
                 table: "Admins",
-                columns: new[] { "Id", "AppUserId", "CreatedAt", "FirstName", "Gender", "IsDeleted", "LastName" },
-                values: new object[] { 1, 1, new DateTime(2024, 2, 12, 0, 0, 0, 0, DateTimeKind.Unspecified), "پدرام", 2, false, "علیزاده" });
+                columns: new[] { "Id", "AppUserId", "Balance", "CreatedAt", "FirstName", "Gender", "IsDeleted", "LastName" },
+                values: new object[] { 1, 1, 0m, new DateTime(2024, 2, 12, 0, 0, 0, 0, DateTimeKind.Unspecified), "پدرام", 2, false, "علیزاده" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUserRoles",
@@ -566,20 +570,20 @@ namespace KareMa.Infra.SqlServer.Migrations
 
             migrationBuilder.InsertData(
                 table: "Customers",
-                columns: new[] { "Id", "AppUserId", "BankCardNumber", "CreatedAt", "FirstName", "Gender", "IsDeleted", "LastName", "PhoneNumber" },
+                columns: new[] { "Id", "AppUserId", "Balance", "BankCardNumber", "CreatedAt", "FirstName", "Gender", "Image", "IsDeleted", "LastName", "PhoneNumber" },
                 values: new object[,]
                 {
-                    { 1, 3, "1234123412341234", new DateTime(2024, 2, 12, 0, 0, 0, 0, DateTimeKind.Unspecified), "تارا", 1, false, "بابایی", "09192365988" },
-                    { 2, 5, "1239684412341234", new DateTime(2024, 2, 12, 0, 0, 0, 0, DateTimeKind.Unspecified), "امیر", 2, false, "تقوایی", "09014839264" }
+                    { 1, 3, 1500m, "1234123412341234", new DateTime(2024, 2, 12, 0, 0, 0, 0, DateTimeKind.Unspecified), "تارا", 1, "\\AdminTemplate\\images\\user\\placeholder.jpg", false, "بابایی", "09192365988" },
+                    { 2, 5, 1500m, "1239684412341234", new DateTime(2024, 2, 12, 0, 0, 0, 0, DateTimeKind.Unspecified), "امیر", 2, "\\AdminTemplate\\images\\user\\placeholder.jpg", false, "تقوایی", "09014839264" }
                 });
 
             migrationBuilder.InsertData(
                 table: "Experts",
-                columns: new[] { "Id", "AppUserId", "BankCardNumber", "BirthDate", "CreatedAt", "FirstName", "Gender", "IsConfirm", "IsDeleted", "LastName", "PhoneNumber", "ProfileImage" },
+                columns: new[] { "Id", "AppUserId", "Balance", "BankCardNumber", "BirthDate", "CreatedAt", "FirstName", "Gender", "Image", "IsConfirm", "IsDeleted", "LastName", "PhoneNumber" },
                 values: new object[,]
                 {
-                    { 1, 2, "1234123412341234", new DateTime(1999, 10, 3, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2024, 2, 12, 0, 0, 0, 0, DateTimeKind.Unspecified), "علی", 2, true, false, "کریمی", "09362356998", null },
-                    { 2, 4, "1234123412341234", new DateTime(1999, 4, 4, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2024, 2, 12, 0, 0, 0, 0, DateTimeKind.Unspecified), "سارا", 1, true, false, "خاتمی", "09362357998", null }
+                    { 1, 2, 0m, "1234123412341234", new DateTime(1999, 10, 3, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2024, 2, 12, 0, 0, 0, 0, DateTimeKind.Unspecified), "علی", 2, "\\AdminTemplate\\images\\user\\placeholder.jpg", true, false, "کریمی", "09362356998" },
+                    { 2, 4, 0m, "1234123412341234", new DateTime(1999, 4, 4, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2024, 2, 12, 0, 0, 0, 0, DateTimeKind.Unspecified), "سارا", 1, "\\AdminTemplate\\images\\user\\placeholder.jpg", true, false, "خاتمی", "09362357998" }
                 });
 
             migrationBuilder.InsertData(

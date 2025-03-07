@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v9.0": {
       "KareMa.Domain.AppService/1.0.0": {
         "dependencies": {
+          "Framework": "1.0.0",
           "KareMa.Domain.Core": "1.0.0",
           "KareMa.Domain.Service": "1.0.0",
           "Microsoft.AspNetCore.Identity": "2.3.0"
@@ -932,6 +933,18 @@
           }
         }
       },
+      "Framework/1.0.0": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "9.0.2",
+          "Microsoft.Extensions.Identity.Core": "9.0.2"
+        },
+        "runtime": {
+          "Framework.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
       "KareMa.Domain.Core/1.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore.Http.Features": "5.0.17",
@@ -1585,6 +1598,11 @@
       "sha512": "sha512-IXoJOXIqc39AIe+CIR7koBtRGMiCt/LPM3lI+PELtDIy9XdyeSrwXFdWV9dzJ2Awl0paLWUaknLxFQ5HpHZUog==",
       "path": "system.windows.extensions/6.0.0",
       "hashPath": "system.windows.extensions.6.0.0.nupkg.sha512"
+    },
+    "Framework/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "KareMa.Domain.Core/1.0.0": {
       "type": "project",

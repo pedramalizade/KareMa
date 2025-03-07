@@ -31,6 +31,12 @@ namespace KareMa.Domain.Service.Expect
         public async Task<int> ExpertOrderCount(int id, CancellationToken cancellationToken)
       => await _expertRepository.ExpertOrderCount(id, cancellationToken);
 
+        public async Task<ExpertUpdateDto> ExpertUpdateInfo(int id, CancellationToken cancellationToken)
+       => await _expertRepository.ExpertUpdateInfo(id,  cancellationToken);
+        public async Task<List<int>> GetExpertServiceIds(int id, CancellationToken cancellationToken)
+  => await _expertRepository.GetExpertServiceIds(id, cancellationToken);
+        public async Task<ExpertNameDto> GetExpertName(int id, CancellationToken cancellationToken)
+          => await _expertRepository.GetExpertName(id, cancellationToken);
         public async Task<List<Expert>> GetAll(CancellationToken cancellationToken)
           => await _expertRepository.GetAll(cancellationToken);
 
@@ -42,5 +48,11 @@ namespace KareMa.Domain.Service.Expect
 
         public async Task<bool> Update(ExpertUpdateDto expertUpdateDto, CancellationToken cancellationToken)
           => await _expertRepository.Update(expertUpdateDto, cancellationToken);
+
+        public async Task<Expert> GetExpertById(int expertId, CancellationToken cancellationToken)
+       => await _expertRepository.GetExpertById(expertId, cancellationToken);
+
+        public async Task UpdateBalance(int expertId, decimal newBalance, CancellationToken cancellationToken)
+            => await _expertRepository.UpdateBalance(expertId, newBalance, cancellationToken);  
     }
 }

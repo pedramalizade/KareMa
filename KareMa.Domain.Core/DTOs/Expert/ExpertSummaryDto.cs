@@ -19,8 +19,8 @@ namespace KareMa.Domain.Core.DTOs.Expert
         public GenderEnum Gender { get; set; }
         [MaxLength(11)]
         public string? ProfileImage { get; set; }
-        [MaxLength(16)]
         public List<Service>? Services { get; set; }
         public List<Comment>? Comments { get; set; }
+        public decimal Balance { get; set; }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using KareMa.Domain.Core.Contracts.Repositories;
+using KareMa.Domain.Core.DTOs.CategoryDTO;
 using KareMa.Domain.Core.DTOs.CustomerDTO;
 using KareMa.Domain.Core.Entities;
 using KareMa.Infra.SqlServer.Common;
@@ -7,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace KareMa.Infra.DataAccess.Repo.Ef.Repository
@@ -27,9 +29,11 @@ namespace KareMa.Infra.DataAccess.Repo.Ef.Repository
                 LastName = customerCreateDto.LastName,
                 Gender = customerCreateDto.Gender,
                 PhoneNumber = customerCreateDto.PhoneNumber,
-                //BackUpPhoneNumber = customerCreateDto.BackUpPhoneNumber,
                 BankCardNumber = customerCreateDto.BankCardNumber,
                 Addresses = customerCreateDto.Addresses,
+                Image = customerCreateDto.Image,
+                AppUserId = customerCreateDto.AppUserId,
+                Balance = customerCreateDto.Balance ?? 0
             };
             await _context.Customers.AddAsync(newModel, cancellationToken);
 
@@ -39,16 +43,37 @@ namespace KareMa.Infra.DataAccess.Repo.Ef.Repository
 
         public async Task<bool> Delete(int customerId, CancellationToken cancellationToken)
         {
+            Console.WriteLine($"Attempting to delete customer with ID: {customerId}");
             var targetModel = await FindCustomer(customerId, cancellationToken);
-            targetModel.IsDeleted = true;
+            if (targetModel == null)
+            {
+                Console.WriteLine($"Customer with ID: {customerId} not found.");
+                return false;
+            }
 
-            _context.SaveChangesAsync(cancellationToken);
+            targetModel.IsDeleted = true;
+            await _context.SaveChangesAsync(cancellationToken); 
+            Console.WriteLine($"Customer with ID: {customerId} marked as deleted.");
             return true;
         }
 
-        public async Task<List<Customer>> GetAll(CancellationToken cancellationToken)
+        public async Task<List<GetCustomerDto>> GetAll(CancellationToken cancellationToken)
         {
-            return await _context.Customers.AsNoTracking().ToListAsync(cancellationToken);
+            Console.WriteLine("Fetching all customers...");
+            var customers = await _context.Customers
+                .AsNoTracking()
+                .Where(c => !c.IsDeleted) 
+                .Select(c => new GetCustomerDto
+                {
+                    Id = c.Id,
+                    FirstName = c.FirstName,
+                    LastName = c.LastName,
+                    Image = c.Image,
+                    Balance = c.Balance
+                }).ToListAsync(cancellationToken);
+
+            Console.WriteLine($"Found {customers.Count} active customers.");
+            return customers;
         }
 
         public async Task<Customer> GetById(int customerId, CancellationToken cancellationToken)
@@ -58,22 +83,58 @@ namespace KareMa.Infra.DataAccess.Repo.Ef.Repository
 
         public async Task<bool> Update(CustomerUpdateDto customerUpdateDto, CancellationToken cancellationToken)
         {
+            Console.WriteLine($"CustomerRepository.Update started for ID: {customerUpdateDto.Id}");
+
             var targetModel = await _context.Customers
-                .FirstOrDefaultAsync(c => c.Id == customerUpdateDto.Id, cancellationToken)
-    ;
+                .Include(c => c.Addresses) // فرض می‌کنم Addresses یه شیء تکی Address هست، نه لیست
+                .FirstOrDefaultAsync(c => c.Id == customerUpdateDto.Id && !c.IsDeleted, cancellationToken);
+
             if (targetModel == null)
+            {
+                Console.WriteLine($"Customer with ID {customerUpdateDto.Id} not found.");
                 return false;
+            }
 
             targetModel.FirstName = customerUpdateDto.FirstName;
             targetModel.LastName = customerUpdateDto.LastName;
-            //targetModel.Gender = customerUpdateDto.Gender;
-            //targetModel.PhoneNumber = customerUpdateDto.PhoneNumber;
-            //targetModel.BackUpPhoneNumber = customerUpdateDto.BackUpPhoneNumber;
-            //targetModel.BankCardNumber = customerUpdateDto.BankCardNumber;
+            targetModel.Balance = customerUpdateDto.Balance;
+            targetModel.Image = customerUpdateDto.Image;
+            targetModel.BankCardNumber = customerUpdateDto.BankCardNumber;
+            targetModel.PhoneNumber = customerUpdateDto.PhoneNumber;
+            targetModel.Gender = customerUpdateDto.Gender;
 
-            await _context.SaveChangesAsync(cancellationToken);
+            if (customerUpdateDto.Address != null)
+            {
+                if (targetModel.Addresses != null)
+                {
+                    // آپدیت آدرس موجود
+                    targetModel.Addresses.Title = customerUpdateDto.Address.Title;
+                    targetModel.Addresses.CityId = customerUpdateDto.Address.CityId;
+                    targetModel.Addresses.Street = customerUpdateDto.Address.Street;
+                    targetModel.Addresses.Area = customerUpdateDto.Address.Area;
+                    targetModel.Addresses.PostalCode = customerUpdateDto.Address.PostalCode;
+                    Console.WriteLine($"Updated existing address for Customer ID: {customerUpdateDto.Id}");
+                }
+                else
+                {
+                    // اضافه کردن آدرس جدید اگه وجود نداره
+                    targetModel.Addresses = customerUpdateDto.Address;
+                    Console.WriteLine($"Added new address for Customer ID: {customerUpdateDto.Id}");
+                }
+            }
 
-            return true;
+            try
+            {
+                await _context.SaveChangesAsync(cancellationToken);
+                Console.WriteLine($"Customer with ID {customerUpdateDto.Id} updated successfully.");
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error saving changes: {ex.Message}");
+                Console.WriteLine($"Inner Exception: {ex.InnerException?.Message}");
+                throw;
+            }
         }
 
         public async Task<CustomerSummaryDto> GetCustomerSummary(int id, CancellationToken cancellationToken)
@@ -86,6 +147,7 @@ namespace KareMa.Infra.DataAccess.Repo.Ef.Repository
                     LastName = c.LastName,
                     BankCardNumber = c.BankCardNumber,
                     PhoneNumber = c.PhoneNumber,
+                    Balance = c.Balance,
                     Gender = c.Gender,
                     Addresses = c.Addresses,
                     Comments = c.Comments,
@@ -99,19 +161,33 @@ namespace KareMa.Infra.DataAccess.Repo.Ef.Repository
         }
         public async Task<CustomerUpdateDto> GetCustomerUpdateInfo(int customerId, CancellationToken cancellationToken)
         {
-            var targetCustomer = await _context.Customers.AsNoTracking().Include(c => c.Addresses)
-                 .Select(c => new CustomerUpdateDto()
-                 {
-                     Id = c.Id,
-                     FirstName = c.FirstName,
-                     LastName = c.LastName,
-                     PhoneNumber = c.PhoneNumber,
-                     Address = c.Addresses,
-                 }).FirstOrDefaultAsync(c => c.Id == customerId, cancellationToken);
+            Console.WriteLine($"GetCustomerUpdateInfo called with customerId: {customerId}");
 
-            if (targetCustomer is null)
-                return new CustomerUpdateDto();
+            var targetCustomer = await _context.Customers
+                .AsNoTracking()
+                .Include(c => c.Addresses)
+                .Where(c => c.Id == customerId && !c.IsDeleted) 
+                .Select(c => new CustomerUpdateDto
+                {
+                    Id = c.Id,
+                    FirstName = c.FirstName,
+                    LastName = c.LastName,
+                    PhoneNumber = c.PhoneNumber,
+                    Address = c.Addresses,
+                    Balance = c.Balance, 
+                    BankCardNumber = c.BankCardNumber,
+                    Gender = c.Gender,
+                    Image = c.Image
+                })
+                .FirstOrDefaultAsync(cancellationToken);
 
+            if (targetCustomer == null)
+            {
+                Console.WriteLine($"Customer with ID: {customerId} not found in database.");
+                return null;
+            }
+
+            Console.WriteLine($"Found customer with ID: {targetCustomer.Id}, Name: {targetCustomer.FirstName} {targetCustomer.LastName}");
             return targetCustomer;
         }
 
@@ -125,5 +201,49 @@ namespace KareMa.Infra.DataAccess.Repo.Ef.Repository
   => await _context.Customers.CountAsync(cancellationToken);
         private async Task<Customer> FindCustomer(int id, CancellationToken cancellationToken)
      => await _context.Customers.FirstOrDefaultAsync(a => a.Id == id, cancellationToken);
+
+        public async Task<CustomerUpdateDto> CustomerUpdateInfo(int id, CancellationToken cancellationToken)
+        {
+            return await _context.Customers.Select(a => new CustomerUpdateDto
+            {
+                Id = id,
+                FirstName = a.FirstName,
+                LastName = a.LastName,
+                Address = a.Addresses,
+                Image = a.Image,
+                Gender = a.Gender,
+                Balance = a.Balance,
+                PhoneNumber = a.PhoneNumber
+
+            }).FirstOrDefaultAsync(a => a.Id == id, cancellationToken);
+        }
+        public async Task UpdateBalance(int customerId, decimal newBalance, CancellationToken cancellationToken)
+        {
+            Console.WriteLine($"Updating balance for Customer ID: {customerId} to {newBalance}");
+            var customer = await _context.Customers
+                .FirstOrDefaultAsync(c => c.Id == customerId && !c.IsDeleted, cancellationToken);
+
+            if (customer == null)
+            {
+                Console.WriteLine($"Customer with ID: {customerId} not found or is deleted.");
+                throw new Exception($"Customer with ID {customerId} not found.");
+            }
+
+            customer.Balance = newBalance;
+            await _context.SaveChangesAsync(cancellationToken);
+            Console.WriteLine($"Balance updated successfully for Customer ID: {customerId}");
+        }
+        public async Task<Customer> GetCustomerById(int customerId, CancellationToken cancellationToken)
+        {
+            Console.WriteLine($"Fetching customer with ID: {customerId}");
+            var customer = await _context.Customers
+                .FirstOrDefaultAsync(c => c.Id == customerId && !c.IsDeleted, cancellationToken);
+
+            if (customer == null)
+            {
+                Console.WriteLine($"Customer with ID: {customerId} not found or is deleted.");
+            }
+            return customer;
+        }
     }
 }

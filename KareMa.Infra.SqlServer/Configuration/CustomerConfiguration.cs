@@ -35,10 +35,12 @@ namespace KareMa.Infra.SqlServer.Configuration
                     FirstName = "تارا",
                     LastName = "بابایی",
                     Gender = GenderEnum.Female,
+                    Image = "\\AdminTemplate\\images\\user\\placeholder.jpg",
                     PhoneNumber = "09192365988",
                     //BackUpPhoneNumber = "09123669858",
                     BankCardNumber = "1234123412341234",
                     CreatedAt = new DateTime(2024, 2, 12),
+                    Balance = 1500,
                     IsDeleted = false,
                     AppUserId = 3
 
@@ -49,6 +51,8 @@ namespace KareMa.Infra.SqlServer.Configuration
                     FirstName = "امیر",
                     LastName = "تقوایی",
                     Gender = GenderEnum.Male,
+                    Image = "\\AdminTemplate\\images\\user\\placeholder.jpg",
+                    Balance = 1500,
                     PhoneNumber = "09014839264",
                     //BackUpPhoneNumber = "09123623258",
                     BankCardNumber = "1239684412341234",

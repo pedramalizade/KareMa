@@ -1,0 +1,18 @@
+﻿@page
+@model KareMa.EndPoint.RazorPages.Areas.ExpertArea.Pages.IndexModel
+@{
+    Layout = "_ExpertLayout";
+    ViewData["Dashboard"] = "active";
+    ViewData["Title"] = "داشبورد";
+}
+<div class="goodup-dashboard-content">
+    <div class="dashboard-tlbar d-block mb-5">
+        <div class="row">
+            <div class="colxl-12 col-lg-12 col-md-12">
+                <h3 class="breadcrumb-item"><a href="#" class="theme-cl">داشبورد</a></h3>
+                <br>
+                <h6 class="ft-medium fs-4">سلام @Model.ExpertName.FirstName @Model.ExpertName.LastName</h6>
+            </div>
+        </div>
+    </div>
+</div>

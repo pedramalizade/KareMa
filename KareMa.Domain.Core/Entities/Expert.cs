@@ -23,15 +23,16 @@ namespace KareMa.Domain.Core.Entities
         public string LastName { get; set; }
         public GenderEnum Gender { get; set; }
         [MaxLength(11)]
-        public string PhoneNumber { get; set; }
+        public string? PhoneNumber { get; set; }
+        public decimal Balance { get; set; }
         public DateTime BirthDate { get; set; }
         [MaxLength(16)]
-        public string BankCardNumber { get; set; }
+        public string? BankCardNumber { get; set; }
         public List<Order>? Orders { get; set; }
         public List<Service>? Services { get; set; }
         public List<Suggestion>? Suggestions { get; set; }
         public List<Comment>? Comments { get; set; }
-        public string? ProfileImage { get; set; }
+        public string? Image { get; set; }
         [DisplayName("آدرس")]
         public Address Address { get; set; }
         public DateTime CreatedAt { get; set; } = DateTime.Now;

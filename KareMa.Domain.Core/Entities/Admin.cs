@@ -16,6 +16,7 @@ namespace KareMa.Domain.Core.Entities
         public int AppUserId { get; set; }
         [MaxLength(20)]
         public string FirstName { get; set; }
+        public decimal Balance { get; set; }
         [MaxLength(50)]
         public string LastName { get; set; }
         public GenderEnum Gender { get; set; }

@@ -124,5 +124,10 @@ namespace KareMa.Infra.DataAccess.Repo.Ef.Repository
 
         private async Task<Service> FindService(int id, CancellationToken cancellationToken)
        => await _context.Services.FirstOrDefaultAsync(a => a.Id == id, cancellationToken);
+
+        public async Task<List<Service>> GetAllServicesAsync(CancellationToken cancellationToken)
+        {
+            return await _context.Services.ToListAsync(cancellationToken);
+        }
     }
 }

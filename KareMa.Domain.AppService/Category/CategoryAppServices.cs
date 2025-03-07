@@ -50,13 +50,31 @@ namespace KareMa.Domain.AppService
   => await _categoryServices.ServiceCategoryUpdateInfo(id, cancellationToken);
         public async Task<bool> Update(CategoryUpdateDto categoryUpdateDto, IFormFile? image, CancellationToken cancellationToken)
         {
+            Console.WriteLine($"CategoryAppServices.Update started for ID: {categoryUpdateDto.Id}");
+
             if (image != null)
             {
-                var imageAddress =  _baseSevices.UploadImage(image);
-                categoryUpdateDto.Image = await imageAddress;
+                try
+                {
+                    var imageAddress = await _baseSevices.UploadImage(image); 
+                    if (string.IsNullOrEmpty(imageAddress))
+                    {
+                        Console.WriteLine("Image upload failed.");
+                        return false;
+                    }
+                    categoryUpdateDto.Image = imageAddress;
+                    Console.WriteLine($"Image uploaded successfully: {imageAddress}");
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Image upload error: {ex.Message}");
+                    return false;
+                }
             }
 
-            return await _categoryServices.Update(categoryUpdateDto, cancellationToken);
+            var result = await _categoryServices.Update(categoryUpdateDto, cancellationToken);
+            Console.WriteLine($"CategoryServices.Update result: {result}");
+            return result;
         }
     }
 }

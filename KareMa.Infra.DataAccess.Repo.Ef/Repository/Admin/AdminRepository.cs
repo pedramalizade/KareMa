@@ -54,6 +54,7 @@ namespace KareMa.Infra.DataAccess.Repo.Ef.Repository
                 Id = a.Id,
                 Email = a.AppUser.Email,
                 FirstName = a.FirstName,
+                Balance = a.Balance,
                 LastName = a.LastName,
                 PhoneNumber = a.AppUser.PhoneNumber
 
@@ -69,6 +70,7 @@ namespace KareMa.Infra.DataAccess.Repo.Ef.Repository
             var targetModel = _context.Admins.FirstOrDefault(a => a.Id == adminUpdateDto.Id);
             targetModel.FirstName = adminUpdateDto.FirstName;
             targetModel.LastName = adminUpdateDto.LastName;
+            targetModel.Balance = adminUpdateDto.Balance;
             //targetModel.Email = adminUpdateDto.Email;
             targetModel.Gender = adminUpdateDto.Gender;
             //targetModel.Password = adminUpdateDto.Password;

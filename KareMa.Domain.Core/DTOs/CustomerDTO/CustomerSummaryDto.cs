@@ -21,6 +21,7 @@ namespace KareMa.Domain.Core.DTOs.CustomerDTO
         public string PhoneNumber { get; set; }
         [MaxLength(16)]
         public string? BankCardNumber { get; set; }
+        public decimal Balance { get; set; }
         public Address Addresses { get; set; }
         public List<Comment>? Comments { get; set; }
         public List<Order>? Orders { get; set; }

@@ -12,10 +12,16 @@ namespace Framework
     {
         public static string GetEnumDisplayName(this Enum enumType)
         {
-            return enumType.GetType().GetMember(enumType.ToString())
-                           .First()
-                           .GetCustomAttribute<DisplayAttribute>()
-                           .Name;
+            var memberInfo = enumType.GetType().GetMember(enumType.ToString());
+            if (memberInfo.Length > 0)
+            {
+                var displayAttribute = memberInfo[0].GetCustomAttribute<DisplayAttribute>();
+                if (displayAttribute != null)
+                {
+                    return displayAttribute.Name;
+                }
+            }
+            return enumType.ToString(); // اگه DisplayAttribute نبود، نام خام enum رو برگردون
         }
     }
 }

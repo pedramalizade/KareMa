@@ -23,7 +23,7 @@ namespace KareMa.Domain.Service
           => _customerRepository.CustomerCount(cancellationToken);
         public Task<bool> Delete(int customerId, CancellationToken cancellationToken)
           => _customerRepository.Delete(customerId, cancellationToken);
-        public Task<List<Customer>> GetAll(CancellationToken cancellationToken)
+        public Task<List<GetCustomerDto>> GetAll(CancellationToken cancellationToken)
           => _customerRepository.GetAll(cancellationToken);
         public async Task<CustomerUpdateDto> GetCustomerUpdateInfo(int customerId, CancellationToken cancellationToken)
    => await _customerRepository.GetCustomerUpdateInfo(customerId, cancellationToken);
@@ -33,5 +33,14 @@ namespace KareMa.Domain.Service
        => await _customerRepository.GetCustomerSummary(id, cancellationToken);
         public async Task<bool> Update(CustomerUpdateDto customerUpdateDto, CancellationToken cancellationToken)
           => await _customerRepository.Update(customerUpdateDto, cancellationToken);
+
+        public async Task<CustomerUpdateDto> CustomerUpdateInfo(int id, CancellationToken cancellationToken)
+        => await _customerRepository.CustomerUpdateInfo(id,  cancellationToken);
+
+        public async Task<Customer> GetCustomerById(int customerId, CancellationToken cancellationToken)
+        => await _customerRepository.GetCustomerById(customerId, cancellationToken);
+
+        public async Task UpdateBalance(int customerId, decimal newBalance, CancellationToken cancellationToken)
+       => await _customerRepository.UpdateBalance(customerId, newBalance, cancellationToken);   
     }
 }

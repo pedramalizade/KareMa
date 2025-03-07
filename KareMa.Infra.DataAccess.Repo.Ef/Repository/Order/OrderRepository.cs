@@ -19,7 +19,6 @@ namespace KareMa.Infra.DataAccess.Repo.Ef.Repository
         {
             _context = context;
         }
-
         public async Task<bool> Create(OrderCreateDto orderCreateDto, CancellationToken cancellationToken)
         {
             var newModel = new Order()
@@ -35,6 +34,7 @@ namespace KareMa.Infra.DataAccess.Repo.Ef.Repository
             await _context.Orders.AddAsync(newModel, cancellationToken);
 
             await _context.SaveChangesAsync(cancellationToken);
+            await AddSampleSuggestionsAsync(newModel.Id, cancellationToken);
             return true;
         }
 
@@ -45,25 +45,97 @@ namespace KareMa.Infra.DataAccess.Repo.Ef.Repository
             await _context.SaveChangesAsync(cancellationToken);
             return true;
         }
+
         public async Task<List<GetOrderDto>> GetAll(CancellationToken cancellationToken)
         {
-            var orders = await _context.Orders.AsNoTracking()
-           .Select(o => new GetOrderDto
-           {
-               Id = o.Id,
-               Title = o.Title,
-               Description = o.Description,
-               Status = o.Status,
-               Customer = o.Customer,
-               Expert = o.Expert,
-               Service = o.Service,
-               Suggestions = o.Suggestions
-           }).ToListAsync(cancellationToken);
+            var orders = await _context.Orders.AsNoTracking().Where(x => x.IsDeleted == false).Include(x => x.Suggestions).ThenInclude(s => s.Expert)
+                 .Select(o => new GetOrderDto
+                 {
+                     Id = o.Id,
+                     Title = o.Title,
+                     Description = o.Description,
+                     Status = o.Status,
+                     Customer = o.Customer,
+                     Service = o.Service,
+                     Image = o.Image,
+                     Suggestions = o.Suggestions
+
+                 }).ToListAsync(cancellationToken);
+
             return orders;
+        }
+
+        public async Task AddSampleSuggestionsAsync(int orderId, CancellationToken cancellationToken)
+        {
+            Console.WriteLine($"Adding sample suggestions for Order ID: {orderId}");
+
+            // چک کردن وجود سفارش
+            var order = await _context.Orders
+                .FirstOrDefaultAsync(o => o.Id == orderId && !o.IsDeleted, cancellationToken);
+
+            if (order == null)
+            {
+                Console.WriteLine($"Order with ID: {orderId} not found or is deleted.");
+                return;
+            }
+
+            // چک کردن متخصص‌ها
+            var experts = await _context.Experts
+                .Where(e => !e.IsDeleted)
+                .Take(2) // فقط دوتا متخصص
+                .ToListAsync(cancellationToken);
+
+            if (experts.Count < 2)
+            {
+                Console.WriteLine("Not enough experts found. Adding sample experts.");
+                var expert1 = new Expert { FirstName = "حسن", LastName = "رضایی", AppUserId = 2 };
+                var expert2 = new Expert { FirstName = "محمد", LastName = "کریمی", AppUserId = 3 };
+                _context.Experts.AddRange(expert1, expert2);
+                await _context.SaveChangesAsync(cancellationToken);
+                experts = new List<Expert> { expert1, expert2 };
+            }
+
+            // چک می‌کنیم که پیشنهاد برای این سفارش وجود داره یا نه
+            var existingSuggestions = await _context.Suggestions
+                .Where(s => s.OrderId == orderId)
+                .ToListAsync(cancellationToken);
+
+            if (!existingSuggestions.Any())
+            {
+                var suggestions = new List<Suggestion>
+        {
+            new Suggestion
+            {
+                OrderId = orderId,
+                ExpertId = experts[0].Id,
+                Price = 500000,
+                Description = "تعمیر سریع و ارزان",
+                SuggestedDate = DateTime.Now.AddDays(1),
+                Status = StatusEnum.AwaitingCustomerConfirmation
+            },
+            new Suggestion
+            {
+                OrderId = orderId,
+                ExpertId = experts[1].Id,
+                Price = 600000,
+                Description = "تعمیر با کیفیت بالا",
+                SuggestedDate = DateTime.Now.AddDays(2),
+                Status = StatusEnum.AwaitingCustomerConfirmation
+            }
+        };
+                _context.Suggestions.AddRange(suggestions);
+                await _context.SaveChangesAsync(cancellationToken);
+                Console.WriteLine($"Added sample suggestions for Order ID: {orderId}");
+            }
+            else
+            {
+                Console.WriteLine($"Suggestions already exist for Order ID: {orderId}");
+            }
         }
 
         public async Task<Order> GetById(int orderId, CancellationToken cancellationToken)
             => await FindOrder(orderId, cancellationToken);
+
 
         public async Task<bool> Update(OrderUpdateDto orderUpdateDto, CancellationToken cancellationToken)
         {
@@ -72,14 +144,11 @@ namespace KareMa.Infra.DataAccess.Repo.Ef.Repository
             targetModel.Title = orderUpdateDto.Title;
             targetModel.Description = orderUpdateDto.Description;
             targetModel.Status = orderUpdateDto.Status;
-            targetModel.Expert = orderUpdateDto.Expert;
-            targetModel.ExpertId = orderUpdateDto.ExpertId;
             targetModel.Service = orderUpdateDto.Service;
             targetModel.ServiceId = orderUpdateDto.ServiceId;
             targetModel.Image = orderUpdateDto.Image;
             targetModel.DoneAt = orderUpdateDto.DoneAt;
             targetModel.Suggestions = orderUpdateDto.Suggestions;
-
 
             await _context.SaveChangesAsync(cancellationToken);
 
@@ -88,10 +157,52 @@ namespace KareMa.Infra.DataAccess.Repo.Ef.Repository
         public async Task<bool> ChangeStatus(StatusEnum status, int orderId, CancellationToken cancellationToken)
         {
             var targetModel = await FindOrder(orderId, cancellationToken);
+
+            if (targetModel == null)
+                return false;
+
+            var allowedStatuses = GetAllowedStatuses(targetModel.Status);
+
+            if (!allowedStatuses.Contains(status))
+                return false;
+
             targetModel.Status = status;
             await _context.SaveChangesAsync(cancellationToken);
             return true;
         }
+
+        private List<StatusEnum> GetAllowedStatuses(StatusEnum currentStatus)
+        {
+            switch (currentStatus)
+            {
+                case StatusEnum.AwaitingSuggestionExperts:
+                    return new List<StatusEnum> { StatusEnum.AwaitingSuggestionExperts, StatusEnum.AwaitingCustomerConfirmation };
+
+                case StatusEnum.AwaitingCustomerConfirmation:
+                    return new List<StatusEnum> { StatusEnum.AwaitingCustomerConfirmation, StatusEnum.Confirmed, StatusEnum.NotConfirmed };
+
+                case StatusEnum.Confirmed:
+                    return new List<StatusEnum> { StatusEnum.Confirmed, StatusEnum.Done };
+
+                case StatusEnum.Done:
+                    return new List<StatusEnum> { StatusEnum.Done };
+
+                default:
+                    return new List<StatusEnum> { currentStatus };
+            }
+        }
+
+        //public async Task<bool> ChangeStatus(StatusEnum status, int orderId, CancellationToken cancellationToken)
+        //{
+        //    var targetModel = await FindOrder(orderId, cancellationToken);
+        //    targetModel.Status = status;
+        //    await _context.SaveChangesAsync(cancellationToken);
+        //    return true;
+        //}
+
+
+        public async Task<int> OrderCount(CancellationToken cancellationToken)
+          => await _context.Orders.CountAsync(cancellationToken);
 
         public async Task<List<GetOrderDto>> GetOrders(int customerId, CancellationToken cancellationToken)
         {
@@ -100,7 +211,6 @@ namespace KareMa.Infra.DataAccess.Repo.Ef.Repository
                 {
                     Customer = o.Customer,
                     Description = o.Description,
-                    Expert = o.Expert,
                     Image = o.Image,
                     Id = o.Id,
                     Service = o.Service,
@@ -116,17 +226,55 @@ namespace KareMa.Infra.DataAccess.Repo.Ef.Repository
                         SuggestedDate = x.SuggestedDate,
                         Status = x.Status,
                     }).ToList()
+
                 }).ToListAsync(cancellationToken);
+
             return target;
         }
-        public async Task AcceptStatus(int orderId, CancellationToken cancellationToken)
+
+        public async Task AcceptOrder(int orderId, CancellationToken cancellationToken)
         {
-            var target = await FindOrder(orderId, cancellationToken);
+            var target = await _context.Orders.FirstOrDefaultAsync(o => o.Id == orderId, cancellationToken);
             target.Status = StatusEnum.Confirmed;
+
             await _context.SaveChangesAsync(cancellationToken);
         }
-        public async Task<int> OrderCount(CancellationToken cancellationToken)
-  => await _context.Orders.CountAsync(cancellationToken);
+
+        public async Task DoneOrder(int id, CancellationToken cancellationToken)
+        {
+            var targetOrder = await _context.Orders.FirstOrDefaultAsync(o => o.Id == id, cancellationToken);
+            targetOrder.Status = StatusEnum.Done;
+            targetOrder.DoneAt = DateTime.Now;
+
+            await _context.SaveChangesAsync(cancellationToken);
+        }
+
+        public async Task<List<OrdersByServiceIdsDto>> GetOrdersByServiceIds(List<int> serviceIds, CancellationToken cancellationToken)
+        {
+            return await _context.Orders.Where(o => serviceIds.Contains(o.ServiceId))
+                  .Select(o => new OrdersByServiceIdsDto
+                  {
+                      Id = o.Id,
+                      Title = o.Title,
+                      Description = o.Description,
+                      Image = o.Image,
+                      CustomerId = o.CustomerId,
+                      Customer = o.Customer,
+                      Service = o.Service,
+                      ServiceId = o.ServiceId,
+                      Status = o.Status
+
+                  }).ToListAsync(cancellationToken);
+        }
+
+        public async Task<bool> OrderIsDone(int orderId, CancellationToken cancellationToken)
+        {
+            var targetOrder = await _context.Orders.FirstOrDefaultAsync(o => o.Id == orderId, cancellationToken);
+
+            if (targetOrder.Status == StatusEnum.Done) return true;
+
+            return false;
+        }
 
         private async Task<Order> FindOrder(int id, CancellationToken cancellationToken)
           => await _context.Orders.FirstOrDefaultAsync(a => a.Id == id, cancellationToken);

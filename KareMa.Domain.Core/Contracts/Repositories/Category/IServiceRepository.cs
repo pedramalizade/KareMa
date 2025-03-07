@@ -19,6 +19,7 @@ namespace KareMa.Domain.Core.Contracts.Repositories
         Task<ServiceUpdateDto> ServiceUpdateInfo(int id, CancellationToken cancellationToken);
         Task<List<ServicesNameDto>> GetServicesName(CancellationToken cancellationToken);
         Task<ServiceNameAndPriceDto> GetServiceNameAndPrice(int id, CancellationToken cancellationToken);
+        Task<List<Entities.Service>> GetAllServicesAsync(CancellationToken cancellationToken);
 
 
     }

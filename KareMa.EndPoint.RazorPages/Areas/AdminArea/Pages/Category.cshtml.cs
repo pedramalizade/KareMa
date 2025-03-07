@@ -17,15 +17,17 @@ namespace KareMa.EndPoint.RazorPages.Pages.Areas.AdminArea.Pages
         [BindProperty]
         public List<GetCategoryDto> GetCategories { get; set; }
 
-        public async Task OnGet(CancellationToken cancellationToken)
+        public async Task<IActionResult> OnGetAsync(CancellationToken cancellationToken)
         {
+            Console.WriteLine("CategoryModel.OnGetAsync called");
             GetCategories = await _categoryAppServices.GetAll(cancellationToken);
+            return Page();
         }
 
-        public async Task<IActionResult> OnGetDelete(int id, CancellationToken cancellationToken)
+        public async Task<IActionResult> OnGetDeleteAsync(int id, CancellationToken cancellationToken)
         {
             await _categoryAppServices.Delete(id, cancellationToken);
-            return RedirectToAction("OnGet");
+            return RedirectToPage(new { refresh = DateTime.Now.Ticks }); 
         }
     }
 }

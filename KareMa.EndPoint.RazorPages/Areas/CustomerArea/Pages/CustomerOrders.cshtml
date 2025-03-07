@@ -6,6 +6,113 @@
     Layout = "_CustomerLayout";
     ViewData["MyOrder"] = "active";
 }
+<div class="text-danger" style="margin-bottom: 10px;">
+    @Html.ValidationSummary(true)
+</div>
+@foreach (var item in Model.Orders)
+{
+    <div class="container dsd-single-listing-wraps">
+        <div class="row dsd-single-lst-caption">
+            <div class="dsd-single-lst-thumb">
+                @if (string.IsNullOrEmpty(item.Image))
+                {
+                    <img src="~/assets/img/none.png" class="img-fluid" alt="" />
+                }
+                else
+                {
+                    <img src="@item.Image" class="img-fluid" alt="" />
+                }
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">@item.Title</h4>
+                        <h5 class="card-title">@item.Service.Name</h5>
+                        <p class="card-text">@item.Description</p>
+                        <button class="btn btn-primary me-1" type="button" data-bs-toggle="collapse" data-bs-target="#@("collapse-" + item.Id)" aria-expanded="false" aria-controls="@("collapse-" + item.Id)">
+                            لیست پیشنهادات
+                        </button>
+                        <div class="collapse" id="@("collapse-" + item.Id)">
+                            <div class="d-grid d-sm-flex p-3 border">
+                                @if (item.Suggestions == null || !item.Suggestions.Any())
+                                {
+                                    <span class="lh-2">
+                                        هنوز پیشنهادی برای درخواست شما ارسال نشده
+                                    </span>
+                                }
+                                else
+                                {
+                                    <table class="table">
+                                        <thead class="table-dark">
+                                            <tr>
+                                                <th>نام متخصص</th>
+                                                <th>قیمت پیشنهادی</th>
+                                                <th>تاریخ پیشنهادی</th>
+                                                <th>وضعیت</th>
+                                                <th>عمل‌ها</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="table-border-bottom-0">
+                                            @if (TempData["SuccessMessage"] != null)
+                                            {
+                                                <div class="alert alert-success" role="alert">
+                                                    @TempData["SuccessMessage"]
+                                                </div>
+                                            }
+                                            @foreach (var suggest in item.Suggestions)
+                                            {
+                                                <tr>
+                                                    <td>@suggest.Expert.FirstName @suggest.Expert.LastName</td>
+                                                    <td>@suggest.Price</td>
+                                                    <td>
+                                                        @if (suggest.SuggestedDate == DateTime.MinValue)
+                                                        {
+                                                            <span>مشخص نشده</span>
+                                                        }
+                                                        else
+                                                        {
+                                                            @suggest.SuggestedDate.ToPersianString("dddd, dd MMMM, yyyy")
+                                                        }
+                                                    </td>
+                                                    <td>@suggest.Status.GetEnumDisplayName()</td>
+                                                    <td>
+                                                        @if (suggest.Status == StatusEnum.AwaitingCustomerConfirmation)
+                                                        {
+                                                            <form method="post" asp-page-handler="AcceptSuggestion" asp-route-id="@suggest.Id" asp-route-orderId="@item.Id" style="display:inline;">
+                                                                <button type="submit" class="btn btn-success">تأیید متخصص</button>
+                                                            </form>
+                                                            <a class="btn btn-warning" asp-page="ExpertDetails" asp-route-expertId="@suggest.ExpertId">دیدن اطلاعات متخصص</a>
+                                                        }
+                                                        else if (suggest.Status == StatusEnum.Confirmed || suggest.Status == StatusEnum.Done)
+                                                        {
+                                                            <a class="btn btn-warning" asp-page="ExpertDetails" asp-route-expertId="@suggest.ExpertId">دیدن اطلاعات متخصص</a>
+                                                        }
+                                                    </td>
+                                                </tr>
+                                            }
+                                        </tbody>
+                                    </table>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+@* @page
+@using Framework
+@using KareMa.Domain.Core.Enums
+@model KareMa.EndPoint.RazorPages.Areas.CustomerArea.Pages.CustomerOrdersModel
+@{
+    Layout = "_CustomerLayout";
+    ViewData["MyOrder"] = "active";
+}
 @foreach (var item in Model.Orders)
 {
     <div class="container dsd-single-listing-wraps">
@@ -26,7 +133,7 @@
                         <h4 class="card-title">@item.Title</h4>
                         <h5 class="card-title">@item.Service.Name</h5>
                         <p class="card-text">@item.Description</p>
-                        @* <a href="javascript:void(0);" class="btn btn-delete"><i class="fas fa-trash ms-1"></i>حذف</a> *@
+                        @* <a href="javascript:void(0);" class="btn btn-delete"><i class="fas fa-trash ms-1"></i>حذف</a> 
                         <button class="btn btn-primary me-1" type="button" data-bs-toggle="collapse" data-bs-target="#@("collapse-" + item.Id)" aria-expanded="false" aria-controls="@("collapse-" + item.Id)">
                             لیست پیشنهادات
                         </button>
@@ -93,3 +200,4 @@
     </div>
 }
 
+ *@

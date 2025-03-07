@@ -24,6 +24,12 @@ public class CustomerUpdateDto
     [RegularExpression(@"^09\d{9}$", ErrorMessage = "فرمت شماره تلفن اشتباه است و باید با 09 شروع شود")]
     [Required(ErrorMessage = "شماره تلفن نمی‌تواند بدون مقدار باشد")]
     public string? PhoneNumber { get; set; }
+    public decimal Balance { get; set; }
+    [DisplayName("جنسیت")]
+    public GenderEnum? Gender { get; set; }
+    [DisplayName("شماره کارت بانکی")]
+    public string BankCardNumber { get; set; }
+    public string? Image { get; set; }
     public Address? Address { get; set; }
 
 }

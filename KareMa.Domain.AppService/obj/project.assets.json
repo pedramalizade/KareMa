@@ -1520,6 +1520,20 @@
           }
         }
       },
+      "Framework/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "9.0.2",
+          "Microsoft.Extensions.Identity.Core": "9.0.1"
+        },
+        "compile": {
+          "bin/placeholder/Framework.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Framework.dll": {}
+        }
+      },
       "KareMa.Domain.Core/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v9.0",
@@ -3908,6 +3922,11 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "Framework/1.0.0": {
+      "type": "project",
+      "path": "../Framework/Framework.csproj",
+      "msbuildProject": "../Framework/Framework.csproj"
+    },
     "KareMa.Domain.Core/1.0.0": {
       "type": "project",
       "path": "../KareMa.Domain.Core/KareMa.Domain.Core.csproj",
@@ -3931,6 +3950,7 @@
   },
   "projectFileDependencyGroups": {
     "net9.0": [
+      "Framework >= 1.0.0",
       "KareMa.Domain.Core >= 1.0.0",
       "KareMa.Domain.Service >= 1.0.0",
       "Microsoft.AspNetCore.Identity >= 2.3.0"
@@ -3968,6 +3988,9 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "projectReferences": {
+            "C:\\Users\\asus\\source\\repos\\KareMa\\Framework\\Framework.csproj": {
+              "projectPath": "C:\\Users\\asus\\source\\repos\\KareMa\\Framework\\Framework.csproj"
+            },
             "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.Domain.Core\\KareMa.Domain.Core.csproj": {
               "projectPath": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.Domain.Core\\KareMa.Domain.Core.csproj"
             },
@@ -4017,5 +4040,13 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1900",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Error occurred while getting package vulnerability data: Unable to load the service index for source https://api.nuget.org/v3/index.json."
+    }
+  ]
 }

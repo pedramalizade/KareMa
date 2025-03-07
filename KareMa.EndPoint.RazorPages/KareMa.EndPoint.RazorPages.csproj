@@ -218,7 +218,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Areas\ExpertArea\" />
     <Folder Include="wwwroot\uploads\" />
   </ItemGroup>
 	

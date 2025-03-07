@@ -18,8 +18,14 @@ namespace KareMa.Domain.Core.Contracts.Service
         Task<int> ExpertCount(CancellationToken cancellationToken);
         Task<ExpertSummaryDto> GetExpertSummary(int id, CancellationToken cancellationToken);
         Task<int> ExpertCommentCount(int id, CancellationToken cancellationToken);
+        Task UpdateBalance(int expertId, decimal newBalance, CancellationToken cancellationToken);
+        Task<Expert> GetExpertById(int expertId, CancellationToken cancellationToken);
         Task<int> ExpertAverageScores(int id, CancellationToken cancellationToken);
         Task<int> ExpertOrderCount(int id, CancellationToken cancellationToken);
+        Task<List<int>> GetExpertServiceIds(int id, CancellationToken cancellationToken);
+        Task<ExpertUpdateDto> ExpertUpdateInfo(int id, CancellationToken cancellationToken);
+        Task<ExpertNameDto> GetExpertName(int id, CancellationToken cancellationToken);
+
     }
 }
 

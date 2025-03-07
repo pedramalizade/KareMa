@@ -20,3 +20,5 @@ C:\Users\asus\source\repos\KareMa\KareMa.Domain.AppService\obj\Debug\net9.0\Kare
 C:\Users\asus\source\repos\KareMa\KareMa.Domain.AppService\obj\Debug\net9.0\refint\KareMa.Domain.AppService.dll
 C:\Users\asus\source\repos\KareMa\KareMa.Domain.AppService\obj\Debug\net9.0\KareMa.Domain.AppService.pdb
 C:\Users\asus\source\repos\KareMa\KareMa.Domain.AppService\obj\Debug\net9.0\ref\KareMa.Domain.AppService.dll
+C:\Users\asus\source\repos\KareMa\KareMa.Domain.AppService\bin\Debug\net9.0\Framework.dll
+C:\Users\asus\source\repos\KareMa\KareMa.Domain.AppService\bin\Debug\net9.0\Framework.pdb

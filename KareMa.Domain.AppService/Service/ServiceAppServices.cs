@@ -37,5 +37,8 @@ namespace KareMa.Domain.AppService
     => await _serviceServices.Update(serviceUpdateDto, cancellationToken);
         public async Task<ServiceNameAndPriceDto> GetServiceNameAndPrice(int id, CancellationToken cancellationToken)
     => await _serviceServices.GetServiceNameAndPrice(id, cancellationToken);
+
+        public async Task<List<Core.Entities.Service>> GetAllServicesAsync(CancellationToken cancellationToken)
+        => await _serviceServices.GetAllServicesAsync(cancellationToken);
     }
 }

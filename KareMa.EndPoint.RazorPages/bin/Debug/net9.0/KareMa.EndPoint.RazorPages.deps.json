@@ -1881,6 +1881,7 @@
       },
       "KareMa.Domain.AppService/1.0.0": {
         "dependencies": {
+          "Framework": "1.0.0",
           "KareMa.Domain.Core": "1.0.0",
           "KareMa.Domain.Service": "1.0.0",
           "Microsoft.AspNetCore.Identity": "2.3.0"

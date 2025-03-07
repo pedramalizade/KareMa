@@ -31,4 +31,7 @@ public class ServiceServices : IServiceServices
     => await _serviceRepository.GetServiceNameAndPrice(id, cancellationToken);
     public async Task<ServiceUpdateDto> ServiceUpdateInfo(int id, CancellationToken cancellationToken)
       => await _serviceRepository.ServiceUpdateInfo(id, cancellationToken);
+
+    public async Task<List<Core.Entities.Service>> GetAllServicesAsync(CancellationToken cancellationToken)
+   => await _serviceRepository.GetAllServicesAsync(cancellationToken);
 }

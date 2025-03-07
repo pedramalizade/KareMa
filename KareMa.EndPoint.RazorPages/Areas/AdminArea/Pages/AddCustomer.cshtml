@@ -1,0 +1,182 @@
+﻿@page
+@using KareMa.Domain.Core.Enums
+@model KareMa.EndPoint.RazorPages.Areas.AdminArea.Pages.AddCustomerModel
+@{
+    Layout = "_AdminLayout";
+    ViewData["Title"] = "افزودن مشتری | کاره ما";
+    ViewData["PageTitle"] = "افزودن مشتری";
+}
+<div class="col-xxl">
+    <div class="card mb-4">
+        <div class="card-body">
+            <form method="post" asp-page-handler="AddCategory" enctype="multipart/form-data">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="row mb-3">
+                    <label class="col-sm-2 col-form-label" asp-for="@Model.CustomerCreate.FirstName">نام</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" asp-for="@Model.CustomerCreate.FirstName">
+                        <span asp-validation-for="@Model.CustomerCreate.FirstName" class="text-danger"></span>
+                    </div>
+                    <label class="col-sm-2 col-form-label" asp-for="@Model.CustomerCreate.LastName">نام خانوادگی</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" asp-for="@Model.CustomerCreate.LastName">
+                        <span asp-validation-for="@Model.CustomerCreate.LastName" class="text-danger"></span>
+                    </div>
+                    <label class="col-sm-2 col-form-label" asp-for="@Model.CustomerCreate.Balance">موجودی</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" asp-for="@Model.CustomerCreate.Balance">
+                        <span asp-validation-for="@Model.CustomerCreate.Balance" class="text-danger"></span>
+                    </div>
+                    <label class="col-sm-2 col-form-label" asp-for="@Model.CustomerCreate.PhoneNumber">شماره تلفن</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" asp-for="@Model.CustomerCreate.PhoneNumber">
+                        <span asp-validation-for="@Model.CustomerCreate.PhoneNumber" class="text-danger"></span>
+                    </div>
+                    <label class="col-sm-2 col-form-label" asp-for="@Model.CustomerCreate.BankCardNumber">شماره کارت بانکی</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" asp-for="@Model.CustomerCreate.BankCardNumber">
+                        <span asp-validation-for="@Model.CustomerCreate.BankCardNumber" class="text-danger"></span>
+                    </div>
+                    <!-- فیلدهای آدرس -->
+                    <label class="col-sm-2 col-form-label" asp-for="@Model.CustomerCreate.Addresses.Title">عنوان آدرس</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" asp-for="@Model.CustomerCreate.Addresses.Title" placeholder="مثلاً خانه یا محل کار">
+                        <span asp-validation-for="@Model.CustomerCreate.Addresses.Title" class="text-danger"></span>
+                    </div>
+                    <label class="col-sm-2 col-form-label" asp-for="@Model.CustomerCreate.Addresses.CityId">شهر</label>
+                    <div class="col-sm-10">
+                        <select class="form-control" asp-for="@Model.CustomerCreate.Addresses.CityId" asp-items="@Model.Cities">
+                            <option value="">انتخاب کنید</option>
+                        </select>
+                        <span asp-validation-for="@Model.CustomerCreate.Addresses.CityId" class="text-danger"></span>
+                    </div>
+                    <label class="col-sm-2 col-form-label" asp-for="@Model.CustomerCreate.Addresses.Street">خیابان</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" asp-for="@Model.CustomerCreate.Addresses.Street">
+                        <span asp-validation-for="@Model.CustomerCreate.Addresses.Street" class="text-danger"></span>
+                    </div>
+                    <label class="col-sm-2 col-form-label" asp-for="@Model.CustomerCreate.Addresses.Area">محله</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" asp-for="@Model.CustomerCreate.Addresses.Area">
+                        <span asp-validation-for="@Model.CustomerCreate.Addresses.Area" class="text-danger"></span>
+                    </div>
+                    <label class="col-sm-2 col-form-label" asp-for="@Model.CustomerCreate.Addresses.PostalCode">کدپستی</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" asp-for="@Model.CustomerCreate.Addresses.PostalCode">
+                        <span asp-validation-for="@Model.CustomerCreate.Addresses.PostalCode" class="text-danger"></span>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label asp-for="@Model.CustomerCreate.Gender" class="mb-1">جنسیت</label>
+                            <select class="form-control rounded" asp-for="@Model.CustomerCreate.Gender">
+                                <option value="">انتخاب کنید</option>
+                                <option value="@GenderEnum.Female">خانم</option>
+                                <option value="@GenderEnum.Male">آقا</option>
+                            </select>
+                            <span asp-validation-for="@Model.CustomerCreate.Gender" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label class="col-sm-2 col-form-label" asp-for="@Model.Image">عکس</label>
+                    <div class="col-sm-10">
+                        <input type="file" class="form-control" asp-for="@Model.Image">
+                        <span asp-validation-for="@Model.Image" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="row justify-content-end">
+                        <div class="col-sm-10">
+                            <button type="submit" class="btn btn-primary">ارسال</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+
+@* @page
+@using KareMa.Domain.Core.Enums
+@model KareMa.EndPoint.RazorPages.Areas.AdminArea.Pages.AddCustomerModel
+@{
+    Layout = "_AdminLayout";
+    ViewData["Title"] = "  افزودن مشتری | کاره ما";
+    ViewData["PageTitle"] = " افزودن مشتری";
+}
+<div class="col-xxl">
+    <div class="card mb-4">
+        <div class="card-body">
+            <form method="post" asp-page-handler="AddCustomer" enctype="multipart/form-data">
+                <div class="row mb-3">
+                    <label class="col-sm-2 col-form-label" asp-for="@Model.CustomerCreate.FirstName"></label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" asp-for="@Model.CustomerCreate.FirstName">
+                        <span asp-validation-for="@Model.CustomerCreate.FirstName" class="text-danger"></span>
+                    </div>
+                    <label class="col-sm-2 col-form-label" asp-for="@Model.CustomerCreate.LastName"></label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" asp-for="@Model.CustomerCreate.LastName">
+                        <span asp-validation-for="@Model.CustomerCreate.LastName" class="text-danger"></span>
+                    </div>
+                    <label class="col-sm-2 col-form-label" asp-for="@Model.CustomerCreate.Balance"></label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" asp-for="@Model.CustomerCreate.Balance">
+                        <span asp-validation-for="@Model.CustomerCreate.Balance" class="text-danger"></span>
+                    </div>
+                    <label class="col-sm-2 col-form-label" asp-for="@Model.CustomerCreate.PhoneNumber"></label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" asp-for="@Model.CustomerCreate.PhoneNumber">
+                        <span asp-validation-for="@Model.CustomerCreate.PhoneNumber" class="text-danger"></span>
+                    </div>
+                    <label class="col-sm-2 col-form-label" asp-for="@Model.CustomerCreate.BackUpPhoneNumber"></label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" asp-for="@Model.CustomerCreate.BackUpPhoneNumber">
+                        <span asp-validation-for="@Model.CustomerCreate.BackUpPhoneNumber" class="text-danger"></span>
+                    </div>
+                    <label class="col-sm-2 col-form-label" asp-for="@Model.CustomerCreate.BankCardNumber"></label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" asp-for="@Model.CustomerCreate.BankCardNumber">
+                        <span asp-validation-for="@Model.CustomerCreate.BankCardNumber" class="text-danger"></span>
+                    </div>
+                    <label class="col-sm-2 col-form-label" asp-for="@Model.CustomerCreate.Addresses"></label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" asp-for="@Model.CustomerCreate.Addresses">
+                        <span asp-validation-for="@Model.CustomerCreate.Addresses" class="text-danger"></span>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label asp-for="@Model.CustomerCreate.Gender" class="mb-1">جنسیت</label>
+                            <select class="form-control rounded" asp-for="@Model.CustomerCreate.Gender">
+                                <option value="@GenderEnum.Female">خانوم</option>
+                                <option value="@GenderEnum.Male">آقا</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label class="col-sm-2 col-form-label" asp-for="@Model.Image">عکس</label>
+                    <div class="col-sm-10">
+                        <input type="file" class="form-control" asp-for="@Model.Image">
+                        <span asp-validation-for="@Model.Image" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="row justify-content-end">
+                        <div class="col-sm-10">
+                            <button type="submit" class="btn btn-primary">ارسال</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+} *@

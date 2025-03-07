@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 
 public class ExpertCreateDto
 {
+    public int AppUserId { get; set; }
     [DisplayName("نام")]
     public string FirstName { get; set; }
     [DisplayName("نام خانوداگی")]
@@ -17,13 +18,13 @@ public class ExpertCreateDto
     public GenderEnum Gender { get; set; }
     [DisplayName("شماره تلفن")]
     public string PhoneNumber { get; set; }
-    [DisplayName("تاریخ تولد")]
     public DateTime BirthDate { get; set; }
+    public decimal Balance { get; set; }
     [DisplayName("عکس پروفایل")]
-    public string ProfileImage { get; set; }
+    public string Image { get; set; }
     [DisplayName("شماره کارت بانکی")]
     public string BankCardNumber { get; set; }
-    public List<Service> Services { get; set; }
+    public List<int> Services { get; set; }
     [DisplayName("آدرس")]
     public Address Address { get; set; }
 }

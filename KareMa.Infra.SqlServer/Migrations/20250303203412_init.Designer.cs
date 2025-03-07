@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace KareMa.Infra.SqlServer.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250227101246_init")]
+    [Migration("20250303203412_init")]
     partial class init
     {
         /// <inheritdoc />
@@ -111,6 +111,9 @@ namespace KareMa.Infra.SqlServer.Migrations
                     b.Property<int>("AppUserId")
                         .HasColumnType("int");
 
+                    b.Property<decimal>("Balance")
+                        .HasColumnType("decimal(18,2)");
+
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
@@ -142,6 +145,7 @@ namespace KareMa.Infra.SqlServer.Migrations
                         {
                             Id = 1,
                             AppUserId = 1,
+                            Balance = 0m,
                             CreatedAt = new DateTime(2024, 2, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             FirstName = "پدرام",
                             Gender = 2,
@@ -669,6 +673,9 @@ namespace KareMa.Infra.SqlServer.Migrations
                     b.Property<int>("AppUserId")
                         .HasColumnType("int");
 
+                    b.Property<decimal>("Balance")
+                        .HasColumnType("decimal(18,2)");
+
                     b.Property<string>("BankCardNumber")
                         .HasMaxLength(16)
                         .HasColumnType("nvarchar(16)");
@@ -683,6 +690,9 @@ namespace KareMa.Infra.SqlServer.Migrations
 
                     b.Property<int?>("Gender")
                         .HasColumnType("int");
+
+                    b.Property<string>("Image")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
@@ -708,10 +718,12 @@ namespace KareMa.Infra.SqlServer.Migrations
                         {
                             Id = 1,
                             AppUserId = 3,
+                            Balance = 1500m,
                             BankCardNumber = "1234123412341234",
                             CreatedAt = new DateTime(2024, 2, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             FirstName = "تارا",
                             Gender = 1,
+                            Image = "\\AdminTemplate\\images\\user\\placeholder.jpg",
                             IsDeleted = false,
                             LastName = "بابایی",
                             PhoneNumber = "09192365988"
@@ -720,10 +732,12 @@ namespace KareMa.Infra.SqlServer.Migrations
                         {
                             Id = 2,
                             AppUserId = 5,
+                            Balance = 1500m,
                             BankCardNumber = "1239684412341234",
                             CreatedAt = new DateTime(2024, 2, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             FirstName = "امیر",
                             Gender = 2,
+                            Image = "\\AdminTemplate\\images\\user\\placeholder.jpg",
                             IsDeleted = false,
                             LastName = "تقوایی",
                             PhoneNumber = "09014839264"
@@ -741,8 +755,10 @@ namespace KareMa.Infra.SqlServer.Migrations
                     b.Property<int>("AppUserId")
                         .HasColumnType("int");
 
+                    b.Property<decimal>("Balance")
+                        .HasColumnType("decimal(18,2)");
+
                     b.Property<string>("BankCardNumber")
-                        .IsRequired()
                         .HasMaxLength(16)
                         .HasColumnType("nvarchar(16)");
 
@@ -760,6 +776,9 @@ namespace KareMa.Infra.SqlServer.Migrations
                     b.Property<int>("Gender")
                         .HasColumnType("int");
 
+                    b.Property<string>("Image")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<bool>("IsConfirm")
                         .HasColumnType("bit");
 
@@ -772,12 +791,8 @@ namespace KareMa.Infra.SqlServer.Migrations
                         .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("PhoneNumber")
-                        .IsRequired()
                         .HasMaxLength(11)
                         .HasColumnType("nvarchar(11)");
-
-                    b.Property<string>("ProfileImage")
-                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
@@ -791,11 +806,13 @@ namespace KareMa.Infra.SqlServer.Migrations
                         {
                             Id = 1,
                             AppUserId = 2,
+                            Balance = 0m,
                             BankCardNumber = "1234123412341234",
                             BirthDate = new DateTime(1999, 10, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             CreatedAt = new DateTime(2024, 2, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             FirstName = "علی",
                             Gender = 2,
+                            Image = "\\AdminTemplate\\images\\user\\placeholder.jpg",
                             IsConfirm = true,
                             IsDeleted = false,
                             LastName = "کریمی",
@@ -805,11 +822,13 @@ namespace KareMa.Infra.SqlServer.Migrations
                         {
                             Id = 2,
                             AppUserId = 4,
+                            Balance = 0m,
                             BankCardNumber = "1234123412341234",
                             BirthDate = new DateTime(1999, 4, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             CreatedAt = new DateTime(2024, 2, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             FirstName = "سارا",
                             Gender = 1,
+                            Image = "\\AdminTemplate\\images\\user\\placeholder.jpg",
                             IsConfirm = true,
                             IsDeleted = false,
                             LastName = "خاتمی",

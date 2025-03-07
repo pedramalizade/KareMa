@@ -29,6 +29,11 @@
                     <span asp-validation-for="@Model.AdminUpdate.Email" class="text-danger"></span>
                 </div>
                 <div class="mb-3 col-md-6">
+                    <label asp-for="@Model.AdminUpdate.Balance" class="form-label">موجودی</label>
+                    <input class="form-control text-start" type="text" asp-for="@Model.AdminUpdate.Balance" dir="ltr">
+                    <span asp-validation-for="@Model.AdminUpdate.Balance" class="text-danger"></span>
+                </div>
+                <div class="mb-3 col-md-6">
                     <label class="form-label" asp-for="@Model.AdminUpdate.PhoneNumber">شماره تلفن</label>
                     <div class="input-group input-group-merge">
                         <input type="text" asp-for="@Model.AdminUpdate.PhoneNumber" class="form-control text-start" dir="ltr">

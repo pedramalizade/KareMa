@@ -1,0 +1,107 @@
+﻿@page
+@using KareMa.Domain.Core.Enums
+@model KareMa.EndPoint.RazorPages.Areas.AdminArea.Pages.UpdateExpertModel
+@{
+    Layout = "_AdminLayout";
+    ViewData["Title"] = "  ویرایش متخصص ها | کاره ما";
+    ViewData["PageTitle"] = " ویرایش متخصص ها";
+}
+<div class="col-xxl">
+    <div class="card mb-4">
+        <div class="card-body">
+            @if (TempData["SuccessMessage"] != null)
+            {
+                <div class="alert alert-success" role="alert">@TempData["SuccessMessage"]</div>
+            }
+            @if (TempData["ErrorMessage"] != null)
+            {
+                <div class="alert alert-danger" role="alert">@TempData["ErrorMessage"]</div>
+            }
+            <form method="post" asp-page-handler="Update" enctype="multipart/form-data">
+                <div asp-validation-summary="ModelOnly" class="text-danger mb-3" role="alert"></div>
+                <input type="hidden" asp-for="ExpertUpdate.Id" />
+                <div class="row mb-3">
+                    <label class="col-sm-2 col-form-label" asp-for="ExpertUpdate.FirstName">نام</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" asp-for="ExpertUpdate.FirstName">
+                        <span asp-validation-for="ExpertUpdate.FirstName" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label class="col-sm-2 col-form-label" asp-for="ExpertUpdate.LastName">نام خانوادگی</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" asp-for="ExpertUpdate.LastName">
+                        <span asp-validation-for="ExpertUpdate.LastName" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label class="col-sm-2 col-form-label" asp-for="ExpertUpdate.Balance">موجودی</label>
+                    <div class="col-sm-10">
+                        <input type="number" step="0.01" class="form-control" asp-for="ExpertUpdate.Balance">
+                        <span asp-validation-for="ExpertUpdate.Balance" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label class="col-sm-2 col-form-label" asp-for="ExpertUpdate.PhoneNumber">شماره تلفن</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" asp-for="ExpertUpdate.PhoneNumber">
+                        <span asp-validation-for="ExpertUpdate.PhoneNumber" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label class="col-sm-2 col-form-label" asp-for="ExpertUpdate.BankCardNumber">شماره کارت بانکی</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" asp-for="ExpertUpdate.BankCardNumber">
+                        <span asp-validation-for="ExpertUpdate.BankCardNumber" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label class="col-sm-2 col-form-label" asp-for="ExpertUpdate.BirthDate">تاریخ تولد</label>
+                    <div class="col-sm-10">
+                        <input type="date" class="form-control" asp-for="ExpertUpdate.BirthDate">
+                        <span asp-validation-for="ExpertUpdate.BirthDate" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label class="col-sm-2 col-form-label" asp-for="ExpertUpdate.Gender">جنسیت</label>
+                    <div class="col-sm-10">
+                        <select class="form-control" asp-for="ExpertUpdate.Gender">
+                            <option value="@GenderEnum.Female">خانم</option>
+                            <option value="@GenderEnum.Male">آقا</option>
+                        </select>
+                        <span asp-validation-for="ExpertUpdate.Gender" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label class="col-sm-2 col-form-label" asp-for="Image">آپلود عکس</label>
+                    <div class="col-sm-10">
+                        <input type="file" class="form-control" asp-for="Image">
+                        <span asp-validation-for="Image" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label class="col-sm-2 col-form-label">عکس فعلی</label>
+                    <div class="col-sm-10">
+                        @if (string.IsNullOrEmpty(Model.ExpertUpdate.Image))
+                        {
+                            <img src="~/assets/img/none.png" width="150px" height="100px" />
+                        }
+                        else
+                        {
+                            <img src="@Model.ExpertUpdate.Image" width="150px" height="100px" />
+                        }
+                    </div>
+                </div>
+                <div class="row justify-content-end">
+                    <div class="col-sm-10">
+                        <button type="submit" class="btn btn-primary">ارسال</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

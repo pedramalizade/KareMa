@@ -1,0 +1,125 @@
+﻿@page
+@using KareMa.Domain.Core.Enums
+@model KareMa.EndPoint.RazorPages.Areas.AdminArea.Pages.AddExpertModel
+@{
+    Layout = "_AdminLayout";
+    ViewData["Title"] = "  افزودن متخصص | کاره ما";
+    ViewData["PageTitle"] = " افزودن متخصص";
+}
+<div class="col-xxl">
+    <div class="card mb-4">
+        <div class="card-body">
+            <form method="post" asp-page-handler="AddCategory" enctype="multipart/form-data">
+                <div asp-validation-summary="ModelOnly" class="text-danger mb-3" role="alert"></div>
+                <div class="row mb-3">
+                    <label class="col-sm-2 col-form-label" for="ExpertCreate_AppUserId">کاربر</label>
+                    <div class="col-sm-10">
+                        <select class="form-control" asp-for="ExpertCreate.AppUserId" asp-items="Model.AvailableUsers">
+                            <option value="">انتخاب کنید</option>
+                        </select>
+                        <span asp-validation-for="ExpertCreate.AppUserId" class="text-danger"></span>
+                    </div>
+                    <label class="col-sm-2 col-form-label" asp-for="ExpertCreate.FirstName">نام</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" asp-for="ExpertCreate.FirstName">
+                        <span asp-validation-for="ExpertCreate.FirstName" class="text-danger"></span>
+                    </div>
+                    <label class="col-sm-2 col-form-label" asp-for="ExpertCreate.LastName">نام خانوادگی</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" asp-for="ExpertCreate.LastName">
+                        <span asp-validation-for="ExpertCreate.LastName" class="text-danger"></span>
+                    </div>
+                    <label class="col-sm-2 col-form-label" asp-for="ExpertCreate.Balance">موجودی</label>
+                    <div class="col-sm-10">
+                        <input type="number" step="0.01" class="form-control" asp-for="ExpertCreate.Balance">
+                        <span asp-validation-for="ExpertCreate.Balance" class="text-danger"></span>
+                    </div>
+                    <label class="col-sm-2 col-form-label" asp-for="ExpertCreate.PhoneNumber">شماره تلفن</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" asp-for="ExpertCreate.PhoneNumber">
+                        <span asp-validation-for="ExpertCreate.PhoneNumber" class="text-danger"></span>
+                    </div>
+                    <label class="col-sm-2 col-form-label" asp-for="ExpertCreate.BirthDate">تاریخ تولد</label>
+                    <div class="col-sm-10">
+                        <input type="date" class="form-control" asp-for="ExpertCreate.BirthDate">
+                        <span asp-validation-for="ExpertCreate.BirthDate" class="text-danger"></span>
+                    </div>
+                    <label class="col-sm-2 col-form-label" asp-for="ExpertCreate.BankCardNumber">شماره کارت بانکی</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" asp-for="ExpertCreate.BankCardNumber">
+                        <span asp-validation-for="ExpertCreate.BankCardNumber" class="text-danger"></span>
+                    </div>
+                    <!-- فیلدهای آدرس -->
+                    <label class="col-sm-2 col-form-label" asp-for="ExpertCreate.Address.Title">عنوان آدرس</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" asp-for="ExpertCreate.Address.Title" placeholder="مثلاً خانه یا محل کار">
+                        <span asp-validation-for="ExpertCreate.Address.Title" class="text-danger"></span>
+                    </div>
+                    <label class="col-sm-2 col-form-label" asp-for="ExpertCreate.Address.CityId">شهر</label>
+                    <div class="col-sm-10">
+                        <select class="form-control" asp-for="ExpertCreate.Address.CityId" asp-items="@Model.Cities">
+                            <option value="">انتخاب کنید</option>
+                        </select>
+                        <span asp-validation-for="ExpertCreate.Address.CityId" class="text-danger"></span>
+                    </div>
+                    <label class="col-sm-2 col-form-label" asp-for="ExpertCreate.Address.Street">خیابان</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" asp-for="ExpertCreate.Address.Street">
+                        <span asp-validation-for="ExpertCreate.Address.Street" class="text-danger"></span>
+                    </div>
+                    <label class="col-sm-2 col-form-label" asp-for="ExpertCreate.Address.Area">محله</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" asp-for="ExpertCreate.Address.Area">
+                        <span asp-validation-for="ExpertCreate.Address.Area" class="text-danger"></span>
+                    </div>
+                    <label class="col-sm-2 col-form-label" asp-for="ExpertCreate.Address.PostalCode">کدپستی</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" asp-for="ExpertCreate.Address.PostalCode">
+                        <span asp-validation-for="ExpertCreate.Address.PostalCode" class="text-danger"></span>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label asp-for="ExpertCreate.Gender" class="mb-1">جنسیت</label>
+                            <select class="form-control rounded" asp-for="ExpertCreate.Gender">
+                                <option value="@GenderEnum.Female">خانم</option>
+                                <option value="@GenderEnum.Male">آقا</option>
+                            </select>
+                            <span asp-validation-for="ExpertCreate.Gender" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label class="col-sm-2 col-form-label" asp-for="Image">عکس</label>
+                    <div class="col-sm-10">
+                        <input type="file" class="form-control" asp-for="Image">
+                        <span asp-validation-for="Image" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label class="col-sm-2 col-form-label">سرویس‌ها</label>
+                    <div class="col-sm-10">
+                        <select class="form-control" asp-for="ExpertCreate.Services" multiple>
+                            @foreach (var service in Model.AllServices)
+                            {
+                                <option value="@service.Id">@service.Name</option>
+                            }
+                        </select>
+                        <small class="form-text text-muted">برای انتخاب چند مورد، دکمه Ctrl را نگه‌دارید و کلیک کنید.</small>
+                        <span asp-validation-for="ExpertCreate.Services" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="row justify-content-end">
+                        <div class="col-sm-10">
+                            <button type="submit" class="btn btn-primary">ارسال</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

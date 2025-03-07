@@ -1,6 +1,7 @@
 ﻿using KareMa.Domain.Core.Contracts.Repositories;
 using KareMa.Domain.Core.DTOs.CommentDTO;
 using KareMa.Domain.Core.Entities;
+using KareMa.Domain.Core.Enums;
 using KareMa.Infra.SqlServer.Common;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -22,6 +23,29 @@ namespace KareMa.Infra.DataAccess.Repo.Ef.Repository
 
         public async Task<bool> Create(CommentCreateDto commentCreateDto, CancellationToken cancellationToken)
         {
+            Console.WriteLine($"CommentAppServices.Create called for ExpertId: {commentCreateDto.ExpertId}, CustomerId: {commentCreateDto.CustomerId}");
+
+            // چک کردن وجود مشتری و متخصص
+            var customerExists = await _context.Customers.AnyAsync(c => c.Id == commentCreateDto.CustomerId && !c.IsDeleted, cancellationToken);
+            var expertExists = await _context.Experts.AnyAsync(e => e.Id == commentCreateDto.ExpertId && !e.IsDeleted, cancellationToken);
+            if (!customerExists || !expertExists)
+            {
+                Console.WriteLine("Customer or Expert not found.");
+                return false;
+            }
+
+            // چک کردن وجود سفارش کامل‌شده
+            var orderCompleted = await _context.Orders
+                .AnyAsync(o => o.CustomerId == commentCreateDto.CustomerId
+                              && o.ExpertId == commentCreateDto.ExpertId
+                              && o.Status == StatusEnum.Done
+                              && !o.IsDeleted, cancellationToken);
+            if (!orderCompleted)
+            {
+                Console.WriteLine("No completed order found for this customer and expert.");
+                return false;
+            }
+
             var newModel = new Comment()
             {
                 Title = commentCreateDto.Title,
@@ -29,11 +53,24 @@ namespace KareMa.Infra.DataAccess.Repo.Ef.Repository
                 Score = commentCreateDto.Score,
                 CustomerId = commentCreateDto.CustomerId,
                 ExpertId = commentCreateDto.ExpertId,
+                CreatedAt = DateTime.UtcNow,
+                IsAccept = true,
+                IsDeleted = false
             };
-            await _context.Comments.AddAsync(newModel, cancellationToken);
 
-            await _context.SaveChangesAsync(cancellationToken);
-            return true;
+            try
+            {
+                await _context.Comments.AddAsync(newModel, cancellationToken);
+                await _context.SaveChangesAsync(cancellationToken);
+                Console.WriteLine("Comment created successfully.");
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error in Create: {ex.Message}");
+                Console.WriteLine($"Inner Exception: {ex.InnerException?.Message}");
+                return false;
+            }
         }
 
         public async Task<bool> Delete(int commentId, CancellationToken cancellationToken)

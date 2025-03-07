@@ -1,0 +1,100 @@
+﻿@page
+@using Framework
+@using KareMa.Domain.Core.Enums
+@model KareMa.EndPoint.RazorPages.Areas.ExpertArea.Pages.ExpertSuggestionsModel
+
+@{
+    Layout = "_ExpertLayout";
+    ViewData["ExpertSuggestions"] = "active";
+    ViewData["Title"] = "پیشنهاد ها";
+}
+<section class="gray py-5 w-75">
+    <h3 class="breadcrumb-item pb-3 px-5"><a href="#" class="theme-cl">پیشنهاد های من</a></h3>
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+
+
+                <!-- row -->
+                <div class="row justify-content-center g-2">
+
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-12">
+                        <div class="d-block grouping-listings">
+                            @foreach (var item in Model.Suggestions)
+                            {
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-12">
+                                    <div class="vrt-list-wrap">
+                                        <div class="vrt-list-wrap-head">
+                                            <div class="p-3">
+                                                <div>
+                                                    @if (item.Order.Image == null)
+                                                    {
+                                                        <img src="src=" ~ /assets/img/none.png" class="" width="2500px" height="2500px" />
+
+                                                    }
+                                                    else
+                                                    {
+                                                        <img src="@item.Order.Image" class="" width="250px" height="250px" />
+                                                    }
+                                                </div>
+                                            </div>
+                                            <div class="p-4">
+                                                <h4 class="mb-0 ft-medium"><a class="text-dark fs-md">@item.Order.Title<span class="verified-badge"></span></a></h4>
+
+                                                <div class="vrt-list-sts">
+                                                    <h5 class="card-title">اسم سرویس: @item.Order.Service.Name</h5>
+                                                    <p class="card-text">توضیحات: @item.Order.Description</p>
+                                                    <p class="card-text">تاریخ درخواستی مشتری: @item.Order.RequesteForTime.ToPersianString()</p>
+                                                </div>
+                                                <div class="dropdown-divider">
+                                                </div>
+                                                <div class="vrt-list-desc">
+                                                    <h4 class="card-title">توضیحات من: @item.Description</h4>
+                                                    <h5 class="card-title">قیمت پیشنهادی: @item.Price</h5>
+                                                    <p class="vrt-qgunke">تاریخ پیشنهادی: @item.SuggestedDateString</p>
+                                                </div>
+                                                وضعیت:
+                                                @if (item.Status == StatusEnum.Confirmed)
+                                                {
+                                                    <p class="badge rounded-pill bg-success disabled">تایید شده توسط مشتری</p>
+                                                    <br />
+
+                                                    <div class="dropdown-divider">
+                                                    </div>
+
+                                                    <div class="dropdown-divider">
+                                                    </div>
+                                                    <br />
+                                                    <p>
+                                                        <strong>
+                                                            آیا انجام کار به اتمام رسید؟
+                                                            <p>
+                                                                <a asp-route-orderId="@item.OrderId" asp-route-suggestionId="@item.Id" asp-page-handler="DoneOrder" class="btn rounded-pill btn-primary">انجام شد</a>
+                                                            </p>
+                                                        </strong>
+                                                    </p>
+                                                }
+                                                else if (item.Status == StatusEnum.NotConfirmed)
+                                                {
+                                                    <p class="badge rounded-pill bg-danger disabled ">تایید نشد</p>
+                                                }
+                                                else if (item.Status == StatusEnum.AwaitingCustomerConfirmation)
+                                                {
+                                                    <p class="badge rounded-pill bg-primary disabled">در انتظار تایید مشتری</p>
+                                                }
+                                                else if (item.Status == StatusEnum.Done)
+                                                {
+                                                    <p class="badge rounded-pill bg-primary disabled">به اتمام رسید</p>
+                                                }
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
