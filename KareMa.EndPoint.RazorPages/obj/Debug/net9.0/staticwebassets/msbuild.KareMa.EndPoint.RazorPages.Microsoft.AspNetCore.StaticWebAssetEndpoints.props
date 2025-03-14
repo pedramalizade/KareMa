@@ -20208,6 +20208,18 @@
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-tJDNm9T1mztNsuMj0LFUPpM7gU/snQRj/0bk0Wt2vfg="}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"76647"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022tJDNm9T1mztNsuMj0LFUPpM7gU/snQRj/0bk0Wt2vfg=\u0022"},{"Name":"Last-Modified","Value":"Tue, 11 Feb 2025 09:15:15 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/KareMa.EndPoint.RazorPages/uploads/032c59b8-f939-4b61-809a-ad1b3df74aa0_young-people-doing-housework-living-room_52683-22049.2mn24nx4n5.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\032c59b8-f939-4b61-809a-ad1b3df74aa0_young-people-doing-housework-living-room_52683-22049.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"2mn24nx4n5"},{"Name":"integrity","Value":"sha256-9sstlQ2L4hqh7V7byqlcRfdecPF8pHe2S/qBM3nEP3c="},{"Name":"label","Value":"_content/KareMa.EndPoint.RazorPages/uploads/032c59b8-f939-4b61-809a-ad1b3df74aa0_young-people-doing-housework-living-room_52683-22049.jpg"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"67540"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u00229sstlQ2L4hqh7V7byqlcRfdecPF8pHe2S/qBM3nEP3c=\u0022"},{"Name":"Last-Modified","Value":"Tue, 11 Mar 2025 15:49:28 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/KareMa.EndPoint.RazorPages/uploads/032c59b8-f939-4b61-809a-ad1b3df74aa0_young-people-doing-housework-living-room_52683-22049.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\032c59b8-f939-4b61-809a-ad1b3df74aa0_young-people-doing-housework-living-room_52683-22049.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-9sstlQ2L4hqh7V7byqlcRfdecPF8pHe2S/qBM3nEP3c="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"67540"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u00229sstlQ2L4hqh7V7byqlcRfdecPF8pHe2S/qBM3nEP3c=\u0022"},{"Name":"Last-Modified","Value":"Tue, 11 Mar 2025 15:49:28 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/KareMa.EndPoint.RazorPages/uploads/032c6553-ff5e-4b5e-bcbf-5fc7a4b6c8a3_young-people-doing-housework-living-room_52683-22049.2mn24nx4n5.jpg">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\032c6553-ff5e-4b5e-bcbf-5fc7a4b6c8a3_young-people-doing-housework-living-room_52683-22049.jpg'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
@@ -20279,6 +20291,18 @@
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-tesntx1o190t/33U8NxwPT7q92OZALqoEekkwh4z0c4="}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"77712"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022tesntx1o190t/33U8NxwPT7q92OZALqoEekkwh4z0c4=\u0022"},{"Name":"Last-Modified","Value":"Tue, 11 Feb 2025 09:15:15 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/KareMa.EndPoint.RazorPages/uploads/0ec45fb5-044d-4680-8c12-283263cd50c7.friefolfew.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\0ec45fb5-044d-4680-8c12-283263cd50c7.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"friefolfew"},{"Name":"integrity","Value":"sha256-ezXKMVGAnsYTShbMhAaYsfX8oyyuwOi3X39y6U\u002BtO7Y="},{"Name":"label","Value":"_content/KareMa.EndPoint.RazorPages/uploads/0ec45fb5-044d-4680-8c12-283263cd50c7.jpg"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"14965"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022ezXKMVGAnsYTShbMhAaYsfX8oyyuwOi3X39y6U\u002BtO7Y=\u0022"},{"Name":"Last-Modified","Value":"Tue, 11 Mar 2025 06:37:47 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/KareMa.EndPoint.RazorPages/uploads/0ec45fb5-044d-4680-8c12-283263cd50c7.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\0ec45fb5-044d-4680-8c12-283263cd50c7.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-ezXKMVGAnsYTShbMhAaYsfX8oyyuwOi3X39y6U\u002BtO7Y="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"14965"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022ezXKMVGAnsYTShbMhAaYsfX8oyyuwOi3X39y6U\u002BtO7Y=\u0022"},{"Name":"Last-Modified","Value":"Tue, 11 Mar 2025 06:37:47 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/KareMa.EndPoint.RazorPages/uploads/132ab33f-7fd3-4a76-bcb2-ba5733690cf0gittaWeb-76-3416 (1).jpeg">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\132ab33f-7fd3-4a76-bcb2-ba5733690cf0gittaWeb-76-3416 (1).jpeg'))</AssetFile>
@@ -20376,6 +20400,18 @@
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-9sstlQ2L4hqh7V7byqlcRfdecPF8pHe2S/qBM3nEP3c="}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"67540"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u00229sstlQ2L4hqh7V7byqlcRfdecPF8pHe2S/qBM3nEP3c=\u0022"},{"Name":"Last-Modified","Value":"Thu, 06 Mar 2025 11:57:26 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/KareMa.EndPoint.RazorPages/uploads/3dac26a3-92b2-4a38-918b-816278e3df73_young-people-doing-housework-living-room_52683-22049.2mn24nx4n5.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\3dac26a3-92b2-4a38-918b-816278e3df73_young-people-doing-housework-living-room_52683-22049.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"2mn24nx4n5"},{"Name":"integrity","Value":"sha256-9sstlQ2L4hqh7V7byqlcRfdecPF8pHe2S/qBM3nEP3c="},{"Name":"label","Value":"_content/KareMa.EndPoint.RazorPages/uploads/3dac26a3-92b2-4a38-918b-816278e3df73_young-people-doing-housework-living-room_52683-22049.jpg"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"67540"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u00229sstlQ2L4hqh7V7byqlcRfdecPF8pHe2S/qBM3nEP3c=\u0022"},{"Name":"Last-Modified","Value":"Fri, 07 Mar 2025 10:58:14 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/KareMa.EndPoint.RazorPages/uploads/3dac26a3-92b2-4a38-918b-816278e3df73_young-people-doing-housework-living-room_52683-22049.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\3dac26a3-92b2-4a38-918b-816278e3df73_young-people-doing-housework-living-room_52683-22049.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-9sstlQ2L4hqh7V7byqlcRfdecPF8pHe2S/qBM3nEP3c="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"67540"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u00229sstlQ2L4hqh7V7byqlcRfdecPF8pHe2S/qBM3nEP3c=\u0022"},{"Name":"Last-Modified","Value":"Fri, 07 Mar 2025 10:58:14 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/KareMa.EndPoint.RazorPages/uploads/3e8dcc42-4726-402d-802f-02d2c09668c2gittaWeb-76-3416 (1).jpeg">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\3e8dcc42-4726-402d-802f-02d2c09668c2gittaWeb-76-3416 (1).jpeg'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
@@ -20387,6 +20423,18 @@
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"oj2w62gjfj"},{"Name":"integrity","Value":"sha256-HF3vzWNfMeukKQfwQOa6MtvqWQiRn5tp4HCfsEE4KCI="},{"Name":"label","Value":"_content/KareMa.EndPoint.RazorPages/uploads/3e8dcc42-4726-402d-802f-02d2c09668c2gittaWeb-76-3416 (1).jpeg"}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"113207"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022HF3vzWNfMeukKQfwQOa6MtvqWQiRn5tp4HCfsEE4KCI=\u0022"},{"Name":"Last-Modified","Value":"Tue, 11 Feb 2025 09:15:15 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/KareMa.EndPoint.RazorPages/uploads/3f6e9b68-c6e8-477a-b46e-141a29ae40cc.2mn24nx4n5.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\3f6e9b68-c6e8-477a-b46e-141a29ae40cc.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"2mn24nx4n5"},{"Name":"integrity","Value":"sha256-9sstlQ2L4hqh7V7byqlcRfdecPF8pHe2S/qBM3nEP3c="},{"Name":"label","Value":"_content/KareMa.EndPoint.RazorPages/uploads/3f6e9b68-c6e8-477a-b46e-141a29ae40cc.jpg"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"67540"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u00229sstlQ2L4hqh7V7byqlcRfdecPF8pHe2S/qBM3nEP3c=\u0022"},{"Name":"Last-Modified","Value":"Fri, 07 Mar 2025 10:37:03 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/KareMa.EndPoint.RazorPages/uploads/3f6e9b68-c6e8-477a-b46e-141a29ae40cc.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\3f6e9b68-c6e8-477a-b46e-141a29ae40cc.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-9sstlQ2L4hqh7V7byqlcRfdecPF8pHe2S/qBM3nEP3c="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"67540"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u00229sstlQ2L4hqh7V7byqlcRfdecPF8pHe2S/qBM3nEP3c=\u0022"},{"Name":"Last-Modified","Value":"Fri, 07 Mar 2025 10:37:03 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/KareMa.EndPoint.RazorPages/uploads/4038f0ca-df6b-4632-b075-ce3fed19ae05_3f2c91d9440631c4f1105b835be7438a.1hhlkz6hjp.jpg">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\4038f0ca-df6b-4632-b075-ce3fed19ae05_3f2c91d9440631c4f1105b835be7438a.jpg'))</AssetFile>
@@ -20592,6 +20640,18 @@
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-tesntx1o190t/33U8NxwPT7q92OZALqoEekkwh4z0c4="}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"77712"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022tesntx1o190t/33U8NxwPT7q92OZALqoEekkwh4z0c4=\u0022"},{"Name":"Last-Modified","Value":"Tue, 11 Feb 2025 09:15:15 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/KareMa.EndPoint.RazorPages/uploads/628ac1a0-c2d5-4754-a251-8366dfb1cac2_smiling-man-helping-woman-with-household_74855-7860.16nevo6ojp.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\628ac1a0-c2d5-4754-a251-8366dfb1cac2_smiling-man-helping-woman-with-household_74855-7860.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"16nevo6ojp"},{"Name":"integrity","Value":"sha256-N1RkX8nxrgrMlpL3dQCMjrS4nhG/4ds\u002BfmDk1P9Kbn8="},{"Name":"label","Value":"_content/KareMa.EndPoint.RazorPages/uploads/628ac1a0-c2d5-4754-a251-8366dfb1cac2_smiling-man-helping-woman-with-household_74855-7860.jpg"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"73987"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022N1RkX8nxrgrMlpL3dQCMjrS4nhG/4ds\u002BfmDk1P9Kbn8=\u0022"},{"Name":"Last-Modified","Value":"Fri, 07 Mar 2025 10:55:59 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/KareMa.EndPoint.RazorPages/uploads/628ac1a0-c2d5-4754-a251-8366dfb1cac2_smiling-man-helping-woman-with-household_74855-7860.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\628ac1a0-c2d5-4754-a251-8366dfb1cac2_smiling-man-helping-woman-with-household_74855-7860.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-N1RkX8nxrgrMlpL3dQCMjrS4nhG/4ds\u002BfmDk1P9Kbn8="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"73987"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022N1RkX8nxrgrMlpL3dQCMjrS4nhG/4ds\u002BfmDk1P9Kbn8=\u0022"},{"Name":"Last-Modified","Value":"Fri, 07 Mar 2025 10:55:59 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/KareMa.EndPoint.RazorPages/uploads/63fba7ec-e9bd-4a2d-8233-2a32169df2bd_flat-design-household-renovation-professions-with-men_23-2148655570.fjutjja0hb.jpg">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\63fba7ec-e9bd-4a2d-8233-2a32169df2bd_flat-design-household-renovation-professions-with-men_23-2148655570.jpg'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
@@ -20603,6 +20663,18 @@
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-2/5ptG9rWvV4Q5xeCTvlecDMXG9vFCWOI8ni1ICF7nA="}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"69912"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u00222/5ptG9rWvV4Q5xeCTvlecDMXG9vFCWOI8ni1ICF7nA=\u0022"},{"Name":"Last-Modified","Value":"Wed, 05 Mar 2025 22:32:27 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/KareMa.EndPoint.RazorPages/uploads/6545f286-b7d7-4002-ae6d-d79f87b390fa_Black and White Simple Circle Brush Name Logo.friefolfew.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\6545f286-b7d7-4002-ae6d-d79f87b390fa_Black and White Simple Circle Brush Name Logo.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"friefolfew"},{"Name":"integrity","Value":"sha256-ezXKMVGAnsYTShbMhAaYsfX8oyyuwOi3X39y6U\u002BtO7Y="},{"Name":"label","Value":"_content/KareMa.EndPoint.RazorPages/uploads/6545f286-b7d7-4002-ae6d-d79f87b390fa_Black and White Simple Circle Brush Name Logo.jpg"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"14965"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022ezXKMVGAnsYTShbMhAaYsfX8oyyuwOi3X39y6U\u002BtO7Y=\u0022"},{"Name":"Last-Modified","Value":"Tue, 11 Mar 2025 06:52:51 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/KareMa.EndPoint.RazorPages/uploads/6545f286-b7d7-4002-ae6d-d79f87b390fa_Black and White Simple Circle Brush Name Logo.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\6545f286-b7d7-4002-ae6d-d79f87b390fa_Black and White Simple Circle Brush Name Logo.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-ezXKMVGAnsYTShbMhAaYsfX8oyyuwOi3X39y6U\u002BtO7Y="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"14965"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022ezXKMVGAnsYTShbMhAaYsfX8oyyuwOi3X39y6U\u002BtO7Y=\u0022"},{"Name":"Last-Modified","Value":"Tue, 11 Mar 2025 06:52:51 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/KareMa.EndPoint.RazorPages/uploads/673e5ba4-90dd-42b7-bba4-15962dd0cda4_smiling-man-helping-woman-with-household_74855-7860.16nevo6ojp.jpg">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\673e5ba4-90dd-42b7-bba4-15962dd0cda4_smiling-man-helping-woman-with-household_74855-7860.jpg'))</AssetFile>
@@ -20652,6 +20724,18 @@
       <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"wdsddx1mu0"},{"Name":"integrity","Value":"sha256-DE4zbyV66sD4zgfU/6xk7zr4WRYnjRj1vu/fqtmRzU4="},{"Name":"label","Value":"_content/KareMa.EndPoint.RazorPages/uploads/716e262a-a6df-4154-bdce-5f8b5fc53186_cleaning-service-big-set-isolated-icons-with-detergents-mops-brooms-female-character-worker-vector-illustration_1284-78507.jpg"}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"108091"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022DE4zbyV66sD4zgfU/6xk7zr4WRYnjRj1vu/fqtmRzU4=\u0022"},{"Name":"Last-Modified","Value":"Thu, 06 Mar 2025 11:54:25 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/KareMa.EndPoint.RazorPages/uploads/72ef9b0e-60d2-4110-95a2-44408f8c214a_young-people-doing-housework-living-room_52683-22049.2mn24nx4n5.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\72ef9b0e-60d2-4110-95a2-44408f8c214a_young-people-doing-housework-living-room_52683-22049.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"2mn24nx4n5"},{"Name":"integrity","Value":"sha256-9sstlQ2L4hqh7V7byqlcRfdecPF8pHe2S/qBM3nEP3c="},{"Name":"label","Value":"_content/KareMa.EndPoint.RazorPages/uploads/72ef9b0e-60d2-4110-95a2-44408f8c214a_young-people-doing-housework-living-room_52683-22049.jpg"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"67540"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u00229sstlQ2L4hqh7V7byqlcRfdecPF8pHe2S/qBM3nEP3c=\u0022"},{"Name":"Last-Modified","Value":"Fri, 07 Mar 2025 10:37:03 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/KareMa.EndPoint.RazorPages/uploads/72ef9b0e-60d2-4110-95a2-44408f8c214a_young-people-doing-housework-living-room_52683-22049.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\72ef9b0e-60d2-4110-95a2-44408f8c214a_young-people-doing-housework-living-room_52683-22049.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-9sstlQ2L4hqh7V7byqlcRfdecPF8pHe2S/qBM3nEP3c="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"67540"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u00229sstlQ2L4hqh7V7byqlcRfdecPF8pHe2S/qBM3nEP3c=\u0022"},{"Name":"Last-Modified","Value":"Fri, 07 Mar 2025 10:37:03 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/KareMa.EndPoint.RazorPages/uploads/76ba401f-7acc-4e6b-b5f8-861e6ebc768a.fjutjja0hb.jpg">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\76ba401f-7acc-4e6b-b5f8-861e6ebc768a.jpg'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
@@ -20664,6 +20748,18 @@
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-2/5ptG9rWvV4Q5xeCTvlecDMXG9vFCWOI8ni1ICF7nA="}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"69912"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u00222/5ptG9rWvV4Q5xeCTvlecDMXG9vFCWOI8ni1ICF7nA=\u0022"},{"Name":"Last-Modified","Value":"Wed, 05 Mar 2025 22:27:51 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/KareMa.EndPoint.RazorPages/uploads/82044300-cae0-47f9-88ae-9a2a14686153_Black and White Simple Circle Brush Name Logo.friefolfew.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\82044300-cae0-47f9-88ae-9a2a14686153_Black and White Simple Circle Brush Name Logo.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"friefolfew"},{"Name":"integrity","Value":"sha256-ezXKMVGAnsYTShbMhAaYsfX8oyyuwOi3X39y6U\u002BtO7Y="},{"Name":"label","Value":"_content/KareMa.EndPoint.RazorPages/uploads/82044300-cae0-47f9-88ae-9a2a14686153_Black and White Simple Circle Brush Name Logo.jpg"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"14965"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022ezXKMVGAnsYTShbMhAaYsfX8oyyuwOi3X39y6U\u002BtO7Y=\u0022"},{"Name":"Last-Modified","Value":"Tue, 11 Mar 2025 06:37:47 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/KareMa.EndPoint.RazorPages/uploads/82044300-cae0-47f9-88ae-9a2a14686153_Black and White Simple Circle Brush Name Logo.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\82044300-cae0-47f9-88ae-9a2a14686153_Black and White Simple Circle Brush Name Logo.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-ezXKMVGAnsYTShbMhAaYsfX8oyyuwOi3X39y6U\u002BtO7Y="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"14965"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022ezXKMVGAnsYTShbMhAaYsfX8oyyuwOi3X39y6U\u002BtO7Y=\u0022"},{"Name":"Last-Modified","Value":"Tue, 11 Mar 2025 06:37:47 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/KareMa.EndPoint.RazorPages/uploads/84111f9d-2243-487b-ae6c-fa156481f474_smiling-man-helping-woman-with-household_74855-7860.16nevo6ojp.jpg">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\84111f9d-2243-487b-ae6c-fa156481f474_smiling-man-helping-woman-with-household_74855-7860.jpg'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
@@ -20675,6 +20771,30 @@
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-N1RkX8nxrgrMlpL3dQCMjrS4nhG/4ds\u002BfmDk1P9Kbn8="}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"73987"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022N1RkX8nxrgrMlpL3dQCMjrS4nhG/4ds\u002BfmDk1P9Kbn8=\u0022"},{"Name":"Last-Modified","Value":"Wed, 26 Feb 2025 20:40:22 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/KareMa.EndPoint.RazorPages/uploads/8448d2c1-8e2a-44d2-9ea6-6baf41789925_flat-design-household-renovation-professions-with-men_23-2148655570.fjutjja0hb.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\8448d2c1-8e2a-44d2-9ea6-6baf41789925_flat-design-household-renovation-professions-with-men_23-2148655570.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"fjutjja0hb"},{"Name":"integrity","Value":"sha256-2/5ptG9rWvV4Q5xeCTvlecDMXG9vFCWOI8ni1ICF7nA="},{"Name":"label","Value":"_content/KareMa.EndPoint.RazorPages/uploads/8448d2c1-8e2a-44d2-9ea6-6baf41789925_flat-design-household-renovation-professions-with-men_23-2148655570.jpg"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"69912"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u00222/5ptG9rWvV4Q5xeCTvlecDMXG9vFCWOI8ni1ICF7nA=\u0022"},{"Name":"Last-Modified","Value":"Fri, 07 Mar 2025 10:56:41 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/KareMa.EndPoint.RazorPages/uploads/8448d2c1-8e2a-44d2-9ea6-6baf41789925_flat-design-household-renovation-professions-with-men_23-2148655570.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\8448d2c1-8e2a-44d2-9ea6-6baf41789925_flat-design-household-renovation-professions-with-men_23-2148655570.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-2/5ptG9rWvV4Q5xeCTvlecDMXG9vFCWOI8ni1ICF7nA="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"69912"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u00222/5ptG9rWvV4Q5xeCTvlecDMXG9vFCWOI8ni1ICF7nA=\u0022"},{"Name":"Last-Modified","Value":"Fri, 07 Mar 2025 10:56:41 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/KareMa.EndPoint.RazorPages/uploads/894c9d12-bb39-487b-a1a4-f9e0818e9f3d_flat-design-household-renovation-professions-with-men_23-2148655570.fjutjja0hb.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\894c9d12-bb39-487b-a1a4-f9e0818e9f3d_flat-design-household-renovation-professions-with-men_23-2148655570.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"fjutjja0hb"},{"Name":"integrity","Value":"sha256-2/5ptG9rWvV4Q5xeCTvlecDMXG9vFCWOI8ni1ICF7nA="},{"Name":"label","Value":"_content/KareMa.EndPoint.RazorPages/uploads/894c9d12-bb39-487b-a1a4-f9e0818e9f3d_flat-design-household-renovation-professions-with-men_23-2148655570.jpg"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"69912"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u00222/5ptG9rWvV4Q5xeCTvlecDMXG9vFCWOI8ni1ICF7nA=\u0022"},{"Name":"Last-Modified","Value":"Fri, 07 Mar 2025 10:38:29 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/KareMa.EndPoint.RazorPages/uploads/894c9d12-bb39-487b-a1a4-f9e0818e9f3d_flat-design-household-renovation-professions-with-men_23-2148655570.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\894c9d12-bb39-487b-a1a4-f9e0818e9f3d_flat-design-household-renovation-professions-with-men_23-2148655570.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-2/5ptG9rWvV4Q5xeCTvlecDMXG9vFCWOI8ni1ICF7nA="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"69912"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u00222/5ptG9rWvV4Q5xeCTvlecDMXG9vFCWOI8ni1ICF7nA=\u0022"},{"Name":"Last-Modified","Value":"Fri, 07 Mar 2025 10:38:29 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/KareMa.EndPoint.RazorPages/uploads/8b8733e2-db8c-48d7-b858-dd4e907a00db_cleaning-service-big-set-isolated-icons-with-detergents-mops-brooms-female-character-worker-vector-illustration_1284-78507.jpg">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\8b8733e2-db8c-48d7-b858-dd4e907a00db_cleaning-service-big-set-isolated-icons-with-detergents-mops-brooms-female-character-worker-vector-illustration_1284-78507.jpg'))</AssetFile>
@@ -20868,6 +20988,18 @@
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-2/5ptG9rWvV4Q5xeCTvlecDMXG9vFCWOI8ni1ICF7nA="}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"69912"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u00222/5ptG9rWvV4Q5xeCTvlecDMXG9vFCWOI8ni1ICF7nA=\u0022"},{"Name":"Last-Modified","Value":"Fri, 28 Feb 2025 07:25:12 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/KareMa.EndPoint.RazorPages/uploads/ad92f260-35ac-45a6-9fc4-91169a49b1d3_young-people-doing-housework-living-room_52683-22049.2mn24nx4n5.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\ad92f260-35ac-45a6-9fc4-91169a49b1d3_young-people-doing-housework-living-room_52683-22049.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"2mn24nx4n5"},{"Name":"integrity","Value":"sha256-9sstlQ2L4hqh7V7byqlcRfdecPF8pHe2S/qBM3nEP3c="},{"Name":"label","Value":"_content/KareMa.EndPoint.RazorPages/uploads/ad92f260-35ac-45a6-9fc4-91169a49b1d3_young-people-doing-housework-living-room_52683-22049.jpg"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"67540"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u00229sstlQ2L4hqh7V7byqlcRfdecPF8pHe2S/qBM3nEP3c=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 18:54:48 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/KareMa.EndPoint.RazorPages/uploads/ad92f260-35ac-45a6-9fc4-91169a49b1d3_young-people-doing-housework-living-room_52683-22049.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\ad92f260-35ac-45a6-9fc4-91169a49b1d3_young-people-doing-housework-living-room_52683-22049.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-9sstlQ2L4hqh7V7byqlcRfdecPF8pHe2S/qBM3nEP3c="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"67540"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u00229sstlQ2L4hqh7V7byqlcRfdecPF8pHe2S/qBM3nEP3c=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 18:54:48 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/KareMa.EndPoint.RazorPages/uploads/adc8c3ab-e2c0-4c8d-bd13-19e402f03007_young-people-doing-housework-living-room_52683-22049.2mn24nx4n5.jpg">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\adc8c3ab-e2c0-4c8d-bd13-19e402f03007_young-people-doing-housework-living-room_52683-22049.jpg'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
@@ -20940,6 +21072,18 @@
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-2/5ptG9rWvV4Q5xeCTvlecDMXG9vFCWOI8ni1ICF7nA="}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"69912"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u00222/5ptG9rWvV4Q5xeCTvlecDMXG9vFCWOI8ni1ICF7nA=\u0022"},{"Name":"Last-Modified","Value":"Wed, 05 Mar 2025 17:49:19 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/KareMa.EndPoint.RazorPages/uploads/bafded17-562d-41e0-bd22-80b36b68a6da_flat-design-household-renovation-professions-with-men_23-2148655570.fjutjja0hb.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\bafded17-562d-41e0-bd22-80b36b68a6da_flat-design-household-renovation-professions-with-men_23-2148655570.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"fjutjja0hb"},{"Name":"integrity","Value":"sha256-2/5ptG9rWvV4Q5xeCTvlecDMXG9vFCWOI8ni1ICF7nA="},{"Name":"label","Value":"_content/KareMa.EndPoint.RazorPages/uploads/bafded17-562d-41e0-bd22-80b36b68a6da_flat-design-household-renovation-professions-with-men_23-2148655570.jpg"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"69912"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u00222/5ptG9rWvV4Q5xeCTvlecDMXG9vFCWOI8ni1ICF7nA=\u0022"},{"Name":"Last-Modified","Value":"Fri, 07 Mar 2025 10:55:11 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/KareMa.EndPoint.RazorPages/uploads/bafded17-562d-41e0-bd22-80b36b68a6da_flat-design-household-renovation-professions-with-men_23-2148655570.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\bafded17-562d-41e0-bd22-80b36b68a6da_flat-design-household-renovation-professions-with-men_23-2148655570.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-2/5ptG9rWvV4Q5xeCTvlecDMXG9vFCWOI8ni1ICF7nA="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"69912"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u00222/5ptG9rWvV4Q5xeCTvlecDMXG9vFCWOI8ni1ICF7nA=\u0022"},{"Name":"Last-Modified","Value":"Fri, 07 Mar 2025 10:55:11 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/KareMa.EndPoint.RazorPages/uploads/bbc6ef3e-275d-4ea8-9191-aa468c9ab662_cleaning-service-big-set-isolated-icons-with-detergents-mops-brooms-female-character-worker-vector-illustration_1284-78507.jpg">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\bbc6ef3e-275d-4ea8-9191-aa468c9ab662_cleaning-service-big-set-isolated-icons-with-detergents-mops-brooms-female-character-worker-vector-illustration_1284-78507.jpg'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
@@ -20963,6 +21107,18 @@
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-N1RkX8nxrgrMlpL3dQCMjrS4nhG/4ds\u002BfmDk1P9Kbn8="}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"73987"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022N1RkX8nxrgrMlpL3dQCMjrS4nhG/4ds\u002BfmDk1P9Kbn8=\u0022"},{"Name":"Last-Modified","Value":"Wed, 26 Feb 2025 20:41:43 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/KareMa.EndPoint.RazorPages/uploads/bee37f05-5326-48aa-a748-a06ef9bd073c_Black and White Simple Circle Brush Name Logo.friefolfew.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\bee37f05-5326-48aa-a748-a06ef9bd073c_Black and White Simple Circle Brush Name Logo.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"friefolfew"},{"Name":"integrity","Value":"sha256-ezXKMVGAnsYTShbMhAaYsfX8oyyuwOi3X39y6U\u002BtO7Y="},{"Name":"label","Value":"_content/KareMa.EndPoint.RazorPages/uploads/bee37f05-5326-48aa-a748-a06ef9bd073c_Black and White Simple Circle Brush Name Logo.jpg"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"14965"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022ezXKMVGAnsYTShbMhAaYsfX8oyyuwOi3X39y6U\u002BtO7Y=\u0022"},{"Name":"Last-Modified","Value":"Fri, 07 Mar 2025 11:00:39 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/KareMa.EndPoint.RazorPages/uploads/bee37f05-5326-48aa-a748-a06ef9bd073c_Black and White Simple Circle Brush Name Logo.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\bee37f05-5326-48aa-a748-a06ef9bd073c_Black and White Simple Circle Brush Name Logo.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-ezXKMVGAnsYTShbMhAaYsfX8oyyuwOi3X39y6U\u002BtO7Y="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"14965"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022ezXKMVGAnsYTShbMhAaYsfX8oyyuwOi3X39y6U\u002BtO7Y=\u0022"},{"Name":"Last-Modified","Value":"Fri, 07 Mar 2025 11:00:39 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/KareMa.EndPoint.RazorPages/uploads/c121825c-f947-4e41-b27c-f968bfeef650_flat-design-household-renovation-professions-with-men_23-2148655570.fjutjja0hb.jpg">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\c121825c-f947-4e41-b27c-f968bfeef650_flat-design-household-renovation-professions-with-men_23-2148655570.jpg'))</AssetFile>
@@ -21023,6 +21179,30 @@
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-ezXKMVGAnsYTShbMhAaYsfX8oyyuwOi3X39y6U\u002BtO7Y="}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"14965"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022ezXKMVGAnsYTShbMhAaYsfX8oyyuwOi3X39y6U\u002BtO7Y=\u0022"},{"Name":"Last-Modified","Value":"Wed, 05 Mar 2025 22:35:47 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/KareMa.EndPoint.RazorPages/uploads/c787612d-9459-49bc-85bf-574b31b1591f_smiling-man-helping-woman-with-household_74855-7860.16nevo6ojp.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\c787612d-9459-49bc-85bf-574b31b1591f_smiling-man-helping-woman-with-household_74855-7860.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"16nevo6ojp"},{"Name":"integrity","Value":"sha256-N1RkX8nxrgrMlpL3dQCMjrS4nhG/4ds\u002BfmDk1P9Kbn8="},{"Name":"label","Value":"_content/KareMa.EndPoint.RazorPages/uploads/c787612d-9459-49bc-85bf-574b31b1591f_smiling-man-helping-woman-with-household_74855-7860.jpg"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"73987"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022N1RkX8nxrgrMlpL3dQCMjrS4nhG/4ds\u002BfmDk1P9Kbn8=\u0022"},{"Name":"Last-Modified","Value":"Fri, 07 Mar 2025 07:22:35 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/KareMa.EndPoint.RazorPages/uploads/c787612d-9459-49bc-85bf-574b31b1591f_smiling-man-helping-woman-with-household_74855-7860.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\c787612d-9459-49bc-85bf-574b31b1591f_smiling-man-helping-woman-with-household_74855-7860.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-N1RkX8nxrgrMlpL3dQCMjrS4nhG/4ds\u002BfmDk1P9Kbn8="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"73987"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022N1RkX8nxrgrMlpL3dQCMjrS4nhG/4ds\u002BfmDk1P9Kbn8=\u0022"},{"Name":"Last-Modified","Value":"Fri, 07 Mar 2025 07:22:35 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/KareMa.EndPoint.RazorPages/uploads/c9498582-5bd9-4f72-9d64-237d805be5cb_Black and White Simple Circle Brush Name Logo.friefolfew.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\c9498582-5bd9-4f72-9d64-237d805be5cb_Black and White Simple Circle Brush Name Logo.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"friefolfew"},{"Name":"integrity","Value":"sha256-ezXKMVGAnsYTShbMhAaYsfX8oyyuwOi3X39y6U\u002BtO7Y="},{"Name":"label","Value":"_content/KareMa.EndPoint.RazorPages/uploads/c9498582-5bd9-4f72-9d64-237d805be5cb_Black and White Simple Circle Brush Name Logo.jpg"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"14965"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022ezXKMVGAnsYTShbMhAaYsfX8oyyuwOi3X39y6U\u002BtO7Y=\u0022"},{"Name":"Last-Modified","Value":"Mon, 10 Mar 2025 07:38:29 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/KareMa.EndPoint.RazorPages/uploads/c9498582-5bd9-4f72-9d64-237d805be5cb_Black and White Simple Circle Brush Name Logo.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\c9498582-5bd9-4f72-9d64-237d805be5cb_Black and White Simple Circle Brush Name Logo.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-ezXKMVGAnsYTShbMhAaYsfX8oyyuwOi3X39y6U\u002BtO7Y="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"14965"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022ezXKMVGAnsYTShbMhAaYsfX8oyyuwOi3X39y6U\u002BtO7Y=\u0022"},{"Name":"Last-Modified","Value":"Mon, 10 Mar 2025 07:38:29 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/KareMa.EndPoint.RazorPages/uploads/ce35358c-700f-4782-bfca-5905144a04bd_cleaning-service-big-set-isolated-icons-with-detergents-mops-brooms-female-character-worker-vector-illustration_1284-78507.jpg">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\ce35358c-700f-4782-bfca-5905144a04bd_cleaning-service-big-set-isolated-icons-with-detergents-mops-brooms-female-character-worker-vector-illustration_1284-78507.jpg'))</AssetFile>
@@ -21120,6 +21300,18 @@
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-9sstlQ2L4hqh7V7byqlcRfdecPF8pHe2S/qBM3nEP3c="}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"67540"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u00229sstlQ2L4hqh7V7byqlcRfdecPF8pHe2S/qBM3nEP3c=\u0022"},{"Name":"Last-Modified","Value":"Sat, 01 Mar 2025 12:20:21 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/KareMa.EndPoint.RazorPages/uploads/e542382a-cb2c-4e5a-bd3b-740ead8e505d_Black and White Simple Circle Brush Name Logo.friefolfew.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\e542382a-cb2c-4e5a-bd3b-740ead8e505d_Black and White Simple Circle Brush Name Logo.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"friefolfew"},{"Name":"integrity","Value":"sha256-ezXKMVGAnsYTShbMhAaYsfX8oyyuwOi3X39y6U\u002BtO7Y="},{"Name":"label","Value":"_content/KareMa.EndPoint.RazorPages/uploads/e542382a-cb2c-4e5a-bd3b-740ead8e505d_Black and White Simple Circle Brush Name Logo.jpg"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"14965"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022ezXKMVGAnsYTShbMhAaYsfX8oyyuwOi3X39y6U\u002BtO7Y=\u0022"},{"Name":"Last-Modified","Value":"Tue, 11 Mar 2025 06:38:50 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/KareMa.EndPoint.RazorPages/uploads/e542382a-cb2c-4e5a-bd3b-740ead8e505d_Black and White Simple Circle Brush Name Logo.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\e542382a-cb2c-4e5a-bd3b-740ead8e505d_Black and White Simple Circle Brush Name Logo.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-ezXKMVGAnsYTShbMhAaYsfX8oyyuwOi3X39y6U\u002BtO7Y="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"14965"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022ezXKMVGAnsYTShbMhAaYsfX8oyyuwOi3X39y6U\u002BtO7Y=\u0022"},{"Name":"Last-Modified","Value":"Tue, 11 Mar 2025 06:38:50 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/KareMa.EndPoint.RazorPages/uploads/e636e7bf-e14b-4d04-9646-28d0282ad1cd_young-people-doing-housework-living-room_52683-22049.2mn24nx4n5.jpg">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\e636e7bf-e14b-4d04-9646-28d0282ad1cd_young-people-doing-housework-living-room_52683-22049.jpg'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
@@ -21131,6 +21323,18 @@
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-9sstlQ2L4hqh7V7byqlcRfdecPF8pHe2S/qBM3nEP3c="}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"67540"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u00229sstlQ2L4hqh7V7byqlcRfdecPF8pHe2S/qBM3nEP3c=\u0022"},{"Name":"Last-Modified","Value":"Wed, 05 Mar 2025 17:54:15 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/KareMa.EndPoint.RazorPages/uploads/e900506a-f4f1-4a17-97b6-0c8c2dd6a687_Black and White Simple Circle Brush Name Logo.friefolfew.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\e900506a-f4f1-4a17-97b6-0c8c2dd6a687_Black and White Simple Circle Brush Name Logo.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"friefolfew"},{"Name":"integrity","Value":"sha256-ezXKMVGAnsYTShbMhAaYsfX8oyyuwOi3X39y6U\u002BtO7Y="},{"Name":"label","Value":"_content/KareMa.EndPoint.RazorPages/uploads/e900506a-f4f1-4a17-97b6-0c8c2dd6a687_Black and White Simple Circle Brush Name Logo.jpg"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"14965"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022ezXKMVGAnsYTShbMhAaYsfX8oyyuwOi3X39y6U\u002BtO7Y=\u0022"},{"Name":"Last-Modified","Value":"Tue, 11 Mar 2025 06:42:49 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/KareMa.EndPoint.RazorPages/uploads/e900506a-f4f1-4a17-97b6-0c8c2dd6a687_Black and White Simple Circle Brush Name Logo.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\e900506a-f4f1-4a17-97b6-0c8c2dd6a687_Black and White Simple Circle Brush Name Logo.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-ezXKMVGAnsYTShbMhAaYsfX8oyyuwOi3X39y6U\u002BtO7Y="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"14965"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022ezXKMVGAnsYTShbMhAaYsfX8oyyuwOi3X39y6U\u002BtO7Y=\u0022"},{"Name":"Last-Modified","Value":"Tue, 11 Mar 2025 06:42:49 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/KareMa.EndPoint.RazorPages/uploads/eb661d4e-bd82-4963-af05-f20c48f9bd00_Black and White Simple Circle Brush Name Logo.friefolfew.jpg">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\eb661d4e-bd82-4963-af05-f20c48f9bd00_Black and White Simple Circle Brush Name Logo.jpg'))</AssetFile>

@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.ComponentModel.DataAnnotations;
 using System.Text.RegularExpressions;
+using System.Globalization;
 
 namespace KareMa.EndPoint.RazorPages.Areas.ExpertArea.Pages
 {
@@ -35,9 +36,6 @@ namespace KareMa.EndPoint.RazorPages.Areas.ExpertArea.Pages
         public IFormFile? Image { get; set; }
 
         [BindProperty]
-        public List<int> ServiceIds { get; set; }
-
-        [BindProperty]
         public List<ServicesNameDto> ServicesNames { get; set; }
 
         [BindProperty]
@@ -48,18 +46,25 @@ namespace KareMa.EndPoint.RazorPages.Areas.ExpertArea.Pages
 
         public async Task OnGetAsync(CancellationToken cancellationToken)
         {
-            _logger.LogInformation("ProfileSetting OnGet called.");
-            Console.WriteLine("ProfileSetting OnGet called.");
-            var expertId = int.Parse(User.Claims.FirstOrDefault(u => u.Type == "userExpertId")?.Value ?? "0");
-            ExpertUpdate = await _expertAppServices.ExpertUpdateInfo(expertId, cancellationToken);
-            ServicesNames = await _serviceAppServices.GetServicesName(cancellationToken);
-            if (ExpertUpdate?.BirthDate != null)
+            var expertIdClaim = User.Claims.FirstOrDefault(u => u.Type == "userExpertId")?.Value;
+            if (!int.TryParse(expertIdClaim, out var expertId))
             {
-                var birthDate = ExpertUpdate.BirthDate;
-                BirthDate = birthDate.ToPersianString("yyyy/MM/dd");
+                _logger.LogError("Could not retrieve or parse expertId from claims.");
+                throw new UnauthorizedAccessException("شناسه کارشناس یافت نشد.");
             }
-            _logger.LogInformation("Current Gender on Get: {Gender}", ExpertUpdate?.Gender);
-            Console.WriteLine($"Current Gender on Get: {ExpertUpdate?.Gender}");
+
+            ExpertUpdate = await _expertAppServices.ExpertUpdateInfo(expertId, cancellationToken);
+            if (ExpertUpdate == null)
+            {
+                _logger.LogWarning("Expert with ID {ExpertId} not found, initializing empty DTO.", expertId);
+                ExpertUpdate = new ExpertUpdateDto { Id = expertId };
+            }
+
+            ServicesNames = await _serviceAppServices.GetServicesName(cancellationToken);
+            BirthDate = ExpertUpdate.BirthDate != null ? ExpertUpdate.BirthDate.ToPersianString("yyyy/MM/dd") : string.Empty;
+
+            _logger.LogInformation("ServiceIds on Get: {@ServiceIds}", ExpertUpdate?.ServiceIds ?? new List<int>());
+            _logger.LogInformation("Gender on Get: {Gender}", ExpertUpdate?.Gender);
         }
 
         public async Task<IActionResult> OnPostUpdateProfileAsync(CancellationToken cancellationToken)
@@ -69,8 +74,9 @@ namespace KareMa.EndPoint.RazorPages.Areas.ExpertArea.Pages
 
             try
             {
-                _logger.LogInformation("Received Data - ID: {Id}, Gender: {Gender}, PhoneNumber: {PhoneNumber}, BirthDate: '{BirthDate}'", ExpertUpdate.Id, ExpertUpdate.Gender, ExpertUpdate.PhoneNumber, BirthDate);
-                Console.WriteLine($"Received Data - ID: {ExpertUpdate.Id}, Gender: {ExpertUpdate.Gender}, PhoneNumber: {ExpertUpdate.PhoneNumber}, BirthDate: '{BirthDate}'");
+                _logger.LogInformation("Received Data - ID: {Id}, Gender: {Gender}, PhoneNumber: {PhoneNumber}, BirthDate: '{BirthDate}', ServiceIds: {@ServiceIds}",
+                    ExpertUpdate.Id, ExpertUpdate.Gender, ExpertUpdate.PhoneNumber, BirthDate, ExpertUpdate.ServiceIds ?? new List<int>());
+                Console.WriteLine($"Received Data - ID: {ExpertUpdate.Id}, Gender: {ExpertUpdate.Gender}, PhoneNumber: {ExpertUpdate.PhoneNumber}, BirthDate: '{BirthDate}', ServiceIds: {string.Join(", ", ExpertUpdate.ServiceIds ?? new List<int>())}");
 
                 if (!ModelState.IsValid)
                 {
@@ -91,7 +97,6 @@ namespace KareMa.EndPoint.RazorPages.Areas.ExpertArea.Pages
 
                 var expertId = int.Parse(User.Claims.FirstOrDefault(u => u.Type == "userExpertId")?.Value ?? "0");
                 ExpertUpdate.Id = expertId;
-                ExpertUpdate.ServiceIds = ServiceIds;
 
                 if (!string.IsNullOrEmpty(BirthDate))
                 {
@@ -103,16 +108,11 @@ namespace KareMa.EndPoint.RazorPages.Areas.ExpertArea.Pages
                         }
 
                         var persianDateParts = BirthDate.Split('/');
-                        if (persianDateParts.Length != 3)
-                        {
-                            throw new FormatException($"تاریخ '{BirthDate}' باید شامل سال، ماه و روز باشد");
-                        }
-
                         var year = int.Parse(persianDateParts[0]);
                         var month = int.Parse(persianDateParts[1]);
                         var day = int.Parse(persianDateParts[2]);
 
-                        var persianCalendar = new System.Globalization.PersianCalendar();
+                        var persianCalendar = new PersianCalendar();
                         ExpertUpdate.BirthDate = persianCalendar.ToDateTime(year, month, day, 0, 0, 0, 0);
                         Console.WriteLine($"BirthDate parsed successfully: {ExpertUpdate.BirthDate}");
                     }
@@ -125,15 +125,24 @@ namespace KareMa.EndPoint.RazorPages.Areas.ExpertArea.Pages
                         return Page();
                     }
                 }
-                else
+
+                // آپلود تصویر اگه وجود داره
+                if (Image != null)
                 {
-                    Console.WriteLine("BirthDate is empty or null.");
+                    var fileName = Guid.NewGuid().ToString() + Path.GetExtension(Image.FileName);
+                    var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/uploads", fileName);
+                    using (var stream = new FileStream(filePath, FileMode.Create))
+                    {
+                        await Image.CopyToAsync(stream);
+                    }
+                    ExpertUpdate.Image = $"/uploads/{fileName}";
+                    _logger.LogInformation("Image uploaded: {ImagePath}", ExpertUpdate.Image);
                 }
 
-                _logger.LogInformation("Updating expert with ID: {ExpertId}, Gender: {Gender}", expertId, ExpertUpdate.Gender);
-                Console.WriteLine($"Updating expert with ID: {expertId}, Gender: {ExpertUpdate.Gender}");
+                _logger.LogInformation("Updating expert with ID: {ExpertId}, ServiceIds: {@ServiceIds}", expertId, ExpertUpdate.ServiceIds);
+                Console.WriteLine($"Updating expert with ID: {expertId}, ServiceIds: {string.Join(", ", ExpertUpdate.ServiceIds ?? new List<int>())}");
 
-                var result = await _expertAppServices.Update(ExpertUpdate, Image,  cancellationToken);
+                var result = await _expertAppServices.Update(ExpertUpdate,Image,  cancellationToken); // Image رو اینجا نمی‌فرستیم چون توی DTO هست
                 if (!result)
                 {
                     _logger.LogWarning("Failed to update expert profile.");
@@ -145,6 +154,7 @@ namespace KareMa.EndPoint.RazorPages.Areas.ExpertArea.Pages
 
                 _logger.LogInformation("Expert profile updated successfully.");
                 Console.WriteLine("Expert profile updated successfully.");
+                TempData["SuccessMessage"] = "تغییرات با موفقیت ذخیره شد.";
                 return RedirectToPage();
             }
             catch (Exception ex)

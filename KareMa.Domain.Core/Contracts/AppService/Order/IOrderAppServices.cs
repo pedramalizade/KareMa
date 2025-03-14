@@ -19,7 +19,7 @@ namespace KareMa.Domain.Core.Contracts.AppService
         Task<Order> GetById(int orderId, CancellationToken cancellationToken);
         Task<List<GetOrderDto>> GetAll(CancellationToken cancellationToken);
         Task<int> OrderCount(CancellationToken cancellationToken);
-        Task AddSampleSuggestionsAsync(int customerId, CancellationToken cancellationToken);
+        //Task AddSampleSuggestionsAsync(int customerId, CancellationToken cancellationToken);
         Task<List<GetOrderDto>> GetOrders(int customerId, CancellationToken cancellationToken);
         Task AcceptOrder(int orderId, CancellationToken cancellationToken);
         Task DoneOrder(int id, int suggestionId, CancellationToken cancellationToken);

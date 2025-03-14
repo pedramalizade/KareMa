@@ -35,6 +35,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KareMa.Domain.AppService", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KareMa.EndPoint.RazorPages", "KareMa.EndPoint.RazorPages\KareMa.EndPoint.RazorPages.csproj", "{55BDA9CF-2CB4-4D0B-878C-75F9D515D62C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KareMa.EndPoint.WebApi", "KareMa.EndPoint.WebApi\KareMa.EndPoint.WebApi.csproj", "{974ADAC2-0BDE-47AE-B308-D443319F7950}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KareMa.Infra.DataAccess.Repository.Dapper", "KareMa.Infra.DataAccess.Repository.Dapper\KareMa.Infra.DataAccess.Repository.Dapper.csproj", "{5F3F3BD5-6455-4847-ACF9-E43067BE619F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +73,14 @@ Global
 		{55BDA9CF-2CB4-4D0B-878C-75F9D515D62C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{55BDA9CF-2CB4-4D0B-878C-75F9D515D62C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{55BDA9CF-2CB4-4D0B-878C-75F9D515D62C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{974ADAC2-0BDE-47AE-B308-D443319F7950}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{974ADAC2-0BDE-47AE-B308-D443319F7950}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{974ADAC2-0BDE-47AE-B308-D443319F7950}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{974ADAC2-0BDE-47AE-B308-D443319F7950}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F3F3BD5-6455-4847-ACF9-E43067BE619F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F3F3BD5-6455-4847-ACF9-E43067BE619F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F3F3BD5-6455-4847-ACF9-E43067BE619F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F3F3BD5-6455-4847-ACF9-E43067BE619F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -89,5 +101,7 @@ Global
 		{4EE36174-1C5E-4741-A927-6014CF4BED25} = {45934AE0-5E05-4B53-A9E1-51291943B02A}
 		{D2D5D86B-3284-41F0-BF74-988A0A87A9BF} = {45934AE0-5E05-4B53-A9E1-51291943B02A}
 		{55BDA9CF-2CB4-4D0B-878C-75F9D515D62C} = {30395637-34AF-4696-A126-DA1E7A2A07BD}
+		{974ADAC2-0BDE-47AE-B308-D443319F7950} = {30395637-34AF-4696-A126-DA1E7A2A07BD}
+		{5F3F3BD5-6455-4847-ACF9-E43067BE619F} = {D8AA1D18-E124-4162-825A-780E3348C95B}
 	EndGlobalSection
 EndGlobal

@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "ytmn7u9T0Ygu2swlfMs30pWbCxS42e2C8cG2j29Qq9E=",
+  "Source": "KareMa.EndPoint.WebApi",
+  "BasePath": "_content/KareMa.EndPoint.WebApi",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

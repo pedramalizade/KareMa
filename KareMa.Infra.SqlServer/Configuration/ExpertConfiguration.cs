@@ -41,6 +41,7 @@ namespace KareMa.Infra.SqlServer.Configuration
                     BankCardNumber = "1234123412341234",
                     Image = "\\AdminTemplate\\images\\user\\placeholder.jpg",
                     IsConfirm = true,
+                    Bio = "تخصص هام توی زمینه خودم عالیه",
                     CreatedAt = new DateTime(2024, 2, 12),
                     IsDeleted = false,
                     Balance = 0,
@@ -58,6 +59,7 @@ namespace KareMa.Infra.SqlServer.Configuration
                      Image = "\\AdminTemplate\\images\\user\\placeholder.jpg",
                      IsConfirm = true,
                      Balance = 0,
+                     Bio = "میتونید بهم اعتماد کنید توی انجام کار ها",
                      CreatedAt = new DateTime(2024, 2, 12),
                      IsDeleted = false,
                      AppUserId = 4

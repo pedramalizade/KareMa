@@ -34,7 +34,7 @@ namespace KareMa.Infra.DataAccess.Repo.Ef.Repository
             await _context.Orders.AddAsync(newModel, cancellationToken);
 
             await _context.SaveChangesAsync(cancellationToken);
-            await AddSampleSuggestionsAsync(newModel.Id, cancellationToken);
+            //await AddSampleSuggestionsAsync(newModel.Id, cancellationToken);
             return true;
         }
 
@@ -65,73 +65,73 @@ namespace KareMa.Infra.DataAccess.Repo.Ef.Repository
             return orders;
         }
 
-        public async Task AddSampleSuggestionsAsync(int orderId, CancellationToken cancellationToken)
-        {
-            Console.WriteLine($"Adding sample suggestions for Order ID: {orderId}");
+        //public async Task AddSampleSuggestionsAsync(int orderId, CancellationToken cancellationToken)
+        //{
+        //    Console.WriteLine($"Adding sample suggestions for Order ID: {orderId}");
 
-            // چک کردن وجود سفارش
-            var order = await _context.Orders
-                .FirstOrDefaultAsync(o => o.Id == orderId && !o.IsDeleted, cancellationToken);
+        //    // چک کردن وجود سفارش
+        //    var order = await _context.Orders
+        //        .FirstOrDefaultAsync(o => o.Id == orderId && !o.IsDeleted, cancellationToken);
 
-            if (order == null)
-            {
-                Console.WriteLine($"Order with ID: {orderId} not found or is deleted.");
-                return;
-            }
+        //    if (order == null)
+        //    {
+        //        Console.WriteLine($"Order with ID: {orderId} not found or is deleted.");
+        //        return;
+        //    }
 
-            // چک کردن متخصص‌ها
-            var experts = await _context.Experts
-                .Where(e => !e.IsDeleted)
-                .Take(2) // فقط دوتا متخصص
-                .ToListAsync(cancellationToken);
+        //    // چک کردن متخصص‌ها
+        //    var experts = await _context.Experts
+        //        .Where(e => !e.IsDeleted)
+        //        .Take(2) // فقط دوتا متخصص
+        //        .ToListAsync(cancellationToken);
 
-            if (experts.Count < 2)
-            {
-                Console.WriteLine("Not enough experts found. Adding sample experts.");
-                var expert1 = new Expert { FirstName = "حسن", LastName = "رضایی", AppUserId = 2 };
-                var expert2 = new Expert { FirstName = "محمد", LastName = "کریمی", AppUserId = 3 };
-                _context.Experts.AddRange(expert1, expert2);
-                await _context.SaveChangesAsync(cancellationToken);
-                experts = new List<Expert> { expert1, expert2 };
-            }
+        //    if (experts.Count < 2)
+        //    {
+        //        Console.WriteLine("Not enough experts found. Adding sample experts.");
+        //        var expert1 = new Expert { FirstName = "حسن", LastName = "رضایی", AppUserId = 2 };
+        //        var expert2 = new Expert { FirstName = "محمد", LastName = "کریمی", AppUserId = 3 };
+        //        _context.Experts.AddRange(expert1, expert2);
+        //        await _context.SaveChangesAsync(cancellationToken);
+        //        experts = new List<Expert> { expert1, expert2 };
+        //    }
 
-            // چک می‌کنیم که پیشنهاد برای این سفارش وجود داره یا نه
-            var existingSuggestions = await _context.Suggestions
-                .Where(s => s.OrderId == orderId)
-                .ToListAsync(cancellationToken);
+        //    // چک می‌کنیم که پیشنهاد برای این سفارش وجود داره یا نه
+        //    var existingSuggestions = await _context.Suggestions
+        //        .Where(s => s.OrderId == orderId)
+        //        .ToListAsync(cancellationToken);
 
-            if (!existingSuggestions.Any())
-            {
-                var suggestions = new List<Suggestion>
-        {
-            new Suggestion
-            {
-                OrderId = orderId,
-                ExpertId = experts[0].Id,
-                Price = 500000,
-                Description = "تعمیر سریع و ارزان",
-                SuggestedDate = DateTime.Now.AddDays(1),
-                Status = StatusEnum.AwaitingCustomerConfirmation
-            },
-            new Suggestion
-            {
-                OrderId = orderId,
-                ExpertId = experts[1].Id,
-                Price = 600000,
-                Description = "تعمیر با کیفیت بالا",
-                SuggestedDate = DateTime.Now.AddDays(2),
-                Status = StatusEnum.AwaitingCustomerConfirmation
-            }
-        };
-                _context.Suggestions.AddRange(suggestions);
-                await _context.SaveChangesAsync(cancellationToken);
-                Console.WriteLine($"Added sample suggestions for Order ID: {orderId}");
-            }
-            else
-            {
-                Console.WriteLine($"Suggestions already exist for Order ID: {orderId}");
-            }
-        }
+        //    if (!existingSuggestions.Any())
+        //    {
+        //        var suggestions = new List<Suggestion>
+        //{
+        //    new Suggestion
+        //    {
+        //        OrderId = orderId,
+        //        ExpertId = experts[0].Id,
+        //        Price = 500000,
+        //        Description = "تعمیر سریع و ارزان",
+        //        SuggestedDate = DateTime.Now.AddDays(1),
+        //        Status = StatusEnum.AwaitingCustomerConfirmation
+        //    },
+        //    new Suggestion
+        //    {
+        //        OrderId = orderId,
+        //        ExpertId = experts[1].Id,
+        //        Price = 600000,
+        //        Description = "تعمیر با کیفیت بالا",
+        //        SuggestedDate = DateTime.Now.AddDays(2),
+        //        Status = StatusEnum.AwaitingCustomerConfirmation
+        //    }
+        //};
+        //        _context.Suggestions.AddRange(suggestions);
+        //        await _context.SaveChangesAsync(cancellationToken);
+        //        Console.WriteLine($"Added sample suggestions for Order ID: {orderId}");
+        //    }
+        //    else
+        //    {
+        //        Console.WriteLine($"Suggestions already exist for Order ID: {orderId}");
+        //    }
+        //}
 
         public async Task<Order> GetById(int orderId, CancellationToken cancellationToken)
             => await FindOrder(orderId, cancellationToken);

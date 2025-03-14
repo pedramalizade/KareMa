@@ -66,13 +66,7 @@
                                 <li>
                                     <div class="gdup-kvty">
                                         <div class="gdup-kvty-icon bg-light-success text-success"><i class="fas fa-wallet"></i></div>
-                                        <div class="gdup-kvty-ctr">
-                                            <h6 class="count">
-                                                @(Model.ExpertSummary != null && Model.ExpertSummary.Balance != null && !double.IsNaN((double)Model.ExpertSummary.Balance)
-                                                    ? Model.ExpertSummary.Balance.ToString("N0")
-                                                    : "0")
-                                            </h6>
-                                        </div>
+                                        <div class="gdup-kvty-ctr"><h6 class="count">@Model.ExpertSummary.Balance</h6></div>
                                         <div class="gdup-kvty-text">موجودی (تومان)</div>
                                     </div>
                                 </li>
@@ -124,59 +118,80 @@
                                 <div class="reviews-comments-wrap">
                                     @if (Model.ExpertSummary != null && Model.ExpertSummary.Comments != null && Model.ExpertSummary.Comments.Any())
                                     {
-                                        @foreach (var comment in Model.ExpertSummary.Comments)
+                                        @foreach (var comment in Model.ExpertSummary.Comments.Where(c => c.IsAccept)) // فقط کامنت‌های تأییدشده
                                         {
                                             <div class="reviews-comments-item">
                                                 <div class="reviews-comments-item-text">
                                                     <h4>@comment.Customer.FirstName @comment.Customer.LastName<span class="reviews-comments-item-date d-flex align-items-center"><i class="ti-calendar theme-cl ms-1"></i>@comment.CreatedAt.ToPersianString("dddd, dd MMMM,yyyy")</span></h4>
                                                     <div class="listing-rating high">
-                                                        @if (comment.Score == 1)
+                                                        @switch (comment.Score)
                                                         {
-                                                            <i class="fas fa-star active"></i>
-                                                            <i class="fas fa-star"></i>
-                                                            <i class="fas fa-star"></i>
-                                                            <i class="fas fa-star"></i>
-                                                            <i class="fas fa-star"></i>
-                                                        }
-                                                        else if (comment.Score == 2)
-                                                        {
-                                                            <i class="fas fa-star active"></i>
-                                                            <i class="fas fa-star active"></i>
-                                                            <i class="fas fa-star"></i>
-                                                            <i class="fas fa-star"></i>
-                                                            <i class="fas fa-star"></i>
-                                                        }
-                                                        else if (comment.Score == 3)
-                                                        {
-                                                            <i class="fas fa-star active"></i>
-                                                            <i class="fas fa-star active"></i>
-                                                            <i class="fas fa-star active"></i>
-                                                            <i class="fas fa-star"></i>
-                                                            <i class="fas fa-star"></i>
-                                                        }
-                                                        else if (comment.Score == 4)
-                                                        {
-                                                            <i class="fas fa-star active"></i>
-                                                            <i class="fas fa-star active"></i>
-                                                            <i class="fas fa-star active"></i>
-                                                            <i class="fas fa-star active"></i>
-                                                            <i class="fas fa-star"></i>
-                                                        }
-                                                        else if (comment.Score == 5)
-                                                        {
-                                                            <i class="fas fa-star active"></i>
-                                                            <i class="fas fa-star active"></i>
-                                                            <i class="fas fa-star active"></i>
-                                                            <i class="fas fa-star active"></i>
-                                                            <i class="fas fa-star active"></i>
-                                                        }
-                                                        else
-                                                        {
-                                                            <i class="fas fa-star"></i>
-                                                            <i class="fas fa-star"></i>
-                                                            <i class="fas fa-star"></i>
-                                                            <i class="fas fa-star"></i>
-                                                            <i class="fas fa-star"></i>
+                                                            case 1:
+                                                                <i class="fas fa-star active"></i>
+
+                                                                <i class="fas fa-star"></i>
+
+                                                                <i class="fas fa-star"></i>
+
+                                                                <i class="fas fa-star"></i>
+
+                                                                <i class="fas fa-star"></i>
+                                                                break;
+                                                            case 2:
+                                                                <i class="fas fa-star active"></i>
+
+                                                                <i class="fas fa-star active"></i>
+
+                                                                <i class="fas fa-star"></i>
+
+                                                                <i class="fas fa-star"></i>
+
+                                                                <i class="fas fa-star"></i>
+                                                                break;
+                                                            case 3:
+                                                                <i class="fas fa-star active"></i>
+
+                                                                <i class="fas fa-star active"></i>
+
+                                                                <i class="fas fa-star active"></i>
+
+                                                                <i class="fas fa-star"></i>
+
+                                                                <i class="fas fa-star"></i>
+                                                                break;
+                                                            case 4:
+                                                                <i class="fas fa-star active"></i>
+
+                                                                <i class="fas fa-star active"></i>
+
+                                                                <i class="fas fa-star active"></i>
+
+                                                                <i class="fas fa-star active"></i>
+
+                                                                <i class="fas fa-star"></i>
+                                                                break;
+                                                            case 5:
+                                                                <i class="fas fa-star active"></i>
+
+                                                                <i class="fas fa-star active"></i>
+
+                                                                <i class="fas fa-star active"></i>
+
+                                                                <i class="fas fa-star active"></i>
+
+                                                                <i class="fas fa-star active"></i>
+                                                                break;
+                                                            default:
+                                                                <i class="fas fa-star"></i>
+
+                                                                <i class="fas fa-star"></i>
+
+                                                                <i class="fas fa-star"></i>
+
+                                                                <i class="fas fa-star"></i>
+
+                                                                <i class="fas fa-star"></i>
+                                                                break;
                                                         }
                                                     </div>
                                                     <div class="clearfix"></div>
@@ -205,11 +220,12 @@
                             <div class="review-form-box form-submit mt-3">
                                 <form method="post" asp-page-handler="AddComment">
                                     <div asp-validation-summary="ModelOnly" class="text-danger mb-3" role="alert"></div>
+                                    <input type="hidden" asp-for="Comment.ExpertId" value="@Model.ExpertSummary.Id" />
                                     <div class="row">
                                         <div class="col-lg-12 col-md-12 col-sm-12">
                                             <div class="form-group mb-3">
                                                 <label class="ft-medium small mb-1">امتیازدهی</label>
-                                                <select asp-for="Comment.Score" class="form-control rounded">
+                                                <select asp-for="Comment.Score" class="form-control rounded" required>
                                                     <option value="1">1 ستاره</option>
                                                     <option value="2">2 ستاره</option>
                                                     <option value="3">3 ستاره</option>
@@ -222,14 +238,14 @@
                                         <div class="col-lg-6 col-md-6 col-sm-12">
                                             <div class="form-group mb-3">
                                                 <label class="ft-medium small mb-1">عنوان</label>
-                                                <input asp-for="Comment.Title" class="form-control rounded" type="text">
+                                                <input asp-for="Comment.Title" class="form-control rounded" type="text" required>
                                                 <span asp-validation-for="Comment.Title" class="text-danger"></span>
                                             </div>
                                         </div>
                                         <div class="col-lg-12 col-md-12 col-sm-12">
                                             <div class="form-group mb-3">
                                                 <label class="ft-medium small mb-1">متن نظر</label>
-                                                <textarea asp-for="Comment.Description" class="form-control rounded ht-140" placeholder="نظر خود را بنویسید"></textarea>
+                                                <textarea asp-for="Comment.Description" class="form-control rounded ht-140" placeholder="نظر خود را بنویسید" required></textarea>
                                                 <span asp-validation-for="Comment.Description" class="text-danger"></span>
                                             </div>
                                         </div>

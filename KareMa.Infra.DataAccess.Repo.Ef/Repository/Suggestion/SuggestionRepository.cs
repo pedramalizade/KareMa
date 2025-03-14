@@ -21,7 +21,21 @@ namespace KareMa.Infra.DataAccess.Repo.Ef.Repository
         }
         public async Task<bool> Create(SuggestionCreateDto suggestionCreateDto, CancellationToken cancellationToken)
         {
-            var newModel = new Suggestion()
+            var order = await _context.Orders
+                .FirstOrDefaultAsync(o => o.Id == suggestionCreateDto.OrderId && o.Status == StatusEnum.AwaitingSuggestionExperts, cancellationToken);
+            if (order == null)
+            {
+                throw new Exception("سفارش باز نیست یا پیدا نشد.");
+            }
+
+            var existingSuggestion = await _context.Suggestions
+                .AnyAsync(s => s.OrderId == suggestionCreateDto.OrderId && s.ExpertId == suggestionCreateDto.ExpertId, cancellationToken);
+            if (existingSuggestion)
+            {
+                throw new Exception("شما قبلاً برای این سفارش پیشنهاد داده‌اید.");
+            }
+
+            var newModel = new Suggestion
             {
                 Description = suggestionCreateDto.Description,
                 ExpertId = suggestionCreateDto.ExpertId,
@@ -30,10 +44,10 @@ namespace KareMa.Infra.DataAccess.Repo.Ef.Repository
                 SuggestedDate = suggestionCreateDto.SuggastionDate,
                 CreateAt = DateTime.Now,
                 IsDeleted = false,
-                Status = StatusEnum.AwaitingCustomerConfirmation,
+                Status = StatusEnum.AwaitingCustomerConfirmation
             };
-            await _context.Suggestions.AddAsync(newModel, cancellationToken);
 
+            await _context.Suggestions.AddAsync(newModel, cancellationToken);
             await _context.SaveChangesAsync(cancellationToken);
             return true;
         }

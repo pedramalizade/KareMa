@@ -21,17 +21,30 @@
                     </h1>
                 </div>
 
-                <form class="main-search-wrap fl-wrap half-column">
+                <form class="main-search-wrap fl-wrap half-column" method="post">
                     <div class="main-search-item">
                         <span class="search-tag">خدمات</span>
-                        <input type="text" class="form-control radius" placeholder="جستجو کنید...">
+                        <input type="text" class="form-control radius"
+                               name="SearchQuery"
+                               placeholder="جستجو کنید..."
+                               value="@Model.SearchQuery">
                     </div>
                     <div class="main-search-button">
-                        <button class="btn full-width theme-bg text-white" type="submit">
+                        <button class="btn full-width theme-bg text-white"
+                                type="submit"
+                                asp-page-handler="Search">
                             <i class="fas fa-search"></i> جستجو
                         </button>
                     </div>
                 </form>
+
+                @if (!string.IsNullOrEmpty(Model.SearchMessage))
+                {
+                    <div class="alert @(Model.IsTemporaryMessage ? "alert-danger" : "alert-info") mt-3"
+                         id="tempMessage">
+                        @Model.SearchMessage
+                    </div>
+                }
 
             </div>
         </div>
@@ -50,7 +63,7 @@
         </div>
 
         <div class="row align-items-center">
-            @foreach (var item in await CategoryAppServices.GetCategorisName(default))
+            @foreach (var item in Model.CategoryNames)
             {
                 <div class="col-md-3 col-sm-6 text-center mb-3">
                     <a asp-page="SubCategory" asp-route-id="@item.Id" class="Goodup-catg-wrap d-block">
@@ -66,10 +79,67 @@
         </div>
     </div>
 </section>
-<!-- ======================= Listing Categories ======================== -->
+<!-- ======================= Footer ======================== -->
+<footer class="footer space gray"
+        style="background-color: #2F3A44; min-height: 300px; display: flex; align-items: center;">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-lg-4 col-md-6 mb-4">
+                <h5 class="ft-medium mb-3">درباره کاره ما</h5>
+                <p class="text-muted">
+                    کاره ما پلتفرمی برای یافتن بهترین خدمات در سراسر کشور. با ما همراه باشید تا تجربه‌ای متفاوت داشته باشید.
+                </p>
+            </div>
 
+            <div class="col-lg-2 col-md-6 mb-4">
+                <h5 class="ft-medium mb-3">لینک‌های مفید</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#" class="text-muted">خانه</a></li>
+                    <li><a href="#" class="text-muted">خدمات</a></li>
+                    <li><a href="#" class="text-muted">تماس با ما</a></li>
+                    <li><a href="#" class="text-muted">درباره ما</a></li>
+                </ul>
+            </div>
 
-@* <!-- ======================= Home Banner ======================== -->
+            <div class="col-lg-3 col-md-6 mb-4">
+                <h5 class="ft-medium mb-3">تماس با ما</h5>
+                <ul class="list-unstyled">
+                    <li><i class="fas fa-phone"></i> 021-12345678</li>
+                    <li><i class="fas fa-envelope"></i> info@karema.ir</li>
+                    <li><i class="fas fa-map-marker-alt"></i> تهران، خیابان اصلی</li>
+                </ul>
+            </div>
+
+            <div class="col-lg-3 col-md-6 mb-4">
+                <h5 class="ft-medium mb-3">ما را دنبال کنید</h5>
+                <div class="social-icons">
+                    <a href="#" class="text-muted"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-muted"><i class="fab fa-telegram"></i></a>
+                    <a href="#" class="fab fa-twitter"></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12 text-center border-top pt-3">
+                <p class="text-muted mb-0">
+                    © @DateTime.Now.Year - تمامی حقوق محفوظ است | کاره ما
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var tempMessage = document.getElementById('tempMessage');
+        if (tempMessage && '@Model.IsTemporaryMessage' === 'True') {
+            setTimeout(function () {
+                tempMessage.style.display = 'none';
+            }, 3000);
+        }
+    });
+</script>@* <!-- ======================= Home Banner ======================== -->
 <div class="home-banner margin-bottom-0"
      style="background-image: url('@Url.Content("~/assets/img/logo/banner (2).jpg")')" ;
      data-overlay="5">

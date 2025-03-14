@@ -30,8 +30,8 @@ namespace KareMa.Domain.AppService
         public Task AcceptOrder(int orderId, CancellationToken cancellationToken)
           => _orderServices.AcceptOrder(orderId, cancellationToken);
 
-        public async Task AddSampleSuggestionsAsync(int customerId, CancellationToken cancellationToken)
-       => await _orderServices.AddSampleSuggestionsAsync(customerId, cancellationToken);    
+       // public async Task AddSampleSuggestionsAsync(int customerId, CancellationToken cancellationToken)
+       //=> await _orderServices.AddSampleSuggestionsAsync(customerId, cancellationToken);    
 
         public async Task<bool> ChangeStatus(StatusEnum status, int orderId, CancellationToken cancellationToken)
         {

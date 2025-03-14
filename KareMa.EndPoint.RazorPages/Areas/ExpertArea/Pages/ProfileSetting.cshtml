@@ -1,4 +1,5 @@
-﻿@page
+﻿
+@page
 @using KareMa.Domain.Core.Enums
 @model KareMa.EndPoint.RazorPages.Areas.ExpertArea.Pages.ProfileSettingModel
 @{
@@ -9,7 +10,7 @@
 <div class="goodup-dashboard-content">
     <div class="dashboard-tlbar d-block mb-5">
         <div class="row">
-            <div class="colxl-12 col-lg-12 col-md-12">
+            <div class="col-xl-12 col-lg-12 col-md-12">
                 <h3 class="breadcrumb-item"><a href="#" class="theme-cl">پروفایل</a></h3>
             </div>
         </div>
@@ -20,106 +21,123 @@
             <div class="col-xl-12 col-lg-12">
                 <div class="dashboard-list-wraps bg-white rounded mb-4">
                     <div class="dashboard-list-wraps-head br-bottom py-3 px-3">
-                        <div class="dashboard-list-wraps-flx">
-                            <h4 class="mb-0 ft-medium fs-md"><i class="fa fa-file-alt ms-2 theme-cl fs-sm"></i>تنظیمات پروفایل</h4>
-                        </div>
+                        <h4 class="mb-0 ft-medium fs-md"><i class="fa fa-file-alt ms-2 theme-cl fs-sm"></i>تنظیمات پروفایل</h4>
                     </div>
+
+                    @if (TempData["SuccessMessage"] != null)
+                    {
+                        <div class="alert alert-success mt-3">@TempData["SuccessMessage"]</div>
+                    }
                     <div class="text-danger" style="margin-bottom: 10px;">
                         @Html.ValidationSummary(true)
                     </div>
-                    <form class="submit-form" method="post" enctype="multipart/form-data" asp-page-handler="UpdateProfile">
-                        <div class="dashboard-widg-bar d-block">
-                            <div class="row">
-                                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-12 order-xl-last order-lg-last order-md-last">
-                                    <div class="d-flex bg-white rounded px-3 py-3 mb-3">
-                                        <div class="dash-figure">
-                                            <div class="dash-figure-thumb">
-                                                @if (Model.ExpertUpdate.Image == null)
-                                                {
-                                                    <img src="~/assets/img/none.png" class="img-fluid rounded" />
-                                                }
-                                                else
-                                                {
-                                                    <img src="@Model.ExpertUpdate.Image" class="img-fluid rounded" alt="" />
-                                                }
-                                            </div>
 
-                                            <div class="upload-photo-btn">
-                                                <div class="Uploadphoto">
-                                                    <span><i class="fas fa-upload"></i> آپلود تصویر</span>
-                                                    <input type="file" asp-for="@Model.Image" class="upload">
-                                                </div>
+                    <div class="current-services py-3 px-3 bg-light rounded mb-3">
+                        <h5 class="mb-2">تخصص‌های فعلی شما:</h5>
+                        <ul class="list-unstyled current-services-list">
+                            @if (Model.ExpertUpdate.ServiceIds != null && Model.ExpertUpdate.ServiceIds.Any())
+                            {
+                                @foreach (var serviceId in Model.ExpertUpdate.ServiceIds)
+                                {
+                                    var service = Model.ServicesNames.FirstOrDefault(s => s.Id == serviceId);
+                                    if (service != null)
+                                    {
+                                        <li>@service.Name</li>
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                <li class="no-services">هنوز تخصصی انتخاب نشده است</li>
+                            }
+                        </ul>
+                    </div>
+
+                    <form class="submit-form" method="post" enctype="multipart/form-data" asp-page-handler="UpdateProfile">
+                        <div class="row">
+                            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-12 order-xl-last order-lg-last order-md-last">
+                                <div class="d-flex bg-white rounded px-3 py-3 mb-3">
+                                    <div class="dash-figure">
+                                        <div class="dash-figure-thumb">
+                                            @if (string.IsNullOrEmpty(Model.ExpertUpdate.Image))
+                                            {
+                                                <img src="~/assets/img/none.png" class="img-fluid rounded" alt="تصویر پیش‌فرض" />
+                                            }
+                                            else
+                                            {
+                                                <img src="@Model.ExpertUpdate.Image" class="img-fluid rounded" alt="تصویر کارشناس" />
+                                            }
+                                        </div>
+                                        <div class="upload-photo-btn">
+                                            <div class="Uploadphoto">
+                                                <span><i class="fas fa-upload"></i> آپلود تصویر</span>
+                                                <input type="file" asp-for="@Model.Image" class="upload" accept="image/*" />
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-xl-9 col-lg-9 col-md-8 col-sm-12">
-                                    <div class="dashboard-list-wraps bg-white rounded mb-4">
-                                        <div class="dashboard-list-wraps-head br-bottom py-3 px-3">
-                                            <div class="dashboard-list-wraps-flx">
-                                                <h4 class="mb-0 ft-medium fs-md"><i class="fa fa-user-check ms-2 theme-cl fs-sm"></i>مشخصات شخصی</h4>
-                                            </div>
-                                        </div>
+                            </div>
 
-                                        <div class="dashboard-list-wraps-body py-3 px-3">
-                                            <div class="row">
-                                                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
-                                                    <div class="form-group">
-                                                        <label class="mb-1">نام</label>
-                                                        <input asp-for=@Model.ExpertUpdate.FirstName type="text" class="form-control rounded" />
-                                                        <span asp-validation-for="@Model.ExpertUpdate.FirstName" class="text-danger"></span>
-                                                    </div>
-                                                </div>
-                                                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
-                                                    <div class="form-group">
-                                                        <label class="mb-1">نام خانوادگی</label>
-                                                        <input asp-for=@Model.ExpertUpdate.LastName type="text" class="form-control rounded" />
-                                                        <span asp-validation-for="@Model.ExpertUpdate.LastName" class="text-danger"></span>
-
-                                                    </div>
-                                                </div>
-                                                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
-                                                    <div class="form-group">
-                                                        <label class="mb-1">شماره تلفن</label>
-                                                        <input type="number" asp-for=@Model.ExpertUpdate.PhoneNumber class="form-control rounded" />
-                                                        <span asp-validation-for="@Model.ExpertUpdate.PhoneNumber" class="text-danger"></span>
-
-                                                    </div>
-                                                </div>
-                                                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
-                                                    <div class="form-group">
-                                                        <label class="mb-1">موجودی</label>
-                                                        <input type="number" asp-for=@Model.ExpertUpdate.Balance class="form-control rounded" />
-                                                        <span asp-validation-for="@Model.ExpertUpdate.Balance" class="text-danger"></span>
-
-                                                    </div>
-                                                </div>
-                                                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
-                                                    <div class="form-group">
-                                                        <label class="mb-1">شماره کارت</label>
-                                                        <input type="number" asp-for=@Model.ExpertUpdate.BankCardNumber class="form-control rounded" />
-                                                        <span asp-validation-for="@Model.ExpertUpdate.BankCardNumber" class="text-danger"></span>
-
-                                                    </div>
-                                                </div>
-                                                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
-                                                    <div class="form-group">
-                                                        <label class="mb-1">تاریخ تولد</label>
-                                                        <input class="form-control rounded" asp-for="@Model.BirthDate" data-jdp data-jdp-max-date="today" />
-                                                        <span asp-validation-for="@Model.BirthDate" class="text-danger"></span>
-
-                                                    </div>
+                            <div class="col-xl-9 col-lg-9 col-md-8 col-sm-12">
+                                <div class="dashboard-list-wraps bg-white rounded mb-4">
+                                    <div class="dashboard-list-wraps-head br-bottom py-3 px-3">
+                                        <h4 class="mb-0 ft-medium fs-md"><i class="fa fa-user-check ms-2 theme-cl fs-sm"></i>مشخصات شخصی</h4>
+                                    </div>
+                                    <div class="dashboard-list-wraps-body py-3 px-3">
+                                        <div class="row">
+                                            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                                                <div class="form-group">
+                                                    <label class="mb-1">نام</label>
+                                                    <input asp-for="@Model.ExpertUpdate.FirstName" type="text" class="form-control rounded" />
+                                                    <span asp-validation-for="@Model.ExpertUpdate.FirstName" class="text-danger"></span>
                                                 </div>
                                             </div>
                                             <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
                                                 <div class="form-group">
-                                                    <label class="mb-1">انتخاب سرویس</label>
-                                                    <select class="js-example-basic-multiple" multiple="multiple" style="width:100%;border:dashed;" asp-for="@Model.ExpertUpdate.ServiceIds">
+                                                    <label class="mb-1">نام خانوادگی</label>
+                                                    <input asp-for="@Model.ExpertUpdate.LastName" type="text" class="form-control rounded" />
+                                                    <span asp-validation-for="@Model.ExpertUpdate.LastName" class="text-danger"></span>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                                                <div class="form-group">
+                                                    <label class="mb-1">شماره تلفن</label>
+                                                    <input asp-for="@Model.ExpertUpdate.PhoneNumber" type="tel" class="form-control rounded" />
+                                                    <span asp-validation-for="@Model.ExpertUpdate.PhoneNumber" class="text-danger"></span>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                                                <div class="form-group">
+                                                    <label class="mb-1">موجودی</label>
+                                                    <input asp-for="@Model.ExpertUpdate.Balance" type="number" class="form-control rounded" />
+                                                    <span asp-validation-for="@Model.ExpertUpdate.Balance" class="text-danger"></span>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                                                <div class="form-group">
+                                                    <label class="mb-1">شماره کارت</label>
+                                                    <input asp-for="@Model.ExpertUpdate.BankCardNumber" type="text" class="form-control rounded" />
+                                                    <span asp-validation-for="@Model.ExpertUpdate.BankCardNumber" class="text-danger"></span>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                                                <div class="form-group">
+                                                    <label class="mb-1">تاریخ تولد</label>
+                                                    <input asp-for="@Model.BirthDate" class="form-control rounded" data-jdp data-jdp-max-date="today" />
+                                                    <span asp-validation-for="@Model.BirthDate" class="text-danger"></span>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                                                <div class="form-group">
+                                                    <label class="mb-1">انتخاب تخصص‌ها</label>
+                                                    <select class="js-example-basic-multiple" name="ExpertUpdate.ServiceIds" multiple="multiple" style="width:100%;border:dashed;" asp-for="@Model.ExpertUpdate.ServiceIds">
                                                         @foreach (var item in Model.ServicesNames)
                                                         {
-                                                            <option value="@item.Id">@item.Name</option>
+                                                            <option value="@item.Id" selected="@(Model.ExpertUpdate.ServiceIds?.Contains(item.Id) == true)">@item.Name</option>
                                                         }
                                                     </select>
+                                                    <span asp-validation-for="@Model.ExpertUpdate.ServiceIds" class="text-danger"></span>
+                                                    <div id="selected-services" class="mt-2"></div>
                                                 </div>
                                             </div>
                                             <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
@@ -130,50 +148,85 @@
                                                         <option value="@GenderEnum.Male">آقا</option>
                                                     </select>
                                                 </div>
-                                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
-                                                    <div class="form-group">
-                                                        <button type="submit" class="btn theme-bg rounded text-light">ذخیره تغییرات</button>
-                                                    </div>
+                                            </div>
+                                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                                                <div class="form-group">
+                                                    <label class="mb-1">درباره من</label>
+                                                    <textarea asp-for="@Model.ExpertUpdate.Bio" class="form-control rounded" rows="4" placeholder="توضیح مختصری درباره خودتان بنویسید"></textarea>
+                                                    <span asp-validation-for="@Model.ExpertUpdate.Bio" class="text-danger"></span>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                                                <div class="form-group text-center mt-3">
+                                                    <button type="submit" class="btn theme-bg rounded text-light">ذخیره تغییرات</button>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-
-
+                        </div>
                     </form>
                 </div>
             </div>
         </div>
     </div>
 </div>
-</div>
 
 @section Scripts {
-
     <partial name="_ValidationScriptsPartial" />
-
     <link href="~/select2/css/select2.min.css" rel="stylesheet" />
     <script src="~/select2/js/select2.min.js"></script>
     <script>
         $(document).ready(function () {
+            const selectElement = $('.js-example-basic-multiple').select2({
+                width: 'resolve',
+                allowClear: true,
+                placeholder: "تخصص‌ها را انتخاب کنید",
+                minimumInputLength: 1,
+                language: {
+                    noResults: () => "سرویسی یافت نشد",
+                    searching: () => "در حال جستجو..."
+                }
+            });
 
-            $('.js-example-basic-multiple').select2(
-                {
-                    width: 'resolve',
-                    allowClear: true,
-                    dropdownCssClass: ":all:",
-                });
+            function updateSelectedServices() {
+                const selectedValues = selectElement.val() || [];
+                console.log("Selected Values:", selectedValues); 
+                const selectedList = $('#selected-services');
+                const currentServicesList = $('.current-services-list');
+
+                selectedList.empty();
+                currentServicesList.empty();
+
+                if (selectedValues.length > 0) {
+                    selectedList.append('<strong>تخصص‌های انتخاب‌شده:</strong><ul class="list-unstyled mt-1"></ul>');
+                    selectElement.find('option').each(function () {
+                        if (selectedValues.includes($(this).val())) {
+                            selectedList.find('ul').append(`<li>${$(this).text()}</li>`);
+                            currentServicesList.append(`<li>${$(this).text()}</li>`);
+                        }
+                    });
+                } else {
+                    currentServicesList.append('<li class="no-services">هنوز تخصصی انتخاب نشده است</li>');
+                }
+            }
+
+            updateSelectedServices();
+            selectElement.on('change', function () {
+                updateSelectedServices();
+            });
+
+            $('form.submit-form').on('submit', function () {
+                selectElement.trigger('change'); 
+                console.log("Form Submitted with ServiceIds:", selectElement.val());
+            });
         });
     </script>
-
     <script>
         jalaliDatepicker.startWatch({
             minDate: "attr",
             maxDate: "attr",
-            minTime: "attr",
-            maxTime: "attr",
             hideAfterChange: true,
             autoHide: true,
             showTodayBtn: true,
@@ -182,14 +235,8 @@
             bottomSpace: 30,
             time: false,
             dayRendering(opt, input) {
-                return {
-                    isHollyDay: opt.day == 1
-                }
+                return { isHollyDay: opt.day == 1 };
             }
         });
-
-        document.getElementById("aaa").addEventListener("jdp:change", function (e) { console.log(e) });
-
-
     </script>
 }

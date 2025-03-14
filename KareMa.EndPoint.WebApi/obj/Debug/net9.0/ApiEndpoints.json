@@ -1,0 +1,68 @@
+[
+  {
+    "ContainingType": "KareMa.EndPoint.WebApi.Controllers.KareMaController",
+    "Method": "GetOrders",
+    "RelativePath": "api/KareMa/GetOrders",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[KareMa.Domain.Core.DTOs.OrderDTO.GetOrderDto, KareMa.Domain.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "KareMa.EndPoint.WebApi.Controllers.KareMaController",
+    "Method": "GetServiceSubCategoryWithServices",
+    "RelativePath": "api/KareMa/GetServiceSubCategoryWithServices",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[KareMa.Domain.Core.Entities.SubCategory, KareMa.Domain.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "KareMa.EndPoint.WebApi.Controllers.KareMaController",
+    "Method": "RegisterUser",
+    "RelativePath": "api/KareMa/RegisterUser",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "accountRegister",
+        "Type": "AccountRegisterDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.String",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  }
+]

@@ -23,6 +23,7 @@
     <ProjectReference Include="..\KareMa.Domain.Core\KareMa.Domain.Core.csproj" />
     <ProjectReference Include="..\KareMa.Domain.Service\KareMa.Domain.Service.csproj" />
     <ProjectReference Include="..\KareMa.Infra.DataAccess.Repo.Ef\KareMa.Infra.DataAccess.Repo.Ef.csproj" />
+    <ProjectReference Include="..\KareMa.Infra.DataAccess.Repository.Dapper\KareMa.Infra.DataAccess.Repository.Dapper.csproj" />
   </ItemGroup>
 
   <ItemGroup>

@@ -29,8 +29,8 @@ namespace KareMa.Domain.Service
         public async Task AcceptOrder(int orderId, CancellationToken cancellationToken)
           => await _orderRepository.AcceptOrder(orderId, cancellationToken);
 
-        public async Task AddSampleSuggestionsAsync(int customerId, CancellationToken cancellationToken)
-       => await _orderRepository.AddSampleSuggestionsAsync(customerId, cancellationToken);
+       // public async Task AddSampleSuggestionsAsync(int customerId, CancellationToken cancellationToken)
+       //=> await _orderRepository.AddSampleSuggestionsAsync(customerId, cancellationToken);
 
         public async Task<bool> ChangeStatus(StatusEnum status, int orderId, CancellationToken cancellationToken)
             => await _orderRepository.ChangeStatus(status, orderId, cancellationToken);

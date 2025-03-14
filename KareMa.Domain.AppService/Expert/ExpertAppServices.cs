@@ -87,32 +87,16 @@ namespace KareMa.Domain.AppService
 
             if (image != null)
             {
-                try
-                {
-                    var imageUrl = await _baseSevices.UploadImage(image);
-                    if (string.IsNullOrEmpty(imageUrl))
-                    {
-                        Console.WriteLine("Image upload failed.");
-                        return false;
-                    }
-                    expertUpdateDto.Image = imageUrl;
-                    Console.WriteLine($"Image uploaded successfully: {imageUrl}");
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine($"Image upload error: {ex.Message}");
-                    return false;
-                }
+                var imageUrl = await _baseSevices.UploadImage(image);
+                if (string.IsNullOrEmpty(imageUrl))
+                    throw new Exception("آپلود تصویر ناموفق بود");
+                expertUpdateDto.Image = imageUrl;
+                Console.WriteLine($"Image uploaded successfully: {imageUrl}");
             }
-
-            Console.WriteLine($"BirthDate from DTO: {expertUpdateDto.BirthDate}");
 
             var result = await _expertServices.Update(expertUpdateDto, cancellationToken);
             if (!result)
-            {
-                Console.WriteLine("ExpertServices.Update returned false.");
-                return false;
-            }
+                throw new Exception("به‌روزرسانی اطلاعات کارشناس ناموفق بود");
 
             Console.WriteLine("ExpertAppServices.Update completed successfully.");
             return true;

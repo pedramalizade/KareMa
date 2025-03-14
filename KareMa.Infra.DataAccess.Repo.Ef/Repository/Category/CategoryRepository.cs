@@ -133,7 +133,7 @@ namespace KareMa.Infra.DataAccess.Repo.Ef.Repository
                         IsDeleted = c.IsDeleted
                     })
                     .ToListAsync(cancellationToken);
-                _memoryCache.Set(cacheKey, categories, TimeSpan.FromMinutes(10)); // کش برای 10 دقیقه
+                _memoryCache.Set(cacheKey, categories, TimeSpan.FromMinutes(10)); 
             }
             return categories;
         }

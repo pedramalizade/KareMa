@@ -759,6 +759,9 @@ namespace KareMa.Infra.SqlServer.Migrations
                         .HasMaxLength(16)
                         .HasColumnType("nvarchar(16)");
 
+                    b.Property<string>("Bio")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<DateTime>("BirthDate")
                         .HasColumnType("datetime2");
 
@@ -805,6 +808,7 @@ namespace KareMa.Infra.SqlServer.Migrations
                             AppUserId = 2,
                             Balance = 0m,
                             BankCardNumber = "1234123412341234",
+                            Bio = "تخصص هام توی زمینه خودم عالیه",
                             BirthDate = new DateTime(1999, 10, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             CreatedAt = new DateTime(2024, 2, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             FirstName = "علی",
@@ -821,6 +825,7 @@ namespace KareMa.Infra.SqlServer.Migrations
                             AppUserId = 4,
                             Balance = 0m,
                             BankCardNumber = "1234123412341234",
+                            Bio = "میتونید بهم اعتماد کنید توی انجام کار ها",
                             BirthDate = new DateTime(1999, 4, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             CreatedAt = new DateTime(2024, 2, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             FirstName = "سارا",

@@ -6737,6 +6737,10 @@
       "PackagePath": "staticwebassets\\uploads\\01ac62a3-8bd9-49f2-8449-17d5e86ce1728f2f07fe2b3b8a5fff2b41af915fcfe8.jpg"
     },
     {
+      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\uploads\\032c59b8-f939-4b61-809a-ad1b3df74aa0_young-people-doing-housework-living-room_52683-22049.jpg",
+      "PackagePath": "staticwebassets\\uploads\\032c59b8-f939-4b61-809a-ad1b3df74aa0_young-people-doing-housework-living-room_52683-22049.jpg"
+    },
+    {
       "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\uploads\\032c6553-ff5e-4b5e-bcbf-5fc7a4b6c8a3_young-people-doing-housework-living-room_52683-22049.jpg",
       "PackagePath": "staticwebassets\\uploads\\032c6553-ff5e-4b5e-bcbf-5fc7a4b6c8a3_young-people-doing-housework-living-room_52683-22049.jpg"
     },
@@ -6759,6 +6763,10 @@
     {
       "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\uploads\\0e13dc06-a06b-40f4-925e-7279868e2b75_3f2c91d9440631c4f1105b835be7438a.jpg",
       "PackagePath": "staticwebassets\\uploads\\0e13dc06-a06b-40f4-925e-7279868e2b75_3f2c91d9440631c4f1105b835be7438a.jpg"
+    },
+    {
+      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\uploads\\0ec45fb5-044d-4680-8c12-283263cd50c7.jpg",
+      "PackagePath": "staticwebassets\\uploads\\0ec45fb5-044d-4680-8c12-283263cd50c7.jpg"
     },
     {
       "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\uploads\\132ab33f-7fd3-4a76-bcb2-ba5733690cf0gittaWeb-76-3416 (1).jpeg",
@@ -6793,8 +6801,16 @@
       "PackagePath": "staticwebassets\\uploads\\3b788e57-6881-4291-ad5f-0622f65ee2b1_young-people-doing-housework-living-room_52683-22049.jpg"
     },
     {
+      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\uploads\\3dac26a3-92b2-4a38-918b-816278e3df73_young-people-doing-housework-living-room_52683-22049.jpg",
+      "PackagePath": "staticwebassets\\uploads\\3dac26a3-92b2-4a38-918b-816278e3df73_young-people-doing-housework-living-room_52683-22049.jpg"
+    },
+    {
       "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\uploads\\3e8dcc42-4726-402d-802f-02d2c09668c2gittaWeb-76-3416 (1).jpeg",
       "PackagePath": "staticwebassets\\uploads\\3e8dcc42-4726-402d-802f-02d2c09668c2gittaWeb-76-3416 (1).jpeg"
+    },
+    {
+      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\uploads\\3f6e9b68-c6e8-477a-b46e-141a29ae40cc.jpg",
+      "PackagePath": "staticwebassets\\uploads\\3f6e9b68-c6e8-477a-b46e-141a29ae40cc.jpg"
     },
     {
       "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\uploads\\4038f0ca-df6b-4632-b075-ce3fed19ae05_3f2c91d9440631c4f1105b835be7438a.jpg",
@@ -6865,8 +6881,16 @@
       "PackagePath": "staticwebassets\\uploads\\609c9b31-9027-417b-bd98-a04cc8ee2b42_3f2c91d9440631c4f1105b835be7438a.jpg"
     },
     {
+      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\uploads\\628ac1a0-c2d5-4754-a251-8366dfb1cac2_smiling-man-helping-woman-with-household_74855-7860.jpg",
+      "PackagePath": "staticwebassets\\uploads\\628ac1a0-c2d5-4754-a251-8366dfb1cac2_smiling-man-helping-woman-with-household_74855-7860.jpg"
+    },
+    {
       "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\uploads\\63fba7ec-e9bd-4a2d-8233-2a32169df2bd_flat-design-household-renovation-professions-with-men_23-2148655570.jpg",
       "PackagePath": "staticwebassets\\uploads\\63fba7ec-e9bd-4a2d-8233-2a32169df2bd_flat-design-household-renovation-professions-with-men_23-2148655570.jpg"
+    },
+    {
+      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\uploads\\6545f286-b7d7-4002-ae6d-d79f87b390fa_Black and White Simple Circle Brush Name Logo.jpg",
+      "PackagePath": "staticwebassets\\uploads\\6545f286-b7d7-4002-ae6d-d79f87b390fa_Black and White Simple Circle Brush Name Logo.jpg"
     },
     {
       "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\uploads\\673e5ba4-90dd-42b7-bba4-15962dd0cda4_smiling-man-helping-woman-with-household_74855-7860.jpg",
@@ -6885,12 +6909,28 @@
       "PackagePath": "staticwebassets\\uploads\\716e262a-a6df-4154-bdce-5f8b5fc53186_cleaning-service-big-set-isolated-icons-with-detergents-mops-brooms-female-character-worker-vector-illustration_1284-78507.jpg"
     },
     {
+      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\uploads\\72ef9b0e-60d2-4110-95a2-44408f8c214a_young-people-doing-housework-living-room_52683-22049.jpg",
+      "PackagePath": "staticwebassets\\uploads\\72ef9b0e-60d2-4110-95a2-44408f8c214a_young-people-doing-housework-living-room_52683-22049.jpg"
+    },
+    {
       "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\uploads\\76ba401f-7acc-4e6b-b5f8-861e6ebc768a.jpg",
       "PackagePath": "staticwebassets\\uploads\\76ba401f-7acc-4e6b-b5f8-861e6ebc768a.jpg"
     },
     {
+      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\uploads\\82044300-cae0-47f9-88ae-9a2a14686153_Black and White Simple Circle Brush Name Logo.jpg",
+      "PackagePath": "staticwebassets\\uploads\\82044300-cae0-47f9-88ae-9a2a14686153_Black and White Simple Circle Brush Name Logo.jpg"
+    },
+    {
       "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\uploads\\84111f9d-2243-487b-ae6c-fa156481f474_smiling-man-helping-woman-with-household_74855-7860.jpg",
       "PackagePath": "staticwebassets\\uploads\\84111f9d-2243-487b-ae6c-fa156481f474_smiling-man-helping-woman-with-household_74855-7860.jpg"
+    },
+    {
+      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\uploads\\8448d2c1-8e2a-44d2-9ea6-6baf41789925_flat-design-household-renovation-professions-with-men_23-2148655570.jpg",
+      "PackagePath": "staticwebassets\\uploads\\8448d2c1-8e2a-44d2-9ea6-6baf41789925_flat-design-household-renovation-professions-with-men_23-2148655570.jpg"
+    },
+    {
+      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\uploads\\894c9d12-bb39-487b-a1a4-f9e0818e9f3d_flat-design-household-renovation-professions-with-men_23-2148655570.jpg",
+      "PackagePath": "staticwebassets\\uploads\\894c9d12-bb39-487b-a1a4-f9e0818e9f3d_flat-design-household-renovation-professions-with-men_23-2148655570.jpg"
     },
     {
       "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\uploads\\8b8733e2-db8c-48d7-b858-dd4e907a00db_cleaning-service-big-set-isolated-icons-with-detergents-mops-brooms-female-character-worker-vector-illustration_1284-78507.jpg",
@@ -6957,6 +6997,10 @@
       "PackagePath": "staticwebassets\\uploads\\abfe68c4-06af-4204-b412-2890157c5ef4_flat-design-household-renovation-professions-with-men_23-2148655570.jpg"
     },
     {
+      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\uploads\\ad92f260-35ac-45a6-9fc4-91169a49b1d3_young-people-doing-housework-living-room_52683-22049.jpg",
+      "PackagePath": "staticwebassets\\uploads\\ad92f260-35ac-45a6-9fc4-91169a49b1d3_young-people-doing-housework-living-room_52683-22049.jpg"
+    },
+    {
       "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\uploads\\adc8c3ab-e2c0-4c8d-bd13-19e402f03007_young-people-doing-housework-living-room_52683-22049.jpg",
       "PackagePath": "staticwebassets\\uploads\\adc8c3ab-e2c0-4c8d-bd13-19e402f03007_young-people-doing-housework-living-room_52683-22049.jpg"
     },
@@ -6981,12 +7025,20 @@
       "PackagePath": "staticwebassets\\uploads\\b8b8b9f4-2dfc-45c7-bcc9-3e183ade6768_flat-design-household-renovation-professions-with-men_23-2148655570.jpg"
     },
     {
+      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\uploads\\bafded17-562d-41e0-bd22-80b36b68a6da_flat-design-household-renovation-professions-with-men_23-2148655570.jpg",
+      "PackagePath": "staticwebassets\\uploads\\bafded17-562d-41e0-bd22-80b36b68a6da_flat-design-household-renovation-professions-with-men_23-2148655570.jpg"
+    },
+    {
       "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\uploads\\bbc6ef3e-275d-4ea8-9191-aa468c9ab662_cleaning-service-big-set-isolated-icons-with-detergents-mops-brooms-female-character-worker-vector-illustration_1284-78507.jpg",
       "PackagePath": "staticwebassets\\uploads\\bbc6ef3e-275d-4ea8-9191-aa468c9ab662_cleaning-service-big-set-isolated-icons-with-detergents-mops-brooms-female-character-worker-vector-illustration_1284-78507.jpg"
     },
     {
       "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\uploads\\bd229bca-40b0-4f56-af63-66a8ab2d98fb_smiling-man-helping-woman-with-household_74855-7860.jpg",
       "PackagePath": "staticwebassets\\uploads\\bd229bca-40b0-4f56-af63-66a8ab2d98fb_smiling-man-helping-woman-with-household_74855-7860.jpg"
+    },
+    {
+      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\uploads\\bee37f05-5326-48aa-a748-a06ef9bd073c_Black and White Simple Circle Brush Name Logo.jpg",
+      "PackagePath": "staticwebassets\\uploads\\bee37f05-5326-48aa-a748-a06ef9bd073c_Black and White Simple Circle Brush Name Logo.jpg"
     },
     {
       "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\uploads\\c121825c-f947-4e41-b27c-f968bfeef650_flat-design-household-renovation-professions-with-men_23-2148655570.jpg",
@@ -7007,6 +7059,14 @@
     {
       "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\uploads\\c5a02ad5-1413-4618-9728-ec1fd6fb0a7c.jpg",
       "PackagePath": "staticwebassets\\uploads\\c5a02ad5-1413-4618-9728-ec1fd6fb0a7c.jpg"
+    },
+    {
+      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\uploads\\c787612d-9459-49bc-85bf-574b31b1591f_smiling-man-helping-woman-with-household_74855-7860.jpg",
+      "PackagePath": "staticwebassets\\uploads\\c787612d-9459-49bc-85bf-574b31b1591f_smiling-man-helping-woman-with-household_74855-7860.jpg"
+    },
+    {
+      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\uploads\\c9498582-5bd9-4f72-9d64-237d805be5cb_Black and White Simple Circle Brush Name Logo.jpg",
+      "PackagePath": "staticwebassets\\uploads\\c9498582-5bd9-4f72-9d64-237d805be5cb_Black and White Simple Circle Brush Name Logo.jpg"
     },
     {
       "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\uploads\\ce35358c-700f-4782-bfca-5905144a04bd_cleaning-service-big-set-isolated-icons-with-detergents-mops-brooms-female-character-worker-vector-illustration_1284-78507.jpg",
@@ -7041,8 +7101,16 @@
       "PackagePath": "staticwebassets\\uploads\\dd91ba02-b5d6-4f45-857f-854d952977e5_young-people-doing-housework-living-room_52683-22049.jpg"
     },
     {
+      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\uploads\\e542382a-cb2c-4e5a-bd3b-740ead8e505d_Black and White Simple Circle Brush Name Logo.jpg",
+      "PackagePath": "staticwebassets\\uploads\\e542382a-cb2c-4e5a-bd3b-740ead8e505d_Black and White Simple Circle Brush Name Logo.jpg"
+    },
+    {
       "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\uploads\\e636e7bf-e14b-4d04-9646-28d0282ad1cd_young-people-doing-housework-living-room_52683-22049.jpg",
       "PackagePath": "staticwebassets\\uploads\\e636e7bf-e14b-4d04-9646-28d0282ad1cd_young-people-doing-housework-living-room_52683-22049.jpg"
+    },
+    {
+      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\uploads\\e900506a-f4f1-4a17-97b6-0c8c2dd6a687_Black and White Simple Circle Brush Name Logo.jpg",
+      "PackagePath": "staticwebassets\\uploads\\e900506a-f4f1-4a17-97b6-0c8c2dd6a687_Black and White Simple Circle Brush Name Logo.jpg"
     },
     {
       "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\uploads\\eb661d4e-bd82-4963-af05-f20c48f9bd00_Black and White Simple Circle Brush Name Logo.jpg",

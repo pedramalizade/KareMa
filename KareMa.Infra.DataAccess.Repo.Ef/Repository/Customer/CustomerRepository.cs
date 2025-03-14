@@ -86,7 +86,7 @@ namespace KareMa.Infra.DataAccess.Repo.Ef.Repository
             Console.WriteLine($"CustomerRepository.Update started for ID: {customerUpdateDto.Id}");
 
             var targetModel = await _context.Customers
-                .Include(c => c.Addresses) // فرض می‌کنم Addresses یه شیء تکی Address هست، نه لیست
+                .Include(c => c.Addresses) 
                 .FirstOrDefaultAsync(c => c.Id == customerUpdateDto.Id && !c.IsDeleted, cancellationToken);
 
             if (targetModel == null)
@@ -107,7 +107,6 @@ namespace KareMa.Infra.DataAccess.Repo.Ef.Repository
             {
                 if (targetModel.Addresses != null)
                 {
-                    // آپدیت آدرس موجود
                     targetModel.Addresses.Title = customerUpdateDto.Address.Title;
                     targetModel.Addresses.CityId = customerUpdateDto.Address.CityId;
                     targetModel.Addresses.Street = customerUpdateDto.Address.Street;
@@ -117,7 +116,6 @@ namespace KareMa.Infra.DataAccess.Repo.Ef.Repository
                 }
                 else
                 {
-                    // اضافه کردن آدرس جدید اگه وجود نداره
                     targetModel.Addresses = customerUpdateDto.Address;
                     Console.WriteLine($"Added new address for Customer ID: {customerUpdateDto.Id}");
                 }

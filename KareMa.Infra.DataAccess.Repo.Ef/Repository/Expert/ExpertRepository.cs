@@ -62,7 +62,7 @@ namespace KareMa.Infra.DataAccess.Repo.Ef.Repository
             {
                 Console.WriteLine($"Error in ExpertRepository.Create: {ex.Message}");
                 Console.WriteLine($"Inner Exception: {ex.InnerException?.Message}");
-                throw; // خطا رو به لایه بالاتر می‌فرستیم
+                throw; 
             }
         }
 
@@ -101,8 +101,6 @@ namespace KareMa.Infra.DataAccess.Repo.Ef.Repository
 
         public async Task<bool> Update(ExpertUpdateDto expertUpdateDto, CancellationToken cancellationToken)
         {
-            Console.WriteLine($"ExpertRepository.Update started for ID: {expertUpdateDto.Id}");
-
             var targetModel = await _context.Experts
                 .Include(e => e.Services)
                 .FirstOrDefaultAsync(e => e.Id == expertUpdateDto.Id && !e.IsDeleted, cancellationToken);
@@ -120,28 +118,25 @@ namespace KareMa.Infra.DataAccess.Repo.Ef.Repository
             targetModel.BankCardNumber = expertUpdateDto.BankCardNumber;
             targetModel.Balance = expertUpdateDto.Balance;
             targetModel.BirthDate = expertUpdateDto.BirthDate;
+            targetModel.Bio = expertUpdateDto.Bio;
             if (expertUpdateDto.Image != null)
-            {
                 targetModel.Image = expertUpdateDto.Image;
-            }
 
+            Console.WriteLine($"ServiceIds to save: {string.Join(", ", expertUpdateDto.ServiceIds ?? new List<int>())}");
             targetModel.Services ??= new List<Service>();
             targetModel.Services.Clear();
             if (expertUpdateDto.ServiceIds != null && expertUpdateDto.ServiceIds.Any())
             {
-                foreach (var item in expertUpdateDto.ServiceIds)
+                var services = await _context.Services
+                    .Where(s => expertUpdateDto.ServiceIds.Contains(s.Id))
+                    .ToListAsync(cancellationToken);
+                if (services.Count != expertUpdateDto.ServiceIds.Count)
                 {
-                    var service = await _context.Services
-                        .FirstOrDefaultAsync(c => c.Id == item, cancellationToken);
-                    if (service != null)
-                    {
-                        targetModel.Services.Add(service);
-                    }
-                    else
-                    {
-                        Console.WriteLine($"Service with ID {item} not found.");
-                    }
+                    Console.WriteLine($"Some service IDs were not found: {string.Join(", ", expertUpdateDto.ServiceIds.Except(services.Select(s => s.Id)))}");
+                    return false;
                 }
+                targetModel.Services.AddRange(services);
+                Console.WriteLine($"Services assigned: {string.Join(", ", targetModel.Services.Select(s => s.Id))}");
             }
 
             try
@@ -153,8 +148,7 @@ namespace KareMa.Infra.DataAccess.Repo.Ef.Repository
             catch (Exception ex)
             {
                 Console.WriteLine($"Error saving changes: {ex.Message}");
-                Console.WriteLine($"Inner Exception: {ex.InnerException?.Message}");
-                throw;
+                throw new Exception("خطا در ذخیره تغییرات در دیتابیس", ex);
             }
         }
 
@@ -245,22 +239,26 @@ namespace KareMa.Infra.DataAccess.Repo.Ef.Repository
 
         public async Task<ExpertUpdateDto> ExpertUpdateInfo(int id, CancellationToken cancellationToken)
         {
-            return await _context.Experts.Select(e => new ExpertUpdateDto
-            {
-                Id = e.Id,
-                FirstName = e.FirstName,
-                LastName = e.LastName,
-                PhoneNumber = e.PhoneNumber,
-                Balance = e.Balance,
-                BirthDate = e.BirthDate,
-                BankCardNumber = e.BankCardNumber,
-                Image = e.Image,
-                ServiceIds = e.Services
-                .Select(s => s.Id)
-                .ToList()
-            }).FirstOrDefaultAsync(e => e.Id == id, cancellationToken);
+            var result = await _context.Experts.Include(e => e.Services)
+                .Select(e => new ExpertUpdateDto
+                {
+                    Id = e.Id,
+                    FirstName = e.FirstName,
+                    LastName = e.LastName,
+                    PhoneNumber = e.PhoneNumber,
+                    Gender = e.Gender,
+                    Balance = e.Balance,
+                    BirthDate = e.BirthDate,
+                    BankCardNumber = e.BankCardNumber,
+                    Image = e.Image,
+                    Bio = e.Bio,
+                    ServiceIds = e.Services
+                        .Select(s => s.Id)
+                        .ToList()
+                }).FirstOrDefaultAsync(e => e.Id == id, cancellationToken);
 
-
+            Console.WriteLine($"ExpertUpdateInfo for ID {id}: ServiceIds = {string.Join(", ", result?.ServiceIds ?? new List<int>())}");
+            return result;
         }
 
         public async Task<ExpertNameDto> GetExpertName(int id, CancellationToken cancellationToken)
@@ -269,7 +267,8 @@ namespace KareMa.Infra.DataAccess.Repo.Ef.Repository
                   .Select(e => new ExpertNameDto
                   {
                       FirstName = e.FirstName,
-                      LastName = e.LastName
+                      LastName = e.LastName,
+                      Balance = e.Balance
                   })
                   .FirstOrDefaultAsync(cancellationToken);
 

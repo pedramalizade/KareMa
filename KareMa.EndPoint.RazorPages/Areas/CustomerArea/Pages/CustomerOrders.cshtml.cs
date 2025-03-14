@@ -28,6 +28,10 @@ namespace KareMa.EndPoint.RazorPages.Areas.CustomerArea.Pages
             _expertAppServices = expertAppServices;
             _logger = logger;
         }
+        private decimal CalculateAdminCommission(decimal transactionAmount)
+        {
+            return transactionAmount * 0.10m;
+        }
 
         [BindProperty]
         public List<GetOrderDto> Orders { get; set; } = new List<GetOrderDto>();
@@ -114,14 +118,36 @@ namespace KareMa.EndPoint.RazorPages.Areas.CustomerArea.Pages
                 return Page();
             }
 
-            customer.Balance -= suggestion.Price;
-            expert.Balance += suggestion.Price;
+            // محاسبه 10 درصد برای ادمین
+            decimal transactionAmount = suggestion.Price;
+            decimal adminCommission = CalculateAdminCommission(transactionAmount);
+            decimal expertAmount = transactionAmount - adminCommission;
 
+            // فرض می‌کنیم ادمین یه حساب مشخص داره (مثلاً ID ثابت یا از سرویس)
+            var adminId = 1; // اینجا باید ID واقعی ادمین رو بذاری یا از یه سرویس بگیری
+            var admin = await _customerAppServices.GetCustomerById(adminId, cancellationToken); // فرضاً ادمین هم توی همین سرویس مشتری‌ها باشه
+            if (admin == null)
+            {
+                _logger.LogWarning("Admin not found for ID: {AdminId}", adminId);
+                Console.WriteLine($"Admin not found for ID: {adminId}");
+                ModelState.AddModelError("", "ادمین یافت نشد.");
+                Orders = await _orderAppServices.GetOrders(userCustomerId, cancellationToken);
+                return Page();
+            }
+
+            // تراکنش‌ها
+            customer.Balance -= transactionAmount; // کل مبلغ از مشتری کم میشه
+            expert.Balance += expertAmount;       // 90 درصد به متخصص
+            admin.Balance += adminCommission;     // 10 درصد به ادمین
+
+            // به‌روزرسانی موجودی‌ها
             await _customerAppServices.UpdateBalance(userCustomerId, customer.Balance, cancellationToken);
             await _expertAppServices.UpdateBalance(suggestion.ExpertId, expert.Balance, cancellationToken);
+            await _customerAppServices.UpdateBalance(adminId, admin.Balance, cancellationToken); // فرضاً همون سرویس مشتری‌ها برای ادمین
 
-            _logger.LogInformation("Payment completed. Customer ID: {CustomerId}, Expert ID: {ExpertId}, Amount: {Price}", userCustomerId, suggestion.ExpertId, suggestion.Price);
-            Console.WriteLine($"Payment completed. Customer ID: {userCustomerId}, Expert ID: {suggestion.ExpertId}, Amount: {suggestion.Price}");
+            _logger.LogInformation("Payment completed. Customer ID: {CustomerId}, Expert ID: {ExpertId}, Admin ID: {AdminId}, Amount: {Price}, Admin Commission: {AdminCommission}",
+                userCustomerId, suggestion.ExpertId, adminId, transactionAmount, adminCommission);
+            Console.WriteLine($"Payment completed. Customer ID: {userCustomerId}, Expert ID: {suggestion.ExpertId}, Admin ID: {adminId}, Amount: {transactionAmount}, Admin Commission: {adminCommission}");
 
             TempData["SuccessMessage"] = "پیشنهاد با موفقیت تأیید و پرداخت انجام شد.";
             Orders = await _orderAppServices.GetOrders(userCustomerId, cancellationToken);

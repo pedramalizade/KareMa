@@ -23,26 +23,50 @@ namespace KareMa.Infra.DataAccess.Repo.Ef.Repository
 
         public async Task<bool> Create(CommentCreateDto commentCreateDto, CancellationToken cancellationToken)
         {
-            Console.WriteLine($"CommentAppServices.Create called for ExpertId: {commentCreateDto.ExpertId}, CustomerId: {commentCreateDto.CustomerId}");
+            Console.WriteLine($"CommentAppServices.Create called for ExpertId: {commentCreateDto?.ExpertId ?? -1}, CustomerId: {commentCreateDto?.CustomerId ?? -1}");
 
-            // چک کردن وجود مشتری و متخصص
-            var customerExists = await _context.Customers.AnyAsync(c => c.Id == commentCreateDto.CustomerId && !c.IsDeleted, cancellationToken);
-            var expertExists = await _context.Experts.AnyAsync(e => e.Id == commentCreateDto.ExpertId && !e.IsDeleted, cancellationToken);
-            if (!customerExists || !expertExists)
+            if (commentCreateDto == null)
             {
-                Console.WriteLine("Customer or Expert not found.");
+                Console.WriteLine("Invalid input: CommentCreateDto is null.");
+                return false;
+            }
+            if (commentCreateDto.CustomerId <= 0)
+            {
+                Console.WriteLine($"Invalid input: CustomerId is invalid ({commentCreateDto.CustomerId}).");
+                return false;
+            }
+            if (commentCreateDto.ExpertId <= 0)
+            {
+                Console.WriteLine($"Invalid input: ExpertId is invalid ({commentCreateDto.ExpertId}).");
                 return false;
             }
 
-            // چک کردن وجود سفارش کامل‌شده
-            var orderCompleted = await _context.Orders
-                .AnyAsync(o => o.CustomerId == commentCreateDto.CustomerId
-                              && o.ExpertId == commentCreateDto.ExpertId
-                              && o.Status == StatusEnum.Done
-                              && !o.IsDeleted, cancellationToken);
+            var customerExists = await _context.Customers.AnyAsync(c => c.Id == commentCreateDto.CustomerId && !c.IsDeleted, cancellationToken);
+            var expertExists = await _context.Experts.AnyAsync(e => e.Id == commentCreateDto.ExpertId && !e.IsDeleted, cancellationToken);
+            if (!customerExists)
+            {
+                Console.WriteLine($"Customer with ID {commentCreateDto.CustomerId} not found or is deleted.");
+                return false;
+            }
+            if (!expertExists)
+            {
+                Console.WriteLine($"Expert with ID {commentCreateDto.ExpertId} not found or is deleted.");
+                return false;
+            }
+
+            var orders = await _context.Orders
+                .Where(o => o.CustomerId == commentCreateDto.CustomerId && !o.IsDeleted)
+                .Select(o => new { o.Id, o.ExpertId, o.Status })
+                .ToListAsync(cancellationToken);
+
+            var orderCompleted = orders.Any(o =>
+                (o.ExpertId == commentCreateDto.ExpertId || o.ExpertId == null) &&
+                o.Status == StatusEnum.Done
+            );
+
             if (!orderCompleted)
             {
-                Console.WriteLine("No completed order found for this customer and expert.");
+                Console.WriteLine($"No completed order found for CustomerId: {commentCreateDto.CustomerId} and ExpertId: {commentCreateDto.ExpertId}.");
                 return false;
             }
 
@@ -62,7 +86,7 @@ namespace KareMa.Infra.DataAccess.Repo.Ef.Repository
             {
                 await _context.Comments.AddAsync(newModel, cancellationToken);
                 await _context.SaveChangesAsync(cancellationToken);
-                Console.WriteLine("Comment created successfully.");
+                Console.WriteLine("Comment created successfully in database.");
                 return true;
             }
             catch (Exception ex)
