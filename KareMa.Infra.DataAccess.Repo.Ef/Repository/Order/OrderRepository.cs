@@ -48,19 +48,23 @@ namespace KareMa.Infra.DataAccess.Repo.Ef.Repository
 
         public async Task<List<GetOrderDto>> GetAll(CancellationToken cancellationToken)
         {
-            var orders = await _context.Orders.AsNoTracking().Where(x => x.IsDeleted == false).Include(x => x.Suggestions).ThenInclude(s => s.Expert)
-                 .Select(o => new GetOrderDto
-                 {
-                     Id = o.Id,
-                     Title = o.Title,
-                     Description = o.Description,
-                     Status = o.Status,
-                     Customer = o.Customer,
-                     Service = o.Service,
-                     Image = o.Image,
-                     Suggestions = o.Suggestions
-
-                 }).ToListAsync(cancellationToken);
+            var orders = await _context.Orders
+                .AsNoTracking()
+                .Where(x => x.IsDeleted == false)
+                .Include(x => x.Suggestions)
+                .ThenInclude(s => s.Expert)
+                .Select(o => new GetOrderDto
+                {
+                    Id = o.Id,
+                    Title = o.Title,
+                    Description = o.Description,
+                    Status = o.Status,
+                    Customer = o.Customer,
+                    Service = o.Service,
+                    Image = o.Image,
+                    Suggestions = o.Suggestions
+                })
+                .ToListAsync(cancellationToken);
 
             return orders;
         }
@@ -262,7 +266,8 @@ namespace KareMa.Infra.DataAccess.Repo.Ef.Repository
                       Customer = o.Customer,
                       Service = o.Service,
                       ServiceId = o.ServiceId,
-                      Status = o.Status
+                      Status = o.Status,
+                      RequesteForTime = o.RequesteForTime
 
                   }).ToListAsync(cancellationToken);
         }

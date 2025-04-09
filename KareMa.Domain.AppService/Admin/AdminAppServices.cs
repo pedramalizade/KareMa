@@ -29,5 +29,10 @@ namespace KareMa.Domain.AppService
    => await _adminServices.GetById(adminId, cancellationToken);
         public async Task<bool> Update(AdminUpdateDto adminUpdateDto, CancellationToken cancellationToken)
           => await _adminServices.Update(adminUpdateDto, cancellationToken);
+
+        public async Task<decimal> GetAdminBalance(int adminId, CancellationToken cancellationToken)
+        {
+            return await _adminServices.GetAdminBalance(adminId, cancellationToken);
+        }
     }
 }

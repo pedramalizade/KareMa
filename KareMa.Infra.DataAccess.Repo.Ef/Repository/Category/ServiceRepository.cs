@@ -3,9 +3,13 @@ using KareMa.Domain.Core.Contracts.Repositories.Category;
 using KareMa.Domain.Core.DTOs.ServiceDTO;
 using KareMa.Domain.Core.Entities;
 using KareMa.Infra.SqlServer.Common;
+using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Dapper;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,9 +20,12 @@ namespace KareMa.Infra.DataAccess.Repo.Ef.Repository
     
     {
         private readonly AppDbContext _context;
-        public ServiceRepository(AppDbContext context)
+        private readonly IConfiguration _configuration;
+
+        public ServiceRepository(AppDbContext context, IConfiguration configuration)
         {
             _context = context;
+            _configuration = configuration;
         }
 
         public async Task<bool> Create(ServiceCreateDto serviceCreateDto, CancellationToken cancellationToken)
@@ -70,20 +77,55 @@ namespace KareMa.Infra.DataAccess.Repo.Ef.Repository
 
         public async Task<List<GetServiceDto>> GetAll(CancellationToken cancellationToken)
         {
-            var services = await _context.Services.AsNoTracking()
-                  .Select(s => new GetServiceDto
-                  {
-                      Id = s.Id,
-                      Name = s.Name,
-                      IsDeleted = s.IsDeleted,
-                      Price = s.Price,
-                      SubCategoryId = s.SubCategoryId,
-                      SubCategory = s.SubCategory,
-                      Image = s.Image,
-                  })
-                  .ToListAsync(cancellationToken);
-            return services;
+            var sql = @"
+        SELECT 
+            s.Id, 
+            s.Name, 
+            s.IsDeleted, 
+            s.Price, 
+            s.SubCategoryId, 
+            s.Image,
+            sc.Id AS SubCategoryId, 
+            sc.Name AS SubCategoryName 
+        FROM Services s
+        LEFT JOIN SubCategories sc ON s.SubCategoryId = sc.Id";
+
+            using (IDbConnection db = new SqlConnection(_configuration.GetSection("ConnectionStrings").Value))
+            {
+                var services = await db.QueryAsync<GetServiceDto, SubCategory, GetServiceDto>(
+                    sql,
+                    (service, subCategory) =>
+                    {
+                        service.SubCategory = subCategory != null
+                            ? new SubCategory
+                            {
+                                Id = subCategory.Id,
+                                Name = subCategory.Name
+                            }
+                            : null;
+                        return service;
+                    },
+                    splitOn: "SubCategoryId");
+
+                return services.AsList();
+            }
         }
+        //public async Task<List<GetServiceDto>> GetAll(CancellationToken cancellationToken)
+        //{
+        //    var services = await _context.Services.AsNoTracking()
+        //          .Select(s => new GetServiceDto
+        //          {
+        //              Id = s.Id,
+        //              Name = s.Name,
+        //              IsDeleted = s.IsDeleted,
+        //              Price = s.Price,
+        //              SubCategoryId = s.SubCategoryId,
+        //              SubCategory = s.SubCategory,
+        //              Image = s.Image,
+        //          })
+        //          .ToListAsync(cancellationToken);
+        //    return services;
+        //}
         public async Task<List<GetByCategorySubIdDto>> GetAllBySubCategoryId(int id, CancellationToken cancellationToken)
         {
             return await _context.Services.Where(x => x.SubCategoryId == id).AsNoTracking()

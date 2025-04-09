@@ -42,8 +42,8 @@ namespace KareMa.EndPoint.RazorPages.Areas.AdminArea.Account.Pages
                 if (User.IsInRole("Customer"))
                     return LocalRedirect("/CustomerArea/Index");
 
-                if (User.IsInRole("Customer"))
-                    return LocalRedirect("/CustomerArea/Index");
+                if (User.IsInRole("Expert"))
+                    return LocalRedirect("/ExpertArea/Index");
             }
 
             ModelState.AddModelError(string.Empty, "نام کاربری یا کلمه عبور اشتباه است");

@@ -54,17 +54,17 @@ builder.Services.AddScoped<IOrderServices, OrderServices>();
 builder.Services.AddScoped<IOrderAppServices, OrderAppServices>();
 
 // Service Services
-builder.Services.AddScoped<IServiceRepository, ServicedapperRepository>();
+builder.Services.AddScoped<IServiceRepository, ServiceRepository>();
 builder.Services.AddScoped<IServiceServices, ServiceServices>();
 builder.Services.AddScoped<IServiceAppServices, ServiceAppServices>();
 
 // Category Services
-builder.Services.AddScoped<ICategoryRepository, CategoryDapperRepository>();
+builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
 builder.Services.AddScoped<ICategoryServices, CategoryServices>();
 builder.Services.AddScoped<ICategoryAppServices, CategoryAppServices>();
 
 // SubCategory Services
-builder.Services.AddScoped<ISubCategoryRepository, SubCategoryDapperRepository>();
+builder.Services.AddScoped<ISubCategoryRepository, SubCategoryRepository>();
 builder.Services.AddScoped<ISubCategoryServices, SubCategoryServices>();
 builder.Services.AddScoped<ISubCategoryAppServices, SubCategoryAppServices>();
 

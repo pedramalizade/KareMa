@@ -15,7 +15,7 @@ namespace KareMa.Domain.Core.Contracts.Repositories
         Task<Admin> GetById(int adminId, CancellationToken cancellationToken);
         Task<List<Admin>> GetAll(CancellationToken cancellationToken);
         Task<AdminUpdateDto> AdminUpdateInfo(int id, CancellationToken cancellationToken);
-
+        Task<decimal> GetAdminBalance(int adminId, CancellationToken cancellationToken);
     }
 
 }

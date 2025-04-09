@@ -1859,6 +1859,7 @@
       },
       "KareMa.Infra.DataAccess.Repo.Ef/1.0.0": {
         "dependencies": {
+          "Dapper": "2.1.66",
           "KareMa.Domain.Core": "1.0.0",
           "KareMa.Infra.SqlServer": "1.0.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "9.0.2"

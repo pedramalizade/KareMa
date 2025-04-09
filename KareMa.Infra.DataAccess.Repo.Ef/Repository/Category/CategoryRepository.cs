@@ -2,11 +2,15 @@
 using KareMa.Domain.Core.DTOs.CategoryDTO;
 using KareMa.Domain.Core.Entities;
 using KareMa.Infra.SqlServer.Common;
+using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Caching.Memory;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+using Dapper;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,12 +20,14 @@ namespace KareMa.Infra.DataAccess.Repo.Ef.Repository
     public class CategoryRepository : ICategoryRepository
     {
         private readonly AppDbContext _context;
+        private readonly IConfiguration _configuration;
         private readonly IMemoryCache _memoryCache;
         private readonly ILogger<CategoryRepository> _logger;
 
-        public CategoryRepository(AppDbContext context, ILogger<CategoryRepository> logger, IMemoryCache memoryCache)
+        public CategoryRepository(AppDbContext context, IConfiguration configuration, ILogger<CategoryRepository> logger, IMemoryCache memoryCache)
         {
             _context = context;
+            _configuration = configuration;
             _logger = logger;
             _memoryCache = memoryCache;
         }
@@ -117,48 +123,40 @@ namespace KareMa.Infra.DataAccess.Repo.Ef.Repository
             return true;
         }
 
+        //public async Task<List<GetCategoryDto>> GetAll(CancellationToken cancellationToken)
+        //{
+        //    Console.WriteLine("CategoryAppServices.GetAll called");
+        //    var cacheKey = "Categories";
+        //    if (!_memoryCache.TryGetValue(cacheKey, out List<GetCategoryDto> categories))
+        //    {
+        //        categories = await _context.Categories
+        //            .Where(c => !c.IsDeleted)
+        //            .Select(c => new GetCategoryDto
+        //            {
+        //                Id = c.Id,
+        //                Name = c.Name,
+        //                Image = c.Image,
+        //                IsDeleted = c.IsDeleted
+        //            })
+        //            .ToListAsync(cancellationToken);
+        //        _memoryCache.Set(cacheKey, categories, TimeSpan.FromMinutes(10)); 
+        //    }
+        //    return categories;
+        //}
         public async Task<List<GetCategoryDto>> GetAll(CancellationToken cancellationToken)
         {
-            Console.WriteLine("CategoryAppServices.GetAll called");
             var cacheKey = "Categories";
             if (!_memoryCache.TryGetValue(cacheKey, out List<GetCategoryDto> categories))
             {
-                categories = await _context.Categories
-                    .Where(c => !c.IsDeleted)
-                    .Select(c => new GetCategoryDto
-                    {
-                        Id = c.Id,
-                        Name = c.Name,
-                        Image = c.Image,
-                        IsDeleted = c.IsDeleted
-                    })
-                    .ToListAsync(cancellationToken);
-                _memoryCache.Set(cacheKey, categories, TimeSpan.FromMinutes(10)); 
+                var sql = "SELECT Id, Name, Image, IsDeleted FROM Categories WHERE IsDeleted = 0";
+                using (IDbConnection db = new SqlConnection(_configuration.GetSection("ConnectionStrings").Value))
+                {
+                    categories = (await db.QueryAsync<GetCategoryDto>(sql)).AsList();
+                    _memoryCache.Set(cacheKey, categories, TimeSpan.FromMinutes(10));
+                }
             }
             return categories;
         }
-        //public async Task<List<GetCategoryDto>> GetAll(CancellationToken cancellationToken)
-        //{
-        //    var categories = _memoryCache.Get<List<GetCategoryDto>>("AllCategories");
-        //    if (categories is null)
-        //    {
-        //        categories = await _context.Categories.AsNoTracking()
-        //           .Select(c => new GetCategoryDto
-        //           {
-        //               Id = c.Id,
-        //               Name = c.Name,
-        //               Image = c.Image,
-        //               IsDeleted = c.IsDeleted
-        //           }).ToListAsync(cancellationToken);
-        //        _memoryCache.Set("AllCategories", categories, new MemoryCacheEntryOptions()
-        //        {
-        //            SlidingExpiration = TimeSpan.FromSeconds(200)
-        //        });
-        //        return categories;
-        //    }
-
-        //    return categories;
-        //}
 
         public async Task<Domain.Core.Entities.Category> GetById(int CategoryId, CancellationToken cancellationToken)
      => await FindServiceCategory(CategoryId, cancellationToken);

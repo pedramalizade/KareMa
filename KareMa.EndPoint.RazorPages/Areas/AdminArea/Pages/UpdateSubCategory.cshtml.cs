@@ -11,13 +11,16 @@ namespace KareMa.EndPoint.RazorPages.Pages.Areas.AdminArea.Pages
     {
         private readonly ISubCategoryAppServices _subCategoryAppServices;
         private readonly ICategoryAppServices _categoryAppService;
+
         public UpdateSubCategoryModel(ISubCategoryAppServices subCategoryAppServices, ICategoryAppServices categoryAppService)
         {
             _subCategoryAppServices = subCategoryAppServices;
             _categoryAppService = categoryAppService;
         }
+
         [BindProperty]
         public SubCategoryUpdateDto SubCategoryUpdate { get; set; }
+
         [BindProperty]
         public IFormFile? Image { get; set; }
 
@@ -26,7 +29,7 @@ namespace KareMa.EndPoint.RazorPages.Pages.Areas.AdminArea.Pages
 
         public async Task<IActionResult> OnGet(int id, CancellationToken cancellationToken)
         {
-            if (id == null || id <= 0)
+            if (id <= 0) 
             {
                 return BadRequest("Invalid Category Id");
             }
@@ -41,15 +44,26 @@ namespace KareMa.EndPoint.RazorPages.Pages.Areas.AdminArea.Pages
             CategoryNames = await _categoryAppService.GetCategorisName(cancellationToken);
             return Page();
         }
-        public async Task<IActionResult> OnPostUpdate(SubCategoryUpdateDto serviceSubCategoryUpdate, IFormFile image, CancellationToken cancellationToken)
+
+        public async Task<IActionResult> OnPostUpdate(CancellationToken cancellationToken) 
         {
             if (!ModelState.IsValid)
             {
+                CategoryNames = await _categoryAppService.GetCategorisName(cancellationToken); 
                 return Page();
             }
 
-            await _subCategoryAppServices.Update(serviceSubCategoryUpdate, image, cancellationToken);
-            return RedirectToPage("SubCategory");
+            try
+            {
+                await _subCategoryAppServices.Update(SubCategoryUpdate, Image, cancellationToken);
+                return RedirectToPage("SubCategory");
+            }
+            catch (Exception ex)
+            {
+                ModelState.AddModelError("", $"Failed to update subcategory: {ex.Message}");
+                CategoryNames = await _categoryAppService.GetCategorisName(cancellationToken);
+                return Page();
+            }
         }
     }
 }

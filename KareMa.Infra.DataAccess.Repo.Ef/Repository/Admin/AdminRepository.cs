@@ -35,6 +35,14 @@ namespace KareMa.Infra.DataAccess.Repo.Ef.Repository
             return true;
         }
 
+        public async Task<decimal> GetAdminBalance(int adminId, CancellationToken cancellationToken)
+        {
+            var admin = await _context.Admins
+                .AsNoTracking()
+                .FirstOrDefaultAsync(a => a.Id == adminId && !a.IsDeleted, cancellationToken);
+            return admin?.Balance ?? 0m; // اگر ادمین پیدا نشد یا موجودی نداشت، صفر برمی‌گردونه
+        }
+
         public async Task<bool> Delete(int adminId, CancellationToken cancellationToken)
         {
             var targetAdmin = await FindAdmin(adminId, cancellationToken);

@@ -2,9 +2,13 @@
 using KareMa.Domain.Core.DTOs.SubCategoryDTO;
 using KareMa.Domain.Core.Entities;
 using KareMa.Infra.SqlServer.Common;
+using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Dapper;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,9 +18,12 @@ namespace KareMa.Infra.DataAccess.Repo.Ef.Repository
     public class SubCategoryRepository : ISubCategoryRepository
     {
         private readonly AppDbContext _context;
-        public SubCategoryRepository(AppDbContext context)
+        private readonly IConfiguration _configuration;
+
+        public SubCategoryRepository(AppDbContext context, IConfiguration configuration)
         {
             _context = context;
+            _configuration = configuration;
         }
 
         public async Task<bool> Create(SubCategoryCreateDto subCategoryCreateDto, CancellationToken cancellationToken)
@@ -44,31 +51,93 @@ namespace KareMa.Infra.DataAccess.Repo.Ef.Repository
 
         public async Task<List<SubCategory>> GetAll(CancellationToken cancellationToken)
         {
-            return await _context.SubCategories.AsNoTracking().Where(c => c.IsDeleted == false)
-                 .Select(s => new SubCategory()
-                 {
-                     Id = s.Id,
-                     Name = s.Name,
-                     Image = s.Image,
-                     CreatedAt = s.CreatedAt,
-                     IsDeleted = s.IsDeleted,
-                     Category = s.Category,
-                     CategoryId = s.CategoryId,
-                     Services = s.Services.Select(x => new Service()
-                     {
-                         Id = x.Id,
-                         Experts = x.Experts,
-                         Price = x.Price,
-                         Name = x.Name,
-                         CreatedAt = x.CreatedAt,
-                         IsDeleted = x.IsDeleted,
-                         Orders = x.Orders,
-                         SubCategory = x.SubCategory,
-                         SubCategoryId = x.SubCategoryId
-                     }).ToList()
-                 })
-                 .ToListAsync(cancellationToken);
+            var sql = @"
+SELECT sc.Id, sc.Name, sc.Image, sc.CreatedAt, sc.IsDeleted, sc.CategoryId,
+       c.Id AS Category_Id, c.Name AS Category_Name, c.Image AS Category_Image, 
+       c.CreatedAt AS Category_CreatedAt, c.IsDeleted AS Category_IsDeleted,
+       s.Id AS Service_Id, s.Name AS Service_Name, s.Price AS Service_Price, 
+       s.Image AS Service_Image, s.CreatedAt AS Service_CreatedAt, 
+       s.IsDeleted AS Service_IsDeleted, s.SubCategoryId
+FROM SubCategories sc
+LEFT JOIN Categories c ON sc.CategoryId = c.Id
+LEFT JOIN Services s ON sc.Id = s.SubCategoryId
+WHERE sc.IsDeleted = 0
+ORDER BY sc.Id, c.Id, s.Id";
+
+            using (IDbConnection db = new SqlConnection(_configuration.GetSection("ConnectionStrings").Value))
+            {
+                var subCategoryDict = new Dictionary<int, SubCategory>();
+
+                var result = await db.QueryAsync<SubCategory, Category, Service, SubCategory>(
+                    sql,
+                    (subCategory, category, service) =>
+                    {
+                        if (!subCategoryDict.TryGetValue(subCategory.Id, out var existingSubCategory))
+                        {
+                            existingSubCategory = subCategory;
+                            existingSubCategory.Services = new List<Service>();
+                            subCategoryDict.Add(subCategory.Id, existingSubCategory);
+                        }
+
+                        if (category != null && existingSubCategory.Category == null)
+                        {
+                            existingSubCategory.Category = category;
+                            existingSubCategory.Category.SubCategories = null; // جلوگیری از چرخه
+                        }
+
+                        if (service != null && service.Id != 0)
+                        {
+                            service.SubCategoryId = existingSubCategory.Id;
+                            service.SubCategory = null; // جلوگیری از چرخه
+                            service.Experts = null;
+                            service.Orders = null;
+                            existingSubCategory.Services.Add(service);
+                        }
+
+                        return existingSubCategory;
+                    },
+                    splitOn: "Category_Id, Service_Id");
+
+                var subCategories = subCategoryDict.Values.ToList();
+
+                // چک کردن مقادیر null و لاگ کردن برای دیباگ (اختیاری)
+                foreach (var sc in subCategories)
+                {
+                    if (sc.Image == null) Console.WriteLine($"SubCategory {sc.Id} has null Image");
+                    if (sc.Category == null) Console.WriteLine($"SubCategory {sc.Id} has null Category");
+                    if (!sc.Services.Any()) Console.WriteLine($"SubCategory {sc.Id} has no Services");
+                }
+
+                return subCategories;
+            }
         }
+        //public async Task<List<SubCategory>> GetAll(CancellationToken cancellationToken)
+        //{
+        //    return await _context.SubCategories.AsNoTracking().Where(c => c.IsDeleted == false)
+        //         .Select(s => new SubCategory()
+        //         {
+        //             Id = s.Id,
+        //             Name = s.Name,
+        //             Image = s.Image,
+        //             CreatedAt = s.CreatedAt,
+        //             IsDeleted = s.IsDeleted,
+        //             Category = s.Category,
+        //             CategoryId = s.CategoryId,
+        //             Services = s.Services.Select(x => new Service()
+        //             {
+        //                 Id = x.Id,
+        //                 Experts = x.Experts,
+        //                 Price = x.Price,
+        //                 Name = x.Name,
+        //                 CreatedAt = x.CreatedAt,
+        //                 IsDeleted = x.IsDeleted,
+        //                 Orders = x.Orders,
+        //                 SubCategory = x.SubCategory,
+        //                 SubCategoryId = x.SubCategoryId
+        //             }).ToList()
+        //         })
+        //         .ToListAsync(cancellationToken);
+        //}
 
         public async Task<SubCategory> GetById(int SubCategoryId, CancellationToken cancellationToken)
        => await FindServiceSubCategory(SubCategoryId, cancellationToken);

@@ -5285,76 +5285,12 @@
       "PackagePath": "staticwebassets\\assets\\img\\404.png"
     },
     {
-      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\assets\\img\\about.jpg",
-      "PackagePath": "staticwebassets\\assets\\img\\about.jpg"
-    },
-    {
       "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\assets\\img\\and.png",
       "PackagePath": "staticwebassets\\assets\\img\\and.png"
     },
     {
-      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\assets\\img\\app.png",
-      "PackagePath": "staticwebassets\\assets\\img\\app.png"
-    },
-    {
-      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\assets\\img\\b-1.jpg",
-      "PackagePath": "staticwebassets\\assets\\img\\b-1.jpg"
-    },
-    {
-      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\assets\\img\\b-2.jpg",
-      "PackagePath": "staticwebassets\\assets\\img\\b-2.jpg"
-    },
-    {
-      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\assets\\img\\b-3.jpg",
-      "PackagePath": "staticwebassets\\assets\\img\\b-3.jpg"
-    },
-    {
-      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\assets\\img\\b-4.jpg",
-      "PackagePath": "staticwebassets\\assets\\img\\b-4.jpg"
-    },
-    {
-      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\assets\\img\\b-5.jpg",
-      "PackagePath": "staticwebassets\\assets\\img\\b-5.jpg"
-    },
-    {
-      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\assets\\img\\b-6.jpg",
-      "PackagePath": "staticwebassets\\assets\\img\\b-6.jpg"
-    },
-    {
-      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\assets\\img\\banner-2.jpg",
-      "PackagePath": "staticwebassets\\assets\\img\\banner-2.jpg"
-    },
-    {
-      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\assets\\img\\banner-3.jpg",
-      "PackagePath": "staticwebassets\\assets\\img\\banner-3.jpg"
-    },
-    {
-      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\assets\\img\\banner-6.jpg",
-      "PackagePath": "staticwebassets\\assets\\img\\banner-6.jpg"
-    },
-    {
-      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\assets\\img\\banner.jpg",
-      "PackagePath": "staticwebassets\\assets\\img\\banner.jpg"
-    },
-    {
-      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\assets\\img\\bg.jpg",
-      "PackagePath": "staticwebassets\\assets\\img\\bg.jpg"
-    },
-    {
-      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\assets\\img\\bn-4.png",
-      "PackagePath": "staticwebassets\\assets\\img\\bn-4.png"
-    },
-    {
       "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\assets\\img\\bn-5.png",
       "PackagePath": "staticwebassets\\assets\\img\\bn-5.png"
-    },
-    {
-      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\assets\\img\\burger-king.png",
-      "PackagePath": "staticwebassets\\assets\\img\\burger-king.png"
-    },
-    {
-      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\assets\\img\\c-1.jpg",
-      "PackagePath": "staticwebassets\\assets\\img\\c-1.jpg"
     },
     {
       "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\assets\\img\\c-1.png",
@@ -5369,24 +5305,12 @@
       "PackagePath": "staticwebassets\\assets\\img\\c-11.png"
     },
     {
-      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\assets\\img\\c-2.jpg",
-      "PackagePath": "staticwebassets\\assets\\img\\c-2.jpg"
-    },
-    {
       "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\assets\\img\\c-2.png",
       "PackagePath": "staticwebassets\\assets\\img\\c-2.png"
     },
     {
-      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\assets\\img\\c-3.jpg",
-      "PackagePath": "staticwebassets\\assets\\img\\c-3.jpg"
-    },
-    {
       "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\assets\\img\\c-3.png",
       "PackagePath": "staticwebassets\\assets\\img\\c-3.png"
-    },
-    {
-      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\assets\\img\\c-4.jpg",
-      "PackagePath": "staticwebassets\\assets\\img\\c-4.jpg"
     },
     {
       "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\assets\\img\\c-4.png",
@@ -5441,52 +5365,12 @@
       "PackagePath": "staticwebassets\\assets\\img\\category\\truck-moving-solid.svg"
     },
     {
-      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\assets\\img\\cover.jpg",
-      "PackagePath": "staticwebassets\\assets\\img\\cover.jpg"
-    },
-    {
       "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\assets\\img\\debit.png",
       "PackagePath": "staticwebassets\\assets\\img\\debit.png"
     },
     {
-      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\assets\\img\\doc-1.jpg",
-      "PackagePath": "staticwebassets\\assets\\img\\doc-1.jpg"
-    },
-    {
-      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\assets\\img\\doc-2.jpg",
-      "PackagePath": "staticwebassets\\assets\\img\\doc-2.jpg"
-    },
-    {
-      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\assets\\img\\doc-3.jpg",
-      "PackagePath": "staticwebassets\\assets\\img\\doc-3.jpg"
-    },
-    {
-      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\assets\\img\\doc-4.jpg",
-      "PackagePath": "staticwebassets\\assets\\img\\doc-4.jpg"
-    },
-    {
-      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\assets\\img\\doc-5.jpg",
-      "PackagePath": "staticwebassets\\assets\\img\\doc-5.jpg"
-    },
-    {
-      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\assets\\img\\doc-6.jpg",
-      "PackagePath": "staticwebassets\\assets\\img\\doc-6.jpg"
-    },
-    {
-      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\assets\\img\\doc-7.jpg",
-      "PackagePath": "staticwebassets\\assets\\img\\doc-7.jpg"
-    },
-    {
-      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\assets\\img\\doc-8.jpg",
-      "PackagePath": "staticwebassets\\assets\\img\\doc-8.jpg"
-    },
-    {
       "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\assets\\img\\facebook.png",
       "PackagePath": "staticwebassets\\assets\\img\\facebook.png"
-    },
-    {
-      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\assets\\img\\favicon.png",
-      "PackagePath": "staticwebassets\\assets\\img\\favicon.png"
     },
     {
       "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\assets\\img\\icons\\basket.png",
@@ -5621,10 +5505,6 @@
       "PackagePath": "staticwebassets\\assets\\img\\ios.png"
     },
     {
-      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\assets\\img\\l-1.jpg",
-      "PackagePath": "staticwebassets\\assets\\img\\l-1.jpg"
-    },
-    {
       "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\assets\\img\\l-1.png",
       "PackagePath": "staticwebassets\\assets\\img\\l-1.png"
     },
@@ -5633,56 +5513,24 @@
       "PackagePath": "staticwebassets\\assets\\img\\l-10.png"
     },
     {
-      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\assets\\img\\l-2.jpg",
-      "PackagePath": "staticwebassets\\assets\\img\\l-2.jpg"
-    },
-    {
       "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\assets\\img\\l-2.png",
       "PackagePath": "staticwebassets\\assets\\img\\l-2.png"
-    },
-    {
-      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\assets\\img\\l-3.jpg",
-      "PackagePath": "staticwebassets\\assets\\img\\l-3.jpg"
-    },
-    {
-      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\assets\\img\\l-3.png",
-      "PackagePath": "staticwebassets\\assets\\img\\l-3.png"
-    },
-    {
-      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\assets\\img\\l-4.jpg",
-      "PackagePath": "staticwebassets\\assets\\img\\l-4.jpg"
     },
     {
       "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\assets\\img\\l-4.png",
       "PackagePath": "staticwebassets\\assets\\img\\l-4.png"
     },
     {
-      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\assets\\img\\l-5.jpg",
-      "PackagePath": "staticwebassets\\assets\\img\\l-5.jpg"
-    },
-    {
       "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\assets\\img\\l-5.png",
       "PackagePath": "staticwebassets\\assets\\img\\l-5.png"
-    },
-    {
-      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\assets\\img\\l-6.jpg",
-      "PackagePath": "staticwebassets\\assets\\img\\l-6.jpg"
     },
     {
       "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\assets\\img\\l-6.png",
       "PackagePath": "staticwebassets\\assets\\img\\l-6.png"
     },
     {
-      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\assets\\img\\l-7.jpg",
-      "PackagePath": "staticwebassets\\assets\\img\\l-7.jpg"
-    },
-    {
       "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\assets\\img\\l-7.png",
       "PackagePath": "staticwebassets\\assets\\img\\l-7.png"
-    },
-    {
-      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\assets\\img\\l-8.jpg",
-      "PackagePath": "staticwebassets\\assets\\img\\l-8.jpg"
     },
     {
       "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\assets\\img\\l-8.png",
@@ -5697,90 +5545,6 @@
       "PackagePath": "staticwebassets\\assets\\img\\landing-bg.png"
     },
     {
-      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\assets\\img\\lg-1.png",
-      "PackagePath": "staticwebassets\\assets\\img\\lg-1.png"
-    },
-    {
-      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\assets\\img\\lg-2.png",
-      "PackagePath": "staticwebassets\\assets\\img\\lg-2.png"
-    },
-    {
-      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\assets\\img\\lg-3.png",
-      "PackagePath": "staticwebassets\\assets\\img\\lg-3.png"
-    },
-    {
-      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\assets\\img\\lg-4.png",
-      "PackagePath": "staticwebassets\\assets\\img\\lg-4.png"
-    },
-    {
-      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\assets\\img\\lg-5.png",
-      "PackagePath": "staticwebassets\\assets\\img\\lg-5.png"
-    },
-    {
-      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\assets\\img\\lg-6.png",
-      "PackagePath": "staticwebassets\\assets\\img\\lg-6.png"
-    },
-    {
-      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\assets\\img\\lg-7.png",
-      "PackagePath": "staticwebassets\\assets\\img\\lg-7.png"
-    },
-    {
-      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\assets\\img\\lg-8.png",
-      "PackagePath": "staticwebassets\\assets\\img\\lg-8.png"
-    },
-    {
-      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\assets\\img\\list.png",
-      "PackagePath": "staticwebassets\\assets\\img\\list.png"
-    },
-    {
-      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\assets\\img\\listing\\l-1.jpg",
-      "PackagePath": "staticwebassets\\assets\\img\\listing\\l-1.jpg"
-    },
-    {
-      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\assets\\img\\listing\\l-10.jpg",
-      "PackagePath": "staticwebassets\\assets\\img\\listing\\l-10.jpg"
-    },
-    {
-      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\assets\\img\\listing\\l-11.jpg",
-      "PackagePath": "staticwebassets\\assets\\img\\listing\\l-11.jpg"
-    },
-    {
-      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\assets\\img\\listing\\l-12.jpg",
-      "PackagePath": "staticwebassets\\assets\\img\\listing\\l-12.jpg"
-    },
-    {
-      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\assets\\img\\listing\\l-2.jpg",
-      "PackagePath": "staticwebassets\\assets\\img\\listing\\l-2.jpg"
-    },
-    {
-      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\assets\\img\\listing\\l-3.jpg",
-      "PackagePath": "staticwebassets\\assets\\img\\listing\\l-3.jpg"
-    },
-    {
-      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\assets\\img\\listing\\l-4.jpg",
-      "PackagePath": "staticwebassets\\assets\\img\\listing\\l-4.jpg"
-    },
-    {
-      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\assets\\img\\listing\\l-5.jpg",
-      "PackagePath": "staticwebassets\\assets\\img\\listing\\l-5.jpg"
-    },
-    {
-      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\assets\\img\\listing\\l-6.jpg",
-      "PackagePath": "staticwebassets\\assets\\img\\listing\\l-6.jpg"
-    },
-    {
-      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\assets\\img\\listing\\l-7.jpg",
-      "PackagePath": "staticwebassets\\assets\\img\\listing\\l-7.jpg"
-    },
-    {
-      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\assets\\img\\listing\\l-8.jpg",
-      "PackagePath": "staticwebassets\\assets\\img\\listing\\l-8.jpg"
-    },
-    {
-      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\assets\\img\\listing\\l-9.jpg",
-      "PackagePath": "staticwebassets\\assets\\img\\listing\\l-9.jpg"
-    },
-    {
       "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\assets\\img\\loader.gif",
       "PackagePath": "staticwebassets\\assets\\img\\loader.gif"
     },
@@ -5793,48 +5557,12 @@
       "PackagePath": "staticwebassets\\assets\\img\\logo.png"
     },
     {
-      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\assets\\img\\logo\\1716061360566.png",
-      "PackagePath": "staticwebassets\\assets\\img\\logo\\1716061360566.png"
-    },
-    {
-      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\assets\\img\\logo\\banner (2).jpg",
-      "PackagePath": "staticwebassets\\assets\\img\\logo\\banner (2).jpg"
-    },
-    {
-      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\assets\\img\\logo\\ido-service.png",
-      "PackagePath": "staticwebassets\\assets\\img\\logo\\ido-service.png"
-    },
-    {
       "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\assets\\img\\logo\\init.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\logo\\init.jpg"
     },
     {
       "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\assets\\img\\logo\\logoo.png",
       "PackagePath": "staticwebassets\\assets\\img\\logo\\logoo.png"
-    },
-    {
-      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\assets\\img\\m-1.png",
-      "PackagePath": "staticwebassets\\assets\\img\\m-1.png"
-    },
-    {
-      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\assets\\img\\m-2.png",
-      "PackagePath": "staticwebassets\\assets\\img\\m-2.png"
-    },
-    {
-      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\assets\\img\\m-3.png",
-      "PackagePath": "staticwebassets\\assets\\img\\m-3.png"
-    },
-    {
-      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\assets\\img\\m-4.png",
-      "PackagePath": "staticwebassets\\assets\\img\\m-4.png"
-    },
-    {
-      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\assets\\img\\m-5.png",
-      "PackagePath": "staticwebassets\\assets\\img\\m-5.png"
-    },
-    {
-      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\assets\\img\\m-6.png",
-      "PackagePath": "staticwebassets\\assets\\img\\m-6.png"
     },
     {
       "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\assets\\img\\med\\1.jpg",
@@ -5875,70 +5603,6 @@
     {
       "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\assets\\img\\paypal.png",
       "PackagePath": "staticwebassets\\assets\\img\\paypal.png"
-    },
-    {
-      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\assets\\img\\real\\r-1.jpg",
-      "PackagePath": "staticwebassets\\assets\\img\\real\\r-1.jpg"
-    },
-    {
-      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\assets\\img\\real\\r-2.jpg",
-      "PackagePath": "staticwebassets\\assets\\img\\real\\r-2.jpg"
-    },
-    {
-      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\assets\\img\\real\\r-3.jpg",
-      "PackagePath": "staticwebassets\\assets\\img\\real\\r-3.jpg"
-    },
-    {
-      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\assets\\img\\real\\r-4.jpg",
-      "PackagePath": "staticwebassets\\assets\\img\\real\\r-4.jpg"
-    },
-    {
-      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\assets\\img\\real\\r-5.jpg",
-      "PackagePath": "staticwebassets\\assets\\img\\real\\r-5.jpg"
-    },
-    {
-      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\assets\\img\\real\\r-6.jpg",
-      "PackagePath": "staticwebassets\\assets\\img\\real\\r-6.jpg"
-    },
-    {
-      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\assets\\img\\real\\r-7.jpg",
-      "PackagePath": "staticwebassets\\assets\\img\\real\\r-7.jpg"
-    },
-    {
-      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\assets\\img\\real\\r-8.jpg",
-      "PackagePath": "staticwebassets\\assets\\img\\real\\r-8.jpg"
-    },
-    {
-      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\assets\\img\\rooms\\1.jpg",
-      "PackagePath": "staticwebassets\\assets\\img\\rooms\\1.jpg"
-    },
-    {
-      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\assets\\img\\rooms\\2.jpg",
-      "PackagePath": "staticwebassets\\assets\\img\\rooms\\2.jpg"
-    },
-    {
-      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\assets\\img\\rooms\\3.jpg",
-      "PackagePath": "staticwebassets\\assets\\img\\rooms\\3.jpg"
-    },
-    {
-      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\assets\\img\\rooms\\4.jpg",
-      "PackagePath": "staticwebassets\\assets\\img\\rooms\\4.jpg"
-    },
-    {
-      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\assets\\img\\rooms\\5.jpg",
-      "PackagePath": "staticwebassets\\assets\\img\\rooms\\5.jpg"
-    },
-    {
-      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\assets\\img\\rooms\\6.jpg",
-      "PackagePath": "staticwebassets\\assets\\img\\rooms\\6.jpg"
-    },
-    {
-      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\assets\\img\\rooms\\7.jpg",
-      "PackagePath": "staticwebassets\\assets\\img\\rooms\\7.jpg"
-    },
-    {
-      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\assets\\img\\rooms\\8.jpg",
-      "PackagePath": "staticwebassets\\assets\\img\\rooms\\8.jpg"
     },
     {
       "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\assets\\img\\sub-category\\barbari.webp",
@@ -6035,70 +5699,6 @@
     {
       "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\assets\\img\\sub-category\\tamiz-kari\\shosteshu.webp",
       "PackagePath": "staticwebassets\\assets\\img\\sub-category\\tamiz-kari\\shosteshu.webp"
-    },
-    {
-      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\assets\\img\\t-1.png",
-      "PackagePath": "staticwebassets\\assets\\img\\t-1.png"
-    },
-    {
-      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\assets\\img\\t-2.png",
-      "PackagePath": "staticwebassets\\assets\\img\\t-2.png"
-    },
-    {
-      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\assets\\img\\t-3.png",
-      "PackagePath": "staticwebassets\\assets\\img\\t-3.png"
-    },
-    {
-      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\assets\\img\\t-4.png",
-      "PackagePath": "staticwebassets\\assets\\img\\t-4.png"
-    },
-    {
-      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\assets\\img\\t-5.png",
-      "PackagePath": "staticwebassets\\assets\\img\\t-5.png"
-    },
-    {
-      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\assets\\img\\t-6.png",
-      "PackagePath": "staticwebassets\\assets\\img\\t-6.png"
-    },
-    {
-      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\assets\\img\\t-7.png",
-      "PackagePath": "staticwebassets\\assets\\img\\t-7.png"
-    },
-    {
-      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\assets\\img\\t-8.png",
-      "PackagePath": "staticwebassets\\assets\\img\\t-8.png"
-    },
-    {
-      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\assets\\img\\team-2.jpg",
-      "PackagePath": "staticwebassets\\assets\\img\\team-2.jpg"
-    },
-    {
-      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\assets\\img\\team-3.jpg",
-      "PackagePath": "staticwebassets\\assets\\img\\team-3.jpg"
-    },
-    {
-      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\assets\\img\\team-5.jpg",
-      "PackagePath": "staticwebassets\\assets\\img\\team-5.jpg"
-    },
-    {
-      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\assets\\img\\user-1.jpg",
-      "PackagePath": "staticwebassets\\assets\\img\\user-1.jpg"
-    },
-    {
-      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\assets\\img\\user-2.jpg",
-      "PackagePath": "staticwebassets\\assets\\img\\user-2.jpg"
-    },
-    {
-      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\assets\\img\\user-4.jpg",
-      "PackagePath": "staticwebassets\\assets\\img\\user-4.jpg"
-    },
-    {
-      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\assets\\img\\user-5.jpg",
-      "PackagePath": "staticwebassets\\assets\\img\\user-5.jpg"
-    },
-    {
-      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\assets\\img\\user-8.jpg",
-      "PackagePath": "staticwebassets\\assets\\img\\user-8.jpg"
     },
     {
       "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\assets\\img\\verify.svg",
@@ -6781,12 +6381,24 @@
       "PackagePath": "staticwebassets\\uploads\\210cfb6d-78ee-4a8b-9021-c12a95c9be35_young-people-doing-housework-living-room_52683-22049.jpg"
     },
     {
+      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\uploads\\213d5899-8ffa-43a9-8458-b338a082e444_5918083871960844270.jpg",
+      "PackagePath": "staticwebassets\\uploads\\213d5899-8ffa-43a9-8458-b338a082e444_5918083871960844270.jpg"
+    },
+    {
       "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\uploads\\248a947d-26b0-42db-b4d8-8dc4f88ac433_cleaning-service-big-set-isolated-icons-with-detergents-mops-brooms-female-character-worker-vector-illustration_1284-78507.jpg",
       "PackagePath": "staticwebassets\\uploads\\248a947d-26b0-42db-b4d8-8dc4f88ac433_cleaning-service-big-set-isolated-icons-with-detergents-mops-brooms-female-character-worker-vector-illustration_1284-78507.jpg"
     },
     {
+      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\uploads\\26185c5f-5dc8-4ef9-8f20-efa95a072ec1_5918083871960844270.jpg",
+      "PackagePath": "staticwebassets\\uploads\\26185c5f-5dc8-4ef9-8f20-efa95a072ec1_5918083871960844270.jpg"
+    },
+    {
       "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\uploads\\28c6776a-cfd3-4ac4-a66e-af26ff8242f3_young-people-doing-housework-living-room_52683-22049.jpg",
       "PackagePath": "staticwebassets\\uploads\\28c6776a-cfd3-4ac4-a66e-af26ff8242f3_young-people-doing-housework-living-room_52683-22049.jpg"
+    },
+    {
+      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\uploads\\2916ca34-a36d-420a-87cd-b1b42d86867f_5918083871960844275.jpg",
+      "PackagePath": "staticwebassets\\uploads\\2916ca34-a36d-420a-87cd-b1b42d86867f_5918083871960844275.jpg"
     },
     {
       "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\uploads\\2a84a999-eff1-4fc5-8b8f-233af8f31145587118_352.jpg",
@@ -6813,6 +6425,10 @@
       "PackagePath": "staticwebassets\\uploads\\3f6e9b68-c6e8-477a-b46e-141a29ae40cc.jpg"
     },
     {
+      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\uploads\\400673fa-0c8a-4cde-aec2-44e60f48df62_flat-design-household-renovation-professions-with-men_23-2148655570.jpg",
+      "PackagePath": "staticwebassets\\uploads\\400673fa-0c8a-4cde-aec2-44e60f48df62_flat-design-household-renovation-professions-with-men_23-2148655570.jpg"
+    },
+    {
       "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\uploads\\4038f0ca-df6b-4632-b075-ce3fed19ae05_3f2c91d9440631c4f1105b835be7438a.jpg",
       "PackagePath": "staticwebassets\\uploads\\4038f0ca-df6b-4632-b075-ce3fed19ae05_3f2c91d9440631c4f1105b835be7438a.jpg"
     },
@@ -6833,8 +6449,24 @@
       "PackagePath": "staticwebassets\\uploads\\464f07ca-19f9-4d9e-8ed8-d6307d8a3c413f2c91d9440631c4f1105b835be7438a.jpg"
     },
     {
+      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\uploads\\46ce3da6-91e1-453d-a847-08911ab461bb_young-people-doing-housework-living-room_52683-22049.jpg",
+      "PackagePath": "staticwebassets\\uploads\\46ce3da6-91e1-453d-a847-08911ab461bb_young-people-doing-housework-living-room_52683-22049.jpg"
+    },
+    {
+      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\uploads\\483ff97f-1283-415d-b429-bd80ccee262f_5918083871960844271.jpg",
+      "PackagePath": "staticwebassets\\uploads\\483ff97f-1283-415d-b429-bd80ccee262f_5918083871960844271.jpg"
+    },
+    {
+      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\uploads\\495674cd-950c-4679-9f06-40fb65ebcf4c.jpg",
+      "PackagePath": "staticwebassets\\uploads\\495674cd-950c-4679-9f06-40fb65ebcf4c.jpg"
+    },
+    {
       "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\uploads\\4b192d21-3c40-4c45-8b6c-816f0b89aad4_Black and White Simple Circle Brush Name Logo.jpg",
       "PackagePath": "staticwebassets\\uploads\\4b192d21-3c40-4c45-8b6c-816f0b89aad4_Black and White Simple Circle Brush Name Logo.jpg"
+    },
+    {
+      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\uploads\\4b319990-90d7-4a66-b8cd-4cb2b191f9be_young-people-doing-housework-living-room_52683-22049.jpg",
+      "PackagePath": "staticwebassets\\uploads\\4b319990-90d7-4a66-b8cd-4cb2b191f9be_young-people-doing-housework-living-room_52683-22049.jpg"
     },
     {
       "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\uploads\\4de645be-98ad-4f40-a619-7628565aa5e4_cleaning-service-big-set-isolated-icons-with-detergents-mops-brooms-female-character-worker-vector-illustration_1284-78507.jpg",
@@ -6885,6 +6517,10 @@
       "PackagePath": "staticwebassets\\uploads\\628ac1a0-c2d5-4754-a251-8366dfb1cac2_smiling-man-helping-woman-with-household_74855-7860.jpg"
     },
     {
+      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\uploads\\63c20c20-292e-4426-a8ea-7a94214403a6_Black and White Simple Circle Brush Name Logo.jpg",
+      "PackagePath": "staticwebassets\\uploads\\63c20c20-292e-4426-a8ea-7a94214403a6_Black and White Simple Circle Brush Name Logo.jpg"
+    },
+    {
       "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\uploads\\63fba7ec-e9bd-4a2d-8233-2a32169df2bd_flat-design-household-renovation-professions-with-men_23-2148655570.jpg",
       "PackagePath": "staticwebassets\\uploads\\63fba7ec-e9bd-4a2d-8233-2a32169df2bd_flat-design-household-renovation-professions-with-men_23-2148655570.jpg"
     },
@@ -6917,6 +6553,10 @@
       "PackagePath": "staticwebassets\\uploads\\76ba401f-7acc-4e6b-b5f8-861e6ebc768a.jpg"
     },
     {
+      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\uploads\\80e4f66f-3cc4-4dd0-8a3d-37e8bf5fc83b_HW- Week21.pdf",
+      "PackagePath": "staticwebassets\\uploads\\80e4f66f-3cc4-4dd0-8a3d-37e8bf5fc83b_HW- Week21.pdf"
+    },
+    {
       "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\uploads\\82044300-cae0-47f9-88ae-9a2a14686153_Black and White Simple Circle Brush Name Logo.jpg",
       "PackagePath": "staticwebassets\\uploads\\82044300-cae0-47f9-88ae-9a2a14686153_Black and White Simple Circle Brush Name Logo.jpg"
     },
@@ -6927,6 +6567,10 @@
     {
       "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\uploads\\8448d2c1-8e2a-44d2-9ea6-6baf41789925_flat-design-household-renovation-professions-with-men_23-2148655570.jpg",
       "PackagePath": "staticwebassets\\uploads\\8448d2c1-8e2a-44d2-9ea6-6baf41789925_flat-design-household-renovation-professions-with-men_23-2148655570.jpg"
+    },
+    {
+      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\uploads\\85e3c7b9-571a-4bc2-be83-4fc9b8aff8be_young-people-doing-housework-living-room_52683-22049.jpg",
+      "PackagePath": "staticwebassets\\uploads\\85e3c7b9-571a-4bc2-be83-4fc9b8aff8be_young-people-doing-housework-living-room_52683-22049.jpg"
     },
     {
       "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\uploads\\894c9d12-bb39-487b-a1a4-f9e0818e9f3d_flat-design-household-renovation-professions-with-men_23-2148655570.jpg",
@@ -6957,6 +6601,10 @@
       "PackagePath": "staticwebassets\\uploads\\92abebb4-bf06-4cae-82b2-77d6a769ff80_Black and White Simple Circle Brush Name Logo.jpg"
     },
     {
+      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\uploads\\9516cacd-b2b4-4a8a-b992-fc00b76c5d7e_flat-design-household-renovation-professions-with-men_23-2148655570.jpg",
+      "PackagePath": "staticwebassets\\uploads\\9516cacd-b2b4-4a8a-b992-fc00b76c5d7e_flat-design-household-renovation-professions-with-men_23-2148655570.jpg"
+    },
+    {
       "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\uploads\\95bb9fe5-ac3c-4870-9ff4-4bdd8a6ba7d8587118_352.jpg",
       "PackagePath": "staticwebassets\\uploads\\95bb9fe5-ac3c-4870-9ff4-4bdd8a6ba7d8587118_352.jpg"
     },
@@ -6973,8 +6621,16 @@
       "PackagePath": "staticwebassets\\uploads\\96543da5-f3a2-493a-828a-74b3d904c702_young-people-doing-housework-living-room_52683-22049.jpg"
     },
     {
+      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\uploads\\9a2b0324-a4b3-4057-85cd-e120208fdac9_5918083871960844270.jpg",
+      "PackagePath": "staticwebassets\\uploads\\9a2b0324-a4b3-4057-85cd-e120208fdac9_5918083871960844270.jpg"
+    },
+    {
       "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\uploads\\9b5062ad-b9c1-453f-b51b-510a0b698308587118_352.jpg",
       "PackagePath": "staticwebassets\\uploads\\9b5062ad-b9c1-453f-b51b-510a0b698308587118_352.jpg"
+    },
+    {
+      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\uploads\\a0eb2ace-97ae-4c54-b2d9-12ca82ef11fb_5918083871960844273.jpg",
+      "PackagePath": "staticwebassets\\uploads\\a0eb2ace-97ae-4c54-b2d9-12ca82ef11fb_5918083871960844273.jpg"
     },
     {
       "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\uploads\\a419a9df-3318-4aa3-8a49-8c5fa7be0e3f_flat-design-household-renovation-professions-with-men_23-2148655570.jpg",
@@ -7005,6 +6661,10 @@
       "PackagePath": "staticwebassets\\uploads\\adc8c3ab-e2c0-4c8d-bd13-19e402f03007_young-people-doing-housework-living-room_52683-22049.jpg"
     },
     {
+      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\uploads\\ae399668-45a1-47cb-ba03-6bdeb6415cff_5918083871960844276.jpg",
+      "PackagePath": "staticwebassets\\uploads\\ae399668-45a1-47cb-ba03-6bdeb6415cff_5918083871960844276.jpg"
+    },
+    {
       "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\uploads\\b0eac1d0-0cd1-4059-9f08-dbc0a6b1ac5c_young-people-doing-housework-living-room_52683-22049.jpg",
       "PackagePath": "staticwebassets\\uploads\\b0eac1d0-0cd1-4059-9f08-dbc0a6b1ac5c_young-people-doing-housework-living-room_52683-22049.jpg"
     },
@@ -7029,6 +6689,10 @@
       "PackagePath": "staticwebassets\\uploads\\bafded17-562d-41e0-bd22-80b36b68a6da_flat-design-household-renovation-professions-with-men_23-2148655570.jpg"
     },
     {
+      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\uploads\\bb88a01b-d0b9-47a0-bfe4-ba5d1c9f3232_5918083871960844270.jpg",
+      "PackagePath": "staticwebassets\\uploads\\bb88a01b-d0b9-47a0-bfe4-ba5d1c9f3232_5918083871960844270.jpg"
+    },
+    {
       "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\uploads\\bbc6ef3e-275d-4ea8-9191-aa468c9ab662_cleaning-service-big-set-isolated-icons-with-detergents-mops-brooms-female-character-worker-vector-illustration_1284-78507.jpg",
       "PackagePath": "staticwebassets\\uploads\\bbc6ef3e-275d-4ea8-9191-aa468c9ab662_cleaning-service-big-set-isolated-icons-with-detergents-mops-brooms-female-character-worker-vector-illustration_1284-78507.jpg"
     },
@@ -7041,8 +6705,16 @@
       "PackagePath": "staticwebassets\\uploads\\bee37f05-5326-48aa-a748-a06ef9bd073c_Black and White Simple Circle Brush Name Logo.jpg"
     },
     {
+      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\uploads\\c0a4f35d-59c1-4cd2-8075-bb3a4f957d2b_cleaning-service-big-set-isolated-icons-with-detergents-mops-brooms-female-character-worker-vector-illustration_1284-78507.jpg",
+      "PackagePath": "staticwebassets\\uploads\\c0a4f35d-59c1-4cd2-8075-bb3a4f957d2b_cleaning-service-big-set-isolated-icons-with-detergents-mops-brooms-female-character-worker-vector-illustration_1284-78507.jpg"
+    },
+    {
       "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\uploads\\c121825c-f947-4e41-b27c-f968bfeef650_flat-design-household-renovation-professions-with-men_23-2148655570.jpg",
       "PackagePath": "staticwebassets\\uploads\\c121825c-f947-4e41-b27c-f968bfeef650_flat-design-household-renovation-professions-with-men_23-2148655570.jpg"
+    },
+    {
+      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\uploads\\c1604079-32fa-469f-8872-96af35bdf0af_5918083871960844277.jpg",
+      "PackagePath": "staticwebassets\\uploads\\c1604079-32fa-469f-8872-96af35bdf0af_5918083871960844277.jpg"
     },
     {
       "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\uploads\\c4455c64-77a0-4e83-b1f0-aed18707c311_flat-design-household-renovation-professions-with-men_23-2148655570.jpg",

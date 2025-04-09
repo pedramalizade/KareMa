@@ -24,6 +24,7 @@ namespace KareMa.Domain.Core.DTOs.OrderDTO
         public int ServiceId { get; set; }
         [DisplayName("عکس")]
         public string? Image { get; set; }
+        public DateTime RequesteForTime { get; set; }
     }
 
 }

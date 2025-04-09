@@ -1,4 +1,5 @@
 ﻿@page
+@using Framework
 @using KareMa.Domain.Core.Enums
 @model KareMa.EndPoint.RazorPages.Areas.ExpertArea.Pages.OpenOrdersModel
 @{
@@ -39,6 +40,8 @@
                                         <div class="dsd-single-lst-caption">
                                             <div class="dsd-single-lst-title"><h5>@order.Title</h5></div>
                                             <span class="agd-location">@order.Description</span>
+                                            <p class="card-text">تاریخ: @order.RequesteForTime.ToPersianString()</p>
+
                                             <div class="dsd-single-lst-footer">
                                                 <a asp-page="AddSuggestion" asp-route-id="@order.Id" class="btn btn-success">
                                                     ثبت پیشنهاد

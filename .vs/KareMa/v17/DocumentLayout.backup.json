@@ -1,7 +1,108 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\asus\\source\\repos\\KareMa\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{C8765232-F67C-4145-A26E-3F6E118CB187}|KareMa.Infra.DataAccess.Repo.Ef\\KareMa.Infra.DataAccess.Repo.Ef.csproj|c:\\users\\asus\\source\\repos\\karema\\karema.infra.dataaccess.repo.ef\\repository\\order\\orderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C8765232-F67C-4145-A26E-3F6E118CB187}|KareMa.Infra.DataAccess.Repo.Ef\\KareMa.Infra.DataAccess.Repo.Ef.csproj|solutionrelative:karema.infra.dataaccess.repo.ef\\repository\\order\\orderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4EE36174-1C5E-4741-A927-6014CF4BED25}|KareMa.Domain.Service\\KareMa.Domain.Service.csproj|c:\\users\\asus\\source\\repos\\karema\\karema.domain.service\\order\\orderservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4EE36174-1C5E-4741-A927-6014CF4BED25}|KareMa.Domain.Service\\KareMa.Domain.Service.csproj|solutionrelative:karema.domain.service\\order\\orderservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D2D5D86B-3284-41F0-BF74-988A0A87A9BF}|KareMa.Domain.AppService\\KareMa.Domain.AppService.csproj|c:\\users\\asus\\source\\repos\\karema\\karema.domain.appservice\\order\\orderappservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D2D5D86B-3284-41F0-BF74-988A0A87A9BF}|KareMa.Domain.AppService\\KareMa.Domain.AppService.csproj|solutionrelative:karema.domain.appservice\\order\\orderappservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{974ADAC2-0BDE-47AE-B308-D443319F7950}|KareMa.EndPoint.WebApi\\KareMa.EndPoint.WebApi.csproj|c:\\users\\asus\\source\\repos\\karema\\karema.endpoint.webapi\\controllers\\karemacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{974ADAC2-0BDE-47AE-B308-D443319F7950}|KareMa.EndPoint.WebApi\\KareMa.EndPoint.WebApi.csproj|solutionrelative:karema.endpoint.webapi\\controllers\\karemacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C8765232-F67C-4145-A26E-3F6E118CB187}|KareMa.Infra.DataAccess.Repo.Ef\\KareMa.Infra.DataAccess.Repo.Ef.csproj|c:\\users\\asus\\source\\repos\\karema\\karema.infra.dataaccess.repo.ef\\repository\\category\\subcategoryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C8765232-F67C-4145-A26E-3F6E118CB187}|KareMa.Infra.DataAccess.Repo.Ef\\KareMa.Infra.DataAccess.Repo.Ef.csproj|solutionrelative:karema.infra.dataaccess.repo.ef\\repository\\category\\subcategoryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55BDA9CF-2CB4-4D0B-878C-75F9D515D62C}|KareMa.EndPoint.RazorPages\\KareMa.EndPoint.RazorPages.csproj|c:\\users\\asus\\source\\repos\\karema\\karema.endpoint.razorpages\\areas\\adminarea\\pages\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{55BDA9CF-2CB4-4D0B-878C-75F9D515D62C}|KareMa.EndPoint.RazorPages\\KareMa.EndPoint.RazorPages.csproj|solutionrelative:karema.endpoint.razorpages\\areas\\adminarea\\pages\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55BDA9CF-2CB4-4D0B-878C-75F9D515D62C}|KareMa.EndPoint.RazorPages\\KareMa.EndPoint.RazorPages.csproj|c:\\users\\asus\\source\\repos\\karema\\karema.endpoint.razorpages\\areas\\adminarea\\pages\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55BDA9CF-2CB4-4D0B-878C-75F9D515D62C}|KareMa.EndPoint.RazorPages\\KareMa.EndPoint.RazorPages.csproj|solutionrelative:karema.endpoint.razorpages\\areas\\adminarea\\pages\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D2D5D86B-3284-41F0-BF74-988A0A87A9BF}|KareMa.Domain.AppService\\KareMa.Domain.AppService.csproj|c:\\users\\asus\\source\\repos\\karema\\karema.domain.appservice\\admin\\adminappservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D2D5D86B-3284-41F0-BF74-988A0A87A9BF}|KareMa.Domain.AppService\\KareMa.Domain.AppService.csproj|solutionrelative:karema.domain.appservice\\admin\\adminappservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B69DBD36-6038-4A9A-88CC-19278220C08F}|KareMa.Domain.Core\\KareMa.Domain.Core.csproj|c:\\users\\asus\\source\\repos\\karema\\karema.domain.core\\contracts\\appservice\\admin\\iadminappservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B69DBD36-6038-4A9A-88CC-19278220C08F}|KareMa.Domain.Core\\KareMa.Domain.Core.csproj|solutionrelative:karema.domain.core\\contracts\\appservice\\admin\\iadminappservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4EE36174-1C5E-4741-A927-6014CF4BED25}|KareMa.Domain.Service\\KareMa.Domain.Service.csproj|c:\\users\\asus\\source\\repos\\karema\\karema.domain.service\\admin\\adminservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4EE36174-1C5E-4741-A927-6014CF4BED25}|KareMa.Domain.Service\\KareMa.Domain.Service.csproj|solutionrelative:karema.domain.service\\admin\\adminservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B69DBD36-6038-4A9A-88CC-19278220C08F}|KareMa.Domain.Core\\KareMa.Domain.Core.csproj|c:\\users\\asus\\source\\repos\\karema\\karema.domain.core\\contracts\\service\\admin\\iadminservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B69DBD36-6038-4A9A-88CC-19278220C08F}|KareMa.Domain.Core\\KareMa.Domain.Core.csproj|solutionrelative:karema.domain.core\\contracts\\service\\admin\\iadminservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C8765232-F67C-4145-A26E-3F6E118CB187}|KareMa.Infra.DataAccess.Repo.Ef\\KareMa.Infra.DataAccess.Repo.Ef.csproj|c:\\users\\asus\\source\\repos\\karema\\karema.infra.dataaccess.repo.ef\\repository\\admin\\adminrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C8765232-F67C-4145-A26E-3F6E118CB187}|KareMa.Infra.DataAccess.Repo.Ef\\KareMa.Infra.DataAccess.Repo.Ef.csproj|solutionrelative:karema.infra.dataaccess.repo.ef\\repository\\admin\\adminrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B69DBD36-6038-4A9A-88CC-19278220C08F}|KareMa.Domain.Core\\KareMa.Domain.Core.csproj|c:\\users\\asus\\source\\repos\\karema\\karema.domain.core\\contracts\\repositories\\admin\\iadminrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B69DBD36-6038-4A9A-88CC-19278220C08F}|KareMa.Domain.Core\\KareMa.Domain.Core.csproj|solutionrelative:karema.domain.core\\contracts\\repositories\\admin\\iadminrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55BDA9CF-2CB4-4D0B-878C-75F9D515D62C}|KareMa.EndPoint.RazorPages\\KareMa.EndPoint.RazorPages.csproj|c:\\users\\asus\\source\\repos\\karema\\karema.endpoint.razorpages\\areas\\adminarea\\pages\\shared\\_adminlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{55BDA9CF-2CB4-4D0B-878C-75F9D515D62C}|KareMa.EndPoint.RazorPages\\KareMa.EndPoint.RazorPages.csproj|solutionrelative:karema.endpoint.razorpages\\areas\\adminarea\\pages\\shared\\_adminlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55BDA9CF-2CB4-4D0B-878C-75F9D515D62C}|KareMa.EndPoint.RazorPages\\KareMa.EndPoint.RazorPages.csproj|c:\\users\\asus\\source\\repos\\karema\\karema.endpoint.razorpages\\areas\\adminarea\\pages\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{55BDA9CF-2CB4-4D0B-878C-75F9D515D62C}|KareMa.EndPoint.RazorPages\\KareMa.EndPoint.RazorPages.csproj|solutionrelative:karema.endpoint.razorpages\\areas\\adminarea\\pages\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55BDA9CF-2CB4-4D0B-878C-75F9D515D62C}|KareMa.EndPoint.RazorPages\\KareMa.EndPoint.RazorPages.csproj|c:\\users\\asus\\source\\repos\\karema\\karema.endpoint.razorpages\\areas\\adminarea\\pages\\shared\\_accountpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{55BDA9CF-2CB4-4D0B-878C-75F9D515D62C}|KareMa.EndPoint.RazorPages\\KareMa.EndPoint.RazorPages.csproj|solutionrelative:karema.endpoint.razorpages\\areas\\adminarea\\pages\\shared\\_accountpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55BDA9CF-2CB4-4D0B-878C-75F9D515D62C}|KareMa.EndPoint.RazorPages\\KareMa.EndPoint.RazorPages.csproj|c:\\users\\asus\\source\\repos\\karema\\karema.endpoint.razorpages\\areas\\adminarea\\pages\\profilesetting.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{55BDA9CF-2CB4-4D0B-878C-75F9D515D62C}|KareMa.EndPoint.RazorPages\\KareMa.EndPoint.RazorPages.csproj|solutionrelative:karema.endpoint.razorpages\\areas\\adminarea\\pages\\profilesetting.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55BDA9CF-2CB4-4D0B-878C-75F9D515D62C}|KareMa.EndPoint.RazorPages\\KareMa.EndPoint.RazorPages.csproj|c:\\users\\asus\\source\\repos\\karema\\karema.endpoint.razorpages\\areas\\adminarea\\pages\\order.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{55BDA9CF-2CB4-4D0B-878C-75F9D515D62C}|KareMa.EndPoint.RazorPages\\KareMa.EndPoint.RazorPages.csproj|solutionrelative:karema.endpoint.razorpages\\areas\\adminarea\\pages\\order.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55BDA9CF-2CB4-4D0B-878C-75F9D515D62C}|KareMa.EndPoint.RazorPages\\KareMa.EndPoint.RazorPages.csproj|c:\\users\\asus\\source\\repos\\karema\\karema.endpoint.razorpages\\pages\\addorder.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55BDA9CF-2CB4-4D0B-878C-75F9D515D62C}|KareMa.EndPoint.RazorPages\\KareMa.EndPoint.RazorPages.csproj|solutionrelative:karema.endpoint.razorpages\\pages\\addorder.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55BDA9CF-2CB4-4D0B-878C-75F9D515D62C}|KareMa.EndPoint.RazorPages\\KareMa.EndPoint.RazorPages.csproj|c:\\users\\asus\\source\\repos\\karema\\karema.endpoint.razorpages\\pages\\addorder.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{55BDA9CF-2CB4-4D0B-878C-75F9D515D62C}|KareMa.EndPoint.RazorPages\\KareMa.EndPoint.RazorPages.csproj|solutionrelative:karema.endpoint.razorpages\\pages\\addorder.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55BDA9CF-2CB4-4D0B-878C-75F9D515D62C}|KareMa.EndPoint.RazorPages\\KareMa.EndPoint.RazorPages.csproj|c:\\users\\asus\\source\\repos\\karema\\karema.endpoint.razorpages\\areas\\customerarea\\pages\\addorder.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55BDA9CF-2CB4-4D0B-878C-75F9D515D62C}|KareMa.EndPoint.RazorPages\\KareMa.EndPoint.RazorPages.csproj|solutionrelative:karema.endpoint.razorpages\\areas\\customerarea\\pages\\addorder.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55BDA9CF-2CB4-4D0B-878C-75F9D515D62C}|KareMa.EndPoint.RazorPages\\KareMa.EndPoint.RazorPages.csproj|c:\\users\\asus\\source\\repos\\karema\\karema.endpoint.razorpages\\areas\\customerarea\\pages\\addorder.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{55BDA9CF-2CB4-4D0B-878C-75F9D515D62C}|KareMa.EndPoint.RazorPages\\KareMa.EndPoint.RazorPages.csproj|solutionrelative:karema.endpoint.razorpages\\areas\\customerarea\\pages\\addorder.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55BDA9CF-2CB4-4D0B-878C-75F9D515D62C}|KareMa.EndPoint.RazorPages\\KareMa.EndPoint.RazorPages.csproj|c:\\users\\asus\\source\\repos\\karema\\karema.endpoint.razorpages\\areas\\expertarea\\pages\\expertsuggestions.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{55BDA9CF-2CB4-4D0B-878C-75F9D515D62C}|KareMa.EndPoint.RazorPages\\KareMa.EndPoint.RazorPages.csproj|solutionrelative:karema.endpoint.razorpages\\areas\\expertarea\\pages\\expertsuggestions.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55BDA9CF-2CB4-4D0B-878C-75F9D515D62C}|KareMa.EndPoint.RazorPages\\KareMa.EndPoint.RazorPages.csproj|c:\\users\\asus\\source\\repos\\karema\\karema.endpoint.razorpages\\areas\\expertarea\\pages\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{55BDA9CF-2CB4-4D0B-878C-75F9D515D62C}|KareMa.EndPoint.RazorPages\\KareMa.EndPoint.RazorPages.csproj|solutionrelative:karema.endpoint.razorpages\\areas\\expertarea\\pages\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55BDA9CF-2CB4-4D0B-878C-75F9D515D62C}|KareMa.EndPoint.RazorPages\\KareMa.EndPoint.RazorPages.csproj|c:\\users\\asus\\source\\repos\\karema\\karema.endpoint.razorpages\\areas\\expertarea\\pages\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{55BDA9CF-2CB4-4D0B-878C-75F9D515D62C}|KareMa.EndPoint.RazorPages\\KareMa.EndPoint.RazorPages.csproj|solutionrelative:karema.endpoint.razorpages\\areas\\expertarea\\pages\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,7 +110,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 747,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -22,6 +123,331 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "OrderRepository.cs",
+              "DocumentMoniker": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.Infra.DataAccess.Repo.Ef\\Repository\\Order\\OrderRepository.cs",
+              "RelativeDocumentMoniker": "KareMa.Infra.DataAccess.Repo.Ef\\Repository\\Order\\OrderRepository.cs",
+              "ToolTip": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.Infra.DataAccess.Repo.Ef\\Repository\\Order\\OrderRepository.cs",
+              "RelativeToolTip": "KareMa.Infra.DataAccess.Repo.Ef\\Repository\\Order\\OrderRepository.cs",
+              "ViewState": "AgIAACoAAAAAAAAAAAAAADUAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-09T18:40:46.576Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "SubCategoryRepository.cs",
+              "DocumentMoniker": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.Infra.DataAccess.Repo.Ef\\Repository\\Category\\SubCategoryRepository.cs",
+              "RelativeDocumentMoniker": "KareMa.Infra.DataAccess.Repo.Ef\\Repository\\Category\\SubCategoryRepository.cs",
+              "ToolTip": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.Infra.DataAccess.Repo.Ef\\Repository\\Category\\SubCategoryRepository.cs",
+              "RelativeToolTip": "KareMa.Infra.DataAccess.Repo.Ef\\Repository\\Category\\SubCategoryRepository.cs",
+              "ViewState": "AgIAADsAAAAAAAAAAAAAAEgAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-09T18:40:08.593Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "OrderAppServices.cs",
+              "DocumentMoniker": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.Domain.AppService\\Order\\OrderAppServices.cs",
+              "RelativeDocumentMoniker": "KareMa.Domain.AppService\\Order\\OrderAppServices.cs",
+              "ToolTip": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.Domain.AppService\\Order\\OrderAppServices.cs",
+              "RelativeToolTip": "KareMa.Domain.AppService\\Order\\OrderAppServices.cs",
+              "ViewState": "AgIAACwAAAAAAAAAAAAqwEAAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-09T18:25:57.18Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "OrderServices.cs",
+              "DocumentMoniker": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.Domain.Service\\Order\\OrderServices.cs",
+              "RelativeDocumentMoniker": "KareMa.Domain.Service\\Order\\OrderServices.cs",
+              "ToolTip": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.Domain.Service\\Order\\OrderServices.cs",
+              "RelativeToolTip": "KareMa.Domain.Service\\Order\\OrderServices.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAiwDIAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-09T18:25:50.513Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "KareMaController.cs",
+              "DocumentMoniker": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.WebApi\\Controllers\\KareMaController.cs",
+              "RelativeDocumentMoniker": "KareMa.EndPoint.WebApi\\Controllers\\KareMaController.cs",
+              "ToolTip": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.WebApi\\Controllers\\KareMaController.cs",
+              "RelativeToolTip": "KareMa.EndPoint.WebApi\\Controllers\\KareMaController.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAACcAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-09T18:17:11.152Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "IAdminAppServices.cs",
+              "DocumentMoniker": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.Domain.Core\\Contracts\\AppService\\Admin\\IAdminAppServices.cs",
+              "RelativeDocumentMoniker": "KareMa.Domain.Core\\Contracts\\AppService\\Admin\\IAdminAppServices.cs",
+              "ToolTip": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.Domain.Core\\Contracts\\AppService\\Admin\\IAdminAppServices.cs",
+              "RelativeToolTip": "KareMa.Domain.Core\\Contracts\\AppService\\Admin\\IAdminAppServices.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-09T18:04:42.617Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "AdminServices.cs",
+              "DocumentMoniker": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.Domain.Service\\Admin\\AdminServices.cs",
+              "RelativeDocumentMoniker": "KareMa.Domain.Service\\Admin\\AdminServices.cs",
+              "ToolTip": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.Domain.Service\\Admin\\AdminServices.cs",
+              "RelativeToolTip": "KareMa.Domain.Service\\Admin\\AdminServices.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAowCMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-09T18:04:15.578Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "IAdminServices.cs",
+              "DocumentMoniker": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.Domain.Core\\Contracts\\Service\\Admin\\IAdminServices.cs",
+              "RelativeDocumentMoniker": "KareMa.Domain.Core\\Contracts\\Service\\Admin\\IAdminServices.cs",
+              "ToolTip": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.Domain.Core\\Contracts\\Service\\Admin\\IAdminServices.cs",
+              "RelativeToolTip": "KareMa.Domain.Core\\Contracts\\Service\\Admin\\IAdminServices.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-09T18:04:07.493Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "AdminRepository.cs",
+              "DocumentMoniker": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.Infra.DataAccess.Repo.Ef\\Repository\\Admin\\AdminRepository.cs",
+              "RelativeDocumentMoniker": "KareMa.Infra.DataAccess.Repo.Ef\\Repository\\Admin\\AdminRepository.cs",
+              "ToolTip": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.Infra.DataAccess.Repo.Ef\\Repository\\Admin\\AdminRepository.cs",
+              "RelativeToolTip": "KareMa.Infra.DataAccess.Repo.Ef\\Repository\\Admin\\AdminRepository.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAACUAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-09T18:02:51.224Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "IAdminRepository.cs",
+              "DocumentMoniker": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.Domain.Core\\Contracts\\Repositories\\Admin\\IAdminRepository.cs",
+              "RelativeDocumentMoniker": "KareMa.Domain.Core\\Contracts\\Repositories\\Admin\\IAdminRepository.cs",
+              "ToolTip": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.Domain.Core\\Contracts\\Repositories\\Admin\\IAdminRepository.cs",
+              "RelativeToolTip": "KareMa.Domain.Core\\Contracts\\Repositories\\Admin\\IAdminRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-09T18:02:31.979Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "AdminAppServices.cs",
+              "DocumentMoniker": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.Domain.AppService\\Admin\\AdminAppServices.cs",
+              "RelativeDocumentMoniker": "KareMa.Domain.AppService\\Admin\\AdminAppServices.cs",
+              "ToolTip": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.Domain.AppService\\Admin\\AdminAppServices.cs",
+              "RelativeToolTip": "KareMa.Domain.AppService\\Admin\\AdminAppServices.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAUwCYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-09T18:00:52.61Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Index.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\Areas\\AdminArea\\Pages\\Index.cshtml.cs",
+              "RelativeDocumentMoniker": "KareMa.EndPoint.RazorPages\\Areas\\AdminArea\\Pages\\Index.cshtml.cs",
+              "ToolTip": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\Areas\\AdminArea\\Pages\\Index.cshtml.cs",
+              "RelativeToolTip": "KareMa.EndPoint.RazorPages\\Areas\\AdminArea\\Pages\\Index.cshtml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-09T17:54:02.579Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\Areas\\AdminArea\\Pages\\Index.cshtml",
+              "RelativeDocumentMoniker": "KareMa.EndPoint.RazorPages\\Areas\\AdminArea\\Pages\\Index.cshtml",
+              "ToolTip": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\Areas\\AdminArea\\Pages\\Index.cshtml",
+              "RelativeToolTip": "KareMa.EndPoint.RazorPages\\Areas\\AdminArea\\Pages\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-09T17:53:43.262Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "_ValidationScriptsPartial.cshtml",
+              "DocumentMoniker": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\Areas\\AdminArea\\Pages\\Shared\\_ValidationScriptsPartial.cshtml",
+              "RelativeDocumentMoniker": "KareMa.EndPoint.RazorPages\\Areas\\AdminArea\\Pages\\Shared\\_ValidationScriptsPartial.cshtml",
+              "ToolTip": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\Areas\\AdminArea\\Pages\\Shared\\_ValidationScriptsPartial.cshtml",
+              "RelativeToolTip": "KareMa.EndPoint.RazorPages\\Areas\\AdminArea\\Pages\\Shared\\_ValidationScriptsPartial.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-09T17:51:57.307Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "_AdminLayout.cshtml",
+              "DocumentMoniker": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\Areas\\AdminArea\\Pages\\Shared\\_AdminLayout.cshtml",
+              "RelativeDocumentMoniker": "KareMa.EndPoint.RazorPages\\Areas\\AdminArea\\Pages\\Shared\\_AdminLayout.cshtml",
+              "ToolTip": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\Areas\\AdminArea\\Pages\\Shared\\_AdminLayout.cshtml",
+              "RelativeToolTip": "KareMa.EndPoint.RazorPages\\Areas\\AdminArea\\Pages\\Shared\\_AdminLayout.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-09T17:51:55.415Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "_AccountPartial.cshtml",
+              "DocumentMoniker": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\Areas\\AdminArea\\Pages\\Shared\\_AccountPartial.cshtml",
+              "RelativeDocumentMoniker": "KareMa.EndPoint.RazorPages\\Areas\\AdminArea\\Pages\\Shared\\_AccountPartial.cshtml",
+              "ToolTip": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\Areas\\AdminArea\\Pages\\Shared\\_AccountPartial.cshtml",
+              "RelativeToolTip": "KareMa.EndPoint.RazorPages\\Areas\\AdminArea\\Pages\\Shared\\_AccountPartial.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-09T17:51:46.205Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "ProfileSetting.cshtml",
+              "DocumentMoniker": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\Areas\\AdminArea\\Pages\\ProfileSetting.cshtml",
+              "RelativeDocumentMoniker": "KareMa.EndPoint.RazorPages\\Areas\\AdminArea\\Pages\\ProfileSetting.cshtml",
+              "ToolTip": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\Areas\\AdminArea\\Pages\\ProfileSetting.cshtml",
+              "RelativeToolTip": "KareMa.EndPoint.RazorPages\\Areas\\AdminArea\\Pages\\ProfileSetting.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-09T17:51:29.063Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Order.cshtml",
+              "DocumentMoniker": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\Areas\\AdminArea\\Pages\\Order.cshtml",
+              "RelativeDocumentMoniker": "KareMa.EndPoint.RazorPages\\Areas\\AdminArea\\Pages\\Order.cshtml",
+              "ToolTip": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\Areas\\AdminArea\\Pages\\Order.cshtml",
+              "RelativeToolTip": "KareMa.EndPoint.RazorPages\\Areas\\AdminArea\\Pages\\Order.cshtml",
+              "ViewState": "AgIAABEAAAAAAAAAAAAAAB0AAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-09T17:47:52.806Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "AddOrder.cshtml",
+              "DocumentMoniker": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\Areas\\CustomerArea\\Pages\\AddOrder.cshtml",
+              "RelativeDocumentMoniker": "KareMa.EndPoint.RazorPages\\Areas\\CustomerArea\\Pages\\AddOrder.cshtml",
+              "ToolTip": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\Areas\\CustomerArea\\Pages\\AddOrder.cshtml",
+              "RelativeToolTip": "KareMa.EndPoint.RazorPages\\Areas\\CustomerArea\\Pages\\AddOrder.cshtml",
+              "ViewState": "AgIAACQAAAAAAAAAAAAAADgAAABjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-09T17:45:14.562Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "AddOrder.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\Areas\\CustomerArea\\Pages\\AddOrder.cshtml.cs",
+              "RelativeDocumentMoniker": "KareMa.EndPoint.RazorPages\\Areas\\CustomerArea\\Pages\\AddOrder.cshtml.cs",
+              "ToolTip": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\Areas\\CustomerArea\\Pages\\AddOrder.cshtml.cs",
+              "RelativeToolTip": "KareMa.EndPoint.RazorPages\\Areas\\CustomerArea\\Pages\\AddOrder.cshtml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-09T17:43:15.902Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "AddOrder.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\Pages\\AddOrder.cshtml.cs",
+              "RelativeDocumentMoniker": "KareMa.EndPoint.RazorPages\\Pages\\AddOrder.cshtml.cs",
+              "ToolTip": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\Pages\\AddOrder.cshtml.cs",
+              "RelativeToolTip": "KareMa.EndPoint.RazorPages\\Pages\\AddOrder.cshtml.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAAACMAAACMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-09T17:28:07.566Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "AddOrder.cshtml",
+              "DocumentMoniker": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\Pages\\AddOrder.cshtml",
+              "RelativeDocumentMoniker": "KareMa.EndPoint.RazorPages\\Pages\\AddOrder.cshtml",
+              "ToolTip": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\Pages\\AddOrder.cshtml",
+              "RelativeToolTip": "KareMa.EndPoint.RazorPages\\Pages\\AddOrder.cshtml",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAADgAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-09T17:28:03.027Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "ExpertSuggestions.cshtml",
+              "DocumentMoniker": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\Areas\\ExpertArea\\Pages\\ExpertSuggestions.cshtml",
+              "RelativeDocumentMoniker": "KareMa.EndPoint.RazorPages\\Areas\\ExpertArea\\Pages\\ExpertSuggestions.cshtml",
+              "ToolTip": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\Areas\\ExpertArea\\Pages\\ExpertSuggestions.cshtml",
+              "RelativeToolTip": "KareMa.EndPoint.RazorPages\\Areas\\ExpertArea\\Pages\\ExpertSuggestions.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAABGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-09T16:56:26.655Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\Areas\\ExpertArea\\Pages\\Index.cshtml",
+              "RelativeDocumentMoniker": "KareMa.EndPoint.RazorPages\\Areas\\ExpertArea\\Pages\\Index.cshtml",
+              "ToolTip": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\Areas\\ExpertArea\\Pages\\Index.cshtml",
+              "RelativeToolTip": "KareMa.EndPoint.RazorPages\\Areas\\ExpertArea\\Pages\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-09T16:56:25.412Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "_ViewImports.cshtml",
+              "DocumentMoniker": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\Areas\\ExpertArea\\Pages\\_ViewImports.cshtml",
+              "RelativeDocumentMoniker": "KareMa.EndPoint.RazorPages\\Areas\\ExpertArea\\Pages\\_ViewImports.cshtml",
+              "ToolTip": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\Areas\\ExpertArea\\Pages\\_ViewImports.cshtml",
+              "RelativeToolTip": "KareMa.EndPoint.RazorPages\\Areas\\ExpertArea\\Pages\\_ViewImports.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-09T16:56:21.877Z",
+              "EditorCaption": ""
             }
           ]
         }

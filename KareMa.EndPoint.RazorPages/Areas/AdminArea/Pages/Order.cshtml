@@ -16,8 +16,8 @@
                     <th>عنوان</th>
                     <th>توضیحات</th>
                     <th>نام مشتری</th>
-                    <th>نام متخصص تایید شده</th>
-                    <th>تعداد پیشنهادات</th>
+                    @* <th>نام متخصص تایید شده</th> *@
+                    <th>وضعیت نهایی</th>
                     <th>وضعیت</th>
                     <th>عملیات</th>
                 </tr>
@@ -35,22 +35,22 @@
                         <td>@order.Title</td>
                         <td>@order.Description</td>
                         <td>@order.Customer.FirstName @order.Customer.LastName</td>
-                        @if (order.Expert != null)
-                        {
-                            <td>@order.Expert.FirstName @order.Expert.LastName</td>
-                        }
-                        else
-                        {
-                            <td>هنوز متخصصی تایید نشده</td>
-                        }
-                        @if (@order.Suggestions.Count != null)
-                        {
-                            <td>@order.Suggestions.Count</td>
-                        }
-                        else
-                        {
-                            <td>0</td>
-                        }
+                        @* @if (order.Expert != null) *@
+                        @* { *@
+                        @*     <td>@order.Expert.FirstName @order.Expert.LastName</td> *@
+                        @* } *@
+                        @* else *@
+                        @* { *@
+                        @*     <td>هنوز متخصصی تایید نشده</td> *@
+                        @* } *@
+                        @* @if (@order.Suggestions.Count != null) *@
+                        @* { *@
+                        @*     <td>@order.Suggestions.Count</td> *@
+                        @* } *@
+                        @* else *@
+                        @* { *@
+                        @*     <td>0</td> *@
+                        @* } *@
                         <td>
                             @order.Status
 
