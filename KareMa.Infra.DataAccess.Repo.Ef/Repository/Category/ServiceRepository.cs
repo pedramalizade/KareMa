@@ -1,5 +1,4 @@
 ﻿using KareMa.Domain.Core.Contracts.Repositories;
-using KareMa.Domain.Core.Contracts.Repositories.Category;
 using KareMa.Domain.Core.DTOs.ServiceDTO;
 using KareMa.Domain.Core.Entities;
 using KareMa.Infra.SqlServer.Common;
@@ -7,12 +6,7 @@ using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Dapper;
-using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace KareMa.Infra.DataAccess.Repo.Ef.Repository
 {
@@ -110,22 +104,7 @@ namespace KareMa.Infra.DataAccess.Repo.Ef.Repository
                 return services.AsList();
             }
         }
-        //public async Task<List<GetServiceDto>> GetAll(CancellationToken cancellationToken)
-        //{
-        //    var services = await _context.Services.AsNoTracking()
-        //          .Select(s => new GetServiceDto
-        //          {
-        //              Id = s.Id,
-        //              Name = s.Name,
-        //              IsDeleted = s.IsDeleted,
-        //              Price = s.Price,
-        //              SubCategoryId = s.SubCategoryId,
-        //              SubCategory = s.SubCategory,
-        //              Image = s.Image,
-        //          })
-        //          .ToListAsync(cancellationToken);
-        //    return services;
-        //}
+
         public async Task<List<GetByCategorySubIdDto>> GetAllBySubCategoryId(int id, CancellationToken cancellationToken)
         {
             return await _context.Services.Where(x => x.SubCategoryId == id).AsNoTracking()

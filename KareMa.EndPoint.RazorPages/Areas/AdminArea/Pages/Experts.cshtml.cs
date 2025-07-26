@@ -1,6 +1,4 @@
 ﻿using KareMa.Domain.Core.Contracts.AppService;
-using KareMa.Domain.Core.DTOs.CustomerDTO;
-using KareMa.Domain.Core.DTOs.Expert;
 using KareMa.Domain.Core.Entities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;

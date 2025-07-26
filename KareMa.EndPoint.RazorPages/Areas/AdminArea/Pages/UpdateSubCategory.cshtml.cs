@@ -1,7 +1,6 @@
 using KareMa.Domain.Core.Contracts.AppService;
 using KareMa.Domain.Core.DTOs.CategoryDTO;
 using KareMa.Domain.Core.DTOs.SubCategoryDTO;
-using KareMa.Domain.Core.Entities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 

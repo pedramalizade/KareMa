@@ -8,12 +8,7 @@ using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using Dapper;
-using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace KareMa.Infra.DataAccess.Repo.Ef.Repository
 {
@@ -44,30 +39,6 @@ namespace KareMa.Infra.DataAccess.Repo.Ef.Repository
             await _context.SaveChangesAsync(cancellationToken);
             _memoryCache.Remove("Categories");
             return true;
-
-            //if (categoryCreateDto == null || string.IsNullOrEmpty(categoryCreateDto.Name))
-            //{
-            //    _logger.LogError("Invalid category data.");
-            //    return false;
-            //}
-
-            //var newModel = new Domain.Core.Entities.Category()
-            //{
-            //    Name = categoryCreateDto.Name,
-            //    Image = string.IsNullOrEmpty(categoryCreateDto.Image) ? "default-image.jpg" : categoryCreateDto.Image,
-            //};
-
-            //await _context.Categories.AddAsync(newModel, cancellationToken);
-            //await _context.SaveChangesAsync(cancellationToken);
-
-            //var exists = await _context.Categories.AnyAsync(c => c.Name == categoryCreateDto.Name, cancellationToken);
-            //if (!exists)
-            //{
-            //    _logger.LogError("Category was not saved to database.");
-            //    return false;
-            //}
-
-            //return true;
         }
 
         public async Task<List<CategoryNameDto>> GetCategorisName(CancellationToken cancellationToken)
@@ -122,27 +93,6 @@ namespace KareMa.Infra.DataAccess.Repo.Ef.Repository
             _memoryCache.Remove("Categories");
             return true;
         }
-
-        //public async Task<List<GetCategoryDto>> GetAll(CancellationToken cancellationToken)
-        //{
-        //    Console.WriteLine("CategoryAppServices.GetAll called");
-        //    var cacheKey = "Categories";
-        //    if (!_memoryCache.TryGetValue(cacheKey, out List<GetCategoryDto> categories))
-        //    {
-        //        categories = await _context.Categories
-        //            .Where(c => !c.IsDeleted)
-        //            .Select(c => new GetCategoryDto
-        //            {
-        //                Id = c.Id,
-        //                Name = c.Name,
-        //                Image = c.Image,
-        //                IsDeleted = c.IsDeleted
-        //            })
-        //            .ToListAsync(cancellationToken);
-        //        _memoryCache.Set(cacheKey, categories, TimeSpan.FromMinutes(10)); 
-        //    }
-        //    return categories;
-        //}
         public async Task<List<GetCategoryDto>> GetAll(CancellationToken cancellationToken)
         {
             var cacheKey = "Categories";

@@ -2,7 +2,6 @@
 using KareMa.Domain.Core.Contracts.Service;
 using KareMa.Domain.Core.DTOs.CategoryDTO;
 using KareMa.Domain.Core.Entities;
-using KareMa.Infra.DataAccess.Repo.Ef.Repository;
 
 namespace KareMa.Domain.Service
 {

@@ -20,23 +20,5 @@ public class AddressConfiguration : IEntityTypeConfiguration<Address>
         builder.HasOne(c => c.City)
             .WithMany(c => c.Address)
             .OnDelete(DeleteBehavior.NoAction);
-
-        //    builder.HasOne(e => e.Expert)
-        //.WithOne(e => e.Address)
-        //.OnDelete(DeleteBehavior.NoAction);
-
-
-        //builder.HasData(
-        //    new Address
-        //    {
-        //        Id = 1,
-        //        CustomerId = 1,
-        //        CityId = 4,
-        //        Area = "منطقه 7",
-        //        PostalCode = "174735364",
-        //        CreatedAt = new DateTime(2024, 5, 3),
-        //        IsDeleted = false
-        //    }
-        //);
     }
 }

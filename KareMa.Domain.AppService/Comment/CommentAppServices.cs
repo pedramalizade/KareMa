@@ -3,11 +3,6 @@ using KareMa.Domain.Core.Contracts.Service;
 using KareMa.Domain.Core.DTOs.CommentDTO;
 using KareMa.Domain.Core.Entities;
 using KareMa.Domain.Core.Entities.Configs;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace KareMa.Domain.AppService
 {

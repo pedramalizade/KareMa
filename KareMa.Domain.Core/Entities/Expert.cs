@@ -1,14 +1,6 @@
 ﻿using KareMa.Domain.Core.Enums;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.ComponentModel.DataAnnotations.Schema;
-using static System.Net.Mime.MediaTypeNames;
-using System.Security.Cryptography;
 
 namespace KareMa.Domain.Core.Entities
 {

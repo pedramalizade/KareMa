@@ -6,12 +6,7 @@ using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Dapper;
-using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace KareMa.Infra.DataAccess.Repo.Ef.Repository
 {
@@ -111,33 +106,6 @@ ORDER BY sc.Id, c.Id, s.Id";
                 return subCategories;
             }
         }
-        //public async Task<List<SubCategory>> GetAll(CancellationToken cancellationToken)
-        //{
-        //    return await _context.SubCategories.AsNoTracking().Where(c => c.IsDeleted == false)
-        //         .Select(s => new SubCategory()
-        //         {
-        //             Id = s.Id,
-        //             Name = s.Name,
-        //             Image = s.Image,
-        //             CreatedAt = s.CreatedAt,
-        //             IsDeleted = s.IsDeleted,
-        //             Category = s.Category,
-        //             CategoryId = s.CategoryId,
-        //             Services = s.Services.Select(x => new Service()
-        //             {
-        //                 Id = x.Id,
-        //                 Experts = x.Experts,
-        //                 Price = x.Price,
-        //                 Name = x.Name,
-        //                 CreatedAt = x.CreatedAt,
-        //                 IsDeleted = x.IsDeleted,
-        //                 Orders = x.Orders,
-        //                 SubCategory = x.SubCategory,
-        //                 SubCategoryId = x.SubCategoryId
-        //             }).ToList()
-        //         })
-        //         .ToListAsync(cancellationToken);
-        //}
 
         public async Task<SubCategory> GetById(int SubCategoryId, CancellationToken cancellationToken)
        => await FindServiceSubCategory(SubCategoryId, cancellationToken);
@@ -197,8 +165,6 @@ ORDER BY sc.Id, c.Id, s.Id";
 
             targetModel.Name = subCategoryUpdateDto.CategoryName;
             targetModel.Image = subCategoryUpdateDto.Image;
-            //targetModel.Services = subCategoryUpdateDto.Services;
-            //targetModel.Category = subCategoryUpdateDto.Category;
 
             await _context.SaveChangesAsync(cancellationToken);
 

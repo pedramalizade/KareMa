@@ -1,16 +1,9 @@
 ﻿using KareMa.Domain.Core.Contracts.Repositories;
-using KareMa.Domain.Core.DTOs.CustomerDTO;
 using KareMa.Domain.Core.DTOs.Expert;
-using KareMa.Domain.Core.DTOs.OrderDTO;
 using KareMa.Domain.Core.Entities;
 using KareMa.Domain.Core.Enums;
 using KareMa.Infra.SqlServer.Common;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace KareMa.Infra.DataAccess.Repo.Ef.Repository
 {

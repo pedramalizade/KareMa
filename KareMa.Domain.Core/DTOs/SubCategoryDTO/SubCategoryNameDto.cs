@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace KareMa.Domain.Core.DTOs.SubCategoryDTO
+﻿namespace KareMa.Domain.Core.DTOs.SubCategoryDTO
 {
     public class SubCategoryNameDto
     {

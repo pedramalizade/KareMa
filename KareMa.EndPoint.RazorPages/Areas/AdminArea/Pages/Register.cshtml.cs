@@ -1,9 +1,6 @@
-﻿using KareMa.Domain.Core.Contracts.AppService.Account;
-using KareMa.Domain.Core.DTOs.AccountDto;
-using KareMa.Domain.Core.Entities;
+﻿using KareMa.Domain.Core.Entities;
 using KareMa.Domain.Core.Enums;
 using KareMa.Infra.SqlServer.Common;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;

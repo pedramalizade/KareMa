@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace KareMa.Domain.Core.Enums
 {
@@ -19,14 +14,5 @@ namespace KareMa.Domain.Core.Enums
         NotConfirmed,
         [Display(Name = "انجام شد")]
         Done 
-
-        //[Display(Name = "تایید نشد")]
-        //NotConfirmed,
-        //[Display(Name = "در انتظار پرداخت")]
-        //AwaitingPayment,
-        //[Display(Name = "پرداخت شد")]
-        //Paied,
-        //[Display(Name = "لغو شد")]
-        //Canceled
     }
 }

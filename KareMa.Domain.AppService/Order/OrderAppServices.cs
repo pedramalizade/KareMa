@@ -4,13 +4,7 @@ using KareMa.Domain.Core.Contracts.Service.BaseService;
 using KareMa.Domain.Core.DTOs.OrderDTO;
 using KareMa.Domain.Core.Entities;
 using KareMa.Domain.Core.Enums;
-using KareMa.Domain.Service;
 using Microsoft.AspNetCore.Http;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace KareMa.Domain.AppService
 {

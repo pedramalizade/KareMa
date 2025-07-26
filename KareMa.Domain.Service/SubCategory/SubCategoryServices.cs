@@ -2,11 +2,6 @@
 using KareMa.Domain.Core.Contracts.Service;
 using KareMa.Domain.Core.DTOs.SubCategoryDTO;
 using KareMa.Domain.Core.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace KareMa.Domain.Service
 {

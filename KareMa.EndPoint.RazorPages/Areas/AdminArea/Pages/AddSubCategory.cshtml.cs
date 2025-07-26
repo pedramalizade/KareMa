@@ -1,5 +1,4 @@
-﻿using KareMa.Domain.AppService;
-using KareMa.Domain.Core.Contracts.AppService;
+﻿using KareMa.Domain.Core.Contracts.AppService;
 using KareMa.Domain.Core.DTOs.CategoryDTO;
 using KareMa.Domain.Core.DTOs.SubCategoryDTO;
 using Microsoft.AspNetCore.Mvc;

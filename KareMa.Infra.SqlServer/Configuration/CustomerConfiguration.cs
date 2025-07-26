@@ -2,11 +2,6 @@
 using KareMa.Domain.Core.Enums;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace KareMa.Infra.SqlServer.Configuration
 {
@@ -22,11 +17,6 @@ namespace KareMa.Infra.SqlServer.Configuration
                 .WithOne(c => c.Customer)
                 .OnDelete(DeleteBehavior.NoAction);
 
-            //builder.HasMany(c => c.Addresses)
-            //    .WithOne(c => c.Customer)
-            //    .OnDelete(DeleteBehavior.NoAction);
-
-
             builder.HasData
                 (
                 new Customer
@@ -37,7 +27,6 @@ namespace KareMa.Infra.SqlServer.Configuration
                     Gender = GenderEnum.Female,
                     Image = "\\AdminTemplate\\images\\user\\placeholder.jpg",
                     PhoneNumber = "09192365988",
-                    //BackUpPhoneNumber = "09123669858",
                     BankCardNumber = "1234123412341234",
                     CreatedAt = new DateTime(2024, 2, 12),
                     Balance = 1500,
@@ -54,7 +43,6 @@ namespace KareMa.Infra.SqlServer.Configuration
                     Image = "\\AdminTemplate\\images\\user\\placeholder.jpg",
                     Balance = 1500,
                     PhoneNumber = "09014839264",
-                    //BackUpPhoneNumber = "09123623258",
                     BankCardNumber = "1239684412341234",
                     CreatedAt = new DateTime(2024, 2, 12),
                     IsDeleted = false,

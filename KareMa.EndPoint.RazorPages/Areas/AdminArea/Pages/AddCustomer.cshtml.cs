@@ -5,8 +5,6 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using System.ComponentModel.DataAnnotations;
-using System.Threading;
 
 namespace KareMa.EndPoint.RazorPages.Areas.AdminArea.Pages
 {

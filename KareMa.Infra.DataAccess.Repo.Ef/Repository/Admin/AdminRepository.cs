@@ -2,11 +2,6 @@
 using KareMa.Domain.Core.Entities;
 using KareMa.Infra.SqlServer.Common;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace KareMa.Infra.DataAccess.Repo.Ef.Repository
 {
@@ -24,10 +19,7 @@ namespace KareMa.Infra.DataAccess.Repo.Ef.Repository
             {
                 FirstName = adminCreateDto.FirstName,
                 LastName = adminCreateDto.LastName,
-                //Email = adminCreateDto.Email,
                 Gender = adminCreateDto.Gender,
-                //Password = adminCreateDto.Password,
-                //PhoneNumber = adminCreateDto.PhoneNumber,
             };
 
             await _context.Admins.AddAsync(newModel, cancellationToken);
@@ -79,10 +71,7 @@ namespace KareMa.Infra.DataAccess.Repo.Ef.Repository
             targetModel.FirstName = adminUpdateDto.FirstName;
             targetModel.LastName = adminUpdateDto.LastName;
             targetModel.Balance = adminUpdateDto.Balance;
-            //targetModel.Email = adminUpdateDto.Email;
             targetModel.Gender = adminUpdateDto.Gender;
-            //targetModel.Password = adminUpdateDto.Password;
-            //targetModel.PhoneNumber = adminUpdateDto.PhoneNumber;
             _context.SaveChanges();
             return true;
         }

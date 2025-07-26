@@ -1,6 +1,4 @@
-﻿using System.Net;
-
-namespace KareMa.EndPoint.RazorPages.Infrastructure
+﻿namespace KareMa.EndPoint.RazorPages.Infrastructure
 {
     public class ExceptionHandlingMiddleware
     {

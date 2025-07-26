@@ -1,18 +1,9 @@
 ﻿using KareMa.Domain.Core.Contracts.AppService;
 using KareMa.Domain.Core.Contracts.Service;
 using KareMa.Domain.Core.Contracts.Service.BaseService;
-using KareMa.Domain.Core.DTOs.CategoryDTO;
 using KareMa.Domain.Core.DTOs.CustomerDTO;
 using KareMa.Domain.Core.Entities;
-using KareMa.Domain.Service;
 using Microsoft.AspNetCore.Http;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace KareMa.Domain.AppService
 {

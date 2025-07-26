@@ -4,12 +4,6 @@ using KareMa.Domain.Core.Contracts.Service;
 using KareMa.Domain.Core.Contracts.Service.BaseService;
 using KareMa.Domain.Core.DTOs.SuggestionDTO;
 using KareMa.Domain.Core.Entities;
-using KareMa.Domain.Core.Enums;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace KareMa.Domain.AppService
 {
@@ -28,23 +22,6 @@ namespace KareMa.Domain.AppService
 
         public async Task<bool> AcceptSuggestion(int suggestionId, int orderId, CancellationToken cancellationToken)
         => await _suggestionServices.AcceptSuggestion(suggestionId, orderId, cancellationToken);
-
-
-        //public async Task<bool> AcceptSuggestion(int id, int orderid, CancellationToken cancellationToken)
-        //{
-        //    var confrimedCount = await _suggestionServices.ConfrimedStatusCount(orderid, cancellationToken);
-
-        //    if (confrimedCount == 0)
-        //    {
-        //        await _suggestionServices.AcceptSuggestion(id, cancellationToken);
-        //        await _orderServices.AcceptOrder(orderid, cancellationToken);
-        //        return true;
-        //    }
-        //    return false;
-        //}
-
-        //public async Task<bool> ChangeStatus(StatusEnum status, int orderId, CancellationToken cancellationToken)
-        //  => await _suggestionServices.ChangeStatus(status, orderId, cancellationToken);
 
         public async Task<bool> Create(SuggestionCreateDto suggestionCreateDto, string suggestionDate, CancellationToken cancellationToken)
         {

@@ -1,9 +1,6 @@
 ﻿using KareMa.Domain.Core.Contracts.AppService.Account;
-using KareMa.Domain.Core.Entities;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using System.ComponentModel.DataAnnotations;
 
 namespace KareMa.EndPoint.RazorPages.Areas.AdminArea.Account.Pages
 {

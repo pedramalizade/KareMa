@@ -1,5 +1,4 @@
-﻿using KareMa.Domain.Core.Contracts.Service;
-using KareMa.Domain.Core.Entities;
+﻿using KareMa.Domain.Core.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 

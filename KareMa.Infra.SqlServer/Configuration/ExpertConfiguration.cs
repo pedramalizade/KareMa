@@ -2,11 +2,6 @@
 using KareMa.Domain.Core.Enums;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace KareMa.Infra.SqlServer.Configuration
 {
@@ -22,11 +17,6 @@ namespace KareMa.Infra.SqlServer.Configuration
             builder.HasMany(e => e.Suggestions)
                 .WithOne(e => e.Expert)
                 .OnDelete(DeleteBehavior.NoAction);
-
-
-            //builder.HasOne(e => e.EvidenceImage)
-            //    .WithOne(e => e.Expert)
-            //    .OnDelete(DeleteBehavior.NoAction);
 
             builder.HasData
                 (

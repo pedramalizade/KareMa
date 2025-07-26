@@ -1,9 +1,4 @@
 ﻿using KareMa.Domain.Core.DTOs.ServiceDTO;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace KareMa.Domain.Core.Contracts.Service
 {

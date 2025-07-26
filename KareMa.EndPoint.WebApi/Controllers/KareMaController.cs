@@ -1,12 +1,8 @@
-﻿using KareMa.Domain.AppService.Account;
-using KareMa.Domain.AppService;
-using KareMa.Domain.Core.Contracts.AppService;
+﻿using KareMa.Domain.Core.Contracts.AppService;
 using KareMa.Domain.Core.Contracts.AppService.Account;
 using KareMa.Domain.Core.DTOs.OrderDTO;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using KareMa.Domain.Core.Entities;
-using Microsoft.AspNetCore.Mvc.Filters;
 using KareMa.EndPoint.WebApi.Filters;
 
 namespace KareMa.EndPoint.WebApi.Controllers
@@ -40,13 +36,6 @@ namespace KareMa.EndPoint.WebApi.Controllers
             var requests = await _orderAppService.GetAll(cancellationToken);
             return requests;
         }
-        //[HttpGet]
-        //[Route(nameof(GetOrders))]
-        //public async Task<List<GetOrderDto>> GetOrders(CancellationToken cancellationToken)
-        //{
-        //    var requests = await _orderAppService.GetAll(cancellationToken);
-        //    return requests;
-        //}
 
         [HttpPost]
         [Route(nameof(RegisterUser))]

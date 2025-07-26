@@ -1,7 +1,6 @@
 ﻿using KareMa.Domain.Core.Contracts.Repositories;
 using KareMa.Domain.Core.Contracts.Service;
 using KareMa.Domain.Core.DTOs.ServiceDTO;
-using KareMa.Domain.Core.Entities;
 
 namespace KareMa.Domain.Services;
 

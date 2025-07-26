@@ -1,12 +1,6 @@
-﻿using KareMa.Domain.Core.DTOs.CategoryDTO;
-using KareMa.Domain.Core.DTOs.SubCategoryDTO;
+﻿using KareMa.Domain.Core.DTOs.SubCategoryDTO;
 using KareMa.Domain.Core.Entities;
 using Microsoft.AspNetCore.Http;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace KareMa.Domain.Core.Contracts.AppService
 {
