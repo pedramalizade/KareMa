@@ -1,7 +1,4 @@
-﻿using KareMa.Domain.Core.DTOs.CustomerDTO;
-using KareMa.Domain.Core.Entities;
-
-namespace KareMa.Domain.Core.Contracts.Service
+﻿namespace KareMa.Domain.Core.Contracts.Service
 {
     public interface ICustomerServices
     {

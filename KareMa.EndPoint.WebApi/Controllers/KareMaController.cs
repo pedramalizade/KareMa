@@ -1,11 +1,4 @@
-﻿using KareMa.Domain.Core.Contracts.AppService;
-using KareMa.Domain.Core.Contracts.AppService.Account;
-using KareMa.Domain.Core.DTOs.OrderDTO;
-using Microsoft.AspNetCore.Mvc;
-using KareMa.Domain.Core.Entities;
-using KareMa.EndPoint.WebApi.Filters;
-
-namespace KareMa.EndPoint.WebApi.Controllers
+﻿namespace KareMa.EndPoint.WebApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

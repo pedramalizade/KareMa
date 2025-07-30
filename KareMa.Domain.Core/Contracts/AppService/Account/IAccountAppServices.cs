@@ -1,7 +1,4 @@
-﻿using KareMa.Domain.Core.DTOs.AccountDto;
-using Microsoft.AspNetCore.Identity;
-
-namespace KareMa.Domain.Core.Contracts.AppService.Account
+﻿namespace KareMa.Domain.Core.Contracts.AppService.Account
 {
     public interface IAccountAppServices
     {

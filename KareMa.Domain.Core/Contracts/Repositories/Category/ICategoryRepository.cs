@@ -1,6 +1,4 @@
-﻿using KareMa.Domain.Core.DTOs.CategoryDTO;
-
-namespace KareMa.Domain.Core.Contracts.Repositories
+﻿namespace KareMa.Domain.Core.Contracts.Repositories
 {
     public interface ICategoryRepository
     {

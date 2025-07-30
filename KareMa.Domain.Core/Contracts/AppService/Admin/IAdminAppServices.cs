@@ -1,6 +1,4 @@
-﻿using KareMa.Domain.Core.Entities;
-
-namespace KareMa.Domain.Core.Contracts.AppService
+﻿namespace KareMa.Domain.Core.Contracts.AppService
 {
     public interface IAdminAppServices
     {

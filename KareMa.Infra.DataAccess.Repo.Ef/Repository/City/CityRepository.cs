@@ -1,10 +1,4 @@
-﻿using KareMa.Domain.Core.Contracts.Repositories;
-using KareMa.Domain.Core.Entities;
-using KareMa.Infra.SqlServer.Common;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Caching.Memory;
-
-namespace KareMa.Infra.DataAccess.Repo.Ef.Repository
+﻿namespace KareMa.Infra.DataAccess.Repo.Ef.Repository
 {
     public class CityRepository : ICityRepository
     {

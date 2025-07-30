@@ -1,13 +1,4 @@
-﻿using KareMa.Domain.Core.Contracts.AppService;
-using KareMa.Domain.Core.Contracts;
-using KareMa.Domain.Core.DTOs.OrderDTO;
-using KareMa.Domain.Core.DTOs.ServiceDTO;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.AspNetCore.Authorization;
-using System.ComponentModel.DataAnnotations;
-
-namespace KareMa.EndPoint.RazorPages.Areas.CustomerArea.Pages
+﻿namespace KareMa.EndPoint.RazorPages.Areas.CustomerArea.Pages
 {
     [Authorize(Roles = "Customer")]
     public class AddOrderModel : PageModel

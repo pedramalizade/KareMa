@@ -1,7 +1,4 @@
-﻿using KareMa.Domain.Core.Enums;
-using System.ComponentModel;
-
-public class AdminCreateDto
+﻿public class AdminCreateDto
 {
 
     [DisplayName("نام")]

@@ -1,6 +1,4 @@
-﻿using KareMa.Domain.Core.Enums;
-
-namespace KareMa.Domain.Core.DTOs.SuggestionDTO
+﻿namespace KareMa.Domain.Core.DTOs.SuggestionDTO
 {
     public class SuggestionDto
     {

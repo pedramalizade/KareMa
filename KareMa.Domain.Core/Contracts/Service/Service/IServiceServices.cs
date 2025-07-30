@@ -1,6 +1,4 @@
-﻿using KareMa.Domain.Core.DTOs.ServiceDTO;
-
-namespace KareMa.Domain.Core.Contracts.Service
+﻿namespace KareMa.Domain.Core.Contracts.Service
 {
     public interface IServiceServices
     {

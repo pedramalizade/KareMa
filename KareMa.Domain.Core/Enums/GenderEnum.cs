@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace KareMa.Domain.Core.Enums
+﻿namespace KareMa.Domain.Core.Enums
 {
     public enum GenderEnum
     {

@@ -1,6 +1,4 @@
-﻿using System.ComponentModel;
-
-namespace KareMa.Domain.Core.DTOs.SuggestionDTO
+﻿namespace KareMa.Domain.Core.DTOs.SuggestionDTO
 {
     public class SuggestionUpdateDto
     {

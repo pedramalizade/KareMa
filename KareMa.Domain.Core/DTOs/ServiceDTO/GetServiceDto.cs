@@ -1,6 +1,4 @@
-﻿using KareMa.Domain.Core.Entities;
-
-namespace KareMa.Domain.Core.DTOs.ServiceDTO
+﻿namespace KareMa.Domain.Core.DTOs.ServiceDTO
 {
     public class GetServiceDto
     {

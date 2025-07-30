@@ -1,7 +1,4 @@
-﻿using KareMa.Domain.Core.DTOs.Expert;
-using KareMa.Domain.Core.Entities;
-
-namespace KareMa.Domain.Core.Contracts.Repositories
+﻿namespace KareMa.Domain.Core.Contracts.Repositories
 {
     public interface IExpertRepository
     {

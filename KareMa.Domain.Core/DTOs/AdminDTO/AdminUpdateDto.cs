@@ -1,7 +1,4 @@
-﻿using System.ComponentModel;
-using KareMa.Domain.Core.Enums;
-
-public class AdminUpdateDto
+﻿public class AdminUpdateDto
 {
 
     public int Id { get; set; }

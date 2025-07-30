@@ -1,8 +1,4 @@
-﻿using KareMa.Domain.Core.Contracts.Service.BaseService;
-using Microsoft.AspNetCore.Http;
-using System.Globalization;
-
-namespace KareMa.Domain.Service.BaseService
+﻿namespace KareMa.Domain.Service.BaseService
 {
     public class BaseService : IBaseSevices
     {

@@ -1,7 +1,4 @@
-﻿using KareMa.Domain.Core.Entities;
-using System.ComponentModel;
-
-public class ImageCreateDto
+﻿public class ImageCreateDto
 {
     [DisplayName("توضیحات عکس")]
     public string? Alt { get; set; }

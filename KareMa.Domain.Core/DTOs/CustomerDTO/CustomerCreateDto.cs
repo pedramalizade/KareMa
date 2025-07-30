@@ -1,8 +1,4 @@
-﻿using KareMa.Domain.Core.Entities;
-using KareMa.Domain.Core.Enums;
-using System.ComponentModel;
-using System.ComponentModel.DataAnnotations;
-public class CustomerCreateDto
+﻿public class CustomerCreateDto
 {
     [Required(ErrorMessage = "نام اجباری است")]
     [DisplayName("نام")]

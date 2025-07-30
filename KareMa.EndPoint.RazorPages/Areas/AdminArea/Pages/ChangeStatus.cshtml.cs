@@ -1,10 +1,4 @@
-﻿using KareMa.Domain.Core.Contracts.AppService;
-using KareMa.Domain.Core.Entities;
-using KareMa.Domain.Core.Enums;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
-
-namespace KareMa.EndPoint.RazorPages.Pages.Areas.AdminArea.Pages
+﻿namespace KareMa.EndPoint.RazorPages.Pages.Areas.AdminArea.Pages
 {
     public class ChangeStatusModel : PageModel
     {

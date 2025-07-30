@@ -1,11 +1,4 @@
-﻿using KareMa.Domain.Core.Contracts.Repositories;
-using KareMa.Domain.Core.DTOs.Expert;
-using KareMa.Domain.Core.Entities;
-using KareMa.Domain.Core.Enums;
-using KareMa.Infra.SqlServer.Common;
-using Microsoft.EntityFrameworkCore;
-
-namespace KareMa.Infra.DataAccess.Repo.Ef.Repository
+﻿namespace KareMa.Infra.DataAccess.Repo.Ef.Repository
 {
     public class ExpertRepository : IExpertRepository
     {

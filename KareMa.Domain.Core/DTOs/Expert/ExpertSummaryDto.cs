@@ -1,8 +1,4 @@
-﻿using KareMa.Domain.Core.Entities;
-using KareMa.Domain.Core.Enums;
-using System.ComponentModel.DataAnnotations;
-
-namespace KareMa.Domain.Core.DTOs.Expert
+﻿namespace KareMa.Domain.Core.DTOs.Expert
 {
     public class ExpertSummaryDto
     {

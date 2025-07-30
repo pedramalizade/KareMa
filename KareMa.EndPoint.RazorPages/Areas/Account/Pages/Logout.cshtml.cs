@@ -1,8 +1,3 @@
-using KareMa.Domain.Core.Entities;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
-
 namespace KareMa.EndPoint.RazorPages.Areas.AdminArea.Account.Pages
 {
     public class LogoutModel : PageModel

@@ -1,7 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel;
-
-namespace KareMa.Domain.Core.Entities
+﻿namespace KareMa.Domain.Core.Entities
 {
     public class Address
     {

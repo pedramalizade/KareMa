@@ -1,10 +1,3 @@
-using KareMa.Domain.Core.Contracts;
-using KareMa.Domain.Core.Contracts.AppService;
-using KareMa.Domain.Core.DTOs.ServiceDTO;
-using KareMa.Domain.Core.DTOs.SubCategoryDTO;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
-
 namespace KareMa.EndPoint.RazorPages.Areas.AdminArea.Pages
 {
     public class UpdateServiceModel : PageModel

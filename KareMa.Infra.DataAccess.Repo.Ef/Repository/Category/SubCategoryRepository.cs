@@ -1,14 +1,4 @@
-﻿using KareMa.Domain.Core.Contracts.Repositories.Category;
-using KareMa.Domain.Core.DTOs.SubCategoryDTO;
-using KareMa.Domain.Core.Entities;
-using KareMa.Infra.SqlServer.Common;
-using Microsoft.Data.SqlClient;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
-using Dapper;
-using System.Data;
-
-namespace KareMa.Infra.DataAccess.Repo.Ef.Repository
+﻿namespace KareMa.Infra.DataAccess.Repo.Ef.Repository
 {
     public class SubCategoryRepository : ISubCategoryRepository
     {

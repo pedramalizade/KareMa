@@ -1,11 +1,4 @@
-﻿using KareMa.Domain.Core.Contracts.AppService;
-using KareMa.Domain.Core.Contracts.Service;
-using KareMa.Domain.Core.Contracts.Service.BaseService;
-using KareMa.Domain.Core.DTOs.CustomerDTO;
-using KareMa.Domain.Core.Entities;
-using Microsoft.AspNetCore.Http;
-
-namespace KareMa.Domain.AppService
+﻿namespace KareMa.Domain.AppService
 {
     public class CustomerAppServices : ICustomerAppServices
     {

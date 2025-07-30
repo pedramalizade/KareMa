@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace KareMa.Domain.Core.DTOs.SubCategoryDTO
+﻿namespace KareMa.Domain.Core.DTOs.SubCategoryDTO
 {
     public class GetByCategoryIdDto
     {

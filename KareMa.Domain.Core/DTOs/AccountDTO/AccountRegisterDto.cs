@@ -1,7 +1,4 @@
-﻿using KareMa.Domain.Core.Enums;
-using System.ComponentModel.DataAnnotations;
-
-public class AccountRegisterDto
+﻿public class AccountRegisterDto
 {
     [Required(ErrorMessage = "وارد کردن نام اجباری است")]
     [Length(3, 20, ErrorMessage = "نام نمی‌تواند کمتر 3 و بیشتر از 20 کاراکتر باشد")]

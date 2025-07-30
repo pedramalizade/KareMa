@@ -1,13 +1,4 @@
-﻿using KareMa.Domain.Core.Contracts.AppService;
-using KareMa.Domain.Core.DTOs.Expert;
-using KareMa.Domain.Core.Entities;
-using KareMa.Domain.Core.Enums;
-using KareMa.Infra.SqlServer.Common;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.EntityFrameworkCore;
-
-namespace KareMa.EndPoint.RazorPages.Pages
+﻿namespace KareMa.EndPoint.RazorPages.Pages
 {
     public class ExpertDetailsModel : PageModel
     {

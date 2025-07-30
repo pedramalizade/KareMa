@@ -1,8 +1,4 @@
-﻿using KareMa.Domain.Core.Entities;
-using KareMa.Domain.Core.Enums;
-using System.ComponentModel.DataAnnotations;
-
-namespace KareMa.Domain.Core.DTOs.OrderDTO
+﻿namespace KareMa.Domain.Core.DTOs.OrderDTO
 {
     public class GetOrderDto
     {

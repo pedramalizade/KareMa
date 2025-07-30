@@ -1,6 +1,4 @@
-﻿using Microsoft.AspNetCore.Identity;
-
-namespace Framework
+﻿namespace Framework
 {
     public class PersianIdentityErrorDescriber : IdentityErrorDescriber
     {

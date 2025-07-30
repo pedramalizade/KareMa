@@ -1,8 +1,4 @@
-﻿using KareMa.Domain.Core.Entities;
-using KareMa.Domain.Core.Enums;
-using System.ComponentModel.DataAnnotations;
-
-namespace KareMa.Domain.Core.DTOs.SuggestionDTO
+﻿namespace KareMa.Domain.Core.DTOs.SuggestionDTO
 {
     public class SuggestionsByExpertIdDto
     {

@@ -1,11 +1,4 @@
-﻿using KareMa.Domain.Core.Contracts.AppService;
-using KareMa.Domain.Core.DTOs.SuggestionDTO;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
-using System.ComponentModel.DataAnnotations;
-
-namespace KareMa.EndPoint.RazorPages.Areas.ExpertArea.Pages
+﻿namespace KareMa.EndPoint.RazorPages.Areas.ExpertArea.Pages
 {
     [Authorize(Roles = "Expert")]
     public class AddSuggestionModel : PageModel

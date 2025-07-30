@@ -1,14 +1,4 @@
-﻿using KareMa.Domain.Core.Contracts;
-using KareMa.Domain.Core.Contracts.AppService;
-using KareMa.Domain.Core.Entities;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
-
-namespace KareMa.EndPoint.RazorPages.Areas.AdminArea.Pages
+﻿namespace KareMa.EndPoint.RazorPages.Areas.AdminArea.Pages
 {
     [Authorize(Roles = "Admin")]
     public class AddExpertModel : PageModel

@@ -1,12 +1,4 @@
-﻿using KareMa.Domain.Core.Contracts.AppService;
-using KareMa.Domain.Core.Contracts.Service;
-using KareMa.Domain.Core.Contracts.Service.BaseService;
-using KareMa.Domain.Core.DTOs.OrderDTO;
-using KareMa.Domain.Core.Entities;
-using KareMa.Domain.Core.Enums;
-using Microsoft.AspNetCore.Http;
-
-namespace KareMa.Domain.AppService
+﻿namespace KareMa.Domain.AppService
 {
     public class OrderAppServices : IOrderAppServices
     {
@@ -22,10 +14,7 @@ namespace KareMa.Domain.AppService
         }
 
         public Task AcceptOrder(int orderId, CancellationToken cancellationToken)
-          => _orderServices.AcceptOrder(orderId, cancellationToken);
-
-       // public async Task AddSampleSuggestionsAsync(int customerId, CancellationToken cancellationToken)
-       //=> await _orderServices.AddSampleSuggestionsAsync(customerId, cancellationToken);    
+          => _orderServices.AcceptOrder(orderId, cancellationToken);  
 
         public async Task<bool> ChangeStatus(StatusEnum status, int orderId, CancellationToken cancellationToken)
         {

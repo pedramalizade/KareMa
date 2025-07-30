@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace Framework.ValidationAttributes
+﻿namespace Framework.ValidationAttributes
 {
     public class PhoneNumberAttribute : ValidationAttribute
     {

@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-public class AccountLoginDto
+﻿public class AccountLoginDto
 {
     [Required(ErrorMessage = "وارد کردن رمزعبور اجباری است")]
     [MinLength(4, ErrorMessage = "رمزعبور نمی‌تواند کمتر 4 کاراکتر باشد")]

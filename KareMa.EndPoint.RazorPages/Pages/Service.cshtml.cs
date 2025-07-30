@@ -1,8 +1,3 @@
-using KareMa.Domain.Core.Contracts;
-using KareMa.Domain.Core.DTOs.ServiceDTO;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
-
 namespace KareMa.EndPoint.RazorPages.Pages
 {
     public class ServiceModel : PageModel

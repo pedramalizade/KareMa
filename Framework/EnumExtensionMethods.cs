@@ -1,7 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.Reflection;
-
-namespace Framework
+﻿namespace Framework
 {
     public static class EnumExtensionMethods
     {

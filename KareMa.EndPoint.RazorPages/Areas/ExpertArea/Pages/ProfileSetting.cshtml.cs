@@ -1,15 +1,4 @@
-﻿using Framework;
-using KareMa.Domain.Core.Contracts.AppService;
-using KareMa.Domain.Core.Contracts;
-using KareMa.Domain.Core.DTOs.ServiceDTO;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
-using System.ComponentModel.DataAnnotations;
-using System.Text.RegularExpressions;
-using System.Globalization;
-
-namespace KareMa.EndPoint.RazorPages.Areas.ExpertArea.Pages
+﻿namespace KareMa.EndPoint.RazorPages.Areas.ExpertArea.Pages
 {
 
     [Authorize(Roles = "Expert")]

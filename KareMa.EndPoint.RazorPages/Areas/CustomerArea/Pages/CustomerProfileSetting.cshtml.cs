@@ -1,10 +1,4 @@
-﻿using KareMa.Domain.Core.Contracts.AppService;
-using KareMa.Domain.Core.Entities;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
-
-namespace KareMa.EndPoint.RazorPages.Areas.CustomerArea.Pages.Shared
+﻿namespace KareMa.EndPoint.RazorPages.Areas.CustomerArea.Pages.Shared
 {
     [Authorize(Roles = "Customer")]
     public class CustomerProfileSettingModel : PageModel

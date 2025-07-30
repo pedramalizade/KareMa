@@ -1,33 +1,4 @@
-using Framework;
-using KareMa.Domain.AppService;
-using KareMa.Domain.AppService.Account;
-using KareMa.Domain.AppService.BaseAppServices;
-using KareMa.Domain.Core.Contracts;
-using KareMa.Domain.Core.Contracts.AppService;
-using KareMa.Domain.Core.Contracts.AppService.Account;
-using KareMa.Domain.Core.Contracts.AppService.BaseServices;
-using KareMa.Domain.Core.Contracts.Repositories;
-using KareMa.Domain.Core.Contracts.Repositories.Category;
-using KareMa.Domain.Core.Contracts.Service;
-using KareMa.Domain.Core.Contracts.Service.BaseService;
-using KareMa.Domain.Core.Entities;
-using KareMa.Domain.Core.Entities.Configs;
-using KareMa.Domain.Service;
-using KareMa.Domain.Service.BaseService;
-using KareMa.Domain.Service.Expect;
-using KareMa.Domain.Services;
-using KareMa.Infra.DataAccess.Repo.Ef.Repository;
-using KareMa.Infra.SqlServer.Common;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
-using Serilog;
-using Serilog.Events;
-using Microsoft.OpenApi.Models;
-using KareMa.Infra.DataAccess.Repository.Dapper.Repository;
-using System.Text.Json.Serialization;
-
 var builder = WebApplication.CreateBuilder(args);
-
 
 builder.Configuration
     .SetBasePath(Directory.GetCurrentDirectory())

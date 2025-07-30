@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace KareMa.Domain.Core.Entities
+﻿namespace KareMa.Domain.Core.Entities
 {
     public class Service
     {

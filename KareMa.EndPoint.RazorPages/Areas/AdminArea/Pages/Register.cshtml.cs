@@ -1,12 +1,4 @@
-﻿using KareMa.Domain.Core.Entities;
-using KareMa.Domain.Core.Enums;
-using KareMa.Infra.SqlServer.Common;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
-using System.ComponentModel.DataAnnotations;
-
-namespace KareMa.EndPoint.RazorPages.Areas.AdminArea.Pages
+﻿namespace KareMa.EndPoint.RazorPages.Areas.AdminArea.Pages
 {
 
     public class RegisterModel : PageModel

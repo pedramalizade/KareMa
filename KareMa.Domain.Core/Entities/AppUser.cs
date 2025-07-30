@@ -1,6 +1,4 @@
-﻿using Microsoft.AspNetCore.Identity;
-
-namespace KareMa.Domain.Core.Entities
+﻿namespace KareMa.Domain.Core.Entities
 {
     public class AppUser : IdentityUser<int>
     {

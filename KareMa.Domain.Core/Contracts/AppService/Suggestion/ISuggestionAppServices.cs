@@ -1,5 +1,4 @@
-﻿using KareMa.Domain.Core.DTOs.SuggestionDTO;
-namespace KareMa.Domain.Core.Contracts.AppService
+﻿namespace KareMa.Domain.Core.Contracts.AppService
 {
     public interface ISuggestionAppServices
     {
@@ -11,6 +10,5 @@ namespace KareMa.Domain.Core.Contracts.AppService
         Task<bool> AcceptSuggestion(int suggestionId, int orderId, CancellationToken cancellationToken);
         Task<List<SuggestionsByExpertIdDto>> GetSuggestionsByExperId(int id, CancellationToken cancellationToken);
         Task<SuggestionDto> GetSuggestionById(int suggestionId, CancellationToken cancellationToken);
-        //Task<bool> ChangeStatus(StatusEnum status, int orderId, CancellationToken cancellationToken);
     }
 }

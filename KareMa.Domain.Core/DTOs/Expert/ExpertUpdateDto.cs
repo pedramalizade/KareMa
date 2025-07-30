@@ -1,8 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel;
-using KareMa.Domain.Core.Enums;
-
-public class ExpertUpdateDto
+﻿public class ExpertUpdateDto
 {
     public int Id { get; set; }
     [MaxLength(25, ErrorMessage = "نام نمی‌تواند بیشتر از 25 کاراکتر باشد"), MinLength(3), Required, DisplayName("نام")]

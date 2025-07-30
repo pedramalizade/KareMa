@@ -1,9 +1,4 @@
-﻿using KareMa.Domain.Core.Contracts.Repositories;
-using KareMa.Domain.Core.Contracts.Service;
-using KareMa.Domain.Core.DTOs.ServiceDTO;
-
-namespace KareMa.Domain.Services;
-
+﻿namespace KareMa.Domain.Services;
 public class ServiceServices : IServiceServices
 {
     private readonly IServiceRepository _serviceRepository;

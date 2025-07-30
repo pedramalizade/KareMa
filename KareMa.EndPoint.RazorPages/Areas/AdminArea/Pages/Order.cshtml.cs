@@ -1,9 +1,3 @@
-using KareMa.Domain.Core.Contracts.AppService;
-using KareMa.Domain.Core.DTOs.OrderDTO;
-using KareMa.Domain.Core.Enums;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
-
 namespace KareMa.EndPoint.RazorPages.Pages.Areas.AdminArea.Pages
 {
     public class OrderModel : PageModel

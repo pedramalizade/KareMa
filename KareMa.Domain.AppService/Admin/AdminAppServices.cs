@@ -1,8 +1,4 @@
-﻿using KareMa.Domain.Core.Contracts.AppService;
-using KareMa.Domain.Core.Contracts.Service;
-using KareMa.Domain.Core.Entities;
-
-namespace KareMa.Domain.AppService
+﻿namespace KareMa.Domain.AppService
 {
     public class AdminAppServices : IAdminAppServices
     {

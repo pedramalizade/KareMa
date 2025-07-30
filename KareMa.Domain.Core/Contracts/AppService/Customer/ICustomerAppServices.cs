@@ -1,6 +1,4 @@
 ﻿using KareMa.Domain.Core.DTOs.CustomerDTO;
-using KareMa.Domain.Core.Entities;
-using Microsoft.AspNetCore.Http;
 
 namespace KareMa.Domain.Core.Contracts.AppService
 {

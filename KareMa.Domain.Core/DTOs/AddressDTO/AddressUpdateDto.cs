@@ -1,7 +1,4 @@
-﻿using KareMa.Domain.Core.Entities;
-using System.ComponentModel;
-
-public class AddressUpdateDto
+﻿public class AddressUpdateDto
 {
     public int Id { get; set; }
     public int CityId { get; set; }

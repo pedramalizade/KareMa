@@ -1,8 +1,4 @@
-﻿using KareMa.Domain.Core.Entities;
-using KareMa.Domain.Core.Enums;
-using System.ComponentModel;
-
-public class ExpertCreateDto
+﻿public class ExpertCreateDto
 {
     public int AppUserId { get; set; }
     [DisplayName("نام")]

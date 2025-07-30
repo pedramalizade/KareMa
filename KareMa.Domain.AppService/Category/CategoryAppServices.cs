@@ -1,11 +1,4 @@
-﻿using KareMa.Domain.Core.Contracts.AppService;
-using KareMa.Domain.Core.Contracts.Service;
-using KareMa.Domain.Core.Contracts.Service.BaseService;
-using KareMa.Domain.Core.DTOs.CategoryDTO;
-using KareMa.Domain.Core.Entities;
-using Microsoft.AspNetCore.Http;
-
-namespace KareMa.Domain.AppService
+﻿namespace KareMa.Domain.AppService
 {
     public class CategoryAppServices : ICategoryAppServices
     {
@@ -28,10 +21,6 @@ namespace KareMa.Domain.AppService
 
             categoryCreateDto.Image = imageAddress;
             return await _categoryServices.Create(categoryCreateDto, cancellationToken);
-
-            //var imageAddress = _baseSevices.UploadImage(image);
-            //categoryCreateDto.Image = await imageAddress;
-            //return await _categoryServices.Create(categoryCreateDto, cancellationToken);
         }
         public async Task<bool> Delete(int serviceCategoryId, CancellationToken cancellationToken)
            => await _categoryServices.Delete(serviceCategoryId, cancellationToken);

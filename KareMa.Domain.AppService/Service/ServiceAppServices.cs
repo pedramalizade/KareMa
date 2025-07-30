@@ -1,8 +1,4 @@
-﻿using KareMa.Domain.Core.Contracts;
-using KareMa.Domain.Core.DTOs.ServiceDTO;
-using KareMa.Domain.Core.Contracts.Service;
-
-namespace KareMa.Domain.AppService
+﻿namespace KareMa.Domain.AppService
 {
     public class ServiceAppServices : IServiceAppServices
     {

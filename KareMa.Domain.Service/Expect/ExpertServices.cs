@@ -1,9 +1,4 @@
-﻿using KareMa.Domain.Core.Contracts.Repositories;
-using KareMa.Domain.Core.Contracts.Service;
-using KareMa.Domain.Core.DTOs.Expert;
-using KareMa.Domain.Core.Entities;
-
-namespace KareMa.Domain.Service.Expect
+﻿namespace KareMa.Domain.Service.Expect
 {
     public class ExpertServices : IExpertServices
     {

@@ -1,6 +1,4 @@
-﻿using KareMa.Domain.Core.DTOs.ServiceDTO;
-
-namespace KareMa.Domain.Core.Contracts.Repositories
+﻿namespace KareMa.Domain.Core.Contracts.Repositories
 {
     public interface IServiceRepository
     {

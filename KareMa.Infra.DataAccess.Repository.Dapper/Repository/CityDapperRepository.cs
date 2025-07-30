@@ -1,12 +1,4 @@
-﻿using Dapper;
-using KareMa.Domain.Core.Contracts.Repositories;
-using KareMa.Domain.Core.Entities;
-using Microsoft.Data.SqlClient;
-using Microsoft.Extensions.Caching.Memory;
-using Microsoft.Extensions.Configuration;
-using System.Data;
-
-namespace KareMa.Infra.DataAccess.Repository.Dapper.Repository
+﻿namespace KareMa.Infra.DataAccess.Repository.Dapper.Repository
 {
     public class CityDapperRepository : ICityRepository
     {

@@ -1,8 +1,4 @@
-﻿using KareMa.Domain.Core.Entities;
-using KareMa.Domain.Core.Enums;
-using System.ComponentModel.DataAnnotations;
-
-namespace KareMa.Domain.Core.DTOs.CustomerDTO
+﻿namespace KareMa.Domain.Core.DTOs.CustomerDTO
 {
     public class CustomerSummaryDto
     {

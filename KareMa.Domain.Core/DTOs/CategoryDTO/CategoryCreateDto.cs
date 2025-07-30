@@ -1,7 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel;
-
-namespace KareMa.Domain.Core.DTOs.CategoryDTO
+﻿namespace KareMa.Domain.Core.DTOs.CategoryDTO
 {
     public class CategoryCreateDto
     {

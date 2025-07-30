@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel;
-public class CommentCreateDto
+﻿public class CommentCreateDto
 {
     [Required(ErrorMessage = "عنوان نمی‌تواند خالی باشد")]
     [MaxLength(100, ErrorMessage = "عنوان نمی‌تواند بیشتر از 100 کاراکتر باشد")]

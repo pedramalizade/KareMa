@@ -1,7 +1,4 @@
-﻿using KareMa.Domain.Core.Entities;
-using System.ComponentModel;
-
-public class AddressCreateDto
+﻿public class AddressCreateDto
 {
     [DisplayName("عنوان")]
     public string Title { get; set; }

@@ -1,10 +1,4 @@
-﻿using KareMa.Domain.Core.Contracts.AppService;
-using KareMa.Domain.Core.Contracts.Service;
-using KareMa.Domain.Core.DTOs.CommentDTO;
-using KareMa.Domain.Core.Entities;
-using KareMa.Domain.Core.Entities.Configs;
-
-namespace KareMa.Domain.AppService
+﻿namespace KareMa.Domain.AppService
 {
     public class CommentAppServices : ICommentAppServices
     {

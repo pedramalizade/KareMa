@@ -1,11 +1,4 @@
-﻿using Framework;
-using KareMa.Domain.Core.Contracts.AppService;
-using KareMa.Domain.Core.Contracts.Service;
-using KareMa.Domain.Core.Contracts.Service.BaseService;
-using KareMa.Domain.Core.DTOs.SuggestionDTO;
-using KareMa.Domain.Core.Entities;
-
-namespace KareMa.Domain.AppService
+﻿namespace KareMa.Domain.AppService
 {
     public class SuggestionAppServices : ISuggestionAppServices
     {

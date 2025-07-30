@@ -1,6 +1,4 @@
-﻿using KareMa.Domain.Core.Entities;
-
-namespace KareMa.Domain.Core.DTOs.SubCategoryDTO
+﻿namespace KareMa.Domain.Core.DTOs.SubCategoryDTO
 {
     public class GetSubCategoryDto
     {

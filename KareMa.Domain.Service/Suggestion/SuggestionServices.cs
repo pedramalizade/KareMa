@@ -1,10 +1,4 @@
-﻿using KareMa.Domain.Core.Contracts.Repositories;
-using KareMa.Domain.Core.Contracts.Service;
-using KareMa.Domain.Core.DTOs.SuggestionDTO;
-using KareMa.Domain.Core.Entities;
-using KareMa.Domain.Core.Enums;
-
-namespace KareMa.Domain.Service
+﻿namespace KareMa.Domain.Service
 {
     public class SuggestionServices : ISuggestionServices
     {

@@ -1,9 +1,4 @@
-﻿using KareMa.Domain.Core.DTOs.OrderDTO;
-using KareMa.Domain.Core.Entities;
-using KareMa.Domain.Core.Enums;
-using Microsoft.AspNetCore.Http;
-
-namespace KareMa.Domain.Core.Contracts.AppService
+﻿namespace KareMa.Domain.Core.Contracts.AppService
 {
     public interface IOrderAppServices
     {
@@ -14,7 +9,6 @@ namespace KareMa.Domain.Core.Contracts.AppService
         Task<Order> GetById(int orderId, CancellationToken cancellationToken);
         Task<List<GetOrderDto>> GetAll(CancellationToken cancellationToken);
         Task<int> OrderCount(CancellationToken cancellationToken);
-        //Task AddSampleSuggestionsAsync(int customerId, CancellationToken cancellationToken);
         Task<List<GetOrderDto>> GetOrders(int customerId, CancellationToken cancellationToken);
         Task AcceptOrder(int orderId, CancellationToken cancellationToken);
         Task DoneOrder(int id, int suggestionId, CancellationToken cancellationToken);

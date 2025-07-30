@@ -1,6 +1,4 @@
-﻿using System.ComponentModel;
-
-namespace KareMa.Domain.Core.DTOs.OrderDTO
+﻿namespace KareMa.Domain.Core.DTOs.OrderDTO
 {
     public class OrderCreateDto
     {

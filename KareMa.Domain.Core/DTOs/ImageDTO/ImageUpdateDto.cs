@@ -1,7 +1,4 @@
-﻿using KareMa.Domain.Core.Entities;
-using System.ComponentModel;
-
-namespace KareMa.Domain.Core.DTOs.ImageDTO
+﻿namespace KareMa.Domain.Core.DTOs.ImageDTO
 {
     public class ImageUpdateDto
     {

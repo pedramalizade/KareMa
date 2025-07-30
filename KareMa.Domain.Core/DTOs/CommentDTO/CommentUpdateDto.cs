@@ -1,6 +1,4 @@
-﻿using System.ComponentModel;
-
-public class CommentUpdateDto
+﻿public class CommentUpdateDto
 {
     public int Id { get; set; }
     public string Title { get; set; }

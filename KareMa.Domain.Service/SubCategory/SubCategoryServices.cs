@@ -1,9 +1,4 @@
-﻿using KareMa.Domain.Core.Contracts.Repositories.Category;
-using KareMa.Domain.Core.Contracts.Service;
-using KareMa.Domain.Core.DTOs.SubCategoryDTO;
-using KareMa.Domain.Core.Entities;
-
-namespace KareMa.Domain.Service
+﻿namespace KareMa.Domain.Service
 {
     public class SubCategoryServices : ISubCategoryServices
     {

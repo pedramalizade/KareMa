@@ -1,6 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
-
-namespace KareMa.Domain.Core.Contracts.Service.BaseService
+﻿namespace KareMa.Domain.Core.Contracts.Service.BaseService
 {
     public interface IBaseSevices
     {

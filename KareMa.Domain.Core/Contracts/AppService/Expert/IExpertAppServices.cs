@@ -1,7 +1,4 @@
 ﻿using KareMa.Domain.Core.DTOs.Expert;
-using KareMa.Domain.Core.Entities;
-using Microsoft.AspNetCore.Http;
-
 namespace KareMa.Domain.Core.Contracts.AppService
 {
     public interface IExpertAppServices

@@ -1,9 +1,4 @@
-﻿using KareMa.Domain.Core.Entities;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel;
-using KareMa.Domain.Core.Enums;
-
-public class CustomerUpdateDto
+﻿public class CustomerUpdateDto
 {
     public int Id { get; set; }
     [MaxLength(20, ErrorMessage = "نام نمی‌تواند بیشتر از 50 کاراکتر باشد")]

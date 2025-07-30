@@ -1,7 +1,4 @@
-﻿using KareMa.Domain.Core.DTOs.SubCategoryDTO;
-using KareMa.Domain.Core.Entities;
-
-namespace KareMa.Domain.Core.Contracts.Repositories.Category
+﻿namespace KareMa.Domain.Core.Contracts.Repositories.Category
 {
     public interface ISubCategoryRepository
     {

@@ -1,8 +1,4 @@
-﻿using KareMa.Domain.Core.DTOs.OrderDTO;
-using KareMa.Domain.Core.Entities;
-using KareMa.Domain.Core.Enums;
-
-namespace KareMa.Domain.Core.Contracts.Service
+﻿namespace KareMa.Domain.Core.Contracts.Service
 {
     public interface IOrderServices
     {
@@ -13,7 +9,6 @@ namespace KareMa.Domain.Core.Contracts.Service
         Task<bool> ChangeStatus(StatusEnum status, int orderId, CancellationToken cancellationToken);
         Task<Order> GetById(int orderId, CancellationToken cancellationToken);
         Task<int> OrderCount(CancellationToken cancellationToken);
-        //Task AddSampleSuggestionsAsync(int customerId, CancellationToken cancellationToken);
         Task<List<GetOrderDto>> GetOrders(int customerId, CancellationToken cancellationToken);
         Task AcceptOrder(int orderId, CancellationToken cancellationToken);
         Task DoneOrder(int orderId, int suggestionId, CancellationToken cancellationToken);

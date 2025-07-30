@@ -1,8 +1,4 @@
-﻿using KareMa.Domain.Core.DTOs.SuggestionDTO;
-using KareMa.Domain.Core.Entities;
-using KareMa.Domain.Core.Enums;
-
-namespace KareMa.Domain.Core.Contracts.Repositories
+﻿namespace KareMa.Domain.Core.Contracts.Repositories
 {
     public interface ISuggestionRepository
     {
