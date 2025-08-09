@@ -37,11 +37,11 @@
             Console.WriteLine("AddExpert OnGet called.");
             ExpertCreate.Address = new Address();
             AllServices = await _serviceAppServices.GetAllServicesAsync(cancellationToken);
-            var cities = await _cityService.GetAll(cancellationToken);
+            var cities = await _cityService.GetAllAsync(cancellationToken);
             Cities = new SelectList(cities, "Id", "Name");
 
             // کاربرانی که هنوز متخصص نیستن
-            var usedAppUserIds = await _expertAppServices.GetAll(cancellationToken)
+            var usedAppUserIds = await _expertAppServices.GetAllAsync(cancellationToken)
                 .ContinueWith(t => t.Result.Select(e => e.AppUserId).ToList(), cancellationToken);
             var availableUsers = await _userManager.Users
                 .Where(u => !usedAppUserIds.Contains(u.Id))
@@ -77,7 +77,7 @@
                 }
 
                 // اینجا دیگه AppUserId رو از کاربر لاگین‌شده نمی‌گیریم، بلکه از فرم میاد
-                var result = await _expertAppServices.Create(ExpertCreate, Image, cancellationToken);
+                var result = await _expertAppServices.CreateAsync(ExpertCreate, Image, cancellationToken);
                 if (!result)
                 {
                     Console.WriteLine("Expert creation failed.");
@@ -103,9 +103,9 @@
         private async Task LoadFormData(CancellationToken cancellationToken)
         {
             AllServices = await _serviceAppServices.GetAllServicesAsync(cancellationToken);
-            var cities = await _cityService.GetAll(cancellationToken);
+            var cities = await _cityService.GetAllAsync(cancellationToken);
             Cities = new SelectList(cities, "Id", "Name");
-            var usedAppUserIds = await _expertAppServices.GetAll(cancellationToken)
+            var usedAppUserIds = await _expertAppServices.GetAllAsync(cancellationToken)
                 .ContinueWith(t => t.Result.Select(e => e.AppUserId).ToList(), cancellationToken);
             var availableUsers = await _userManager.Users
                 .Where(u => !usedAppUserIds.Contains(u.Id))

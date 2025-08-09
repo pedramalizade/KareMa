@@ -15,7 +15,7 @@ namespace KareMa.EndPoint.RazorPages.Areas.ExpertArea.Pages
         public async Task OnGet(CancellationToken cancellationToken)
         {
             var expertId = int.Parse(User.Claims.FirstOrDefault(u => u.Type == "userExpertId").Value);
-            ExpertName = await _expertAppServices.GetExpertName(expertId, cancellationToken);
+            ExpertName = await _expertAppServices.GetExpertNameAsync(expertId, cancellationToken);
         }
     }
 }

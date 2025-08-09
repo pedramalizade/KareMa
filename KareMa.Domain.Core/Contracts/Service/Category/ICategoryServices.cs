@@ -3,13 +3,13 @@
     public interface ICategoryServices
     {
 
-        Task<bool> Create(CategoryCreateDto serviceCategoryCreateDto, CancellationToken cancellationToken);
-        Task<bool> Update(CategoryUpdateDto serviceCategoryUpdateDto, CancellationToken cancellationToken);
-        Task<bool> Delete(int serviceCategoryId, CancellationToken cancellationToken);
-        Task<Category> GetById(int serviceCategoryId, CancellationToken cancellationToken);
-        Task<List<GetCategoryDto>> GetAll(CancellationToken cancellationToken);
-        Task<List<CategoryNameDto>> GetCategorisName(CancellationToken cancellationToken);
-        Task<CategoryUpdateDto> ServiceCategoryUpdateInfo(int id, CancellationToken cancellationToken);
+        Task<bool> CreateAsync(CategoryCreateDto serviceCategoryCreateDto, CancellationToken cancellationToken);
+        Task<bool> UpdateAsync(CategoryUpdateDto serviceCategoryUpdateDto, CancellationToken cancellationToken);
+        Task<bool> DeleteAsync(int serviceCategoryId, CancellationToken cancellationToken);
+        Task<Category> GetByIdAsync(int serviceCategoryId, CancellationToken cancellationToken);
+        Task<List<GetCategoryDto>> GetAllAsync(CancellationToken cancellationToken);
+        Task<List<CategoryNameDto>> GetCategorisNameAsync(CancellationToken cancellationToken);
+        Task<CategoryUpdateDto> ServiceCategoryUpdateInfoAsync(int id, CancellationToken cancellationToken);
 
     }
 }

@@ -27,14 +27,14 @@ namespace KareMa.EndPoint.RazorPages.Pages.Areas.AdminArea.Pages
                 return BadRequest("Invalid Category Id");
             }
 
-            SubCategoryUpdate = await _subCategoryAppServices.ServiceSubCategoryUpdateInfo(id, cancellationToken);
+            SubCategoryUpdate = await _subCategoryAppServices.ServiceSubCategoryUpdateInfoAsync(id, cancellationToken);
 
             if (SubCategoryUpdate == null)
             {
                 return NotFound("SubCategory not found");
             }
 
-            CategoryNames = await _categoryAppService.GetCategorisName(cancellationToken);
+            CategoryNames = await _categoryAppService.GetCategorisNameAsync(cancellationToken);
             return Page();
         }
 
@@ -42,19 +42,19 @@ namespace KareMa.EndPoint.RazorPages.Pages.Areas.AdminArea.Pages
         {
             if (!ModelState.IsValid)
             {
-                CategoryNames = await _categoryAppService.GetCategorisName(cancellationToken); 
+                CategoryNames = await _categoryAppService.GetCategorisNameAsync(cancellationToken); 
                 return Page();
             }
 
             try
             {
-                await _subCategoryAppServices.Update(SubCategoryUpdate, Image, cancellationToken);
+                await _subCategoryAppServices.UpdateAsync(SubCategoryUpdate, Image, cancellationToken);
                 return RedirectToPage("SubCategory");
             }
             catch (Exception ex)
             {
                 ModelState.AddModelError("", $"Failed to update subcategory: {ex.Message}");
-                CategoryNames = await _categoryAppService.GetCategorisName(cancellationToken);
+                CategoryNames = await _categoryAppService.GetCategorisNameAsync(cancellationToken);
                 return Page();
             }
         }

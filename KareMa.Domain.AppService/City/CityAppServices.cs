@@ -9,10 +9,10 @@
             _cityServices = cityServices;
         }
 
-        public async Task<List<City>> GetAll(CancellationToken cancellationToken)
-          => await _cityServices.GetAll(cancellationToken);
+        public async Task<List<City>> GetAllAsync(CancellationToken cancellationToken)
+          => await _cityServices.GetAllAsync(cancellationToken);
 
-        public async Task<City> GetById(int cityId, CancellationToken cancellationToken)
-          => await _cityServices.GetById(cityId, cancellationToken);
+        public async Task<City> GetByIdAsync(int cityId, CancellationToken cancellationToken)
+          => await _cityServices.GetByIdAsync(cityId, cancellationToken);
     }
 }

@@ -42,14 +42,14 @@
                 throw new UnauthorizedAccessException("شناسه کارشناس یافت نشد.");
             }
 
-            ExpertUpdate = await _expertAppServices.ExpertUpdateInfo(expertId, cancellationToken);
+            ExpertUpdate = await _expertAppServices.ExpertUpdateInfoAsync(expertId, cancellationToken);
             if (ExpertUpdate == null)
             {
                 _logger.LogWarning("Expert with ID {ExpertId} not found, initializing empty DTO.", expertId);
                 ExpertUpdate = new ExpertUpdateDto { Id = expertId };
             }
 
-            ServicesNames = await _serviceAppServices.GetServicesName(cancellationToken);
+            ServicesNames = await _serviceAppServices.GetServicesNameAsync(cancellationToken);
             BirthDate = ExpertUpdate.BirthDate != null ? ExpertUpdate.BirthDate.ToPersianString("yyyy/MM/dd") : string.Empty;
 
             _logger.LogInformation("ServiceIds on Get: {@ServiceIds}", ExpertUpdate?.ServiceIds ?? new List<int>());
@@ -80,7 +80,7 @@
                             ModelState.AddModelError("", $"خطا در {modelStateKey}: {error.ErrorMessage}");
                         }
                     }
-                    ServicesNames = await _serviceAppServices.GetServicesName(cancellationToken);
+                    ServicesNames = await _serviceAppServices.GetServicesNameAsync(cancellationToken);
                     return Page();
                 }
 
@@ -110,7 +110,7 @@
                         _logger.LogWarning("Failed to parse BirthDate '{BirthDate}': {Message}", BirthDate, ex.Message);
                         Console.WriteLine($"Failed to parse BirthDate '{BirthDate}': {ex.Message}");
                         ModelState.AddModelError("BirthDate", $"خطا در تبدیل تاریخ تولد: {ex.Message}");
-                        ServicesNames = await _serviceAppServices.GetServicesName(cancellationToken);
+                        ServicesNames = await _serviceAppServices.GetServicesNameAsync(cancellationToken);
                         return Page();
                     }
                 }
@@ -131,13 +131,13 @@
                 _logger.LogInformation("Updating expert with ID: {ExpertId}, ServiceIds: {@ServiceIds}", expertId, ExpertUpdate.ServiceIds);
                 Console.WriteLine($"Updating expert with ID: {expertId}, ServiceIds: {string.Join(", ", ExpertUpdate.ServiceIds ?? new List<int>())}");
 
-                var result = await _expertAppServices.Update(ExpertUpdate,Image,  cancellationToken); // Image رو اینجا نمی‌فرستیم چون توی DTO هست
+                var result = await _expertAppServices.UpdateAsync(ExpertUpdate,Image,  cancellationToken); // Image رو اینجا نمی‌فرستیم چون توی DTO هست
                 if (!result)
                 {
                     _logger.LogWarning("Failed to update expert profile.");
                     Console.WriteLine("Failed to update expert profile.");
                     ModelState.AddModelError("", "خطا در ذخیره تغییرات پروفایل");
-                    ServicesNames = await _serviceAppServices.GetServicesName(cancellationToken);
+                    ServicesNames = await _serviceAppServices.GetServicesNameAsync(cancellationToken);
                     return Page();
                 }
 
@@ -152,7 +152,7 @@
                 Console.WriteLine($"Error in OnPostUpdateProfile: {ex.Message}");
                 Console.WriteLine($"Inner Exception: {ex.InnerException?.Message}");
                 ModelState.AddModelError("", $"خطا در ذخیره تغییرات: {ex.Message} - جزئیات: {ex.InnerException?.Message}");
-                ServicesNames = await _serviceAppServices.GetServicesName(cancellationToken);
+                ServicesNames = await _serviceAppServices.GetServicesNameAsync(cancellationToken);
                 return Page();
             }
         }

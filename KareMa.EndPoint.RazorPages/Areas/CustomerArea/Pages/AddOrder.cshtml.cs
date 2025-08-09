@@ -30,7 +30,7 @@
 
         public async Task OnGet(CancellationToken cancellationToken)
         {
-            Services = await _serviceAppServices.GetServicesName(cancellationToken);
+            Services = await _serviceAppServices.GetServicesNameAsync(cancellationToken);
         }
 
         public async Task<IActionResult> OnPostAddOrder(OrderCreateDto order, CancellationToken cancellationToken, IFormFile image, string date)
@@ -39,7 +39,7 @@
             {
                 var userCustomerId = int.Parse(User.Claims.FirstOrDefault(c => c.Type == "userCustomerId").Value);
                 order.CustomerId = userCustomerId;
-                await _orderAppServices.Create(order, image, date, cancellationToken);
+                await _orderAppServices.CreateAsync(order, image, date, cancellationToken);
                 return RedirectToAction("CustomerProfile-Orders");
             }
             return Page();

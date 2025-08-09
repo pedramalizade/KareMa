@@ -43,7 +43,7 @@
                 return Page();
             }
 
-            await _categoryAppServices.Create(CategoryCreate, Image, cancellationToken);
+            await _categoryAppServices.CreateAsync(CategoryCreate, Image, cancellationToken);
             return RedirectToPage("Category");
         }
 

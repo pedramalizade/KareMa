@@ -23,14 +23,14 @@
         public IFormFile Image { get; set; }
         public async Task OnGet(CancellationToken cancellationToken)
         {
-            CategoryNames = await _categoryAppServices.GetCategorisName(cancellationToken);
+            CategoryNames = await _categoryAppServices.GetCategorisNameAsync(cancellationToken);
         }
 
         public async Task<IActionResult> OnPostAdd(SubCategoryCreateDto serviceSubCategoryCreate, CancellationToken cancellationToken, IFormFile image)
         {
             if (ModelState.IsValid)
             {
-                await _subCategoryAppServices.Create(serviceSubCategoryCreate, cancellationToken, image);
+                await _subCategoryAppServices.CreateAsync(serviceSubCategoryCreate, cancellationToken, image);
                 return RedirectToPage("SubCategory");
             }
             return Page();

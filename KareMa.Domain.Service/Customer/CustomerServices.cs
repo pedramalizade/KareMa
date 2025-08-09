@@ -7,30 +7,27 @@
         {
             _customerRepository = customerRepository;
         }
-        public Task<bool> Create(CustomerCreateDto customerCreateDto, CancellationToken cancellationToken)
-          => _customerRepository.Create(customerCreateDto, cancellationToken);
-        public Task<int> CustomerCount(CancellationToken cancellationToken)
-          => _customerRepository.CustomerCount(cancellationToken);
-        public Task<bool> Delete(int customerId, CancellationToken cancellationToken)
-          => _customerRepository.Delete(customerId, cancellationToken);
-        public Task<List<GetCustomerDto>> GetAll(CancellationToken cancellationToken)
-          => _customerRepository.GetAll(cancellationToken);
-        public async Task<CustomerUpdateDto> GetCustomerUpdateInfo(int customerId, CancellationToken cancellationToken)
-   => await _customerRepository.GetCustomerUpdateInfo(customerId, cancellationToken);
-        public Task<Customer> GetById(int customerId, CancellationToken cancellationToken)
-          => _customerRepository.GetById(customerId, cancellationToken);
-        public async Task<CustomerSummaryDto> GetCustomerSummary(int id, CancellationToken cancellationToken)
-       => await _customerRepository.GetCustomerSummary(id, cancellationToken);
-        public async Task<bool> Update(CustomerUpdateDto customerUpdateDto, CancellationToken cancellationToken)
-          => await _customerRepository.Update(customerUpdateDto, cancellationToken);
-
-        public async Task<CustomerUpdateDto> CustomerUpdateInfo(int id, CancellationToken cancellationToken)
-        => await _customerRepository.CustomerUpdateInfo(id,  cancellationToken);
-
-        public async Task<Customer> GetCustomerById(int customerId, CancellationToken cancellationToken)
-        => await _customerRepository.GetCustomerById(customerId, cancellationToken);
-
-        public async Task UpdateBalance(int customerId, decimal newBalance, CancellationToken cancellationToken)
-       => await _customerRepository.UpdateBalance(customerId, newBalance, cancellationToken);   
+        public Task<bool> CreateAsync(CustomerCreateDto customerCreateDto, CancellationToken cancellationToken)
+          => _customerRepository.CreateAsync(customerCreateDto, cancellationToken);
+        public Task<int> CustomerCountAsync(CancellationToken cancellationToken)
+          => _customerRepository.CustomerCountAsync(cancellationToken);
+        public Task<bool> DeleteAsync(int customerId, CancellationToken cancellationToken)
+          => _customerRepository.DeleteAsync(customerId, cancellationToken);
+        public Task<List<GetCustomerDto>> GetAllAsync(CancellationToken cancellationToken)
+          => _customerRepository.GetAllAsync(cancellationToken);
+        public async Task<CustomerUpdateDto> GetCustomerUpdateInfoAsync(int customerId, CancellationToken cancellationToken)
+   => await _customerRepository.GetCustomerUpdateInfoAsync(customerId, cancellationToken);
+        public Task<Customer> GetByIdAsync(int customerId, CancellationToken cancellationToken)
+          => _customerRepository.GetByIdAsync(customerId, cancellationToken);
+        public async Task<CustomerSummaryDto> GetCustomerSummaryAsync(int id, CancellationToken cancellationToken)
+       => await _customerRepository.GetCustomerSummaryAsync(id, cancellationToken);
+        public async Task<bool> UpdateAsync(CustomerUpdateDto customerUpdateDto, CancellationToken cancellationToken)
+          => await _customerRepository.UpdateAsync(customerUpdateDto, cancellationToken);
+        public async Task<CustomerUpdateDto> CustomerUpdateInfoAsync(int id, CancellationToken cancellationToken)
+        => await _customerRepository.CustomerUpdateInfoAsync(id,  cancellationToken);
+        public async Task<Customer> GetCustomerByIdAsync(int customerId, CancellationToken cancellationToken)
+        => await _customerRepository.GetCustomerByIdAsync(customerId, cancellationToken);
+        public async Task UpdateBalanceAsync(int customerId, decimal newBalance, CancellationToken cancellationToken)
+       => await _customerRepository.UpdateBalanceAsync(customerId, newBalance, cancellationToken);   
     }
 }

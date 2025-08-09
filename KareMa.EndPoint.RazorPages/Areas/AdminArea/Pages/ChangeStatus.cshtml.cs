@@ -20,7 +20,7 @@
 
         public async Task<IActionResult> OnGet(int id, CancellationToken cancellationToken)
         {
-            Order = await _orderAppServices.GetById(id, cancellationToken);
+            Order = await _orderAppServices.GetByIdAsync(id, cancellationToken);
 
             if (Order == null)
             {
@@ -38,7 +38,7 @@
         {
             try
             {
-                await _orderAppServices.ChangeStatus(Status, OrderId, cancellationToken);
+                await _orderAppServices.ChangeStatusAsync(Status, OrderId, cancellationToken);
                 TempData["SuccessMessage"] = "وضعیت سفارش با موفقیت تغییر کرد!";
             }
             catch (Exception ex)

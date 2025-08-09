@@ -2,15 +2,15 @@
 {
     public interface ISubCategoryServices
     {
-        Task<bool> Create(SubCategoryCreateDto serviceSubCategoryCreateDto, CancellationToken cancellationToken);
-        Task<bool> Update(SubCategoryUpdateDto serviceSubCategoryUpdateDto, CancellationToken cancellationToken);
-        Task<bool> Delete(int serviceSubCategoryId, CancellationToken cancellationToken);
-        Task<SubCategory> GetById(int serviceSubCategoryId, CancellationToken cancellationToken);
-        Task<List<SubCategory>> GetAll(CancellationToken cancellationToken);
-        Task<List<SubCategoryNameDto>> GetCategorisName(CancellationToken cancellationToken);
-        Task<List<GetSubCategoryDto>> GetSubCategories(CancellationToken cancellationToken);
-        Task<List<GetByCategoryIdDto>> GetAllByCategoryId(int id, CancellationToken cancellationToken);
-        Task<SubCategoryUpdateDto> ServiceSubCategoryUpdateInfo(int id, CancellationToken cancellationToken);
+        Task<bool> CreateAsync(SubCategoryCreateDto serviceSubCategoryCreateDto, CancellationToken cancellationToken);
+        Task<bool> UpdateAsync(SubCategoryUpdateDto serviceSubCategoryUpdateDto, CancellationToken cancellationToken);
+        Task<bool> DeleteAsync(int serviceSubCategoryId, CancellationToken cancellationToken);
+        Task<SubCategory> GetByIdAsync(int serviceSubCategoryId, CancellationToken cancellationToken);
+        Task<List<SubCategory>> GetAllAsync(CancellationToken cancellationToken);
+        Task<List<SubCategoryNameDto>> GetCategorisNameAsync(CancellationToken cancellationToken);
+        Task<List<GetSubCategoryDto>> GetSubCategoriesAsync(CancellationToken cancellationToken);
+        Task<List<GetByCategoryIdDto>> GetAllByCategoryIdAsync(int id, CancellationToken cancellationToken);
+        Task<SubCategoryUpdateDto> ServiceSubCategoryUpdateInfoAsync(int id, CancellationToken cancellationToken);
 
 
     }

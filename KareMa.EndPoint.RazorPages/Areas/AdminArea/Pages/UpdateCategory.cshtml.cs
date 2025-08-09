@@ -18,7 +18,7 @@
         public async Task<IActionResult> OnGetAsync(int id, CancellationToken cancellationToken)
         {
             Console.WriteLine($"OnGetAsync called with id: {id}");
-            CategoryUpdate = await _categoryAppServices.ServiceCategoryUpdateInfo(id, cancellationToken);
+            CategoryUpdate = await _categoryAppServices.ServiceCategoryUpdateInfoAsync(id, cancellationToken);
             if (CategoryUpdate == null)
             {
                 Console.WriteLine($"Category with ID: {id} not found.");
@@ -44,7 +44,7 @@
 
             try
             {
-                var result = await _categoryAppServices.Update(CategoryUpdate, Image, cancellationToken);
+                var result = await _categoryAppServices.UpdateAsync(CategoryUpdate, Image, cancellationToken);
                 if (result)
                 {
                     TempData["SuccessMessage"] = "دسته‌بندی با موفقیت آپدیت شد.";

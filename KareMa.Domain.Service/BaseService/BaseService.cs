@@ -25,8 +25,7 @@
             }
             return null;
         }
-
-        public DateTime PersianToGregorian(string persianDateString)
+        public DateTime PersianToGregorianAsync(string persianDateString)
         {
             PersianCalendar pc = new PersianCalendar();
             string[] separatedTimeAndDate = persianDateString.Split(' ');

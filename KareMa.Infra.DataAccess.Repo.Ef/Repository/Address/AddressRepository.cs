@@ -8,7 +8,7 @@
             _context = context;
         }
 
-        public async Task<bool> Create(AddressCreateDto addressCreateDto, CancellationToken cancellationToken)
+        public async Task<bool> CreateAsync(AddressCreateDto addressCreateDto, CancellationToken cancellationToken)
         {
             var newModel = new Address()
             {
@@ -26,7 +26,7 @@
             return true;
         }
 
-        public async Task<bool> Delete(int addressId, CancellationToken cancellationToken)
+        public async Task<bool> DeleteAsync(int addressId, CancellationToken cancellationToken)
         {
             var targetMidel = await FindAddress(addressId, cancellationToken);
             targetMidel.IsDeleted = true;
@@ -35,13 +35,13 @@
             return true;
         }
 
-        public async Task<List<Address>> GetAll(CancellationToken cancellationToken)
+        public async Task<List<Address>> GetAllAsync(CancellationToken cancellationToken)
        => await _context.Addresses.AsNoTracking().ToListAsync(cancellationToken);
 
-        public async Task<Address> GetById(int addressId, CancellationToken cancellationToken)
+        public async Task<Address> GetByIdAsync(int addressId, CancellationToken cancellationToken)
       => await FindAddress(addressId, cancellationToken);
 
-        public async Task<bool> Update(AddressUpdateDto addrressUpdateDto, CancellationToken cancellationToken)
+        public async Task<bool> UpdateAsync(AddressUpdateDto addrressUpdateDto, CancellationToken cancellationToken)
         {
             var targetModel = await FindAddress(addrressUpdateDto.Id, cancellationToken);
 

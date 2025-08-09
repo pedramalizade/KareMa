@@ -7,20 +7,19 @@
         {
             _adminRepository = adminRepository;
         }
-        public async Task<bool> Create(AdminCreateDto adminCreateDto, CancellationToken cancellationToken)
-          =>await _adminRepository.Create(adminCreateDto, cancellationToken);
-        public async Task<bool> Delete(int adminId, CancellationToken cancellationToken)
-     => await _adminRepository.Delete(adminId, cancellationToken);
-        public async Task<List<Admin>> GetAll(CancellationToken cancellationToken)
-   => await _adminRepository.GetAll(cancellationToken);
-        public async Task<AdminUpdateDto> AdminUpdateInfo(int id, CancellationToken cancellationToken)
-  => await _adminRepository.AdminUpdateInfo(id, cancellationToken);
-        public async Task<Admin> GetById(int adminId, CancellationToken cancellationToken)
-          => await _adminRepository.GetById(adminId, cancellationToken);
-        public async Task<bool> Update(AdminUpdateDto adminUpdateDto, CancellationToken cancellationToken)
-             => await _adminRepository.Update(adminUpdateDto, cancellationToken);
-
-        public async Task<decimal> GetAdminBalance(int adminId, CancellationToken cancellationToken)
-        => await _adminRepository.GetAdminBalance(adminId, cancellationToken);  
+        public async Task<bool> CreateAsync(AdminCreateDto adminCreateDto, CancellationToken cancellationToken)
+          =>await _adminRepository.CreateAsync(adminCreateDto, cancellationToken);
+        public async Task<bool> DeleteAsync(int adminId, CancellationToken cancellationToken)
+     => await _adminRepository.DeleteAsync(adminId, cancellationToken);
+        public async Task<List<Admin>> GetAllAsync(CancellationToken cancellationToken)
+   => await _adminRepository.GetAllAsync(cancellationToken);
+        public async Task<AdminUpdateDto> AdminUpdateInfoAsync(int id, CancellationToken cancellationToken)
+  => await _adminRepository.AdminUpdateInfoAsync(id, cancellationToken);
+        public async Task<Admin> GetByIdAsync(int adminId, CancellationToken cancellationToken)
+          => await _adminRepository.GetByIdAsync(adminId, cancellationToken);
+        public async Task<bool> UpdateAsync(AdminUpdateDto adminUpdateDto, CancellationToken cancellationToken)
+             => await _adminRepository.UpdateAsync(adminUpdateDto, cancellationToken);
+        public async Task<decimal> GetAdminBalanceAsync(int adminId, CancellationToken cancellationToken)
+        => await _adminRepository.GetAdminBalanceAsync(adminId, cancellationToken);  
     }
 }

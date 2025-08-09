@@ -14,7 +14,7 @@ namespace KareMa.EndPoint.RazorPages.Pages
 
         public async Task OnGet(int id, CancellationToken cancellationToken)
         {
-            SubCategories = await _subCategoryAppServices.GetAllByCategoryId(id, cancellationToken);
+            SubCategories = await _subCategoryAppServices.GetAllByCategoryIdAsync(id, cancellationToken);
         }
     }
 }

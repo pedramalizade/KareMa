@@ -26,7 +26,7 @@
         {
             Console.WriteLine("OnGet called.");
             CustomerCreate.Addresses = new Address();
-            var cities = await _cityService.GetAll(cancellationToken);
+            var cities = await _cityService.GetAllAsync(cancellationToken);
             Cities = new SelectList(cities, "Id", "Name");
         }
 
@@ -53,7 +53,7 @@
                         }
                     }
                     ModelState.AddModelError("", "لطفاً خطاهای زیر را بررسی کنید: " + string.Join(" | ", errorMessages));
-                    var cities = await _cityService.GetAll(cancellationToken);
+                    var cities = await _cityService.GetAllAsync(cancellationToken);
                     Cities = new SelectList(cities, "Id", "Name");
                     Console.WriteLine("Returning page with validation errors.");
                     return Page();
@@ -77,7 +77,7 @@
                 {
                     Console.WriteLine("No logged-in user found.");
                     ModelState.AddModelError("", "کاربر لاگین‌شده پیدا نشد. لطفاً اول وارد شوید.");
-                    var cities = await _cityService.GetAll(cancellationToken);
+                    var cities = await _cityService.GetAllAsync(cancellationToken);
                     Cities = new SelectList(cities, "Id", "Name");
                     return Page();
                 }
@@ -85,12 +85,12 @@
                 CustomerCreate.AppUserId = currentUser.Id;
                 Console.WriteLine($"AppUserId set to {currentUser.Id}");
 
-                var result = await _customerAppServices.Create(CustomerCreate, Image, cancellationToken);
+                var result = await _customerAppServices.CreateAsync(CustomerCreate, Image, cancellationToken);
                 if (!result)
                 {
                     Console.WriteLine("Customer creation failed.");
                     ModelState.AddModelError("", "خطا در ثبت مشتری: مشکل در آپلود عکس یا ذخیره اطلاعات");
-                    var cities = await _cityService.GetAll(cancellationToken);
+                    var cities = await _cityService.GetAllAsync(cancellationToken);
                     Cities = new SelectList(cities, "Id", "Name");
                     return Page();
                 }
@@ -102,7 +102,7 @@
             {
                 Console.WriteLine($"Error occurred: {ex.Message}");
                 ModelState.AddModelError("", $"خطا در ثبت مشتری: {ex.Message}");
-                var cities = await _cityService.GetAll(cancellationToken);
+                var cities = await _cityService.GetAllAsync(cancellationToken);
                 Cities = new SelectList(cities, "Id", "Name");
                 return Page();
             }

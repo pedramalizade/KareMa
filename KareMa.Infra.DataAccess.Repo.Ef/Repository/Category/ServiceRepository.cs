@@ -12,7 +12,7 @@
             _configuration = configuration;
         }
 
-        public async Task<bool> Create(ServiceCreateDto serviceCreateDto, CancellationToken cancellationToken)
+        public async Task<bool> CreateAsync(ServiceCreateDto serviceCreateDto, CancellationToken cancellationToken)
         {
 
             var newModel = new Service()
@@ -26,7 +26,7 @@
             return true;
 
         }
-        public async Task<List<ServicesNameDto>> GetServicesName(CancellationToken cancellationToken)
+        public async Task<List<ServicesNameDto>> GetServicesNameAsync(CancellationToken cancellationToken)
         {
             return await _context.Services.Select(s => new ServicesNameDto
             {
@@ -35,7 +35,7 @@
                 Price = s.Price
             }).ToListAsync(cancellationToken);
         }
-        public async Task<ServiceNameAndPriceDto> GetServiceNameAndPrice(int id, CancellationToken cancellationToken)
+        public async Task<ServiceNameAndPriceDto> GetServiceNameAndPriceAsync(int id, CancellationToken cancellationToken)
         {
             var targetSrtvice = await _context.Services.AsNoTracking().Where(s => s.Id == id)
                   .Select(s => new ServiceNameAndPriceDto
@@ -51,7 +51,7 @@
 
         }
 
-        public async Task<bool> Delete(int serviceId, CancellationToken cancellationToken)
+        public async Task<bool> DeleteAsync(int serviceId, CancellationToken cancellationToken)
         {
             var targetModel = await FindService(serviceId, cancellationToken);
             targetModel.IsDeleted = true;
@@ -59,7 +59,7 @@
             return true;
         }
 
-        public async Task<List<GetServiceDto>> GetAll(CancellationToken cancellationToken)
+        public async Task<List<GetServiceDto>> GetAllAsync(CancellationToken cancellationToken)
         {
             var sql = @"
         SELECT 
@@ -95,7 +95,7 @@
             }
         }
 
-        public async Task<List<GetByCategorySubIdDto>> GetAllBySubCategoryId(int id, CancellationToken cancellationToken)
+        public async Task<List<GetByCategorySubIdDto>> GetAllBySubCategoryIdAsync(int id, CancellationToken cancellationToken)
         {
             return await _context.Services.Where(x => x.SubCategoryId == id).AsNoTracking()
                 .Select(c => new GetByCategorySubIdDto
@@ -106,7 +106,7 @@
                 .ToListAsync(cancellationToken);
         }
 
-        public async Task<ServiceUpdateDto> ServiceUpdateInfo(int id, CancellationToken cancellationToken)
+        public async Task<ServiceUpdateDto> ServiceUpdateInfoAsync(int id, CancellationToken cancellationToken)
         {
             return await _context.Services
                 .Select(s => new ServiceUpdateDto
@@ -118,10 +118,10 @@
 
                 }).FirstOrDefaultAsync(s => s.Id == id);
         }
-        public async Task<Service> GetById(int serviceId, CancellationToken cancellationToken)
+        public async Task<Service> GetByIdAsync(int serviceId, CancellationToken cancellationToken)
        => await FindService(serviceId, cancellationToken);
 
-        public async Task<bool> Update(ServiceUpdateDto serviceUpdateDto, CancellationToken cancellationToken)
+        public async Task<bool> UpdateAsync(ServiceUpdateDto serviceUpdateDto, CancellationToken cancellationToken)
         {
             var targetModel = await FindService(serviceUpdateDto.Id, cancellationToken);
 

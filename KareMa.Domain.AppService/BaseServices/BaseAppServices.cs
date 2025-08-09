@@ -7,7 +7,7 @@
         {
             _baseSevices = baseSevices;
         }
-        public async Task<string> UploadImage(IFormFile image)
+        public async Task<string> UploadImageAsync(IFormFile image)
           => await _baseSevices.UploadImage(image);
     }
 

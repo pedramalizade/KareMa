@@ -2,7 +2,7 @@
 {
     public interface ICityAppServices
     {
-        Task<City> GetById(int cityId, CancellationToken cancellationToken);
-        Task<List<City>> GetAll(CancellationToken cancellationToken);
+        Task<City> GetByIdAsync(int cityId, CancellationToken cancellationToken);
+        Task<List<City>> GetAllAsync(CancellationToken cancellationToken);
     }
 }

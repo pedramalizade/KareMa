@@ -17,7 +17,7 @@
         [Route(nameof(GetServiceSubCategoryWithServices))]
         public async Task<List<SubCategory>> GetServiceSubCategoryWithServices(CancellationToken cancellationToken)
         {
-            var subCategories = await _subCategoryAppService.GetAll(cancellationToken);
+            var subCategories = await _subCategoryAppService.GetAllAsync(cancellationToken);
             return subCategories;
         }
 
@@ -26,7 +26,7 @@
         [ServiceFilter(typeof(ApiKeyAuthFilter))]
         public async Task<List<GetOrderDto>> GetOrders(CancellationToken cancellationToken)
         {
-            var requests = await _orderAppService.GetAll(cancellationToken);
+            var requests = await _orderAppService.GetAllAsync(cancellationToken);
             return requests;
         }
 

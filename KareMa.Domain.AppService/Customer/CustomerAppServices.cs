@@ -9,7 +9,7 @@
             _customerServices = customerServices;
             _baseSevices = baseSevices;
         }
-        public async Task<bool> Create(CustomerCreateDto customerCreateDto, IFormFile image, CancellationToken cancellationToken)
+        public async Task<bool> CreateAsync(CustomerCreateDto customerCreateDto, IFormFile image, CancellationToken cancellationToken)
         {
             var imageAddress = await _baseSevices.UploadImage(image);
 
@@ -20,21 +20,21 @@
             }
 
             customerCreateDto.Image = imageAddress;
-            return await _customerServices.Create(customerCreateDto, cancellationToken);
+            return await _customerServices.CreateAsync(customerCreateDto, cancellationToken);
         }
-    public async Task<int> CustomerCount(CancellationToken cancellationToken)
-          => await _customerServices.CustomerCount(cancellationToken);
-        public async Task<CustomerSummaryDto> GetCustomerSummary(int id, CancellationToken cancellationToken)
-          => await _customerServices.GetCustomerSummary(id, cancellationToken);
-        public async Task<bool> Delete(int customerId, CancellationToken cancellationToken)
-          => await _customerServices.Delete(customerId, cancellationToken);
-        public async Task<List<GetCustomerDto>> GetAll(CancellationToken cancellationToken)
-          => await _customerServices.GetAll(cancellationToken);
-        public async Task<Customer> GetById(int customerId, CancellationToken cancellationToken)
-          => await _customerServices.GetById(customerId, cancellationToken);
-        public async Task<CustomerUpdateDto> GetCustomerUpdateInfo(int customerId, CancellationToken cancellationToken)
-  => await _customerServices.GetCustomerUpdateInfo(customerId, cancellationToken);
-        public async Task<bool> Update(CustomerUpdateDto customerUpdateDto, IFormFile Image, CancellationToken cancellationToken)
+        public async Task<int> CustomerCountAsync(CancellationToken cancellationToken)
+          => await _customerServices.CustomerCountAsync(cancellationToken);
+        public async Task<CustomerSummaryDto> GetCustomerSummaryAsync(int id, CancellationToken cancellationToken)
+          => await _customerServices.GetCustomerSummaryAsync(id, cancellationToken);
+        public async Task<bool> DeleteAsync(int customerId, CancellationToken cancellationToken)
+          => await _customerServices.DeleteAsync(customerId, cancellationToken);
+        public async Task<List<GetCustomerDto>> GetAllAsync(CancellationToken cancellationToken)
+          => await _customerServices.GetAllAsync(cancellationToken);
+        public async Task<Customer> GetByIdAsync(int customerId, CancellationToken cancellationToken)
+          => await _customerServices.GetByIdAsync(customerId, cancellationToken);
+        public async Task<CustomerUpdateDto> GetCustomerUpdateInfoAsync(int customerId, CancellationToken cancellationToken)
+  => await _customerServices.GetCustomerUpdateInfoAsync(customerId, cancellationToken);
+        public async Task<bool> UpdateAsync(CustomerUpdateDto customerUpdateDto, IFormFile Image, CancellationToken cancellationToken)
         {
             Console.WriteLine($"CustomerAppServices.Update started for ID: {customerUpdateDto.Id}");
 
@@ -53,18 +53,15 @@
                 }
             }
 
-            var result = await _customerServices.Update(customerUpdateDto, cancellationToken);
+            var result = await _customerServices.UpdateAsync(customerUpdateDto, cancellationToken);
             Console.WriteLine($"CustomerServices.Update result: {result}");
             return result;
         }
-
-        public async Task<CustomerUpdateDto> CustomerUpdateInfo(int id, CancellationToken cancellationToken)
-      => await _customerServices.CustomerUpdateInfo(id, cancellationToken);
-
-        public async Task<Customer> GetCustomerById(int customerId, CancellationToken cancellationToken)
-       => await _customerServices.GetCustomerById(customerId, cancellationToken);
-
-        public async Task UpdateBalance(int customerId, decimal newBalance, CancellationToken cancellationToken)
-      => await _customerServices.UpdateBalance(customerId, newBalance, cancellationToken);  
+        public async Task<CustomerUpdateDto> CustomerUpdateInfoAsync(int id, CancellationToken cancellationToken)
+      => await _customerServices.CustomerUpdateInfoAsync(id, cancellationToken);
+        public async Task<Customer> GetCustomerByIdAsync(int customerId, CancellationToken cancellationToken)
+       => await _customerServices.GetCustomerByIdAsync(customerId, cancellationToken);
+        public async Task UpdateBalanceAsync(int customerId, decimal newBalance, CancellationToken cancellationToken)
+      => await _customerServices.UpdateBalanceAsync(customerId, newBalance, cancellationToken);  
     }
 }

@@ -21,12 +21,12 @@
 
         public async Task OnGetAsync(CancellationToken cancellationToken)
         {
-            CategoryNames = await _categoryAppServices.GetCategorisName(cancellationToken);
+            CategoryNames = await _categoryAppServices.GetCategorisNameAsync(cancellationToken);
         }
 
         public async Task<IActionResult> OnPostSearchAsync(CancellationToken cancellationToken)
         {
-            var allCategories = await _categoryAppServices.GetCategorisName(cancellationToken);
+            var allCategories = await _categoryAppServices.GetCategorisNameAsync(cancellationToken);
             CategoryNames = allCategories;
 
             if (string.IsNullOrWhiteSpace(SearchQuery))

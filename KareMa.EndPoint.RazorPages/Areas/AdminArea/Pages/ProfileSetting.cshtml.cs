@@ -17,7 +17,7 @@ namespace KareMa.EndPoint.RazorPages.Areas.AdminArea.Pages
         public async Task OnGet(CancellationToken cancellationToken)
         {
             var adminUserId = int.Parse(User.Claims.FirstOrDefault(x => x.Type == "userAdminId").Value);
-            AdminUpdate = await _adminAppServices.AdminUpdateInfo(adminUserId, cancellationToken);
+            AdminUpdate = await _adminAppServices.AdminUpdateInfoAsync(adminUserId, cancellationToken);
         }
 
         public async Task<IActionResult> OnPostUpdateAdmin(AdminUpdateDto adminUpdate, CancellationToken cancellationToken)
@@ -27,7 +27,7 @@ namespace KareMa.EndPoint.RazorPages.Areas.AdminArea.Pages
             {
                 var adminUserId = int.Parse(User.Claims.FirstOrDefault(x => x.Type == "userAdminId").Value);
                 adminUpdate.Id = adminUserId;
-                await _adminAppServices.Update(adminUpdate, cancellationToken);
+                await _adminAppServices.UpdateAsync(adminUpdate, cancellationToken);
                 return RedirectToAction("OnGet");
             }
             return RedirectToAction("OnGet");

@@ -2,7 +2,7 @@
 {
     public interface IBaseSevices
     {
-        DateTime PersianToGregorian(string persianDateString);
+        DateTime PersianToGregorianAsync(string persianDateString);
         Task<string> UploadImage(IFormFile image);
     }
 }

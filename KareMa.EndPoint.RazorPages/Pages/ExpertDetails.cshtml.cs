@@ -24,7 +24,7 @@
         public async Task<IActionResult> OnGetAsync(int expertId, CancellationToken cancellationToken)
         {
             Console.WriteLine($"OnGetAsync called with expertId: {expertId}");
-            ExpertSummary = await _expertAppServices.GetExpertSummary(expertId, cancellationToken);
+            ExpertSummary = await _expertAppServices.GetExpertSummaryAsync(expertId, cancellationToken);
             if (ExpertSummary == null || ExpertSummary.Id == 0)
             {
                 ExpertSummary = new ExpertSummaryDto { Balance = 0, Id = expertId, Comments = new List<Comment>(), Services = new List<Service>() };
@@ -63,7 +63,7 @@
                     }
                 }
                 TempData["OrderNotDone"] = string.Join(" | ", errors);
-                ExpertSummary = await _expertAppServices.GetExpertSummary(expertId, cancellationToken);
+                ExpertSummary = await _expertAppServices.GetExpertSummaryAsync(expertId, cancellationToken);
                 return Page();
             }
 
@@ -86,7 +86,7 @@
                         logger?.LogError("No valid ExpertId found in form either.");
                         Console.WriteLine("No valid ExpertId found in form either.");
                         TempData["OrderNotDone"] = "خطا: شناسه متخصص نامعتبر است.";
-                        ExpertSummary = await _expertAppServices.GetExpertSummary(expertId, cancellationToken);
+                        ExpertSummary = await _expertAppServices.GetExpertSummaryAsync(expertId, cancellationToken);
                         return Page();
                     }
                 }
@@ -101,7 +101,7 @@
                         Console.WriteLine($"Claim Type: {claim.Type}, Value: {claim.Value}");
                     }
                     TempData["OrderNotDone"] = "خطا: کاربر شناسایی نشد.";
-                    ExpertSummary = await _expertAppServices.GetExpertSummary(expertId, cancellationToken);
+                    ExpertSummary = await _expertAppServices.GetExpertSummaryAsync(expertId, cancellationToken);
                     return Page();
                 }
 
@@ -110,7 +110,7 @@
                     logger?.LogWarning("Failed to parse CustomerId from claim value: {ClaimValue}", customerIdClaim.Value);
                     Console.WriteLine($"Failed to parse CustomerId from claim value: {customerIdClaim.Value}");
                     TempData["OrderNotDone"] = "خطا: شناسه مشتری نامعتبر است.";
-                    ExpertSummary = await _expertAppServices.GetExpertSummary(expertId, cancellationToken);
+                    ExpertSummary = await _expertAppServices.GetExpertSummaryAsync(expertId, cancellationToken);
                     return Page();
                 }
                 Comment.CustomerId = customerId;
@@ -125,7 +125,7 @@
                     Comment.CustomerId, Comment.ExpertId, Comment.Title ?? "null", Comment.Description ?? "null", Comment.Score);
                 Console.WriteLine($"Calling Create with Comment: CustomerId={Comment.CustomerId}, ExpertId={Comment.ExpertId}, Title={Comment.Title ?? "null"}, Description={Comment.Description ?? "null"}, Score={Comment.Score}");
 
-                var result = await _commentAppServices.Create(Comment, cancellationToken);
+                var result = await _commentAppServices.CreateAsync(Comment, cancellationToken);
                 logger?.LogInformation("Create method returned: {Result}", result);
                 Console.WriteLine($"Create method returned: {result}");
 
@@ -134,7 +134,7 @@
                     logger?.LogWarning("Create failed. Check Create method logs for details.");
                     Console.WriteLine("Create failed. Check Create method logs for details.");
                     TempData["OrderNotDone"] = "سفارش شما توسط این کارشناس به اتمام نرسیده یا خطایی رخ داده است.";
-                    ExpertSummary = await _expertAppServices.GetExpertSummary(expertId, cancellationToken);
+                    ExpertSummary = await _expertAppServices.GetExpertSummaryAsync(expertId, cancellationToken);
                     return Page();
                 }
 
@@ -149,14 +149,14 @@
                 Console.WriteLine($"Error in OnPostAddComment: {ex.Message}");
                 Console.WriteLine($"Inner Exception: {ex.InnerException?.Message}");
                 TempData["OrderNotDone"] = $"خطا در ثبت نظر: {ex.Message}";
-                ExpertSummary = await _expertAppServices.GetExpertSummary(expertId, cancellationToken);
+                ExpertSummary = await _expertAppServices.GetExpertSummaryAsync(expertId, cancellationToken);
                 return Page();
             }
         }
 
         public async Task<int> ExpertAverageScores(int expertId, CancellationToken cancellationToken)
         {
-            var summary = await _expertAppServices.GetExpertSummary(expertId, cancellationToken);
+            var summary = await _expertAppServices.GetExpertSummaryAsync(expertId, cancellationToken);
             if (summary?.Comments == null || !summary.Comments.Any())
                 return 0;
             return (int)Math.Round(summary.Comments.Average(c => c.Score), 0);

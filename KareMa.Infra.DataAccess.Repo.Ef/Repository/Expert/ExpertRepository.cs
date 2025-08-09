@@ -7,7 +7,7 @@
         {
             _context = context;
         }
-        public async Task<bool> Create(ExpertCreateDto expertCreateDto, CancellationToken cancellationToken)
+        public async Task<bool> CreateAsync(ExpertCreateDto expertCreateDto, CancellationToken cancellationToken)
         {
             try
             {
@@ -52,7 +52,7 @@
             }
         }
 
-        public async Task<bool> Delete(int expertId, CancellationToken cancellationToken)
+        public async Task<bool> DeleteAsync(int expertId, CancellationToken cancellationToken)
         {
             Console.WriteLine($"Attempting to delete expert with ID: {expertId}");
             var targetModel = await FindExpert(expertId, cancellationToken);
@@ -68,7 +68,7 @@
             return true;
         }
 
-        public async Task<List<Expert>> GetAll(CancellationToken cancellationToken)
+        public async Task<List<Expert>> GetAllAsync(CancellationToken cancellationToken)
         {
             Console.WriteLine("Fetching all experts...");
             var experts = await _context.Experts
@@ -80,12 +80,12 @@
             return experts;
         }
 
-        public async Task<Expert> GetById(int expertId, CancellationToken cancellationToken)
+        public async Task<Expert> GetByIdAsync(int expertId, CancellationToken cancellationToken)
         {
             return await FindExpert(expertId, cancellationToken);
         }
 
-        public async Task<bool> Update(ExpertUpdateDto expertUpdateDto, CancellationToken cancellationToken)
+        public async Task<bool> UpdateAsync(ExpertUpdateDto expertUpdateDto, CancellationToken cancellationToken)
         {
             var targetModel = await _context.Experts
                 .Include(e => e.Services)
@@ -138,13 +138,13 @@
             }
         }
 
-        public async Task<int> ExpertCount(CancellationToken cancellationToken)
+        public async Task<int> ExpertCountAsync(CancellationToken cancellationToken)
         {
             var count = await _context.Experts.CountAsync(cancellationToken);
             return count;
         }
 
-        public async Task<ExpertSummaryDto> GetExpertSummary(int id, CancellationToken cancellationToken)
+        public async Task<ExpertSummaryDto> GetExpertSummaryAsync(int id, CancellationToken cancellationToken)
         {
             Console.WriteLine($"Fetching expert summary for ID: {id}");
             var target = await _context.Experts
@@ -193,12 +193,12 @@
         }
 
 
-        public async Task<int> ExpertCommentCount(int id, CancellationToken cancellationToken)
+        public async Task<int> ExpertCommentCountAsync(int id, CancellationToken cancellationToken)
         {
             var targetExpert = await _context.Experts.Where(e => e.Id == id).SelectMany(e => e.Comments).CountAsync();
             return targetExpert;
         }
-        public async Task<int> ExpertAverageScores(int id, CancellationToken cancellationToken)
+        public async Task<int> ExpertAverageScoresAsync(int id, CancellationToken cancellationToken)
         {
             var targetExpert = await _context.Experts.Include(o => o.Comments).FirstOrDefaultAsync(e => e.Id == id, cancellationToken);
             if (targetExpert == null || targetExpert.Comments == null || !targetExpert.Comments.Any())
@@ -209,21 +209,21 @@
             return score;
         }
 
-        public async Task<int> ExpertOrderCount(int id, CancellationToken cancellationToken)
+        public async Task<int> ExpertOrderCountAsync(int id, CancellationToken cancellationToken)
         {
             var targetExpertSuggestion = await _context.Experts.Where(e => e.Id == id).SelectMany(e => e.Suggestions).ToListAsync(cancellationToken);
             var suggestions = targetExpertSuggestion.Count(o => o.Status == StatusEnum.Done);
             return suggestions;
         }
 
-        public async Task<List<int>> GetExpertServiceIds(int id, CancellationToken cancellationToken)
+        public async Task<List<int>> GetExpertServiceIdsAsync(int id, CancellationToken cancellationToken)
         {
             var expertServices = await _context.Experts.Where(e => e.Id == id).SelectMany(e => e.Services).ToListAsync(cancellationToken);
             var servicesId = expertServices.Select(s => s.Id).ToList();
             return servicesId;
         }
 
-        public async Task<ExpertUpdateDto> ExpertUpdateInfo(int id, CancellationToken cancellationToken)
+        public async Task<ExpertUpdateDto> ExpertUpdateInfoAsync(int id, CancellationToken cancellationToken)
         {
             var result = await _context.Experts.Include(e => e.Services)
                 .Select(e => new ExpertUpdateDto
@@ -247,7 +247,7 @@
             return result;
         }
 
-        public async Task<ExpertNameDto> GetExpertName(int id, CancellationToken cancellationToken)
+        public async Task<ExpertNameDto> GetExpertNameAsync(int id, CancellationToken cancellationToken)
         {
             var targetExpert = await _context.Experts.AsNoTracking().Where(e => e.Id == id)
                   .Select(e => new ExpertNameDto
@@ -263,7 +263,7 @@
 
             return targetExpert;
         }
-        public async Task<Expert> GetExpertById(int expertId, CancellationToken cancellationToken)
+        public async Task<Expert> GetExpertByIdAsync(int expertId, CancellationToken cancellationToken)
         {
             Console.WriteLine($"Fetching expert with ID: {expertId}");
             var expert = await _context.Experts
@@ -276,7 +276,7 @@
             return expert;
         }
 
-        public async Task UpdateBalance(int expertId, decimal newBalance, CancellationToken cancellationToken)
+        public async Task UpdateBalanceAsync(int expertId, decimal newBalance, CancellationToken cancellationToken)
         {
             Console.WriteLine($"Updating balance for Expert ID: {expertId} to {newBalance}");
             var expert = await _context.Experts

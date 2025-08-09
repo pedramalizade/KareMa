@@ -8,7 +8,7 @@
             _context = context;
         }
 
-        public async Task<bool> Create(AdminCreateDto adminCreateDto, CancellationToken cancellationToken)
+        public async Task<bool> CreateAsync(AdminCreateDto adminCreateDto, CancellationToken cancellationToken)
         {
             var newModel = new Admin()
             {
@@ -22,7 +22,7 @@
             return true;
         }
 
-        public async Task<decimal> GetAdminBalance(int adminId, CancellationToken cancellationToken)
+        public async Task<decimal> GetAdminBalanceAsync(int adminId, CancellationToken cancellationToken)
         {
             var admin = await _context.Admins
                 .AsNoTracking()
@@ -30,7 +30,7 @@
             return admin?.Balance ?? 0m; // اگر ادمین پیدا نشد یا موجودی نداشت، صفر برمی‌گردونه
         }
 
-        public async Task<bool> Delete(int adminId, CancellationToken cancellationToken)
+        public async Task<bool> DeleteAsync(int adminId, CancellationToken cancellationToken)
         {
             var targetAdmin = await FindAdmin(adminId, cancellationToken);
             targetAdmin.IsDeleted = true;
@@ -39,10 +39,10 @@
 
         }
 
-        public async Task<List<Admin>> GetAll(CancellationToken cancellationToken)
+        public async Task<List<Admin>> GetAllAsync(CancellationToken cancellationToken)
        => await _context.Admins.AsNoTracking().ToListAsync(cancellationToken);
 
-        public async Task<AdminUpdateDto> AdminUpdateInfo(int id, CancellationToken cancellationToken)
+        public async Task<AdminUpdateDto> AdminUpdateInfoAsync(int id, CancellationToken cancellationToken)
         {
             var m = await _context.Admins.Select(a => new AdminUpdateDto
             {
@@ -57,10 +57,10 @@
             return m;
         }
 
-        public async Task<Admin> GetById(int adminId, CancellationToken cancellationToken)
+        public async Task<Admin> GetByIdAsync(int adminId, CancellationToken cancellationToken)
           => await FindAdmin(adminId, cancellationToken);
 
-        public async Task<bool> Update(AdminUpdateDto adminUpdateDto, CancellationToken cancellationToken)
+        public async Task<bool> UpdateAsync(AdminUpdateDto adminUpdateDto, CancellationToken cancellationToken)
         {
             var targetModel = _context.Admins.FirstOrDefault(a => a.Id == adminUpdateDto.Id);
             targetModel.FirstName = adminUpdateDto.FirstName;

@@ -9,8 +9,7 @@
             _expertServices = expertServices;
             _baseSevices = baseServce;
         }
-
-        public async Task<bool> Create(ExpertCreateDto expertCreateDto, IFormFile Image, CancellationToken cancellationToken)
+        public async Task<bool> CreateAsync(ExpertCreateDto expertCreateDto, IFormFile Image, CancellationToken cancellationToken)
         {
             string imageAddress = null;
             if (Image != null)
@@ -38,36 +37,27 @@
                 throw;
             }
         }
-
-        public async Task<bool> Delete(int expertId, CancellationToken cancellationToken)
+        public async Task<bool> DeleteAsync(int expertId, CancellationToken cancellationToken)
           => await _expertServices.Delete(expertId, cancellationToken);
-
-        public async Task<int> ExpertAverageScores(int id, CancellationToken cancellationToken)
+        public async Task<int> ExpertAverageScoresAsync(int id, CancellationToken cancellationToken)
           => await _expertServices.ExpertAverageScores(id, cancellationToken);
-
-        public async Task<int> ExpertCommentCount(int id, CancellationToken cancellationToken)
+        public async Task<int> ExpertCommentCountAsync(int id, CancellationToken cancellationToken)
           => await _expertServices.ExpertCommentCount(id, cancellationToken);
-
-        public async Task<int> ExpertCount(CancellationToken cancellationToken)
+        public async Task<int> ExpertCountAsync(CancellationToken cancellationToken)
           => await _expertServices.ExpertCount(cancellationToken);
-
-        public async Task<int> ExpertOrderCount(int id, CancellationToken cancellationToken)
+        public async Task<int> ExpertOrderCountAsync(int id, CancellationToken cancellationToken)
           => await _expertServices.ExpertOrderCount(id, cancellationToken);
-
-        public async Task<ExpertUpdateDto> ExpertUpdateInfo(int id, CancellationToken cancellationToken)
+        public async Task<ExpertUpdateDto> ExpertUpdateInfoAsync(int id, CancellationToken cancellationToken)
        => await _expertServices.ExpertUpdateInfo(id, cancellationToken);
-
-        public async Task<List<Expert>> GetAll(CancellationToken cancellationToken)
+        public async Task<List<Expert>> GetAllAsync(CancellationToken cancellationToken)
           => await _expertServices.GetAll(cancellationToken);
-        public async Task<ExpertNameDto> GetExpertName(int id, CancellationToken cancellationToken)
+        public async Task<ExpertNameDto> GetExpertNameAsync(int id, CancellationToken cancellationToken)
   => await _expertServices.GetExpertName(id, cancellationToken);
-        public async Task<Expert> GetById(int expertId, CancellationToken cancellationToken)
+        public async Task<Expert> GetByIdAsync(int expertId, CancellationToken cancellationToken)
           => await _expertServices.GetById(expertId, cancellationToken);
-
-        public async Task<ExpertSummaryDto> GetExpertSummary(int id, CancellationToken cancellationToken)
+        public async Task<ExpertSummaryDto> GetExpertSummaryAsync(int id, CancellationToken cancellationToken)
           => await _expertServices.GetExpertSummary(id, cancellationToken);
-
-        public async Task<bool> Update(ExpertUpdateDto expertUpdateDto, IFormFile? image, CancellationToken cancellationToken)
+        public async Task<bool> UpdateAsync(ExpertUpdateDto expertUpdateDto, IFormFile? image, CancellationToken cancellationToken)
         {
             Console.WriteLine($"ExpertAppServices.Update started for ID: {expertUpdateDto.Id}");
 
@@ -87,11 +77,9 @@
             Console.WriteLine("ExpertAppServices.Update completed successfully.");
             return true;
         }
-
-        public async Task<Expert> GetExpertById(int expertId, CancellationToken cancellationToken)
+        public async Task<Expert> GetExpertByIdAsync(int expertId, CancellationToken cancellationToken)
         => await _expertServices.GetExpertById(expertId, cancellationToken);
-
-        public async Task UpdateBalance(int expertId, decimal newBalance, CancellationToken cancellationToken)
+        public async Task UpdateBalanceAsync(int expertId, decimal newBalance, CancellationToken cancellationToken)
         => await _expertServices.UpdateBalance(expertId, newBalance, cancellationToken);
     }
 }

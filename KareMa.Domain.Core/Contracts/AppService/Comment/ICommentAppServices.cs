@@ -2,15 +2,15 @@
 {
     public interface ICommentAppServices
     {
-        Task<bool> Create(CommentCreateDto commentCreateDto, CancellationToken cancellationToken);
-        Task<bool> Update(CommentUpdateDto commentUpdateDto, CancellationToken cancellationToken);
-        Task<bool> Delete(int CommentId, CancellationToken cancellationToken);
-        Task<Comment> GetById(int commentId, CancellationToken cancellationToken);
-        Task<List<GetCommentsDto>> GetAll(CancellationToken cancellationToken);
-        Task<bool> SetScore(int expertId, int score, CancellationToken cancellationToken);
-        Task AcceptComment(int commentId, CancellationToken cancellationToken);
-        Task RejectComment(int commentId, CancellationToken cancellationToken);
-        Task<List<RecentCommentDto>> GetRecentComments(CancellationToken cancellationToken);
-        Task<int> CommentCount(CancellationToken cancellationToken);
+        Task<bool> CreateAsync(CommentCreateDto commentCreateDto, CancellationToken cancellationToken);
+        Task<bool> UpdateAsync(CommentUpdateDto commentUpdateDto, CancellationToken cancellationToken);
+        Task<bool> DeleteAsync(int CommentId, CancellationToken cancellationToken);
+        Task<Comment> GetByIdAsync(int commentId, CancellationToken cancellationToken);
+        Task<List<GetCommentsDto>> GetAllAsync(CancellationToken cancellationToken);
+        Task<bool> SetScoreAsync(int expertId, int score, CancellationToken cancellationToken);
+        Task AcceptCommentAsync(int commentId, CancellationToken cancellationToken);
+        Task RejectCommentAsync(int commentId, CancellationToken cancellationToken);
+        Task<List<RecentCommentDto>> GetRecentCommentsAsync(CancellationToken cancellationToken);
+        Task<int> CommentCountAsync(CancellationToken cancellationToken);
     }
 }

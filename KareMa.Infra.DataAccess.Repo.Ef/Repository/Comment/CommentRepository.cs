@@ -9,52 +9,25 @@
             _context = context;
         }
 
-        public async Task<bool> Create(CommentCreateDto commentCreateDto, CancellationToken cancellationToken)
+        public async Task<bool> CreateAsync(CommentCreateDto commentCreateDto, CancellationToken cancellationToken)
         {
-            Console.WriteLine($"CommentAppServices.Create called for ExpertId: {commentCreateDto?.ExpertId ?? -1}, CustomerId: {commentCreateDto?.CustomerId ?? -1}");
 
-            if (commentCreateDto == null)
-            {
-                Console.WriteLine("Invalid input: CommentCreateDto is null.");
+            if (commentCreateDto == null || commentCreateDto.CustomerId <= 0 || commentCreateDto.ExpertId <= 0)
                 return false;
-            }
-            if (commentCreateDto.CustomerId <= 0)
-            {
-                Console.WriteLine($"Invalid input: CustomerId is invalid ({commentCreateDto.CustomerId}).");
-                return false;
-            }
-            if (commentCreateDto.ExpertId <= 0)
-            {
-                Console.WriteLine($"Invalid input: ExpertId is invalid ({commentCreateDto.ExpertId}).");
-                return false;
-            }
 
             var customerExists = await _context.Customers.AnyAsync(c => c.Id == commentCreateDto.CustomerId && !c.IsDeleted, cancellationToken);
             var expertExists = await _context.Experts.AnyAsync(e => e.Id == commentCreateDto.ExpertId && !e.IsDeleted, cancellationToken);
-            if (!customerExists)
-            {
-                Console.WriteLine($"Customer with ID {commentCreateDto.CustomerId} not found or is deleted.");
+            if (!customerExists || !expertExists)
                 return false;
-            }
-            if (!expertExists)
-            {
-                Console.WriteLine($"Expert with ID {commentCreateDto.ExpertId} not found or is deleted.");
-                return false;
-            }
 
-            var orders = await _context.Orders
-                .Where(o => o.CustomerId == commentCreateDto.CustomerId && !o.IsDeleted)
-                .Select(o => new { o.Id, o.ExpertId, o.Status })
-                .ToListAsync(cancellationToken);
-
-            var orderCompleted = orders.Any(o =>
-                (o.ExpertId == commentCreateDto.ExpertId || o.ExpertId == null) &&
-                o.Status == StatusEnum.Done
-            );
+            var orderCompleted = await _context.Orders
+        .AnyAsync(o => o.CustomerId == commentCreateDto.CustomerId &&
+                       !o.IsDeleted &&
+                       (o.ExpertId == commentCreateDto.ExpertId || o.ExpertId == null) &&
+                       o.Status == StatusEnum.Done, cancellationToken);
 
             if (!orderCompleted)
             {
-                Console.WriteLine($"No completed order found for CustomerId: {commentCreateDto.CustomerId} and ExpertId: {commentCreateDto.ExpertId}.");
                 return false;
             }
 
@@ -74,18 +47,15 @@
             {
                 await _context.Comments.AddAsync(newModel, cancellationToken);
                 await _context.SaveChangesAsync(cancellationToken);
-                Console.WriteLine("Comment created successfully in database.");
                 return true;
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Error in Create: {ex.Message}");
-                Console.WriteLine($"Inner Exception: {ex.InnerException?.Message}");
                 return false;
             }
         }
 
-        public async Task<bool> Delete(int commentId, CancellationToken cancellationToken)
+        public async Task<bool> DeleteAsync(int commentId, CancellationToken cancellationToken)
         {
             var targetModel = await FindComment(commentId, cancellationToken);
             targetModel.IsDeleted = true;
@@ -93,7 +63,7 @@
             return true;
         }
 
-        public async Task<List<GetCommentsDto>> GetAll(CancellationToken cancellationToken)
+        public async Task<List<GetCommentsDto>> GetAllAsync(CancellationToken cancellationToken)
         {
             var comments = await _context.Comments.AsNoTracking()
                  .Select(c => new GetCommentsDto
@@ -114,10 +84,10 @@
         }
 
 
-        public async Task<Comment> GetById(int commentId, CancellationToken cancellationToken)
+        public async Task<Comment> GetByIdAsync(int commentId, CancellationToken cancellationToken)
        => await FindComment(commentId, cancellationToken);
 
-        public async Task<bool> Update(CommentUpdateDto commentUpdateDto, CancellationToken cancellationToken)
+        public async Task<bool> UpdateAsync(CommentUpdateDto commentUpdateDto, CancellationToken cancellationToken)
         {
             var targetModel = await FindComment(commentUpdateDto.Id, cancellationToken);
 
@@ -129,26 +99,26 @@
 
             return true;
         }
-        public async Task<bool> SetScore(int expertId, int score, CancellationToken cancellationToken)
+        public async Task<bool> SetScoreAsync(int expertId, int score, CancellationToken cancellationToken)
         {
             var targetModel = await _context.Comments.FirstOrDefaultAsync(c => c.ExpertId == expertId, cancellationToken);
             targetModel.Score = score;
             await _context.SaveChangesAsync(cancellationToken);
             return true;
         }
-        public async Task AcceptComment(int commentId, CancellationToken cancellationToken)
+        public async Task AcceptCommentAsync(int commentId, CancellationToken cancellationToken)
         {
             var targetModel = await FindComment(commentId, cancellationToken);
             targetModel.IsAccept = true;
             await _context.SaveChangesAsync(cancellationToken);
         }
-        public async Task RejectComment(int commentId, CancellationToken cancellationToken)
+        public async Task RejectCommentAsync(int commentId, CancellationToken cancellationToken)
         {
             var targetModel = await FindComment(commentId, cancellationToken);
             targetModel.IsAccept = false;
             await _context.SaveChangesAsync(cancellationToken);
         }
-        public async Task<List<RecentCommentDto>> GetRecentComments(int count, CancellationToken cancellationToken)
+        public async Task<List<RecentCommentDto>> GetRecentCommentsAsync(int count, CancellationToken cancellationToken)
         {
             var recentComments = await _context.Comments.
                 Select(c => new RecentCommentDto
@@ -164,7 +134,7 @@
                 .ToListAsync(cancellationToken);
             return recentComments;
         }
-        public async Task<int> CommentCount(CancellationToken cancellationToken)
+        public async Task<int> CommentCountAsync(CancellationToken cancellationToken)
           => await _context.Comments.CountAsync(cancellationToken);
 
         private async Task<Comment> FindComment(int id, CancellationToken cancellationToken)

@@ -7,25 +7,24 @@
         {
             _serviceServices = serviceServices;
         }
-        public async Task<bool> Create(ServiceCreateDto serviceCreateDto, CancellationToken cancellationToken)
-        => await _serviceServices.Create(serviceCreateDto, cancellationToken);
-        public async Task<bool> Delete(int serviceId, CancellationToken cancellationToken)
-       => await _serviceServices.Delete(serviceId, cancellationToken);
-        public async Task<List<GetServiceDto>> GetAll(CancellationToken cancellationToken)
-      => await _serviceServices.GetAll(cancellationToken);
-        public async Task<Core.Entities.Service> GetById(int serviceId, CancellationToken cancellationToken)
-            => await _serviceServices.GetById(serviceId, cancellationToken);
-        public async Task<ServiceUpdateDto> ServiceUpdateInfo(int id, CancellationToken cancellationToken)
-  => await _serviceServices.ServiceUpdateInfo(id, cancellationToken);
-        public async Task<List<GetByCategorySubIdDto>> GetAllBySubCategoryId(int id, CancellationToken cancellationToken)
-  => await _serviceServices.GetAllBySubCategoryId(id, cancellationToken);
-        public async Task<List<ServicesNameDto>> GetServicesName(CancellationToken cancellationToken)
-    => await _serviceServices.GetServicesName(cancellationToken);
-        public async Task<bool> Update(ServiceUpdateDto serviceUpdateDto, CancellationToken cancellationToken)
-    => await _serviceServices.Update(serviceUpdateDto, cancellationToken);
-        public async Task<ServiceNameAndPriceDto> GetServiceNameAndPrice(int id, CancellationToken cancellationToken)
-    => await _serviceServices.GetServiceNameAndPrice(id, cancellationToken);
-
+        public async Task<bool> CreateAsync(ServiceCreateDto serviceCreateDto, CancellationToken cancellationToken)
+        => await _serviceServices.CreateAsync(serviceCreateDto, cancellationToken);
+        public async Task<bool> DeleteAsync(int serviceId, CancellationToken cancellationToken)
+       => await _serviceServices.DeleteAsync(serviceId, cancellationToken);
+        public async Task<List<GetServiceDto>> GetAllAsync(CancellationToken cancellationToken)
+      => await _serviceServices.GetAllAsync(cancellationToken);
+        public async Task<Core.Entities.Service> GetByIdAsync(int serviceId, CancellationToken cancellationToken)
+            => await _serviceServices.GetByIdAsync(serviceId, cancellationToken);
+        public async Task<ServiceUpdateDto> ServiceUpdateInfoAsync(int id, CancellationToken cancellationToken)
+  => await _serviceServices.ServiceUpdateInfoAsync(id, cancellationToken);
+        public async Task<List<GetByCategorySubIdDto>> GetAllBySubCategoryIdAsync(int id, CancellationToken cancellationToken)
+  => await _serviceServices.GetAllBySubCategoryIdAsync(id, cancellationToken);
+        public async Task<List<ServicesNameDto>> GetServicesNameAsync(CancellationToken cancellationToken)
+    => await _serviceServices.GetServicesNameAsync(cancellationToken);
+        public async Task<bool> UpdateAsync(ServiceUpdateDto serviceUpdateDto, CancellationToken cancellationToken)
+    => await _serviceServices.UpdateAsync(serviceUpdateDto, cancellationToken);
+        public async Task<ServiceNameAndPriceDto> GetServiceNameAndPriceAsync(int id, CancellationToken cancellationToken)
+    => await _serviceServices.GetServiceNameAndPriceAsync(id, cancellationToken);
         public async Task<List<Core.Entities.Service>> GetAllServicesAsync(CancellationToken cancellationToken)
         => await _serviceServices.GetAllServicesAsync(cancellationToken);
     }

@@ -18,7 +18,7 @@
         public async Task<IActionResult> OnGetAsync(int id, CancellationToken cancellationToken)
         {
             Console.WriteLine($"OnGetAsync called with id: {id}");
-            ExpertUpdate = await _expertAppServices.ExpertUpdateInfo(id, cancellationToken);
+            ExpertUpdate = await _expertAppServices.ExpertUpdateInfoAsync(id, cancellationToken);
             if (ExpertUpdate == null)
             {
                 Console.WriteLine($"Expert with ID: {id} not found.");
@@ -44,7 +44,7 @@
 
             try
             {
-                var result = await _expertAppServices.Update(ExpertUpdate, Image, cancellationToken);
+                var result = await _expertAppServices.UpdateAsync(ExpertUpdate, Image, cancellationToken);
                 if (result)
                 {
                     TempData["SuccessMessage"] = "اطلاعات متخصص با موفقیت آپدیت شد.";

@@ -12,32 +12,25 @@
             _orderServices = orderServices;
             _baseSevices = baseSevices;
         }
-
-        public async Task<bool> AcceptSuggestion(int suggestionId, int orderId, CancellationToken cancellationToken)
-        => await _suggestionServices.AcceptSuggestion(suggestionId, orderId, cancellationToken);
-
-        public async Task<bool> Create(SuggestionCreateDto suggestionCreateDto, string suggestionDate, CancellationToken cancellationToken)
+        public async Task<bool> AcceptSuggestionAsync(int suggestionId, int orderId, CancellationToken cancellationToken)
+        => await _suggestionServices.AcceptSuggestionAsync(suggestionId, orderId, cancellationToken);
+        public async Task<bool> CreateAsync(SuggestionCreateDto suggestionCreateDto, string suggestionDate, CancellationToken cancellationToken)
         {
-            var gregorianDate = _baseSevices.PersianToGregorian(suggestionDate);
+            var gregorianDate = _baseSevices.PersianToGregorianAsync(suggestionDate);
             suggestionCreateDto.SuggastionDate = gregorianDate;
-            return await _suggestionServices.Create(suggestionCreateDto, cancellationToken);
+            return await _suggestionServices.CreateAsync(suggestionCreateDto, cancellationToken);
         }
-
-        public async Task<bool> Delete(int suggestionId, CancellationToken cancellationToken)
-          => await _suggestionServices.Delete(suggestionId, cancellationToken);
-
-        public async Task<List<Suggestion>> GetAll(CancellationToken cancellationToken)
-          => await _suggestionServices.GetAll(cancellationToken);
-
-        public async Task<Suggestion> GetById(int suggestionId, CancellationToken cancellationToken)
-          => await _suggestionServices.GetById(suggestionId, cancellationToken);
-
-        public async Task<SuggestionDto> GetSuggestionById(int suggestionId, CancellationToken cancellationToken)
-       => await _suggestionServices.GetSuggestionById(suggestionId, cancellationToken);
-
-        public async Task<List<SuggestionsByExpertIdDto>> GetSuggestionsByExperId(int id, CancellationToken cancellationToken)
+        public async Task<bool> DeleteAsync(int suggestionId, CancellationToken cancellationToken)
+          => await _suggestionServices.DeleteAsync(suggestionId, cancellationToken);
+        public async Task<List<Suggestion>> GetAllAsync(CancellationToken cancellationToken)
+          => await _suggestionServices.GetAllAsync(cancellationToken);
+        public async Task<Suggestion> GetByIdAsync(int suggestionId, CancellationToken cancellationToken)
+          => await _suggestionServices.GetByIdAsync(suggestionId, cancellationToken);
+        public async Task<SuggestionDto> GetSuggestionByIdAsync(int suggestionId, CancellationToken cancellationToken)
+       => await _suggestionServices.GetSuggestionByIdAsync(suggestionId, cancellationToken);
+        public async Task<List<SuggestionsByExpertIdDto>> GetSuggestionsByExperIdAsync(int id, CancellationToken cancellationToken)
         {
-            var Suggestions = await _suggestionServices.GetSuggestionsByExperId(id, cancellationToken);
+            var Suggestions = await _suggestionServices.GetSuggestionsByExperIdAsync(id, cancellationToken);
             var suggetionDates = Suggestions.Select(s => s.SuggestedDate).ToList();
             foreach (var item in Suggestions)
             {
@@ -45,8 +38,7 @@
             }
             return Suggestions;
         }
-
-        public async Task<bool> Update(SuggestionUpdateDto suggestionUpdateDto, CancellationToken cancellationToken)
-          => await _suggestionServices.Update(suggestionUpdateDto, cancellationToken);
+        public async Task<bool> UpdateAsync(SuggestionUpdateDto suggestionUpdateDto, CancellationToken cancellationToken)
+          => await _suggestionServices.UpdateAsync(suggestionUpdateDto, cancellationToken);
     }
 }

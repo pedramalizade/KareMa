@@ -9,7 +9,7 @@
             _categoryServices = categoryServices;
             _baseSevices = baseSevices;
         }
-        public async Task<bool> Create(CategoryCreateDto categoryCreateDto, IFormFile image, CancellationToken cancellationToken)
+        public async Task<bool> CreateAsync(CategoryCreateDto categoryCreateDto, IFormFile image, CancellationToken cancellationToken)
         {
             var imageAddress = await _baseSevices.UploadImage(image);
 
@@ -20,19 +20,19 @@
             }
 
             categoryCreateDto.Image = imageAddress;
-            return await _categoryServices.Create(categoryCreateDto, cancellationToken);
+            return await _categoryServices.CreateAsync(categoryCreateDto, cancellationToken);
         }
-        public async Task<bool> Delete(int serviceCategoryId, CancellationToken cancellationToken)
-           => await _categoryServices.Delete(serviceCategoryId, cancellationToken);
-        public async Task<List<GetCategoryDto>> GetAll(CancellationToken cancellationToken)
-          => await _categoryServices.GetAll(cancellationToken);
-        public async Task<Category> GetById(int serviceCategoryId, CancellationToken cancellationToken)
-          => await _categoryServices.GetById(serviceCategoryId, cancellationToken);
-        public Task<List<CategoryNameDto>> GetCategorisName(CancellationToken cancellationToken)
-     => _categoryServices.GetCategorisName(cancellationToken);
-        public async Task<CategoryUpdateDto> ServiceCategoryUpdateInfo(int id, CancellationToken cancellationToken)
-  => await _categoryServices.ServiceCategoryUpdateInfo(id, cancellationToken);
-        public async Task<bool> Update(CategoryUpdateDto categoryUpdateDto, IFormFile? image, CancellationToken cancellationToken)
+        public async Task<bool> DeleteAsync(int serviceCategoryId, CancellationToken cancellationToken)
+           => await _categoryServices.DeleteAsync(serviceCategoryId, cancellationToken);
+        public async Task<List<GetCategoryDto>> GetAllAsync(CancellationToken cancellationToken)
+          => await _categoryServices.GetAllAsync(cancellationToken);
+        public async Task<Category> GetByIdAsync(int serviceCategoryId, CancellationToken cancellationToken)
+          => await _categoryServices.GetByIdAsync(serviceCategoryId, cancellationToken);
+        public Task<List<CategoryNameDto>> GetCategorisNameAsync(CancellationToken cancellationToken)
+     => _categoryServices.GetCategorisNameAsync(cancellationToken);
+        public async Task<CategoryUpdateDto> ServiceCategoryUpdateInfoAsync(int id, CancellationToken cancellationToken)
+  => await _categoryServices.ServiceCategoryUpdateInfoAsync(id, cancellationToken);
+        public async Task<bool> UpdateAsync(CategoryUpdateDto categoryUpdateDto, IFormFile? image, CancellationToken cancellationToken)
         {
             Console.WriteLine($"CategoryAppServices.Update started for ID: {categoryUpdateDto.Id}");
 
@@ -56,7 +56,7 @@
                 }
             }
 
-            var result = await _categoryServices.Update(categoryUpdateDto, cancellationToken);
+            var result = await _categoryServices.UpdateAsync(categoryUpdateDto, cancellationToken);
             Console.WriteLine($"CategoryServices.Update result: {result}");
             return result;
         }

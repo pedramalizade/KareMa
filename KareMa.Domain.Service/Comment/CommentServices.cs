@@ -7,25 +7,25 @@
         {
             _commentRepository = commentRepository;
         }
-        public async Task AcceptComment(int commentId, CancellationToken cancellationToken)
-  => await _commentRepository.AcceptComment(commentId, cancellationToken);
-        public async Task<int> CommentCount(CancellationToken cancellationToken)
-         => await _commentRepository.CommentCount(cancellationToken);
-        public async Task<bool> Create(CommentCreateDto commentCreateDto, CancellationToken cancellationToken)
-     => await _commentRepository.Create(commentCreateDto, cancellationToken);
-        public async Task<bool> Delete(int CommentId, CancellationToken cancellationToken)
-  => await _commentRepository.Delete(CommentId, cancellationToken);
-        public async Task<List<GetCommentsDto>> GetAll(CancellationToken cancellationToken)
-         => await _commentRepository.GetAll(cancellationToken);
-        public async Task<Comment> GetById(int commentId, CancellationToken cancellationToken)
-     => await _commentRepository.GetById(commentId, cancellationToken);
-        public async Task<List<RecentCommentDto>> GetRecentComments(int count, CancellationToken cancellationToken)
-          => await _commentRepository.GetRecentComments(count, cancellationToken);
-        public async Task RejectComment(int commentId, CancellationToken cancellationToken)
-          => await _commentRepository.RejectComment(commentId, cancellationToken);
-        public async Task<bool> SetScore(int expertId, int score, CancellationToken cancellationToken)
-          => await _commentRepository.SetScore(expertId, score, cancellationToken);
-        public async Task<bool> Update(CommentUpdateDto commentUpdateDto, CancellationToken cancellationToken)
-          => await _commentRepository.Update(commentUpdateDto, cancellationToken);
+        public async Task AcceptCommentAsync(int commentId, CancellationToken cancellationToken)
+  => await _commentRepository.AcceptCommentAsync(commentId, cancellationToken);
+        public async Task<int> CommentCountAsync(CancellationToken cancellationToken)
+         => await _commentRepository.CommentCountAsync(cancellationToken);
+        public async Task<bool> CreateAsync(CommentCreateDto commentCreateDto, CancellationToken cancellationToken)
+     => await _commentRepository.CreateAsync(commentCreateDto, cancellationToken);
+        public async Task<bool> DeleteAsync(int CommentId, CancellationToken cancellationToken)
+  => await _commentRepository.DeleteAsync(CommentId, cancellationToken);
+        public async Task<List<GetCommentsDto>> GetAllAsync(CancellationToken cancellationToken)
+         => await _commentRepository.GetAllAsync(cancellationToken);
+        public async Task<Comment> GetByIdAsync(int commentId, CancellationToken cancellationToken)
+     => await _commentRepository.GetByIdAsync(commentId, cancellationToken);
+        public async Task<List<RecentCommentDto>> GetRecentCommentsAsync(int count, CancellationToken cancellationToken)
+          => await _commentRepository.GetRecentCommentsAsync(count, cancellationToken);
+        public async Task RejectCommentAsync(int commentId, CancellationToken cancellationToken)
+          => await _commentRepository.RejectCommentAsync(commentId, cancellationToken);
+        public async Task<bool> SetScoreAsync(int expertId, int score, CancellationToken cancellationToken)
+          => await _commentRepository.SetScoreAsync(expertId, score, cancellationToken);
+        public async Task<bool> UpdateAsync(CommentUpdateDto commentUpdateDto, CancellationToken cancellationToken)
+          => await _commentRepository.UpdateAsync(commentUpdateDto, cancellationToken);
     }
 }

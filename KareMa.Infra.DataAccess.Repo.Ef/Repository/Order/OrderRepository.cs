@@ -7,7 +7,7 @@
         {
             _context = context;
         }
-        public async Task<bool> Create(OrderCreateDto orderCreateDto, CancellationToken cancellationToken)
+        public async Task<bool> CreateAsync(OrderCreateDto orderCreateDto, CancellationToken cancellationToken)
         {
             var newModel = new Order()
             {
@@ -25,7 +25,7 @@
             return true;
         }
 
-        public async Task<bool> Delete(int orderId, CancellationToken cancellationToken)
+        public async Task<bool> DeleteAsync(int orderId, CancellationToken cancellationToken)
         {
             var targetModel = await FindOrder(orderId, cancellationToken);
             targetModel.IsDeleted = true;
@@ -33,7 +33,7 @@
             return true;
         }
 
-        public async Task<List<GetOrderDto>> GetAll(CancellationToken cancellationToken)
+        public async Task<List<GetOrderDto>> GetAllAsync(CancellationToken cancellationToken)
         {
             var orders = await _context.Orders
                 .AsNoTracking()
@@ -56,11 +56,11 @@
             return orders;
         }
 
-        public async Task<Order> GetById(int orderId, CancellationToken cancellationToken)
+        public async Task<Order> GetByIdAsync(int orderId, CancellationToken cancellationToken)
             => await FindOrder(orderId, cancellationToken);
 
 
-        public async Task<bool> Update(OrderUpdateDto orderUpdateDto, CancellationToken cancellationToken)
+        public async Task<bool> UpdateAsync(OrderUpdateDto orderUpdateDto, CancellationToken cancellationToken)
         {
             var targetModel = await FindOrder(orderUpdateDto.Id, cancellationToken);
 
@@ -77,7 +77,7 @@
 
             return true;
         }
-        public async Task<bool> ChangeStatus(StatusEnum status, int orderId, CancellationToken cancellationToken)
+        public async Task<bool> ChangeStatusAsync(StatusEnum status, int orderId, CancellationToken cancellationToken)
         {
             var targetModel = await FindOrder(orderId, cancellationToken);
 
@@ -115,10 +115,10 @@
             }
         }
 
-        public async Task<int> OrderCount(CancellationToken cancellationToken)
+        public async Task<int> OrderCountAsync(CancellationToken cancellationToken)
           => await _context.Orders.CountAsync(cancellationToken);
 
-        public async Task<List<GetOrderDto>> GetOrders(int customerId, CancellationToken cancellationToken)
+        public async Task<List<GetOrderDto>> GetOrdersAsync(int customerId, CancellationToken cancellationToken)
         {
             var target = await _context.Orders.Where(o => o.Customer.Id == customerId && o.IsDeleted == false)
                 .Select(o => new GetOrderDto
@@ -146,7 +146,7 @@
             return target;
         }
 
-        public async Task AcceptOrder(int orderId, CancellationToken cancellationToken)
+        public async Task AcceptOrderAsync(int orderId, CancellationToken cancellationToken)
         {
             var target = await _context.Orders.FirstOrDefaultAsync(o => o.Id == orderId, cancellationToken);
             target.Status = StatusEnum.Confirmed;
@@ -154,7 +154,7 @@
             await _context.SaveChangesAsync(cancellationToken);
         }
 
-        public async Task DoneOrder(int id, CancellationToken cancellationToken)
+        public async Task DoneOrderAsync(int id, CancellationToken cancellationToken)
         {
             var targetOrder = await _context.Orders.FirstOrDefaultAsync(o => o.Id == id, cancellationToken);
             targetOrder.Status = StatusEnum.Done;
@@ -163,7 +163,7 @@
             await _context.SaveChangesAsync(cancellationToken);
         }
 
-        public async Task<List<OrdersByServiceIdsDto>> GetOrdersByServiceIds(List<int> serviceIds, CancellationToken cancellationToken)
+        public async Task<List<OrdersByServiceIdsDto>> GetOrdersByServiceIdsAsync(List<int> serviceIds, CancellationToken cancellationToken)
         {
             return await _context.Orders.Where(o => serviceIds.Contains(o.ServiceId))
                   .Select(o => new OrdersByServiceIdsDto
@@ -182,7 +182,7 @@
                   }).ToListAsync(cancellationToken);
         }
 
-        public async Task<bool> OrderIsDone(int orderId, CancellationToken cancellationToken)
+        public async Task<bool> OrderIsDoneAsync(int orderId, CancellationToken cancellationToken)
         {
             var targetOrder = await _context.Orders.FirstOrDefaultAsync(o => o.Id == orderId, cancellationToken);
 

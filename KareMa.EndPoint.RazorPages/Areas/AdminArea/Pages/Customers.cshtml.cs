@@ -13,13 +13,13 @@
 
         public async Task OnGetAsync(CancellationToken cancellationToken)
         {
-            GetCustomers = await _customerAppService.GetAll(cancellationToken);
+            GetCustomers = await _customerAppService.GetAllAsync(cancellationToken);
         }
 
         public async Task<IActionResult> OnPostDelete(int id, CancellationToken cancellationToken)
         {
             Console.WriteLine($"OnPostDelete called for customer ID: {id}");
-            var result = await _customerAppService.Delete(id, cancellationToken);
+            var result = await _customerAppService.DeleteAsync(id, cancellationToken);
             if (!result)
             {
                 TempData["ErrorMessage"] = "حذف مشتری با خطا مواجه شد.";

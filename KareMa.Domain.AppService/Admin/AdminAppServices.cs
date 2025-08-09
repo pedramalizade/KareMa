@@ -8,22 +8,22 @@
         {
             _adminServices = adminServices;
         }
-        public async Task<bool> Create(AdminCreateDto adminCreateDto, CancellationToken cancellationToken)
-         => await _adminServices.Create(adminCreateDto, cancellationToken);
-        public async Task<bool> Delete(int adminId, CancellationToken cancellationToken)
-         => await _adminServices.Delete(adminId, cancellationToken);
-        public async Task<List<Admin>> GetAll(CancellationToken cancellationToken)
-       => await _adminServices.GetAll(cancellationToken);
-        public async Task<AdminUpdateDto> AdminUpdateInfo(int id, CancellationToken cancellationToken)
-          => await _adminServices.AdminUpdateInfo(id, cancellationToken);
-        public async Task<Admin> GetById(int adminId, CancellationToken cancellationToken)
-   => await _adminServices.GetById(adminId, cancellationToken);
-        public async Task<bool> Update(AdminUpdateDto adminUpdateDto, CancellationToken cancellationToken)
-          => await _adminServices.Update(adminUpdateDto, cancellationToken);
+        public async Task<bool> CreateAsync(AdminCreateDto adminCreateDto, CancellationToken cancellationToken)
+         => await _adminServices.CreateAsync(adminCreateDto, cancellationToken);
+        public async Task<bool> DeleteAsync(int adminId, CancellationToken cancellationToken)
+         => await _adminServices.DeleteAsync(adminId, cancellationToken);
+        public async Task<List<Admin>> GetAllAsync(CancellationToken cancellationToken)
+       => await _adminServices.GetAllAsync(cancellationToken);
+        public async Task<AdminUpdateDto> AdminUpdateInfoAsync(int id, CancellationToken cancellationToken)
+          => await _adminServices.AdminUpdateInfoAsync(id, cancellationToken);
+        public async Task<Admin> GetByIdAsync(int adminId, CancellationToken cancellationToken)
+   => await _adminServices.GetByIdAsync(adminId, cancellationToken);
+        public async Task<bool> UpdateAsync(AdminUpdateDto adminUpdateDto, CancellationToken cancellationToken)
+          => await _adminServices.UpdateAsync(adminUpdateDto, cancellationToken);
 
-        public async Task<decimal> GetAdminBalance(int adminId, CancellationToken cancellationToken)
+        public async Task<decimal> GetAdminBalanceAsync(int adminId, CancellationToken cancellationToken)
         {
-            return await _adminServices.GetAdminBalance(adminId, cancellationToken);
+            return await _adminServices.GetAdminBalanceAsync(adminId, cancellationToken);
         }
     }
 }

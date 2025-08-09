@@ -13,13 +13,13 @@
 
         public async Task OnGetAsync(CancellationToken cancellationToken)
         {
-            GetExpert = await _expertAppService.GetAll(cancellationToken);
+            GetExpert = await _expertAppService.GetAllAsync(cancellationToken);
         }
 
         public async Task<IActionResult> OnPostDelete(int id, CancellationToken cancellationToken)
         {
             Console.WriteLine($"OnPostDelete called for expert ID: {id}");
-            var result = await _expertAppService.Delete(id, cancellationToken);
+            var result = await _expertAppService.DeleteAsync(id, cancellationToken);
             if (!result)
             {
                 TempData["ErrorMessage"] = "حذف متخصص با خطا مواجه شد.";

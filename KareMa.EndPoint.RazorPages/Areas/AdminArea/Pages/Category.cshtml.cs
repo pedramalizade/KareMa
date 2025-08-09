@@ -15,13 +15,13 @@ namespace KareMa.EndPoint.RazorPages.Pages.Areas.AdminArea.Pages
         public async Task<IActionResult> OnGetAsync(CancellationToken cancellationToken)
         {
             Console.WriteLine("CategoryModel.OnGetAsync called");
-            GetCategories = await _categoryAppServices.GetAll(cancellationToken);
+            GetCategories = await _categoryAppServices.GetAllAsync(cancellationToken);
             return Page();
         }
 
         public async Task<IActionResult> OnGetDeleteAsync(int id, CancellationToken cancellationToken)
         {
-            await _categoryAppServices.Delete(id, cancellationToken);
+            await _categoryAppServices.DeleteAsync(id, cancellationToken);
             return RedirectToPage(new { refresh = DateTime.Now.Ticks }); 
         }
     }

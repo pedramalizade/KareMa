@@ -15,11 +15,11 @@ namespace KareMa.EndPoint.RazorPages.Pages.Areas.AdminArea.Pages
         public int OrderId { get; set; }
         public async Task OnGet(CancellationToken cancellationToken)
         {
-            Orders = await _orderAppServices.GetAll(cancellationToken);
+            Orders = await _orderAppServices.GetAllAsync(cancellationToken);
         }
         public async Task<IActionResult> OnGetDelete(int id, CancellationToken cancellationToken)
         {
-            await _orderAppServices.Delete(id, cancellationToken);
+            await _orderAppServices.DeleteAsync(id, cancellationToken);
             return RedirectToAction("OnGet");
         }
     }

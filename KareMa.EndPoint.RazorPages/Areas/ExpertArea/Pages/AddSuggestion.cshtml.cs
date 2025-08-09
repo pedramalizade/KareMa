@@ -33,7 +33,7 @@
             {
                 var expertId = int.Parse(User.Claims.FirstOrDefault(u => u.Type == "userExpertId").Value);
                 suggestionCreate.ExpertId = expertId;
-                await _suggestionAppServices.Create(suggestionCreate, suggestionDate, cancellationToken);
+                await _suggestionAppServices.CreateAsync(suggestionCreate, suggestionDate, cancellationToken);
 
                 return RedirectToPage("ExpertSuggestions");
             }

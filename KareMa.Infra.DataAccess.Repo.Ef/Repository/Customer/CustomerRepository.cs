@@ -8,7 +8,7 @@
             _context = context;
         }
 
-        public async Task<bool> Create(CustomerCreateDto customerCreateDto, CancellationToken cancellationToken)
+        public async Task<bool> CreateAsync(CustomerCreateDto customerCreateDto, CancellationToken cancellationToken)
         {
             var newModel = new Customer()
             {
@@ -28,7 +28,7 @@
             return true;
         }
 
-        public async Task<bool> Delete(int customerId, CancellationToken cancellationToken)
+        public async Task<bool> DeleteAsync(int customerId, CancellationToken cancellationToken)
         {
             Console.WriteLine($"Attempting to delete customer with ID: {customerId}");
             var targetModel = await FindCustomer(customerId, cancellationToken);
@@ -44,7 +44,7 @@
             return true;
         }
 
-        public async Task<List<GetCustomerDto>> GetAll(CancellationToken cancellationToken)
+        public async Task<List<GetCustomerDto>> GetAllAsync(CancellationToken cancellationToken)
         {
             Console.WriteLine("Fetching all customers...");
             var customers = await _context.Customers
@@ -63,12 +63,12 @@
             return customers;
         }
 
-        public async Task<Customer> GetById(int customerId, CancellationToken cancellationToken)
+        public async Task<Customer> GetByIdAsync(int customerId, CancellationToken cancellationToken)
         {
             return await FindCustomer(customerId, cancellationToken);
         }
 
-        public async Task<bool> Update(CustomerUpdateDto customerUpdateDto, CancellationToken cancellationToken)
+        public async Task<bool> UpdateAsync(CustomerUpdateDto customerUpdateDto, CancellationToken cancellationToken)
         {
             Console.WriteLine($"CustomerRepository.Update started for ID: {customerUpdateDto.Id}");
 
@@ -122,7 +122,7 @@
             }
         }
 
-        public async Task<CustomerSummaryDto> GetCustomerSummary(int id, CancellationToken cancellationToken)
+        public async Task<CustomerSummaryDto> GetCustomerSummaryAsync(int id, CancellationToken cancellationToken)
         {
             var target = await _context.Customers.Where(a => a.Id == id && a.IsDeleted == false)
                 .Select(c => new CustomerSummaryDto
@@ -144,7 +144,7 @@
             }
             return new CustomerSummaryDto();
         }
-        public async Task<CustomerUpdateDto> GetCustomerUpdateInfo(int customerId, CancellationToken cancellationToken)
+        public async Task<CustomerUpdateDto> GetCustomerUpdateInfoAsync(int customerId, CancellationToken cancellationToken)
         {
             Console.WriteLine($"GetCustomerUpdateInfo called with customerId: {customerId}");
 
@@ -182,12 +182,12 @@
             var customerId = targetCustomer.Id;
             return customerId;
         }
-        public async Task<int> CustomerCount(CancellationToken cancellationToken)
+        public async Task<int> CustomerCountAsync(CancellationToken cancellationToken)
   => await _context.Customers.CountAsync(cancellationToken);
         private async Task<Customer> FindCustomer(int id, CancellationToken cancellationToken)
      => await _context.Customers.FirstOrDefaultAsync(a => a.Id == id, cancellationToken);
 
-        public async Task<CustomerUpdateDto> CustomerUpdateInfo(int id, CancellationToken cancellationToken)
+        public async Task<CustomerUpdateDto> CustomerUpdateInfoAsync(int id, CancellationToken cancellationToken)
         {
             return await _context.Customers.Select(a => new CustomerUpdateDto
             {
@@ -202,7 +202,7 @@
 
             }).FirstOrDefaultAsync(a => a.Id == id, cancellationToken);
         }
-        public async Task UpdateBalance(int customerId, decimal newBalance, CancellationToken cancellationToken)
+        public async Task UpdateBalanceAsync(int customerId, decimal newBalance, CancellationToken cancellationToken)
         {
             Console.WriteLine($"Updating balance for Customer ID: {customerId} to {newBalance}");
             var customer = await _context.Customers
@@ -218,7 +218,7 @@
             await _context.SaveChangesAsync(cancellationToken);
             Console.WriteLine($"Balance updated successfully for Customer ID: {customerId}");
         }
-        public async Task<Customer> GetCustomerById(int customerId, CancellationToken cancellationToken)
+        public async Task<Customer> GetCustomerByIdAsync(int customerId, CancellationToken cancellationToken)
         {
             Console.WriteLine($"Fetching customer with ID: {customerId}");
             var customer = await _context.Customers

@@ -4,7 +4,7 @@
 @model KareMa.EndPoint.RazorPages.Pages.ExpertDetailsModel
 @inject IExpertAppServices ExpertAppServices;
 @{
-    int commentCount = await ExpertAppServices.ExpertCommentCount(Model.ExpertSummary.Id, default);
+    int commentCount = await ExpertAppServices.ExpertCommentCountAsync(Model.ExpertSummary.Id, default);
 }
 <section class="gray">
     <div class="container">

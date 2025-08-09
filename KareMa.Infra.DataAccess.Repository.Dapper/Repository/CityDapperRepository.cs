@@ -11,7 +11,7 @@
             _memoryCache = memoryCache;
         }
 
-        public async Task<List<City>> GetAll(CancellationToken cancellationToken)
+        public async Task<List<City>> GetAllAsync(CancellationToken cancellationToken)
         {
             var cities = _memoryCache.Get<List<City>>("Cities");
             if (cities is null)
@@ -28,7 +28,7 @@
             return cities;
         }
 
-        public async Task<City> GetById(int cityId, CancellationToken cancellationToken)
+        public async Task<City> GetByIdAsync(int cityId, CancellationToken cancellationToken)
         {
             using (IDbConnection db = new SqlConnection(_configuration.GetSection("ConnectionStrings").Value))
             {

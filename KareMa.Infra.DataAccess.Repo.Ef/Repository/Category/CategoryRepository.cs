@@ -15,7 +15,7 @@
             _memoryCache = memoryCache;
         }
 
-        public async Task<bool> Create(CategoryCreateDto categoryCreateDto, CancellationToken cancellationToken)
+        public async Task<bool> CreateAsync(CategoryCreateDto categoryCreateDto, CancellationToken cancellationToken)
         {
             var newModel = new Category()
             {
@@ -29,7 +29,7 @@
             return true;
         }
 
-        public async Task<List<CategoryNameDto>> GetCategorisName(CancellationToken cancellationToken)
+        public async Task<List<CategoryNameDto>> GetCategorisNameAsync(CancellationToken cancellationToken)
         {
             var categories = _memoryCache.Get<List<CategoryNameDto>>("CategoriesName");
 
@@ -53,7 +53,7 @@
             return categories;
         }
 
-        public async Task<CategoryUpdateDto> ServiceCategoryUpdateInfo(int id, CancellationToken cancellationToken)
+        public async Task<CategoryUpdateDto> ServiceCategoryUpdateInfoAsync(int id, CancellationToken cancellationToken)
         {
             return await _context.Categories.Select(c => new CategoryUpdateDto
             {
@@ -65,7 +65,7 @@
 
         }
 
-        public async Task<bool> Delete(int CategoryId, CancellationToken cancellationToken)
+        public async Task<bool> DeleteAsync(int CategoryId, CancellationToken cancellationToken)
         {
             var targetModel = await FindServiceCategory(CategoryId, cancellationToken);
             targetModel.IsDeleted = true;
@@ -81,7 +81,7 @@
             _memoryCache.Remove("Categories");
             return true;
         }
-        public async Task<List<GetCategoryDto>> GetAll(CancellationToken cancellationToken)
+        public async Task<List<GetCategoryDto>> GetAllAsync(CancellationToken cancellationToken)
         {
             var cacheKey = "Categories";
             if (!_memoryCache.TryGetValue(cacheKey, out List<GetCategoryDto> categories))
@@ -96,10 +96,10 @@
             return categories;
         }
 
-        public async Task<Domain.Core.Entities.Category> GetById(int CategoryId, CancellationToken cancellationToken)
+        public async Task<Domain.Core.Entities.Category> GetByIdAsync(int CategoryId, CancellationToken cancellationToken)
      => await FindServiceCategory(CategoryId, cancellationToken);
 
-        public async Task<bool> Update(CategoryUpdateDto categoryUpdateDto, CancellationToken cancellationToken)
+        public async Task<bool> UpdateAsync(CategoryUpdateDto categoryUpdateDto, CancellationToken cancellationToken)
         {
             Console.WriteLine($"CategoryRepository.Update started for ID: {categoryUpdateDto.Id}");
 

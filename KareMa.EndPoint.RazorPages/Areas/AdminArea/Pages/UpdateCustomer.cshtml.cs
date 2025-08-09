@@ -18,7 +18,7 @@
         public async Task<IActionResult> OnGetAsync(int id, CancellationToken cancellationToken)
         {
             Console.WriteLine($"OnGetAsync called with id: {id}");
-            CustomerUpdate = await _customerAppServices.GetCustomerUpdateInfo(id, cancellationToken);
+            CustomerUpdate = await _customerAppServices.GetCustomerUpdateInfoAsync(id, cancellationToken);
             if (CustomerUpdate == null)
             {
                 Console.WriteLine($"Customer with ID: {id} not found, redirecting to Customers.");
@@ -44,7 +44,7 @@
 
             try
             {
-                var result = await _customerAppServices.Update(CustomerUpdate, Image, cancellationToken);
+                var result = await _customerAppServices.UpdateAsync(CustomerUpdate, Image, cancellationToken);
                 if (result)
                 {
                     TempData["SuccessMessage"] = "اطلاعات مشتری با موفقیت آپدیت شد.";

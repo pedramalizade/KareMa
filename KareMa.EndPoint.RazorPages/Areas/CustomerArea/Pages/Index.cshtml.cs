@@ -15,7 +15,7 @@ namespace KareMa.EndPoint.RazorPages.Areas.CustomerArea.Pages
         public async Task OnGet(CancellationToken cancellationToken)
         {
             var userId = int.Parse(User.Claims.FirstOrDefault(u => u.Type == "userCustomerId").Value);
-            CustomerSummary = await _customerAppServices.GetCustomerSummary(userId, cancellationToken);
+            CustomerSummary = await _customerAppServices.GetCustomerSummaryAsync(userId, cancellationToken);
         }
     }
 }

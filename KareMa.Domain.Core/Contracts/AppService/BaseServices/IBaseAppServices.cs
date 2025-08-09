@@ -2,7 +2,7 @@
 {
     public interface IBaseAppServices
     {
-        Task<string> UploadImage(IFormFile image);
+        Task<string> UploadImageAsync(IFormFile image);
     }
 
 }

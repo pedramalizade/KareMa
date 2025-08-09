@@ -34,14 +34,14 @@
                 return Unauthorized();
             }
 
-            CustomerUpdate = await _customerAppServices.GetCustomerUpdateInfo(userCustomerId, cancellationToken);
+            CustomerUpdate = await _customerAppServices.GetCustomerUpdateInfoAsync(userCustomerId, cancellationToken);
             if (CustomerUpdate == null)
             {
                 Console.WriteLine($"Customer with ID {userCustomerId} not found.");
                 return NotFound();
             }
 
-            Cities = await _cityAppService.GetAll(cancellationToken);
+            Cities = await _cityAppService.GetAllAsync(cancellationToken);
             Console.WriteLine($"Customer data loaded successfully for ID: {userCustomerId}");
 
             return Page();
@@ -58,7 +58,7 @@
                 {
                     Console.WriteLine("No valid customer ID found in claims.");
                     ModelState.AddModelError("", "کاربر معتبر نیست.");
-                    Cities = await _cityAppService.GetAll(cancellationToken);
+                    Cities = await _cityAppService.GetAllAsync(cancellationToken);
                     return Page();
                 }
 
@@ -76,7 +76,7 @@
                             ModelState.AddModelError("", $"خطا در {modelStateKey}: {error.ErrorMessage}");
                         }
                     }
-                    Cities = await _cityAppService.GetAll(cancellationToken);
+                    Cities = await _cityAppService.GetAllAsync(cancellationToken);
                     return Page();
                 }
 
@@ -114,19 +114,19 @@
                     {
                         Console.WriteLine($"Failed to upload image: {ex.Message}");
                         ModelState.AddModelError("", $"خطا در آپلود تصویر: {ex.Message}");
-                        Cities = await _cityAppService.GetAll(cancellationToken);
+                        Cities = await _cityAppService.GetAllAsync(cancellationToken);
                         return Page();
                     }
                 }
 
                 Console.WriteLine($"Updating customer with ID: {userCustomerId}, Gender: {CustomerUpdate.Gender}");
 
-                var result = await _customerAppServices.Update(CustomerUpdate, Image, cancellationToken);
+                var result = await _customerAppServices.UpdateAsync(CustomerUpdate, Image, cancellationToken);
                 if (!result)
                 {
                     Console.WriteLine("Failed to update customer profile.");
                     ModelState.AddModelError("", "خطا در ذخیره تغییرات پروفایل");
-                    Cities = await _cityAppService.GetAll(cancellationToken);
+                    Cities = await _cityAppService.GetAllAsync(cancellationToken);
                     return Page();
                 }
 
@@ -139,7 +139,7 @@
                 Console.WriteLine($"Error in OnPostUpdate: {ex.Message}");
                 Console.WriteLine($"Inner Exception: {ex.InnerException?.Message}");
                 ModelState.AddModelError("", $"خطا در ذخیره تغییرات: {ex.Message} - جزئیات: {ex.InnerException?.Message ?? "جزئیات بیشتری در دسترس نیست"}");
-                Cities = await _cityAppService.GetAll(cancellationToken);
+                Cities = await _cityAppService.GetAllAsync(cancellationToken);
                 return Page();
             }
         }

@@ -29,7 +29,7 @@
         public string Date { get; set; }
         public async Task OnGet(int id, CancellationToken cancellationToken)
         {
-            Service = await _serviceAppServices.GetServiceNameAndPrice(id, cancellationToken);
+            Service = await _serviceAppServices.GetServiceNameAndPriceAsync(id, cancellationToken);
         }
 
         public async Task<IActionResult> OnPostAdd(OrderCreateDto order, CancellationToken cancellationToken, IFormFile image, string date)
@@ -39,7 +39,7 @@
             {
                 var userCustomerId = int.Parse(User.Claims.FirstOrDefault(c => c.Type == "userCustomerId").Value);
                 order.CustomerId = userCustomerId;
-                await _orderAppServices.Create(order, image, date, cancellationToken);
+                await _orderAppServices.CreateAsync(order, image, date, cancellationToken);
                 return LocalRedirect("/CustomerArea/CustomerOrders");
             }
             return RedirectToAction("OnGet");

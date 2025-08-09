@@ -18,14 +18,14 @@ namespace KareMa.EndPoint.RazorPages.Areas.AdminArea.Pages
 
         public async Task OnGet(int id, CancellationToken cancellationToken)
         {
-            ServiceUpdate = await _serviceAppServices.ServiceUpdateInfo(id, cancellationToken);
-            SubCategoryNames = await _subCategoryAppServices.GetCategorisName(cancellationToken);
+            ServiceUpdate = await _serviceAppServices.ServiceUpdateInfoAsync(id, cancellationToken);
+            SubCategoryNames = await _subCategoryAppServices.GetCategorisNameAsync(cancellationToken);
         }
         public async Task<IActionResult> OnPostUpdate(ServiceUpdateDto serviceUpdate, CancellationToken cancellationToken)
         {
             if (ModelState.IsValid)
             {
-                await _serviceAppServices.Update(serviceUpdate, cancellationToken);
+                await _serviceAppServices.UpdateAsync(serviceUpdate, cancellationToken);
                 return RedirectToPage("Service");
             }
             return Page();

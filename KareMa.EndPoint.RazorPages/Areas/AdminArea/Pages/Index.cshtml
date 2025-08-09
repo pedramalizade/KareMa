@@ -22,7 +22,7 @@
                             <span class="secondary-font fw-medium">درخواست</span>
                             <div class="d-flex align-items-baseline mt-2">
                                 <h4 class="mb-0 me-2">
-                                    @await OrderAppServices.OrderCount(default)
+                                    @await OrderAppServices.OrderCountAsync(default)
                                 </h4>
                             </div>
                             <small>مجموع درخواست‌ها</small>
@@ -42,7 +42,7 @@
                             <span class="secondary-font fw-medium">کامنت</span>
                             <div class="d-flex align-items-baseline mt-2">
                                 <h4 class="mb-0 me-2">
-                                    @await CommentAppServices.CommentCount(default)
+                                    @await CommentAppServices.CommentCountAsync(default)
                                 </h4>
                             </div>
                             <small>مجموع کامنت‌ها</small>
@@ -62,7 +62,7 @@
                             <span class="secondary-font fw-medium">متخصص</span>
                             <div class="d-flex align-items-baseline mt-2">
                                 <h4 class="mb-0 me-2">
-                                    @await ExpertAppServices.ExpertCount(default)
+                                    @await ExpertAppServices.ExpertCountAsync(default)
                                 </h4>
                             </div>
                             <small>مجموع متخصصین</small>
@@ -82,7 +82,7 @@
                             <span class="secondary-font fw-medium">مشتری</span>
                             <div class="d-flex align-items-baseline mt-2">
                                 <h4 class="mb-0 me-2">
-                                    @await CustomerAppServices.CustomerCount(default)
+                                    @await CustomerAppServices.CustomerCountAsync(default)
                                 </h4>
                             </div>
                             <small>مجموع مشتری ها</small>

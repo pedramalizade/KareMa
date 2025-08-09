@@ -11,7 +11,7 @@
             _configuration = configuration;
         }
 
-        public async Task<bool> Create(SubCategoryCreateDto subCategoryCreateDto, CancellationToken cancellationToken)
+        public async Task<bool> CreateAsync(SubCategoryCreateDto subCategoryCreateDto, CancellationToken cancellationToken)
         {
 
             var newModel = new SubCategory()
@@ -26,7 +26,7 @@
             return true;
         }
 
-        public async Task<bool> Delete(int serviceSubCategoryId, CancellationToken cancellationToken)
+        public async Task<bool> DeleteAsync(int serviceSubCategoryId, CancellationToken cancellationToken)
         {
             var targetModel = await FindServiceSubCategory(serviceSubCategoryId, cancellationToken);
             targetModel.IsDeleted = true;
@@ -34,7 +34,7 @@
             return true;
         }
 
-        public async Task<List<SubCategory>> GetAll(CancellationToken cancellationToken)
+        public async Task<List<SubCategory>> GetAllAsync(CancellationToken cancellationToken)
         {
             var sql = @"
 SELECT sc.Id, sc.Name, sc.Image, sc.CreatedAt, sc.IsDeleted, sc.CategoryId,
@@ -97,9 +97,9 @@ ORDER BY sc.Id, c.Id, s.Id";
             }
         }
 
-        public async Task<SubCategory> GetById(int SubCategoryId, CancellationToken cancellationToken)
+        public async Task<SubCategory> GetByIdAsync(int SubCategoryId, CancellationToken cancellationToken)
        => await FindServiceSubCategory(SubCategoryId, cancellationToken);
-        public async Task<List<SubCategoryNameDto>> GetCategorisName(CancellationToken cancellationToken)
+        public async Task<List<SubCategoryNameDto>> GetCategorisNameAsync(CancellationToken cancellationToken)
         {
             var subcategories = await _context.SubCategories.AsNoTracking()
                  .Select(s => new SubCategoryNameDto
@@ -110,7 +110,7 @@ ORDER BY sc.Id, c.Id, s.Id";
             return subcategories;
         }
 
-        public async Task<List<GetByCategoryIdDto>> GetAllByCategoryId(int id, CancellationToken cancellationToken)
+        public async Task<List<GetByCategoryIdDto>> GetAllByCategoryIdAsync(int id, CancellationToken cancellationToken)
         {
             return await _context.SubCategories.Where(x => x.CategoryId == id && x.IsDeleted == false).AsNoTracking()
                 .Select(c => new GetByCategoryIdDto
@@ -121,7 +121,7 @@ ORDER BY sc.Id, c.Id, s.Id";
                 })
                 .ToListAsync(cancellationToken);
         }
-        public async Task<List<GetSubCategoryDto>> GetSubCategories(CancellationToken cancellationToken)
+        public async Task<List<GetSubCategoryDto>> GetSubCategoriesAsync(CancellationToken cancellationToken)
         {
             var subcategories = await _context.SubCategories.AsNoTracking()
                 .Select(s => new GetSubCategoryDto
@@ -136,7 +136,7 @@ ORDER BY sc.Id, c.Id, s.Id";
             return subcategories;
         }
 
-        public async Task<SubCategoryUpdateDto> ServiceSubCategoryUpdateInfo(int id, CancellationToken cancellationToken)
+        public async Task<SubCategoryUpdateDto> ServiceSubCategoryUpdateInfoAsync(int id, CancellationToken cancellationToken)
         {
             return await _context.SubCategories.AsNoTracking().Where(c => c.IsDeleted == false)
                 .Select(s => new SubCategoryUpdateDto
@@ -149,7 +149,7 @@ ORDER BY sc.Id, c.Id, s.Id";
                 }).FirstOrDefaultAsync(s => s.Id == id, cancellationToken);
         }
 
-        public async Task<bool> Update(SubCategoryUpdateDto subCategoryUpdateDto, CancellationToken cancellationToken)
+        public async Task<bool> UpdateAsync(SubCategoryUpdateDto subCategoryUpdateDto, CancellationToken cancellationToken)
         {
             var targetModel = await FindServiceSubCategory(subCategoryUpdateDto.Id, cancellationToken);
 

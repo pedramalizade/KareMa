@@ -8,38 +8,27 @@
         {
             _suggestionRepository = suggestionRepository;
         }
-
-        public async Task<bool> AcceptSuggestion(int suggestionId, int orderId, CancellationToken cancellationToken)
-        => await _suggestionRepository.AcceptSuggestion(suggestionId, orderId, cancellationToken);
-
-        public async Task<bool> ChangeStatus(StatusEnum status, int orderId, CancellationToken cancellationToken)
-          => await _suggestionRepository.ChangeStatus(status, orderId, cancellationToken);
-
-        public async Task<int> ConfrimedStatusCount(int orderId, CancellationToken cancellationToken)
-          => await _suggestionRepository.ConfrimedStatusCount(orderId, cancellationToken);
-
-        public async Task<bool> Create(SuggestionCreateDto suggestionCreateDto, CancellationToken cancellationToken)
-          => await _suggestionRepository.Create(suggestionCreateDto, cancellationToken);
-
-        public async Task<bool> Delete(int suggestionId, CancellationToken cancellationToken)
-          => await _suggestionRepository.Delete(suggestionId, cancellationToken);
-
-        public async Task DoneSuggestion(int id, CancellationToken cancellationToken)
-          => await _suggestionRepository.DoneSuggestion(id, cancellationToken);
-
-        public async Task<List<Suggestion>> GetAll(CancellationToken cancellationToken)
-          => await _suggestionRepository.GetAll(cancellationToken);
-
-        public async Task<Suggestion> GetById(int suggestionId, CancellationToken cancellationToken)
-          => await _suggestionRepository.GetById(suggestionId, cancellationToken);
-
-        public async Task<SuggestionDto> GetSuggestionById(int suggestionId, CancellationToken cancellationToken)
-       => await _suggestionRepository.GetSuggestionById(suggestionId, cancellationToken);
-
-        public async Task<List<SuggestionsByExpertIdDto>> GetSuggestionsByExperId(int id, CancellationToken cancellationToken)
-          => await _suggestionRepository.GetSuggestionsByExperId(id, cancellationToken);
-
-        public async Task<bool> Update(SuggestionUpdateDto suggestionUpdateDto, CancellationToken cancellationToken)
-          => await _suggestionRepository.Update(suggestionUpdateDto, cancellationToken);
+        public async Task<bool> AcceptSuggestionAsync(int suggestionId, int orderId, CancellationToken cancellationToken)
+        => await _suggestionRepository.AcceptSuggestionAsync(suggestionId, orderId, cancellationToken);
+        public async Task<bool> ChangeStatusAsync(StatusEnum status, int orderId, CancellationToken cancellationToken)
+          => await _suggestionRepository.ChangeStatusAsync(status, orderId, cancellationToken);
+        public async Task<int> ConfrimedStatusCountAsync(int orderId, CancellationToken cancellationToken)
+          => await _suggestionRepository.ConfrimedStatusCountAsync(orderId, cancellationToken);
+        public async Task<bool> CreateAsync(SuggestionCreateDto suggestionCreateDto, CancellationToken cancellationToken)
+          => await _suggestionRepository.CreateAsync(suggestionCreateDto, cancellationToken);
+        public async Task<bool> DeleteAsync(int suggestionId, CancellationToken cancellationToken)
+          => await _suggestionRepository.DeleteAsync(suggestionId, cancellationToken);
+        public async Task DoneSuggestionAsync(int id, CancellationToken cancellationToken)
+          => await _suggestionRepository.DoneSuggestionAsync(id, cancellationToken);
+        public async Task<List<Suggestion>> GetAllAsync(CancellationToken cancellationToken)
+          => await _suggestionRepository.GetAllAsync(cancellationToken);
+        public async Task<Suggestion> GetByIdAsync(int suggestionId, CancellationToken cancellationToken)
+          => await _suggestionRepository.GetByIdAsync(suggestionId, cancellationToken);
+        public async Task<SuggestionDto> GetSuggestionByIdAsync(int suggestionId, CancellationToken cancellationToken)
+       => await _suggestionRepository.GetSuggestionByIdAsync(suggestionId, cancellationToken);
+        public async Task<List<SuggestionsByExpertIdDto>> GetSuggestionsByExperIdAsync(int id, CancellationToken cancellationToken)
+          => await _suggestionRepository.GetSuggestionsByExperIdAsync(id, cancellationToken);
+        public async Task<bool> UpdateAsync(SuggestionUpdateDto suggestionUpdateDto, CancellationToken cancellationToken)
+          => await _suggestionRepository.UpdateAsync(suggestionUpdateDto, cancellationToken);
     }
 }

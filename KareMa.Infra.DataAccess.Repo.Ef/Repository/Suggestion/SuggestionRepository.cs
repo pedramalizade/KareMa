@@ -7,7 +7,7 @@
         {
             _context = context;
         }
-        public async Task<bool> Create(SuggestionCreateDto suggestionCreateDto, CancellationToken cancellationToken)
+        public async Task<bool> CreateAsync(SuggestionCreateDto suggestionCreateDto, CancellationToken cancellationToken)
         {
             var order = await _context.Orders
                 .FirstOrDefaultAsync(o => o.Id == suggestionCreateDto.OrderId && o.Status == StatusEnum.AwaitingSuggestionExperts, cancellationToken);
@@ -40,7 +40,7 @@
             return true;
         }
 
-        public async Task<bool> Delete(int suggestionId, CancellationToken cancellationToken)
+        public async Task<bool> DeleteAsync(int suggestionId, CancellationToken cancellationToken)
         {
             var targetModel = await FindSuggestion(suggestionId, cancellationToken);
             targetModel.IsDeleted = true;
@@ -48,17 +48,17 @@
             return true;
         }
 
-        public async Task<List<Suggestion>> GetAll(CancellationToken cancellationToken)
+        public async Task<List<Suggestion>> GetAllAsync(CancellationToken cancellationToken)
         {
             return await _context.Suggestions.AsNoTracking().ToListAsync(cancellationToken);
         }
 
-        public async Task<Suggestion> GetById(int suggestionId, CancellationToken cancellationToken)
+        public async Task<Suggestion> GetByIdAsync(int suggestionId, CancellationToken cancellationToken)
         {
             return await FindSuggestion(suggestionId, cancellationToken);
         }
 
-        public async Task<bool> Update(SuggestionUpdateDto suggestionUpdateDto, CancellationToken cancellationToken)
+        public async Task<bool> UpdateAsync(SuggestionUpdateDto suggestionUpdateDto, CancellationToken cancellationToken)
         {
             var targetModel = await FindSuggestion(suggestionUpdateDto.Id, cancellationToken);
 
@@ -70,7 +70,7 @@
             return true;
         }
 
-        public async Task<bool> AcceptSuggestion(int suggestionId, int orderId, CancellationToken cancellationToken)
+        public async Task<bool> AcceptSuggestionAsync(int suggestionId, int orderId, CancellationToken cancellationToken)
         {
             var targetSuggestion = await _context.Suggestions
                 .FirstOrDefaultAsync(s => s.Id == suggestionId && s.OrderId == orderId, cancellationToken);
@@ -102,12 +102,12 @@
             return true;
         }
 
-        public async Task<int> ConfrimedStatusCount(int orderId, CancellationToken cancellationToken)
+        public async Task<int> ConfrimedStatusCountAsync(int orderId, CancellationToken cancellationToken)
         {
             return await _context.Suggestions.Where(s => s.OrderId == orderId && s.Status == StatusEnum.Confirmed).CountAsync(cancellationToken);
         }
 
-        public async Task<List<SuggestionsByExpertIdDto>> GetSuggestionsByExperId(int id, CancellationToken cancellationToken)
+        public async Task<List<SuggestionsByExpertIdDto>> GetSuggestionsByExperIdAsync(int id, CancellationToken cancellationToken)
         {
             return await _context.Suggestions.Where(s => s.ExpertId == id)
                 .Select(s => new SuggestionsByExpertIdDto
@@ -130,7 +130,7 @@
                .ToListAsync(cancellationToken);
         }
 
-        public async Task DoneSuggestion(int id, CancellationToken cancellationToken)
+        public async Task DoneSuggestionAsync(int id, CancellationToken cancellationToken)
         {
             var targetSuggestion = await _context.Suggestions.FirstOrDefaultAsync(s => s.Id == id, cancellationToken);
             targetSuggestion.Status = StatusEnum.Done;
@@ -138,7 +138,7 @@
             await _context.SaveChangesAsync(cancellationToken);
         }
 
-        public async Task<bool> ChangeStatus(StatusEnum status, int orderId, CancellationToken cancellationToken)
+        public async Task<bool> ChangeStatusAsync(StatusEnum status, int orderId, CancellationToken cancellationToken)
         {
             var targetModel = await _context.Suggestions.FirstOrDefaultAsync(x => x.OrderId == orderId, cancellationToken);
 
@@ -157,7 +157,7 @@
         private async Task<Suggestion> FindSuggestion(int id, CancellationToken cancellationToken)
        => await _context.Suggestions.FirstOrDefaultAsync(a => a.Id == id, cancellationToken);
 
-        public async Task<SuggestionDto> GetSuggestionById(int suggestionId, CancellationToken cancellationToken)
+        public async Task<SuggestionDto> GetSuggestionByIdAsync(int suggestionId, CancellationToken cancellationToken)
         {
             var suggestion = await _context.Suggestions
         .Include(s => s.Expert)

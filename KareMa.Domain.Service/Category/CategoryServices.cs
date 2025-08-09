@@ -7,19 +7,19 @@
         {
             _categoryRepository = categoryRepository; 
         }
-        public async Task<bool> Create(CategoryCreateDto serviceCategoryCreateDto, CancellationToken cancellationToken)
-           => await _categoryRepository.Create(serviceCategoryCreateDto, cancellationToken);
-        public async Task<bool> Delete(int serviceCategoryId, CancellationToken cancellationToken)
-           => await _categoryRepository.Delete(serviceCategoryId, cancellationToken);
-        public async Task<List<GetCategoryDto>> GetAll(CancellationToken cancellationToken)
-          => await _categoryRepository.GetAll(cancellationToken);
-        public async Task<List<CategoryNameDto>> GetCategorisName(CancellationToken cancellationToken)
-      => await _categoryRepository.GetCategorisName(cancellationToken);
-        public async Task<CategoryUpdateDto> ServiceCategoryUpdateInfo(int id, CancellationToken cancellationToken)
-  => await _categoryRepository.ServiceCategoryUpdateInfo(id, cancellationToken);
-        public async Task<Category> GetById(int serviceCategoryId, CancellationToken cancellationToken)
-          => await _categoryRepository.GetById(serviceCategoryId, cancellationToken);
-        public async Task<bool> Update(CategoryUpdateDto serviceCategoryUpdateDto, CancellationToken cancellationToken)
-          => await _categoryRepository.Update(serviceCategoryUpdateDto, cancellationToken);
+        public async Task<bool> CreateAsync(CategoryCreateDto serviceCategoryCreateDto, CancellationToken cancellationToken)
+           => await _categoryRepository.CreateAsync(serviceCategoryCreateDto, cancellationToken);
+        public async Task<bool> DeleteAsync(int serviceCategoryId, CancellationToken cancellationToken)
+           => await _categoryRepository.DeleteAsync(serviceCategoryId, cancellationToken);
+        public async Task<List<GetCategoryDto>> GetAllAsync(CancellationToken cancellationToken)
+          => await _categoryRepository.GetAllAsync(cancellationToken);
+        public async Task<List<CategoryNameDto>> GetCategorisNameAsync(CancellationToken cancellationToken)
+      => await _categoryRepository.GetCategorisNameAsync(cancellationToken);
+        public async Task<CategoryUpdateDto> ServiceCategoryUpdateInfoAsync(int id, CancellationToken cancellationToken)
+  => await _categoryRepository.ServiceCategoryUpdateInfoAsync(id, cancellationToken);
+        public async Task<Category> GetByIdAsync(int serviceCategoryId, CancellationToken cancellationToken)
+          => await _categoryRepository.GetByIdAsync(serviceCategoryId, cancellationToken);
+        public async Task<bool> UpdateAsync(CategoryUpdateDto serviceCategoryUpdateDto, CancellationToken cancellationToken)
+          => await _categoryRepository.UpdateAsync(serviceCategoryUpdateDto, cancellationToken);
     }
 }
