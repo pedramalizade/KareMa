@@ -361563,6 +361563,88 @@
           "Value": "uploads/fe556eb6-4d2e-480f-ab4c-4b4cda7a533a__6b3deaa3-c9a1-4660-b15e-d495fb2399f5.jfif"
         }
       ]
+    },
+    {
+      "Route": "uploads/logoioioioioi.png",
+      "AssetFile": "uploads/logoioioioioi.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "181339"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"QYET58YrkQfxFx4ElWvHFdSiynyQXkMhw66TGlMmt2U=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 22 Aug 2025 09:56:41 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-QYET58YrkQfxFx4ElWvHFdSiynyQXkMhw66TGlMmt2U="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/logoioioioioi.rlff2om2jp.png",
+      "AssetFile": "uploads/logoioioioioi.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "181339"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"QYET58YrkQfxFx4ElWvHFdSiynyQXkMhw66TGlMmt2U=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 22 Aug 2025 09:56:41 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "rlff2om2jp"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-QYET58YrkQfxFx4ElWvHFdSiynyQXkMhw66TGlMmt2U="
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/logoioioioioi.png"
+        }
+      ]
     }
   ]
 }

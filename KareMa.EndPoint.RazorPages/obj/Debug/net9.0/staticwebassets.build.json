@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "4AL+oxv/QTMhnFIXGQN58o8MzHKBjhZ6wMp0xo1cjo8=",
+  "Hash": "gAFE2DL4ap7Bcb06q2FQo9Oz+a0qadiC2+PacV+w8Ws=",
   "Source": "KareMa.EndPoint.RazorPages",
   "BasePath": "_content/KareMa.EndPoint.RazorPages",
   "Mode": "Default",
@@ -56379,6 +56379,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\uploads\\fe556eb6-4d2e-480f-ab4c-4b4cda7a533a__6b3deaa3-c9a1-4660-b15e-d495fb2399f5.jfif"
+    },
+    {
+      "Identity": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\uploads\\logoioioioioi.png",
+      "SourceId": "KareMa.EndPoint.RazorPages",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\",
+      "BasePath": "_content/KareMa.EndPoint.RazorPages",
+      "RelativePath": "uploads/logoioioioioi#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "rlff2om2jp",
+      "Integrity": "QYET58YrkQfxFx4ElWvHFdSiynyQXkMhw66TGlMmt2U=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\logoioioioioi.png"
     }
   ],
   "Endpoints": [
@@ -418239,6 +418260,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-ftmX50frIQFqKyMN+WheAgMza21twVstiXfoBYSy1H0="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/logoioioioioi.png",
+      "AssetFile": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\uploads\\logoioioioioi.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "181339"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"QYET58YrkQfxFx4ElWvHFdSiynyQXkMhw66TGlMmt2U=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 22 Aug 2025 09:56:41 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-QYET58YrkQfxFx4ElWvHFdSiynyQXkMhw66TGlMmt2U="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/logoioioioioi.rlff2om2jp.png",
+      "AssetFile": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\uploads\\logoioioioioi.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "181339"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"QYET58YrkQfxFx4ElWvHFdSiynyQXkMhw66TGlMmt2U=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 22 Aug 2025 09:56:41 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "rlff2om2jp"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/logoioioioioi.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-QYET58YrkQfxFx4ElWvHFdSiynyQXkMhw66TGlMmt2U="
         }
       ]
     }

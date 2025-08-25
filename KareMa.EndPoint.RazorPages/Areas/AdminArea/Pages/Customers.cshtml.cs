@@ -18,17 +18,14 @@
 
         public async Task<IActionResult> OnPostDelete(int id, CancellationToken cancellationToken)
         {
-            Console.WriteLine($"OnPostDelete called for customer ID: {id}");
             var result = await _customerAppService.DeleteAsync(id, cancellationToken);
             if (!result)
             {
                 TempData["ErrorMessage"] = "حذف مشتری با خطا مواجه شد.";
-                Console.WriteLine($"Delete failed for customer ID: {id}");
             }
             else
             {
                 TempData["SuccessMessage"] = "مشتری با موفقیت حذف شد.";
-                Console.WriteLine($"Delete succeeded for customer ID: {id}");
             }
             return RedirectToPage();
         }

@@ -61,38 +61,25 @@
 
         public async Task<List<GetServiceDto>> GetAllAsync(CancellationToken cancellationToken)
         {
-            var sql = @"
-        SELECT 
-            s.Id, 
-            s.Name, 
-            s.IsDeleted, 
-            s.Price, 
-            s.SubCategoryId, 
-            s.Image,
-            sc.Id AS SubCategoryId, 
-            sc.Name AS SubCategoryName 
-        FROM Services s
-        LEFT JOIN SubCategories sc ON s.SubCategoryId = sc.Id";
-
-            using (IDbConnection db = new SqlConnection(_configuration.GetSection("ConnectionStrings").Value))
+            return await _context.Services
+            .Include(s => s.SubCategory)
+            .Select(s => new GetServiceDto
             {
-                var services = await db.QueryAsync<GetServiceDto, SubCategory, GetServiceDto>(
-                    sql,
-                    (service, subCategory) =>
+                Id = s.Id,
+                Name = s.Name,
+                IsDeleted = s.IsDeleted,
+                Price = s.Price,
+                SubCategoryId = s.SubCategoryId,
+                Image = s.Image,
+                SubCategory = s.SubCategory != null
+                    ? new SubCategory
                     {
-                        service.SubCategory = subCategory != null
-                            ? new SubCategory
-                            {
-                                Id = subCategory.Id,
-                                Name = subCategory.Name
-                            }
-                            : null;
-                        return service;
-                    },
-                    splitOn: "SubCategoryId");
-
-                return services.AsList();
-            }
+                        Id = s.SubCategory.Id,
+                        Name = s.SubCategory.Name
+                    }
+                    : null
+            })
+            .ToListAsync(cancellationToken);
         }
 
         public async Task<List<GetByCategorySubIdDto>> GetAllBySubCategoryIdAsync(int id, CancellationToken cancellationToken)

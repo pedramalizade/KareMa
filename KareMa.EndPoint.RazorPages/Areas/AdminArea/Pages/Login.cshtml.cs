@@ -35,16 +35,13 @@
 
         public async Task<IActionResult> OnPostAsync(string returnUrl = null)
         {
-            // اگه returnUrl null باشه، یه مسیر پیش‌فرض معتبر تنظیم می‌کنیم
-            returnUrl ??= Url.Page("/AdminArea/AddCustomer") ?? "/AdminArea/AddCustomer"; // مسیر پیش‌فرض
+            returnUrl ??= Url.Page("/AdminArea/AddCustomer") ?? "/AdminArea/AddCustomer"; 
 
             _logger.LogInformation("Login attempt started.");
-            Console.WriteLine("Login attempt started.");
 
             if (!ModelState.IsValid)
             {
                 _logger.LogWarning("Invalid model state.");
-                Console.WriteLine("Invalid model state.");
                 return Page();
             }
 
@@ -52,7 +49,6 @@
             if (user == null)
             {
                 _logger.LogWarning("User with email {Email} not found.", Input.Email);
-                Console.WriteLine($"User with email {Input.Email} not found.");
                 ModelState.AddModelError("", "ایمیل یا رمز عبور اشتباه است.");
                 return Page();
             }
@@ -61,13 +57,10 @@
             if (result.Succeeded)
             {
                 _logger.LogInformation("User {Email} logged in successfully.", Input.Email);
-                Console.WriteLine($"User {Input.Email} logged in successfully.");
 
-                // چک می‌کنیم که returnUrl معتبر باشه
                 if (string.IsNullOrEmpty(returnUrl))
                 {
                     _logger.LogWarning("returnUrl is null or empty, using default.");
-                    Console.WriteLine("returnUrl is null or empty, using default.");
                     returnUrl = "/AdminArea/AddCustomer";
                 }
 
@@ -75,7 +68,6 @@
             }
 
             _logger.LogWarning("Login failed for {Email}.", Input.Email);
-            Console.WriteLine($"Login failed for {Input.Email}.");
             ModelState.AddModelError("", "ایمیل یا رمز عبور اشتباه است.");
             return Page();
         }

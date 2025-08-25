@@ -135,6 +135,10 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "dependencies": {
+            "KavenegarDotNetCore": {
+              "target": "Package",
+              "version": "[1.0.7, )"
+            },
             "Microsoft.AspNetCore.Identity": {
               "target": "Package",
               "version": "[2.3.0, )"
@@ -287,6 +291,12 @@
       "frameworks": {
         "net9.0": {
           "targetAlias": "net9.0",
+          "dependencies": {
+            "KavenegarDotNetCore": {
+              "target": "Package",
+              "version": "[1.0.7, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

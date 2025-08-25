@@ -59,18 +59,15 @@
         public async Task<IActionResult> OnPostUpdateProfileAsync(CancellationToken cancellationToken)
         {
             _logger.LogInformation("ProfileSetting OnPostUpdateProfile started.");
-            Console.WriteLine("ProfileSetting OnPostUpdateProfile started.");
 
             try
             {
                 _logger.LogInformation("Received Data - ID: {Id}, Gender: {Gender}, PhoneNumber: {PhoneNumber}, BirthDate: '{BirthDate}', ServiceIds: {@ServiceIds}",
                     ExpertUpdate.Id, ExpertUpdate.Gender, ExpertUpdate.PhoneNumber, BirthDate, ExpertUpdate.ServiceIds ?? new List<int>());
-                Console.WriteLine($"Received Data - ID: {ExpertUpdate.Id}, Gender: {ExpertUpdate.Gender}, PhoneNumber: {ExpertUpdate.PhoneNumber}, BirthDate: '{BirthDate}', ServiceIds: {string.Join(", ", ExpertUpdate.ServiceIds ?? new List<int>())}");
 
                 if (!ModelState.IsValid)
                 {
                     _logger.LogWarning("ModelState is invalid.");
-                    Console.WriteLine("ModelState is invalid.");
                     foreach (var modelStateKey in ModelState.Keys)
                     {
                         var value = ModelState[modelStateKey];
@@ -103,19 +100,16 @@
 
                         var persianCalendar = new PersianCalendar();
                         ExpertUpdate.BirthDate = persianCalendar.ToDateTime(year, month, day, 0, 0, 0, 0);
-                        Console.WriteLine($"BirthDate parsed successfully: {ExpertUpdate.BirthDate}");
                     }
                     catch (Exception ex)
                     {
                         _logger.LogWarning("Failed to parse BirthDate '{BirthDate}': {Message}", BirthDate, ex.Message);
-                        Console.WriteLine($"Failed to parse BirthDate '{BirthDate}': {ex.Message}");
                         ModelState.AddModelError("BirthDate", $"خطا در تبدیل تاریخ تولد: {ex.Message}");
                         ServicesNames = await _serviceAppServices.GetServicesNameAsync(cancellationToken);
                         return Page();
                     }
                 }
 
-                // آپلود تصویر اگه وجود داره
                 if (Image != null)
                 {
                     var fileName = Guid.NewGuid().ToString() + Path.GetExtension(Image.FileName);
@@ -129,28 +123,23 @@
                 }
 
                 _logger.LogInformation("Updating expert with ID: {ExpertId}, ServiceIds: {@ServiceIds}", expertId, ExpertUpdate.ServiceIds);
-                Console.WriteLine($"Updating expert with ID: {expertId}, ServiceIds: {string.Join(", ", ExpertUpdate.ServiceIds ?? new List<int>())}");
 
-                var result = await _expertAppServices.UpdateAsync(ExpertUpdate,Image,  cancellationToken); // Image رو اینجا نمی‌فرستیم چون توی DTO هست
+                var result = await _expertAppServices.UpdateAsync(ExpertUpdate,Image,  cancellationToken); 
                 if (!result)
                 {
                     _logger.LogWarning("Failed to update expert profile.");
-                    Console.WriteLine("Failed to update expert profile.");
                     ModelState.AddModelError("", "خطا در ذخیره تغییرات پروفایل");
                     ServicesNames = await _serviceAppServices.GetServicesNameAsync(cancellationToken);
                     return Page();
                 }
 
                 _logger.LogInformation("Expert profile updated successfully.");
-                Console.WriteLine("Expert profile updated successfully.");
                 TempData["SuccessMessage"] = "تغییرات با موفقیت ذخیره شد.";
                 return RedirectToPage();
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Error in OnPostUpdateProfile: {Message}", ex.Message);
-                Console.WriteLine($"Error in OnPostUpdateProfile: {ex.Message}");
-                Console.WriteLine($"Inner Exception: {ex.InnerException?.Message}");
                 ModelState.AddModelError("", $"خطا در ذخیره تغییرات: {ex.Message} - جزئیات: {ex.InnerException?.Message}");
                 ServicesNames = await _serviceAppServices.GetServicesNameAsync(cancellationToken);
                 return Page();

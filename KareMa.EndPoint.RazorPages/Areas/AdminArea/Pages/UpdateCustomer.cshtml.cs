@@ -17,24 +17,19 @@
 
         public async Task<IActionResult> OnGetAsync(int id, CancellationToken cancellationToken)
         {
-            Console.WriteLine($"OnGetAsync called with id: {id}");
             CustomerUpdate = await _customerAppServices.GetCustomerUpdateInfoAsync(id, cancellationToken);
             if (CustomerUpdate == null)
             {
-                Console.WriteLine($"Customer with ID: {id} not found, redirecting to Customers.");
                 TempData["ErrorMessage"] = "مشتری پیدا نشد.";
                 return RedirectToPage("Customers");
             }
-            Console.WriteLine($"Loaded customer with ID: {CustomerUpdate.Id}, Name: {CustomerUpdate.FirstName} {CustomerUpdate.LastName}");
             return Page();
         }
 
         public async Task<IActionResult> OnPostUpdateAsync(CancellationToken cancellationToken)
         {
-            Console.WriteLine($"OnPostUpdateAsync called with Customer ID: {CustomerUpdate.Id}");
             if (!ModelState.IsValid)
             {
-                Console.WriteLine("ModelState is invalid.");
                 foreach (var error in ModelState.Values.SelectMany(v => v.Errors))
                 {
                     Console.WriteLine($"Error: {error.ErrorMessage}");
@@ -58,7 +53,6 @@
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Error in OnPostUpdate: {ex.Message}");
                 TempData["ErrorMessage"] = $"خطا: {ex.Message}";
                 return Page();
             }

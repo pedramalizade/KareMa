@@ -14,4 +14,4 @@ global using KareMa.Domain.Core.DTOs.ServiceDTO;
 global using KareMa.Domain.Core.Contracts.Repositories.Category;
 global using KareMa.Domain.Core.DTOs.SubCategoryDTO;
 global using KareMa.Domain.Core.DTOs.SuggestionDTO;
-
+global using Microsoft.Extensions.Options;

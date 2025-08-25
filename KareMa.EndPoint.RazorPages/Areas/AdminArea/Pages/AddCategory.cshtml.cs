@@ -23,7 +23,7 @@
         }
         public async Task<IActionResult> OnPostAddCategory(CancellationToken cancellationToken)
         {
-            ModelState.Remove("CategoryCreate.Id"); // حذف اعتبارسنجی ID در صورت نیاز
+            ModelState.Remove("CategoryCreate.Id"); 
 
             if (Image == null || Image.Length == 0)
             {
@@ -46,15 +46,5 @@
             await _categoryAppServices.CreateAsync(CategoryCreate, Image, cancellationToken);
             return RedirectToPage("Category");
         }
-
-        /*   public async Task<IActionResult> OnPostAddCategory(CategoryCreateDto serviceCategoryCreate, IFormFile image, CancellationToken cancellationToken)
-           {
-               if (ModelState.IsValid)
-               {
-                   await _categoryAppServices.Create(serviceCategoryCreate, image, cancellationToken);
-                   return RedirectToPage("Category");
-               }
-               return Page();
-           }*/
     }
 }

@@ -1,0 +1,16 @@
+C:\Users\asus\source\repos\KareMa\KareMa.Infra.DataAccess.Repository.Dapper\bin\Release\net9.0\KareMa.Infra.DataAccess.Repository.Dapper.deps.json
+C:\Users\asus\source\repos\KareMa\KareMa.Infra.DataAccess.Repository.Dapper\bin\Release\net9.0\KareMa.Infra.DataAccess.Repository.Dapper.dll
+C:\Users\asus\source\repos\KareMa\KareMa.Infra.DataAccess.Repository.Dapper\bin\Release\net9.0\KareMa.Infra.DataAccess.Repository.Dapper.pdb
+C:\Users\asus\source\repos\KareMa\KareMa.Infra.DataAccess.Repository.Dapper\bin\Release\net9.0\KareMa.Domain.Core.dll
+C:\Users\asus\source\repos\KareMa\KareMa.Infra.DataAccess.Repository.Dapper\bin\Release\net9.0\KareMa.Domain.Core.pdb
+C:\Users\asus\source\repos\KareMa\KareMa.Infra.DataAccess.Repository.Dapper\obj\Release\net9.0\KareMa.Infra.DataAccess.Repository.Dapper.csproj.AssemblyReference.cache
+C:\Users\asus\source\repos\KareMa\KareMa.Infra.DataAccess.Repository.Dapper\obj\Release\net9.0\KareMa.Infra.DataAccess.Repository.Dapper.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\asus\source\repos\KareMa\KareMa.Infra.DataAccess.Repository.Dapper\obj\Release\net9.0\KareMa.Infra.DataAccess.Repository.Dapper.AssemblyInfoInputs.cache
+C:\Users\asus\source\repos\KareMa\KareMa.Infra.DataAccess.Repository.Dapper\obj\Release\net9.0\KareMa.Infra.DataAccess.Repository.Dapper.AssemblyInfo.cs
+C:\Users\asus\source\repos\KareMa\KareMa.Infra.DataAccess.Repository.Dapper\obj\Release\net9.0\KareMa.Infra.DataAccess.Repository.Dapper.csproj.CoreCompileInputs.cache
+C:\Users\asus\source\repos\KareMa\KareMa.Infra.DataAccess.Repository.Dapper\obj\Release\net9.0\KareMa.Infra.DataAccess.Repository.Dapper.sourcelink.json
+C:\Users\asus\source\repos\KareMa\KareMa.Infra.DataAccess.Repository.Dapper\obj\Release\net9.0\KareMa.I.EA1CC8D7.Up2Date
+C:\Users\asus\source\repos\KareMa\KareMa.Infra.DataAccess.Repository.Dapper\obj\Release\net9.0\KareMa.Infra.DataAccess.Repository.Dapper.dll
+C:\Users\asus\source\repos\KareMa\KareMa.Infra.DataAccess.Repository.Dapper\obj\Release\net9.0\refint\KareMa.Infra.DataAccess.Repository.Dapper.dll
+C:\Users\asus\source\repos\KareMa\KareMa.Infra.DataAccess.Repository.Dapper\obj\Release\net9.0\KareMa.Infra.DataAccess.Repository.Dapper.pdb
+C:\Users\asus\source\repos\KareMa\KareMa.Infra.DataAccess.Repository.Dapper\obj\Release\net9.0\ref\KareMa.Infra.DataAccess.Repository.Dapper.dll

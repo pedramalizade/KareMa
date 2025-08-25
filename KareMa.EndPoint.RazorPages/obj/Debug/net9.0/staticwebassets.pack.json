@@ -6501,6 +6501,10 @@
       "PackagePath": "staticwebassets\\uploads\\fe556eb6-4d2e-480f-ab4c-4b4cda7a533a__6b3deaa3-c9a1-4660-b15e-d495fb2399f5.jfif"
     },
     {
+      "Id": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.EndPoint.RazorPages\\wwwroot\\uploads\\logoioioioioi.png",
+      "PackagePath": "staticwebassets\\uploads\\logoioioioioi.png"
+    },
+    {
       "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.KareMa.EndPoint.RazorPages.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
     },

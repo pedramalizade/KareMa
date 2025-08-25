@@ -19,8 +19,7 @@
         public List<ServicesNameDto> Services { get; set; } = new List<ServicesNameDto>();
 
         [BindProperty]
-        [Required(ErrorMessage = " عکس نمی‌تواند بدون مقدار باشد")]
-        public IFormFile Image { get; set; }
+        public IFormFile? Image { get; set; }
 
         [BindProperty]
         [Required(ErrorMessage = "تاریخ نمی‌تواند بدون مقدار باشد")]

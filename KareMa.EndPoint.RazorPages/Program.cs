@@ -1,4 +1,5 @@
-﻿var builder = WebApplication.CreateBuilder(args);
+﻿
+var builder = WebApplication.CreateBuilder(args);
 builder.Configuration
     .SetBasePath(Directory.GetCurrentDirectory())
     .AddJsonFile("appsettings.json")
@@ -7,6 +8,7 @@ builder.Configuration
 var seq = builder.Configuration.GetSection("Seq").Get<Seq>();
 var commentConfig = builder.Configuration.GetSection("CommentConfiguration").Get<CommentConfiguration>();
 builder.Services.AddSingleton(commentConfig);
+
 
 var connectionString = builder.Configuration.GetSection("ConnectionStrings").Value;
 builder.Services.AddDbContext<AppDbContext>(options =>

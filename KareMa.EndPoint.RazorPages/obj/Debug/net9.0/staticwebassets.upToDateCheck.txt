@@ -2678,3 +2678,4 @@ wwwroot\uploads\f8b7f65d-d60d-450d-93c4-793c7a2e8667_cleaning-service-big-set-is
 wwwroot\uploads\f927a109-7599-4eb5-ac16-92bfccca95d8_smiling-man-helping-woman-with-household_74855-7860.jpg
 wwwroot\uploads\fe126c89-fcde-4804-b895-3d477e26677b_Black and White Simple Circle Brush Name Logo.jpg
 wwwroot\uploads\fe556eb6-4d2e-480f-ab4c-4b4cda7a533a__6b3deaa3-c9a1-4660-b15e-d495fb2399f5.jfif
+wwwroot\uploads\logoioioioioi.png

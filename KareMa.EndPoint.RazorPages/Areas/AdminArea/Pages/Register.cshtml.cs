@@ -65,18 +65,15 @@
         public void OnGet()
         {
             _logger.LogInformation("Register page loaded.");
-            Console.WriteLine("Register page loaded.");
         }
 
         public async Task<IActionResult> OnPostAsync()
         {
             _logger.LogInformation("Register attempt started.");
-            Console.WriteLine("Register attempt started.");
 
             if (!ModelState.IsValid)
             {
                 _logger.LogWarning("Invalid model state.");
-                Console.WriteLine("Invalid model state.");
                 foreach (var modelStateKey in ModelState.Keys)
                 {
                     var value = ModelState[modelStateKey];
@@ -96,14 +93,12 @@
                 _logger.LogInformation("User {Email} created successfully.", Input.Email);
                 Console.WriteLine($"User {Input.Email} created successfully.");
 
-                // اضافه کردن نقش Admin
                 if (!await _roleManager.RoleExistsAsync("Admin"))
                 {
                     await _roleManager.CreateAsync(new IdentityRole<int> { Name = "Admin" });
                 }
                 await _userManager.AddToRoleAsync(user, "Admin");
 
-                // ثبت اطلاعات در جدول Admin
                 var admin = new Admin
                 {
                     AppUserId = user.Id,
@@ -115,7 +110,6 @@
                 _dbContext.Admins.Add(admin);
                 await _dbContext.SaveChangesAsync();
 
-                // لاگین کردن کاربر بعد از ثبت‌نام
                 await _signInManager.SignInAsync(user, isPersistent: true);
 
                 TempData["Success"] = "ادمین جدید ثبت شد!";
@@ -126,7 +120,6 @@
             {
                 ModelState.AddModelError("", error.Description);
                 _logger.LogWarning("Registration error: {Error}", error.Description);
-                Console.WriteLine($"Registration error: {error.Description}");
             }
 
             return Page();

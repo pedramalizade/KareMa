@@ -17,24 +17,19 @@
 
         public async Task<IActionResult> OnGetAsync(int id, CancellationToken cancellationToken)
         {
-            Console.WriteLine($"OnGetAsync called with id: {id}");
             CategoryUpdate = await _categoryAppServices.ServiceCategoryUpdateInfoAsync(id, cancellationToken);
             if (CategoryUpdate == null)
             {
-                Console.WriteLine($"Category with ID: {id} not found.");
                 TempData["ErrorMessage"] = "دسته‌بندی پیدا نشد.";
                 return RedirectToPage("Category");
             }
-            Console.WriteLine($"Loaded category with ID: {CategoryUpdate.Id}, Name: {CategoryUpdate.Name}");
             return Page();
         }
 
         public async Task<IActionResult> OnPostUpdateAsync(CancellationToken cancellationToken)
         {
-            Console.WriteLine($"OnPostUpdateAsync called with Category ID: {CategoryUpdate.Id}");
             if (!ModelState.IsValid)
             {
-                Console.WriteLine("ModelState is invalid.");
                 foreach (var error in ModelState.Values.SelectMany(v => v.Errors))
                 {
                     Console.WriteLine($"Error: {error.ErrorMessage}");
@@ -62,8 +57,6 @@
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Error in OnPostUpdate: {ex.Message}");
-                Console.WriteLine($"Inner Exception: {ex.InnerException?.Message}");
                 TempData["ErrorMessage"] = $"خطا: {ex.Message}";
                 return Page();
             }

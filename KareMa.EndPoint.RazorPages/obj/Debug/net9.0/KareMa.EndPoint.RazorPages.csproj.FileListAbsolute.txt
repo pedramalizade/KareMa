@@ -1550,3 +1550,5 @@ C:\Users\asus\source\repos\KareMa\KareMa.EndPoint.RazorPages\bin\Debug\net9.0\ru
 C:\Users\asus\source\repos\KareMa\KareMa.EndPoint.RazorPages\bin\Debug\net9.0\runtimes\win\lib\net9.0\Microsoft.Data.SqlClient.dll
 C:\Users\asus\source\repos\KareMa\KareMa.EndPoint.RazorPages\bin\Debug\net9.0\KareMa.Infra.DataAccess.Repository.Dapper.dll
 C:\Users\asus\source\repos\KareMa\KareMa.EndPoint.RazorPages\bin\Debug\net9.0\KareMa.Infra.DataAccess.Repository.Dapper.pdb
+C:\Users\asus\source\repos\KareMa\KareMa.EndPoint.RazorPages\bin\Debug\net9.0\Kavenegar.Core.dll
+C:\Users\asus\source\repos\KareMa\KareMa.EndPoint.RazorPages\bin\Debug\net9.0\Newtonsoft.Json.dll

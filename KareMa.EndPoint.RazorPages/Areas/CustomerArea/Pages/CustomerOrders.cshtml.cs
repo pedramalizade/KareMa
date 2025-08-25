@@ -30,27 +30,22 @@
 
         public async Task OnGetAsync(CancellationToken cancellationToken)
         {
-            Console.WriteLine("CustomerOrders OnGet started.");
 
             var userCustomerId = int.Parse(User.Claims.FirstOrDefault(c => c.Type == "userCustomerId")?.Value ?? "0");
             if (userCustomerId == 0)
             {
-                Console.WriteLine("No valid customer ID found in claims.");
                 return;
             }
 
             Orders = await _orderAppServices.GetOrdersAsync(userCustomerId, cancellationToken);
-            Console.WriteLine($"Orders loaded successfully for Customer ID: {userCustomerId}");
         }
 
         public async Task<IActionResult> OnPostAcceptSuggestionAsync(int id, int orderId, CancellationToken cancellationToken)
         {
-            Console.WriteLine($"AcceptSuggestion started for Suggestion ID: {id}, Order ID: {orderId}");
 
             var userCustomerId = int.Parse(User.Claims.FirstOrDefault(c => c.Type == "userCustomerId")?.Value ?? "0");
             if (userCustomerId == 0)
             {
-                Console.WriteLine("No valid customer ID found in claims.");
                 ModelState.AddModelError("", "کاربر معتبر نیست.");
                 Orders = await _orderAppServices.GetOrdersAsync(userCustomerId, cancellationToken);
                 return Page();
@@ -59,7 +54,6 @@
             var suggestion = await _suggestionAppServices.GetSuggestionByIdAsync(id, cancellationToken);
             if (suggestion == null || suggestion.OrderId != orderId)
             {
-                Console.WriteLine($"Suggestion not found or invalid for Suggestion ID: {id}");
                 ModelState.AddModelError("", "پیشنهاد مورد نظر یافت نشد.");
                 Orders = await _orderAppServices.GetOrdersAsync(userCustomerId, cancellationToken);
                 return Page();
@@ -68,7 +62,6 @@
             var customer = await _customerAppServices.GetCustomerByIdAsync(userCustomerId, cancellationToken);
             if (customer == null)
             {
-                Console.WriteLine($"Customer not found for ID: {userCustomerId}");
                 ModelState.AddModelError("", "مشتری یافت نشد.");
                 Orders = await _orderAppServices.GetOrdersAsync(userCustomerId, cancellationToken);
                 return Page();
@@ -76,7 +69,6 @@
 
             if (customer.Balance < suggestion.Price)
             {
-                Console.WriteLine($"Insufficient balance for Customer ID: {userCustomerId}. Balance: {customer.Balance}, Price: {suggestion.Price}");
                 ModelState.AddModelError("", "موجودی شما کافی نیست.");
                 Orders = await _orderAppServices.GetOrdersAsync(userCustomerId, cancellationToken);
                 return Page();
@@ -85,7 +77,6 @@
             var result = await _suggestionAppServices.AcceptSuggestionAsync(id, orderId, cancellationToken);
             if (!result)
             {
-                Console.WriteLine($"Failed to accept suggestion for Suggestion ID: {id}");
                 ModelState.AddModelError("", "شما برای یک سفارش فقط می‌توانید یک متخصص انتخاب کنید یا خطایی رخ داده است.");
                 Orders = await _orderAppServices.GetOrdersAsync(userCustomerId, cancellationToken);
                 return Page();
@@ -94,13 +85,11 @@
             var expert = await _expertAppServices.GetExpertByIdAsync(suggestion.ExpertId, cancellationToken);
             if (expert == null)
             {
-                Console.WriteLine($"Expert not found for ID: {suggestion.ExpertId}");
                 ModelState.AddModelError("", "متخصص یافت نشد.");
                 Orders = await _orderAppServices.GetOrdersAsync(userCustomerId, cancellationToken);
                 return Page();
             }
 
-            // محاسبه 10 درصد برای ادمین
             decimal transactionAmount = suggestion.Price;
             decimal adminCommission = CalculateAdminCommission(transactionAmount);
             decimal expertAmount = transactionAmount - adminCommission;
@@ -109,23 +98,19 @@
             var admin = await _customerAppServices.GetCustomerByIdAsync(adminId, cancellationToken);
             if (admin == null)
             {
-                Console.WriteLine($"Admin not found for ID: {adminId}");
                 ModelState.AddModelError("", "ادمین یافت نشد.");
                 Orders = await _orderAppServices.GetOrdersAsync(userCustomerId, cancellationToken);
                 return Page();
             }
 
-            // تراکنش‌ها
-            customer.Balance -= transactionAmount; // کل مبلغ از مشتری کم میشه
-            expert.Balance += expertAmount;       // 90 درصد به متخصص
-            admin.Balance += adminCommission;     // 10 درصد به ادمین
+            customer.Balance -= transactionAmount; 
+            expert.Balance += expertAmount;       
+            admin.Balance += adminCommission;     
 
-            // به‌روزرسانی موجودی‌ها
             await _customerAppServices.UpdateBalanceAsync(userCustomerId, customer.Balance, cancellationToken);
             await _expertAppServices.UpdateBalanceAsync(suggestion.ExpertId, expert.Balance, cancellationToken);
             await _customerAppServices.UpdateBalanceAsync(adminId, admin.Balance, cancellationToken);
 
-            Console.WriteLine($"Payment completed. Customer ID: {userCustomerId}, Expert ID: {suggestion.ExpertId}, Admin ID: {adminId}, Amount: {transactionAmount}, Admin Commission: {adminCommission}");
 
             TempData["SuccessMessage"] = "پیشنهاد با موفقیت تأیید و پرداخت انجام شد.";
             Orders = await _orderAppServices.GetOrdersAsync(userCustomerId, cancellationToken);

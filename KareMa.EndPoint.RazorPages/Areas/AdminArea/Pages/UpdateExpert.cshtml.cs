@@ -17,24 +17,19 @@
 
         public async Task<IActionResult> OnGetAsync(int id, CancellationToken cancellationToken)
         {
-            Console.WriteLine($"OnGetAsync called with id: {id}");
             ExpertUpdate = await _expertAppServices.ExpertUpdateInfoAsync(id, cancellationToken);
             if (ExpertUpdate == null)
             {
-                Console.WriteLine($"Expert with ID: {id} not found.");
                 TempData["ErrorMessage"] = "متخصص پیدا نشد.";
                 return RedirectToPage("Experts");
             }
-            Console.WriteLine($"Loaded expert with ID: {ExpertUpdate.Id}, Name: {ExpertUpdate.FirstName} {ExpertUpdate.LastName}");
             return Page();
         }
 
         public async Task<IActionResult> OnPostUpdateAsync(CancellationToken cancellationToken)
         {
-            Console.WriteLine($"OnPostUpdateAsync called with Expert ID: {ExpertUpdate.Id}");
             if (!ModelState.IsValid)
             {
-                Console.WriteLine("ModelState is invalid.");
                 foreach (var error in ModelState.Values.SelectMany(v => v.Errors))
                 {
                     Console.WriteLine($"Error: {error.ErrorMessage}");
@@ -58,8 +53,6 @@
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Error in OnPostUpdate: {ex.Message}");
-                Console.WriteLine($"Inner Exception: {ex.InnerException?.Message}");
                 TempData["ErrorMessage"] = $"خطا در آپدیت: {ex.Message}";
                 return Page();
             }

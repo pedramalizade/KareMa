@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("KareMa.Infra.DataAccess.Repository.Dapper")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+36335736580df7b983eac97c647cbef415a8c1e7")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+44755cda65c669ab3291f920b3905d164083a95d")]
 [assembly: System.Reflection.AssemblyProductAttribute("KareMa.Infra.DataAccess.Repository.Dapper")]
 [assembly: System.Reflection.AssemblyTitleAttribute("KareMa.Infra.DataAccess.Repository.Dapper")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

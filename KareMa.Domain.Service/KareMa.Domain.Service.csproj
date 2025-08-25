@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="KavenegarDotNetCore" Version="1.0.7" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\KareMa.Domain.Core\KareMa.Domain.Core.csproj" />
     <ProjectReference Include="..\KareMa.Infra.DataAccess.Repo.Ef\KareMa.Infra.DataAccess.Repo.Ef.csproj" />
   </ItemGroup>
