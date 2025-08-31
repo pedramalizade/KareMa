@@ -1,9 +1,4 @@
-﻿using KareMa.Domain.Core.Entities;
-using KareMa.Domain.Core.Enums;
-using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Microsoft.EntityFrameworkCore;
-
-public class AdminConfiguration : IEntityTypeConfiguration<Admin>
+﻿public class AdminConfiguration : IEntityTypeConfiguration<Admin>
 {
     public void Configure(EntityTypeBuilder<Admin> builder)
     {

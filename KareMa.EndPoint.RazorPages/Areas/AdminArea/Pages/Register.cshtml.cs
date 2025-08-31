@@ -64,24 +64,16 @@
 
         public void OnGet()
         {
-            _logger.LogInformation("Register page loaded.");
+            _logger.LogInformation("صفحه ثبت‌نام بارگذاری شد.");
         }
 
         public async Task<IActionResult> OnPostAsync()
         {
-            _logger.LogInformation("Register attempt started.");
+            _logger.LogInformation("فرآیند ثبت‌نام شروع شد.");
 
             if (!ModelState.IsValid)
             {
-                _logger.LogWarning("Invalid model state.");
-                foreach (var modelStateKey in ModelState.Keys)
-                {
-                    var value = ModelState[modelStateKey];
-                    foreach (var error in value.Errors)
-                    {
-                        Console.WriteLine($"Key: {modelStateKey}, Error: {error.ErrorMessage}");
-                    }
-                }
+                AddModelStateErrors();
                 return Page();
             }
 
@@ -90,13 +82,9 @@
 
             if (result.Succeeded)
             {
-                _logger.LogInformation("User {Email} created successfully.", Input.Email);
-                Console.WriteLine($"User {Input.Email} created successfully.");
+                _logger.LogInformation("کاربر با ایمیل {Email} با موفقیت ایجاد شد.", Input.Email);
 
-                if (!await _roleManager.RoleExistsAsync("Admin"))
-                {
-                    await _roleManager.CreateAsync(new IdentityRole<int> { Name = "Admin" });
-                }
+                await EnsureAdminRoleExistsAsync();
                 await _userManager.AddToRoleAsync(user, "Admin");
 
                 var admin = new Admin
@@ -112,20 +100,43 @@
 
                 await _signInManager.SignInAsync(user, isPersistent: true);
 
-                TempData["Success"] = "ادمین جدید ثبت شد!";
+                TempData["Success"] = "ادمین جدید با موفقیت ثبت شد!";
                 return LocalRedirect("/AdminArea/AddCustomer");
             }
 
-            foreach (var error in result.Errors)
-            {
-                ModelState.AddModelError("", error.Description);
-                _logger.LogWarning("Registration error: {Error}", error.Description);
-            }
-
+            AddIdentityErrors(result);
             return Page();
         }
+
+        private void AddModelStateErrors()
+        {
+            _logger.LogWarning("مدل ورودی معتبر نیست.");
+            foreach (var (key, value) in ModelState)
+                foreach (var error in value.Errors)
+                {
+                    Console.WriteLine($"Key: {key}, Error: {error.ErrorMessage}");
+                    ModelState.AddModelError("", $"خطا در {key}: {error.ErrorMessage}");
+                }
+        }
+
+        private async Task EnsureAdminRoleExistsAsync()
+        {
+            if (!await _roleManager.RoleExistsAsync("Admin"))
+            {
+                _logger.LogInformation("نقش 'Admin' یافت نشد، در حال ایجاد...");
+                await _roleManager.CreateAsync(new IdentityRole<int> { Name = "Admin" });
+                _logger.LogInformation("نقش 'Admin' با موفقیت ایجاد شد.");
+            }
+        }
+
+        private void AddIdentityErrors(IdentityResult result)
+        {
+            foreach (var error in result.Errors)
+            {
+                _logger.LogWarning("خطا در ثبت‌نام: {Error}", error.Description);
+                ModelState.AddModelError("", $"خطا در ثبت‌نام: {error.Description}");
+            }
+        }
     }
-
-
 }
 

@@ -1,8 +1,4 @@
-﻿using KareMa.Domain.Core.Entities;
-using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Microsoft.EntityFrameworkCore;
-
-public class AddressConfiguration : IEntityTypeConfiguration<Address>
+﻿public class AddressConfiguration : IEntityTypeConfiguration<Address>
 {
     public void Configure(EntityTypeBuilder<Address> builder)
     {

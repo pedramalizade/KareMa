@@ -45,75 +45,31 @@
 
         public async Task<IActionResult> OnPostUpdateAsync(CancellationToken cancellationToken)
         {
-
             try
             {
                 var userCustomerId = int.Parse(User.Claims.FirstOrDefault(c => c.Type == "userCustomerId")?.Value ?? "0");
                 if (userCustomerId == 0)
                 {
-                    ModelState.AddModelError("", "کاربر معتبر نیست.");
-                    Cities = await _cityAppService.GetAllAsync(cancellationToken);
-                    return Page();
+                    return await ReturnWithError("کاربر معتبر نیست.", cancellationToken);
                 }
-
 
                 if (!ModelState.IsValid)
                 {
-                    foreach (var modelStateKey in ModelState.Keys)
-                    {
-                        var value = ModelState[modelStateKey];
-                        foreach (var error in value.Errors)
-                        {
-                            ModelState.AddModelError("", $"خطا در {modelStateKey}: {error.ErrorMessage}");
-                        }
-                    }
-                    Cities = await _cityAppService.GetAllAsync(cancellationToken);
-                    return Page();
+                    AddModelStateErrors();
+                    return await ReturnWithCities(cancellationToken);
                 }
 
-                CustomerUpdate.Id = userCustomerId;
-                if (CustomerUpdate.Address != null)
+                PrepareCustomerUpdate(userCustomerId);
+
+                if (Image != null && !await TryUploadImageAsync(cancellationToken))
                 {
-                    CustomerUpdate.Address.CustomerId = userCustomerId;
-                    if (string.IsNullOrEmpty(CustomerUpdate.Address.Title))
-                    {
-                        CustomerUpdate.Address.Title = "آدرس پیش‌فرض";
-                    }
+                    return await ReturnWithCities(cancellationToken);
                 }
-                else
-                {
-                    CustomerUpdate.Address = new Address { CustomerId = userCustomerId, Title = "آدرس پیش‌فرض" };
-                }
-
-                if (Image != null)
-                {
-                    var fileName = $"{Guid.NewGuid()}{Path.GetExtension(Image.FileName)}";
-                    var filePath = Path.Combine("wwwroot/uploads", fileName);
-
-                    try
-                    {
-                        Directory.CreateDirectory(Path.GetDirectoryName(filePath));
-                        using (var stream = new FileStream(filePath, FileMode.Create))
-                        {
-                            await Image.CopyToAsync(stream, cancellationToken);
-                        }
-                        CustomerUpdate.Image = $"/uploads/{fileName}";
-                    }
-                    catch (Exception ex)
-                    {
-                        ModelState.AddModelError("", $"خطا در آپلود تصویر: {ex.Message}");
-                        Cities = await _cityAppService.GetAllAsync(cancellationToken);
-                        return Page();
-                    }
-                }
-
 
                 var result = await _customerAppServices.UpdateAsync(CustomerUpdate, Image, cancellationToken);
                 if (!result)
                 {
-                    ModelState.AddModelError("", "خطا در ذخیره تغییرات پروفایل");
-                    Cities = await _cityAppService.GetAllAsync(cancellationToken);
-                    return Page();
+                    return await ReturnWithError("خطا در ذخیره تغییرات پروفایل", cancellationToken);
                 }
 
                 TempData["SuccessMessage"] = "تغییرات با موفقیت ذخیره شد.";
@@ -121,10 +77,64 @@
             }
             catch (Exception ex)
             {
-                ModelState.AddModelError("", $"خطا در ذخیره تغییرات: {ex.Message} - جزئیات: {ex.InnerException?.Message ?? "جزئیات بیشتری در دسترس نیست"}");
-                Cities = await _cityAppService.GetAllAsync(cancellationToken);
-                return Page();
+                var errorMessage = $"خطا در ذخیره تغییرات: {ex.Message} - جزئیات: {ex.InnerException?.Message ?? "جزئیات بیشتری در دسترس نیست"}";
+                return await ReturnWithError(errorMessage, cancellationToken);
             }
+        }
+
+        private void AddModelStateErrors()
+        {
+            foreach (var (key, value) in ModelState)
+                foreach (var error in value.Errors)
+                    ModelState.AddModelError("", $"خطا در {key}: {error.ErrorMessage}");
+        }
+
+        private void PrepareCustomerUpdate(int userCustomerId)
+        {
+            CustomerUpdate.Id = userCustomerId;
+
+            if (CustomerUpdate.Address == null)
+            {
+                CustomerUpdate.Address = new Address { CustomerId = userCustomerId, Title = "آدرس پیش‌فرض" };
+            }
+            else
+            {
+                CustomerUpdate.Address.CustomerId = userCustomerId;
+                CustomerUpdate.Address.Title ??= "آدرس پیش‌فرض";
+            }
+        }
+
+        private async Task<bool> TryUploadImageAsync(CancellationToken cancellationToken)
+        {
+            try
+            {
+                var fileName = $"{Guid.NewGuid()}{Path.GetExtension(Image.FileName)}";
+                var filePath = Path.Combine("wwwroot/uploads", fileName);
+
+                Directory.CreateDirectory(Path.GetDirectoryName(filePath));
+                using var stream = new FileStream(filePath, FileMode.Create);
+                await Image.CopyToAsync(stream, cancellationToken);
+
+                CustomerUpdate.Image = $"/uploads/{fileName}";
+                return true;
+            }
+            catch (Exception ex)
+            {
+                ModelState.AddModelError("", $"خطا در آپلود تصویر: {ex.Message}");
+                return false;
+            }
+        }
+
+        private async Task<IActionResult> ReturnWithError(string message, CancellationToken cancellationToken)
+        {
+            ModelState.AddModelError("", message);
+            return await ReturnWithCities(cancellationToken);
+        }
+
+        private async Task<IActionResult> ReturnWithCities(CancellationToken cancellationToken)
+        {
+            Cities = await _cityAppService.GetAllAsync(cancellationToken);
+            return Page();
         }
     }
 }

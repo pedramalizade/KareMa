@@ -29,45 +29,41 @@
 
         public void OnGet()
         {
-            _logger.LogInformation("Login page loaded.");
-            Console.WriteLine("Login page loaded.");
+            _logger.LogInformation("صفحه ورود بارگذاری شد.");
         }
 
         public async Task<IActionResult> OnPostAsync(string returnUrl = null)
         {
-            returnUrl ??= Url.Page("/AdminArea/AddCustomer") ?? "/AdminArea/AddCustomer"; 
-
-            _logger.LogInformation("Login attempt started.");
+            returnUrl ??= Url.Page("/AdminArea/AddCustomer") ?? "/AdminArea/AddCustomer";
 
             if (!ModelState.IsValid)
             {
-                _logger.LogWarning("Invalid model state.");
                 return Page();
             }
 
             var user = await _userManager.FindByEmailAsync(Input.Email);
             if (user == null)
             {
-                _logger.LogWarning("User with email {Email} not found.", Input.Email);
                 ModelState.AddModelError("", "ایمیل یا رمز عبور اشتباه است.");
                 return Page();
             }
 
-            var result = await _signInManager.PasswordSignInAsync(user.UserName, Input.Password, isPersistent: true, lockoutOnFailure: false);
+            var result = await _signInManager.PasswordSignInAsync(
+                user.UserName,
+                Input.Password,
+                isPersistent: true,
+                lockoutOnFailure: false
+            );
+
             if (result.Succeeded)
             {
-                _logger.LogInformation("User {Email} logged in successfully.", Input.Email);
-
                 if (string.IsNullOrEmpty(returnUrl))
                 {
-                    _logger.LogWarning("returnUrl is null or empty, using default.");
                     returnUrl = "/AdminArea/AddCustomer";
                 }
-
                 return LocalRedirect(returnUrl);
             }
 
-            _logger.LogWarning("Login failed for {Email}.", Input.Email);
             ModelState.AddModelError("", "ایمیل یا رمز عبور اشتباه است.");
             return Page();
         }

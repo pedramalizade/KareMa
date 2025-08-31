@@ -1,8 +1,4 @@
-﻿using KareMa.Domain.Core.Entities;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata.Builders;
-
-namespace KareMa.Infra.SqlServer.Configuration
+﻿namespace KareMa.Infra.SqlServer.Configuration
 {
     public class CategoryConfiguration : IEntityTypeConfiguration<Category>
     {

@@ -1,10 +1,4 @@
-﻿using KareMa.Domain.Core.Entities;
-using KareMa.Infra.SqlServer.Configuration;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore;
-
-namespace KareMa.Infra.SqlServer.Common
+﻿namespace KareMa.Infra.SqlServer.Common
 {
     public class AppDbContext : IdentityDbContext<AppUser, IdentityRole<int>, int>
     {

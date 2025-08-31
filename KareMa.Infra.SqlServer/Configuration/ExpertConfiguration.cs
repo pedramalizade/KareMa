@@ -1,9 +1,4 @@
-﻿using KareMa.Domain.Core.Entities;
-using KareMa.Domain.Core.Enums;
-using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Microsoft.EntityFrameworkCore;
-
-namespace KareMa.Infra.SqlServer.Configuration
+﻿namespace KareMa.Infra.SqlServer.Configuration
 {
     public class ExpertConfiguration : IEntityTypeConfiguration<Expert>
     {

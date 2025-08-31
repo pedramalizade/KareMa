@@ -31,41 +31,38 @@
 
         public async Task<IActionResult> OnPostAddCategory(CancellationToken cancellationToken)
         {
-
             try
             {
                 if (!ModelState.IsValid)
                 {
                     var errorMessages = new List<string>();
-                    foreach (var modelStateKey in ModelState.Keys)
+                    foreach (var key in ModelState.Keys)
                     {
-                        var value = ModelState[modelStateKey];
-                        foreach (var error in value.Errors)
+                        var entry = ModelState[key];
+                        foreach (var error in entry.Errors)
                         {
-                            var errorMessage = $"Key: {modelStateKey}, Error: {error.ErrorMessage}";
-                            Console.WriteLine(errorMessage);
-                            errorMessages.Add(errorMessage);
+                            errorMessages.Add($"خطا در {key}: {error.ErrorMessage}");
                         }
                     }
-                    ModelState.AddModelError("", "لطفاً خطاهای زیر را بررسی کنید: " + string.Join(" | ", errorMessages));
+
+                    ModelState.AddModelError("", "لطفاً خطاهای زیر را برطرف کنید: " + string.Join(" | ", errorMessages));
                     var cities = await _cityService.GetAllAsync(cancellationToken);
                     Cities = new SelectList(cities, "Id", "Name");
                     return Page();
                 }
 
-                if (User.Identity.IsAuthenticated)
+                if (!User.Identity.IsAuthenticated)
                 {
-                    Console.WriteLine($"User Claims: {string.Join(", ", User.Claims.Select(c => $"{c.Type}: {c.Value}"))}");
-                }
-                else
-                {
-                    Console.WriteLine("User is not authenticated.");
+                    ModelState.AddModelError("", "کاربر احراز هویت نشده است.");
+                    var cities = await _cityService.GetAllAsync(cancellationToken);
+                    Cities = new SelectList(cities, "Id", "Name");
+                    return Page();
                 }
 
                 var currentUser = await _userManager.GetUserAsync(User);
                 if (currentUser == null)
                 {
-                    ModelState.AddModelError("", "کاربر لاگین‌شده پیدا نشد. لطفاً اول وارد شوید.");
+                    ModelState.AddModelError("", "کاربر لاگین‌شده پیدا نشد. لطفاً ابتدا وارد شوید.");
                     var cities = await _cityService.GetAllAsync(cancellationToken);
                     Cities = new SelectList(cities, "Id", "Name");
                     return Page();
@@ -76,7 +73,7 @@
                 var result = await _customerAppServices.CreateAsync(CustomerCreate, Image, cancellationToken);
                 if (!result)
                 {
-                    ModelState.AddModelError("", "خطا در ثبت مشتری: مشکل در آپلود عکس یا ذخیره اطلاعات");
+                    ModelState.AddModelError("", "خطا در ثبت مشتری: مشکل در آپلود تصویر یا ذخیره اطلاعات.");
                     var cities = await _cityService.GetAllAsync(cancellationToken);
                     Cities = new SelectList(cities, "Id", "Name");
                     return Page();

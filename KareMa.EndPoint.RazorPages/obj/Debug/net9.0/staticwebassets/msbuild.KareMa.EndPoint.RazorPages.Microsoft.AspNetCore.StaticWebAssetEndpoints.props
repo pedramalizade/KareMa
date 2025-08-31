@@ -19008,18 +19008,6 @@
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-tJDNm9T1mztNsuMj0LFUPpM7gU/snQRj/0bk0Wt2vfg="}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"76647"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022tJDNm9T1mztNsuMj0LFUPpM7gU/snQRj/0bk0Wt2vfg=\u0022"},{"Name":"Last-Modified","Value":"Tue, 11 Feb 2025 09:15:15 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
-    <StaticWebAssetEndpoint Include="_content/KareMa.EndPoint.RazorPages/uploads/04e3045a-73de-4430-8052-c1ec56a7b9a4_cleaning-service-big-set-isolated-icons-with-detergents-mops-brooms-female-character-worker-vector-illustration_1284-78507.jpg">
-      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\04e3045a-73de-4430-8052-c1ec56a7b9a4_cleaning-service-big-set-isolated-icons-with-detergents-mops-brooms-female-character-worker-vector-illustration_1284-78507.jpg'))</AssetFile>
-      <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-DE4zbyV66sD4zgfU/6xk7zr4WRYnjRj1vu/fqtmRzU4="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"108091"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022DE4zbyV66sD4zgfU/6xk7zr4WRYnjRj1vu/fqtmRzU4=\u0022"},{"Name":"Last-Modified","Value":"Wed, 05 Mar 2025 17:00:33 GMT"}]]]></ResponseHeaders>
-    </StaticWebAssetEndpoint>
-    <StaticWebAssetEndpoint Include="_content/KareMa.EndPoint.RazorPages/uploads/04e3045a-73de-4430-8052-c1ec56a7b9a4_cleaning-service-big-set-isolated-icons-with-detergents-mops-brooms-female-character-worker-vector-illustration_1284-78507.wdsddx1mu0.jpg">
-      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\04e3045a-73de-4430-8052-c1ec56a7b9a4_cleaning-service-big-set-isolated-icons-with-detergents-mops-brooms-female-character-worker-vector-illustration_1284-78507.jpg'))</AssetFile>
-      <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"wdsddx1mu0"},{"Name":"integrity","Value":"sha256-DE4zbyV66sD4zgfU/6xk7zr4WRYnjRj1vu/fqtmRzU4="},{"Name":"label","Value":"_content/KareMa.EndPoint.RazorPages/uploads/04e3045a-73de-4430-8052-c1ec56a7b9a4_cleaning-service-big-set-isolated-icons-with-detergents-mops-brooms-female-character-worker-vector-illustration_1284-78507.jpg"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"108091"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022DE4zbyV66sD4zgfU/6xk7zr4WRYnjRj1vu/fqtmRzU4=\u0022"},{"Name":"Last-Modified","Value":"Wed, 05 Mar 2025 17:00:33 GMT"}]]]></ResponseHeaders>
-    </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/KareMa.EndPoint.RazorPages/uploads/0e13dc06-a06b-40f4-925e-7279868e2b75_3f2c91d9440631c4f1105b835be7438a.1hhlkz6hjp.jpg">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\0e13dc06-a06b-40f4-925e-7279868e2b75_3f2c91d9440631c4f1105b835be7438a.jpg'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
@@ -19176,18 +19164,6 @@
       <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"y40g87x299"},{"Name":"integrity","Value":"sha256-ToeSzVbT9GrHMjGmBIfM9opXeRQn4/tR6YCwhLSSHWc="},{"Name":"label","Value":"_content/KareMa.EndPoint.RazorPages/uploads/495674cd-950c-4679-9f06-40fb65ebcf4c.jpg"}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"85739"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022ToeSzVbT9GrHMjGmBIfM9opXeRQn4/tR6YCwhLSSHWc=\u0022"},{"Name":"Last-Modified","Value":"Wed, 09 Apr 2025 17:00:14 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
-    <StaticWebAssetEndpoint Include="_content/KareMa.EndPoint.RazorPages/uploads/516a4a76-e7d0-4a84-ab8d-3942466690e9_cleaning-service-big-set-isolated-icons-with-detergents-mops-brooms-female-character-worker-vector-illustration_1284-78507.jpg">
-      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\516a4a76-e7d0-4a84-ab8d-3942466690e9_cleaning-service-big-set-isolated-icons-with-detergents-mops-brooms-female-character-worker-vector-illustration_1284-78507.jpg'))</AssetFile>
-      <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-DE4zbyV66sD4zgfU/6xk7zr4WRYnjRj1vu/fqtmRzU4="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"108091"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022DE4zbyV66sD4zgfU/6xk7zr4WRYnjRj1vu/fqtmRzU4=\u0022"},{"Name":"Last-Modified","Value":"Wed, 05 Mar 2025 17:43:24 GMT"}]]]></ResponseHeaders>
-    </StaticWebAssetEndpoint>
-    <StaticWebAssetEndpoint Include="_content/KareMa.EndPoint.RazorPages/uploads/516a4a76-e7d0-4a84-ab8d-3942466690e9_cleaning-service-big-set-isolated-icons-with-detergents-mops-brooms-female-character-worker-vector-illustration_1284-78507.wdsddx1mu0.jpg">
-      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\516a4a76-e7d0-4a84-ab8d-3942466690e9_cleaning-service-big-set-isolated-icons-with-detergents-mops-brooms-female-character-worker-vector-illustration_1284-78507.jpg'))</AssetFile>
-      <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"wdsddx1mu0"},{"Name":"integrity","Value":"sha256-DE4zbyV66sD4zgfU/6xk7zr4WRYnjRj1vu/fqtmRzU4="},{"Name":"label","Value":"_content/KareMa.EndPoint.RazorPages/uploads/516a4a76-e7d0-4a84-ab8d-3942466690e9_cleaning-service-big-set-isolated-icons-with-detergents-mops-brooms-female-character-worker-vector-illustration_1284-78507.jpg"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"108091"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022DE4zbyV66sD4zgfU/6xk7zr4WRYnjRj1vu/fqtmRzU4=\u0022"},{"Name":"Last-Modified","Value":"Wed, 05 Mar 2025 17:43:24 GMT"}]]]></ResponseHeaders>
-    </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/KareMa.EndPoint.RazorPages/uploads/6545f286-b7d7-4002-ae6d-d79f87b390fa_Black and White Simple Circle Brush Name Logo.friefolfew.jpg">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\6545f286-b7d7-4002-ae6d-d79f87b390fa_Black and White Simple Circle Brush Name Logo.jpg'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
@@ -19199,18 +19175,6 @@
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-ezXKMVGAnsYTShbMhAaYsfX8oyyuwOi3X39y6U\u002BtO7Y="}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"14965"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022ezXKMVGAnsYTShbMhAaYsfX8oyyuwOi3X39y6U\u002BtO7Y=\u0022"},{"Name":"Last-Modified","Value":"Tue, 11 Mar 2025 06:52:51 GMT"}]]]></ResponseHeaders>
-    </StaticWebAssetEndpoint>
-    <StaticWebAssetEndpoint Include="_content/KareMa.EndPoint.RazorPages/uploads/716e262a-a6df-4154-bdce-5f8b5fc53186_cleaning-service-big-set-isolated-icons-with-detergents-mops-brooms-female-character-worker-vector-illustration_1284-78507.jpg">
-      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\716e262a-a6df-4154-bdce-5f8b5fc53186_cleaning-service-big-set-isolated-icons-with-detergents-mops-brooms-female-character-worker-vector-illustration_1284-78507.jpg'))</AssetFile>
-      <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-DE4zbyV66sD4zgfU/6xk7zr4WRYnjRj1vu/fqtmRzU4="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"108091"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022DE4zbyV66sD4zgfU/6xk7zr4WRYnjRj1vu/fqtmRzU4=\u0022"},{"Name":"Last-Modified","Value":"Thu, 06 Mar 2025 11:54:25 GMT"}]]]></ResponseHeaders>
-    </StaticWebAssetEndpoint>
-    <StaticWebAssetEndpoint Include="_content/KareMa.EndPoint.RazorPages/uploads/716e262a-a6df-4154-bdce-5f8b5fc53186_cleaning-service-big-set-isolated-icons-with-detergents-mops-brooms-female-character-worker-vector-illustration_1284-78507.wdsddx1mu0.jpg">
-      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\716e262a-a6df-4154-bdce-5f8b5fc53186_cleaning-service-big-set-isolated-icons-with-detergents-mops-brooms-female-character-worker-vector-illustration_1284-78507.jpg'))</AssetFile>
-      <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"wdsddx1mu0"},{"Name":"integrity","Value":"sha256-DE4zbyV66sD4zgfU/6xk7zr4WRYnjRj1vu/fqtmRzU4="},{"Name":"label","Value":"_content/KareMa.EndPoint.RazorPages/uploads/716e262a-a6df-4154-bdce-5f8b5fc53186_cleaning-service-big-set-isolated-icons-with-detergents-mops-brooms-female-character-worker-vector-illustration_1284-78507.jpg"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"108091"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022DE4zbyV66sD4zgfU/6xk7zr4WRYnjRj1vu/fqtmRzU4=\u0022"},{"Name":"Last-Modified","Value":"Thu, 06 Mar 2025 11:54:25 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/KareMa.EndPoint.RazorPages/uploads/8448d2c1-8e2a-44d2-9ea6-6baf41789925_flat-design-household-renovation-professions-with-men_23-2148655570.fjutjja0hb.jpg">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\8448d2c1-8e2a-44d2-9ea6-6baf41789925_flat-design-household-renovation-professions-with-men_23-2148655570.jpg'))</AssetFile>
@@ -19247,30 +19211,6 @@
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-2/5ptG9rWvV4Q5xeCTvlecDMXG9vFCWOI8ni1ICF7nA="}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"69912"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u00222/5ptG9rWvV4Q5xeCTvlecDMXG9vFCWOI8ni1ICF7nA=\u0022"},{"Name":"Last-Modified","Value":"Fri, 07 Mar 2025 10:38:29 GMT"}]]]></ResponseHeaders>
-    </StaticWebAssetEndpoint>
-    <StaticWebAssetEndpoint Include="_content/KareMa.EndPoint.RazorPages/uploads/8b8733e2-db8c-48d7-b858-dd4e907a00db_cleaning-service-big-set-isolated-icons-with-detergents-mops-brooms-female-character-worker-vector-illustration_1284-78507.jpg">
-      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\8b8733e2-db8c-48d7-b858-dd4e907a00db_cleaning-service-big-set-isolated-icons-with-detergents-mops-brooms-female-character-worker-vector-illustration_1284-78507.jpg'))</AssetFile>
-      <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-DE4zbyV66sD4zgfU/6xk7zr4WRYnjRj1vu/fqtmRzU4="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"108091"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022DE4zbyV66sD4zgfU/6xk7zr4WRYnjRj1vu/fqtmRzU4=\u0022"},{"Name":"Last-Modified","Value":"Thu, 06 Mar 2025 20:26:10 GMT"}]]]></ResponseHeaders>
-    </StaticWebAssetEndpoint>
-    <StaticWebAssetEndpoint Include="_content/KareMa.EndPoint.RazorPages/uploads/8b8733e2-db8c-48d7-b858-dd4e907a00db_cleaning-service-big-set-isolated-icons-with-detergents-mops-brooms-female-character-worker-vector-illustration_1284-78507.wdsddx1mu0.jpg">
-      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\8b8733e2-db8c-48d7-b858-dd4e907a00db_cleaning-service-big-set-isolated-icons-with-detergents-mops-brooms-female-character-worker-vector-illustration_1284-78507.jpg'))</AssetFile>
-      <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"wdsddx1mu0"},{"Name":"integrity","Value":"sha256-DE4zbyV66sD4zgfU/6xk7zr4WRYnjRj1vu/fqtmRzU4="},{"Name":"label","Value":"_content/KareMa.EndPoint.RazorPages/uploads/8b8733e2-db8c-48d7-b858-dd4e907a00db_cleaning-service-big-set-isolated-icons-with-detergents-mops-brooms-female-character-worker-vector-illustration_1284-78507.jpg"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"108091"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022DE4zbyV66sD4zgfU/6xk7zr4WRYnjRj1vu/fqtmRzU4=\u0022"},{"Name":"Last-Modified","Value":"Thu, 06 Mar 2025 20:26:10 GMT"}]]]></ResponseHeaders>
-    </StaticWebAssetEndpoint>
-    <StaticWebAssetEndpoint Include="_content/KareMa.EndPoint.RazorPages/uploads/8c9c2f27-c946-42ac-910d-6de4949e8e30_cleaning-service-big-set-isolated-icons-with-detergents-mops-brooms-female-character-worker-vector-illustration_1284-78507.jpg">
-      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\8c9c2f27-c946-42ac-910d-6de4949e8e30_cleaning-service-big-set-isolated-icons-with-detergents-mops-brooms-female-character-worker-vector-illustration_1284-78507.jpg'))</AssetFile>
-      <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-DE4zbyV66sD4zgfU/6xk7zr4WRYnjRj1vu/fqtmRzU4="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"108091"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022DE4zbyV66sD4zgfU/6xk7zr4WRYnjRj1vu/fqtmRzU4=\u0022"},{"Name":"Last-Modified","Value":"Wed, 05 Mar 2025 18:56:04 GMT"}]]]></ResponseHeaders>
-    </StaticWebAssetEndpoint>
-    <StaticWebAssetEndpoint Include="_content/KareMa.EndPoint.RazorPages/uploads/8c9c2f27-c946-42ac-910d-6de4949e8e30_cleaning-service-big-set-isolated-icons-with-detergents-mops-brooms-female-character-worker-vector-illustration_1284-78507.wdsddx1mu0.jpg">
-      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\8c9c2f27-c946-42ac-910d-6de4949e8e30_cleaning-service-big-set-isolated-icons-with-detergents-mops-brooms-female-character-worker-vector-illustration_1284-78507.jpg'))</AssetFile>
-      <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"wdsddx1mu0"},{"Name":"integrity","Value":"sha256-DE4zbyV66sD4zgfU/6xk7zr4WRYnjRj1vu/fqtmRzU4="},{"Name":"label","Value":"_content/KareMa.EndPoint.RazorPages/uploads/8c9c2f27-c946-42ac-910d-6de4949e8e30_cleaning-service-big-set-isolated-icons-with-detergents-mops-brooms-female-character-worker-vector-illustration_1284-78507.jpg"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"108091"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022DE4zbyV66sD4zgfU/6xk7zr4WRYnjRj1vu/fqtmRzU4=\u0022"},{"Name":"Last-Modified","Value":"Wed, 05 Mar 2025 18:56:04 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/KareMa.EndPoint.RazorPages/uploads/90c36121-f21a-465f-a729-c4b954fb488b_smiling-man-helping-woman-with-household_74855-7860.16nevo6ojp.jpg">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\90c36121-f21a-465f-a729-c4b954fb488b_smiling-man-helping-woman-with-household_74855-7860.jpg'))</AssetFile>
@@ -19392,18 +19332,6 @@
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-ezXKMVGAnsYTShbMhAaYsfX8oyyuwOi3X39y6U\u002BtO7Y="}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"14965"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022ezXKMVGAnsYTShbMhAaYsfX8oyyuwOi3X39y6U\u002BtO7Y=\u0022"},{"Name":"Last-Modified","Value":"Thu, 06 Mar 2025 20:16:50 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
-    <StaticWebAssetEndpoint Include="_content/KareMa.EndPoint.RazorPages/uploads/f1645901-6cbc-48d8-8006-35754de00be7_cleaning-service-big-set-isolated-icons-with-detergents-mops-brooms-female-character-worker-vector-illustration_1284-78507.jpg">
-      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\f1645901-6cbc-48d8-8006-35754de00be7_cleaning-service-big-set-isolated-icons-with-detergents-mops-brooms-female-character-worker-vector-illustration_1284-78507.jpg'))</AssetFile>
-      <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-DE4zbyV66sD4zgfU/6xk7zr4WRYnjRj1vu/fqtmRzU4="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"108091"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022DE4zbyV66sD4zgfU/6xk7zr4WRYnjRj1vu/fqtmRzU4=\u0022"},{"Name":"Last-Modified","Value":"Wed, 26 Feb 2025 11:20:38 GMT"}]]]></ResponseHeaders>
-    </StaticWebAssetEndpoint>
-    <StaticWebAssetEndpoint Include="_content/KareMa.EndPoint.RazorPages/uploads/f1645901-6cbc-48d8-8006-35754de00be7_cleaning-service-big-set-isolated-icons-with-detergents-mops-brooms-female-character-worker-vector-illustration_1284-78507.wdsddx1mu0.jpg">
-      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\f1645901-6cbc-48d8-8006-35754de00be7_cleaning-service-big-set-isolated-icons-with-detergents-mops-brooms-female-character-worker-vector-illustration_1284-78507.jpg'))</AssetFile>
-      <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"wdsddx1mu0"},{"Name":"integrity","Value":"sha256-DE4zbyV66sD4zgfU/6xk7zr4WRYnjRj1vu/fqtmRzU4="},{"Name":"label","Value":"_content/KareMa.EndPoint.RazorPages/uploads/f1645901-6cbc-48d8-8006-35754de00be7_cleaning-service-big-set-isolated-icons-with-detergents-mops-brooms-female-character-worker-vector-illustration_1284-78507.jpg"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"108091"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022DE4zbyV66sD4zgfU/6xk7zr4WRYnjRj1vu/fqtmRzU4=\u0022"},{"Name":"Last-Modified","Value":"Wed, 26 Feb 2025 11:20:38 GMT"}]]]></ResponseHeaders>
-    </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/KareMa.EndPoint.RazorPages/uploads/f5803ca4-d55b-469d-b99f-7b5c843c2e76_flat-design-household-renovation-professions-with-men_23-2148655570.fjutjja0hb.jpg">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\f5803ca4-d55b-469d-b99f-7b5c843c2e76_flat-design-household-renovation-professions-with-men_23-2148655570.jpg'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
@@ -19415,18 +19343,6 @@
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-2/5ptG9rWvV4Q5xeCTvlecDMXG9vFCWOI8ni1ICF7nA="}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"69912"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u00222/5ptG9rWvV4Q5xeCTvlecDMXG9vFCWOI8ni1ICF7nA=\u0022"},{"Name":"Last-Modified","Value":"Thu, 27 Feb 2025 10:36:06 GMT"}]]]></ResponseHeaders>
-    </StaticWebAssetEndpoint>
-    <StaticWebAssetEndpoint Include="_content/KareMa.EndPoint.RazorPages/uploads/f59c5567-b6bb-41de-bd22-1b535416c6e4_cleaning-service-big-set-isolated-icons-with-detergents-mops-brooms-female-character-worker-vector-illustration_1284-78507.jpg">
-      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\f59c5567-b6bb-41de-bd22-1b535416c6e4_cleaning-service-big-set-isolated-icons-with-detergents-mops-brooms-female-character-worker-vector-illustration_1284-78507.jpg'))</AssetFile>
-      <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-DE4zbyV66sD4zgfU/6xk7zr4WRYnjRj1vu/fqtmRzU4="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"108091"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022DE4zbyV66sD4zgfU/6xk7zr4WRYnjRj1vu/fqtmRzU4=\u0022"},{"Name":"Last-Modified","Value":"Thu, 06 Mar 2025 11:38:33 GMT"}]]]></ResponseHeaders>
-    </StaticWebAssetEndpoint>
-    <StaticWebAssetEndpoint Include="_content/KareMa.EndPoint.RazorPages/uploads/f59c5567-b6bb-41de-bd22-1b535416c6e4_cleaning-service-big-set-isolated-icons-with-detergents-mops-brooms-female-character-worker-vector-illustration_1284-78507.wdsddx1mu0.jpg">
-      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\f59c5567-b6bb-41de-bd22-1b535416c6e4_cleaning-service-big-set-isolated-icons-with-detergents-mops-brooms-female-character-worker-vector-illustration_1284-78507.jpg'))</AssetFile>
-      <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"wdsddx1mu0"},{"Name":"integrity","Value":"sha256-DE4zbyV66sD4zgfU/6xk7zr4WRYnjRj1vu/fqtmRzU4="},{"Name":"label","Value":"_content/KareMa.EndPoint.RazorPages/uploads/f59c5567-b6bb-41de-bd22-1b535416c6e4_cleaning-service-big-set-isolated-icons-with-detergents-mops-brooms-female-character-worker-vector-illustration_1284-78507.jpg"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"108091"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022DE4zbyV66sD4zgfU/6xk7zr4WRYnjRj1vu/fqtmRzU4=\u0022"},{"Name":"Last-Modified","Value":"Thu, 06 Mar 2025 11:38:33 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/KareMa.EndPoint.RazorPages/uploads/f6d91538-c7a1-44e6-becd-a1c64ef33727_3f2c91d9440631c4f1105b835be7438a.1hhlkz6hjp.jpg">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\f6d91538-c7a1-44e6-becd-a1c64ef33727_3f2c91d9440631c4f1105b835be7438a.jpg'))</AssetFile>
@@ -19451,18 +19367,6 @@
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-2/5ptG9rWvV4Q5xeCTvlecDMXG9vFCWOI8ni1ICF7nA="}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"69912"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u00222/5ptG9rWvV4Q5xeCTvlecDMXG9vFCWOI8ni1ICF7nA=\u0022"},{"Name":"Last-Modified","Value":"Thu, 06 Mar 2025 11:57:02 GMT"}]]]></ResponseHeaders>
-    </StaticWebAssetEndpoint>
-    <StaticWebAssetEndpoint Include="_content/KareMa.EndPoint.RazorPages/uploads/f8b7f65d-d60d-450d-93c4-793c7a2e8667_cleaning-service-big-set-isolated-icons-with-detergents-mops-brooms-female-character-worker-vector-illustration_1284-78507.jpg">
-      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\f8b7f65d-d60d-450d-93c4-793c7a2e8667_cleaning-service-big-set-isolated-icons-with-detergents-mops-brooms-female-character-worker-vector-illustration_1284-78507.jpg'))</AssetFile>
-      <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-DE4zbyV66sD4zgfU/6xk7zr4WRYnjRj1vu/fqtmRzU4="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"108091"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022DE4zbyV66sD4zgfU/6xk7zr4WRYnjRj1vu/fqtmRzU4=\u0022"},{"Name":"Last-Modified","Value":"Thu, 27 Feb 2025 10:30:21 GMT"}]]]></ResponseHeaders>
-    </StaticWebAssetEndpoint>
-    <StaticWebAssetEndpoint Include="_content/KareMa.EndPoint.RazorPages/uploads/f8b7f65d-d60d-450d-93c4-793c7a2e8667_cleaning-service-big-set-isolated-icons-with-detergents-mops-brooms-female-character-worker-vector-illustration_1284-78507.wdsddx1mu0.jpg">
-      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\f8b7f65d-d60d-450d-93c4-793c7a2e8667_cleaning-service-big-set-isolated-icons-with-detergents-mops-brooms-female-character-worker-vector-illustration_1284-78507.jpg'))</AssetFile>
-      <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"wdsddx1mu0"},{"Name":"integrity","Value":"sha256-DE4zbyV66sD4zgfU/6xk7zr4WRYnjRj1vu/fqtmRzU4="},{"Name":"label","Value":"_content/KareMa.EndPoint.RazorPages/uploads/f8b7f65d-d60d-450d-93c4-793c7a2e8667_cleaning-service-big-set-isolated-icons-with-detergents-mops-brooms-female-character-worker-vector-illustration_1284-78507.jpg"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"108091"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022DE4zbyV66sD4zgfU/6xk7zr4WRYnjRj1vu/fqtmRzU4=\u0022"},{"Name":"Last-Modified","Value":"Thu, 27 Feb 2025 10:30:21 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/KareMa.EndPoint.RazorPages/uploads/f927a109-7599-4eb5-ac16-92bfccca95d8_smiling-man-helping-woman-with-household_74855-7860.16nevo6ojp.jpg">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\f927a109-7599-4eb5-ac16-92bfccca95d8_smiling-man-helping-woman-with-household_74855-7860.jpg'))</AssetFile>
