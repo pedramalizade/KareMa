@@ -42,14 +42,14 @@
             {
                 try
                 {
-                    var imageAddress = await _baseSevices.UploadImage(Image); // مستقیم await می‌کنیم
+                    var imageAddress = await _baseSevices.UploadImage(Image);
                     customerUpdateDto.Image = imageAddress;
                     Console.WriteLine($"Image uploaded: {customerUpdateDto.Image}");
                 }
                 catch (Exception ex)
                 {
                     Console.WriteLine($"Image upload failed: {ex.Message}");
-                    return false; // اگه آپلود خطا بده، آپدیت رو متوقف می‌کنیم
+                    return false; 
                 }
             }
 

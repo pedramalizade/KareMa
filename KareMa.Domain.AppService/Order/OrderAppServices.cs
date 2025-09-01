@@ -20,11 +20,10 @@
             if (!suggestionResult)
             {
                 Console.WriteLine($"Failed to change suggestion status for OrderId: {orderId}");
-                // می‌تونی اینجا تصمیم بگیری ادامه نده یا ادامه بده
             }
 
             var orderResult = await _orderServices.ChangeStatusAsync(status, orderId, cancellationToken);
-            return orderResult; // یا می‌تونی suggestionResult && orderResult برگردونی
+            return orderResult; 
         }
         public async Task<bool> CreateAsync(OrderCreateDto orderCreateDto, IFormFile image, string runTime, CancellationToken cancellationToken)
         {

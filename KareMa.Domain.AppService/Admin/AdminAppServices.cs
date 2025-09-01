@@ -20,7 +20,6 @@
    => await _adminServices.GetByIdAsync(adminId, cancellationToken);
         public async Task<bool> UpdateAsync(AdminUpdateDto adminUpdateDto, CancellationToken cancellationToken)
           => await _adminServices.UpdateAsync(adminUpdateDto, cancellationToken);
-
         public async Task<decimal> GetAdminBalanceAsync(int adminId, CancellationToken cancellationToken)
         {
             return await _adminServices.GetAdminBalanceAsync(adminId, cancellationToken);

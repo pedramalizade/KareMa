@@ -2,23 +2,20 @@
 {
     public class CommentRepository : ICommentRepository
     {
-
         private readonly AppDbContext _context;
         public CommentRepository(AppDbContext context)
         {
             _context = context;
         }
-
         public async Task<bool> CreateAsync(CommentCreateDto commentCreateDto, CancellationToken cancellationToken)
         {
 
-            if (commentCreateDto == null || commentCreateDto.CustomerId <= 0 || commentCreateDto.ExpertId <= 0)
-                return false;
+            if (commentCreateDto == null || commentCreateDto.CustomerId <= 0 || commentCreateDto.ExpertId <= 0) return false;
+
 
             var customerExists = await _context.Customers.AnyAsync(c => c.Id == commentCreateDto.CustomerId && !c.IsDeleted, cancellationToken);
             var expertExists = await _context.Experts.AnyAsync(e => e.Id == commentCreateDto.ExpertId && !e.IsDeleted, cancellationToken);
-            if (!customerExists || !expertExists)
-                return false;
+            if (!customerExists || !expertExists) return false;
 
             var orderCompleted = await _context.Orders
         .AnyAsync(o => o.CustomerId == commentCreateDto.CustomerId &&
@@ -82,8 +79,6 @@
                  }).ToListAsync(cancellationToken);
             return comments;
         }
-
-
         public async Task<Comment> GetByIdAsync(int commentId, CancellationToken cancellationToken)
        => await FindComment(commentId, cancellationToken);
 

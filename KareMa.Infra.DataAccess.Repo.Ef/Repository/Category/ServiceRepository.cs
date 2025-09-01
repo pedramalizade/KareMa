@@ -93,7 +93,7 @@
                 .ToListAsync(cancellationToken);
         }
 
-        public async Task<ServiceUpdateDto> ServiceUpdateInfoAsync(int id, CancellationToken cancellationToken)
+        public async Task<ServiceUpdateDto?> ServiceUpdateInfoAsync(int id, CancellationToken cancellationToken)
         {
             return await _context.Services
                 .Select(s => new ServiceUpdateDto

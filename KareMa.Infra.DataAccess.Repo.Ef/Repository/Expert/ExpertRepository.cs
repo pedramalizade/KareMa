@@ -3,25 +3,27 @@
     public class ExpertRepository : IExpertRepository
     {
         private readonly AppDbContext _context;
-        public ExpertRepository(AppDbContext context)
+        private readonly ILogger<ExpertRepository> _logger;
+        public ExpertRepository(AppDbContext context, ILogger<ExpertRepository> logger)
         {
             _context = context;
+            _logger = logger;
         }
         public async Task<bool> CreateAsync(ExpertCreateDto expertCreateDto, CancellationToken cancellationToken)
         {
             try
             {
-                // چک کردن تکراری بودن AppUserId
                 var existingExpert = await _context.Experts
                     .AsNoTracking()
                     .AnyAsync(e => e.AppUserId == expertCreateDto.AppUserId && !e.IsDeleted, cancellationToken);
+
                 if (existingExpert)
                 {
-                    Console.WriteLine($"Expert with AppUserId: {expertCreateDto.AppUserId} already exists.");
-                    throw new InvalidOperationException($"متخصصی با AppUserId = {expertCreateDto.AppUserId} قبلاً ثبت شده است.");
+                    _logger.LogWarning("متخصص از قبل وجود دارد.", expertCreateDto.AppUserId);
+                    throw new InvalidOperationException($"متخصصی با {expertCreateDto.AppUserId} قبلاً ثبت شده است.");
                 }
 
-                var newModel = new Expert
+                var newExpert = new Expert
                 {
                     AppUserId = expertCreateDto.AppUserId,
                     FirstName = expertCreateDto.FirstName,
@@ -38,190 +40,179 @@
                         : new List<Service>()
                 };
 
-                Console.WriteLine($"Creating expert with AppUserId: {newModel.AppUserId}, Services Count: {newModel.Services?.Count ?? 0}");
-                await _context.Experts.AddAsync(newModel, cancellationToken);
+                _logger.LogInformation("در حال ایجاد متخصص",
+                    newExpert.AppUserId, newExpert.Services?.Count ?? 0);
+
+                await _context.Experts.AddAsync(newExpert, cancellationToken);
                 await _context.SaveChangesAsync(cancellationToken);
-                Console.WriteLine("Expert saved successfully.");
+
+                _logger.LogInformation("متخصص با موفقیت ذخیره شد.");
                 return true;
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Error in ExpertRepository.Create: {ex.Message}");
-                Console.WriteLine($"Inner Exception: {ex.InnerException?.Message}");
-                throw; 
+                throw;
             }
         }
 
         public async Task<bool> DeleteAsync(int expertId, CancellationToken cancellationToken)
         {
-            Console.WriteLine($"Attempting to delete expert with ID: {expertId}");
-            var targetModel = await FindExpert(expertId, cancellationToken);
-            if (targetModel == null)
+
+            var targetExpert = await FindExpert(expertId, cancellationToken);
+            if (targetExpert == null)
             {
-                Console.WriteLine($"Expert with ID: {expertId} not found.");
                 return false;
             }
 
-            targetModel.IsDeleted = true;
-            await _context.SaveChangesAsync(cancellationToken); 
-            Console.WriteLine($"Expert with ID: {expertId} marked as deleted.");
+            targetExpert.IsDeleted = true;
+            await _context.SaveChangesAsync(cancellationToken);
+
             return true;
         }
 
         public async Task<List<Expert>> GetAllAsync(CancellationToken cancellationToken)
         {
-            Console.WriteLine("Fetching all experts...");
             var experts = await _context.Experts
                 .AsNoTracking()
                 .Where(e => !e.IsDeleted)
                 .ToListAsync(cancellationToken);
 
-            Console.WriteLine($"Found {experts.Count} active experts.");
             return experts;
         }
 
         public async Task<Expert> GetByIdAsync(int expertId, CancellationToken cancellationToken)
-        {
-            return await FindExpert(expertId, cancellationToken);
-        }
+            => await FindExpert(expertId, cancellationToken);
 
         public async Task<bool> UpdateAsync(ExpertUpdateDto expertUpdateDto, CancellationToken cancellationToken)
         {
-            var targetModel = await _context.Experts
+            var targetExpert = await _context.Experts
                 .Include(e => e.Services)
                 .FirstOrDefaultAsync(e => e.Id == expertUpdateDto.Id && !e.IsDeleted, cancellationToken);
 
-            if (targetModel == null)
+            if (targetExpert == null)
             {
-                Console.WriteLine($"Expert with ID {expertUpdateDto.Id} not found.");
+                _logger.LogWarning("متخصص با شناسه {ExpertId} یافت نشد.", expertUpdateDto.Id);
                 return false;
             }
 
-            targetModel.FirstName = expertUpdateDto.FirstName;
-            targetModel.LastName = expertUpdateDto.LastName;
-            targetModel.PhoneNumber = expertUpdateDto.PhoneNumber;
-            targetModel.Gender = expertUpdateDto.Gender;
-            targetModel.BankCardNumber = expertUpdateDto.BankCardNumber;
-            targetModel.Balance = expertUpdateDto.Balance;
-            targetModel.BirthDate = expertUpdateDto.BirthDate;
-            targetModel.Bio = expertUpdateDto.Bio;
-            if (expertUpdateDto.Image != null)
-                targetModel.Image = expertUpdateDto.Image;
+            targetExpert.FirstName = expertUpdateDto.FirstName;
+            targetExpert.LastName = expertUpdateDto.LastName;
+            targetExpert.PhoneNumber = expertUpdateDto.PhoneNumber;
+            targetExpert.Gender = expertUpdateDto.Gender;
+            targetExpert.BankCardNumber = expertUpdateDto.BankCardNumber;
+            targetExpert.Balance = expertUpdateDto.Balance;
+            targetExpert.BirthDate = expertUpdateDto.BirthDate;
+            targetExpert.Bio = expertUpdateDto.Bio;
 
-            Console.WriteLine($"ServiceIds to save: {string.Join(", ", expertUpdateDto.ServiceIds ?? new List<int>())}");
-            targetModel.Services ??= new List<Service>();
-            targetModel.Services.Clear();
+            if (expertUpdateDto.Image != null)
+                targetExpert.Image = expertUpdateDto.Image;
+
+            _logger.LogInformation("سرویس‌های انتخاب شده برای ذخیره: {ServiceIds}", string.Join(", ", expertUpdateDto.ServiceIds ?? new List<int>()));
+
+            targetExpert.Services ??= new List<Service>();
+            targetExpert.Services.Clear();
+
             if (expertUpdateDto.ServiceIds != null && expertUpdateDto.ServiceIds.Any())
             {
                 var services = await _context.Services
                     .Where(s => expertUpdateDto.ServiceIds.Contains(s.Id))
                     .ToListAsync(cancellationToken);
+
                 if (services.Count != expertUpdateDto.ServiceIds.Count)
                 {
-                    Console.WriteLine($"Some service IDs were not found: {string.Join(", ", expertUpdateDto.ServiceIds.Except(services.Select(s => s.Id)))}");
+                    var missing = expertUpdateDto.ServiceIds.Except(services.Select(s => s.Id));
+                    _logger.LogWarning("برخی شناسه‌های سرویس یافت نشدند", string.Join(", ", missing));
                     return false;
                 }
-                targetModel.Services.AddRange(services);
-                Console.WriteLine($"Services assigned: {string.Join(", ", targetModel.Services.Select(s => s.Id))}");
+
+                targetExpert.Services.AddRange(services);
+                _logger.LogInformation("سرویس‌ها با موفقیت به متخصص اختصاص داده شدند", string.Join(", ", targetExpert.Services.Select(s => s.Id)));
             }
 
             try
             {
                 await _context.SaveChangesAsync(cancellationToken);
-                Console.WriteLine($"Expert with ID {expertUpdateDto.Id} updated successfully.");
+                _logger.LogInformation("متخصص با موفقیت به‌روزرسانی شد.", expertUpdateDto.Id);
                 return true;
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Error saving changes: {ex.Message}");
+                _logger.LogError(ex, "خطا هنگام ذخیره تغییرات متخصص با شناسه", expertUpdateDto.Id);
                 throw new Exception("خطا در ذخیره تغییرات در دیتابیس", ex);
             }
         }
 
         public async Task<int> ExpertCountAsync(CancellationToken cancellationToken)
-        {
-            var count = await _context.Experts.CountAsync(cancellationToken);
-            return count;
-        }
+            => await _context.Experts.CountAsync(cancellationToken);
 
         public async Task<ExpertSummaryDto> GetExpertSummaryAsync(int id, CancellationToken cancellationToken)
         {
-            Console.WriteLine($"Fetching expert summary for ID: {id}");
-            var target = await _context.Experts
+            _logger.LogInformation("در حال دریافت خلاصه اطلاعات متخصص با شناسه", id);
+
+            var expert = await _context.Experts
                 .Include(e => e.Services)
                 .Include(e => e.Comments)
-                .Where(e => e.Id == id && e.IsDeleted == false)
+                .Where(e => e.Id == id && !e.IsDeleted)
                 .Select(e => new ExpertSummaryDto
                 {
                     Id = e.Id,
-                    Comments = (e.Comments != null ? e.Comments
-                        .Where(c => c.IsAccept == true && c.IsDeleted == false)
-                        .Select(x => new Comment
-                        {
-                            Customer = x.Customer,
-                            Score = x.Score,
-                            Title = x.Title,
-                            Description = x.Description,
-                            CreatedAt = x.CreatedAt,
-                            IsAccept = x.IsAccept,
-                            IsDeleted = x.IsDeleted
-                        }).ToList() : new List<Comment>()),
+                    Comments = e.Comments != null
+                        ? e.Comments.Where(c => c.IsAccept && !c.IsDeleted)
+                            .Select(c => new Comment
+                            {
+                                Customer = c.Customer,
+                                Score = c.Score,
+                                Title = c.Title,
+                                Description = c.Description,
+                                CreatedAt = c.CreatedAt,
+                                IsAccept = c.IsAccept,
+                                IsDeleted = c.IsDeleted
+                            }).ToList()
+                        : new List<Comment>(),
                     FirstName = e.FirstName,
-                    Gender = e.Gender,
                     LastName = e.LastName,
+                    Gender = e.Gender,
                     ProfileImage = e.Image,
                     Services = e.Services ?? new List<Service>(),
-                    Balance = e.Balance 
+                    Balance = e.Balance
                 }).FirstOrDefaultAsync(cancellationToken);
 
-            if (target == null)
+            if (expert == null)
             {
-                Console.WriteLine($"Expert with ID: {id} not found or is deleted.");
-                return new ExpertSummaryDto
-                {
-                    Id = id,
-                    Comments = new List<Comment>(),
-                    Services = new List<Service>(),
-                    Balance = 0
-                };
+                _logger.LogWarning("متخصص یافت نشد یا حذف شده است.", id);
+                return new ExpertSummaryDto { Id = id, Comments = new List<Comment>(), Services = new List<Service>(), Balance = 0 };
             }
 
-            Console.WriteLine($"Expert Balance for ID: {id} is {target.Balance}");
-            Console.WriteLine($"Expert Comments count for ID: {id} is {target.Comments.Count}");
-            Console.WriteLine($"Expert Services count for ID: {id} is {target.Services.Count}");
-            return target;
-        }
+            _logger.LogInformation("خلاصه متخصص: موجودی={Balance} | تعداد دیدگاه={CommentCount} | تعداد سرویس={ServiceCount}",
+                expert.Balance, expert.Comments.Count, expert.Services.Count);
 
+            return expert;
+        }
 
         public async Task<int> ExpertCommentCountAsync(int id, CancellationToken cancellationToken)
-        {
-            var targetExpert = await _context.Experts.Where(e => e.Id == id).SelectMany(e => e.Comments).CountAsync();
-            return targetExpert;
-        }
+            => await _context.Experts.Where(e => e.Id == id).SelectMany(e => e.Comments).CountAsync();
+
         public async Task<int> ExpertAverageScoresAsync(int id, CancellationToken cancellationToken)
         {
-            var targetExpert = await _context.Experts.Include(o => o.Comments).FirstOrDefaultAsync(e => e.Id == id, cancellationToken);
-            if (targetExpert == null || targetExpert.Comments == null || !targetExpert.Comments.Any())
-            {
+            var expert = await _context.Experts.Include(e => e.Comments).FirstOrDefaultAsync(e => e.Id == id, cancellationToken);
+            if (expert == null || expert.Comments == null || !expert.Comments.Any())
                 return 0;
-            }
-            var score = (int)targetExpert.Comments.Select(c => c.Score).Average();
-            return score;
+
+            return (int)expert.Comments.Select(c => c.Score).Average();
         }
 
         public async Task<int> ExpertOrderCountAsync(int id, CancellationToken cancellationToken)
         {
-            var targetExpertSuggestion = await _context.Experts.Where(e => e.Id == id).SelectMany(e => e.Suggestions).ToListAsync(cancellationToken);
-            var suggestions = targetExpertSuggestion.Count(o => o.Status == StatusEnum.Done);
-            return suggestions;
+            var suggestions = await _context.Experts.Where(e => e.Id == id)
+                .SelectMany(e => e.Suggestions)
+                .ToListAsync(cancellationToken);
+
+            return suggestions.Count(o => o.Status == StatusEnum.Done);
         }
 
         public async Task<List<int>> GetExpertServiceIdsAsync(int id, CancellationToken cancellationToken)
-        {
-            var expertServices = await _context.Experts.Where(e => e.Id == id).SelectMany(e => e.Services).ToListAsync(cancellationToken);
-            var servicesId = expertServices.Select(s => s.Id).ToList();
-            return servicesId;
-        }
+            => (await _context.Experts.Where(e => e.Id == id).SelectMany(e => e.Services).ToListAsync(cancellationToken))
+                .Select(s => s.Id).ToList();
 
         public async Task<ExpertUpdateDto> ExpertUpdateInfoAsync(int id, CancellationToken cancellationToken)
         {
@@ -238,64 +229,52 @@
                     BankCardNumber = e.BankCardNumber,
                     Image = e.Image,
                     Bio = e.Bio,
-                    ServiceIds = e.Services
-                        .Select(s => s.Id)
-                        .ToList()
+                    ServiceIds = e.Services.Select(s => s.Id).ToList()
                 }).FirstOrDefaultAsync(e => e.Id == id, cancellationToken);
 
-            Console.WriteLine($"ExpertUpdateInfo for ID {id}: ServiceIds = {string.Join(", ", result?.ServiceIds ?? new List<int>())}");
+            _logger.LogInformation("اطلاعات به‌روزرسانی متخصص {ExpertId}: سرویس‌ها = {ServiceIds}", id, string.Join(", ", result?.ServiceIds ?? new List<int>()));
             return result;
         }
 
         public async Task<ExpertNameDto> GetExpertNameAsync(int id, CancellationToken cancellationToken)
-        {
-            var targetExpert = await _context.Experts.AsNoTracking().Where(e => e.Id == id)
-                  .Select(e => new ExpertNameDto
-                  {
-                      FirstName = e.FirstName,
-                      LastName = e.LastName,
-                      Balance = e.Balance
-                  })
-                  .FirstOrDefaultAsync(cancellationToken);
+            => await _context.Experts.AsNoTracking()
+                .Where(e => e.Id == id)
+                .Select(e => new ExpertNameDto { FirstName = e.FirstName, LastName = e.LastName, Balance = e.Balance })
+                .FirstOrDefaultAsync(cancellationToken) ?? new ExpertNameDto();
 
-            if (targetExpert == null)
-                return new ExpertNameDto();
-
-            return targetExpert;
-        }
         public async Task<Expert> GetExpertByIdAsync(int expertId, CancellationToken cancellationToken)
         {
-            Console.WriteLine($"Fetching expert with ID: {expertId}");
+
             var expert = await _context.Experts
                 .FirstOrDefaultAsync(e => e.Id == expertId && !e.IsDeleted, cancellationToken);
 
             if (expert == null)
-            {
-                Console.WriteLine($"Expert with ID: {expertId} not found or is deleted.");
-            }
+                _logger.LogWarning($"متخصص با شناسه {expertId} یافت نشد یا حذف شده است.", expertId);
+
             return expert;
         }
 
         public async Task UpdateBalanceAsync(int expertId, decimal newBalance, CancellationToken cancellationToken)
         {
-            Console.WriteLine($"Updating balance for Expert ID: {expertId} to {newBalance}");
+            _logger.LogInformation($"در حال به‌روزرسانی موجودی متخصص با شناسه {expertId} به {newBalance}", expertId, newBalance);
+
             var expert = await _context.Experts
                 .FirstOrDefaultAsync(e => e.Id == expertId && !e.IsDeleted, cancellationToken);
 
             if (expert == null)
             {
-                Console.WriteLine($"Expert with ID: {expertId} not found or is deleted.");
-                throw new Exception($"Expert with ID {expertId} not found or is deleted.");
+                _logger.LogWarning($"متخصص با شناسه {expertId} یافت نشد یا حذف شده است.", expertId);
+                throw new Exception($"متخصص با شناسه {expertId} یافت نشد یا حذف شده است.");
             }
 
             expert.Balance = newBalance;
             await _context.SaveChangesAsync(cancellationToken);
-            Console.WriteLine($"Balance updated successfully for Expert ID: {expertId}");
+
+            _logger.LogInformation($"موجودی متخصص با شناسه {expertId} با موفقیت به‌روزرسانی شد.", expertId);
         }
 
-
         private async Task<Expert> FindExpert(int id, CancellationToken cancellationToken)
-          => await _context.Experts.FirstOrDefaultAsync(a => a.Id == id, cancellationToken);
+            => await _context.Experts.FirstOrDefaultAsync(e => e.Id == id, cancellationToken);
 
     }
 }

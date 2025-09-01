@@ -67,13 +67,13 @@ ORDER BY sc.Id, c.Id, s.Id";
                         if (category != null && existingSubCategory.Category == null)
                         {
                             existingSubCategory.Category = category;
-                            existingSubCategory.Category.SubCategories = null; // جلوگیری از چرخه
+                            existingSubCategory.Category.SubCategories = null; 
                         }
 
                         if (service != null && service.Id != 0)
                         {
                             service.SubCategoryId = existingSubCategory.Id;
-                            service.SubCategory = null; // جلوگیری از چرخه
+                            service.SubCategory = null; 
                             service.Experts = null;
                             service.Orders = null;
                             existingSubCategory.Services.Add(service);
@@ -85,7 +85,6 @@ ORDER BY sc.Id, c.Id, s.Id";
 
                 var subCategories = subCategoryDict.Values.ToList();
 
-                // چک کردن مقادیر null و لاگ کردن برای دیباگ (اختیاری)
                 foreach (var sc in subCategories)
                 {
                     if (sc.Image == null) Console.WriteLine($"SubCategory {sc.Id} has null Image");
@@ -136,7 +135,7 @@ ORDER BY sc.Id, c.Id, s.Id";
             return subcategories;
         }
 
-        public async Task<SubCategoryUpdateDto> ServiceSubCategoryUpdateInfoAsync(int id, CancellationToken cancellationToken)
+        public async Task<SubCategoryUpdateDto?> ServiceSubCategoryUpdateInfoAsync(int id, CancellationToken cancellationToken)
         {
             return await _context.SubCategories.AsNoTracking().Where(c => c.IsDeleted == false)
                 .Select(s => new SubCategoryUpdateDto

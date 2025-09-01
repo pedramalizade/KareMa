@@ -11,7 +11,7 @@
         Task UpdateBalanceAsync(int customerId, decimal newBalance, CancellationToken cancellationToken);
         Task<Customer> GetCustomerByIdAsync(int customerId, CancellationToken cancellationToken);
         Task<CustomerUpdateDto> GetCustomerUpdateInfoAsync(int customerId, CancellationToken cancellationToken);
-        Task<CustomerUpdateDto> CustomerUpdateInfoAsync(int id, CancellationToken cancellationToken);
+        Task<CustomerUpdateDto?> CustomerUpdateInfoAsync(int id, CancellationToken cancellationToken);
         Task<CustomerSummaryDto> GetCustomerSummaryAsync(int id, CancellationToken cancellationToken);
     }
 }

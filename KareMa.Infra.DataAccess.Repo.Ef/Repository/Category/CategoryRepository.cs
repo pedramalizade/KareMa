@@ -53,7 +53,7 @@
             return categories;
         }
 
-        public async Task<CategoryUpdateDto> ServiceCategoryUpdateInfoAsync(int id, CancellationToken cancellationToken)
+        public async Task<CategoryUpdateDto?> ServiceCategoryUpdateInfoAsync(int id, CancellationToken cancellationToken)
         {
             return await _context.Categories.Select(c => new CategoryUpdateDto
             {
@@ -101,49 +101,53 @@
 
         public async Task<bool> UpdateAsync(CategoryUpdateDto categoryUpdateDto, CancellationToken cancellationToken)
         {
-            Console.WriteLine($"CategoryRepository.Update started for ID: {categoryUpdateDto.Id}");
+            _logger.LogInformation("ویرایش دسته‌بندی آغاز شد.", categoryUpdateDto.Id);
 
             var targetModel = await FindServiceCategory(categoryUpdateDto.Id, cancellationToken);
             if (targetModel == null)
             {
-                Console.WriteLine($"Category with ID: {categoryUpdateDto.Id} not found.");
+                _logger.LogWarning("دسته‌بندی پیدا نشد.", categoryUpdateDto.Id);
                 return false;
             }
 
             targetModel.Name = categoryUpdateDto.Name ?? targetModel.Name;
-            if (categoryUpdateDto.Image != null) targetModel.Image = categoryUpdateDto.Image;
+            if (categoryUpdateDto.Image != null)
+            {
+                targetModel.Image = categoryUpdateDto.Image;
+            }
 
             try
             {
                 await _context.SaveChangesAsync(cancellationToken);
                 _memoryCache.Remove("Categories");
-                Console.WriteLine($"Category with ID: {categoryUpdateDto.Id} updated successfully.");
+
+                _logger.LogInformation("دسته‌بندی با موفقیت ویرایش شد.", categoryUpdateDto.Id);
                 return true;
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Error saving changes: {ex.Message}");
-                Console.WriteLine($"Inner Exception: {ex.InnerException?.Message}");
+                _logger.LogError(ex, "خطا در ذخیره تغییرات دسته‌بندی ", categoryUpdateDto.Id);
                 return false;
             }
         }
 
-
         private async Task<Domain.Core.Entities.Category> FindServiceCategory(int id, CancellationToken cancellationToken)
         {
-            Console.WriteLine($"FindServiceCategory called with id: {id}");
+            _logger.LogInformation("در حال جستجوی دسته‌بندی", id);
+
             var category = await _context.Categories
-                .FirstOrDefaultAsync(a => a.Id == id && !a.IsDeleted, cancellationToken); 
+                .FirstOrDefaultAsync(c => c.Id == id && !c.IsDeleted, cancellationToken);
+
             if (category == null)
             {
-                Console.WriteLine($"Category with ID: {id} not found.");
+                _logger.LogWarning($"دسته‌بندی با شناسه {category.Id} پیدا نشد.", id);
             }
             else
             {
-                Console.WriteLine($"Found category with ID: {category.Id}, Name: {category.Name}");
+                _logger.LogInformation($"دسته‌بندی یافت شد: شناسه {category.Id} - نام {category.Name}", category.Id, category.Name);
             }
+
             return category;
         }
     }
-
 }

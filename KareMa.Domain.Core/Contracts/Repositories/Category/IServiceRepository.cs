@@ -8,12 +8,9 @@
         Task<Entities.Service> GetByIdAsync(int serviceId, CancellationToken cancellationToken);
         Task<List<GetServiceDto>> GetAllAsync(CancellationToken cancellationToken);
         Task<List<GetByCategorySubIdDto>> GetAllBySubCategoryIdAsync(int id, CancellationToken cancellationToken);
-        Task<ServiceUpdateDto> ServiceUpdateInfoAsync(int id, CancellationToken cancellationToken);
+        Task<ServiceUpdateDto?> ServiceUpdateInfoAsync(int id, CancellationToken cancellationToken);
         Task<List<ServicesNameDto>> GetServicesNameAsync(CancellationToken cancellationToken);
         Task<ServiceNameAndPriceDto> GetServiceNameAndPriceAsync(int id, CancellationToken cancellationToken);
         Task<List<Entities.Service>> GetAllServicesAsync(CancellationToken cancellationToken);
-
-
     }
-
 }

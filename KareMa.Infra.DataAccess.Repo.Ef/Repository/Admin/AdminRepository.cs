@@ -27,7 +27,7 @@
             var admin = await _context.Admins
                 .AsNoTracking()
                 .FirstOrDefaultAsync(a => a.Id == adminId && !a.IsDeleted, cancellationToken);
-            return admin?.Balance ?? 0m; // اگر ادمین پیدا نشد یا موجودی نداشت، صفر برمی‌گردونه
+            return admin?.Balance ?? 0m; 
         }
 
         public async Task<bool> DeleteAsync(int adminId, CancellationToken cancellationToken)

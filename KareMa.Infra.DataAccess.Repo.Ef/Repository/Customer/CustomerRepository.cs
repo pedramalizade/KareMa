@@ -3,11 +3,12 @@
     public class CustomerRepository : ICustomerRepository
     {
         private readonly AppDbContext _context;
-        public CustomerRepository(AppDbContext context)
+        private readonly ILogger<CustomerRepository> _logger;
+        public CustomerRepository(AppDbContext context, ILogger<CustomerRepository> logger)
         {
             _context = context;
+            _logger = logger;
         }
-
         public async Task<bool> CreateAsync(CustomerCreateDto customerCreateDto, CancellationToken cancellationToken)
         {
             var newModel = new Customer()
@@ -30,26 +31,27 @@
 
         public async Task<bool> DeleteAsync(int customerId, CancellationToken cancellationToken)
         {
-            Console.WriteLine($"Attempting to delete customer with ID: {customerId}");
+            _logger.LogInformation("حذف مشتری آغاز شد.", customerId);
+
             var targetModel = await FindCustomer(customerId, cancellationToken);
             if (targetModel == null)
             {
-                Console.WriteLine($"Customer with ID: {customerId} not found.");
+                _logger.LogWarning("مشتری یافت نشد.", customerId);
                 return false;
             }
 
             targetModel.IsDeleted = true;
-            await _context.SaveChangesAsync(cancellationToken); 
-            Console.WriteLine($"Customer with ID: {customerId} marked as deleted.");
+            await _context.SaveChangesAsync(cancellationToken);
+
+            _logger.LogInformation("مشتری با موفقیت حذف شد (به‌صورت نرم).", customerId);
             return true;
         }
 
         public async Task<List<GetCustomerDto>> GetAllAsync(CancellationToken cancellationToken)
         {
-            Console.WriteLine("Fetching all customers...");
             var customers = await _context.Customers
                 .AsNoTracking()
-                .Where(c => !c.IsDeleted) 
+                .Where(c => !c.IsDeleted)
                 .Select(c => new GetCustomerDto
                 {
                     Id = c.Id,
@@ -59,7 +61,7 @@
                     Balance = c.Balance
                 }).ToListAsync(cancellationToken);
 
-            Console.WriteLine($"Found {customers.Count} active customers.");
+            _logger.LogInformation(" مشتری فعال یافت شد.", customers.Count);
             return customers;
         }
 
@@ -70,15 +72,15 @@
 
         public async Task<bool> UpdateAsync(CustomerUpdateDto customerUpdateDto, CancellationToken cancellationToken)
         {
-            Console.WriteLine($"CustomerRepository.Update started for ID: {customerUpdateDto.Id}");
+            _logger.LogInformation("به‌روزرسانی مشتری آغاز شد.", customerUpdateDto.Id);
 
             var targetModel = await _context.Customers
-                .Include(c => c.Addresses) 
+                .Include(c => c.Addresses)
                 .FirstOrDefaultAsync(c => c.Id == customerUpdateDto.Id && !c.IsDeleted, cancellationToken);
 
             if (targetModel == null)
             {
-                Console.WriteLine($"Customer with ID {customerUpdateDto.Id} not found.");
+                _logger.LogWarning("مشتری یافت نشد.", customerUpdateDto.Id);
                 return false;
             }
 
@@ -99,25 +101,25 @@
                     targetModel.Addresses.Street = customerUpdateDto.Address.Street;
                     targetModel.Addresses.Area = customerUpdateDto.Address.Area;
                     targetModel.Addresses.PostalCode = customerUpdateDto.Address.PostalCode;
-                    Console.WriteLine($"Updated existing address for Customer ID: {customerUpdateDto.Id}");
+
+                    _logger.LogInformation("آدرس موجود برای مشتری به‌روزرسانی شد.", customerUpdateDto.Id);
                 }
                 else
                 {
                     targetModel.Addresses = customerUpdateDto.Address;
-                    Console.WriteLine($"Added new address for Customer ID: {customerUpdateDto.Id}");
+                    _logger.LogInformation("آدرس جدید برای مشتری اضافه شد.", customerUpdateDto.Id);
                 }
             }
 
             try
             {
                 await _context.SaveChangesAsync(cancellationToken);
-                Console.WriteLine($"Customer with ID {customerUpdateDto.Id} updated successfully.");
+                _logger.LogInformation("مشتری با موفقیت به‌روزرسانی شد.", customerUpdateDto.Id);
                 return true;
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Error saving changes: {ex.Message}");
-                Console.WriteLine($"Inner Exception: {ex.InnerException?.Message}");
+                _logger.LogError(ex, "خطا هنگام ذخیره تغییرات مشتری با شناسه ", customerUpdateDto.Id);
                 throw;
             }
         }
@@ -151,7 +153,7 @@
             var targetCustomer = await _context.Customers
                 .AsNoTracking()
                 .Include(c => c.Addresses)
-                .Where(c => c.Id == customerId && !c.IsDeleted) 
+                .Where(c => c.Id == customerId && !c.IsDeleted)
                 .Select(c => new CustomerUpdateDto
                 {
                     Id = c.Id,
@@ -159,7 +161,7 @@
                     LastName = c.LastName,
                     PhoneNumber = c.PhoneNumber,
                     Address = c.Addresses,
-                    Balance = c.Balance, 
+                    Balance = c.Balance,
                     BankCardNumber = c.BankCardNumber,
                     Gender = c.Gender,
                     Image = c.Image
@@ -187,7 +189,7 @@
         private async Task<Customer> FindCustomer(int id, CancellationToken cancellationToken)
      => await _context.Customers.FirstOrDefaultAsync(a => a.Id == id, cancellationToken);
 
-        public async Task<CustomerUpdateDto> CustomerUpdateInfoAsync(int id, CancellationToken cancellationToken)
+        public async Task<CustomerUpdateDto?> CustomerUpdateInfoAsync(int id, CancellationToken cancellationToken)
         {
             return await _context.Customers.Select(a => new CustomerUpdateDto
             {
@@ -204,30 +206,35 @@
         }
         public async Task UpdateBalanceAsync(int customerId, decimal newBalance, CancellationToken cancellationToken)
         {
-            Console.WriteLine($"Updating balance for Customer ID: {customerId} to {newBalance}");
+            _logger.LogInformation("به‌روزرسانی موجودی مشتری به مقدار آغاز شد.", customerId, newBalance);
+
             var customer = await _context.Customers
                 .FirstOrDefaultAsync(c => c.Id == customerId && !c.IsDeleted, cancellationToken);
 
             if (customer == null)
             {
-                Console.WriteLine($"Customer with ID: {customerId} not found or is deleted.");
-                throw new Exception($"Customer with ID {customerId} not found.");
+                _logger.LogWarning("مشتری یافت نشد یا حذف شده است.", customerId);
+                throw new Exception($"مشتری با شناسه {customerId} یافت نشد.");
             }
 
             customer.Balance = newBalance;
             await _context.SaveChangesAsync(cancellationToken);
-            Console.WriteLine($"Balance updated successfully for Customer ID: {customerId}");
+
+            _logger.LogInformation("موجودی مشتری با موفقیت به‌روزرسانی شد.", customerId);
         }
+
         public async Task<Customer> GetCustomerByIdAsync(int customerId, CancellationToken cancellationToken)
         {
-            Console.WriteLine($"Fetching customer with ID: {customerId}");
+            _logger.LogInformation("در حال دریافت اطلاعات مشتری با شناسه ", customerId);
+
             var customer = await _context.Customers
                 .FirstOrDefaultAsync(c => c.Id == customerId && !c.IsDeleted, cancellationToken);
 
             if (customer == null)
             {
-                Console.WriteLine($"Customer with ID: {customerId} not found or is deleted.");
+                _logger.LogWarning("مشتری یافت نشد یا حذف شده است.", customerId);
             }
+
             return customer;
         }
     }

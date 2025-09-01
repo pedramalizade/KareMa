@@ -85,10 +85,8 @@
                 .Where(s => s.OrderId == orderId && s.Id != suggestionId)
                 .ToListAsync(cancellationToken);
 
-            // تأیید پیشنهاد انتخاب‌شده
             targetSuggestion.Status = StatusEnum.Confirmed;
 
-            // رد کردن بقیه پیشنهادها
             foreach (var suggestion in otherSuggestions)
             {
                 if (suggestion.Status == StatusEnum.AwaitingCustomerConfirmation)
@@ -171,7 +169,7 @@
                 OrderId = suggestion.OrderId,
                 ExpertId = suggestion.ExpertId,
                 Expert = suggestion.Expert,
-                Price = suggestion.Price, // تبدیل int به decimal خودکار انجام می‌شه
+                Price = suggestion.Price, 
                 Description = suggestion.Description,
                 SuggestedDate = suggestion.SuggestedDate,
                 Status = suggestion.Status

@@ -9,7 +9,7 @@
         Task<List<SubCategory>> GetAllAsync(CancellationToken cancellationToken);
         Task<List<SubCategoryNameDto>> GetCategorisNameAsync(CancellationToken cancellationToken);
         Task<List<GetByCategoryIdDto>> GetAllByCategoryIdAsync(int id, CancellationToken cancellationToken);
-        Task<SubCategoryUpdateDto> ServiceSubCategoryUpdateInfoAsync(int id, CancellationToken cancellationToken);
+        Task<SubCategoryUpdateDto?> ServiceSubCategoryUpdateInfoAsync(int id, CancellationToken cancellationToken);
         Task<List<GetSubCategoryDto>> GetSubCategoriesAsync(CancellationToken cancellationToken);
 
     }

@@ -4,14 +4,11 @@
     {
         private readonly AppDbContext _context;
         private readonly IMemoryCache _memoryCache;
-
-
         public CityRepository(AppDbContext context, IMemoryCache memoryCache)
         {
             _context = context;
             _memoryCache = memoryCache;
         }
-
         public async Task<List<City>> GetAllAsync(CancellationToken cancellationToken)
         {
             var cities = _memoryCache.Get<List<City>>("Cities");
