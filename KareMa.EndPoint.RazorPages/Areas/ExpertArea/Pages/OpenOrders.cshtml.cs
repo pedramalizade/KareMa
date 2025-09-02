@@ -13,7 +13,6 @@ namespace KareMa.EndPoint.RazorPages.Areas.ExpertArea.Pages
         [BindProperty]
         public List<OrdersByServiceIdsDto> Orders { get; set; }
 
-
         public async Task OnGet(CancellationToken cancellationToken)
         {
             var expertId = int.Parse(User.Claims.FirstOrDefault(u => u.Type == "userExpertId").Value);

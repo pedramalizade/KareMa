@@ -43,7 +43,7 @@
             public GenderEnum Gender { get; set; }
 
             [Display(Name = "موجودی")]
-            public decimal Balance { get; set; } = 0; // پیش‌فرض 0
+            public decimal Balance { get; set; } = 0; 
 
             [Required(ErrorMessage = "ایمیل اجباری است")]
             [EmailAddress(ErrorMessage = "ایمیل نامعتبر است")]

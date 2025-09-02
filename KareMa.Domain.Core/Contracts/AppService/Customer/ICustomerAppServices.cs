@@ -1,6 +1,4 @@
-﻿using KareMa.Domain.Core.DTOs.CustomerDTO;
-
-namespace KareMa.Domain.Core.Contracts.AppService
+﻿namespace KareMa.Domain.Core.Contracts.AppService
 {
     public interface ICustomerAppServices
     {
@@ -15,6 +13,8 @@ namespace KareMa.Domain.Core.Contracts.AppService
         Task<CustomerUpdateDto> GetCustomerUpdateInfoAsync(int customerId, CancellationToken cancellationToken);
         Task<CustomerSummaryDto> GetCustomerSummaryAsync(int id, CancellationToken cancellationToken);
         Task<CustomerUpdateDto> CustomerUpdateInfoAsync(int id, CancellationToken cancellationToken);
+        Task<OperationResult> UpdateProfileAsync(int userCustomerId, CustomerUpdateDto customerUpdateDto, IFormFile? image, CancellationToken cancellationToken);
+
 
     }
 }

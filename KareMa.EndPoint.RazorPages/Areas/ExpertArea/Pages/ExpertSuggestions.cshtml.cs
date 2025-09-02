@@ -15,7 +15,6 @@ namespace KareMa.EndPoint.RazorPages.Areas.ExpertArea.Pages
         [BindProperty]
         public List<SuggestionsByExpertIdDto> Suggestions { get; set; } = new List<SuggestionsByExpertIdDto>();
 
-
         public async Task OnGet(CancellationToken cancellationToken)
         {
             var expertId = int.Parse(User.Claims.FirstOrDefault(c => c.Type == "userExpertId").Value);

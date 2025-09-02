@@ -22,6 +22,46 @@
             customerCreateDto.Image = imageAddress;
             return await _customerServices.CreateAsync(customerCreateDto, cancellationToken);
         }
+        public async Task<OperationResult> UpdateProfileAsync(int userCustomerId, CustomerUpdateDto customerUpdateDto, IFormFile? image, CancellationToken cancellationToken)
+        {
+            try
+            {
+                PrepareCustomerUpdate(userCustomerId, customerUpdateDto);
+
+                if (image != null)
+                {
+                    var imageUrl = await _baseSevices.UploadImage(image);
+                    if (string.IsNullOrEmpty(imageUrl))
+                        return OperationResult.Fail("آپلود تصویر ناموفق بود.");
+                    customerUpdateDto.Image = imageUrl;
+                }
+
+                var result = await _customerServices.UpdateAsync(customerUpdateDto, cancellationToken);
+                return result
+                    ? OperationResult.SuccessResult()
+                    : OperationResult.Fail("ذخیره تغییرات پروفایل ناموفق بود.");
+            }
+            catch (Exception ex)
+            {
+                return OperationResult.Fail($"خطا در ذخیره تغییرات: {ex.Message}");
+            }
+        }
+
+        private void PrepareCustomerUpdate(int userCustomerId, CustomerUpdateDto dto)
+        {
+            dto.Id = userCustomerId;
+            if (dto.Address == null)
+            {
+                dto.Address = new Address { CustomerId = userCustomerId, Title = "آدرس پیش‌فرض" };
+            }
+            else
+            {
+                dto.Address.CustomerId = userCustomerId;
+                dto.Address.Title ??= "آدرس پیش‌فرض";
+            }
+        }
+       
+
         public async Task<int> CustomerCountAsync(CancellationToken cancellationToken)
           => await _customerServices.CustomerCountAsync(cancellationToken);
         public async Task<CustomerSummaryDto> GetCustomerSummaryAsync(int id, CancellationToken cancellationToken)

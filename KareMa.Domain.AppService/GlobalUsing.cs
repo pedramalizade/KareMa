@@ -20,5 +20,6 @@ global using KareMa.Domain.Core.DTOs.ServiceDTO;
 global using KareMa.Domain.Core.DTOs.SubCategoryDTO;
 global using Framework;
 global using KareMa.Domain.Core.DTOs.SuggestionDTO;
+global using KareMa.Domain.Core.Contracts.AppService.WorkFlow;
 
 

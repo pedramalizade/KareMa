@@ -17,5 +17,7 @@ namespace KareMa.Domain.Core.Contracts.AppService
         Task<int> ExpertOrderCountAsync(int id, CancellationToken cancellationToken);
         Task<ExpertUpdateDto> ExpertUpdateInfoAsync(int id, CancellationToken cancellationToken);
         Task<ExpertNameDto> GetExpertNameAsync(int id, CancellationToken cancellationToken);
+        Task<ExpertUpdateDto> GetExpertUpdateAsync(int expertId, CancellationToken cancellationToken);
+        Task<bool> UpdateProfileAsync(ExpertUpdateDto expertUpdateDto, IFormFile? image, string? birthDate, CancellationToken cancellationToken);
     }
 }

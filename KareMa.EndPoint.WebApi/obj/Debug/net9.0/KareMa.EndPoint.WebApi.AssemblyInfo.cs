@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("KareMa.EndPoint.WebApi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6d09d12d42c93f1d8f08714a4cb71ad933ea7bf2")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7b728849aa36f301c5354c49986da79506cd1ecd")]
 [assembly: System.Reflection.AssemblyProductAttribute("KareMa.EndPoint.WebApi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("KareMa.EndPoint.WebApi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
