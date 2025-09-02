@@ -5,5 +5,6 @@
         Task<List<IdentityError>> Register(AccountRegisterDto accountRegisterDto);
         Task<bool> Login(AccountLoginDto accountLoginDto);
         Task<List<IdentityError>> AdminRegister(AccountAdminRegisterDto accountAdminRegisterDto);
+        Task<IList<string>> GetUserRolesByEmail(string email);
     }
 }

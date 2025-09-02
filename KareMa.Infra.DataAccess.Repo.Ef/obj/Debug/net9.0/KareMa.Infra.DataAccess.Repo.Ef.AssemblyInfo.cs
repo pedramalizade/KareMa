@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("KareMa.Infra.DataAccess.Repo.Ef")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ed0d50e87fb047b173f50a9680d47395e27828b8")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6d09d12d42c93f1d8f08714a4cb71ad933ea7bf2")]
 [assembly: System.Reflection.AssemblyProductAttribute("KareMa.Infra.DataAccess.Repo.Ef")]
 [assembly: System.Reflection.AssemblyTitleAttribute("KareMa.Infra.DataAccess.Repo.Ef")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

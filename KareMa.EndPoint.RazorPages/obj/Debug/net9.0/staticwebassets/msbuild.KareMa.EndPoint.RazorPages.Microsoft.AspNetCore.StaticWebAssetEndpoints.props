@@ -17452,13 +17452,13 @@
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\KareMa.EndPoint.RazorPages.t40s8yt41u.bundle.scp.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-U3C\u002BIoWaHzC6tUAtffWZ12sFqLI2syLaZgWWWHY83LM="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"1144"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022U3C\u002BIoWaHzC6tUAtffWZ12sFqLI2syLaZgWWWHY83LM=\u0022"},{"Name":"Last-Modified","Value":"Tue, 25 Feb 2025 12:17:00 GMT"}]]]></ResponseHeaders>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"1144"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022U3C\u002BIoWaHzC6tUAtffWZ12sFqLI2syLaZgWWWHY83LM=\u0022"},{"Name":"Last-Modified","Value":"Tue, 02 Sep 2025 11:52:56 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/KareMa.EndPoint.RazorPages/KareMa.EndPoint.RazorPages.t40s8yt41u.bundle.scp.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\KareMa.EndPoint.RazorPages.t40s8yt41u.bundle.scp.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"t40s8yt41u"},{"Name":"integrity","Value":"sha256-U3C\u002BIoWaHzC6tUAtffWZ12sFqLI2syLaZgWWWHY83LM="},{"Name":"label","Value":"_content/KareMa.EndPoint.RazorPages/KareMa.EndPoint.RazorPages.bundle.scp.css"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"1144"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022U3C\u002BIoWaHzC6tUAtffWZ12sFqLI2syLaZgWWWHY83LM=\u0022"},{"Name":"Last-Modified","Value":"Tue, 25 Feb 2025 12:17:00 GMT"}]]]></ResponseHeaders>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"1144"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022U3C\u002BIoWaHzC6tUAtffWZ12sFqLI2syLaZgWWWHY83LM=\u0022"},{"Name":"Last-Modified","Value":"Tue, 02 Sep 2025 11:52:56 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/KareMa.EndPoint.RazorPages/lib/bootstrap/dist/css/bootstrap-grid.bqjiyaj88i.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\lib\bootstrap\dist\css\bootstrap-grid.css'))</AssetFile>

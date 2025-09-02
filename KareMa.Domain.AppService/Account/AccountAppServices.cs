@@ -92,5 +92,13 @@
 
             return (List<IdentityError>)result.Errors;
         }
+        public async Task<IList<string>> GetUserRolesByEmail(string email)
+        {
+            var user = await _userManager.FindByEmailAsync(email);
+            if (user == null)
+                return new List<string>();
+
+            return await _userManager.GetRolesAsync(user);
+        }
     }
 }

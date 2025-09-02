@@ -28,3 +28,5 @@ global using Serilog;
 global using Serilog.Events;
 global using KareMa.Infra.DataAccess.Repository.Dapper.Repository;
 global using System.Text.Json.Serialization;
+global using Microsoft.AspNetCore.Authorization;
+
