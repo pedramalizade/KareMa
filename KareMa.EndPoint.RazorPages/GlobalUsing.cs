@@ -1,15 +1,15 @@
 ﻿global using Microsoft.AspNetCore.Mvc.RazorPages;
-global using KareMa.Domain.Core.Contracts.AppService.Account;
 global using Microsoft.AspNetCore.Mvc;
-global using KareMa.Domain.Core.Entities;
 global using Microsoft.AspNetCore.Identity;
+global using Microsoft.AspNetCore.Authorization;
+global using Microsoft.EntityFrameworkCore;
+global using Microsoft.AspNetCore.Mvc.Rendering;
+
+global using KareMa.Domain.Core.Contracts.AppService.Account;
+global using KareMa.Domain.Core.Entities;
 global using KareMa.Domain.Core.Contracts.AppService;
 global using KareMa.Domain.Core.DTOs.CategoryDTO;
-global using System.ComponentModel.DataAnnotations;
-global using Microsoft.AspNetCore.Authorization;
-global using Microsoft.AspNetCore.Mvc.Rendering;
 global using KareMa.Domain.Core.Contracts;
-global using Microsoft.EntityFrameworkCore;
 global using KareMa.Domain.Core.DTOs.ServiceDTO;
 global using KareMa.Domain.Core.DTOs.SubCategoryDTO;
 global using KareMa.Domain.Core.Enums;
@@ -19,9 +19,6 @@ global using KareMa.Domain.Core.DTOs.OrderDTO;
 global using KareMa.Infra.SqlServer.Common;
 global using KareMa.Domain.Core.DTOs.SuggestionDTO;
 global using KareMa.Domain.Core.DTOs.Expert;
-global using Framework;
-global using System.Text.RegularExpressions;
-global using System.Globalization;
 global using KareMa.Domain.Core.Contracts.Repositories.Category;
 global using KareMa.Domain.Core.Contracts.Repositories;
 global using KareMa.Infra.DataAccess.Repo.Ef.Repository;
@@ -36,12 +33,13 @@ global using KareMa.Domain.AppService.BaseAppServices;
 global using KareMa.Domain.Services;
 global using KareMa.Domain.Core.Entities.Configs;
 global using KareMa.EndPoint.RazorPages.Infrastructure;
-global using Serilog;
-global using Serilog.Events;
 global using KareMa.Domain.AppService.Account;
 global using KareMa.Infra.DataAccess.Repository.Dapper.Repository;
-global using System.Globalization;
-global using System.Text.RegularExpressions;
 global using KareMa.Domain.Core.Contracts.AppService.WorkFlow;
 
+global using Serilog.Events;
+global using Serilog;
 
+global using System.ComponentModel.DataAnnotations;
+
+global using Framework;

@@ -1,9 +1,9 @@
-﻿global using KareMa.Domain.Core.Contracts.Repositories;
+﻿global using Microsoft.AspNetCore.Http;
+
+global using KareMa.Domain.Core.Contracts.Repositories;
 global using KareMa.Domain.Core.Contracts.Service;
 global using KareMa.Domain.Core.Entities;
 global using KareMa.Domain.Core.Contracts.Service.BaseService;
-global using Microsoft.AspNetCore.Http;
-global using System.Globalization;
 global using KareMa.Domain.Core.DTOs.CategoryDTO;
 global using KareMa.Domain.Core.DTOs.CommentDTO;
 global using KareMa.Domain.Core.DTOs.CustomerDTO;
@@ -14,4 +14,5 @@ global using KareMa.Domain.Core.DTOs.ServiceDTO;
 global using KareMa.Domain.Core.Contracts.Repositories.Category;
 global using KareMa.Domain.Core.DTOs.SubCategoryDTO;
 global using KareMa.Domain.Core.DTOs.SuggestionDTO;
-global using Microsoft.Extensions.Options;
+
+global using System.Globalization;

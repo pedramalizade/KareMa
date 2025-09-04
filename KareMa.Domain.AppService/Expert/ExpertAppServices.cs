@@ -4,7 +4,9 @@
     {
         private readonly IExpertServices _expertServices;
         private readonly IBaseSevices _baseSevices;
-        public ExpertAppServices(IExpertServices expertServices, IBaseSevices baseServce)
+        public ExpertAppServices(
+            IExpertServices expertServices,
+            IBaseSevices baseServce)
         {
             _expertServices = expertServices;
             _baseSevices = baseServce;
@@ -99,22 +101,18 @@
           => await _expertServices.GetExpertSummary(id, cancellationToken);
         public async Task<bool> UpdateAsync(ExpertUpdateDto expertUpdateDto, IFormFile? image, CancellationToken cancellationToken)
         {
-            Console.WriteLine($"ExpertAppServices.Update started for ID: {expertUpdateDto.Id}");
-
             if (image != null)
             {
                 var imageUrl = await _baseSevices.UploadImage(image);
                 if (string.IsNullOrEmpty(imageUrl))
                     throw new Exception("آپلود تصویر ناموفق بود");
                 expertUpdateDto.Image = imageUrl;
-                Console.WriteLine($"Image uploaded successfully: {imageUrl}");
             }
 
             var result = await _expertServices.Update(expertUpdateDto, cancellationToken);
             if (!result)
                 throw new Exception("به‌روزرسانی اطلاعات کارشناس ناموفق بود");
 
-            Console.WriteLine("ExpertAppServices.Update completed successfully.");
             return true;
         }
         public async Task<Expert> GetExpertByIdAsync(int expertId, CancellationToken cancellationToken)

@@ -1,6 +1,5 @@
 ﻿namespace KareMa.EndPoint.RazorPages.Areas.AdminArea.Pages
 {
-
     public class RegisterModel : PageModel
     {
         private readonly UserManager<AppUser> _userManager;

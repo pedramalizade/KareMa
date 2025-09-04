@@ -1,11 +1,14 @@
-﻿global using KareMa.Domain.Core.Contracts.AppService;
+﻿global using Microsoft.AspNetCore.Mvc;
+global using Microsoft.AspNetCore.Mvc.Filters;
+global using Microsoft.EntityFrameworkCore;
+global using Microsoft.AspNetCore.Identity;
+global using Microsoft.AspNetCore.Authorization;
+
+global using KareMa.Domain.Core.Contracts.AppService;
 global using KareMa.Domain.Core.Contracts.AppService.Account;
 global using KareMa.Domain.Core.DTOs.OrderDTO;
-global using Microsoft.AspNetCore.Mvc;
 global using KareMa.Domain.Core.Entities;
 global using KareMa.EndPoint.WebApi.Filters;
-global using Microsoft.AspNetCore.Mvc.Filters;
-global using Framework;
 global using KareMa.Domain.AppService;
 global using KareMa.Domain.AppService.Account;
 global using KareMa.Domain.AppService.BaseAppServices;
@@ -22,11 +25,11 @@ global using KareMa.Domain.Service.Expect;
 global using KareMa.Domain.Services;
 global using KareMa.Infra.DataAccess.Repo.Ef.Repository;
 global using KareMa.Infra.SqlServer.Common;
-global using Microsoft.AspNetCore.Identity;
-global using Microsoft.EntityFrameworkCore;
-global using Serilog;
-global using Serilog.Events;
 global using KareMa.Infra.DataAccess.Repository.Dapper.Repository;
-global using System.Text.Json.Serialization;
-global using Microsoft.AspNetCore.Authorization;
 
+global using Serilog.Events;
+global using Serilog;
+
+global using System.Text.Json.Serialization;
+
+global using Framework;
