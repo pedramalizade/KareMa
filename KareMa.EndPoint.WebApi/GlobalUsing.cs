@@ -26,6 +26,7 @@ global using KareMa.Domain.Services;
 global using KareMa.Infra.DataAccess.Repo.Ef.Repository;
 global using KareMa.Infra.SqlServer.Common;
 global using KareMa.Infra.DataAccess.Repository.Dapper.Repository;
+global using KareMa.EndPoint.WebApi.Infrastructure;
 
 global using Serilog.Events;
 global using Serilog;

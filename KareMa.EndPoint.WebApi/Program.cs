@@ -1,3 +1,4 @@
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Configuration
@@ -89,6 +90,7 @@ builder.Services.AddScoped<IAccountAppServices, AccountAppServices>();
 builder.Services.AddScoped<KareMa.EndPoint.WebApi.Filters.ApiKeyAuthFilter>();
 // Add services to the container.
 
+
 builder.Services.AddMemoryCache();
 
 builder.Services.AddIdentity<AppUser, IdentityRole<int>>(options =>
@@ -129,10 +131,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseMiddleware<ExceptionHandlingMiddleware>();
 app.UseHttpsRedirection();
-
 app.UseAuthorization();
-
 app.MapControllers();
-
 app.Run();
