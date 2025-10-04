@@ -59,13 +59,11 @@
                 imageAddress = await _baseSevices.UploadImage(Image);
                 if (string.IsNullOrEmpty(imageAddress))
                 {
-                    Console.WriteLine("Image upload failed!");
                     return false;
                 }
             }
             else
             {
-                Console.WriteLine("No image provided, proceeding without image.");
             }
 
             expertCreateDto.Image = imageAddress;
@@ -75,7 +73,6 @@
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Error in Create: {ex.Message}");
                 throw;
             }
         }

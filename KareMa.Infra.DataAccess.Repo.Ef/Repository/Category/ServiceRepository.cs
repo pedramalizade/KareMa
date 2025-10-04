@@ -72,14 +72,11 @@
                 SubCategoryId = s.SubCategoryId,
                 Image = s.Image,
                 SubCategory = s.SubCategory != null
-                    ? new SubCategory
-                    {
+                    ? new SubCategory{
                         Id = s.SubCategory.Id,
                         Name = s.SubCategory.Name
-                    }
-                    : null
-            })
-            .ToListAsync(cancellationToken);
+                    } : null
+            }).ToListAsync(cancellationToken);
         }
 
         public async Task<List<GetByCategorySubIdDto>> GetAllBySubCategoryIdAsync(int id, CancellationToken cancellationToken)
@@ -89,8 +86,7 @@
                 {
                     Id = c.Id,
                     Name = c.Name
-                })
-                .ToListAsync(cancellationToken);
+                }).ToListAsync(cancellationToken);
         }
 
         public async Task<ServiceUpdateDto?> ServiceUpdateInfoAsync(int id, CancellationToken cancellationToken)

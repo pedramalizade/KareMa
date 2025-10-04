@@ -15,7 +15,6 @@
 
             if (string.IsNullOrEmpty(imageAddress))
             {
-                Console.WriteLine("Image upload failed!");
                 return false;
             }
 
@@ -34,7 +33,6 @@
   => await _categoryServices.ServiceCategoryUpdateInfoAsync(id, cancellationToken);
         public async Task<bool> UpdateAsync(CategoryUpdateDto categoryUpdateDto, IFormFile? image, CancellationToken cancellationToken)
         {
-            Console.WriteLine($"CategoryAppServices.Update started for ID: {categoryUpdateDto.Id}");
 
             if (image != null)
             {
@@ -43,21 +41,17 @@
                     var imageAddress = await _baseSevices.UploadImage(image); 
                     if (string.IsNullOrEmpty(imageAddress))
                     {
-                        Console.WriteLine("Image upload failed.");
                         return false;
                     }
                     categoryUpdateDto.Image = imageAddress;
-                    Console.WriteLine($"Image uploaded successfully: {imageAddress}");
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine($"Image upload error: {ex.Message}");
                     return false;
                 }
             }
 
             var result = await _categoryServices.UpdateAsync(categoryUpdateDto, cancellationToken);
-            Console.WriteLine($"CategoryServices.Update result: {result}");
             return result;
         }
     }

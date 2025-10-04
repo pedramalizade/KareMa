@@ -29,7 +29,7 @@
             return true;
         }
 
-        public async Task<List<CategoryNameDto>> GetCategorisNameAsync(CancellationToken cancellationToken)
+        public async Task<List<CategoryNameDto>> GetCategoriesNameAsync(CancellationToken cancellationToken)
         {
             var categories = _memoryCache.Get<List<CategoryNameDto>>("CategoriesName");
 

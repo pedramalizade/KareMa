@@ -17,10 +17,6 @@
         public async Task<bool> ChangeStatusAsync(StatusEnum status, int orderId, CancellationToken cancellationToken)
         {
             var suggestionResult = await _suggestionServices.ChangeStatusAsync(status, orderId, cancellationToken);
-            if (!suggestionResult)
-            {
-                Console.WriteLine($"Failed to change suggestion status for OrderId: {orderId}");
-            }
 
             var orderResult = await _orderServices.ChangeStatusAsync(status, orderId, cancellationToken);
             return orderResult; 

@@ -15,7 +15,6 @@
 
             if (string.IsNullOrEmpty(imageAddress))
             {
-                Console.WriteLine("Image upload failed!");
                 return false;
             }
 
@@ -38,7 +37,7 @@
 
                 var result = await _customerServices.UpdateAsync(customerUpdateDto, cancellationToken);
                 return result
-                    ? OperationResult.SuccessResult()
+                    ? OperationResult.SuccessResult() 
                     : OperationResult.Fail("ذخیره تغییرات پروفایل ناموفق بود.");
             }
             catch (Exception ex)
@@ -76,25 +75,20 @@
   => await _customerServices.GetCustomerUpdateInfoAsync(customerId, cancellationToken);
         public async Task<bool> UpdateAsync(CustomerUpdateDto customerUpdateDto, IFormFile Image, CancellationToken cancellationToken)
         {
-            Console.WriteLine($"CustomerAppServices.Update started for ID: {customerUpdateDto.Id}");
-
             if (Image != null)
             {
                 try
                 {
                     var imageAddress = await _baseSevices.UploadImage(Image);
                     customerUpdateDto.Image = imageAddress;
-                    Console.WriteLine($"Image uploaded: {customerUpdateDto.Image}");
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine($"Image upload failed: {ex.Message}");
                     return false; 
                 }
             }
 
             var result = await _customerServices.UpdateAsync(customerUpdateDto, cancellationToken);
-            Console.WriteLine($"CustomerServices.Update result: {result}");
             return result;
         }
         public async Task<CustomerUpdateDto> CustomerUpdateInfoAsync(int id, CancellationToken cancellationToken)

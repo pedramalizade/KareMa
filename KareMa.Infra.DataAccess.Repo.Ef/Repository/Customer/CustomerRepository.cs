@@ -148,8 +148,6 @@
         }
         public async Task<CustomerUpdateDto> GetCustomerUpdateInfoAsync(int customerId, CancellationToken cancellationToken)
         {
-            Console.WriteLine($"GetCustomerUpdateInfo called with customerId: {customerId}");
-
             var targetCustomer = await _context.Customers
                 .AsNoTracking()
                 .Include(c => c.Addresses)
@@ -170,11 +168,9 @@
 
             if (targetCustomer == null)
             {
-                Console.WriteLine($"Customer with ID: {customerId} not found in database.");
                 return null;
             }
 
-            Console.WriteLine($"Found customer with ID: {targetCustomer.Id}, Name: {targetCustomer.FirstName} {targetCustomer.LastName}");
             return targetCustomer;
         }
 

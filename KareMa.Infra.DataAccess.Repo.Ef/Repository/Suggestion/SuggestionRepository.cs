@@ -77,7 +77,6 @@
 
             if (targetSuggestion == null || targetSuggestion.Status != StatusEnum.AwaitingCustomerConfirmation)
             {
-                Console.WriteLine($"Suggestion ID: {suggestionId} not found or not awaiting confirmation for Order ID: {orderId}");
                 return false;
             }
 
@@ -96,7 +95,6 @@
             }
 
             await _context.SaveChangesAsync(cancellationToken);
-            Console.WriteLine($"Suggestion ID: {suggestionId} confirmed for Order ID: {orderId}");
             return true;
         }
 
@@ -142,13 +140,11 @@
 
             if (targetModel == null)
             {
-                Console.WriteLine($"No suggestion found for OrderId: {orderId}");
                 return false;
             }
 
             targetModel.Status = status;
             await _context.SaveChangesAsync(cancellationToken);
-            Console.WriteLine($"Suggestion status changed to {status} for OrderId: {orderId}");
             return true;
         }
 
