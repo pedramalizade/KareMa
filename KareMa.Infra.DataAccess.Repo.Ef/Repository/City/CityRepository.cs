@@ -9,6 +9,10 @@
             _context = context;
             _memoryCache = memoryCache;
         }
+
+        /// <summary>
+        /// دریافت همه شهر ها
+        /// </summary>
         public async Task<List<City>> GetAllAsync(CancellationToken cancellationToken)
         {
             var cities = _memoryCache.Get<List<City>>("Cities");
@@ -23,6 +27,10 @@
 
             return cities;
         }
+
+        /// <summary>
+        /// دریافت یک شهر بر اساس شناسه
+        /// </summary>
         public async Task<City> GetByIdAsync(int cityId, CancellationToken cancellationToken)
         {
             return await _context.Cities.AsNoTracking().FirstOrDefaultAsync(c => c.Id == cityId, cancellationToken);

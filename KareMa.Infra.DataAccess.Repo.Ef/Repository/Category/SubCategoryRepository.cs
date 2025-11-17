@@ -11,6 +11,9 @@
             _configuration = configuration;
         }
 
+        /// <summary>
+        /// ایجاد یک زیرشاخه جدید
+        /// </summary>
         public async Task<bool> CreateAsync(SubCategoryCreateDto subCategoryCreateDto, CancellationToken cancellationToken)
         {
 
@@ -26,6 +29,9 @@
             return true;
         }
 
+        /// <summary>
+        /// حذف منطقی یک زیرشاخه
+        /// </summary>
         public async Task<bool> DeleteAsync(int serviceSubCategoryId, CancellationToken cancellationToken)
         {
             var targetModel = await FindServiceSubCategory(serviceSubCategoryId, cancellationToken);
@@ -34,6 +40,9 @@
             return true;
         }
 
+        /// <summary>
+        /// دریافت همه زیرشاخه‌ها همراه با دسته‌بندی و سرویس‌ها
+        /// </summary>
         public async Task<List<SubCategory>> GetAllAsync(CancellationToken cancellationToken)
         {
             var sql = @"
@@ -96,8 +105,15 @@ ORDER BY sc.Id, c.Id, s.Id";
             }
         }
 
+        /// <summary>
+        /// دریافت یک زیرشاخه بر اساس شناسه
+        /// </summary>
         public async Task<SubCategory> GetByIdAsync(int SubCategoryId, CancellationToken cancellationToken)
        => await FindServiceSubCategory(SubCategoryId, cancellationToken);
+
+        /// <summary>
+        /// دریافت لیست نام زیرشاخه‌ها
+        /// </summary>
         public async Task<List<SubCategoryNameDto>> GetCategorisNameAsync(CancellationToken cancellationToken)
         {
             var subcategories = await _context.SubCategories.AsNoTracking()
@@ -109,6 +125,9 @@ ORDER BY sc.Id, c.Id, s.Id";
             return subcategories;
         }
 
+        /// <summary>
+        /// دریافت زیرشاخه‌ها بر اساس شناسه دسته‌بندی
+        /// </summary>
         public async Task<List<GetByCategoryIdDto>> GetAllByCategoryIdAsync(int id, CancellationToken cancellationToken)
         {
             return await _context.SubCategories.Where(x => x.CategoryId == id && x.IsDeleted == false).AsNoTracking()
@@ -120,6 +139,10 @@ ORDER BY sc.Id, c.Id, s.Id";
                 })
                 .ToListAsync(cancellationToken);
         }
+
+        /// <summary>
+        /// دریافت زیرشاخه‌ها با اطلاعات کلی
+        /// </summary>
         public async Task<List<GetSubCategoryDto>> GetSubCategoriesAsync(CancellationToken cancellationToken)
         {
             var subcategories = await _context.SubCategories.AsNoTracking()
@@ -135,6 +158,9 @@ ORDER BY sc.Id, c.Id, s.Id";
             return subcategories;
         }
 
+        /// <summary>
+        /// دریافت اطلاعات یک زیرشاخه برای ویرایش
+        /// </summary>
         public async Task<SubCategoryUpdateDto?> ServiceSubCategoryUpdateInfoAsync(int id, CancellationToken cancellationToken)
         {
             return await _context.SubCategories.AsNoTracking().Where(c => c.IsDeleted == false)
@@ -148,6 +174,9 @@ ORDER BY sc.Id, c.Id, s.Id";
                 }).FirstOrDefaultAsync(s => s.Id == id, cancellationToken);
         }
 
+        /// <summary>
+        /// به‌روزرسانی اطلاعات یک زیرشاخه
+        /// </summary>
         public async Task<bool> UpdateAsync(SubCategoryUpdateDto subCategoryUpdateDto, CancellationToken cancellationToken)
         {
             var targetModel = await FindServiceSubCategory(subCategoryUpdateDto.Id, cancellationToken);
@@ -159,6 +188,10 @@ ORDER BY sc.Id, c.Id, s.Id";
 
             return true;
         }
+
+        /// <summary>
+        /// پیدا کردن یک زیرشاخه بر اساس شناسه
+        /// </summary>
         private async Task<SubCategory> FindServiceSubCategory(int id, CancellationToken cancellationToken)
         => await _context.SubCategories.FirstOrDefaultAsync(a => a.Id == id, cancellationToken);
     }

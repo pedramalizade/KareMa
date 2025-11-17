@@ -12,6 +12,9 @@
             _configuration = configuration;
         }
 
+        /// <summary>
+        /// ایجاد یک سرویس جدید
+        /// </summary>
         public async Task<bool> CreateAsync(ServiceCreateDto serviceCreateDto, CancellationToken cancellationToken)
         {
 
@@ -26,6 +29,10 @@
             return true;
 
         }
+
+        /// <summary>
+        /// دریافت لیست نام و قیمت سرویس‌ها
+        /// </summary>
         public async Task<List<ServicesNameDto>> GetServicesNameAsync(CancellationToken cancellationToken)
         {
             return await _context.Services.Select(s => new ServicesNameDto
@@ -35,6 +42,10 @@
                 Price = s.Price
             }).ToListAsync(cancellationToken);
         }
+
+        /// <summary>
+        /// دریافت نام و قیمت یک سرویس بر اساس شناسه
+        /// </summary>
         public async Task<ServiceNameAndPriceDto> GetServiceNameAndPriceAsync(int id, CancellationToken cancellationToken)
         {
             var targetSrtvice = await _context.Services.AsNoTracking().Where(s => s.Id == id)
@@ -51,6 +62,9 @@
 
         }
 
+        /// <summary>
+        /// حذف منطقی یک سرویس
+        /// </summary>
         public async Task<bool> DeleteAsync(int serviceId, CancellationToken cancellationToken)
         {
             var targetModel = await FindService(serviceId, cancellationToken);
@@ -59,6 +73,9 @@
             return true;
         }
 
+        /// <summary>
+        /// دریافت همه سرویس‌ها همراه با زیرشاخه‌ها
+        /// </summary>
         public async Task<List<GetServiceDto>> GetAllAsync(CancellationToken cancellationToken)
         {
             return await _context.Services
@@ -79,6 +96,9 @@
             }).ToListAsync(cancellationToken);
         }
 
+        /// <summary>
+        /// دریافت سرویس‌ها بر اساس شناسه زیرشاخه
+        /// </summary>
         public async Task<List<GetByCategorySubIdDto>> GetAllBySubCategoryIdAsync(int id, CancellationToken cancellationToken)
         {
             return await _context.Services.Where(x => x.SubCategoryId == id).AsNoTracking()
@@ -89,6 +109,9 @@
                 }).ToListAsync(cancellationToken);
         }
 
+        /// <summary>
+        /// دریافت اطلاعات یک سرویس برای ویرایش
+        /// </summary>
         public async Task<ServiceUpdateDto?> ServiceUpdateInfoAsync(int id, CancellationToken cancellationToken)
         {
             return await _context.Services
@@ -101,9 +124,16 @@
 
                 }).FirstOrDefaultAsync(s => s.Id == id);
         }
+
+        /// <summary>
+        /// دریافت یک سرویس بر اساس شناسه
+        /// </summary>
         public async Task<Service> GetByIdAsync(int serviceId, CancellationToken cancellationToken)
        => await FindService(serviceId, cancellationToken);
 
+        /// <summary>
+        /// به‌روزرسانی اطلاعات یک سرویس
+        /// </summary>
         public async Task<bool> UpdateAsync(ServiceUpdateDto serviceUpdateDto, CancellationToken cancellationToken)
         {
             var targetModel = await FindService(serviceUpdateDto.Id, cancellationToken);
@@ -116,9 +146,15 @@
             return true;
         }
 
+        /// <summary>
+        /// پیدا کردن یک سرویس بر اساس شناسه
+        /// </summary>
         private async Task<Service> FindService(int id, CancellationToken cancellationToken)
        => await _context.Services.FirstOrDefaultAsync(a => a.Id == id, cancellationToken);
 
+        /// <summary>
+        /// دریافت همه سرویس‌ها بدون فیلتر
+        /// </summary>
         public async Task<List<Service>> GetAllServicesAsync(CancellationToken cancellationToken)
         {
             return await _context.Services.ToListAsync(cancellationToken);

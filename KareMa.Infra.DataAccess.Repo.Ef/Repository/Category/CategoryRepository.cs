@@ -15,6 +15,9 @@
             _memoryCache = memoryCache;
         }
 
+        /// <summary>
+        /// ایجاد یک دسته‌بندی جدید
+        /// </summary>
         public async Task<bool> CreateAsync(CategoryCreateDto categoryCreateDto, CancellationToken cancellationToken)
         {
             var newModel = new Category()
@@ -29,6 +32,9 @@
             return true;
         }
 
+        /// <summary>
+        /// دریافت لیست نام دسته‌بندی‌ها از کش یا دیتابیس
+        /// </summary>
         public async Task<List<CategoryNameDto>> GetCategoriesNameAsync(CancellationToken cancellationToken)
         {
             var categories = _memoryCache.Get<List<CategoryNameDto>>("CategoriesName");
@@ -53,6 +59,9 @@
             return categories;
         }
 
+        /// <summary>
+        /// دریافت اطلاعات یک دسته‌بندی برای ویرایش
+        /// </summary>
         public async Task<CategoryUpdateDto?> ServiceCategoryUpdateInfoAsync(int id, CancellationToken cancellationToken)
         {
             return await _context.Categories.Select(c => new CategoryUpdateDto
@@ -65,6 +74,9 @@
 
         }
 
+        /// <summary>
+        /// حذف منطقی یک دسته‌بندی
+        /// </summary>
         public async Task<bool> DeleteAsync(int CategoryId, CancellationToken cancellationToken)
         {
             var targetModel = await FindServiceCategory(CategoryId, cancellationToken);
@@ -81,6 +93,10 @@
             _memoryCache.Remove("Categories");
             return true;
         }
+
+        /// <summary>
+        /// دریافت همه دسته‌بندی‌ها با استفاده از کش
+        /// </summary>
         public async Task<List<GetCategoryDto>> GetAllAsync(CancellationToken cancellationToken)
         {
             var cacheKey = "Categories";
@@ -96,9 +112,15 @@
             return categories;
         }
 
+        /// <summary>
+        /// دریافت دسته‌بندی بر اساس شناسه
+        /// </summary>
         public async Task<Domain.Core.Entities.Category> GetByIdAsync(int CategoryId, CancellationToken cancellationToken)
      => await FindServiceCategory(CategoryId, cancellationToken);
 
+        /// <summary>
+        /// به‌روزرسانی اطلاعات یک دسته‌بندی
+        /// </summary>
         public async Task<bool> UpdateAsync(CategoryUpdateDto categoryUpdateDto, CancellationToken cancellationToken)
         {
             _logger.LogInformation("ویرایش دسته‌بندی آغاز شد.", categoryUpdateDto.Id);
@@ -131,6 +153,9 @@
             }
         }
 
+        /// <summary>
+        /// پیدا کردن یک دسته‌بندی فعال بر اساس شناسه
+        /// </summary>
         private async Task<Domain.Core.Entities.Category> FindServiceCategory(int id, CancellationToken cancellationToken)
         {
             _logger.LogInformation("در حال جستجوی دسته‌بندی", id);
@@ -148,6 +173,14 @@
             }
 
             return category;
+        }
+
+        /// <summary>
+        /// دریافت لیست نام دسته‌بندی‌ها (Not Implemented)
+        /// </summary>
+        public Task<List<CategoryNameDto>> GetCategorisNameAsync(CancellationToken cancellationToken)
+        {
+            throw new NotImplementedException();
         }
     }
 }

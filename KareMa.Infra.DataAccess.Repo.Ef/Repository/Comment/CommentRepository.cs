@@ -7,6 +7,10 @@
         {
             _context = context;
         }
+
+        /// <summary>
+        /// ایجاد یک نظر جدید در صورت تکمیل شدن سفارش توسط مشتری
+        /// </summary>
         public async Task<bool> CreateAsync(CommentCreateDto commentCreateDto, CancellationToken cancellationToken)
         {
 
@@ -52,6 +56,9 @@
             }
         }
 
+        /// <summary>
+        /// حذف منطقی یک نظر
+        /// </summary>
         public async Task<bool> DeleteAsync(int commentId, CancellationToken cancellationToken)
         {
             var targetModel = await FindComment(commentId, cancellationToken);
@@ -60,6 +67,9 @@
             return true;
         }
 
+        /// <summary>
+        /// دریافت همه نظرات با اطلاعات مشتری و متخصص
+        /// </summary>
         public async Task<List<GetCommentsDto>> GetAllAsync(CancellationToken cancellationToken)
         {
             var comments = await _context.Comments.AsNoTracking()
@@ -79,9 +89,16 @@
                  }).ToListAsync(cancellationToken);
             return comments;
         }
+
+        /// <summary>
+        /// دریافت یک نظر بر اساس شناسه
+        /// </summary>
         public async Task<Comment> GetByIdAsync(int commentId, CancellationToken cancellationToken)
        => await FindComment(commentId, cancellationToken);
 
+        /// <summary>
+        /// به‌روزرسانی اطلاعات یک نظر
+        /// </summary>
         public async Task<bool> UpdateAsync(CommentUpdateDto commentUpdateDto, CancellationToken cancellationToken)
         {
             var targetModel = await FindComment(commentUpdateDto.Id, cancellationToken);
@@ -94,6 +111,10 @@
 
             return true;
         }
+
+        /// <summary>
+        /// تعیین امتیاز برای یک متخصص
+        /// </summary>
         public async Task<bool> SetScoreAsync(int expertId, int score, CancellationToken cancellationToken)
         {
             var targetModel = await _context.Comments.FirstOrDefaultAsync(c => c.ExpertId == expertId, cancellationToken);
@@ -101,18 +122,30 @@
             await _context.SaveChangesAsync(cancellationToken);
             return true;
         }
+
+        /// <summary>
+        /// پذیرش یک نظر
+        /// </summary>
         public async Task AcceptCommentAsync(int commentId, CancellationToken cancellationToken)
         {
             var targetModel = await FindComment(commentId, cancellationToken);
             targetModel.IsAccept = true;
             await _context.SaveChangesAsync(cancellationToken);
         }
+
+        /// <summary>
+        /// رد یک نظر
+        /// </summary>
         public async Task RejectCommentAsync(int commentId, CancellationToken cancellationToken)
         {
             var targetModel = await FindComment(commentId, cancellationToken);
             targetModel.IsAccept = false;
             await _context.SaveChangesAsync(cancellationToken);
         }
+
+        /// <summary>
+        /// دریافت آخرین نظرات به ترتیب زمان ایجاد
+        /// </summary>
         public async Task<List<RecentCommentDto>> GetRecentCommentsAsync(int count, CancellationToken cancellationToken)
         {
             var recentComments = await _context.Comments.
@@ -129,9 +162,16 @@
                 .ToListAsync(cancellationToken);
             return recentComments;
         }
+
+        /// <summary>
+        /// شمارش کل نظرات
+        /// </summary>
         public async Task<int> CommentCountAsync(CancellationToken cancellationToken)
           => await _context.Comments.CountAsync(cancellationToken);
 
+        /// <summary>
+        /// پیدا کردن یک نظر بر اساس شناسه
+        /// </summary>
         private async Task<Comment> FindComment(int id, CancellationToken cancellationToken)
      => await _context.Comments.FirstOrDefaultAsync(a => a.Id == id, cancellationToken);
     }

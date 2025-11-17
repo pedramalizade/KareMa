@@ -5,5 +5,6 @@
         public Admin? Admin { get; set; }
         public Customer? Customer { get; set; }
         public Expert? Expert { get; set; }
+        public bool IsActive { get; set; } = true;
     }
 }

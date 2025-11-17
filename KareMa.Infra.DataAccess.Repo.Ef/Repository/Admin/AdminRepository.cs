@@ -1,4 +1,6 @@
-﻿namespace KareMa.Infra.DataAccess.Repo.Ef.Repository
+﻿using Microsoft.EntityFrameworkCore;
+
+namespace KareMa.Infra.DataAccess.Repo.Ef.Repository
 {
     public class AdminRepository : IAdminRepository
     {
@@ -8,6 +10,12 @@
             _context = context;
         }
 
+        /// <summary>
+        /// یک ادمین جدید ایجاد می‌کند.
+        /// </summary>
+        /// <param name="adminCreateDto">اطلاعات ادمین.</param>
+        /// <param name="cancellationToken">توکن لغو عملیات.</param>
+        /// <returns>در صورت موفقیت مقدار true برمی‌گرداند.</returns>
         public async Task<bool> CreateAsync(AdminCreateDto adminCreateDto, CancellationToken cancellationToken)
         {
             var newModel = new Admin()
@@ -22,14 +30,20 @@
             return true;
         }
 
+        /// <summary>
+        /// دریافت موجودی ادمین بر اساس شناسه
+        /// </summary>
         public async Task<decimal> GetAdminBalanceAsync(int adminId, CancellationToken cancellationToken)
         {
             var admin = await _context.Admins
                 .AsNoTracking()
                 .FirstOrDefaultAsync(a => a.Id == adminId && !a.IsDeleted, cancellationToken);
-            return admin?.Balance ?? 0m; 
+            return admin?.Balance ?? 0m;
         }
 
+        /// <summary>
+        /// حذف ادمین
+        /// </summary>
         public async Task<bool> DeleteAsync(int adminId, CancellationToken cancellationToken)
         {
             var targetAdmin = await FindAdmin(adminId, cancellationToken);
@@ -39,9 +53,15 @@
 
         }
 
+        /// <summary>
+        /// دریافت لیست همه ادمین ها
+        /// </summary>
         public async Task<List<Admin>> GetAllAsync(CancellationToken cancellationToken)
        => await _context.Admins.AsNoTracking().ToListAsync(cancellationToken);
 
+        /// <summary>
+        /// آپدیت اطلاعات ادمین
+        /// </summary>
         public async Task<AdminUpdateDto> AdminUpdateInfoAsync(int id, CancellationToken cancellationToken)
         {
             var m = await _context.Admins.Select(a => new AdminUpdateDto
@@ -57,9 +77,15 @@
             return m;
         }
 
+        /// <summary>
+        /// دریافت ادمین بر اساس شناسه
+        /// </summary>
         public async Task<Admin> GetByIdAsync(int adminId, CancellationToken cancellationToken)
           => await FindAdmin(adminId, cancellationToken);
 
+        /// <summary>
+        /// به‌روزرسانی اطلاعات ادمین
+        /// </summary>
         public async Task<bool> UpdateAsync(AdminUpdateDto adminUpdateDto, CancellationToken cancellationToken)
         {
             var targetModel = _context.Admins.FirstOrDefault(a => a.Id == adminUpdateDto.Id);
@@ -70,6 +96,10 @@
             _context.SaveChanges();
             return true;
         }
+
+        /// <summary>
+        /// پیدا کردن ادمین بر اساس شناسه
+        /// </summary>
         private async Task<Admin> FindAdmin(int id, CancellationToken cancellationToken)
       => await _context.Admins.AsNoTracking().FirstOrDefaultAsync(a => a.Id == id);
     }
