@@ -9,6 +9,8 @@
             _context = context;
             _logger = logger;
         }
+
+        /// <summary>ایجاد مشتری جدید.</summary>
         public async Task<bool> CreateAsync(CustomerCreateDto customerCreateDto, CancellationToken cancellationToken)
         {
             var newModel = new Customer()
@@ -29,6 +31,7 @@
             return true;
         }
 
+        /// <summary>حذف نرم مشتری.</summary>
         public async Task<bool> DeleteAsync(int customerId, CancellationToken cancellationToken)
         {
             _logger.LogInformation("حذف مشتری آغاز شد.", customerId);
@@ -47,6 +50,7 @@
             return true;
         }
 
+        /// <summary>دریافت مشتریان فعال.</summary>
         public async Task<List<GetCustomerDto>> GetAllAsync(CancellationToken cancellationToken)
         {
             var customers = await _context.Customers
@@ -65,11 +69,13 @@
             return customers;
         }
 
+        /// <summary>دریافت مشتری با شناسه.</summary>
         public async Task<Customer> GetByIdAsync(int customerId, CancellationToken cancellationToken)
         {
             return await FindCustomer(customerId, cancellationToken);
         }
 
+        /// <summary>به‌روزرسانی اطلاعات مشتری.</summary>
         public async Task<bool> UpdateAsync(CustomerUpdateDto customerUpdateDto, CancellationToken cancellationToken)
         {
             _logger.LogInformation("به‌روزرسانی مشتری آغاز شد.", customerUpdateDto.Id);
@@ -124,6 +130,7 @@
             }
         }
 
+        /// <summary>دریافت خلاصه اطلاعات مشتری.</summary>
         public async Task<CustomerSummaryDto> GetCustomerSummaryAsync(int id, CancellationToken cancellationToken)
         {
             var target = await _context.Customers.Where(a => a.Id == id && a.IsDeleted == false)
@@ -146,6 +153,8 @@
             }
             return new CustomerSummaryDto();
         }
+
+        /// <summary>اطلاعات لازم فرم ویرایش مشتری.</summary>
         public async Task<CustomerUpdateDto> GetCustomerUpdateInfoAsync(int customerId, CancellationToken cancellationToken)
         {
             var targetCustomer = await _context.Customers
@@ -174,17 +183,24 @@
             return targetCustomer;
         }
 
+        /// <summary>یافتن شناسه مشتری با AppUserId.</summary>
         public async Task<int> FindCustomerIdWithApplicationUser(int appUserId, CancellationToken cancellationToken)
         {
             var targetCustomer = await _context.Customers.FirstOrDefaultAsync(c => c.AppUserId == appUserId, cancellationToken);
             var customerId = targetCustomer.Id;
             return customerId;
         }
+
+        /// <summary>تعداد کل مشتریان.</summary>
         public async Task<int> CustomerCountAsync(CancellationToken cancellationToken)
   => await _context.Customers.CountAsync(cancellationToken);
+
+
+        /// <summary>جستجوی مشتری با شناسه.</summary>
         private async Task<Customer> FindCustomer(int id, CancellationToken cancellationToken)
      => await _context.Customers.FirstOrDefaultAsync(a => a.Id == id, cancellationToken);
 
+        /// <summary>دریافت اطلاعات مشتری برای ویرایش.</summary>
         public async Task<CustomerUpdateDto?> CustomerUpdateInfoAsync(int id, CancellationToken cancellationToken)
         {
             return await _context.Customers.Select(a => new CustomerUpdateDto
@@ -200,6 +216,8 @@
 
             }).FirstOrDefaultAsync(a => a.Id == id, cancellationToken);
         }
+
+        /// <summary>آپدیت موجودی مشتری.</summary>
         public async Task UpdateBalanceAsync(int customerId, decimal newBalance, CancellationToken cancellationToken)
         {
             _logger.LogInformation("به‌روزرسانی موجودی مشتری به مقدار آغاز شد.", customerId, newBalance);
@@ -219,6 +237,7 @@
             _logger.LogInformation("موجودی مشتری با موفقیت به‌روزرسانی شد.", customerId);
         }
 
+        /// <summary>دریافت مشتری غیرحذف‌شده.</summary>
         public async Task<Customer> GetCustomerByIdAsync(int customerId, CancellationToken cancellationToken)
         {
             _logger.LogInformation("در حال دریافت اطلاعات مشتری با شناسه ", customerId);
