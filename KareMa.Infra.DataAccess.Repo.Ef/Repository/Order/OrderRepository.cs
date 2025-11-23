@@ -7,6 +7,7 @@
         {
             _context = context;
         }
+        /// <summary>ایجاد سفارش.</summary>
         public async Task<bool> CreateAsync(OrderCreateDto orderCreateDto, CancellationToken cancellationToken)
         {
             var newModel = new Order()
@@ -24,7 +25,7 @@
             await _context.SaveChangesAsync(cancellationToken);
             return true;
         }
-
+        /// <summary>حذف منطقی سفارش.</summary>
         public async Task<bool> DeleteAsync(int orderId, CancellationToken cancellationToken)
         {
             var targetModel = await FindOrder(orderId, cancellationToken);
@@ -32,7 +33,7 @@
             await _context.SaveChangesAsync(cancellationToken);
             return true;
         }
-
+        /// <summary>دریافت همه سفارش‌ها.</summary>
         public async Task<List<GetOrderDto>> GetAllAsync(CancellationToken cancellationToken)
         {
             var orders = await _context.Orders
@@ -56,10 +57,11 @@
             return orders;
         }
 
+        /// <summary>دریافت سفارش با شناسه.</summary>
         public async Task<Order> GetByIdAsync(int orderId, CancellationToken cancellationToken)
             => await FindOrder(orderId, cancellationToken);
 
-
+        /// <summary>به‌روزرسانی سفارش.</summary>
         public async Task<bool> UpdateAsync(OrderUpdateDto orderUpdateDto, CancellationToken cancellationToken)
         {
             var targetModel = await FindOrder(orderUpdateDto.Id, cancellationToken);
@@ -77,6 +79,7 @@
 
             return true;
         }
+        /// <summary>تغییر وضعیت سفارش.</summary>
         public async Task<bool> ChangeStatusAsync(StatusEnum status, int orderId, CancellationToken cancellationToken)
         {
             var targetModel = await FindOrder(orderId, cancellationToken);
@@ -93,7 +96,7 @@
             await _context.SaveChangesAsync(cancellationToken);
             return true;
         }
-
+        /// <summary>وضعیت‌های مجاز بعدی.</summary>
         private List<StatusEnum> GetAllowedStatuses(StatusEnum currentStatus)
         {
             switch (currentStatus)
@@ -114,10 +117,10 @@
                     return new List<StatusEnum> { currentStatus };
             }
         }
-
+        /// <summary>تعداد سفارش‌ها.</summary>
         public async Task<int> OrderCountAsync(CancellationToken cancellationToken)
           => await _context.Orders.CountAsync(cancellationToken);
-
+        /// <summary>سفارش‌های مشتری.</summary>
         public async Task<List<GetOrderDto>> GetOrdersAsync(int customerId, CancellationToken cancellationToken)
         {
             var target = await _context.Orders.Where(o => o.Customer.Id == customerId && o.IsDeleted == false)
@@ -145,7 +148,7 @@
 
             return target;
         }
-
+        /// <summary>تأیید سفارش.</summary>
         public async Task AcceptOrderAsync(int orderId, CancellationToken cancellationToken)
         {
             var target = await _context.Orders.FirstOrDefaultAsync(o => o.Id == orderId, cancellationToken);
@@ -153,7 +156,7 @@
 
             await _context.SaveChangesAsync(cancellationToken);
         }
-
+        /// <summary>انجام‌شدن سفارش.</summary>
         public async Task DoneOrderAsync(int id, CancellationToken cancellationToken)
         {
             var targetOrder = await _context.Orders.FirstOrDefaultAsync(o => o.Id == id, cancellationToken);
@@ -162,7 +165,7 @@
 
             await _context.SaveChangesAsync(cancellationToken);
         }
-
+        /// <summary>سفارش‌ها بر اساس سرویس.</summary>
         public async Task<List<OrdersByServiceIdsDto>> GetOrdersByServiceIdsAsync(List<int> serviceIds, CancellationToken cancellationToken)
         {
             return await _context.Orders.Where(o => serviceIds.Contains(o.ServiceId))
@@ -182,6 +185,7 @@
                   }).ToListAsync(cancellationToken);
         }
 
+        /// <summary>آیا سفارش انجام شده؟</summary>
         public async Task<bool> OrderIsDoneAsync(int orderId, CancellationToken cancellationToken)
         {
             var targetOrder = await _context.Orders.FirstOrDefaultAsync(o => o.Id == orderId, cancellationToken);
@@ -190,7 +194,7 @@
 
             return false;
         }
-
+        /// <summary>جستجوی سفارش.</summary>
         private async Task<Order> FindOrder(int id, CancellationToken cancellationToken)
           => await _context.Orders.FirstOrDefaultAsync(a => a.Id == id, cancellationToken);
     }

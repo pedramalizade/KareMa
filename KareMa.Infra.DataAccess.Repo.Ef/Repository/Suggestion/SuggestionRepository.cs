@@ -7,6 +7,7 @@
         {
             _context = context;
         }
+        /// <summary>ایجاد پیشنهاد.</summary>
         public async Task<bool> CreateAsync(SuggestionCreateDto suggestionCreateDto, CancellationToken cancellationToken)
         {
             var order = await _context.Orders
@@ -39,7 +40,7 @@
             await _context.SaveChangesAsync(cancellationToken);
             return true;
         }
-
+        /// <summary>حذف منطقی پیشنهاد.</summary>
         public async Task<bool> DeleteAsync(int suggestionId, CancellationToken cancellationToken)
         {
             var targetModel = await FindSuggestion(suggestionId, cancellationToken);
@@ -47,17 +48,18 @@
             await _context.SaveChangesAsync(cancellationToken);
             return true;
         }
-
+        /// <summary>دریافت همه پیشنهادها.</summary>
         public async Task<List<Suggestion>> GetAllAsync(CancellationToken cancellationToken)
         {
             return await _context.Suggestions.AsNoTracking().ToListAsync(cancellationToken);
         }
-
+        /// <summary>دریافت پیشنهاد با شناسه.</summary>
         public async Task<Suggestion> GetByIdAsync(int suggestionId, CancellationToken cancellationToken)
         {
             return await FindSuggestion(suggestionId, cancellationToken);
         }
 
+        /// <summary>ویرایش پیشنهاد.</summary>
         public async Task<bool> UpdateAsync(SuggestionUpdateDto suggestionUpdateDto, CancellationToken cancellationToken)
         {
             var targetModel = await FindSuggestion(suggestionUpdateDto.Id, cancellationToken);
@@ -69,7 +71,7 @@
 
             return true;
         }
-
+        /// <summary>تأیید پیشنهاد منتخب.</summary>
         public async Task<bool> AcceptSuggestionAsync(int suggestionId, int orderId, CancellationToken cancellationToken)
         {
             var targetSuggestion = await _context.Suggestions
@@ -97,12 +99,12 @@
             await _context.SaveChangesAsync(cancellationToken);
             return true;
         }
-
+        /// <summary>تعداد پیشنهادهای تأییدشده.</summary>
         public async Task<int> ConfrimedStatusCountAsync(int orderId, CancellationToken cancellationToken)
         {
             return await _context.Suggestions.Where(s => s.OrderId == orderId && s.Status == StatusEnum.Confirmed).CountAsync(cancellationToken);
         }
-
+        /// <summary>پیشنهادهای یک متخصص.</summary>
         public async Task<List<SuggestionsByExpertIdDto>> GetSuggestionsByExperIdAsync(int id, CancellationToken cancellationToken)
         {
             return await _context.Suggestions.Where(s => s.ExpertId == id)
@@ -125,7 +127,7 @@
                 })
                .ToListAsync(cancellationToken);
         }
-
+        /// <summary>اتمام پیشنهاد.</summary>
         public async Task DoneSuggestionAsync(int id, CancellationToken cancellationToken)
         {
             var targetSuggestion = await _context.Suggestions.FirstOrDefaultAsync(s => s.Id == id, cancellationToken);
@@ -133,7 +135,7 @@
 
             await _context.SaveChangesAsync(cancellationToken);
         }
-
+        /// <summary>تغییر وضعیت پیشنهاد.</summary>
         public async Task<bool> ChangeStatusAsync(StatusEnum status, int orderId, CancellationToken cancellationToken)
         {
             var targetModel = await _context.Suggestions.FirstOrDefaultAsync(x => x.OrderId == orderId, cancellationToken);
@@ -147,10 +149,10 @@
             await _context.SaveChangesAsync(cancellationToken);
             return true;
         }
-
+        /// <summary>جستجوی پیشنهاد.</summary>
         private async Task<Suggestion> FindSuggestion(int id, CancellationToken cancellationToken)
        => await _context.Suggestions.FirstOrDefaultAsync(a => a.Id == id, cancellationToken);
-
+        /// <summary>دریافت پیشنهاد با جزئیات.</summary>
         public async Task<SuggestionDto> GetSuggestionByIdAsync(int suggestionId, CancellationToken cancellationToken)
         {
             var suggestion = await _context.Suggestions

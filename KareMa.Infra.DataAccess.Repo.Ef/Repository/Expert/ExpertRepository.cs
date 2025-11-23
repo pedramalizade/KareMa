@@ -9,6 +9,8 @@
             _context = context;
             _logger = logger;
         }
+
+        /// <summary>ایجاد متخصص.</summary>
         public async Task<bool> CreateAsync(ExpertCreateDto expertCreateDto, CancellationToken cancellationToken)
         {
             try
@@ -55,6 +57,7 @@
             }
         }
 
+        /// <summary>حذف منطقی متخصص.</summary>
         public async Task<bool> DeleteAsync(int expertId, CancellationToken cancellationToken)
         {
 
@@ -70,6 +73,7 @@
             return true;
         }
 
+        /// <summary>دریافت همه متخصصان.</summary>
         public async Task<List<Expert>> GetAllAsync(CancellationToken cancellationToken)
         {
             var experts = await _context.Experts
@@ -80,9 +84,10 @@
             return experts;
         }
 
+        /// <summary>دریافت متخصص با شناسه.</summary>
         public async Task<Expert> GetByIdAsync(int expertId, CancellationToken cancellationToken)
             => await FindExpert(expertId, cancellationToken);
-
+        /// <summary>به‌روزرسانی متخصص.</summary>
         public async Task<bool> UpdateAsync(ExpertUpdateDto expertUpdateDto, CancellationToken cancellationToken)
         {
             var targetExpert = await _context.Experts
@@ -141,10 +146,10 @@
                 throw new Exception("خطا در ذخیره تغییرات در دیتابیس", ex);
             }
         }
-
+        /// <summary>تعداد متخصصان.</summary>
         public async Task<int> ExpertCountAsync(CancellationToken cancellationToken)
             => await _context.Experts.CountAsync(cancellationToken);
-
+        /// <summary>خلاصه متخصص.</summary>
         public async Task<ExpertSummaryDto> GetExpertSummaryAsync(int id, CancellationToken cancellationToken)
         {
             _logger.LogInformation("در حال دریافت خلاصه اطلاعات متخصص با شناسه", id);
@@ -188,10 +193,10 @@
 
             return expert;
         }
-
+        /// <summary>تعداد کامنت‌ها.</summary>
         public async Task<int> ExpertCommentCountAsync(int id, CancellationToken cancellationToken)
             => await _context.Experts.Where(e => e.Id == id).SelectMany(e => e.Comments).CountAsync();
-
+        /// <summary>میانگین امتیاز.</summary>
         public async Task<int> ExpertAverageScoresAsync(int id, CancellationToken cancellationToken)
         {
             var expert = await _context.Experts.Include(e => e.Comments).FirstOrDefaultAsync(e => e.Id == id, cancellationToken);
@@ -200,7 +205,7 @@
 
             return (int)expert.Comments.Select(c => c.Score).Average();
         }
-
+        /// <summary>تعداد سفارشات انجام‌شده.</summary>
         public async Task<int> ExpertOrderCountAsync(int id, CancellationToken cancellationToken)
         {
             var suggestions = await _context.Experts.Where(e => e.Id == id)
@@ -210,10 +215,11 @@
             return suggestions.Count(o => o.Status == StatusEnum.Done);
         }
 
+        /// <summary>شناسه سرویس‌ها.</summary>
         public async Task<List<int>> GetExpertServiceIdsAsync(int id, CancellationToken cancellationToken)
             => (await _context.Experts.Where(e => e.Id == id).SelectMany(e => e.Services).ToListAsync(cancellationToken))
                 .Select(s => s.Id).ToList();
-
+        /// <summary>اطلاعات ویرایش.</summary>
         public async Task<ExpertUpdateDto> ExpertUpdateInfoAsync(int id, CancellationToken cancellationToken)
         {
             var result = await _context.Experts.Include(e => e.Services)
@@ -235,13 +241,13 @@
             _logger.LogInformation("اطلاعات به‌روزرسانی متخصص {ExpertId}: سرویس‌ها = {ServiceIds}", id, string.Join(", ", result?.ServiceIds ?? new List<int>()));
             return result;
         }
-
+        /// <summary>نام متخصص.</summary>
         public async Task<ExpertNameDto> GetExpertNameAsync(int id, CancellationToken cancellationToken)
             => await _context.Experts.AsNoTracking()
                 .Where(e => e.Id == id)
                 .Select(e => new ExpertNameDto { FirstName = e.FirstName, LastName = e.LastName, Balance = e.Balance })
                 .FirstOrDefaultAsync(cancellationToken) ?? new ExpertNameDto();
-
+        /// <summary>دریافت متخصص.</summary>
         public async Task<Expert> GetExpertByIdAsync(int expertId, CancellationToken cancellationToken)
         {
 
@@ -253,7 +259,7 @@
 
             return expert;
         }
-
+        /// <summary>آپدیت موجودی.</summary>
         public async Task UpdateBalanceAsync(int expertId, decimal newBalance, CancellationToken cancellationToken)
         {
             _logger.LogInformation($"در حال به‌روزرسانی موجودی متخصص با شناسه {expertId} به {newBalance}", expertId, newBalance);
@@ -273,6 +279,7 @@
             _logger.LogInformation($"موجودی متخصص با شناسه {expertId} با موفقیت به‌روزرسانی شد.", expertId);
         }
 
+        /// <summary>پیدا کردن متخصص.</summary>
         private async Task<Expert> FindExpert(int id, CancellationToken cancellationToken)
             => await _context.Experts.FirstOrDefaultAsync(e => e.Id == id, cancellationToken);
 
