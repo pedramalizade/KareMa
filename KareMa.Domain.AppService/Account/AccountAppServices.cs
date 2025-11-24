@@ -10,6 +10,9 @@
             _signInManager = signInManager;
             _userManager = userManager;
         }
+        /// <summary>
+        /// ثبت‌نام یک کاربر عادی (مشتری یا متخصص) و اختصاص نقش و Claim مناسب
+        /// </summary>
         public async Task<List<IdentityError>> Register(AccountRegisterDto accountRegisterDto) 
         {
             var role = string.Empty; 
@@ -50,12 +53,18 @@
             if (result.Succeeded) await _userManager.AddToRoleAsync(user, role);
             return (List<IdentityError>)result.Errors;
         }
-
+        /// <summary>
+        /// ورود کاربر با ایمیل و رمز عبور
+        /// </summary>
         public async Task<bool> Login(AccountLoginDto accountLoginDto) 
         {
             var result = await _signInManager.PasswordSignInAsync(accountLoginDto.Email, accountLoginDto.Password, false, lockoutOnFailure: false); 
             return result.Succeeded; 
         }
+
+        /// <summary>
+        /// ایجاد یک نمونه جدید از AppUser
+        /// </summary>
         private AppUser CreateUser() 
         {
             try 
@@ -68,6 +77,9 @@
             }
         }
 
+        /// <summary>
+        /// ثبت‌نام یک کاربر ادمین و اختصاص نقش Admin و Claim مربوطه
+        /// </summary>
         public async Task<List<IdentityError>> AdminRegister(AccountAdminRegisterDto accountAdminRegisterDto)
         {
             var user = CreateUser();
@@ -92,6 +104,9 @@
 
             return (List<IdentityError>)result.Errors;
         }
+        /// <summary>
+        /// دریافت نقش‌های یک کاربر بر اساس ایمیل
+        /// </summary>
         public async Task<IList<string>> GetUserRolesByEmail(string email)
         {
             var user = await _userManager.FindByEmailAsync(email);
