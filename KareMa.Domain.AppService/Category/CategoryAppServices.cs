@@ -9,6 +9,7 @@
             _categoryServices = categoryServices;
             _baseSevices = baseSevices;
         }
+        /// <summary>ایجاد دسته‌بندی جدید همراه با تصویر.</summary>
         public async Task<bool> CreateAsync(CategoryCreateDto categoryCreateDto, IFormFile image, CancellationToken cancellationToken)
         {
             var imageAddress = await _baseSevices.UploadImage(image);
@@ -21,16 +22,22 @@
             categoryCreateDto.Image = imageAddress;
             return await _categoryServices.CreateAsync(categoryCreateDto, cancellationToken);
         }
+        /// <summary>حذف دسته‌بندی.</summary>
         public async Task<bool> DeleteAsync(int serviceCategoryId, CancellationToken cancellationToken)
            => await _categoryServices.DeleteAsync(serviceCategoryId, cancellationToken);
+        /// <summary>دریافت همه دسته‌بندی‌ها.</summary>
         public async Task<List<GetCategoryDto>> GetAllAsync(CancellationToken cancellationToken)
           => await _categoryServices.GetAllAsync(cancellationToken);
+        /// <summary>دریافت دسته‌بندی با شناسه.</summary>
         public async Task<Category> GetByIdAsync(int serviceCategoryId, CancellationToken cancellationToken)
           => await _categoryServices.GetByIdAsync(serviceCategoryId, cancellationToken);
+        /// <summary>نام دسته‌بندی‌ها.</summary>
         public Task<List<CategoryNameDto>> GetCategorisNameAsync(CancellationToken cancellationToken)
      => _categoryServices.GetCategorisNameAsync(cancellationToken);
+        /// <summary>اطلاعات بروزرسانی دسته‌بندی.</summary>
         public async Task<CategoryUpdateDto> ServiceCategoryUpdateInfoAsync(int id, CancellationToken cancellationToken)
   => await _categoryServices.ServiceCategoryUpdateInfoAsync(id, cancellationToken);
+        /// <summary>بروزرسانی دسته‌بندی.</summary>
         public async Task<bool> UpdateAsync(CategoryUpdateDto categoryUpdateDto, IFormFile? image, CancellationToken cancellationToken)
         {
 

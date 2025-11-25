@@ -15,7 +15,17 @@
             _expertAppServices = expertAppServices;
             _suggestionAppServices = suggestionAppServices;
         }
-
+        /// <summary>
+        /// پذیرش یک پیشنهاد و پردازش پرداخت مربوطه:
+        /// - بررسی موجود بودن پیشنهاد و سفارش
+        /// - بررسی موجودی مشتری
+        /// - اعمال تغییرات موجودی مشتری، متخصص و ادمین با محاسبه کمیسیون
+        /// </summary>
+        /// <param name="suggestionId">شناسه پیشنهاد.</param>
+        /// <param name="orderId">شناسه سفارش مربوطه.</param>
+        /// <param name="userCustomerId">شناسه مشتری.</param>
+        /// <param name="cancellationToken">توکن لغو عملیات غیرهمزمان.</param>
+        /// <returns>نتیجه عملیات به صورت <see cref="OperationResult"/>.</returns>
         public async Task<OperationResult> AcceptSuggestionAndProcessPaymentAsync(
             int suggestionId,
             int orderId,

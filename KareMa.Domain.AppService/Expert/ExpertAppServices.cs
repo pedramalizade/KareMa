@@ -12,18 +12,18 @@
             _baseSevices = baseServce;
         }
 
+        /// <summary>دریافت اطلاعات موردنیاز برای بروزرسانی کارشناس.</summary>
         public async Task<ExpertUpdateDto> GetExpertUpdateAsync(int expertId, CancellationToken cancellationToken)
         {
             var dto = await _expertServices.ExpertUpdateInfo(expertId, cancellationToken);
             return dto ?? new ExpertUpdateDto { Id = expertId };
         }
 
+        /// <summary>بروزرسانی پروفایل کارشناس.</summary>
         public async Task<bool> UpdateProfileAsync(ExpertUpdateDto expertUpdateDto, IFormFile? image, string? birthDate, CancellationToken cancellationToken)
         {
             if (!string.IsNullOrEmpty(birthDate))
-            {
                 expertUpdateDto.BirthDate = ParsePersianBirthDate(birthDate);
-            }
 
             if (image != null)
             {
@@ -32,70 +32,92 @@
                     throw new Exception("آپلود تصویر ناموفق بود");
                 expertUpdateDto.Image = imageUrl;
             }
+
             var result = await _expertServices.Update(expertUpdateDto, cancellationToken);
             if (!result) throw new Exception("به‌روزرسانی اطلاعات کارشناس ناموفق بود");
             return true;
         }
 
+        /// <summary>تبدیل تاریخ شمسی به میلادی.</summary>
         private DateTime ParsePersianBirthDate(string birthDate)
         {
             if (!Regex.IsMatch(birthDate, @"^\d{4}/\d{2}/\d{2}$"))
-                throw new FormatException($"فرمت تاریخ '{birthDate}' اشتباه است؛ باید yyyy/MM/dd باشد.");
+                throw new FormatException($"فرمت تاریخ '{birthDate}' اشتباه است.");
 
             var parts = birthDate.Split('/');
-            var year = int.Parse(parts[0]);
-            var month = int.Parse(parts[1]);
-            var day = int.Parse(parts[2]);
             var persianCalendar = new PersianCalendar();
-
-            return persianCalendar.ToDateTime(year, month, day, 0, 0, 0, 0);
+            return persianCalendar.ToDateTime(
+                int.Parse(parts[0]),
+                int.Parse(parts[1]),
+                int.Parse(parts[2]),
+                0, 0, 0, 0
+            );
         }
 
+        /// <summary>ایجاد کارشناس جدید.</summary>
         public async Task<bool> CreateAsync(ExpertCreateDto expertCreateDto, IFormFile Image, CancellationToken cancellationToken)
         {
             string imageAddress = null;
+
             if (Image != null)
             {
                 imageAddress = await _baseSevices.UploadImage(Image);
-                if (string.IsNullOrEmpty(imageAddress))
-                {
-                    return false;
-                }
-            }
-            else
-            {
+                if (string.IsNullOrEmpty(imageAddress)) return false;
             }
 
             expertCreateDto.Image = imageAddress;
+
             try
             {
                 return await _expertServices.Create(expertCreateDto, cancellationToken);
             }
-            catch (Exception ex)
+            catch
             {
                 throw;
             }
         }
+
+        /// <summary>حذف کارشناس.</summary>
         public async Task<bool> DeleteAsync(int expertId, CancellationToken cancellationToken)
-          => await _expertServices.Delete(expertId, cancellationToken);
+            => await _expertServices.Delete(expertId, cancellationToken);
+
+        /// <summary>میانگین امتیازات کارشناس.</summary>
         public async Task<int> ExpertAverageScoresAsync(int id, CancellationToken cancellationToken)
-          => await _expertServices.ExpertAverageScores(id, cancellationToken);
+            => await _expertServices.ExpertAverageScores(id, cancellationToken);
+
+        /// <summary>تعداد نظرات کارشناس.</summary>
         public async Task<int> ExpertCommentCountAsync(int id, CancellationToken cancellationToken)
-          => await _expertServices.ExpertCommentCount(id, cancellationToken);
+            => await _expertServices.ExpertCommentCount(id, cancellationToken);
+
+        /// <summary>تعداد کل کارشناسان.</summary>
         public async Task<int> ExpertCountAsync(CancellationToken cancellationToken)
-          => await _expertServices.ExpertCount(cancellationToken);
+            => await _expertServices.ExpertCount(cancellationToken);
+
+        /// <summary>تعداد سفارشات کارشناس.</summary>
         public async Task<int> ExpertOrderCountAsync(int id, CancellationToken cancellationToken)
-          => await _expertServices.ExpertOrderCount(id, cancellationToken);
+            => await _expertServices.ExpertOrderCount(id, cancellationToken);
+
+        /// <summary>دریافت اطلاعات لازم برای بروزرسانی.</summary>
         public async Task<ExpertUpdateDto> ExpertUpdateInfoAsync(int id, CancellationToken cancellationToken)
-       => await _expertServices.ExpertUpdateInfo(id, cancellationToken);
+            => await _expertServices.ExpertUpdateInfo(id, cancellationToken);
+
+        /// <summary>دریافت تمام کارشناسان.</summary>
         public async Task<List<Expert>> GetAllAsync(CancellationToken cancellationToken)
-          => await _expertServices.GetAll(cancellationToken);
+            => await _expertServices.GetAll(cancellationToken);
+
+        /// <summary>دریافت نام کارشناس.</summary>
         public async Task<ExpertNameDto> GetExpertNameAsync(int id, CancellationToken cancellationToken)
-  => await _expertServices.GetExpertName(id, cancellationToken);
+            => await _expertServices.GetExpertName(id, cancellationToken);
+
+        /// <summary>دریافت کارشناس با شناسه.</summary>
         public async Task<Expert> GetByIdAsync(int expertId, CancellationToken cancellationToken)
-          => await _expertServices.GetById(expertId, cancellationToken);
+            => await _expertServices.GetById(expertId, cancellationToken);
+
+        /// <summary>خلاصه اطلاعات کارشناس.</summary>
         public async Task<ExpertSummaryDto> GetExpertSummaryAsync(int id, CancellationToken cancellationToken)
-          => await _expertServices.GetExpertSummary(id, cancellationToken);
+            => await _expertServices.GetExpertSummary(id, cancellationToken);
+
+        /// <summary>بروزرسانی اطلاعات کارشناس.</summary>
         public async Task<bool> UpdateAsync(ExpertUpdateDto expertUpdateDto, IFormFile? image, CancellationToken cancellationToken)
         {
             if (image != null)
@@ -107,14 +129,17 @@
             }
 
             var result = await _expertServices.Update(expertUpdateDto, cancellationToken);
-            if (!result)
-                throw new Exception("به‌روزرسانی اطلاعات کارشناس ناموفق بود");
+            if (!result) throw new Exception("به‌روزرسانی اطلاعات کارشناس ناموفق بود");
 
             return true;
         }
+
+        /// <summary>دریافت کارشناس با شناسه.</summary>
         public async Task<Expert> GetExpertByIdAsync(int expertId, CancellationToken cancellationToken)
-        => await _expertServices.GetExpertById(expertId, cancellationToken);
+            => await _expertServices.GetExpertById(expertId, cancellationToken);
+
+        /// <summary>بروزرسانی موجودی کارشناس.</summary>
         public async Task UpdateBalanceAsync(int expertId, decimal newBalance, CancellationToken cancellationToken)
-        => await _expertServices.UpdateBalance(expertId, newBalance, cancellationToken);
+            => await _expertServices.UpdateBalance(expertId, newBalance, cancellationToken);
     }
 }
