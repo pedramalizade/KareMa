@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("KareMa.Domain.AppService")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+51d638f7dfd89e236d7667e89d5b712d2341a7fe")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b96fc3d5da78008d4e9af44b53d766f49f2247c8")]
 [assembly: System.Reflection.AssemblyProductAttribute("KareMa.Domain.AppService")]
 [assembly: System.Reflection.AssemblyTitleAttribute("KareMa.Domain.AppService")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
