@@ -18,6 +18,12 @@ namespace KareMa.EndPoint.WebApi.Controllers
             _subCategoryAppServices = subCategoryAppServices;
         }
 
+        /// <summary>
+        /// ایجاد یک سرویس جدید
+        /// </summary>
+        /// <param name="serviceCreate">مدل حاوی اطلاعات سرویس جدید</param>
+        /// <param name="cancellationToken">توکن لغو عملیات</param>
+        /// <returns>پیام موفقیت یا خطا در ایجاد سرویس</returns>
         [HttpPost("create")]
         public async Task<IActionResult> CreateService([FromBody] ServiceCreateDto serviceCreate, CancellationToken cancellationToken)
         {
@@ -28,6 +34,11 @@ namespace KareMa.EndPoint.WebApi.Controllers
             return Ok(new { message = "سرویس با موفقیت ایجاد شد." });
         }
 
+        /// <summary>
+        /// دریافت همه سرویس‌ها
+        /// </summary>
+        /// <param name="cancellationToken">توکن لغو عملیات</param>
+        /// <returns>لیست تمام سرویس‌ها</returns>
         [HttpGet("all")]
         public async Task<ActionResult<List<GetServiceDto>>> GetAllServices(CancellationToken cancellationToken)
         {
@@ -35,6 +46,12 @@ namespace KareMa.EndPoint.WebApi.Controllers
             return Ok(services);
         }
 
+        /// <summary>
+        /// حذف یک سرویس با شناسه مشخص
+        /// </summary>
+        /// <param name="id">شناسه سرویس</param>
+        /// <param name="cancellationToken">توکن لغو عملیات</param>
+        /// <returns>پیام موفقیت یا خطا در حذف سرویس</returns>
         [HttpDelete("{id:int}")]
         public async Task<IActionResult> DeleteService(int id, CancellationToken cancellationToken)
         {
@@ -42,6 +59,12 @@ namespace KareMa.EndPoint.WebApi.Controllers
             return Ok(new { message = "سرویس حذف شد." });
         }
 
+        /// <summary>
+        /// دریافت اطلاعات یک سرویس برای بروزرسانی
+        /// </summary>
+        /// <param name="id">شناسه سرویس</param>
+        /// <param name="cancellationToken">توکن لغو عملیات</param>
+        /// <returns>مدل اطلاعات سرویس یا پیغام خطا در صورت عدم وجود</returns>
         [HttpGet("{id:int}")]
         public async Task<ActionResult<ServiceUpdateDto>> GetServiceById(int id, CancellationToken cancellationToken)
         {
@@ -51,6 +74,12 @@ namespace KareMa.EndPoint.WebApi.Controllers
             return Ok(service);
         }
 
+        /// <summary>
+        /// بروزرسانی اطلاعات یک سرویس
+        /// </summary>
+        /// <param name="serviceUpdate">مدل حاوی اطلاعات جدید سرویس</param>
+        /// <param name="cancellationToken">توکن لغو عملیات</param>
+        /// <returns>پیام موفقیت یا خطا بعد از بروزرسانی</returns>
         [HttpPut("update")]
         public async Task<IActionResult> UpdateService([FromBody] ServiceUpdateDto serviceUpdate, CancellationToken cancellationToken)
         {
@@ -61,6 +90,11 @@ namespace KareMa.EndPoint.WebApi.Controllers
             return Ok(new { message = "سرویس با موفقیت آپدیت شد." });
         }
 
+        /// <summary>
+        /// دریافت نام زیرشاخه‌های سرویس‌ها
+        /// </summary>
+        /// <param name="cancellationToken">توکن لغو عملیات</param>
+        /// <returns>لیست نام زیرشاخه‌ها</returns>
         [HttpGet("subcategories")]
         public async Task<IActionResult> GetSubCategories(CancellationToken cancellationToken)
         {

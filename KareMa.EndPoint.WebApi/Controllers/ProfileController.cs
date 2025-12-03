@@ -12,6 +12,11 @@
             _adminAppServices = adminAppServices;
         }
 
+        /// <summary>
+        /// دریافت اطلاعات پروفایل ادمین وارد شده
+        /// </summary>
+        /// <param name="cancellationToken">توکن لغو عملیات</param>
+        /// <returns>اطلاعات پروفایل ادمین در صورت موفقیت، یا پیام خطا در صورت عدم موفقیت</returns>
         [HttpGet]
         public async Task<IActionResult> GetProfile(CancellationToken cancellationToken)
         {
@@ -31,6 +36,12 @@
             }
         }
 
+        /// <summary>
+        /// بروزرسانی اطلاعات پروفایل ادمین
+        /// </summary>
+        /// <param name="adminUpdate">مدل حاوی اطلاعات جدید ادمین</param>
+        /// <param name="cancellationToken">توکن لغو عملیات</param>
+        /// <returns>پیام موفقیت یا خطا بعد از تلاش بروزرسانی</returns>
         [HttpPost("update")]
         public async Task<IActionResult> UpdateProfile([FromBody] AdminUpdateDto adminUpdate, CancellationToken cancellationToken)
         {

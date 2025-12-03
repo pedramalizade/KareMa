@@ -14,6 +14,11 @@ namespace KareMa.EndPoint.WebApi.Controllers
             _commentAppServices = commentAppServices;
         }
 
+        /// <summary>
+        /// دریافت تمام کامنت‌ها.
+        /// </summary>
+        /// <param name="cancellationToken">توکن لغو عملیات.</param>
+        /// <returns>لیست کامل کامنت‌ها.</returns>
         [HttpGet]
         public async Task<ActionResult<List<GetCommentsDto>>> GetAll(CancellationToken cancellationToken)
         {
@@ -21,6 +26,12 @@ namespace KareMa.EndPoint.WebApi.Controllers
             return Ok(comments);
         }
 
+        /// <summary>
+        /// تأیید یک کامنت بر اساس شناسه.
+        /// </summary>
+        /// <param name="id">شناسه کامنت.</param>
+        /// <param name="cancellationToken">توکن لغو عملیات.</param>
+        /// <returns>پیام موفقیت یا خطا.</returns>
         [HttpPut("{id:int}/accept")]
         public async Task<IActionResult> AcceptComment(int id, CancellationToken cancellationToken)
         {
@@ -35,6 +46,12 @@ namespace KareMa.EndPoint.WebApi.Controllers
             }
         }
 
+        /// <summary>
+        /// رد یک کامنت بر اساس شناسه.
+        /// </summary>
+        /// <param name="id">شناسه کامنت.</param>
+        /// <param name="cancellationToken">توکن لغو عملیات.</param>
+        /// <returns>پیام موفقیت یا خطا.</returns>
         [HttpPut("{id:int}/reject")]
         public async Task<IActionResult> RejectComment(int id, CancellationToken cancellationToken)
         {
@@ -49,6 +66,12 @@ namespace KareMa.EndPoint.WebApi.Controllers
             }
         }
 
+        /// <summary>
+        /// حذف یک کامنت بر اساس شناسه.
+        /// </summary>
+        /// <param name="id">شناسه کامنت.</param>
+        /// <param name="cancellationToken">توکن لغو عملیات.</param>
+        /// <returns>پیام موفقیت یا خطا.</returns>
         [HttpDelete("{id:int}")]
         public async Task<IActionResult> DeleteComment(int id, CancellationToken cancellationToken)
         {

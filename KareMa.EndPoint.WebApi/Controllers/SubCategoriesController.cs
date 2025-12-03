@@ -18,6 +18,13 @@ namespace KareMa.EndPoint.WebApi.Controllers
             _categoryAppServices = categoryAppServices;
         }
 
+        /// <summary>
+        /// ایجاد یک زیرشاخه جدید
+        /// </summary>
+        /// <param name="subCategoryCreate">مدل حاوی اطلاعات زیرشاخه جدید</param>
+        /// <param name="image">تصویر مربوط به زیرشاخه</param>
+        /// <param name="cancellationToken">توکن لغو عملیات</param>
+        /// <returns>پیام موفقیت یا خطا در ایجاد زیرشاخه</returns>
         [HttpPost("create")]
         public async Task<IActionResult> CreateSubCategory([FromForm] SubCategoryCreateDto subCategoryCreate, IFormFile image, CancellationToken cancellationToken)
         {
@@ -28,6 +35,11 @@ namespace KareMa.EndPoint.WebApi.Controllers
             return Ok(new { message = "SubCategory با موفقیت ایجاد شد." });
         }
 
+        /// <summary>
+        /// دریافت همه زیرشاخه‌ها
+        /// </summary>
+        /// <param name="cancellationToken">توکن لغو عملیات</param>
+        /// <returns>لیست تمام زیرشاخه‌ها</returns>
         [HttpGet("all")]
         public async Task<ActionResult<List<GetSubCategoryDto>>> GetAllSubCategories(CancellationToken cancellationToken)
         {
@@ -35,6 +47,12 @@ namespace KareMa.EndPoint.WebApi.Controllers
             return Ok(subCategories);
         }
 
+        /// <summary>
+        /// حذف یک زیرشاخه با شناسه مشخص
+        /// </summary>
+        /// <param name="id">شناسه زیرشاخه</param>
+        /// <param name="cancellationToken">توکن لغو عملیات</param>
+        /// <returns>پیام موفقیت یا خطا در حذف زیرشاخه</returns>
         [HttpDelete("{id:int}")]
         public async Task<IActionResult> DeleteSubCategory(int id, CancellationToken cancellationToken)
         {
@@ -42,6 +60,12 @@ namespace KareMa.EndPoint.WebApi.Controllers
             return Ok(new { message = "SubCategory حذف شد." });
         }
 
+        /// <summary>
+        /// دریافت اطلاعات یک زیرشاخه برای بروزرسانی
+        /// </summary>
+        /// <param name="id">شناسه زیرشاخه</param>
+        /// <param name="cancellationToken">توکن لغو عملیات</param>
+        /// <returns>مدل اطلاعات زیرشاخه یا پیغام خطا در صورت عدم وجود</returns>
         [HttpGet("{id:int}")]
         public async Task<ActionResult<SubCategoryUpdateDto>> GetSubCategoryById(int id, CancellationToken cancellationToken)
         {
@@ -54,6 +78,13 @@ namespace KareMa.EndPoint.WebApi.Controllers
             return Ok(subCategory);
         }
 
+        /// <summary>
+        /// بروزرسانی اطلاعات یک زیرشاخه
+        /// </summary>
+        /// <param name="subCategoryUpdate">مدل حاوی اطلاعات جدید زیرشاخه</param>
+        /// <param name="image">تصویر جدید (اختیاری)</param>
+        /// <param name="cancellationToken">توکن لغو عملیات</param>
+        /// <returns>پیام موفقیت یا خطا بعد از بروزرسانی</returns>
         [HttpPut("update")]
         public async Task<IActionResult> UpdateSubCategory([FromForm] SubCategoryUpdateDto subCategoryUpdate, IFormFile? image, CancellationToken cancellationToken)
         {
@@ -71,6 +102,11 @@ namespace KareMa.EndPoint.WebApi.Controllers
             }
         }
 
+        /// <summary>
+        /// دریافت لیست دسته‌بندی‌ها برای انتخاب در فرم زیرشاخه
+        /// </summary>
+        /// <param name="cancellationToken">توکن لغو عملیات</param>
+        /// <returns>لیست نام دسته‌بندی‌ها</returns>
         [HttpGet("categories")]
         public async Task<IActionResult> GetCategories(CancellationToken cancellationToken)
         {

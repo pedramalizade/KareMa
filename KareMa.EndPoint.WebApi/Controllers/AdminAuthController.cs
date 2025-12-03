@@ -45,6 +45,12 @@ namespace KareMa.EndPoint.WebApi.Controllers
             public string? RedirectUrl { get; set; }
         }
 
+        /// <summary>
+        /// عملیات لاگین کاربر با استفاده از نام کاربری و رمز عبور.
+        /// </summary>
+        /// <param name="request">اطلاعات نام کاربری و رمز عبور.</param>
+        /// <param name="returnUrl">آدرس اختیاری برای ریدایرکت پس از ورود.</param>
+        /// <returns>نتیجه ورود شامل وضعیت موفقیت، پیام و آدرس ریدایرکت.</returns>
         [HttpPost("login")]
         public async Task<ActionResult<LoginResponse>> Login([FromBody] LoginRequest request, string returnUrl = null)
         {
@@ -71,6 +77,11 @@ namespace KareMa.EndPoint.WebApi.Controllers
             });
         }
 
+        /// <summary>
+        /// ثبت‌نام و ایجاد کاربر جدید از نوع ادمین.
+        /// </summary>
+        /// <param name="request">اطلاعات موردنیاز برای ثبت‌نام کاربر.</param>
+        /// <returns>وضعیت عملیات ثبت‌نام به‌همراه پیام خطا یا موفقیت.</returns>
         [HttpPost("register")]
         public async Task<IActionResult> Register([FromBody] RegisterRequest request)
         {
@@ -105,6 +116,10 @@ namespace KareMa.EndPoint.WebApi.Controllers
             return Ok(new { Success = true, Message = "ادمین با موفقیت ثبت شد" });
         }
 
+        /// <summary>
+        /// خروج کاربر از سیستم.
+        /// </summary>
+        /// <returns>نتیجه عملیات خروج.</returns>
         [HttpPost("logout")]
         public async Task<IActionResult> Logout()
         {

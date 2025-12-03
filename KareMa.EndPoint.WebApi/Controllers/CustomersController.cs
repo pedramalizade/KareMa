@@ -16,11 +16,15 @@ namespace KareMa.EndPoint.WebApi.Controllers
             _cityAppService = cityAppService;
         }
 
+        /// <summary>
+        /// ایجاد یک مشتری جدید همراه با تصویر.
+        /// </summary>
+        /// <param name="customerCreate">اطلاعات موردنیاز برای ایجاد مشتری.</param>
+        /// <param name="image">تصویر مشتری (اختیاری).</param>
+        /// <param name="cancellationToken">توکن لغو عملیات.</param>
+        /// <returns>نتیجه عملیات ایجاد مشتری.</returns>
         [HttpPost("create")]
-        public async Task<IActionResult> CreateCustomer(
-            [FromForm] CustomerCreateDto customerCreate,
-            [FromForm] IFormFile? image,
-            CancellationToken cancellationToken)
+        public async Task<IActionResult> CreateCustomer([FromForm] CustomerCreateDto customerCreate,[FromForm] IFormFile? image,CancellationToken cancellationToken)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
@@ -33,6 +37,11 @@ namespace KareMa.EndPoint.WebApi.Controllers
             return Ok(new { message = "مشتری با موفقیت ثبت شد" });
         }
 
+        /// <summary>
+        /// دریافت لیست تمام مشتریان.
+        /// </summary>
+        /// <param name="cancellationToken">توکن لغو عملیات.</param>
+        /// <returns>لیست مشتریان.</returns>
         [HttpGet("all")]
         public async Task<ActionResult<List<GetCustomerDto>>> GetAllCustomers(CancellationToken cancellationToken)
         {
@@ -40,6 +49,12 @@ namespace KareMa.EndPoint.WebApi.Controllers
             return Ok(customers);
         }
 
+        /// <summary>
+        /// حذف مشتری بر اساس شناسه.
+        /// </summary>
+        /// <param name="id">شناسه مشتری.</param>
+        /// <param name="cancellationToken">توکن لغو عملیات.</param>
+        /// <returns>نتیجه عملیات حذف.</returns>
         [HttpDelete("{id:int}")]
         public async Task<IActionResult> DeleteCustomer(int id, CancellationToken cancellationToken)
         {
@@ -51,6 +66,12 @@ namespace KareMa.EndPoint.WebApi.Controllers
             return Ok(new { message = "مشتری با موفقیت حذف شد" });
         }
 
+        /// <summary>
+        /// دریافت اطلاعات مشتری برای ویرایش.
+        /// </summary>
+        /// <param name="id">شناسه مشتری.</param>
+        /// <param name="cancellationToken">توکن لغو عملیات.</param>
+        /// <returns>اطلاعات قابل ویرایش مشتری.</returns>
         [HttpGet("{id:int}")]
         public async Task<ActionResult<CustomerUpdateDto>> GetCustomerById(int id, CancellationToken cancellationToken)
         {
@@ -62,6 +83,13 @@ namespace KareMa.EndPoint.WebApi.Controllers
             return Ok(customer);
         }
 
+        /// <summary>
+        /// ویرایش اطلاعات مشتری همراه با امکان تغییر تصویر.
+        /// </summary>
+        /// <param name="customerUpdate">اطلاعات ویرایشی مشتری.</param>
+        /// <param name="image">تصویر جدید (اختیاری).</param>
+        /// <param name="cancellationToken">توکن لغو عملیات.</param>
+        /// <returns>نتیجه عملیات آپدیت.</returns>
         [HttpPut("update")]
         public async Task<IActionResult> UpdateCustomer(
             [FromForm] CustomerUpdateDto customerUpdate,
@@ -79,6 +107,11 @@ namespace KareMa.EndPoint.WebApi.Controllers
             return Ok(new { message = "اطلاعات مشتری با موفقیت آپدیت شد" });
         }
 
+        /// <summary>
+        /// دریافت لیست شهرها.
+        /// </summary>
+        /// <param name="cancellationToken">توکن لغو عملیات.</param>
+        /// <returns>لیست شهرها.</returns>
         [HttpGet("cities")]
         public async Task<ActionResult<List<City>>> GetCities(CancellationToken cancellationToken)
         {

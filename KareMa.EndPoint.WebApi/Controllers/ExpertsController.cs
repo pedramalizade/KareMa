@@ -21,12 +21,15 @@
             _cityService = cityService;
             _userManager = userManager;
         }
-
+        /// <summary>
+        /// ایجاد متخصص جدید همراه با امکان آپلود تصویر.
+        /// </summary>
+        /// <param name="expertCreate">اطلاعات ثبت متخصص.</param>
+        /// <param name="image">فایل تصویر متخصص (اختیاری).</param>
+        /// <param name="cancellationToken">توکن لغو عملیات.</param>
+        /// <returns>نتیجه عملیات ایجاد متخصص.</returns>
         [HttpPost("create")]
-        public async Task<IActionResult> CreateExpert(
-            [FromForm] ExpertCreateDto expertCreate,
-            [FromForm] IFormFile? image,
-            CancellationToken cancellationToken)
+        public async Task<IActionResult> CreateExpert([FromForm] ExpertCreateDto expertCreate,[FromForm] IFormFile? image,CancellationToken cancellationToken)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
@@ -39,6 +42,11 @@
             return Ok(new { message = "متخصص با موفقیت اضافه شد" });
         }
 
+        /// <summary>
+        /// دریافت لیست تمام متخصص‌ها.
+        /// </summary>
+        /// <param name="cancellationToken">توکن لغو عملیات.</param>
+        /// <returns>لیست متخصص‌ها.</returns>
         [HttpGet("all")]
         public async Task<ActionResult<List<Expert>>> GetAllExperts(CancellationToken cancellationToken)
         {
@@ -46,6 +54,12 @@
             return Ok(experts);
         }
 
+        /// <summary>
+        /// حذف متخصص بر اساس شناسه.
+        /// </summary>
+        /// <param name="id">شناسه متخصص.</param>
+        /// <param name="cancellationToken">توکن لغو عملیات.</param>
+        /// <returns>نتیجه عملیات حذف.</returns>
         [HttpDelete("{id:int}")]
         public async Task<IActionResult> DeleteExpert(int id, CancellationToken cancellationToken)
         {
@@ -56,7 +70,12 @@
 
             return Ok(new { message = "متخصص با موفقیت حذف شد" });
         }
-
+        /// <summary>
+        /// دریافت اطلاعات متخصص برای ویرایش.
+        /// </summary>
+        /// <param name="id">شناسه متخصص.</param>
+        /// <param name="cancellationToken">توکن لغو عملیات.</param>
+        /// <returns>اطلاعات قابل ویرایش متخصص.</returns>
         [HttpGet("{id:int}")]
         public async Task<ActionResult<ExpertUpdateDto>> GetExpertById(int id, CancellationToken cancellationToken)
         {
@@ -67,11 +86,16 @@
             return Ok(expert);
         }
 
+
+        /// <summary>
+        /// ویرایش اطلاعات متخصص همراه با امکان تغییر تصویر.
+        /// </summary>
+        /// <param name="expertUpdate">اطلاعات ویرایش متخصص.</param>
+        /// <param name="image">تصویر جدید متخصص (اختیاری).</param>
+        /// <param name="cancellationToken">توکن لغو عملیات.</param>
+        /// <returns>نتیجه عملیات آپدیت.</returns>
         [HttpPut("update")]
-        public async Task<IActionResult> UpdateExpert(
-            [FromForm] ExpertUpdateDto expertUpdate,
-            [FromForm] IFormFile? image,
-            CancellationToken cancellationToken)
+        public async Task<IActionResult> UpdateExpert([FromForm] ExpertUpdateDto expertUpdate,[FromForm] IFormFile? image,CancellationToken cancellationToken)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
@@ -84,6 +108,12 @@
             return Ok(new { message = "اطلاعات متخصص با موفقیت آپدیت شد" });
         }
 
+        /// <summary>
+        /// دریافت داده‌های موردنیاز فرم ثبت یا ویرایش متخصص.
+        /// شامل شهرها و سرویس‌ها.
+        /// </summary>
+        /// <param name="cancellationToken">توکن لغو عملیات.</param>
+        /// <returns>لیست شهرها و سرویس‌ها.</returns>
         [HttpGet("form-data")]
         public async Task<IActionResult> GetFormData(CancellationToken cancellationToken)
         {
@@ -93,6 +123,12 @@
             return Ok(new { cities, services });
         }
 
+        /// <summary>
+        /// دریافت داده‌های موردنیاز فرم ثبت یا ویرایش متخصص.
+        /// شامل شهرها و سرویس‌ها.
+        /// </summary>
+        /// <param name="cancellationToken">توکن لغو عملیات.</param>
+        /// <returns>لیست شهرها و سرویس‌ها.</returns>
         [HttpGet("available-users")]
         public async Task<IActionResult> GetAvailableUsers(CancellationToken cancellationToken)
         {

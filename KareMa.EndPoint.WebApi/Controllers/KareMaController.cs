@@ -13,6 +13,12 @@
             _orderAppService = orderAppServices;
             _subCategoryAppService = subCategoryAppServices;
         }
+
+        /// <summary>
+        /// دریافت لیست تمام زیر‌دسته‌ها همراه با سرویس‌ها
+        /// </summary>
+        /// <param name="cancellationToken">توکن لغو عملیات</param>
+        /// <returns>لیست SubCategory</returns>
         [HttpGet]
         [Route(nameof(GetServiceSubCategoryWithServices))]
         public async Task<List<SubCategory>> GetServiceSubCategoryWithServices(CancellationToken cancellationToken)
@@ -21,6 +27,11 @@
             return subCategories;
         }
 
+        /// <summary>
+        /// دریافت تمام سفارش‌ها (محافظت‌شده با ApiKey)
+        /// </summary>
+        /// <param name="cancellationToken">توکن لغو عملیات</param>
+        /// <returns>لیست سفارش‌ها</returns>
         [HttpGet]
         [Route(nameof(GetOrders))]
         [ServiceFilter(typeof(ApiKeyAuthFilter))]
@@ -30,6 +41,11 @@
             return requests;
         }
 
+        /// <summary>
+        /// ثبت‌نام کاربر جدید
+        /// </summary>
+        /// <param name="accountRegister">مدل اطلاعات ثبت‌نام</param>
+        /// <returns>متن نتیجه ثبت‌نام</returns>
         [HttpPost]
         [Route(nameof(RegisterUser))]
         public async Task<string> RegisterUser(AccountRegisterDto accountRegister)
