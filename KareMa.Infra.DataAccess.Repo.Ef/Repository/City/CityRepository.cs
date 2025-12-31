@@ -35,6 +35,5 @@
         {
             return await _context.Cities.AsNoTracking().FirstOrDefaultAsync(c => c.Id == cityId, cancellationToken);
         }
-        
     }
 }

@@ -26,7 +26,6 @@
                 Image = categoryCreateDto.Image,
             };
             await _context.Categories.AddAsync(newModel, cancellationToken);
-
             await _context.SaveChangesAsync(cancellationToken);
             _memoryCache.Remove("Categories");
             return true;
@@ -39,7 +38,7 @@
         {
             var categories = _memoryCache.Get<List<CategoryNameDto>>("CategoriesName");
 
-            if (categories is null)
+            if (categories == null)
             {
                 categories = await _context.Categories.AsNoTracking().Where(c => c.IsDeleted == false)
                   .Select(s => new CategoryNameDto
@@ -88,7 +87,7 @@
             }
             catch (Exception ex)
             {
-                throw ex;
+                throw new Exception("Fail");
             }
             _memoryCache.Remove("Categories");
             return true;

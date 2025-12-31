@@ -26,7 +26,7 @@ namespace KareMa.Infra.DataAccess.Repo.Ef.Repository
             };
 
             await _context.Admins.AddAsync(newModel, cancellationToken);
-            _context.SaveChangesAsync(cancellationToken);
+            await _context.SaveChangesAsync(cancellationToken);
             return true;
         }
 
@@ -35,9 +35,7 @@ namespace KareMa.Infra.DataAccess.Repo.Ef.Repository
         /// </summary>
         public async Task<decimal> GetAdminBalanceAsync(int adminId, CancellationToken cancellationToken)
         {
-            var admin = await _context.Admins
-                .AsNoTracking()
-                .FirstOrDefaultAsync(a => a.Id == adminId && !a.IsDeleted, cancellationToken);
+            var admin = await _context.Admins.AsNoTracking().FirstOrDefaultAsync(a => a.Id == adminId && !a.IsDeleted, cancellationToken);
             return admin?.Balance ?? 0m;
         }
 
@@ -50,7 +48,6 @@ namespace KareMa.Infra.DataAccess.Repo.Ef.Repository
             targetAdmin.IsDeleted = true;
             await _context.SaveChangesAsync(cancellationToken);
             return true;
-
         }
 
         /// <summary>
@@ -64,7 +61,7 @@ namespace KareMa.Infra.DataAccess.Repo.Ef.Repository
         /// </summary>
         public async Task<AdminUpdateDto> AdminUpdateInfoAsync(int id, CancellationToken cancellationToken)
         {
-            var m = await _context.Admins.Select(a => new AdminUpdateDto
+            var updateInfo = await _context.Admins.Select(a => new AdminUpdateDto
             {
                 Id = a.Id,
                 Email = a.AppUser.Email,
@@ -74,7 +71,7 @@ namespace KareMa.Infra.DataAccess.Repo.Ef.Repository
                 PhoneNumber = a.AppUser.PhoneNumber
 
             }).FirstOrDefaultAsync(a => a.Id == id, cancellationToken);
-            return m;
+            return updateInfo;
         }
 
         /// <summary>

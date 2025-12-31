@@ -1,7 +1,7 @@
 ﻿namespace KareMa.Infra.DataAccess.Repo.Ef.Repository
 {
     public class ServiceRepository : IServiceRepository
-    
+
     {
         private readonly AppDbContext _context;
         private readonly IConfiguration _configuration;
@@ -17,7 +17,6 @@
         /// </summary>
         public async Task<bool> CreateAsync(ServiceCreateDto serviceCreateDto, CancellationToken cancellationToken)
         {
-
             var newModel = new Service()
             {
                 Name = serviceCreateDto.Name,
@@ -88,11 +87,7 @@
                 Price = s.Price,
                 SubCategoryId = s.SubCategoryId,
                 Image = s.Image,
-                SubCategory = s.SubCategory != null
-                    ? new SubCategory{
-                        Id = s.SubCategory.Id,
-                        Name = s.SubCategory.Name
-                    } : null
+                SubCategory = s.SubCategory != null ? new SubCategory { Id = s.SubCategory.Id, Name = s.SubCategory.Name } : null
             }).ToListAsync(cancellationToken);
         }
 
