@@ -23,7 +23,7 @@
                 Gender = adminCreateDto.Gender,
             };
 
-            await Queryable.AddAsync(newModel, cancellationToken);
+            await _context.Admins.AddAsync(newModel, cancellationToken);
             await _context.SaveChangesAsync(cancellationToken);
             return true;
         }
