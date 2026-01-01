@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("KareMa.Infra.SqlServer")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+14ab1dcf3e53f65e215683484cb23acf507b0ccb")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+51d661b1135868bb2a73ba5e2fa328241cd89832")]
 [assembly: System.Reflection.AssemblyProductAttribute("KareMa.Infra.SqlServer")]
 [assembly: System.Reflection.AssemblyTitleAttribute("KareMa.Infra.SqlServer")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

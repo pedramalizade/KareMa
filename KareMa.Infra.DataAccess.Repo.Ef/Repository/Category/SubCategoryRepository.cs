@@ -1,6 +1,8 @@
-﻿namespace KareMa.Infra.DataAccess.Repo.Ef.Repository
+﻿using KareMa.Infra.DataAccess.Repo.Ef.BaseRepository;
+
+namespace KareMa.Infra.DataAccess.Repo.Ef.Repository
 {
-    public class SubCategoryRepository : ISubCategoryRepository
+    public class SubCategoryRepository : BaseRepository<SubCategory>, ISubCategoryRepository
     {
         private readonly AppDbContext _context;
         private readonly IConfiguration _configuration;
@@ -116,7 +118,7 @@ ORDER BY sc.Id, c.Id, s.Id";
         /// </summary>
         public async Task<List<SubCategoryNameDto>> GetCategorisNameAsync(CancellationToken cancellationToken)
         {
-            var subcategories = await _context.SubCategories.AsNoTracking()
+            var subcategories = await Queryable.AsNoTracking()
                  .Select(s => new SubCategoryNameDto
                  {
                      Id = s.Id,
@@ -130,7 +132,7 @@ ORDER BY sc.Id, c.Id, s.Id";
         /// </summary>
         public async Task<List<GetByCategoryIdDto>> GetAllByCategoryIdAsync(int id, CancellationToken cancellationToken)
         {
-            return await _context.SubCategories.Where(x => x.CategoryId == id && x.IsDeleted == false).AsNoTracking()
+            return await Queryable.Where(x => x.CategoryId == id && x.IsDeleted == false).AsNoTracking()
                 .Select(c => new GetByCategoryIdDto
                 {
                     Id = c.Id,
@@ -145,7 +147,7 @@ ORDER BY sc.Id, c.Id, s.Id";
         /// </summary>
         public async Task<List<GetSubCategoryDto>> GetSubCategoriesAsync(CancellationToken cancellationToken)
         {
-            var subcategories = await _context.SubCategories.AsNoTracking()
+            var subcategories = await Queryable.AsNoTracking()
                 .Select(s => new GetSubCategoryDto
                 {
                     Name = s.Name,
@@ -163,7 +165,7 @@ ORDER BY sc.Id, c.Id, s.Id";
         /// </summary>
         public async Task<SubCategoryUpdateDto?> ServiceSubCategoryUpdateInfoAsync(int id, CancellationToken cancellationToken)
         {
-            return await _context.SubCategories.AsNoTracking().Where(c => c.IsDeleted == false)
+            return await Queryable.AsNoTracking().Where(c => c.IsDeleted == false)
                 .Select(s => new SubCategoryUpdateDto
                 {
                     Id = s.Id,

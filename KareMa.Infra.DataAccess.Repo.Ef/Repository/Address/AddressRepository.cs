@@ -16,6 +16,9 @@
         /// <returns>در صورت موفقیت مقدار true برمی‌گرداند.</returns>
         public async Task<bool> CreateAsync(AddressCreateDto addressCreateDto, CancellationToken cancellationToken)
         {
+            if (addressCreateDto.CityId == null) 
+                return false;
+
             var newModel = new Address()
             {
                 Area = addressCreateDto.Area,
@@ -28,7 +31,7 @@
             };
             await _context.Addresses.AddAsync(newModel);
 
-            _context.SaveChangesAsync(cancellationToken);
+            await _context.SaveChangesAsync(cancellationToken);
             return true;
         }
 
@@ -43,7 +46,7 @@
             var targetMidel = await FindAddress(addressId, cancellationToken);
             targetMidel.IsDeleted = true;
 
-            _context.SaveChangesAsync(cancellationToken);
+            await _context.SaveChangesAsync(cancellationToken);
             return true;
         }
 
@@ -67,21 +70,20 @@
         /// <summary>
         /// اطلاعات یک آدرس را به‌روزرسانی می‌کند.
         /// </summary>
-        /// <param name="addrressUpdateDto">اطلاعات جدید آدرس.</param>
+        /// <param name="addressUpdateDto">اطلاعات جدید آدرس.</param>
         /// <param name="cancellationToken">توکن لغو عملیات.</param>
         /// <returns>در صورت موفقیت مقدار true برمی‌گرداند.</returns>
-        public async Task<bool> UpdateAsync(AddressUpdateDto addrressUpdateDto, CancellationToken cancellationToken)
+        public async Task<bool> UpdateAsync(AddressUpdateDto addressUpdateDto, CancellationToken cancellationToken)
         {
-            var targetModel = await FindAddress(addrressUpdateDto.Id, cancellationToken);
+            var targetModel = await FindAddress(addressUpdateDto.Id, cancellationToken);
 
-            targetModel.Area = addrressUpdateDto.Area;
-            targetModel.CityId = addrressUpdateDto.CityId;
-            targetModel.City = addrressUpdateDto.City;
-            targetModel.Street = addrressUpdateDto.Street;
-            targetModel.PostalCode = addrressUpdateDto.PostalCode;
+            targetModel.Area = addressUpdateDto.Area;
+            targetModel.CityId = addressUpdateDto.CityId;
+            targetModel.City = addressUpdateDto.City;
+            targetModel.Street = addressUpdateDto.Street;
+            targetModel.PostalCode = addressUpdateDto.PostalCode;
 
             await _context.SaveChangesAsync(cancellationToken);
-
             return true;
         }
 

@@ -1,6 +1,6 @@
 ﻿namespace KareMa.Infra.DataAccess.Repo.Ef.Repository
 {
-    public class CategoryRepository : ICategoryRepository
+    public class CategoryRepository : BaseRepository<Category>,  ICategoryRepository
     {
         private readonly AppDbContext _context;
         private readonly IConfiguration _configuration;
@@ -63,14 +63,15 @@
         /// </summary>
         public async Task<CategoryUpdateDto?> ServiceCategoryUpdateInfoAsync(int id, CancellationToken cancellationToken)
         {
-            return await _context.Categories.Select(c => new CategoryUpdateDto
-            {
-                Id = c.Id,
-                Image = c.Image,
-                Name = c.Name
-
-            }).FirstOrDefaultAsync(c => c.Id == id, cancellationToken);
-
+            return await Queryable
+                .Where(c => c.Id == id)
+                .Select(c => new CategoryUpdateDto
+                {
+                    Id = c.Id,
+                    Image = c.Image,
+                    Name = c.Name
+                })
+                .FirstOrDefaultAsync(cancellationToken);
         }
 
         /// <summary>

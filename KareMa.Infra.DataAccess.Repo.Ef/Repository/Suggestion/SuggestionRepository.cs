@@ -1,6 +1,6 @@
 ﻿namespace KareMa.Infra.DataAccess.Repo.Ef.Repository
 {
-    public class SuggestionRepository : ISuggestionRepository
+    public class SuggestionRepository : BaseRepository<Suggestion>, ISuggestionRepository
     {
         private readonly AppDbContext _context;
         public SuggestionRepository(AppDbContext context)
@@ -17,7 +17,7 @@
                 throw new Exception("سفارش باز نیست یا پیدا نشد.");
             }
 
-            var existingSuggestion = await _context.Suggestions
+            var existingSuggestion = await Queryable
                 .AnyAsync(s => s.OrderId == suggestionCreateDto.OrderId && s.ExpertId == suggestionCreateDto.ExpertId, cancellationToken);
             if (existingSuggestion)
             {
@@ -51,7 +51,7 @@
         /// <summary>دریافت همه پیشنهادها.</summary>
         public async Task<List<Suggestion>> GetAllAsync(CancellationToken cancellationToken)
         {
-            return await _context.Suggestions.AsNoTracking().ToListAsync(cancellationToken);
+            return await Queryable.AsNoTracking().ToListAsync(cancellationToken);
         }
         /// <summary>دریافت پیشنهاد با شناسه.</summary>
         public async Task<Suggestion> GetByIdAsync(int suggestionId, CancellationToken cancellationToken)
@@ -74,7 +74,7 @@
         /// <summary>تأیید پیشنهاد منتخب.</summary>
         public async Task<bool> AcceptSuggestionAsync(int suggestionId, int orderId, CancellationToken cancellationToken)
         {
-            var targetSuggestion = await _context.Suggestions
+            var targetSuggestion = await Queryable
                 .FirstOrDefaultAsync(s => s.Id == suggestionId && s.OrderId == orderId, cancellationToken);
 
             if (targetSuggestion == null || targetSuggestion.Status != StatusEnum.AwaitingCustomerConfirmation)
@@ -82,7 +82,7 @@
                 return false;
             }
 
-            var otherSuggestions = await _context.Suggestions
+            var otherSuggestions = await Queryable
                 .Where(s => s.OrderId == orderId && s.Id != suggestionId)
                 .ToListAsync(cancellationToken);
 
@@ -102,12 +102,12 @@
         /// <summary>تعداد پیشنهادهای تأییدشده.</summary>
         public async Task<int> ConfrimedStatusCountAsync(int orderId, CancellationToken cancellationToken)
         {
-            return await _context.Suggestions.Where(s => s.OrderId == orderId && s.Status == StatusEnum.Confirmed).CountAsync(cancellationToken);
+            return await Queryable.Where(s => s.OrderId == orderId && s.Status == StatusEnum.Confirmed).CountAsync(cancellationToken);
         }
         /// <summary>پیشنهادهای یک متخصص.</summary>
         public async Task<List<SuggestionsByExpertIdDto>> GetSuggestionsByExperIdAsync(int id, CancellationToken cancellationToken)
         {
-            return await _context.Suggestions.Where(s => s.ExpertId == id)
+            return await Queryable.Where(s => s.ExpertId == id)
                 .Select(s => new SuggestionsByExpertIdDto
                 {
                     Id = s.Id,
@@ -130,7 +130,7 @@
         /// <summary>اتمام پیشنهاد.</summary>
         public async Task DoneSuggestionAsync(int id, CancellationToken cancellationToken)
         {
-            var targetSuggestion = await _context.Suggestions.FirstOrDefaultAsync(s => s.Id == id, cancellationToken);
+            var targetSuggestion = await Queryable.FirstOrDefaultAsync(s => s.Id == id, cancellationToken);
             targetSuggestion.Status = StatusEnum.Done;
 
             await _context.SaveChangesAsync(cancellationToken);
@@ -138,7 +138,7 @@
         /// <summary>تغییر وضعیت پیشنهاد.</summary>
         public async Task<bool> ChangeStatusAsync(StatusEnum status, int orderId, CancellationToken cancellationToken)
         {
-            var targetModel = await _context.Suggestions.FirstOrDefaultAsync(x => x.OrderId == orderId, cancellationToken);
+            var targetModel = await Queryable.FirstOrDefaultAsync(x => x.OrderId == orderId, cancellationToken);
 
             if (targetModel == null)
             {
@@ -151,13 +151,11 @@
         }
         /// <summary>جستجوی پیشنهاد.</summary>
         private async Task<Suggestion> FindSuggestion(int id, CancellationToken cancellationToken)
-       => await _context.Suggestions.FirstOrDefaultAsync(a => a.Id == id, cancellationToken);
+       => await Queryable.FirstOrDefaultAsync(a => a.Id == id, cancellationToken);
         /// <summary>دریافت پیشنهاد با جزئیات.</summary>
         public async Task<SuggestionDto> GetSuggestionByIdAsync(int suggestionId, CancellationToken cancellationToken)
         {
-            var suggestion = await _context.Suggestions
-        .Include(s => s.Expert)
-        .FirstOrDefaultAsync(s => s.Id == suggestionId, cancellationToken);
+            var suggestion = await Queryable.Include(s => s.Expert).FirstOrDefaultAsync(s => s.Id == suggestionId, cancellationToken);
 
             if (suggestion == null) return null;
 
@@ -167,7 +165,7 @@
                 OrderId = suggestion.OrderId,
                 ExpertId = suggestion.ExpertId,
                 Expert = suggestion.Expert,
-                Price = suggestion.Price, 
+                Price = suggestion.Price,
                 Description = suggestion.Description,
                 SuggestedDate = suggestion.SuggestedDate,
                 Status = suggestion.Status

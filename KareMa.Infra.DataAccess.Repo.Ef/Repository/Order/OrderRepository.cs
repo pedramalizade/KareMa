@@ -1,6 +1,6 @@
 ﻿namespace KareMa.Infra.DataAccess.Repo.Ef.Repository
 {
-    public class OrderRepository : IOrderRepository
+    public class OrderRepository : BaseRepository<Order>, IOrderRepository
     {
         private readonly AppDbContext _context;
         public OrderRepository(AppDbContext context)
@@ -36,7 +36,7 @@
         /// <summary>دریافت همه سفارش‌ها.</summary>
         public async Task<List<GetOrderDto>> GetAllAsync(CancellationToken cancellationToken)
         {
-            var orders = await _context.Orders
+            var orders = await Queryable
                 .AsNoTracking()
                 .Where(x => x.IsDeleted == false)
                 .Include(x => x.Suggestions)
@@ -119,11 +119,11 @@
         }
         /// <summary>تعداد سفارش‌ها.</summary>
         public async Task<int> OrderCountAsync(CancellationToken cancellationToken)
-          => await _context.Orders.CountAsync(cancellationToken);
+          => await Queryable.CountAsync(cancellationToken);
         /// <summary>سفارش‌های مشتری.</summary>
         public async Task<List<GetOrderDto>> GetOrdersAsync(int customerId, CancellationToken cancellationToken)
         {
-            var target = await _context.Orders.Where(o => o.Customer.Id == customerId && o.IsDeleted == false)
+            var target = await Queryable.Where(o => o.Customer.Id == customerId && o.IsDeleted == false)
                 .Select(o => new GetOrderDto
                 {
                     Customer = o.Customer,
@@ -151,7 +151,7 @@
         /// <summary>تأیید سفارش.</summary>
         public async Task AcceptOrderAsync(int orderId, CancellationToken cancellationToken)
         {
-            var target = await _context.Orders.FirstOrDefaultAsync(o => o.Id == orderId, cancellationToken);
+            var target = await Queryable.FirstOrDefaultAsync(o => o.Id == orderId, cancellationToken);
             target.Status = StatusEnum.Confirmed;
 
             await _context.SaveChangesAsync(cancellationToken);
@@ -159,7 +159,7 @@
         /// <summary>انجام‌شدن سفارش.</summary>
         public async Task DoneOrderAsync(int id, CancellationToken cancellationToken)
         {
-            var targetOrder = await _context.Orders.FirstOrDefaultAsync(o => o.Id == id, cancellationToken);
+            var targetOrder = await Queryable.FirstOrDefaultAsync(o => o.Id == id, cancellationToken);
             targetOrder.Status = StatusEnum.Done;
             targetOrder.DoneAt = DateTime.Now;
 
@@ -168,7 +168,7 @@
         /// <summary>سفارش‌ها بر اساس سرویس.</summary>
         public async Task<List<OrdersByServiceIdsDto>> GetOrdersByServiceIdsAsync(List<int> serviceIds, CancellationToken cancellationToken)
         {
-            return await _context.Orders.Where(o => serviceIds.Contains(o.ServiceId))
+            return await Queryable.Where(o => serviceIds.Contains(o.ServiceId))
                   .Select(o => new OrdersByServiceIdsDto
                   {
                       Id = o.Id,
@@ -188,7 +188,7 @@
         /// <summary>آیا سفارش انجام شده؟</summary>
         public async Task<bool> OrderIsDoneAsync(int orderId, CancellationToken cancellationToken)
         {
-            var targetOrder = await _context.Orders.FirstOrDefaultAsync(o => o.Id == orderId, cancellationToken);
+            var targetOrder = await Queryable.FirstOrDefaultAsync(o => o.Id == orderId, cancellationToken);
 
             if (targetOrder.Status == StatusEnum.Done) return true;
 
@@ -196,7 +196,6 @@
         }
         /// <summary>جستجوی سفارش.</summary>
         private async Task<Order> FindOrder(int id, CancellationToken cancellationToken)
-          => await _context.Orders.FirstOrDefaultAsync(a => a.Id == id, cancellationToken);
+          => await Queryable.FirstOrDefaultAsync(a => a.Id == id, cancellationToken);
     }
-
 }

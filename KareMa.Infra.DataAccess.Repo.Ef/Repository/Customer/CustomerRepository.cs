@@ -1,6 +1,6 @@
 ﻿namespace KareMa.Infra.DataAccess.Repo.Ef.Repository
 {
-    public class CustomerRepository : ICustomerRepository
+    public class CustomerRepository : BaseRepository<Customer>, ICustomerRepository
     {
         private readonly AppDbContext _context;
         private readonly ILogger<CustomerRepository> _logger;
@@ -53,7 +53,7 @@
         /// <summary>دریافت مشتریان فعال.</summary>
         public async Task<List<GetCustomerDto>> GetAllAsync(CancellationToken cancellationToken)
         {
-            var customers = await _context.Customers
+            var customers = await Queryable
                 .AsNoTracking()
                 .Where(c => !c.IsDeleted)
                 .Select(c => new GetCustomerDto
@@ -80,7 +80,7 @@
         {
             _logger.LogInformation("به‌روزرسانی مشتری آغاز شد.", customerUpdateDto.Id);
 
-            var targetModel = await _context.Customers
+            var targetModel = await Queryable
                 .Include(c => c.Addresses)
                 .FirstOrDefaultAsync(c => c.Id == customerUpdateDto.Id && !c.IsDeleted, cancellationToken);
 
@@ -133,7 +133,7 @@
         /// <summary>دریافت خلاصه اطلاعات مشتری.</summary>
         public async Task<CustomerSummaryDto> GetCustomerSummaryAsync(int id, CancellationToken cancellationToken)
         {
-            var target = await _context.Customers.Where(a => a.Id == id && a.IsDeleted == false)
+            var target = await Queryable.Where(a => a.Id == id && a.IsDeleted == false)
                 .Select(c => new CustomerSummaryDto
                 {
                     Id = c.Id,
@@ -157,7 +157,7 @@
         /// <summary>اطلاعات لازم فرم ویرایش مشتری.</summary>
         public async Task<CustomerUpdateDto> GetCustomerUpdateInfoAsync(int customerId, CancellationToken cancellationToken)
         {
-            var targetCustomer = await _context.Customers
+            var targetCustomer = await Queryable
                 .AsNoTracking()
                 .Include(c => c.Addresses)
                 .Where(c => c.Id == customerId && !c.IsDeleted)
@@ -186,24 +186,24 @@
         /// <summary>یافتن شناسه مشتری با AppUserId.</summary>
         public async Task<int> FindCustomerIdWithApplicationUser(int appUserId, CancellationToken cancellationToken)
         {
-            var targetCustomer = await _context.Customers.FirstOrDefaultAsync(c => c.AppUserId == appUserId, cancellationToken);
+            var targetCustomer = await Queryable.FirstOrDefaultAsync(c => c.AppUserId == appUserId, cancellationToken);
             var customerId = targetCustomer.Id;
             return customerId;
         }
 
         /// <summary>تعداد کل مشتریان.</summary>
         public async Task<int> CustomerCountAsync(CancellationToken cancellationToken)
-  => await _context.Customers.CountAsync(cancellationToken);
+  => await Queryable.CountAsync(cancellationToken);
 
 
         /// <summary>جستجوی مشتری با شناسه.</summary>
         private async Task<Customer> FindCustomer(int id, CancellationToken cancellationToken)
-     => await _context.Customers.FirstOrDefaultAsync(a => a.Id == id, cancellationToken);
+     => await Queryable.FirstOrDefaultAsync(a => a.Id == id, cancellationToken);
 
         /// <summary>دریافت اطلاعات مشتری برای ویرایش.</summary>
         public async Task<CustomerUpdateDto?> CustomerUpdateInfoAsync(int id, CancellationToken cancellationToken)
         {
-            return await _context.Customers.Select(a => new CustomerUpdateDto
+            return await Queryable.Select(a => new CustomerUpdateDto
             {
                 Id = id,
                 FirstName = a.FirstName,
@@ -222,7 +222,7 @@
         {
             _logger.LogInformation("به‌روزرسانی موجودی مشتری به مقدار آغاز شد.", customerId, newBalance);
 
-            var customer = await _context.Customers
+            var customer = await Queryable
                 .FirstOrDefaultAsync(c => c.Id == customerId && !c.IsDeleted, cancellationToken);
 
             if (customer == null)

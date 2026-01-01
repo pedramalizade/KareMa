@@ -1,7 +1,6 @@
 ﻿namespace KareMa.Infra.DataAccess.Repo.Ef.Repository
 {
-    public class ServiceRepository : IServiceRepository
-
+    public class ServiceRepository : BaseRepository<Service>, IServiceRepository
     {
         private readonly AppDbContext _context;
         private readonly IConfiguration _configuration;
@@ -77,7 +76,7 @@
         /// </summary>
         public async Task<List<GetServiceDto>> GetAllAsync(CancellationToken cancellationToken)
         {
-            return await _context.Services
+            return await Queryable
             .Include(s => s.SubCategory)
             .Select(s => new GetServiceDto
             {
@@ -96,7 +95,7 @@
         /// </summary>
         public async Task<List<GetByCategorySubIdDto>> GetAllBySubCategoryIdAsync(int id, CancellationToken cancellationToken)
         {
-            return await _context.Services.Where(x => x.SubCategoryId == id).AsNoTracking()
+            return await Queryable.Where(x => x.SubCategoryId == id).AsNoTracking()
                 .Select(c => new GetByCategorySubIdDto
                 {
                     Id = c.Id,
@@ -109,7 +108,7 @@
         /// </summary>
         public async Task<ServiceUpdateDto?> ServiceUpdateInfoAsync(int id, CancellationToken cancellationToken)
         {
-            return await _context.Services
+            return await Queryable
                 .Select(s => new ServiceUpdateDto
                 {
                     Id = s.Id,
@@ -145,14 +144,14 @@
         /// پیدا کردن یک سرویس بر اساس شناسه
         /// </summary>
         private async Task<Service> FindService(int id, CancellationToken cancellationToken)
-       => await _context.Services.FirstOrDefaultAsync(a => a.Id == id, cancellationToken);
+       => await Queryable.FirstOrDefaultAsync(a => a.Id == id, cancellationToken);
 
         /// <summary>
         /// دریافت همه سرویس‌ها بدون فیلتر
         /// </summary>
         public async Task<List<Service>> GetAllServicesAsync(CancellationToken cancellationToken)
         {
-            return await _context.Services.ToListAsync(cancellationToken);
+            return await Queryable.ToListAsync(cancellationToken);
         }
     }
 }

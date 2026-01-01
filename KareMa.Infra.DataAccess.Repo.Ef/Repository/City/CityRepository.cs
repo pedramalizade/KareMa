@@ -1,6 +1,6 @@
 ﻿namespace KareMa.Infra.DataAccess.Repo.Ef.Repository
 {
-    public class CityRepository : ICityRepository
+    public class CityRepository : BaseRepository<City>, ICityRepository
     {
         private readonly AppDbContext _context;
         private readonly IMemoryCache _memoryCache;
@@ -18,7 +18,7 @@
             var cities = _memoryCache.Get<List<City>>("Cities");
             if (cities is null)
             {
-                cities = await _context.Cities.AsNoTracking().ToListAsync(cancellationToken);
+                cities = await Queryable.AsNoTracking().ToListAsync(cancellationToken);
                 _memoryCache.Set("Cities", cities, new MemoryCacheEntryOptions
                 {
                     SlidingExpiration = TimeSpan.FromDays(90)
@@ -33,7 +33,7 @@
         /// </summary>
         public async Task<City> GetByIdAsync(int cityId, CancellationToken cancellationToken)
         {
-            return await _context.Cities.AsNoTracking().FirstOrDefaultAsync(c => c.Id == cityId, cancellationToken);
+            return await Queryable.AsNoTracking().FirstOrDefaultAsync(c => c.Id == cityId, cancellationToken);
         }
     }
 }

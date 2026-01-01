@@ -17,6 +17,7 @@ global using KareMa.Domain.Core.DTOs.CustomerDTO;
 global using KareMa.Domain.Core.DTOs.Expert;
 global using KareMa.Domain.Core.DTOs.OrderDTO;
 global using KareMa.Domain.Core.DTOs.SuggestionDTO;
+global using KareMa.Infra.DataAccess.Repo.Ef.BaseRepository;
 
 global using System.Data;
 

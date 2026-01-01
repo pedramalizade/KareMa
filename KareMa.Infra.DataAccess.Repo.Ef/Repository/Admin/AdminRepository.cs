@@ -1,8 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
-
-namespace KareMa.Infra.DataAccess.Repo.Ef.Repository
+﻿namespace KareMa.Infra.DataAccess.Repo.Ef.Repository
 {
-    public class AdminRepository : IAdminRepository
+    public class AdminRepository : BaseRepository<Admin>, IAdminRepository
     {
         private readonly AppDbContext _context;
         public AdminRepository(AppDbContext context)
@@ -25,7 +23,7 @@ namespace KareMa.Infra.DataAccess.Repo.Ef.Repository
                 Gender = adminCreateDto.Gender,
             };
 
-            await _context.Admins.AddAsync(newModel, cancellationToken);
+            await Queryable.AddAsync(newModel, cancellationToken);
             await _context.SaveChangesAsync(cancellationToken);
             return true;
         }
@@ -35,7 +33,7 @@ namespace KareMa.Infra.DataAccess.Repo.Ef.Repository
         /// </summary>
         public async Task<decimal> GetAdminBalanceAsync(int adminId, CancellationToken cancellationToken)
         {
-            var admin = await _context.Admins.AsNoTracking().FirstOrDefaultAsync(a => a.Id == adminId && !a.IsDeleted, cancellationToken);
+            var admin = await Queryable.AsNoTracking().FirstOrDefaultAsync(a => a.Id == adminId && !a.IsDeleted, cancellationToken);
             return admin?.Balance ?? 0m;
         }
 
@@ -54,14 +52,14 @@ namespace KareMa.Infra.DataAccess.Repo.Ef.Repository
         /// دریافت لیست همه ادمین ها
         /// </summary>
         public async Task<List<Admin>> GetAllAsync(CancellationToken cancellationToken)
-       => await _context.Admins.AsNoTracking().ToListAsync(cancellationToken);
+       => await Queryable.AsNoTracking().ToListAsync(cancellationToken);
 
         /// <summary>
         /// آپدیت اطلاعات ادمین
         /// </summary>
         public async Task<AdminUpdateDto> AdminUpdateInfoAsync(int id, CancellationToken cancellationToken)
         {
-            var updateInfo = await _context.Admins.Select(a => new AdminUpdateDto
+            var updateInfo = await Queryable.Select(a => new AdminUpdateDto
             {
                 Id = a.Id,
                 Email = a.AppUser.Email,
@@ -85,7 +83,7 @@ namespace KareMa.Infra.DataAccess.Repo.Ef.Repository
         /// </summary>
         public async Task<bool> UpdateAsync(AdminUpdateDto adminUpdateDto, CancellationToken cancellationToken)
         {
-            var targetModel = _context.Admins.FirstOrDefault(a => a.Id == adminUpdateDto.Id);
+            var targetModel = Queryable.FirstOrDefault(a => a.Id == adminUpdateDto.Id);
             targetModel.FirstName = adminUpdateDto.FirstName;
             targetModel.LastName = adminUpdateDto.LastName;
             targetModel.Balance = adminUpdateDto.Balance;
@@ -98,7 +96,7 @@ namespace KareMa.Infra.DataAccess.Repo.Ef.Repository
         /// پیدا کردن ادمین بر اساس شناسه
         /// </summary>
         private async Task<Admin> FindAdmin(int id, CancellationToken cancellationToken)
-      => await _context.Admins.AsNoTracking().FirstOrDefaultAsync(a => a.Id == id);
+      => await Queryable.AsNoTracking().FirstOrDefaultAsync(a => a.Id == id);
     }
 
 }

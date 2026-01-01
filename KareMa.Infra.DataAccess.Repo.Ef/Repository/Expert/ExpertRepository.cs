@@ -1,6 +1,6 @@
 ﻿namespace KareMa.Infra.DataAccess.Repo.Ef.Repository
 {
-    public class ExpertRepository : IExpertRepository
+    public class ExpertRepository : BaseRepository<Expert>, IExpertRepository
     {
         private readonly AppDbContext _context;
         private readonly ILogger<ExpertRepository> _logger;
@@ -15,7 +15,7 @@
         {
             try
             {
-                var existingExpert = await _context.Experts
+                var existingExpert = await Queryable
                     .AsNoTracking()
                     .AnyAsync(e => e.AppUserId == expertCreateDto.AppUserId && !e.IsDeleted, cancellationToken);
 
@@ -37,9 +37,7 @@
                     Balance = expertCreateDto.Balance,
                     BirthDate = expertCreateDto.BirthDate,
                     Image = expertCreateDto.Image,
-                    Services = expertCreateDto.Services != null
-                        ? _context.Services.Where(s => expertCreateDto.Services.Contains(s.Id)).ToList()
-                        : new List<Service>()
+                    Services = expertCreateDto.Services != null ? _context.Services.Where(s => expertCreateDto.Services.Contains(s.Id)).ToList() : new List<Service>()
                 };
 
                 _logger.LogInformation("در حال ایجاد متخصص",
@@ -76,7 +74,7 @@
         /// <summary>دریافت همه متخصصان.</summary>
         public async Task<List<Expert>> GetAllAsync(CancellationToken cancellationToken)
         {
-            var experts = await _context.Experts
+            var experts = await Queryable
                 .AsNoTracking()
                 .Where(e => !e.IsDeleted)
                 .ToListAsync(cancellationToken);
@@ -90,7 +88,7 @@
         /// <summary>به‌روزرسانی متخصص.</summary>
         public async Task<bool> UpdateAsync(ExpertUpdateDto expertUpdateDto, CancellationToken cancellationToken)
         {
-            var targetExpert = await _context.Experts
+            var targetExpert = await Queryable
                 .Include(e => e.Services)
                 .FirstOrDefaultAsync(e => e.Id == expertUpdateDto.Id && !e.IsDeleted, cancellationToken);
 
@@ -148,21 +146,20 @@
         }
         /// <summary>تعداد متخصصان.</summary>
         public async Task<int> ExpertCountAsync(CancellationToken cancellationToken)
-            => await _context.Experts.CountAsync(cancellationToken);
+            => await Queryable.CountAsync(cancellationToken);
         /// <summary>خلاصه متخصص.</summary>
         public async Task<ExpertSummaryDto> GetExpertSummaryAsync(int id, CancellationToken cancellationToken)
         {
             _logger.LogInformation("در حال دریافت خلاصه اطلاعات متخصص با شناسه", id);
 
-            var expert = await _context.Experts
+            var expert = await Queryable
                 .Include(e => e.Services)
                 .Include(e => e.Comments)
                 .Where(e => e.Id == id && !e.IsDeleted)
                 .Select(e => new ExpertSummaryDto
                 {
                     Id = e.Id,
-                    Comments = e.Comments != null
-                        ? e.Comments.Where(c => c.IsAccept && !c.IsDeleted)
+                    Comments = e.Comments != null ? e.Comments.Where(c => c.IsAccept && !c.IsDeleted)
                             .Select(c => new Comment
                             {
                                 Customer = c.Customer,
@@ -172,8 +169,7 @@
                                 CreatedAt = c.CreatedAt,
                                 IsAccept = c.IsAccept,
                                 IsDeleted = c.IsDeleted
-                            }).ToList()
-                        : new List<Comment>(),
+                            }).ToList() : new List<Comment>(),
                     FirstName = e.FirstName,
                     LastName = e.LastName,
                     Gender = e.Gender,
@@ -195,11 +191,11 @@
         }
         /// <summary>تعداد کامنت‌ها.</summary>
         public async Task<int> ExpertCommentCountAsync(int id, CancellationToken cancellationToken)
-            => await _context.Experts.Where(e => e.Id == id).SelectMany(e => e.Comments).CountAsync();
+            => await Queryable.Where(e => e.Id == id).SelectMany(e => e.Comments).CountAsync();
         /// <summary>میانگین امتیاز.</summary>
         public async Task<int> ExpertAverageScoresAsync(int id, CancellationToken cancellationToken)
         {
-            var expert = await _context.Experts.Include(e => e.Comments).FirstOrDefaultAsync(e => e.Id == id, cancellationToken);
+            var expert = await Queryable.Include(e => e.Comments).FirstOrDefaultAsync(e => e.Id == id, cancellationToken);
             if (expert == null || expert.Comments == null || !expert.Comments.Any())
                 return 0;
 
@@ -208,7 +204,7 @@
         /// <summary>تعداد سفارشات انجام‌شده.</summary>
         public async Task<int> ExpertOrderCountAsync(int id, CancellationToken cancellationToken)
         {
-            var suggestions = await _context.Experts.Where(e => e.Id == id)
+            var suggestions = await Queryable.Where(e => e.Id == id)
                 .SelectMany(e => e.Suggestions)
                 .ToListAsync(cancellationToken);
 
@@ -217,12 +213,12 @@
 
         /// <summary>شناسه سرویس‌ها.</summary>
         public async Task<List<int>> GetExpertServiceIdsAsync(int id, CancellationToken cancellationToken)
-            => (await _context.Experts.Where(e => e.Id == id).SelectMany(e => e.Services).ToListAsync(cancellationToken))
+            => (await Queryable.Where(e => e.Id == id).SelectMany(e => e.Services).ToListAsync(cancellationToken))
                 .Select(s => s.Id).ToList();
         /// <summary>اطلاعات ویرایش.</summary>
         public async Task<ExpertUpdateDto> ExpertUpdateInfoAsync(int id, CancellationToken cancellationToken)
         {
-            var result = await _context.Experts.Include(e => e.Services)
+            var result = await Queryable.Include(e => e.Services)
                 .Select(e => new ExpertUpdateDto
                 {
                     Id = e.Id,
@@ -243,7 +239,7 @@
         }
         /// <summary>نام متخصص.</summary>
         public async Task<ExpertNameDto> GetExpertNameAsync(int id, CancellationToken cancellationToken)
-            => await _context.Experts.AsNoTracking()
+            => await Queryable.AsNoTracking()
                 .Where(e => e.Id == id)
                 .Select(e => new ExpertNameDto { FirstName = e.FirstName, LastName = e.LastName, Balance = e.Balance })
                 .FirstOrDefaultAsync(cancellationToken) ?? new ExpertNameDto();
@@ -251,7 +247,7 @@
         public async Task<Expert> GetExpertByIdAsync(int expertId, CancellationToken cancellationToken)
         {
 
-            var expert = await _context.Experts
+            var expert = await Queryable
                 .FirstOrDefaultAsync(e => e.Id == expertId && !e.IsDeleted, cancellationToken);
 
             if (expert == null)
@@ -264,7 +260,7 @@
         {
             _logger.LogInformation($"در حال به‌روزرسانی موجودی متخصص با شناسه {expertId} به {newBalance}", expertId, newBalance);
 
-            var expert = await _context.Experts
+            var expert = await Queryable
                 .FirstOrDefaultAsync(e => e.Id == expertId && !e.IsDeleted, cancellationToken);
 
             if (expert == null)
@@ -281,7 +277,7 @@
 
         /// <summary>پیدا کردن متخصص.</summary>
         private async Task<Expert> FindExpert(int id, CancellationToken cancellationToken)
-            => await _context.Experts.FirstOrDefaultAsync(e => e.Id == id, cancellationToken);
+            => await Queryable.FirstOrDefaultAsync(e => e.Id == id, cancellationToken);
 
     }
 }

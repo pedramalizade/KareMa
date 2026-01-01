@@ -1,6 +1,6 @@
 ﻿namespace KareMa.Infra.DataAccess.Repo.Ef.Repository
 {
-    public class CommentRepository : ICommentRepository
+    public class CommentRepository : BaseRepository<Comment>, ICommentRepository
     {
         private readonly AppDbContext _context;
         public CommentRepository(AppDbContext context)
@@ -72,7 +72,7 @@
         /// </summary>
         public async Task<List<GetCommentsDto>> GetAllAsync(CancellationToken cancellationToken)
         {
-            var comments = await _context.Comments.AsNoTracking()
+            var comments = await Queryable.AsNoTracking()
                  .Select(c => new GetCommentsDto
                  {
                      Id = c.Id,
@@ -117,7 +117,7 @@
         /// </summary>
         public async Task<bool> SetScoreAsync(int expertId, int score, CancellationToken cancellationToken)
         {
-            var targetModel = await _context.Comments.FirstOrDefaultAsync(c => c.ExpertId == expertId, cancellationToken);
+            var targetModel = await Queryable.FirstOrDefaultAsync(c => c.ExpertId == expertId, cancellationToken);
             targetModel.Score = score;
             await _context.SaveChangesAsync(cancellationToken);
             return true;
@@ -148,7 +148,7 @@
         /// </summary>
         public async Task<List<RecentCommentDto>> GetRecentCommentsAsync(int count, CancellationToken cancellationToken)
         {
-            var recentComments = await _context.Comments.
+            var recentComments = await Queryable.
                 Select(c => new RecentCommentDto
                 {
                     Id = c.Id,
@@ -167,12 +167,12 @@
         /// شمارش کل نظرات
         /// </summary>
         public async Task<int> CommentCountAsync(CancellationToken cancellationToken)
-          => await _context.Comments.CountAsync(cancellationToken);
+          => await Queryable.CountAsync(cancellationToken);
 
         /// <summary>
         /// پیدا کردن یک نظر بر اساس شناسه
         /// </summary>
         private async Task<Comment> FindComment(int id, CancellationToken cancellationToken)
-     => await _context.Comments.FirstOrDefaultAsync(a => a.Id == id, cancellationToken);
+     => await Queryable.FirstOrDefaultAsync(a => a.Id == id, cancellationToken);
     }
 }
