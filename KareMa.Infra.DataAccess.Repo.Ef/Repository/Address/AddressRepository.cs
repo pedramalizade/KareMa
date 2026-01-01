@@ -1,6 +1,6 @@
 ﻿namespace KareMa.Infra.DataAccess.Repo.Ef.Repository
 {
-    public class AddressRepository : IAddressRepository
+    public class AddressRepository : BaseRepository<Address>, IAddressRepository
     {
         private readonly AppDbContext _context;
         public AddressRepository(AppDbContext context)
@@ -56,7 +56,7 @@
         /// <param name="cancellationToken">توکن لغو عملیات.</param>
         /// <returns>لیست آدرس‌ها.</returns>
         public async Task<List<Address>> GetAllAsync(CancellationToken cancellationToken)
-       => await _context.Addresses.AsNoTracking().ToListAsync(cancellationToken);
+       => await Queryable.AsNoTracking().ToListAsync(cancellationToken);
 
         /// <summary>
         /// آدرس را بر اساس شناسه برمی‌گرداند.
@@ -94,7 +94,6 @@
         /// <param name="cancellationToken">توکن لغو عملیات.</param>
         /// <returns>آدرس پیدا شده یا مقدار null.</returns>
         private async Task<Address> FindAddress(int id, CancellationToken cancellationToken)
-        => await _context.Addresses.AsNoTracking().FirstOrDefaultAsync(a => a.Id == id, cancellationToken);
+        => await Queryable.AsNoTracking().FirstOrDefaultAsync(a => a.Id == id, cancellationToken);
     }
-
 }
