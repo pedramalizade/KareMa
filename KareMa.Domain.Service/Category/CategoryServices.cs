@@ -5,7 +5,7 @@
         private readonly ICategoryRepository _categoryRepository;
         public CategoryServices(ICategoryRepository categoryRepository)
         {
-            _categoryRepository = categoryRepository; 
+            _categoryRepository = categoryRepository;
         }
         /// <summary>ایجاد دسته‌بندی جدید</summary>
         public async Task<bool> CreateAsync(CategoryCreateDto serviceCategoryCreateDto, CancellationToken cancellationToken)
@@ -20,12 +20,12 @@
             => await _categoryRepository.GetAllAsync(cancellationToken);
 
         /// <summary>دریافت نام دسته‌بندی‌ها</summary>
-        public async Task<List<CategoryNameDto>> GetCategorisNameAsync(CancellationToken cancellationToken)
+        public async Task<List<CategoryNameDto>> GetCategoriesNameAsync(CancellationToken cancellationToken)
             => await _categoryRepository.GetCategorisNameAsync(cancellationToken);
 
         /// <summary>دریافت اطلاعات جهت ویرایش</summary>
-        public async Task<CategoryUpdateDto> ServiceCategoryUpdateInfoAsync(int id, CancellationToken cancellationToken)
-            => await _categoryRepository.ServiceCategoryUpdateInfoAsync(id, cancellationToken);
+        public async Task<CategoryUpdateDto> ServiceCategoryUpdateInfoAsync(int categoryId, CancellationToken cancellationToken)
+            => await _categoryRepository.ServiceCategoryUpdateInfoAsync(categoryId, cancellationToken);
 
         /// <summary>دریافت دسته‌بندی با شناسه</summary>
         public async Task<Category> GetByIdAsync(int serviceCategoryId, CancellationToken cancellationToken)

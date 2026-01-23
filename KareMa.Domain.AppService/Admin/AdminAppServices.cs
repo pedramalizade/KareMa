@@ -27,8 +27,8 @@
         /// <summary>
         /// دریافت اطلاعات یک ادمین برای بروزرسانی
         /// </summary>
-        public async Task<AdminUpdateDto> AdminUpdateInfoAsync(int id, CancellationToken cancellationToken)
-          => await _adminServices.AdminUpdateInfoAsync(id, cancellationToken);
+        public async Task<AdminUpdateDto> AdminUpdateInfoAsync(int adminId, CancellationToken cancellationToken)
+          => await _adminServices.AdminUpdateInfoAsync(adminId, cancellationToken);
         /// <summary>
         /// دریافت ادمین بر اساس شناسه
         /// </summary>

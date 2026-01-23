@@ -18,7 +18,7 @@ namespace KareMa.EndPoint.RazorPages.Areas.ExpertArea.Pages
         public async Task OnGet(CancellationToken cancellationToken)
         {
             var expertId = int.Parse(User.Claims.FirstOrDefault(c => c.Type == "userExpertId").Value);
-            Suggestions = await _suggestionAppServices.GetSuggestionsByExperIdAsync(expertId, cancellationToken);
+            Suggestions = await _suggestionAppServices.GetSuggestionsByExpertIdAsync(expertId, cancellationToken);
         }
 
         public async Task OnGetDoneOrder(int suggestionId, int orderId, CancellationToken cancellationToken)

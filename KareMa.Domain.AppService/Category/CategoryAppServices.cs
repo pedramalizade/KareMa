@@ -33,10 +33,10 @@
           => await _categoryServices.GetByIdAsync(serviceCategoryId, cancellationToken);
         /// <summary>نام دسته‌بندی‌ها.</summary>
         public Task<List<CategoryNameDto>> GetCategorisNameAsync(CancellationToken cancellationToken)
-     => _categoryServices.GetCategorisNameAsync(cancellationToken);
+     => _categoryServices.GetCategoriesNameAsync(cancellationToken);
         /// <summary>اطلاعات بروزرسانی دسته‌بندی.</summary>
-        public async Task<CategoryUpdateDto> ServiceCategoryUpdateInfoAsync(int id, CancellationToken cancellationToken)
-  => await _categoryServices.ServiceCategoryUpdateInfoAsync(id, cancellationToken);
+        public async Task<CategoryUpdateDto> ServiceCategoryUpdateInfoAsync(int categoryId, CancellationToken cancellationToken)
+  => await _categoryServices.ServiceCategoryUpdateInfoAsync(categoryId, cancellationToken);
         /// <summary>بروزرسانی دسته‌بندی.</summary>
         public async Task<bool> UpdateAsync(CategoryUpdateDto categoryUpdateDto, IFormFile? image, CancellationToken cancellationToken)
         {

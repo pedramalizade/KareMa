@@ -33,7 +33,7 @@
         /// </summary>
         public async Task<List<ServicesNameDto>> GetServicesNameAsync(CancellationToken cancellationToken)
         {
-            return await _context.Services.Select(s => new ServicesNameDto
+            return await Queryable.Select(s => new ServicesNameDto
             {
                 Id = s.Id,
                 Name = s.Name,
@@ -44,9 +44,9 @@
         /// <summary>
         /// دریافت نام و قیمت یک سرویس بر اساس شناسه
         /// </summary>
-        public async Task<ServiceNameAndPriceDto> GetServiceNameAndPriceAsync(int id, CancellationToken cancellationToken)
+        public async Task<ServiceNameAndPriceDto> GetServiceNameAndPriceAsync(int serviceId, CancellationToken cancellationToken)
         {
-            var targetSrtvice = await _context.Services.AsNoTracking().Where(s => s.Id == id)
+            var targetSrtvice = await Queryable.AsNoTracking().Where(s => s.Id == serviceId)
                   .Select(s => new ServiceNameAndPriceDto
                   {
                       Id = s.Id,
@@ -93,9 +93,9 @@
         /// <summary>
         /// دریافت سرویس‌ها بر اساس شناسه زیرشاخه
         /// </summary>
-        public async Task<List<GetByCategorySubIdDto>> GetAllBySubCategoryIdAsync(int id, CancellationToken cancellationToken)
+        public async Task<List<GetByCategorySubIdDto>> GetAllBySubCategoryIdAsync(int subCategoryId, CancellationToken cancellationToken)
         {
-            return await Queryable.Where(x => x.SubCategoryId == id).AsNoTracking()
+            return await Queryable.Where(x => x.SubCategoryId == subCategoryId).AsNoTracking()
                 .Select(c => new GetByCategorySubIdDto
                 {
                     Id = c.Id,
@@ -106,7 +106,7 @@
         /// <summary>
         /// دریافت اطلاعات یک سرویس برای ویرایش
         /// </summary>
-        public async Task<ServiceUpdateDto?> ServiceUpdateInfoAsync(int id, CancellationToken cancellationToken)
+        public async Task<ServiceUpdateDto?> ServiceUpdateInfoAsync(int serviceId, CancellationToken cancellationToken)
         {
             return await Queryable
                 .Select(s => new ServiceUpdateDto
@@ -116,7 +116,7 @@
                     Price = s.Price,
                     SubCategoryId = s.SubCategoryId
 
-                }).FirstOrDefaultAsync(s => s.Id == id);
+                }).FirstOrDefaultAsync(s => s.Id == serviceId);
         }
 
         /// <summary>
@@ -143,8 +143,8 @@
         /// <summary>
         /// پیدا کردن یک سرویس بر اساس شناسه
         /// </summary>
-        private async Task<Service> FindService(int id, CancellationToken cancellationToken)
-       => await Queryable.FirstOrDefaultAsync(a => a.Id == id, cancellationToken);
+        private async Task<Service> FindService(int serviceId, CancellationToken cancellationToken)
+       => await Queryable.FirstOrDefaultAsync(x => x.Id == serviceId, cancellationToken);
 
         /// <summary>
         /// دریافت همه سرویس‌ها بدون فیلتر

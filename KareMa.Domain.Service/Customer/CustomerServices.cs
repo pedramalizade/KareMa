@@ -32,16 +32,16 @@
             => _customerRepository.GetByIdAsync(customerId, cancellationToken);
 
         /// <summary>خلاصه اطلاعات مشتری</summary>
-        public async Task<CustomerSummaryDto> GetCustomerSummaryAsync(int id, CancellationToken cancellationToken)
-            => await _customerRepository.GetCustomerSummaryAsync(id, cancellationToken);
+        public async Task<CustomerSummaryDto> GetCustomerSummaryAsync(int customerId, CancellationToken cancellationToken)
+            => await _customerRepository.GetCustomerSummaryAsync(customerId, cancellationToken);
 
         /// <summary>ویرایش مشتری</summary>
         public async Task<bool> UpdateAsync(CustomerUpdateDto customerUpdateDto, CancellationToken cancellationToken)
             => await _customerRepository.UpdateAsync(customerUpdateDto, cancellationToken);
 
         /// <summary>دریافت اطلاعات جهت ویرایش</summary>
-        public async Task<CustomerUpdateDto> CustomerUpdateInfoAsync(int id, CancellationToken cancellationToken)
-            => await _customerRepository.CustomerUpdateInfoAsync(id, cancellationToken);
+        public async Task<CustomerUpdateDto> CustomerUpdateInfoAsync(int customerId, CancellationToken cancellationToken)
+            => await _customerRepository.CustomerUpdateInfoAsync(customerId, cancellationToken);
 
         /// <summary>دریافت مشتری با شناسه</summary>
         public async Task<Customer> GetCustomerByIdAsync(int customerId, CancellationToken cancellationToken)

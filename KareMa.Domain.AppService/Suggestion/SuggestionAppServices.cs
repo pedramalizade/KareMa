@@ -55,9 +55,9 @@
         /// <summary>
         /// دریافت همه پیشنهادهای یک کارشناس با فرمت تاریخ شمسی.
         /// </summary>
-        public async Task<List<SuggestionsByExpertIdDto>> GetSuggestionsByExperIdAsync(int id, CancellationToken cancellationToken)
+        public async Task<List<SuggestionsByExpertIdDto>> GetSuggestionsByExpertIdAsync(int expertId, CancellationToken cancellationToken)
         {
-            var Suggestions = await _suggestionServices.GetSuggestionsByExperIdAsync(id, cancellationToken);
+            var Suggestions = await _suggestionServices.GetSuggestionsByExpertIdAsync(expertId, cancellationToken);
             foreach (var item in Suggestions)
             {
                 item.SuggestedDateString = (DateTime.Parse(item.SuggestedDate.ToString())).ToPersianString("yyyy/MM/dd");

@@ -26,7 +26,6 @@ namespace KareMa.Infra.DataAccess.Repo.Ef.Repository
                 Image = subCategoryCreateDto.Image,
             };
             await _context.SubCategories.AddAsync(newModel, cancellationToken);
-
             await _context.SaveChangesAsync(cancellationToken);
             return true;
         }
@@ -130,9 +129,9 @@ ORDER BY sc.Id, c.Id, s.Id";
         /// <summary>
         /// دریافت زیرشاخه‌ها بر اساس شناسه دسته‌بندی
         /// </summary>
-        public async Task<List<GetByCategoryIdDto>> GetAllByCategoryIdAsync(int id, CancellationToken cancellationToken)
+        public async Task<List<GetByCategoryIdDto>> GetAllByCategoryIdAsync(int categoryId, CancellationToken cancellationToken)
         {
-            return await Queryable.Where(x => x.CategoryId == id && x.IsDeleted == false).AsNoTracking()
+            return await Queryable.Where(x => x.CategoryId == categoryId && x.IsDeleted == false).AsNoTracking()
                 .Select(c => new GetByCategoryIdDto
                 {
                     Id = c.Id,
@@ -163,7 +162,7 @@ ORDER BY sc.Id, c.Id, s.Id";
         /// <summary>
         /// دریافت اطلاعات یک زیرشاخه برای ویرایش
         /// </summary>
-        public async Task<SubCategoryUpdateDto?> ServiceSubCategoryUpdateInfoAsync(int id, CancellationToken cancellationToken)
+        public async Task<SubCategoryUpdateDto?> ServiceSubCategoryUpdateInfoAsync(int subCategoryId, CancellationToken cancellationToken)
         {
             return await Queryable.AsNoTracking().Where(c => c.IsDeleted == false)
                 .Select(s => new SubCategoryUpdateDto
@@ -173,7 +172,7 @@ ORDER BY sc.Id, c.Id, s.Id";
                     Image = s.Image,
                     CategoryId = s.CategoryId
 
-                }).FirstOrDefaultAsync(s => s.Id == id, cancellationToken);
+                }).FirstOrDefaultAsync(s => s.Id == subCategoryId, cancellationToken);
         }
 
         /// <summary>
@@ -194,7 +193,7 @@ ORDER BY sc.Id, c.Id, s.Id";
         /// <summary>
         /// پیدا کردن یک زیرشاخه بر اساس شناسه
         /// </summary>
-        private async Task<SubCategory> FindServiceSubCategory(int id, CancellationToken cancellationToken)
-        => await _context.SubCategories.FirstOrDefaultAsync(a => a.Id == id, cancellationToken);
+        private async Task<SubCategory> FindServiceSubCategory(int subCategoryId, CancellationToken cancellationToken)
+        => await _context.SubCategories.FirstOrDefaultAsync(x => x.Id == subCategoryId, cancellationToken);
     }
 }

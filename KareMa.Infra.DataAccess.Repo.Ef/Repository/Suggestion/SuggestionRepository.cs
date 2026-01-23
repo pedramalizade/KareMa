@@ -10,15 +10,12 @@
         /// <summary>ایجاد پیشنهاد.</summary>
         public async Task<bool> CreateAsync(SuggestionCreateDto suggestionCreateDto, CancellationToken cancellationToken)
         {
-            var order = await _context.Orders
-                .FirstOrDefaultAsync(o => o.Id == suggestionCreateDto.OrderId && o.Status == StatusEnum.AwaitingSuggestionExperts, cancellationToken);
+            var order = await Queryable.FirstOrDefaultAsync(o => o.Id == suggestionCreateDto.OrderId && o.Status == StatusEnum.AwaitingSuggestionExperts, cancellationToken);
             if (order == null)
-            {
-                throw new Exception("سفارش باز نیست یا پیدا نشد.");
-            }
+                return false;
 
-            var existingSuggestion = await Queryable
-                .AnyAsync(s => s.OrderId == suggestionCreateDto.OrderId && s.ExpertId == suggestionCreateDto.ExpertId, cancellationToken);
+
+            var existingSuggestion = await Queryable.AnyAsync(s => s.OrderId == suggestionCreateDto.OrderId && s.ExpertId == suggestionCreateDto.ExpertId, cancellationToken);
             if (existingSuggestion)
             {
                 throw new Exception("شما قبلاً برای این سفارش پیشنهاد داده‌اید.");
@@ -105,9 +102,9 @@
             return await Queryable.Where(s => s.OrderId == orderId && s.Status == StatusEnum.Confirmed).CountAsync(cancellationToken);
         }
         /// <summary>پیشنهادهای یک متخصص.</summary>
-        public async Task<List<SuggestionsByExpertIdDto>> GetSuggestionsByExperIdAsync(int id, CancellationToken cancellationToken)
+        public async Task<List<SuggestionsByExpertIdDto>> GetSuggestionsByExpertIdAsync(int expertId, CancellationToken cancellationToken)
         {
-            return await Queryable.Where(s => s.ExpertId == id)
+            return await Queryable.Where(s => s.ExpertId == expertId)
                 .Select(s => new SuggestionsByExpertIdDto
                 {
                     Id = s.Id,
@@ -128,9 +125,9 @@
                .ToListAsync(cancellationToken);
         }
         /// <summary>اتمام پیشنهاد.</summary>
-        public async Task DoneSuggestionAsync(int id, CancellationToken cancellationToken)
+        public async Task DoneSuggestionAsync(int suggestionId, CancellationToken cancellationToken)
         {
-            var targetSuggestion = await Queryable.FirstOrDefaultAsync(s => s.Id == id, cancellationToken);
+            var targetSuggestion = await Queryable.FirstOrDefaultAsync(s => s.Id == suggestionId, cancellationToken);
             targetSuggestion.Status = StatusEnum.Done;
 
             await _context.SaveChangesAsync(cancellationToken);
@@ -150,8 +147,8 @@
             return true;
         }
         /// <summary>جستجوی پیشنهاد.</summary>
-        private async Task<Suggestion> FindSuggestion(int id, CancellationToken cancellationToken)
-       => await Queryable.FirstOrDefaultAsync(a => a.Id == id, cancellationToken);
+        private async Task<Suggestion> FindSuggestion(int suggestionId, CancellationToken cancellationToken)
+       => await Queryable.FirstOrDefaultAsync(a => a.Id == suggestionId, cancellationToken);
         /// <summary>دریافت پیشنهاد با جزئیات.</summary>
         public async Task<SuggestionDto> GetSuggestionByIdAsync(int suggestionId, CancellationToken cancellationToken)
         {

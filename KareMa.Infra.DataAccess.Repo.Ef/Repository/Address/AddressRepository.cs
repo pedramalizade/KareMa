@@ -30,7 +30,6 @@
                 IsDefault = addressCreateDto.IsDefault,
             };
             await _context.Addresses.AddAsync(newModel);
-
             await _context.SaveChangesAsync(cancellationToken);
             return true;
         }
@@ -90,10 +89,10 @@
         /// <summary>
         /// آدرس را بر اساس شناسه پیدا می‌کند.
         /// </summary>
-        /// <param name="id">شناسه آدرس.</param>
+        /// <param name="addressId">شناسه آدرس.</param>
         /// <param name="cancellationToken">توکن لغو عملیات.</param>
         /// <returns>آدرس پیدا شده یا مقدار null.</returns>
-        private async Task<Address> FindAddress(int id, CancellationToken cancellationToken)
-        => await Queryable.AsNoTracking().FirstOrDefaultAsync(a => a.Id == id, cancellationToken);
+        private async Task<Address> FindAddress(int addressId, CancellationToken cancellationToken)
+        => await Queryable.AsNoTracking().FirstOrDefaultAsync(a => a.Id == addressId, cancellationToken);
     }
 }

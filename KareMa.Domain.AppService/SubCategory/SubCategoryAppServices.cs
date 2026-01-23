@@ -46,8 +46,8 @@
         /// <summary>
         /// دریافت زیرشاخه‌ها بر اساس شناسه دسته‌بندی.
         /// </summary>
-        public Task<List<GetByCategoryIdDto>> GetAllByCategoryIdAsync(int id, CancellationToken cancellationToken)
-            => _subCategoryServices.GetAllByCategoryIdAsync(id, cancellationToken);
+        public Task<List<GetByCategoryIdDto>> GetAllByCategoryIdAsync(int categoryId, CancellationToken cancellationToken)
+            => _subCategoryServices.GetAllByCategoryIdAsync(categoryId, cancellationToken);
 
         /// <summary>
         /// دریافت نام همه زیرشاخه‌ها.
@@ -58,8 +58,8 @@
         /// <summary>
         /// دریافت اطلاعات زیرشاخه برای بروزرسانی.
         /// </summary>
-        public async Task<SubCategoryUpdateDto> ServiceSubCategoryUpdateInfoAsync(int id, CancellationToken cancellationToken)
-            => await _subCategoryServices.ServiceSubCategoryUpdateInfoAsync(id, cancellationToken);
+        public async Task<SubCategoryUpdateDto> ServiceSubCategoryUpdateInfoAsync(int subCategoryId, CancellationToken cancellationToken)
+            => await _subCategoryServices.ServiceSubCategoryUpdateInfoAsync(subCategoryId, cancellationToken);
 
         /// <summary>
         /// ایجاد زیرشاخه جدید با تصویر.

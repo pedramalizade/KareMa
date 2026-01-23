@@ -157,9 +157,9 @@
             await _context.SaveChangesAsync(cancellationToken);
         }
         /// <summary>انجام‌شدن سفارش.</summary>
-        public async Task DoneOrderAsync(int id, CancellationToken cancellationToken)
+        public async Task DoneOrderAsync(int orderId, CancellationToken cancellationToken)
         {
-            var targetOrder = await Queryable.FirstOrDefaultAsync(o => o.Id == id, cancellationToken);
+            var targetOrder = await Queryable.FirstOrDefaultAsync(o => o.Id == orderId, cancellationToken);
             targetOrder.Status = StatusEnum.Done;
             targetOrder.DoneAt = DateTime.Now;
 
@@ -195,7 +195,7 @@
             return false;
         }
         /// <summary>جستجوی سفارش.</summary>
-        private async Task<Order> FindOrder(int id, CancellationToken cancellationToken)
-          => await Queryable.FirstOrDefaultAsync(a => a.Id == id, cancellationToken);
+        private async Task<Order> FindOrder(int orderId, CancellationToken cancellationToken)
+          => await Queryable.FirstOrDefaultAsync(a => a.Id == orderId, cancellationToken);
     }
 }

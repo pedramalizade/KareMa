@@ -57,7 +57,7 @@
         /// <summary>
         /// آپدیت اطلاعات ادمین
         /// </summary>
-        public async Task<AdminUpdateDto> AdminUpdateInfoAsync(int id, CancellationToken cancellationToken)
+        public async Task<AdminUpdateDto> AdminUpdateInfoAsync(int adminId, CancellationToken cancellationToken)
         {
             var updateInfo = await Queryable.Select(a => new AdminUpdateDto
             {
@@ -68,7 +68,7 @@
                 LastName = a.LastName,
                 PhoneNumber = a.AppUser.PhoneNumber
 
-            }).FirstOrDefaultAsync(a => a.Id == id, cancellationToken);
+            }).FirstOrDefaultAsync(a => a.Id == adminId, cancellationToken);
             return updateInfo;
         }
 
@@ -95,8 +95,8 @@
         /// <summary>
         /// پیدا کردن ادمین بر اساس شناسه
         /// </summary>
-        private async Task<Admin> FindAdmin(int id, CancellationToken cancellationToken)
-      => await Queryable.AsNoTracking().FirstOrDefaultAsync(a => a.Id == id);
+        private async Task<Admin> FindAdmin(int AdminId, CancellationToken cancellationToken)
+      => await Queryable.AsNoTracking().FirstOrDefaultAsync(a => a.Id == AdminId);
     }
 
 }

@@ -34,14 +34,14 @@
         /// <summary>
         /// دریافت اطلاعات موردنیاز برای بروزرسانی سرویس.
         /// </summary>
-        public async Task<ServiceUpdateDto> ServiceUpdateInfoAsync(int id, CancellationToken cancellationToken)
-          => await _serviceServices.ServiceUpdateInfoAsync(id, cancellationToken);
+        public async Task<ServiceUpdateDto> ServiceUpdateInfoAsync(int serviceId, CancellationToken cancellationToken)
+          => await _serviceServices.ServiceUpdateInfoAsync(serviceId, cancellationToken);
 
         /// <summary>
         /// دریافت لیست سرویس‌ها بر اساس شناسه زیرمجموعه.
         /// </summary>
-        public async Task<List<GetByCategorySubIdDto>> GetAllBySubCategoryIdAsync(int id, CancellationToken cancellationToken)
-          => await _serviceServices.GetAllBySubCategoryIdAsync(id, cancellationToken);
+        public async Task<List<GetByCategorySubIdDto>> GetAllBySubCategoryIdAsync(int subCategoryId, CancellationToken cancellationToken)
+          => await _serviceServices.GetAllBySubCategoryIdAsync(subCategoryId, cancellationToken);
 
         /// <summary>
         /// دریافت نام تمام سرویس‌ها.
@@ -58,8 +58,8 @@
         /// <summary>
         /// دریافت نام و قیمت یک سرویس.
         /// </summary>
-        public async Task<ServiceNameAndPriceDto> GetServiceNameAndPriceAsync(int id, CancellationToken cancellationToken)
-          => await _serviceServices.GetServiceNameAndPriceAsync(id, cancellationToken);
+        public async Task<ServiceNameAndPriceDto> GetServiceNameAndPriceAsync(int serviceId, CancellationToken cancellationToken)
+          => await _serviceServices.GetServiceNameAndPriceAsync(serviceId, cancellationToken);
 
         /// <summary>
         /// دریافت تمامی سرویس‌ها بدون فیلتر.

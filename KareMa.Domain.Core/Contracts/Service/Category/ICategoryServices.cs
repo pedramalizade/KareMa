@@ -8,7 +8,7 @@
         Task<bool> DeleteAsync(int serviceCategoryId, CancellationToken cancellationToken);
         Task<Category> GetByIdAsync(int serviceCategoryId, CancellationToken cancellationToken);
         Task<List<GetCategoryDto>> GetAllAsync(CancellationToken cancellationToken);
-        Task<List<CategoryNameDto>> GetCategorisNameAsync(CancellationToken cancellationToken);
+        Task<List<CategoryNameDto>> GetCategoriesNameAsync(CancellationToken cancellationToken);
         Task<CategoryUpdateDto> ServiceCategoryUpdateInfoAsync(int id, CancellationToken cancellationToken);
 
     }

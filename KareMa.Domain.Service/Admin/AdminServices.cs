@@ -20,8 +20,8 @@
             => await _adminRepository.GetAllAsync(cancellationToken);
 
         /// <summary>دریافت اطلاعات برای ویرایش</summary>
-        public async Task<AdminUpdateDto> AdminUpdateInfoAsync(int id, CancellationToken cancellationToken)
-            => await _adminRepository.AdminUpdateInfoAsync(id, cancellationToken);
+        public async Task<AdminUpdateDto> AdminUpdateInfoAsync(int adminId, CancellationToken cancellationToken)
+            => await _adminRepository.AdminUpdateInfoAsync(adminId, cancellationToken);
 
         /// <summary>دریافت ادمین با شناسه</summary>
         public async Task<Admin> GetByIdAsync(int adminId, CancellationToken cancellationToken)

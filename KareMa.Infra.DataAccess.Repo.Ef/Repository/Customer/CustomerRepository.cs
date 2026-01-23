@@ -131,9 +131,9 @@
         }
 
         /// <summary>دریافت خلاصه اطلاعات مشتری.</summary>
-        public async Task<CustomerSummaryDto> GetCustomerSummaryAsync(int id, CancellationToken cancellationToken)
+        public async Task<CustomerSummaryDto> GetCustomerSummaryAsync(int customerId, CancellationToken cancellationToken)
         {
-            var target = await Queryable.Where(a => a.Id == id && a.IsDeleted == false)
+            var target = await Queryable.Where(a => a.Id == customerId && a.IsDeleted == false)
                 .Select(c => new CustomerSummaryDto
                 {
                     Id = c.Id,
@@ -176,9 +176,7 @@
                 .FirstOrDefaultAsync(cancellationToken);
 
             if (targetCustomer == null)
-            {
                 return null;
-            }
 
             return targetCustomer;
         }
@@ -197,15 +195,15 @@
 
 
         /// <summary>جستجوی مشتری با شناسه.</summary>
-        private async Task<Customer> FindCustomer(int id, CancellationToken cancellationToken)
-     => await Queryable.FirstOrDefaultAsync(a => a.Id == id, cancellationToken);
+        private async Task<Customer> FindCustomer(int customerId, CancellationToken cancellationToken)
+     => await Queryable.FirstOrDefaultAsync(a => a.Id == customerId, cancellationToken);
 
         /// <summary>دریافت اطلاعات مشتری برای ویرایش.</summary>
-        public async Task<CustomerUpdateDto?> CustomerUpdateInfoAsync(int id, CancellationToken cancellationToken)
+        public async Task<CustomerUpdateDto?> CustomerUpdateInfoAsync(int customerId, CancellationToken cancellationToken)
         {
             return await Queryable.Select(a => new CustomerUpdateDto
             {
-                Id = id,
+                Id = customerId,
                 FirstName = a.FirstName,
                 LastName = a.LastName,
                 Address = a.Addresses,
@@ -214,7 +212,7 @@
                 Balance = a.Balance,
                 PhoneNumber = a.PhoneNumber
 
-            }).FirstOrDefaultAsync(a => a.Id == id, cancellationToken);
+            }).FirstOrDefaultAsync(a => a.Id == customerId, cancellationToken);
         }
 
         /// <summary>آپدیت موجودی مشتری.</summary>
@@ -240,15 +238,12 @@
         /// <summary>دریافت مشتری غیرحذف‌شده.</summary>
         public async Task<Customer> GetCustomerByIdAsync(int customerId, CancellationToken cancellationToken)
         {
-            _logger.LogInformation("در حال دریافت اطلاعات مشتری با شناسه ", customerId);
+            //_logger.LogInformation("در حال دریافت اطلاعات مشتری با شناسه ", customerId);
 
-            var customer = await _context.Customers
-                .FirstOrDefaultAsync(c => c.Id == customerId && !c.IsDeleted, cancellationToken);
+            var customer = await _context.Customers.FirstOrDefaultAsync(c => c.Id == customerId && !c.IsDeleted, cancellationToken);
 
             if (customer == null)
-            {
-                _logger.LogWarning("مشتری یافت نشد یا حذف شده است.", customerId);
-            }
+                return null;
 
             return customer;
         }

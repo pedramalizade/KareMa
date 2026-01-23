@@ -61,10 +61,10 @@
         /// <summary>
         /// دریافت اطلاعات یک دسته‌بندی برای ویرایش
         /// </summary>
-        public async Task<CategoryUpdateDto?> ServiceCategoryUpdateInfoAsync(int id, CancellationToken cancellationToken)
+        public async Task<CategoryUpdateDto?> ServiceCategoryUpdateInfoAsync(int categoryId, CancellationToken cancellationToken)
         {
             return await Queryable
-                .Where(c => c.Id == id)
+                .Where(c => c.Id == categoryId)
                 .Select(c => new CategoryUpdateDto
                 {
                     Id = c.Id,
@@ -77,9 +77,9 @@
         /// <summary>
         /// حذف منطقی یک دسته‌بندی
         /// </summary>
-        public async Task<bool> DeleteAsync(int CategoryId, CancellationToken cancellationToken)
+        public async Task<bool> DeleteAsync(int categoryId, CancellationToken cancellationToken)
         {
-            var targetModel = await FindServiceCategory(CategoryId, cancellationToken);
+            var targetModel = await FindServiceCategory(categoryId, cancellationToken);
             targetModel.IsDeleted = true;
             try
             {
@@ -156,16 +156,16 @@
         /// <summary>
         /// پیدا کردن یک دسته‌بندی فعال بر اساس شناسه
         /// </summary>
-        private async Task<Domain.Core.Entities.Category> FindServiceCategory(int id, CancellationToken cancellationToken)
+        private async Task<Domain.Core.Entities.Category> FindServiceCategory(int categoryId, CancellationToken cancellationToken)
         {
-            _logger.LogInformation("در حال جستجوی دسته‌بندی", id);
+            _logger.LogInformation("در حال جستجوی دسته‌بندی", categoryId);
 
             var category = await _context.Categories
-                .FirstOrDefaultAsync(c => c.Id == id && !c.IsDeleted, cancellationToken);
+                .FirstOrDefaultAsync(c => c.Id == categoryId && !c.IsDeleted, cancellationToken);
 
             if (category == null)
             {
-                _logger.LogWarning($"دسته‌بندی با شناسه {category.Id} پیدا نشد.", id);
+                _logger.LogWarning($"دسته‌بندی با شناسه {category.Id} پیدا نشد.", categoryId);
             }
             else
             {

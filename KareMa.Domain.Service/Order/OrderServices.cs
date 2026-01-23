@@ -48,9 +48,9 @@
             => await _orderRepository.GetOrdersAsync(customerId, cancellationToken);
 
         /// <summary>دریافت سفارش‌های مرتبط با خدمات متخصص</summary>
-        public async Task<List<OrdersByServiceIdsDto>> GetOrdersByExpertIdAsync(int exoertId, CancellationToken cancellationToken)
+        public async Task<List<OrdersByServiceIdsDto>> GetOrdersByExpertIdAsync(int expertId, CancellationToken cancellationToken)
         {
-            var serviceIds = await _expertServices.GetExpertServiceIds(exoertId, cancellationToken);
+            var serviceIds = await _expertServices.GetExpertServiceIds(expertId, cancellationToken);
             return await _orderRepository.GetOrdersByServiceIdsAsync(serviceIds, cancellationToken);
         }
 

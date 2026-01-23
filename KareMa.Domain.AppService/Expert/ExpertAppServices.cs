@@ -82,40 +82,40 @@
             => await _expertServices.Delete(expertId, cancellationToken);
 
         /// <summary>میانگین امتیازات کارشناس.</summary>
-        public async Task<int> ExpertAverageScoresAsync(int id, CancellationToken cancellationToken)
-            => await _expertServices.ExpertAverageScores(id, cancellationToken);
+        public async Task<int> ExpertAverageScoresAsync(int expertAverageScoresId, CancellationToken cancellationToken)
+            => await _expertServices.ExpertAverageScores(expertAverageScoresId, cancellationToken);
 
         /// <summary>تعداد نظرات کارشناس.</summary>
-        public async Task<int> ExpertCommentCountAsync(int id, CancellationToken cancellationToken)
-            => await _expertServices.ExpertCommentCount(id, cancellationToken);
+        public async Task<int> ExpertCommentCountAsync(int expertCommentsId, CancellationToken cancellationToken)
+            => await _expertServices.ExpertCommentCount(expertCommentsId, cancellationToken);
 
         /// <summary>تعداد کل کارشناسان.</summary>
         public async Task<int> ExpertCountAsync(CancellationToken cancellationToken)
             => await _expertServices.ExpertCount(cancellationToken);
 
         /// <summary>تعداد سفارشات کارشناس.</summary>
-        public async Task<int> ExpertOrderCountAsync(int id, CancellationToken cancellationToken)
-            => await _expertServices.ExpertOrderCount(id, cancellationToken);
+        public async Task<int> ExpertOrderCountAsync(int expertOrderId, CancellationToken cancellationToken)
+            => await _expertServices.ExpertOrderCount(expertOrderId, cancellationToken);
 
         /// <summary>دریافت اطلاعات لازم برای بروزرسانی.</summary>
-        public async Task<ExpertUpdateDto> ExpertUpdateInfoAsync(int id, CancellationToken cancellationToken)
-            => await _expertServices.ExpertUpdateInfo(id, cancellationToken);
+        public async Task<ExpertUpdateDto> ExpertUpdateInfoAsync(int expertId, CancellationToken cancellationToken)
+            => await _expertServices.ExpertUpdateInfo(expertId, cancellationToken);
 
         /// <summary>دریافت تمام کارشناسان.</summary>
         public async Task<List<Expert>> GetAllAsync(CancellationToken cancellationToken)
             => await _expertServices.GetAll(cancellationToken);
 
         /// <summary>دریافت نام کارشناس.</summary>
-        public async Task<ExpertNameDto> GetExpertNameAsync(int id, CancellationToken cancellationToken)
-            => await _expertServices.GetExpertName(id, cancellationToken);
+        public async Task<ExpertNameDto> GetExpertNameAsync(int expertId, CancellationToken cancellationToken)
+            => await _expertServices.GetExpertName(expertId, cancellationToken);
 
         /// <summary>دریافت کارشناس با شناسه.</summary>
         public async Task<Expert> GetByIdAsync(int expertId, CancellationToken cancellationToken)
             => await _expertServices.GetById(expertId, cancellationToken);
 
         /// <summary>خلاصه اطلاعات کارشناس.</summary>
-        public async Task<ExpertSummaryDto> GetExpertSummaryAsync(int id, CancellationToken cancellationToken)
-            => await _expertServices.GetExpertSummary(id, cancellationToken);
+        public async Task<ExpertSummaryDto> GetExpertSummaryAsync(int expertSummary, CancellationToken cancellationToken)
+            => await _expertServices.GetExpertSummary(expertSummary, cancellationToken);
 
         /// <summary>بروزرسانی اطلاعات کارشناس.</summary>
         public async Task<bool> UpdateAsync(ExpertUpdateDto expertUpdateDto, IFormFile? image, CancellationToken cancellationToken)

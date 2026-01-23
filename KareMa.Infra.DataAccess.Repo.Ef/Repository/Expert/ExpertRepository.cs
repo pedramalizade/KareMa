@@ -148,14 +148,14 @@
         public async Task<int> ExpertCountAsync(CancellationToken cancellationToken)
             => await Queryable.CountAsync(cancellationToken);
         /// <summary>خلاصه متخصص.</summary>
-        public async Task<ExpertSummaryDto> GetExpertSummaryAsync(int id, CancellationToken cancellationToken)
+        public async Task<ExpertSummaryDto> GetExpertSummaryAsync(int expertSummary, CancellationToken cancellationToken)
         {
-            _logger.LogInformation("در حال دریافت خلاصه اطلاعات متخصص با شناسه", id);
+            _logger.LogInformation("در حال دریافت خلاصه اطلاعات متخصص با شناسه", expertSummary);
 
             var expert = await Queryable
                 .Include(e => e.Services)
                 .Include(e => e.Comments)
-                .Where(e => e.Id == id && !e.IsDeleted)
+                .Where(e => e.Id == expertSummary && !e.IsDeleted)
                 .Select(e => new ExpertSummaryDto
                 {
                     Id = e.Id,
@@ -180,8 +180,8 @@
 
             if (expert == null)
             {
-                _logger.LogWarning("متخصص یافت نشد یا حذف شده است.", id);
-                return new ExpertSummaryDto { Id = id, Comments = new List<Comment>(), Services = new List<Service>(), Balance = 0 };
+                _logger.LogWarning("متخصص یافت نشد یا حذف شده است.", expertSummary);
+                return new ExpertSummaryDto { Id = expertSummary, Comments = new List<Comment>(), Services = new List<Service>(), Balance = 0 };
             }
 
             _logger.LogInformation("خلاصه متخصص: موجودی={Balance} | تعداد دیدگاه={CommentCount} | تعداد سرویس={ServiceCount}",
@@ -190,21 +190,21 @@
             return expert;
         }
         /// <summary>تعداد کامنت‌ها.</summary>
-        public async Task<int> ExpertCommentCountAsync(int id, CancellationToken cancellationToken)
-            => await Queryable.Where(e => e.Id == id).SelectMany(e => e.Comments).CountAsync();
+        public async Task<int> ExpertCommentCountAsync(int expertCommentsId, CancellationToken cancellationToken)
+            => await Queryable.Where(e => e.Id == expertCommentsId).SelectMany(e => e.Comments).CountAsync();
         /// <summary>میانگین امتیاز.</summary>
-        public async Task<int> ExpertAverageScoresAsync(int id, CancellationToken cancellationToken)
+        public async Task<int> ExpertAverageScoresAsync(int expertAverageScoresId, CancellationToken cancellationToken)
         {
-            var expert = await Queryable.Include(e => e.Comments).FirstOrDefaultAsync(e => e.Id == id, cancellationToken);
+            var expert = await Queryable.Include(e => e.Comments).FirstOrDefaultAsync(e => e.Id == expertAverageScoresId, cancellationToken);
             if (expert == null || expert.Comments == null || !expert.Comments.Any())
                 return 0;
 
             return (int)expert.Comments.Select(c => c.Score).Average();
         }
         /// <summary>تعداد سفارشات انجام‌شده.</summary>
-        public async Task<int> ExpertOrderCountAsync(int id, CancellationToken cancellationToken)
+        public async Task<int> ExpertOrderCountAsync(int expertOrderId, CancellationToken cancellationToken)
         {
-            var suggestions = await Queryable.Where(e => e.Id == id)
+            var suggestions = await Queryable.Where(e => e.Id == expertOrderId)
                 .SelectMany(e => e.Suggestions)
                 .ToListAsync(cancellationToken);
 
@@ -212,11 +212,11 @@
         }
 
         /// <summary>شناسه سرویس‌ها.</summary>
-        public async Task<List<int>> GetExpertServiceIdsAsync(int id, CancellationToken cancellationToken)
-            => (await Queryable.Where(e => e.Id == id).SelectMany(e => e.Services).ToListAsync(cancellationToken))
+        public async Task<List<int>> GetExpertServiceIdsAsync(int expertServiceId, CancellationToken cancellationToken)
+            => (await Queryable.Where(e => e.Id == expertServiceId).SelectMany(e => e.Services).ToListAsync(cancellationToken))
                 .Select(s => s.Id).ToList();
         /// <summary>اطلاعات ویرایش.</summary>
-        public async Task<ExpertUpdateDto> ExpertUpdateInfoAsync(int id, CancellationToken cancellationToken)
+        public async Task<ExpertUpdateDto> ExpertUpdateInfoAsync(int expertId, CancellationToken cancellationToken)
         {
             var result = await Queryable.Include(e => e.Services)
                 .Select(e => new ExpertUpdateDto
@@ -232,15 +232,15 @@
                     Image = e.Image,
                     Bio = e.Bio,
                     ServiceIds = e.Services.Select(s => s.Id).ToList()
-                }).FirstOrDefaultAsync(e => e.Id == id, cancellationToken);
+                }).FirstOrDefaultAsync(e => e.Id == expertId, cancellationToken);
 
-            _logger.LogInformation("اطلاعات به‌روزرسانی متخصص {ExpertId}: سرویس‌ها = {ServiceIds}", id, string.Join(", ", result?.ServiceIds ?? new List<int>()));
+            _logger.LogInformation("اطلاعات به‌روزرسانی متخصص {ExpertId}: سرویس‌ها = {ServiceIds}", expertId, string.Join(", ", result?.ServiceIds ?? new List<int>()));
             return result;
         }
         /// <summary>نام متخصص.</summary>
-        public async Task<ExpertNameDto> GetExpertNameAsync(int id, CancellationToken cancellationToken)
+        public async Task<ExpertNameDto> GetExpertNameAsync(int expertId, CancellationToken cancellationToken)
             => await Queryable.AsNoTracking()
-                .Where(e => e.Id == id)
+                .Where(e => e.Id == expertId)
                 .Select(e => new ExpertNameDto { FirstName = e.FirstName, LastName = e.LastName, Balance = e.Balance })
                 .FirstOrDefaultAsync(cancellationToken) ?? new ExpertNameDto();
         /// <summary>دریافت متخصص.</summary>
@@ -276,7 +276,7 @@
         }
 
         /// <summary>پیدا کردن متخصص.</summary>
-        private async Task<Expert> FindExpert(int id, CancellationToken cancellationToken)
+        private async Task<Expert> FindExpert(int expertId, CancellationToken cancellationToken)
             => await Queryable.FirstOrDefaultAsync(e => e.Id == id, cancellationToken);
 
     }

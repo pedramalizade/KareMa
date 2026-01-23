@@ -27,20 +27,20 @@ public class ServiceServices : IServiceServices
         => await _serviceRepository.UpdateAsync(serviceUpdateDto, cancellationToken);
 
     /// <summary>دریافت سرویس‌های یک زیرگروه</summary>
-    public async Task<List<GetByCategorySubIdDto>> GetAllBySubCategoryIdAsync(int id, CancellationToken cancellationToken)
-        => await _serviceRepository.GetAllBySubCategoryIdAsync(id, cancellationToken);
+    public async Task<List<GetByCategorySubIdDto>> GetAllBySubCategoryIdAsync(int subCategoryId, CancellationToken cancellationToken)
+        => await _serviceRepository.GetAllBySubCategoryIdAsync(subCategoryId, cancellationToken);
 
     /// <summary>دریافت نام سرویس‌ها</summary>
     public async Task<List<ServicesNameDto>> GetServicesNameAsync(CancellationToken cancellationToken)
         => await _serviceRepository.GetServicesNameAsync(cancellationToken);
 
     /// <summary>دریافت نام و قیمت سرویس</summary>
-    public async Task<ServiceNameAndPriceDto> GetServiceNameAndPriceAsync(int id, CancellationToken cancellationToken)
-        => await _serviceRepository.GetServiceNameAndPriceAsync(id, cancellationToken);
+    public async Task<ServiceNameAndPriceDto> GetServiceNameAndPriceAsync(int serviceId, CancellationToken cancellationToken)
+        => await _serviceRepository.GetServiceNameAndPriceAsync(serviceId, cancellationToken);
 
     /// <summary>اطلاعات ویرایش سرویس</summary>
-    public async Task<ServiceUpdateDto> ServiceUpdateInfoAsync(int id, CancellationToken cancellationToken)
-        => await _serviceRepository.ServiceUpdateInfoAsync(id, cancellationToken);
+    public async Task<ServiceUpdateDto> ServiceUpdateInfoAsync(int serviceId, CancellationToken cancellationToken)
+        => await _serviceRepository.ServiceUpdateInfoAsync(serviceId, cancellationToken);
 
     /// <summary>دریافت لیست کامل سرویس‌ها</summary>
     public async Task<List<Core.Entities.Service>> GetAllServicesAsync(CancellationToken cancellationToken)

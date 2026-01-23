@@ -35,7 +35,7 @@
         /// <summary>
         /// دریافت پیشنهادها بر اساس شناسه کارشناس.
         /// </summary>
-        Task<List<SuggestionsByExpertIdDto>> GetSuggestionsByExperIdAsync(int id, CancellationToken cancellationToken);
+        Task<List<SuggestionsByExpertIdDto>> GetSuggestionsByExpertIdAsync(int id, CancellationToken cancellationToken);
 
         /// <summary>
         /// دریافت جزئیات پیشنهاد بر اساس شناسه.

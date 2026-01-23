@@ -172,7 +172,7 @@
         /// <summary>
         /// پیدا کردن یک نظر بر اساس شناسه
         /// </summary>
-        private async Task<Comment> FindComment(int id, CancellationToken cancellationToken)
-     => await Queryable.FirstOrDefaultAsync(a => a.Id == id, cancellationToken);
+        private async Task<Comment> FindComment(int commentId, CancellationToken cancellationToken)
+     => await Queryable.FirstOrDefaultAsync(a => a.Id == commentId, cancellationToken);
     }
 }

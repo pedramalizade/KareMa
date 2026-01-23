@@ -38,8 +38,8 @@
         /// <summary>
         /// علامت‌گذاری پیشنهاد به عنوان انجام شده
         /// </summary>
-        public async Task DoneSuggestionAsync(int id, CancellationToken cancellationToken)
-          => await _suggestionRepository.DoneSuggestionAsync(id, cancellationToken);
+        public async Task DoneSuggestionAsync(int suggestionId, CancellationToken cancellationToken)
+          => await _suggestionRepository.DoneSuggestionAsync(suggestionId, cancellationToken);
         /// <summary>
         /// دریافت تمام پیشنهادها
         /// </summary>
@@ -58,8 +58,8 @@
         /// <summary>
         /// دریافت تمام پیشنهادهای یک متخصص بر اساس شناسه
         /// </summary>
-        public async Task<List<SuggestionsByExpertIdDto>> GetSuggestionsByExperIdAsync(int id, CancellationToken cancellationToken)
-          => await _suggestionRepository.GetSuggestionsByExperIdAsync(id, cancellationToken);
+        public async Task<List<SuggestionsByExpertIdDto>> GetSuggestionsByExpertIdAsync(int expertId, CancellationToken cancellationToken)
+          => await _suggestionRepository.GetSuggestionsByExpertIdAsync(expertId, cancellationToken);
 
         /// <summary>
         /// بروزرسانی یک پیشنهاد

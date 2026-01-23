@@ -9,7 +9,7 @@
         Task<List<Suggestion>> GetAllAsync(CancellationToken cancellationToken);
         Task<bool> AcceptSuggestionAsync(int suggestionId, int orderId, CancellationToken cancellationToken);
         Task<int> ConfrimedStatusCountAsync(int orderId, CancellationToken cancellationToken);
-        Task<List<SuggestionsByExpertIdDto>> GetSuggestionsByExperIdAsync(int id, CancellationToken cancellationToken);
+        Task<List<SuggestionsByExpertIdDto>> GetSuggestionsByExpertIdAsync(int id, CancellationToken cancellationToken);
         Task DoneSuggestionAsync(int id, CancellationToken cancellationToken);
         Task<SuggestionDto> GetSuggestionByIdAsync(int suggestionId, CancellationToken cancellationToken);
         Task<bool> ChangeStatusAsync(StatusEnum status, int suggetionId, CancellationToken cancellationToken);

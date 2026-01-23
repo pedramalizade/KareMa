@@ -43,8 +43,8 @@
         /// <summary>
         /// دریافت تمام زیرشاخه‌ها بر اساس شناسه دسته‌بندی
         /// </summary>
-        public Task<List<GetByCategoryIdDto>> GetAllByCategoryIdAsync(int id, CancellationToken cancellationToken)
-  => _subCategoryRepository.GetAllByCategoryIdAsync(id, cancellationToken);
+        public Task<List<GetByCategoryIdDto>> GetAllByCategoryIdAsync(int categoryId, CancellationToken cancellationToken)
+  => _subCategoryRepository.GetAllByCategoryIdAsync(categoryId, cancellationToken);
 
         /// <summary>
         /// دریافت لیست DTO همه زیرشاخه‌ها
@@ -54,7 +54,7 @@
         /// <summary>
         /// دریافت اطلاعات زیرشاخه برای بروزرسانی
         /// </summary>
-        public async Task<SubCategoryUpdateDto> ServiceSubCategoryUpdateInfoAsync(int id, CancellationToken cancellationToken)
-          => await _subCategoryRepository.ServiceSubCategoryUpdateInfoAsync(id, cancellationToken);
+        public async Task<SubCategoryUpdateDto> ServiceSubCategoryUpdateInfoAsync(int subCategoryId, CancellationToken cancellationToken)
+          => await _subCategoryRepository.ServiceSubCategoryUpdateInfoAsync(subCategoryId, cancellationToken);
     }
 }

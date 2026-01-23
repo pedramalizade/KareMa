@@ -66,8 +66,8 @@
             => await _customerServices.CustomerCountAsync(cancellationToken);
 
         /// <summary>خلاصه اطلاعات مشتری.</summary>
-        public async Task<CustomerSummaryDto> GetCustomerSummaryAsync(int id, CancellationToken cancellationToken)
-            => await _customerServices.GetCustomerSummaryAsync(id, cancellationToken);
+        public async Task<CustomerSummaryDto> GetCustomerSummaryAsync(int customerId, CancellationToken cancellationToken)
+            => await _customerServices.GetCustomerSummaryAsync(customerId, cancellationToken);
 
         /// <summary>حذف مشتری.</summary>
         public async Task<bool> DeleteAsync(int customerId, CancellationToken cancellationToken)
@@ -105,8 +105,8 @@
         }
 
         /// <summary>اطلاعات لازم برای ویرایش مشتری.</summary>
-        public async Task<CustomerUpdateDto> CustomerUpdateInfoAsync(int id, CancellationToken cancellationToken)
-            => await _customerServices.CustomerUpdateInfoAsync(id, cancellationToken);
+        public async Task<CustomerUpdateDto> CustomerUpdateInfoAsync(int customerId, CancellationToken cancellationToken)
+            => await _customerServices.CustomerUpdateInfoAsync(customerId, cancellationToken);
 
         /// <summary>دریافت مشتری با شناسه.</summary>
         public async Task<Customer> GetCustomerByIdAsync(int customerId, CancellationToken cancellationToken)

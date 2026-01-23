@@ -49,8 +49,8 @@
         /// <summary>
         /// ثبت تکمیل شدن سفارش توسط متخصص.
         /// </summary>
-        public async Task DoneOrderAsync(int id, int suggestionId, CancellationToken cancellationToken)
-          => await _orderServices.DoneOrderAsync(id, suggestionId, cancellationToken);
+        public async Task DoneOrderAsync(int orderId, int suggestionId, CancellationToken cancellationToken)
+          => await _orderServices.DoneOrderAsync(orderId, suggestionId, cancellationToken);
 
         /// <summary>
         /// دریافت لیست تمامی سفارش‌ها.
