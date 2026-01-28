@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\asus\\source\\repos\\KareMa\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{D2D5D86B-3284-41F0-BF74-988A0A87A9BF}|KareMa.Domain.AppService\\KareMa.Domain.AppService.csproj|c:\\users\\asus\\source\\repos\\karema\\karema.domain.appservice\\workflow\\customerorderworkflowappservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D2D5D86B-3284-41F0-BF74-988A0A87A9BF}|KareMa.Domain.AppService\\KareMa.Domain.AppService.csproj|solutionrelative:karema.domain.appservice\\workflow\\customerorderworkflowappservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{D2D5D86B-3284-41F0-BF74-988A0A87A9BF}|KareMa.Domain.AppService\\KareMa.Domain.AppService.csproj|c:\\users\\asus\\source\\repos\\karema\\karema.domain.appservice\\suggestion\\suggestionappservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D2D5D86B-3284-41F0-BF74-988A0A87A9BF}|KareMa.Domain.AppService\\KareMa.Domain.AppService.csproj|solutionrelative:karema.domain.appservice\\suggestion\\suggestionappservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -79,19 +83,32 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "CustomerOrderWorkflowAppServices.cs",
+              "DocumentMoniker": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.Domain.AppService\\WorkFlow\\CustomerOrderWorkflowAppServices.cs",
+              "RelativeDocumentMoniker": "KareMa.Domain.AppService\\WorkFlow\\CustomerOrderWorkflowAppServices.cs",
+              "ToolTip": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.Domain.AppService\\WorkFlow\\CustomerOrderWorkflowAppServices.cs",
+              "RelativeToolTip": "KareMa.Domain.AppService\\WorkFlow\\CustomerOrderWorkflowAppServices.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-23T09:42:43.676Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "SuggestionAppServices.cs",
               "DocumentMoniker": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.Domain.AppService\\Suggestion\\SuggestionAppServices.cs",
               "RelativeDocumentMoniker": "KareMa.Domain.AppService\\Suggestion\\SuggestionAppServices.cs",
               "ToolTip": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.Domain.AppService\\Suggestion\\SuggestionAppServices.cs",
               "RelativeToolTip": "KareMa.Domain.AppService\\Suggestion\\SuggestionAppServices.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADkAAABQAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAD8AAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-23T09:42:05.138Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "SubCategoryAppServices.cs",
               "DocumentMoniker": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.Domain.AppService\\SubCategory\\SubCategoryAppServices.cs",
               "RelativeDocumentMoniker": "KareMa.Domain.AppService\\SubCategory\\SubCategoryAppServices.cs",
@@ -104,7 +121,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "ServiceServices.cs",
               "DocumentMoniker": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.Domain.Service\\Service\\ServiceServices.cs",
               "RelativeDocumentMoniker": "KareMa.Domain.Service\\Service\\ServiceServices.cs",
@@ -117,7 +134,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "ServiceAppServices.cs",
               "DocumentMoniker": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.Domain.AppService\\Service\\ServiceAppServices.cs",
               "RelativeDocumentMoniker": "KareMa.Domain.AppService\\Service\\ServiceAppServices.cs",
@@ -130,7 +147,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "OrderAppServices.cs",
               "DocumentMoniker": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.Domain.AppService\\Order\\OrderAppServices.cs",
               "RelativeDocumentMoniker": "KareMa.Domain.AppService\\Order\\OrderAppServices.cs",
@@ -143,7 +160,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "ExpertAppServices.cs",
               "DocumentMoniker": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.Domain.AppService\\Expert\\ExpertAppServices.cs",
               "RelativeDocumentMoniker": "KareMa.Domain.AppService\\Expert\\ExpertAppServices.cs",
@@ -156,7 +173,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "CustomerAppServices.cs",
               "DocumentMoniker": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.Domain.AppService\\Customer\\CustomerAppServices.cs",
               "RelativeDocumentMoniker": "KareMa.Domain.AppService\\Customer\\CustomerAppServices.cs",
@@ -169,7 +186,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "CommentAppServices.cs",
               "DocumentMoniker": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.Domain.AppService\\Comment\\CommentAppServices.cs",
               "RelativeDocumentMoniker": "KareMa.Domain.AppService\\Comment\\CommentAppServices.cs",
@@ -182,7 +199,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "CityAppServices.cs",
               "DocumentMoniker": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.Domain.AppService\\City\\CityAppServices.cs",
               "RelativeDocumentMoniker": "KareMa.Domain.AppService\\City\\CityAppServices.cs",
@@ -195,7 +212,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "CategoryAppServices.cs",
               "DocumentMoniker": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.Domain.AppService\\Category\\CategoryAppServices.cs",
               "RelativeDocumentMoniker": "KareMa.Domain.AppService\\Category\\CategoryAppServices.cs",
@@ -208,7 +225,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "BaseAppServices.cs",
               "DocumentMoniker": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.Domain.AppService\\BaseServices\\BaseAppServices.cs",
               "RelativeDocumentMoniker": "KareMa.Domain.AppService\\BaseServices\\BaseAppServices.cs",
@@ -221,7 +238,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "AdminAppServices.cs",
               "DocumentMoniker": "C:\\Users\\asus\\source\\repos\\KareMa\\KareMa.Domain.AppService\\Admin\\AdminAppServices.cs",
               "RelativeDocumentMoniker": "KareMa.Domain.AppService\\Admin\\AdminAppServices.cs",
