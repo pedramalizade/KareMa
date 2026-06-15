@@ -124,9 +124,7 @@ Each role includes its own profile picture.
 - Deploy to hosting
 - Notifications  
 - Dedicated API for mobile app
-
 ---
-
 ## 🎯 Project Goals
 Designed to demonstrate real-world backend skills with a focus on:
 - Clean, scalable architecture  
