@@ -67,9 +67,7 @@ KareMa/
 - **Expert:** Sends suggestions & completes the job  
 - **Admin:** Manages users, experts, cities, orders, and system data  
 Each role includes its own profile picture.
-
 ---
-
 ### 🛠️ Service Request Workflow
 1. Customer creates a service request  
 2. Experts view the request and submit suggestions  
