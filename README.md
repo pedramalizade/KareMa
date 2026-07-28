@@ -11,9 +11,7 @@ KareMa is a platform where Customers request services, Experts submit suggestion
 - **Admin** – full management over the platform  
 - **Expert** – responds to service requests and performs the work  
 - **Customer** – submits requests and approves completed jobs  
-
 ---
-
 ## 🛠️ Tech Stack
 
 ### Backend
