@@ -55,11 +55,8 @@ KareMa/
 │       ├── ViewModels/           
 │       └── wwwroot/                        
 
-
 ---
-
 ## ⭐ Core Features
-
 ### 👤 Role-Based System
 - **Customer:** Creates service requests  
 - **Expert:** Sends suggestions & completes the job  
