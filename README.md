@@ -94,7 +94,6 @@ Each role includes its own profile picture.
 - Separate **Image** entity  
 - Used for profile pictures + service photos  
 - Files stored in **wwwroot**, metadata stored in database  
-
 ---
 
 ## 🚀 Development Log – Phase 1
