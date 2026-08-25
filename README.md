@@ -97,7 +97,6 @@ Each role includes its own profile picture.
 ---
 
 ## 🚀 Development Log – Phase 1
-
 ### ✔ Completed
 - Project architecture  
 - Entities & relationships  
