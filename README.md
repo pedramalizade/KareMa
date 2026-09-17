@@ -80,9 +80,7 @@ Each role includes its own profile picture.
 - Automatic transfer after job confirmation  
 - Transaction table for full history  
 - No payment logic inside controllers (clean separation)  
-
 ---
-
 ## 🏙️ City & Location Management
 - Cities table  
 - Customers & Experts linked to cities  
