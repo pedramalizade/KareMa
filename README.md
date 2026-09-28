@@ -30,9 +30,7 @@ KareMa is a platform where Customers request services, Experts submit suggestion
 - AutoMapper  
 - FluentValidation  
 - Authentication & Authorization
-
 ---
-
 ## 📁 Project Structure
 
 
