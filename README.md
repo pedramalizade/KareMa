@@ -70,9 +70,7 @@ Each role includes its own profile picture.
 6. Payment is automatically processed — **Customer → Expert**
 
 👉 Financial logic is implemented inside **Repository + Configuration layer**, *not the Service layer*, ensuring clean architecture.
-
 ---
-
 ## 💳 Financial & Transaction System
 - Balance tracking for Customers & Experts  
 - Automatic transfer after job confirmation  
