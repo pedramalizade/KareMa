@@ -13,7 +13,6 @@ KareMa is a platform where Customers request services, Experts submit suggestion
 - **Customer** – submits requests and approves completed jobs  
 ---
 ## 🛠️ Tech Stack
-
 ### Backend
 - ASP.NET Core MVC  
 - C#  
