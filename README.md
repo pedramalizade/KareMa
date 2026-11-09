@@ -80,9 +80,7 @@ Each role includes its own profile picture.
 - Cities table  
 - Customers & Experts linked to cities  
 - Used for filtering & UI logic across the system  
-
 ---
-
 ## 🖼️ Image Management
 - Separate **Image** entity  
 - Used for profile pictures + service photos  
