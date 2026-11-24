@@ -6,7 +6,6 @@ This isn’t a simple CRUD app — KareMa handles real-world business logic such
 
 ## 🎯 Project Overview
 KareMa is a platform where Customers request services, Experts submit suggestions and complete jobs, and Admins manage the entire system.
-
 ### 👥 Core System Roles
 - **Admin** – full management over the platform  
 - **Expert** – responds to service requests and performs the work  
