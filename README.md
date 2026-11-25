@@ -18,7 +18,6 @@ KareMa is a platform where Customers request services, Experts submit suggestion
 - Entity Framework Core  
 - Repository + Service + AppService Architecture  
 - SQL Server  
-
 ### Frontend
 - Razor Views  
 - Bootstrap  
